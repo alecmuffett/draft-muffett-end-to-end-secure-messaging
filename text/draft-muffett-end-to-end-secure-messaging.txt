@@ -68,17 +68,20 @@ Table of Contents
      3.2.  Transparency of Participation . . . . . . . . . . . . . .   3
      3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
        3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   3
-     3.4.  Closure of Participation  . . . . . . . . . . . . . . . .   3
+     3.4.  Closure of Participation  . . . . . . . . . . . . . . . .   4
+       3.4.1.  Closure of Conversation . . . . . . . . . . . . . . .   4
+       3.4.2.  Closure of Devices  . . . . . . . . . . . . . . . . .   4
+       3.4.3.  Notification and Awareness  . . . . . . . . . . . . .   4
    4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
      4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
-       4.3.1.  Examples of PCASM . . . . . . . . . . . . . . . . . .   4
+       4.3.1.  Examples of PCASM . . . . . . . . . . . . . . . . . .   5
        4.3.2.  Examples of non-PCASM . . . . . . . . . . . . . . . .   5
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    9.  Informative References  . . . . . . . . . . . . . . . . . . .   7
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
@@ -101,9 +104,6 @@ Table of Contents
    [RFC7686] networking to literally restrict the distribution of
    plaintext content to relevant participants.
 
-   Therefore we describe E2ESM in terms of functional outcomes of the
-   messenger rather than in terms of implementation goals and
-   technologies.
 
 
 
@@ -113,6 +113,10 @@ Muffett                  Expires 6 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   Therefore we describe E2ESM in terms of functional outcomes of the
+   messenger rather than in terms of implementation goals and
+   technologies.
 
 1.1.  Notational Conventions
 
@@ -159,10 +163,6 @@ Internet-Draft                    e2esm                         May 2021
    outside of the above-defined set are "non-participants" in respect of
    that message.
 
-3.4.  Closure of Participation
-
-
-
 
 
 Muffett                  Expires 6 November 2021                [Page 3]
@@ -170,17 +170,25 @@ Muffett                  Expires 6 November 2021                [Page 3]
 Internet-Draft                    e2esm                         May 2021
 
 
-   1.  The set of participants in a conversation SHALL NOT be increased
-       except by the intentional action of one or more existing
-       participants.
+3.4.  Closure of Participation
 
-   2.  2E2ESM solutions MUST provide each participant entity with means
-       to review or delete the full set of clients or devices that can
-       access their message PCASM.
+3.4.1.  Closure of Conversation
 
-   3.  E2ESM solutions MUST provide each participant entity with
-       notifications or a complete history of all changes to their set
-       of clients or devices.
+   The set of participants in a conversation SHALL NOT be increased
+   except by the intentional action of one or more existing
+   participants.
+
+3.4.2.  Closure of Devices
+
+   2E2ESM solutions MUST provide each participant entity with means to
+   review or delete any or all clients or devices that can access their
+   message PCASM.
+
+3.4.3.  Notification and Awareness
+
+   E2ESM solutions MUST provide each participant entity with
+   notifications or a complete history of all changes to the set of any
+   or all clients or devices that can access their message PCASM.
 
 4.  Definitions
 
@@ -210,14 +218,6 @@ Internet-Draft                    e2esm                         May 2021
    3.  any metadata which may describe the thematic nature of the
        content
 
-4.3.1.  Examples of PCASM
-
-   Information which would be PCASM would include, non-exclusively:
-
-   1.   The content is "Hello, world."
-
-   2.   The content is definitely 13 bytes long
-
 
 
 
@@ -225,6 +225,14 @@ Muffett                  Expires 6 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+4.3.1.  Examples of PCASM
+
+   Information which would be PCASM would include, non-exclusively:
+
+   1.   The content is "Hello, world."
+
+   2.   The content is definitely 13 bytes long
 
    3.   The content starts with the word "Hello"
 
@@ -266,14 +274,6 @@ Internet-Draft                    e2esm                         May 2021
 
    5.  The content was sent from the following IP address: ...
 
-   6.  The content was sent from the following geolocation: ...
-
-   7.  The content was composed using the following platform: ...
-
-   There is obvious discussion to be had regarding "how fuzzy a content-
-   size is fuzzy enough?"
-
-
 
 
 
@@ -281,6 +281,13 @@ Muffett                  Expires 6 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   6.  The content was sent from the following geolocation: ...
+
+   7.  The content was composed using the following platform: ...
+
+   There is obvious discussion to be had regarding "how fuzzy a content-
+   size is fuzzy enough?"
 
    If the size of a message's content is at all observable by a non-
    participant, it would appear reasonable where a block cipher is used
@@ -324,19 +331,16 @@ Internet-Draft                    e2esm                         May 2021
    A different approach to defining (specifically) end-to-end encryption
    is being discussed in [I-D.knodel-e2ee-definition].
 
-7.  IANA Considerations
-
-   This document has no IANA actions.
-
-
-
-
 
 
 Muffett                  Expires 6 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+7.  IANA Considerations
+
+   This document has no IANA actions.
 
 8.  Security Considerations
 
@@ -378,10 +382,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
 
 
 

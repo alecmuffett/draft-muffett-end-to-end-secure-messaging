@@ -90,14 +90,20 @@ It follows that for any given message, all entities that exist outside of the ab
 
 ## Closure of Participation
 
-1.  The set of participants in a conversation **SHALL NOT** be increased except by the intentional
-    action of one or more existing participants.
+### Closure of Conversation
 
-2.  2E2ESM solutions **MUST** provide each participant entity with means to review or delete the
-    full set of clients or devices that can access their message PCASM.
+The set of participants in a conversation **SHALL NOT** be increased except by the intentional
+action of one or more existing participants.
 
-3.  E2ESM solutions **MUST** provide each participant entity with notifications or a complete
-    history of all changes to their set of clients or devices.
+### Closure of Devices
+
+2E2ESM solutions **MUST** provide each participant entity with means to review or delete any or all
+clients or devices that can access their message PCASM.
+
+### Notification and Awareness
+
+E2ESM solutions **MUST** provide each participant entity with notifications or a complete history of
+all changes to the set of any or all clients or devices that can access their message PCASM.
 
 # Definitions
 
