@@ -97,13 +97,13 @@ action of one or more existing participants.
 
 ### Closure of Devices
 
-2E2ESM solutions **MUST** provide each participant entity with means to review or delete any or all
+2E2ESM solutions **MUST** provide each participant entity with means to review or revoke access for
 clients or devices that can access their message PCASM.
 
 ### Notification and Awareness
 
-E2ESM solutions **MUST** provide each participant entity with notifications or a complete history of
-all changes to the set of any or all clients or devices that can access their message PCASM.
+E2ESM solutions **MUST** provide each participant entity with notifications or complete logs of
+changes to the set of clients or devices that can access their message PCASM.
 
 # Definitions
 

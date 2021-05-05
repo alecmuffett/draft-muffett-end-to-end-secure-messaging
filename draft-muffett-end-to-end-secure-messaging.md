@@ -171,8 +171,8 @@ existing participants.
 **MUST** provide
 each participant entity
 with means
-to review or delete
-any or all clients or devices
+to review or revoke access for
+clients or devices
 that can access
 their message PCASM.
 
@@ -182,10 +182,10 @@ E2ESM solutions
 **MUST** provide
 each participant entity
 with notifications
-or a complete history
-of all changes
+or complete logs
+of changes
 to the set of
-any or all clients or devices
+clients or devices
 that can access
 their message PCASM.
 

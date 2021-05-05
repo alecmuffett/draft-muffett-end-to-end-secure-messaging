@@ -181,14 +181,14 @@ Internet-Draft                    e2esm                         May 2021
 3.4.2.  Closure of Devices
 
    2E2ESM solutions MUST provide each participant entity with means to
-   review or delete any or all clients or devices that can access their
+   review or revoke access for clients or devices that can access their
    message PCASM.
 
 3.4.3.  Notification and Awareness
 
    E2ESM solutions MUST provide each participant entity with
-   notifications or a complete history of all changes to the set of any
-   or all clients or devices that can access their message PCASM.
+   notifications or complete logs of changes to the set of clients or
+   devices that can access their message PCASM.
 
 4.  Definitions
 
