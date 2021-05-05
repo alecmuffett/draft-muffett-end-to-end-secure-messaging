@@ -7,7 +7,7 @@ XML2RFC=xml2rfc -v
 all: $(DIR)/$(NAME).txt $(DIR)/$(NAME).html
 
 push: all
-	git push
+	git add . && git commit -m "make." && git push
 
 $(DIR)/$(NAME).html: $(DIR)/$(NAME).xml
 	( cd $(DIR) && $(XML2RFC) --html $(NAME).xml )

@@ -26,8 +26,8 @@ organization = "Security Researcher"
 .# Abstract
 
 This document defines End-to-End Secure Messaging in terms of the behaviours that **SHOULD** be
-exhibited by software that claims to implement it, or claims to implement its subset known as
-End-to-End Encrypted Messaging.
+exhibited by software which claims to implement it, or which claims to implement that subset which
+is known as End-to-End Encrypted Messaging.
 
 {mainmatter}
 
