@@ -172,7 +172,7 @@ with means
 to review or revoke access for
 clients or devices
 that can access
-their message PCASM.
+future PCASM.
 
 ## Notification and Awareness
 
@@ -184,8 +184,8 @@ or complete logs
 of changes
 to the set of
 clients or devices
-that can access
-their message PCASM.
+that can or could access
+message PCASM.
 
 # Definitions
 
