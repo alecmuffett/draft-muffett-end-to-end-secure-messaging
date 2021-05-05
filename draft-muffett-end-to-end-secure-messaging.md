@@ -156,9 +156,8 @@ in respect of that message.
 
 The set of participants
 in a conversation
-**MUST NOT**
-be able
-to be increased
+**SHALL NOT**
+be increased
 except by
 the intentional action
 of one or more
