@@ -152,6 +152,24 @@ except by
 the intentional action
 of one or more
 existing participants.</t>
+<t>E2ESM solutions
+<bcp14>MUST</bcp14> provide
+each participant entity
+with means
+to review or delete
+the full set
+of clients or devices
+that can access
+their message PCASM.</t>
+<t>Further,
+E2ESM solutions
+<bcp14>MUST</bcp14> provide
+each participant entity
+with notifications
+or a complete history
+of all changes
+to their set
+of clients or devices.</t>
 </section>
 </section>
 
@@ -200,7 +218,6 @@ regarding any or all of:</t>
 <ol>
 <li>The content is &quot;Hello, world.&quot;</li>
 <li>The content is definitely 13 bytes long</li>
-<li>The content is definitely not 10 bytes long</li>
 <li>The content starts with the word &quot;Hello&quot;</li>
 <li>The content contains the substring &quot;ello&quot;</li>
 <li>The content does not contain the word &quot;Goodbye&quot;</li>

@@ -93,6 +93,12 @@ It follows that for any given message, all entities that exist outside of the ab
 The set of participants in a conversation **SHALL NOT** be increased except by the intentional
 action of one or more existing participants.
 
+E2ESM solutions **MUST** provide each participant entity with means to review or delete the full set
+of clients or devices that can access their message PCASM.
+
+Further, E2ESM solutions **MUST** provide each participant entity with notifications or a complete
+history of all changes to their set of clients or devices.
+
 # Definitions
 
 These principles **MUST** be measured with respect to the following definitions:
@@ -125,27 +131,25 @@ Information which would be PCASM would include, non-exclusively:
 
 2.   The content is definitely 13 bytes long
 
-3.   The content is definitely not 10 bytes long
+3.   The content starts with the word "Hello"
 
-4.   The content starts with the word "Hello"
+4.   The content contains the substring "ello"
 
-5.   The content contains the substring "ello"
+5.   The content does not contain the word "Goodbye"
 
-6.   The content does not contain the word "Goodbye"
+6.   The content contains a substring from amongst the following set: ...
 
-7.   The content contains a substring from amongst the following set: ...
+7.   The content does not contain a substring from amongst the following set: ...
 
-8.   The content does not contain a substring from amongst the following set: ...
+8.   The top bit of the first byte of the content in ASCII encoding, is zero
 
-9.   The top bit of the first byte of the content in ASCII encoding, is zero
+9.   The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
 
-10.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
+10.  The hash of the content exists amongst the following set of hashes: ...
 
-11.  The hash of the content exists amongst the following set of hashes: ...
+11.  The hash of the content does not exist amongst the following set of hashes: ...
 
-12.  The hash of the content does not exist amongst the following set of hashes: ...
-
-13.  The content was matched by a machine-learning classifier with the following training set: ...
+12.  The content was matched by a machine-learning classifier with the following training set: ...
 
 ### Examples of non-PCASM
 
