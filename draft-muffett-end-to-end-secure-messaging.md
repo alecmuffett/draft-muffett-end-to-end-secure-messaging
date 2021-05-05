@@ -108,7 +108,8 @@ of all current
 conversation participants
 **MUST** be visible
 at all times
-to all conversation participants.
+to all current
+conversation participants.
 
 ## Integrity of Participation
 
