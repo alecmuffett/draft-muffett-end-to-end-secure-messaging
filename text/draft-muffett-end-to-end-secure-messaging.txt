@@ -14,8 +14,9 @@ Expires: 6 November 2021
 Abstract
 
    This document defines End-to-End Secure Messaging in terms of the
-   behaviours that should be exhibited by software which claims to
-   implement it, or its subset known as End-to-End Encrypted Messaging.
+   behaviours that SHOULD be exhibited by software that claims to
+   implement it, or claims to implement its subset known as End-to-End
+   Encrypted Messaging.
 
 Status of This Memo
 
@@ -47,7 +48,6 @@ Copyright Notice
    extracted from this document must include Simplified BSD License text
    as described in Section 4.e of the Trust Legal Provisions and are
    provided without warranty as described in the Simplified BSD License.
-
 
 
 
