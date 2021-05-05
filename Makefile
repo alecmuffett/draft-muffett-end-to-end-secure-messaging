@@ -1,4 +1,4 @@
-NAME=draft-muffett-end-to-end-secure-messaging
+NAME=draft-muffett-end-to-end-secure-messaging-00
 DIR=text
 
 XML2RFC=xml2rfc -v

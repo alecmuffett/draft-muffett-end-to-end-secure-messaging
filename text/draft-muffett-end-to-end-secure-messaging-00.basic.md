@@ -63,7 +63,7 @@ All participants **MUST** be peers and **MUST** have equal access to any given m
 ## Transparency of Participation
 
 The existence of all current conversation participants **MUST** be visible at all times to all
-conversation participants.
+current conversation participants.
 
 ## Integrity of Participation
 

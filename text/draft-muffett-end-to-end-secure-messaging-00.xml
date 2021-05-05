@@ -96,7 +96,8 @@ of all current
 conversation participants
 <bcp14>MUST</bcp14> be visible
 at all times
-to all conversation participants.</t>
+to all current
+conversation participants.</t>
 </section>
 
 <section anchor="integrity-of-participation"><name>Integrity of Participation</name>

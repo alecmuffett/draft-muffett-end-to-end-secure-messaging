@@ -129,7 +129,7 @@ Internet-Draft                    e2esm                         May 2021
 2.2.  Transparency of Participation
 
    The existence of all current conversation participants MUST be
-   visible at all times to all conversation participants.
+   visible at all times to all current conversation participants.
 
 2.3.  Integrity of Participation
 
