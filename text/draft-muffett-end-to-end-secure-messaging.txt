@@ -80,7 +80,7 @@ Table of Contents
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    9.  Informative References  . . . . . . . . . . . . . . . . . . .   7
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
@@ -180,9 +180,7 @@ Internet-Draft                    e2esm                         May 2021
 
    E2ESM solutions MUST provide each participant entity with means to
    review or revoke access for clients or devices that can access future
-   PCASM.
-
-   E2ESM solutions MUST provide each participant entity with
+   PCASM.  E2ESM solutions MUST provide each participant entity with
    notifications or complete logs of changes to the set of clients or
    devices that can or could access message PCASM.
 
@@ -218,6 +216,8 @@ Internet-Draft                    e2esm                         May 2021
 
    Information which would be PCASM would include, non-exclusively:
 
+   1.   The content is "Hello, world."
+
 
 
 
@@ -225,8 +225,6 @@ Muffett                  Expires 6 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   1.   The content is "Hello, world."
 
    2.   The content is definitely 13 bytes long
 
@@ -274,6 +272,8 @@ Internet-Draft                    e2esm                         May 2021
 
    7.  The content was composed using the following platform: ...
 
+   There is obvious discussion to be had regarding "how fuzzy a content-
+   size is fuzzy enough?"
 
 
 
@@ -281,9 +281,6 @@ Muffett                  Expires 6 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   There is obvious discussion to be had regarding "how fuzzy a content-
-   size is fuzzy enough?"
 
    If the size of a message's content is at all observable by a non-
    participant, it would appear reasonable where a block cipher is used
@@ -327,6 +324,9 @@ Internet-Draft                    e2esm                         May 2021
    A different approach to defining (specifically) end-to-end encryption
    is being discussed in [I-D.knodel-e2ee-definition].
 
+7.  IANA Considerations
+
+   This document has no IANA actions.
 
 
 
@@ -337,10 +337,6 @@ Muffett                  Expires 6 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-7.  IANA Considerations
-
-   This document has no IANA actions.
 
 8.  Security Considerations
 
@@ -382,6 +378,10 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
+
+
+
+
 
 
 

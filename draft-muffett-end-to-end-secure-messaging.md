@@ -173,7 +173,6 @@ to review or revoke access for
 clients or devices
 that can access
 future PCASM.
-
 E2ESM solutions
 **MUST** provide
 each participant entity
