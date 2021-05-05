@@ -95,7 +95,7 @@ capitals, as shown here.
 Software which functions
 as an End-to-End Secure Messenger
 **MUST** satisfy the following principles, and
-**MUST** satisfy these principles in respect the provided definitions
+**MUST** satisfy these principles in respect of the provided definitions
 for all forms of communication
 and data-sharing
 that the software offers,
