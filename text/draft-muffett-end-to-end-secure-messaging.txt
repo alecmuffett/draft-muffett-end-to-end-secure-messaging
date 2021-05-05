@@ -195,8 +195,14 @@ Internet-Draft                    e2esm                         May 2021
 4.3.  Plaintext Content and Sensitive Metadata (PCASM)
 
    The PCASM of a message is defined as: 1 or more bits of information
-   regarding either the plaintext message content ("content"), or the
-   precise size of that content.
+   regarding any or all of:
+
+   1.  the plaintext message content (the "content")
+
+   2.  the precise size of the content
+
+   3.  any metadata which may describe the thematic nature of the
+       content
 
 4.3.1.  Examples of PCASM
 
@@ -212,12 +218,6 @@ Internet-Draft                    e2esm                         May 2021
 
    5.   The content contains the substring "ello"
 
-   6.   The content does not contain the word "Goodbye"
-
-   7.   The content contains a substring from amongst the following set:
-        ...
-
-
 
 
 
@@ -225,6 +225,11 @@ Muffett                  Expires 6 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   6.   The content does not contain the word "Goodbye"
+
+   7.   The content contains a substring from amongst the following set:
+        ...
 
    8.   The content does not contain a substring from amongst the
         following set: ...
@@ -270,17 +275,15 @@ Internet-Draft                    e2esm                         May 2021
    size as a number that is any more specific or precise than an integer
    multiple of the underlying cipher block size would be.
 
-   Stream cipher behaviour is currently undefined.
-
-
-
-
 
 
 Muffett                  Expires 6 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   Stream cipher "fuzziness" adequacy is currently undefined in this
+   draft.
 
 4.4.  Backdoor
 
@@ -324,9 +327,6 @@ Internet-Draft                    e2esm                         May 2021
    This document is entirely comprised of security considerations.
 
 9.  Informative References
-
-
-
 
 
 

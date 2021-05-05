@@ -199,9 +199,11 @@ of a message
 is defined as:
 1 or more
 bits of information
-regarding
-either the plaintext message content ("content"),
-or the precise size of that content.
+regarding any or all of:
+
+1. the plaintext message content (the "content")
+1. the precise size of the content
+1. any metadata which may describe the thematic nature of the content
 
 ### Examples of PCASM
 
@@ -250,8 +252,8 @@ that is any more specific or precise
 than an integer multiple
 of the underlying cipher block size would be.
 
-Stream cipher behaviour
-is currently undefined.
+Stream cipher "fuzziness" adequacy
+is currently undefined in this draft.
 
 ## Backdoor
 

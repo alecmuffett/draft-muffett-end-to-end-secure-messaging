@@ -109,8 +109,13 @@ evolving set of participants.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
-The PCASM of a message is defined as: 1 or more bits of information regarding either the plaintext
-message content ("content"), or the precise size of that content.
+The PCASM of a message is defined as: 1 or more bits of information regarding any or all of:
+
+1.  the plaintext message content (the "content")
+
+2.  the precise size of the content
+
+3.  any metadata which may describe the thematic nature of the content
 
 ### Examples of PCASM
 
@@ -167,7 +172,7 @@ reasonable where a block cipher is used to implement E2ESM, to avoid visibly sur
 underlying content size as a number that is any more specific or precise than an integer multiple of
 the underlying cipher block size would be.
 
-Stream cipher behaviour is currently undefined.
+Stream cipher "fuzziness" adequacy is currently undefined in this draft.
 
 ## Backdoor
 
