@@ -5,7 +5,7 @@ category = "info"
 docName = "apparently this tool demands a doc name but does not use it"
 ipr ="trust200902"
 area = "Internet"
-workgroup = "Messaging Layer Security"
+workgroup = "ietf-mls"
 keyword = ["messaging", "end to end", "encryption"]
 
 [seriesInfo]
@@ -25,7 +25,9 @@ organization = "Security Researcher"
 
 .# Abstract
 
-This document defines End-to-End Secure Messaging.
+This document defines End-to-End Secure Messaging in terms of the behaviours that should be
+exhibited by software which claims to implement it, or its subset known as End-to-End Encrypted
+Messaging.
 
 {mainmatter}
 

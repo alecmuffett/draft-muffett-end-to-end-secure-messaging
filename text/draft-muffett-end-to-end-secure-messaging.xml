@@ -9,13 +9,20 @@
 </address></author>
 <date/>
 <area>Internet</area>
-<workgroup>Messaging Layer Security</workgroup>
+<workgroup>ietf-mls</workgroup>
 <keyword>messaging</keyword>
 <keyword>end to end</keyword>
 <keyword>encryption</keyword>
 
 <abstract>
-<t>This document defines End-to-End Secure Messaging.</t>
+<t>This document
+defines End-to-End Secure Messaging
+in terms of the behaviours
+that should be exhibited
+by software
+which claims to implement it,
+or its subset known as
+End-to-End Encrypted Messaging.</t>
 </abstract>
 
 </front>
