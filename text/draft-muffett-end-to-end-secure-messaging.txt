@@ -68,7 +68,7 @@ Table of Contents
      3.2.  Transparency of Participation . . . . . . . . . . . . . .   3
      3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
        3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   3
-     3.4.  Closure of Participation  . . . . . . . . . . . . . . . .   4
+     3.4.  Closure of Participation  . . . . . . . . . . . . . . . .   3
    4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
@@ -159,7 +159,7 @@ Internet-Draft                    e2esm                         May 2021
    outside of the above-defined set are "non-participants" in respect of
    that message.
 
-
+3.4.  Closure of Participation
 
 
 
@@ -170,19 +170,17 @@ Muffett                  Expires 6 November 2021                [Page 3]
 Internet-Draft                    e2esm                         May 2021
 
 
-3.4.  Closure of Participation
+   1.  The set of participants in a conversation SHALL NOT be increased
+       except by the intentional action of one or more existing
+       participants.
 
-   The set of participants in a conversation SHALL NOT be increased
-   except by the intentional action of one or more existing
-   participants.
+   2.  2E2ESM solutions MUST provide each participant entity with means
+       to review or delete the full set of clients or devices that can
+       access their message PCASM.
 
-   E2ESM solutions MUST provide each participant entity with means to
-   review or delete the full set of clients or devices that can access
-   their message PCASM.
-
-   Further, E2ESM solutions MUST provide each participant entity with
-   notifications or a complete history of all changes to their set of
-   clients or devices.
+   3.  E2ESM solutions MUST provide each participant entity with
+       notifications or a complete history of all changes to their set
+       of clients or devices.
 
 4.  Definitions
 
@@ -218,6 +216,8 @@ Internet-Draft                    e2esm                         May 2021
 
    1.   The content is "Hello, world."
 
+   2.   The content is definitely 13 bytes long
+
 
 
 
@@ -225,8 +225,6 @@ Muffett                  Expires 6 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   2.   The content is definitely 13 bytes long
 
    3.   The content starts with the word "Hello"
 
@@ -274,6 +272,8 @@ Internet-Draft                    e2esm                         May 2021
 
    There is obvious discussion to be had regarding "how fuzzy a content-
    size is fuzzy enough?"
+
+
 
 
 

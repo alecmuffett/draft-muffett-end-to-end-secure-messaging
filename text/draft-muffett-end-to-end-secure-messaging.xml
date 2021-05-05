@@ -144,32 +144,18 @@ in respect of that message.</t>
 </section>
 
 <section anchor="closure-of-participation"><name>Closure of Participation</name>
-<t>The set of participants
-in a conversation
-<bcp14>SHALL NOT</bcp14>
-be increased
-except by
-the intentional action
-of one or more
-existing participants.</t>
-<t>E2ESM solutions
-<bcp14>MUST</bcp14> provide
-each participant entity
-with means
-to review or delete
-the full set
-of clients or devices
-that can access
-their message PCASM.</t>
-<t>Further,
-E2ESM solutions
-<bcp14>MUST</bcp14> provide
-each participant entity
-with notifications
-or a complete history
-of all changes
-to their set
-of clients or devices.</t>
+
+<ol>
+<li>The set of participants in a conversation <bcp14>SHALL NOT</bcp14> be
+increased except by the intentional action of one or more existing
+participants.</li>
+<li>2E2ESM solutions <bcp14>MUST</bcp14> provide each participant entity with
+means to review or delete the full set of clients or devices that
+can access their message PCASM.</li>
+<li>E2ESM solutions <bcp14>MUST</bcp14> provide each participant entity with
+notifications or a complete history of all changes to their set of
+clients or devices.</li>
+</ol>
 </section>
 </section>
 
