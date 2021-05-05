@@ -138,9 +138,7 @@ of any given message
 **MUST** only be available
 to the fixed set
 of conversation participants
-from whom,
-to whom,
-and at the time when
+at the time when
 it was sent.
 
 ### Non-Participation
