@@ -210,7 +210,6 @@ Information which would be PCASM would include, non-exclusively:
 
 1. The content is "Hello, world."
 1. The content is definitely 13 bytes long
-1. The content is definitely not 10 bytes long
 1. The content starts with the word "Hello"
 1. The content contains the substring "ello"
 1. The content does not contain the word "Goodbye"
