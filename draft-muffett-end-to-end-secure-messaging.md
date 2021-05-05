@@ -163,7 +163,7 @@ except by the intentional action
 of one or more
 existing participants.
 
-## Closure of Devices
+## Management of Participant Clients & Devices
 
 E2ESM solutions
 **MUST** provide
@@ -174,7 +174,7 @@ clients or devices
 that can access
 future PCASM.
 
-## Notification and Awareness
+## Visibility of Participant Clients & Devices
 
 E2ESM solutions
 **MUST** provide

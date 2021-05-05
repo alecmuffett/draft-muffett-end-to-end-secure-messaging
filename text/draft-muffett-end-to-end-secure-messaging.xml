@@ -152,7 +152,7 @@ of one or more
 existing participants.</t>
 </section>
 
-<section anchor="closure-of-devices"><name>Closure of Devices</name>
+<section anchor="management-of-participant-clients-devices"><name>Management of Participant Clients &amp; Devices</name>
 <t>E2ESM solutions
 <bcp14>MUST</bcp14> provide
 each participant entity
@@ -163,7 +163,7 @@ that can access
 future PCASM.</t>
 </section>
 
-<section anchor="notification-and-awareness"><name>Notification and Awareness</name>
+<section anchor="visibility-of-participant-clients-devices"><name>Visibility of Participant Clients &amp; Devices</name>
 <t>E2ESM solutions
 <bcp14>MUST</bcp14> provide
 each participant entity
