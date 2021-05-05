@@ -126,7 +126,7 @@ Internet-Draft                    e2esm                         May 2021
 
    Software which functions as an End-to-End Secure Messenger MUST
    satisfy the following principles, and MUST satisfy these principles
-   in respect the provided definitions for all forms of communication
+   in respect of the provided definitions for all forms of communication
    and data-sharing that the software offers, otherwise it is not an
    End-to-End Secure Messenger.
 
@@ -150,14 +150,14 @@ Internet-Draft                    e2esm                         May 2021
 3.3.  Integrity of Participation
 
    The PCASM of any given message MUST only be available to the fixed
-   set of conversation participants from whom, to whom, and at the time
-   when it was sent.
+   set of conversation participants at the time when it was sent.
 
 3.3.1.  Non-Participation
 
    It follows that for any given message, all entities that exist
    outside of the above-defined set are "non-participants" in respect of
    that message.
+
 
 
 

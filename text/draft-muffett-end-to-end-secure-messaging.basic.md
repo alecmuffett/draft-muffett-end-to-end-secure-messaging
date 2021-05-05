@@ -59,9 +59,9 @@ here.
 # Requirements for an End-to-End Secure Messenger
 
 Software which functions as an End-to-End Secure Messenger **MUST** satisfy the following
-principles, and **MUST** satisfy these principles in respect the provided definitions for all forms
-of communication and data-sharing that the software offers, otherwise it is not an End-to-End Secure
-Messenger.
+principles, and **MUST** satisfy these principles in respect of the provided definitions for all
+forms of communication and data-sharing that the software offers, otherwise it is not an End-to-End
+Secure Messenger.
 
 # Principles
 
@@ -81,7 +81,7 @@ current conversation participants.
 ## Integrity of Participation
 
 The PCASM of any given message **MUST** only be available to the fixed set of conversation
-participants from whom, to whom, and at the time when it was sent.
+participants at the time when it was sent.
 
 ### Non-Participation
 

@@ -84,7 +84,7 @@ capitals, as shown here.</t>
 <t>Software which functions
 as an End-to-End Secure Messenger
 <bcp14>MUST</bcp14> satisfy the following principles, and
-<bcp14>MUST</bcp14> satisfy these principles in respect the provided definitions
+<bcp14>MUST</bcp14> satisfy these principles in respect of the provided definitions
 for all forms of communication
 and data-sharing
 that the software offers,
@@ -126,9 +126,7 @@ of any given message
 <bcp14>MUST</bcp14> only be available
 to the fixed set
 of conversation participants
-from whom,
-to whom,
-and at the time when
+at the time when
 it was sent.</t>
 
 <section anchor="non-participation"><name>Non-Participation</name>
