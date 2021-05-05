@@ -152,7 +152,7 @@ of one or more
 existing participants.</t>
 </section>
 
-<section anchor="management-of-participant-clients-devices"><name>Management of Participant Clients &amp; Devices</name>
+<section anchor="management-and-visibility-of-participant-clients-devices"><name>Management and Visibility of Participant Clients &amp; Devices</name>
 <t>E2ESM solutions
 <bcp14>MUST</bcp14> provide
 each participant entity
@@ -161,9 +161,6 @@ to review or revoke access for
 clients or devices
 that can access
 future PCASM.</t>
-</section>
-
-<section anchor="visibility-of-participant-clients-devices"><name>Visibility of Participant Clients &amp; Devices</name>
 <t>E2ESM solutions
 <bcp14>MUST</bcp14> provide
 each participant entity

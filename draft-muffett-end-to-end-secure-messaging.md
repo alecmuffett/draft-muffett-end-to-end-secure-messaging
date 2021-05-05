@@ -163,7 +163,7 @@ except by the intentional action
 of one or more
 existing participants.
 
-## Management of Participant Clients & Devices
+## Management and Visibility of Participant Clients & Devices
 
 E2ESM solutions
 **MUST** provide
@@ -173,8 +173,6 @@ to review or revoke access for
 clients or devices
 that can access
 future PCASM.
-
-## Visibility of Participant Clients & Devices
 
 E2ESM solutions
 **MUST** provide

@@ -93,12 +93,10 @@ It follows that for any given message, all entities that exist outside of the ab
 The set of participants in a conversation **SHALL NOT** be increased except by the intentional
 action of one or more existing participants.
 
-## Management of Participant Clients & Devices
+## Management and Visibility of Participant Clients & Devices
 
 E2ESM solutions **MUST** provide each participant entity with means to review or revoke access for
 clients or devices that can access future PCASM.
-
-## Visibility of Participant Clients & Devices
 
 E2ESM solutions **MUST** provide each participant entity with notifications or complete logs of
 changes to the set of clients or devices that can or could access message PCASM.
