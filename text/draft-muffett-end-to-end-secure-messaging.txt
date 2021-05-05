@@ -13,6 +13,78 @@ Expires: 6 November 2021
 
 Abstract
 
+   This document defines End-to-End Secure Messaging.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 6 November 2021.
+
+Copyright Notice
+
+   Copyright (c) 2021 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Simplified BSD License.
+
+
+
+
+
+
+
+
+Muffett                  Expires 6 November 2021                [Page 1]
+
+Internet-Draft                    e2esm                         May 2021
+
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+     1.1.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
+   2.  Requirements for an End-to-End Secure Messenger . . . . . . .   3
+   3.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   3
+     3.1.  Equality of Participation . . . . . . . . . . . . . . . .   3
+     3.2.  Transparency of Participation . . . . . . . . . . . . . .   3
+     3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
+       3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   3
+     3.4.  Closure of Participation  . . . . . . . . . . . . . . . .   4
+   4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
+     4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
+     4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
+       4.3.1.  Examples of PCASM . . . . . . . . . . . . . . . . . .   4
+       4.3.2.  Examples of non-PCASM . . . . . . . . . . . . . . . .   5
+     4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
+   5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
+   6.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   8.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   9.  Informative References  . . . . . . . . . . . . . . . . . . .   6
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
+
+1.  Introduction
+
    End-to-End Secure Messaging (E2ESM) is a mechanism which offers a
    digital analogue of "closed distribution lists" for sharing message
    content amongst a set of participants, where all participants are
@@ -33,78 +105,6 @@ Abstract
    messenger rather than in terms of implementation goals and
    technologies.
 
-Status of This Memo
-
-   This Internet-Draft is submitted in full conformance with the
-   provisions of BCP 78 and BCP 79.
-
-   Internet-Drafts are working documents of the Internet Engineering
-   Task Force (IETF).  Note that other groups may also distribute
-   working documents as Internet-Drafts.  The list of current Internet-
-   Drafts is at https://datatracker.ietf.org/drafts/current/.
-
-   Internet-Drafts are draft documents valid for a maximum of six months
-   and may be updated, replaced, or obsoleted by other documents at any
-   time.  It is inappropriate to use Internet-Drafts as reference
-   material or to cite them other than as "work in progress."
-
-   This Internet-Draft will expire on 6 November 2021.
-
-
-
-
-Muffett                  Expires 6 November 2021                [Page 1]
-
-Internet-Draft                    e2esm                         May 2021
-
-
-Copyright Notice
-
-   Copyright (c) 2021 IETF Trust and the persons identified as the
-   document authors.  All rights reserved.
-
-   This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents (https://trustee.ietf.org/
-   license-info) in effect on the date of publication of this document.
-   Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.  Code Components
-   extracted from this document must include Simplified BSD License text
-   as described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Simplified BSD License.
-
-Table of Contents
-
-   1.  Requirements for an End-to-End Secure Messenger . . . . . . .   2
-   2.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   3
-     2.1.  Equality of Participation . . . . . . . . . . . . . . . .   3
-     2.2.  Transparency of Participation . . . . . . . . . . . . . .   3
-     2.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
-       2.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   3
-     2.4.  Closure of Participation  . . . . . . . . . . . . . . . .   3
-   3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   3
-     3.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   3
-     3.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
-     3.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
-       3.3.1.  Examples of PCASM . . . . . . . . . . . . . . . . . .   4
-       3.3.2.  Examples of non-PCASM . . . . . . . . . . . . . . . .   5
-     3.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   5
-   4.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   5
-   5.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
-   7.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
-   8.  Informative References  . . . . . . . . . . . . . . . . . . .   6
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
-
-1.  Requirements for an End-to-End Secure Messenger
-
-   Software which functions as an End-to-End Secure Messenger MUST
-   satisfy the following principles, and MUST satisfy these principles
-   in respect the provided definitions for all forms of communication
-   and data-sharing that the software offers, otherwise it is not an
-   End-to-End Secure Messenger.
-
-
-
 
 
 
@@ -114,51 +114,51 @@ Muffett                  Expires 6 November 2021                [Page 2]
 Internet-Draft                    e2esm                         May 2021
 
 
-2.  Principles
+1.1.  Notational Conventions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+2.  Requirements for an End-to-End Secure Messenger
+
+   Software which functions as an End-to-End Secure Messenger MUST
+   satisfy the following principles, and MUST satisfy these principles
+   in respect the provided definitions for all forms of communication
+   and data-sharing that the software offers, otherwise it is not an
+   End-to-End Secure Messenger.
+
+3.  Principles
 
    For a series of one or more "messages" each which are comprised of
    "plaintext content and sensitive metadata" (PCASM) and which
    constitute a "conversation" amongst a set of "participants", to
    provide E2ESM will require:
 
-2.1.  Equality of Participation
+3.1.  Equality of Participation
 
    All participants MUST be peers and MUST have equal access to any
    given message's PCASM.
 
-2.2.  Transparency of Participation
+3.2.  Transparency of Participation
 
    The existence of all current conversation participants MUST be
    visible at all times to all current conversation participants.
 
-2.3.  Integrity of Participation
+3.3.  Integrity of Participation
 
    The PCASM of any given message MUST only be available to the fixed
    set of conversation participants from whom, to whom, and at the time
    when it was sent.
 
-2.3.1.  Non-Participation
+3.3.1.  Non-Participation
 
    It follows that for any given message, all entities that exist
    outside of the above-defined set are "non-participants" in respect of
    that message.
 
-2.4.  Closure of Participation
-
-   The set of participants in a conversation MUST NOT be able to be
-   increased except by the intentional action of one or more existing
-   participants.
-
-3.  Definitions
-
-   These principles MUST be measured with respect to the following
-   definitions:
-
-3.1.  Participant
-
-   A participant is any entity - human, machine, software bot, escrow
-   agent, or otherwise, that is bounded by the extent of that entity's
-   [TrustedComputingBase].
 
 
 
@@ -170,18 +170,35 @@ Muffett                  Expires 6 November 2021                [Page 3]
 Internet-Draft                    e2esm                         May 2021
 
 
-3.2.  Conversation
+3.4.  Closure of Participation
+
+   The set of participants in a conversation MUST NOT be able to be
+   increased except by the intentional action of one or more existing
+   participants.
+
+4.  Definitions
+
+   These principles MUST be measured with respect to the following
+   definitions:
+
+4.1.  Participant
+
+   A participant is any entity - human, machine, software bot, escrow
+   agent, or otherwise, that is bounded by the extent of that entity's
+   [TrustedComputingBase].
+
+4.2.  Conversation
 
    A conversation is a sequence of one or more messages over a period of
    time amongst a constant or evolving set of participants.
 
-3.3.  Plaintext Content and Sensitive Metadata (PCASM)
+4.3.  Plaintext Content and Sensitive Metadata (PCASM)
 
    The PCASM of a message is defined as: 1 or more bits of information
    regarding either the plaintext message content ("content"), or the
    precise size of that content.
 
-3.3.1.  Examples of PCASM
+4.3.1.  Examples of PCASM
 
    Information which would be PCASM would include, non-exclusively:
 
@@ -200,6 +217,15 @@ Internet-Draft                    e2esm                         May 2021
    7.   The content contains a substring from amongst the following set:
         ...
 
+
+
+
+
+Muffett                  Expires 6 November 2021                [Page 4]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    8.   The content does not contain a substring from amongst the
         following set: ...
 
@@ -217,16 +243,7 @@ Internet-Draft                    e2esm                         May 2021
    13.  The content was matched by a machine-learning classifier with
         the following training set: ...
 
-
-
-
-
-Muffett                  Expires 6 November 2021                [Page 4]
-
-Internet-Draft                    e2esm                         May 2021
-
-
-3.3.2.  Examples of non-PCASM
+4.3.2.  Examples of non-PCASM
 
    Information which would not be PCASM would include, non-exclusively:
 
@@ -255,7 +272,17 @@ Internet-Draft                    e2esm                         May 2021
 
    Stream cipher behaviour is currently undefined.
 
-3.4.  Backdoor
+
+
+
+
+
+Muffett                  Expires 6 November 2021                [Page 5]
+
+Internet-Draft                    e2esm                         May 2021
+
+
+4.4.  Backdoor
 
    Discussions of E2ESM frequently reference the concept of "backdoors".
    We propose a standard definition:
@@ -265,7 +292,7 @@ Internet-Draft                    e2esm                         May 2021
    PCASM of that message may become available to a non-participant
    without the intentional action of a participant.
 
-4.  Scope of a Participant in E2ESM
+5.  Scope of a Participant in E2ESM
 
    The term "participant" in this document exists to supercede the more
    vague notion of "end" in the phrase "end-to-end".
@@ -275,13 +302,6 @@ Internet-Draft                    e2esm                         May 2021
    store, forward, or access messages by means that are outside of the
    messenger software.
 
-
-
-Muffett                  Expires 6 November 2021                [Page 5]
-
-Internet-Draft                    e2esm                         May 2021
-
-
    For example: if a participant accesses their E2ESM messenger via
    remote desktop software, and their RDP session is hijacked by a third
    party; of if they back-up their messages in cleartext to cloud
@@ -290,20 +310,33 @@ Internet-Draft                    e2esm                         May 2021
 
    This would be a failure of the participant's [TrustedComputingBase].
 
-5.  See Also
+6.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
    is being discussed in [I-D.knodel-e2ee-definition].
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document has no IANA actions.
 
-7.  Security Considerations
+8.  Security Considerations
 
    This document is entirely comprised of security considerations.
 
-8.  Informative References
+9.  Informative References
+
+
+
+
+
+
+
+
+
+Muffett                  Expires 6 November 2021                [Page 6]
+
+Internet-Draft                    e2esm                         May 2021
+
 
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
@@ -312,9 +345,18 @@ Internet-Draft                    e2esm                         May 2021
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
 
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
    [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
               2015, <https://www.rfc-editor.org/info/rfc7686>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [RicochetRefresh]
               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
@@ -333,4 +375,18 @@ Author's Address
 
 
 
-Muffett                  Expires 6 November 2021                [Page 6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muffett                  Expires 6 November 2021                [Page 7]

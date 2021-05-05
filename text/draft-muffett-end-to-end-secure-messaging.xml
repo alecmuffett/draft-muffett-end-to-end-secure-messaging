@@ -15,6 +15,14 @@
 <keyword>encryption</keyword>
 
 <abstract>
+<t>This document defines End-to-End Secure Messaging.</t>
+</abstract>
+
+</front>
+
+<middle>
+
+<section anchor="introduction"><name>Introduction</name>
 <t>End-to-End Secure Messaging (E2ESM)
 is a mechanism
 which offers a digital analogue
@@ -54,11 +62,15 @@ rather than
 in terms
 of implementation
 goals and technologies.</t>
-</abstract>
 
-</front>
-
-<middle>
+<section anchor="notational-conventions"><name>Notational Conventions</name>
+<t>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
+&quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;NOT RECOMMENDED&quot;, &quot;MAY&quot;, and
+&quot;OPTIONAL&quot; in this document are to be interpreted as described in BCP
+14 <xref target="RFC2119"></xref> <xref target="RFC8174"></xref> when, and only when, they appear in all
+capitals, as shown here.</t>
+</section>
+</section>
 
 <section anchor="requirements-for-an-end-to-end-secure-messenger"><name>Requirements for an End-to-End Secure Messenger</name>
 <t>Software which functions
@@ -291,7 +303,9 @@ is being discussed in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
 <back>
 <references><name>Informative References</name>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml-ids/reference.I-D.knodel-e2ee-definition.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7686.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
 <reference anchor="RicochetRefresh" target="https://www.ricochetrefresh.net">
   <front>
     <title>Ricochet Refresh</title>
