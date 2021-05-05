@@ -143,8 +143,6 @@ in respect of that message.</t>
 </section>
 </section>
 
-<section anchor="closure-of-participation"><name>Closure of Participation</name>
-
 <section anchor="closure-of-conversation"><name>Closure of Conversation</name>
 <t>The set of participants
 in a conversation
@@ -155,7 +153,7 @@ existing participants.</t>
 </section>
 
 <section anchor="closure-of-devices"><name>Closure of Devices</name>
-<t>2E2ESM solutions
+<t>E2ESM solutions
 <bcp14>MUST</bcp14> provide
 each participant entity
 with means
@@ -176,7 +174,6 @@ to the set of
 clients or devices
 that can access
 their message PCASM.</t>
-</section>
 </section>
 </section>
 

@@ -88,19 +88,17 @@ participants from whom, to whom, and at the time when it was sent.
 It follows that for any given message, all entities that exist outside of the above-defined set are
 "non-participants" in respect of that message.
 
-## Closure of Participation
-
-### Closure of Conversation
+## Closure of Conversation
 
 The set of participants in a conversation **SHALL NOT** be increased except by the intentional
 action of one or more existing participants.
 
-### Closure of Devices
+## Closure of Devices
 
-2E2ESM solutions **MUST** provide each participant entity with means to review or revoke access for
+E2ESM solutions **MUST** provide each participant entity with means to review or revoke access for
 clients or devices that can access their message PCASM.
 
-### Notification and Awareness
+## Notification and Awareness
 
 E2ESM solutions **MUST** provide each participant entity with notifications or complete logs of
 changes to the set of clients or devices that can access their message PCASM.

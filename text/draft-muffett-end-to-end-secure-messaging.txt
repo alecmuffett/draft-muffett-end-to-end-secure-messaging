@@ -68,10 +68,9 @@ Table of Contents
      3.2.  Transparency of Participation . . . . . . . . . . . . . .   3
      3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
        3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   3
-     3.4.  Closure of Participation  . . . . . . . . . . . . . . . .   4
-       3.4.1.  Closure of Conversation . . . . . . . . . . . . . . .   4
-       3.4.2.  Closure of Devices  . . . . . . . . . . . . . . . . .   4
-       3.4.3.  Notification and Awareness  . . . . . . . . . . . . .   4
+     3.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   4
+     3.5.  Closure of Devices  . . . . . . . . . . . . . . . . . . .   4
+     3.6.  Notification and Awareness  . . . . . . . . . . . . . . .   4
    4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
@@ -104,8 +103,9 @@ Table of Contents
    [RFC7686] networking to literally restrict the distribution of
    plaintext content to relevant participants.
 
-
-
+   Therefore we describe E2ESM in terms of functional outcomes of the
+   messenger rather than in terms of implementation goals and
+   technologies.
 
 
 
@@ -113,10 +113,6 @@ Muffett                  Expires 6 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   Therefore we describe E2ESM in terms of functional outcomes of the
-   messenger rather than in terms of implementation goals and
-   technologies.
 
 1.1.  Notational Conventions
 
@@ -165,26 +161,28 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
+
+
+
+
 Muffett                  Expires 6 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
 
-3.4.  Closure of Participation
-
-3.4.1.  Closure of Conversation
+3.4.  Closure of Conversation
 
    The set of participants in a conversation SHALL NOT be increased
    except by the intentional action of one or more existing
    participants.
 
-3.4.2.  Closure of Devices
+3.5.  Closure of Devices
 
-   2E2ESM solutions MUST provide each participant entity with means to
+   E2ESM solutions MUST provide each participant entity with means to
    review or revoke access for clients or devices that can access their
    message PCASM.
 
-3.4.3.  Notification and Awareness
+3.6.  Notification and Awareness
 
    E2ESM solutions MUST provide each participant entity with
    notifications or complete logs of changes to the set of clients or
@@ -217,6 +215,8 @@ Internet-Draft                    e2esm                         May 2021
 
    3.  any metadata which may describe the thematic nature of the
        content
+
+
 
 
 
