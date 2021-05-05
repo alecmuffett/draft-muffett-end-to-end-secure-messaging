@@ -138,7 +138,9 @@ of any given message
 **MUST** only be available
 to the fixed set
 of conversation participants
-at the time when
+from whom,
+to whom,
+and at the time when
 it was sent.
 
 ### Non-Participation
@@ -156,9 +158,8 @@ in respect of that message.
 
 The set of participants
 in a conversation
-**MUST NOT**
-be able
-to be increased
+**SHALL NOT**
+be increased
 except by
 the intentional action
 of one or more

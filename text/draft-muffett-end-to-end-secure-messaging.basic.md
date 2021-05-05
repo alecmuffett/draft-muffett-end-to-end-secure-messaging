@@ -81,7 +81,7 @@ current conversation participants.
 ## Integrity of Participation
 
 The PCASM of any given message **MUST** only be available to the fixed set of conversation
-participants at the time when it was sent.
+participants from whom, to whom, and at the time when it was sent.
 
 ### Non-Participation
 
@@ -90,8 +90,8 @@ It follows that for any given message, all entities that exist outside of the ab
 
 ## Closure of Participation
 
-The set of participants in a conversation **MUST NOT** be able to be increased except by the
-intentional action of one or more existing participants.
+The set of participants in a conversation **SHALL NOT** be increased except by the intentional
+action of one or more existing participants.
 
 # Definitions
 

@@ -150,14 +150,14 @@ Internet-Draft                    e2esm                         May 2021
 3.3.  Integrity of Participation
 
    The PCASM of any given message MUST only be available to the fixed
-   set of conversation participants at the time when it was sent.
+   set of conversation participants from whom, to whom, and at the time
+   when it was sent.
 
 3.3.1.  Non-Participation
 
    It follows that for any given message, all entities that exist
    outside of the above-defined set are "non-participants" in respect of
    that message.
-
 
 
 
@@ -172,8 +172,8 @@ Internet-Draft                    e2esm                         May 2021
 
 3.4.  Closure of Participation
 
-   The set of participants in a conversation MUST NOT be able to be
-   increased except by the intentional action of one or more existing
+   The set of participants in a conversation SHALL NOT be increased
+   except by the intentional action of one or more existing
    participants.
 
 4.  Definitions
