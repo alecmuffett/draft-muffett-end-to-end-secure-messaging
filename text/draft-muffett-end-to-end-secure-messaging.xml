@@ -276,7 +276,7 @@ in respect of a given message
 and that message's set of participants
 where some PCASM
 of that message
-may become available
+<bcp14>MAY</bcp14> become available
 to a non-participant
 without the intentional action of a participant.</t>
 </section>
@@ -292,7 +292,7 @@ in the phrase &quot;end-to-end&quot;.</t>
 in terms of an entity's <xref target="TrustedComputingBase"></xref>
 to acknowledge
 that an entity
-may legitimately
+<bcp14>MAY</bcp14> legitimately
 store, forward, or access messages
 by means
 that are outside of
@@ -339,7 +339,7 @@ have privileged access
 to PCASM,
 for instance
 via direct database access,
-but it may
+but it <bcp14>MAY</bcp14>
 have &quot;normal&quot; access
 to PCASM
 of conversations

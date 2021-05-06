@@ -185,8 +185,8 @@ Stream cipher "fuzziness" adequacy is currently undefined in this draft.
 Discussions of E2ESM frequently reference the concept of "backdoors". We propose a standard
 definition:
 
-A backdoor is any intentional or unintentional mechanism, in respect of a given message and
-that message's set of participants where some PCASM of that message may become available to a
+A backdoor is any intentional or unintentional mechanism, in respect of a given message and that
+message's set of participants where some PCASM of that message **MAY** become available to a
 non-participant without the intentional action of a participant.
 
 # Scope of a Participant in E2ESM
@@ -194,8 +194,8 @@ non-participant without the intentional action of a participant.
 The term "participant" in this document exists to supercede the more vague notion of "end" in the
 phrase "end-to-end".
 
-Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that
-an entity may legitimately store, forward, or access messages by means that are outside of the
+Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
+entity **MAY** legitimately store, forward, or access messages by means that are outside of the
 messenger software.
 
 For example: if a participant accesses their E2ESM messenger via remote desktop software, and their
@@ -216,7 +216,7 @@ If FooBook decides to represent itself as a conversation non-participant, then i
 any access to PCASM. (Integrity of Participation / Non-Participation)
 
 If FooBook decides to represent itself as a conversation participant, then it **MUST NOT** have
-privileged access to PCASM, for instance via direct database access, but it may have "normal"
+privileged access to PCASM, for instance via direct database access, but it **MAY** have "normal"
 access to PCASM of conversations where it is a participant. (Integrity of Participation, Equality of
 Participation)
 

@@ -287,7 +287,7 @@ in respect of a given message
 and that message's set of participants
 where some PCASM
 of that message
-may become available
+**MAY** become available
 to a non-participant
 without the intentional action of a participant.
 
@@ -303,7 +303,7 @@ Participants are defined
 in terms of an entity's [@TrustedComputingBase]
 to acknowledge
 that an entity
-may legitimately
+**MAY** legitimately
 store, forward, or access messages
 by means
 that are outside of
@@ -355,7 +355,7 @@ have privileged access
 to PCASM,
 for instance
 via direct database access,
-but it may
+but it **MAY**
 have "normal" access
 to PCASM
 of conversations
