@@ -193,7 +193,7 @@ Information which would not be PCASM would include, non-exclusively:
 ## Backdoor
 
 A "backdoor" is any intentional or unintentional mechanism, in respect of a given message and
-that message's set of participants where some PCASM of that message **MAY** become available to a
+that message's set of participants, where some PCASM of that message **MAY** become available to a
 non-participant without the intentional action of a participant.
 
 # Scope of a Participant in E2ESM
