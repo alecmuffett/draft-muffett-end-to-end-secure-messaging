@@ -345,7 +345,7 @@ If FooBook decides
 to represent itself
 as a conversation non-participant,
 then it **MUST NOT**
-have access to PCASM. (Integrity of Participation / Non-Participation)
+have any access to PCASM. (Integrity of Participation / Non-Participation)
 
 If FooBook decides
 to represent itself
@@ -354,7 +354,12 @@ then it **MUST NOT**
 have privileged access
 to PCASM,
 for instance
-via direct database access. (Integrity of Participation, Equality of Participation)
+via direct database access,
+but it may
+have "normal" access
+to PCASM
+of conversations
+where it is a participant. (Integrity of Participation, Equality of Participation)
 
 FooBook **MAY**
 retain means

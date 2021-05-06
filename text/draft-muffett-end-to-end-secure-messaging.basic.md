@@ -213,11 +213,12 @@ FooBook **MUST** decide whether to represent itself as a conversation participan
 non-participant. (Transparency of Participation)
 
 If FooBook decides to represent itself as a conversation non-participant, then it **MUST NOT** have
-access to PCASM. (Integrity of Participation / Non-Participation)
+any access to PCASM. (Integrity of Participation / Non-Participation)
 
 If FooBook decides to represent itself as a conversation participant, then it **MUST NOT** have
-privileged access to PCASM, for instance via direct database access. (Integrity of Participation,
-Equality of Participation)
+privileged access to PCASM, for instance via direct database access, but it may have "normal"
+access to PCASM of conversations where it is a participant. (Integrity of Participation, Equality of
+Participation)
 
 FooBook **MAY** retain means to eject reported abusive participants from a conversation. (Decrease
 in Closure of Participation)

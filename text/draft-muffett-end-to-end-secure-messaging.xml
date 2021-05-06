@@ -330,7 +330,7 @@ or as a non-participant. (Transparency of Participation)</t>
 to represent itself
 as a conversation non-participant,
 then it <bcp14>MUST NOT</bcp14>
-have access to PCASM. (Integrity of Participation / Non-Participation)</t>
+have any access to PCASM. (Integrity of Participation / Non-Participation)</t>
 <t>If FooBook decides
 to represent itself
 as a conversation participant,
@@ -338,7 +338,12 @@ then it <bcp14>MUST NOT</bcp14>
 have privileged access
 to PCASM,
 for instance
-via direct database access. (Integrity of Participation, Equality of Participation)</t>
+via direct database access,
+but it may
+have &quot;normal&quot; access
+to PCASM
+of conversations
+where it is a participant. (Integrity of Participation, Equality of Participation)</t>
 <t>FooBook <bcp14>MAY</bcp14>
 retain means
 to eject reported abusive participants

@@ -339,13 +339,14 @@ Internet-Draft                    e2esm                         May 2021
 
 
    If FooBook decides to represent itself as a conversation non-
-   participant, then it MUST NOT have access to PCASM.  (Integrity of
-   Participation / Non-Participation)
+   participant, then it MUST NOT have any access to PCASM.  (Integrity
+   of Participation / Non-Participation)
 
    If FooBook decides to represent itself as a conversation participant,
    then it MUST NOT have privileged access to PCASM, for instance via
-   direct database access.  (Integrity of Participation, Equality of
-   Participation)
+   direct database access, but it may have "normal" access to PCASM of
+   conversations where it is a participant.  (Integrity of
+   Participation, Equality of Participation)
 
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
@@ -382,10 +383,9 @@ Internet-Draft                    e2esm                         May 2021
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
+
+
+
 
 
 
@@ -393,6 +393,11 @@ Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
@@ -416,11 +421,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
-
 
 
 
