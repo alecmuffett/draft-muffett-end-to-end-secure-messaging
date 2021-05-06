@@ -168,8 +168,9 @@ Descriptive PCASM would include, non-exclusively:
 
 ### **OPTIONAL** Conversational Metadata
 
-Whether per-conversation metadata, such as "group titles" or "group participants" constitutes PCASM,
-is a choice for the E2ESM Solution, but it **MUST** be made apparent to participants.
+Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons",
+or "group participant lists" constitute PCASM, is a choice for the E2ESM Solution, but that choice
+**MUST** be made apparent to participants.
 
 ### Non-PCASM
 

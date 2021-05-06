@@ -263,13 +263,17 @@ of the content.</t>
 </section>
 
 <section anchor="optional-conversational-metadata"><name><bcp14>OPTIONAL</bcp14> Conversational Metadata</name>
-<t>Whether per-conversation metadata,
-such as &quot;group titles&quot;
-or &quot;group participants&quot;
-constitutes PCASM,
+<t>Whether per-conversation &quot;group&quot; metadata,
+such as
+&quot;group titles&quot;,
+&quot;group topics&quot;,
+&quot;group icons&quot;,
+or &quot;group participant lists&quot;
+constitute PCASM,
 is a choice
 for the E2ESM Solution,
-but it <bcp14>MUST</bcp14>
+but that choice
+<bcp14>MUST</bcp14>
 be made apparent
 to participants.</t>
 </section>
