@@ -202,16 +202,37 @@ set of participants.</t>
 <section anchor="plaintext-content-and-sensitive-metadata-pcasm"><name>Plaintext Content and Sensitive Metadata (PCASM)</name>
 <t>The PCASM
 of a message
-is defined as:
-1 or more
-bits of information
-regarding any or all of:</t>
+is defined as:</t>
 
-<ol>
-<li>the plaintext message content (the &quot;content&quot;)</li>
-<li>the precise size of the content</li>
-<li>any metadata which may describe the thematic nature of the content</li>
-</ol>
+<section anchor="content-pcasm"><name>Content PCASM</name>
+<t>Content PCASM
+is data
+that offers an attacker
+a better than 50-50 guess
+regarding the value of
+any individual bit of plaintext message content (the &quot;content&quot;)</t>
+</section>
+
+<section anchor="size-pcasm"><name>Size PCASM</name>
+<t>For block encryption of content,
+Size PCASM is the unpadded size of the content.</t>
+<t>For stream encryption of content,
+Size PCASM is currently undefined.</t>
+<t>For transport encryption of content,
+Size PCASM <bcp14>SHOULD NOT</bcp14> be observable.</t>
+</section>
+
+<section anchor="descriptive-pcasm"><name>Descriptive PCASM</name>
+<t>Descriptive PCASM
+is data
+that offers an attacker
+a better than 50-50 guess
+regarding the value of
+any individual bit of metadata
+that may reveal
+the thematic nature of the content,
+e.g. group-chat titles.</t>
+</section>
 
 <section anchor="examples-of-pcasm"><name>Examples of PCASM</name>
 <t>Information which would be PCASM would include, non-exclusively:</t>
@@ -244,23 +265,6 @@ regarding any or all of:</t>
 <li>The content was sent from the following geolocation: ...</li>
 <li>The content was composed using the following platform: ...</li>
 </ol>
-<t>There is obvious discussion
-to be had
-regarding
-&quot;how fuzzy a content-size is fuzzy enough?&quot;</t>
-<t>If the size of a message's content
-is at all observable
-by a non-participant,
-it would appear reasonable
-where a block cipher is used to implement E2ESM,
-to avoid visibly surfacing
-the underlying content size
-as a number
-that is any more specific or precise
-than an integer multiple
-of the underlying cipher block size would be.</t>
-<t>Stream cipher &quot;fuzziness&quot; adequacy
-is currently undefined in this draft.</t>
 </section>
 </section>
 

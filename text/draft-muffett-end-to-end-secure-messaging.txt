@@ -67,7 +67,7 @@ Table of Contents
      3.1.  Equality of Participation . . . . . . . . . . . . . . . .   3
      3.2.  Transparency of Participation . . . . . . . . . . . . . .   3
      3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
-       3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   3
+       3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   4
      3.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   4
      3.5.  Management and Visibility of Participant Clients &
            Devices . . . . . . . . . . . . . . . . . . . . . . . . .   4
@@ -75,12 +75,15 @@ Table of Contents
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
      4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
-       4.3.1.  Examples of PCASM . . . . . . . . . . . . . . . . . .   4
-       4.3.2.  Examples of non-PCASM . . . . . . . . . . . . . . . .   5
+       4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   4
+       4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
+       4.3.3.  Descriptive PCASM . . . . . . . . . . . . . . . . . .   5
+       4.3.4.  Examples of PCASM . . . . . . . . . . . . . . . . . .   5
+       4.3.5.  Examples of non-PCASM . . . . . . . . . . . . . . . .   6
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
-   6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     6.1.  Worked Example  . . . . . . . . . . . . . . . . . . . . .   6
+   6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     6.1.  Worked Example  . . . . . . . . . . . . . . . . . . . . .   7
      6.2.  E2ESM does not define message "rights management" . . . .   7
    7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
@@ -101,10 +104,7 @@ Table of Contents
    central server.  So therefore E2ESM is often narrowly regarded in
    terms of "end-to-end encryption".
 
-   Other architectural approaches exist - for instance [RicochetRefresh]
-   which implements closed distribution by using secure point-to-point
-   [RFC7686] networking to literally restrict the distribution of
-   plaintext content to relevant participants.
+
 
 
 
@@ -113,6 +113,11 @@ Muffett                  Expires 7 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   Other architectural approaches exist - for instance [RicochetRefresh]
+   which implements closed distribution by using secure point-to-point
+   [RFC7686] networking to literally restrict the distribution of
+   plaintext content to relevant participants.
 
    Therefore we describe E2ESM in terms of functional outcomes of the
    messenger rather than in terms of implementation goals and
@@ -157,11 +162,6 @@ Internet-Draft                    e2esm                         May 2021
    set of conversation participants from whom, to whom, and at the time
    when it was sent.
 
-3.3.1.  Non-Participation
-
-   It follows that for any given message, all entities that exist
-   outside of the above-defined set are "non-participants" in respect of
-   that message.
 
 
 
@@ -169,6 +169,12 @@ Muffett                  Expires 7 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+3.3.1.  Non-Participation
+
+   It follows that for any given message, all entities that exist
+   outside of the above-defined set are "non-participants" in respect of
+   that message.
 
 3.4.  Closure of Conversation
 
@@ -204,19 +210,13 @@ Internet-Draft                    e2esm                         May 2021
 
 4.3.  Plaintext Content and Sensitive Metadata (PCASM)
 
-   The PCASM of a message is defined as: 1 or more bits of information
-   regarding any or all of:
+   The PCASM of a message is defined as:
 
-   1.  the plaintext message content (the "content")
+4.3.1.  Content PCASM
 
-   2.  the precise size of the content
-
-   3.  any metadata which may describe the thematic nature of the
-       content
-
-4.3.1.  Examples of PCASM
-
-   Information which would be PCASM would include, non-exclusively:
+   Content PCASM is data that offers an attacker a better than 50-50
+   guess regarding the value of any individual bit of plaintext message
+   content (the "content")
 
 
 
@@ -225,6 +225,26 @@ Muffett                  Expires 7 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+4.3.2.  Size PCASM
+
+   For block encryption of content, Size PCASM is the unpadded size of
+   the content.
+
+   For stream encryption of content, Size PCASM is currently undefined.
+
+   For transport encryption of content, Size PCASM SHOULD NOT be
+   observable.
+
+4.3.3.  Descriptive PCASM
+
+   Descriptive PCASM is data that offers an attacker a better than 50-50
+   guess regarding the value of any individual bit of metadata that may
+   reveal the thematic nature of the content, e.g. group-chat titles.
+
+4.3.4.  Examples of PCASM
+
+   Information which would be PCASM would include, non-exclusively:
 
    1.   The content is "Hello, world."
 
@@ -253,10 +273,19 @@ Internet-Draft                    e2esm                         May 2021
    11.  The hash of the content does not exist amongst the following set
         of hashes: ...
 
+
+
+
+
+Muffett                  Expires 7 November 2021                [Page 5]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    12.  The content was matched by a machine-learning classifier with
         the following training set: ...
 
-4.3.2.  Examples of non-PCASM
+4.3.5.  Examples of non-PCASM
 
    Information which would not be PCASM would include, non-exclusively:
 
@@ -273,26 +302,6 @@ Internet-Draft                    e2esm                         May 2021
    6.  The content was sent from the following geolocation: ...
 
    7.  The content was composed using the following platform: ...
-
-
-
-
-Muffett                  Expires 7 November 2021                [Page 5]
-
-Internet-Draft                    e2esm                         May 2021
-
-
-   There is obvious discussion to be had regarding "how fuzzy a content-
-   size is fuzzy enough?"
-
-   If the size of a message's content is at all observable by a non-
-   participant, it would appear reasonable where a block cipher is used
-   to implement E2ESM, to avoid visibly surfacing the underlying content
-   size as a number that is any more specific or precise than an integer
-   multiple of the underlying cipher block size would be.
-
-   Stream cipher "fuzziness" adequacy is currently undefined in this
-   draft.
 
 4.4.  Backdoor
 
@@ -322,21 +331,19 @@ Internet-Draft                    e2esm                         May 2021
 
    This would be a failure of the participant's [TrustedComputingBase].
 
-6.  Rationale
-
-6.1.  Worked Example
-
-   Consider FooBook, a hypothetical example company which provides
-   messaging services for conversations between entities who use it.
-
-
-
 
 
 Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+6.  Rationale
+
+6.1.  Worked Example
+
+   Consider FooBook, a hypothetical example company which provides
+   messaging services for conversations between entities who use it.
 
    For each conversation FooBook MUST decide whether to represent itself
    as a conversation participant or as a non-participant.  (Transparency
@@ -379,13 +386,6 @@ Internet-Draft                    e2esm                         May 2021
    current" participants to access PCASM from which they were previously
    excluded.
 
-   Per the definition of "backdoor" this latter is considered
-   application functionality requiring "intentional action" of a
-   message's participant - nearly equivalent to forwarding the content
-   as a "fresh string of bits", although potentially with greater
-   attribution.
-
-
 
 
 
@@ -393,6 +393,12 @@ Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   Per the definition of "backdoor" this latter is considered
+   application functionality requiring "intentional action" of a
+   message's participant - nearly equivalent to forwarding the content
+   as a "fresh string of bits", although potentially with greater
+   attribution.
 
    Both approaches - analogous to "call by value" versus "call by
    reference" - raise interesting application design questions.  However
@@ -437,12 +443,6 @@ Internet-Draft                    e2esm                         May 2021
               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
               <https://www.ricochetrefresh.net>.
 
-   [TrustedComputingBase]
-              Wikipedia, "Trusted Computing Base", 2021,
-              <https://en.wikipedia.org/wiki/Trusted_computing_base>.
-
-
-
 
 
 Muffett                  Expires 7 November 2021                [Page 8]
@@ -450,16 +450,16 @@ Muffett                  Expires 7 November 2021                [Page 8]
 Internet-Draft                    e2esm                         May 2021
 
 
+   [TrustedComputingBase]
+              Wikipedia, "Trusted Computing Base", 2021,
+              <https://en.wikipedia.org/wiki/Trusted_computing_base>.
+
 Author's Address
 
    Alec Muffett
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
 
 
 
