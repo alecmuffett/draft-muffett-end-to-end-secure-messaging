@@ -372,6 +372,41 @@ with respect
 to their FooBook messaging services. (Management and Visibility)</t>
 </section>
 
+<section anchor="observations"><name>Observations</name>
+<t>Integrity of Participation,
+which restricts access
+of a message's PCASM
+to its fixed set of participants,
+will obviously not apply
+to PCASM content
+that is copied
+as a &quot;fresh string of bits&quot;
+and then is resubmitted
+by a participant
+as a new message
+sent to a new, &quot;current&quot; set of participants.</t>
+<t>Less obviously
+an E2ESM
+<bcp14>MAY</bcp14> enable
+message &quot;forwarding&quot;,
+or &quot;replying&quot;,
+or &quot;quoting&quot;,
+where a participant
+may freshly send
+object references and keys
+that permit &quot;current&quot; participants
+to access PCASM
+from which
+they were previously excluded.
+Per the definition
+of &quot;backdoor&quot;
+this is considered to be
+application functionality
+equivalent to a &quot;fresh string of bits&quot;
+and is outside the scope
+of this document.</t>
+</section>
+
 <section anchor="see-also"><name>See Also</name>
 <t>A different approach to defining (specifically) end-to-end encryption
 is being discussed in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>

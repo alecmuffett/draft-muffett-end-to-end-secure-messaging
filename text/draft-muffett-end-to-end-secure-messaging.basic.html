@@ -378,6 +378,42 @@ of their <cite class="informative"><a href="#TrustedComputingBase"><sup>[Trusted
 with respect
 to their FooBook messaging services. (Management and Visibility)</p>
 
+<h1 id="observations">Observations</h1>
+
+<p>Integrity of Participation,
+which restricts access
+of a message&rsquo;s PCASM
+to its fixed set of participants,
+will obviously not apply
+to PCASM content
+that is copied
+as a &ldquo;fresh string of bits&rdquo;
+and then is resubmitted
+by a participant
+as a new message
+sent to a new, &ldquo;current&rdquo; set of participants.</p>
+
+<p>Less obviously
+an E2ESM
+<strong>MAY</strong> enable
+message &ldquo;forwarding&rdquo;,
+or &ldquo;replying&rdquo;,
+or &ldquo;quoting&rdquo;,
+where a participant
+may freshly send
+object references and keys
+that permit &ldquo;current&rdquo; participants
+to access PCASM
+from which
+they were previously excluded.
+Per the definition
+of &ldquo;backdoor&rdquo;
+this is considered to be
+application functionality
+equivalent to a &ldquo;fresh string of bits&rdquo;
+and is outside the scope
+of this document.</p>
+
 <h1 id="see-also">See Also</h1>
 
 <p>A different approach to defining (specifically) end-to-end encryption
