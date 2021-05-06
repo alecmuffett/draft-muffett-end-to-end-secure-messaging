@@ -65,7 +65,7 @@ to relevant participants.</t>
 <t>Therefore we describe E2ESM
 in terms of
 functional behaviours
-of the solution
+of the software
 rather than
 in terms
 of implementation
@@ -162,7 +162,7 @@ existing participants.</t>
 </section>
 
 <section anchor="management-and-visibility-of-participant-clients-devices"><name>Management and Visibility of Participant Clients &amp; Devices</name>
-<t>E2ESM solutions
+<t>E2ESM software
 <bcp14>MUST</bcp14> provide
 each participant entity
 with means
@@ -170,7 +170,7 @@ to review or revoke access for
 clients or devices
 that can access
 future PCASM.</t>
-<t>E2ESM solutions
+<t>E2ESM software
 <bcp14>MUST</bcp14> provide
 each participant entity
 with notifications
@@ -271,7 +271,7 @@ such as
 or &quot;group participant lists&quot;
 constitute PCASM,
 is a choice
-for the E2ESM Solution,
+for the E2ESM software,
 but that choice
 <bcp14>MUST</bcp14>
 be made apparent
@@ -325,10 +325,10 @@ that an entity
 store, forward, or access messages
 by means
 that are outside of
-the messenger solution.</t>
+the E2ESM software.</t>
 <t>For example:
 if a participant
-accesses their E2ESM solution
+accesses their E2ESM software
 via remote desktop software,
 and their RDP session is hijacked by a third party;
 of if they back-up their messages
@@ -416,8 +416,8 @@ as a &quot;fresh string of bits&quot;
 that is sent
 as a new message
 to &quot;new, current&quot; participants.</t>
-<t>Less obviously
-an E2ESM solution
+<t>Less obviously:
+E2ESM software
 <bcp14>MAY</bcp14> enable
 message &quot;forwarding&quot;,
 or &quot;replying&quot;,

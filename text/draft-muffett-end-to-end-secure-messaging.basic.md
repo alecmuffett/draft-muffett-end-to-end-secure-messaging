@@ -46,7 +46,7 @@ Other architectural approaches exist - for instance [@RicochetRefresh] which imp
 distribution by using secure point-to-point [@RFC7686] networking to literally restrict the
 distribution of plaintext content to relevant participants.
 
-Therefore we describe E2ESM in terms of functional behaviours of the solution rather than in terms
+Therefore we describe E2ESM in terms of functional behaviours of the software rather than in terms
 of implementation goals and technologies.
 
 ## Notational Conventions
@@ -97,10 +97,10 @@ action of one or more existing participants.
 
 ## Management and Visibility of Participant Clients & Devices
 
-E2ESM solutions **MUST** provide each participant entity with means to review or revoke access for
+E2ESM software **MUST** provide each participant entity with means to review or revoke access for
 clients or devices that can access future PCASM.
 
-E2ESM solutions **MUST** provide each participant entity with notifications or complete logs of
+E2ESM software **MUST** provide each participant entity with notifications or complete logs of
 changes to the set of clients or devices that can or could access message PCASM.
 
 # Definitions
@@ -169,7 +169,7 @@ Descriptive PCASM would include, non-exclusively:
 ### **OPTIONAL** Conversational Metadata
 
 Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons",
-or "group participant lists" constitute PCASM, is a choice for the E2ESM Solution, but that choice
+or "group participant lists" constitute PCASM, is a choice for the E2ESM software, but that choice
 **MUST** be made apparent to participants.
 
 ### Non-PCASM
@@ -206,9 +206,9 @@ phrase "end-to-end".
 
 Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
 entity **MAY** legitimately store, forward, or access messages by means that are outside of the
-messenger solution.
+E2ESM software.
 
-For example: if a participant accesses their E2ESM solution via remote desktop software, and their
+For example: if a participant accesses their E2ESM software via remote desktop software, and their
 RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
 storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM.
 
@@ -249,7 +249,7 @@ Integrity of Participation, which restricts access of a message's PCASM to its f
 participants, obviously does not apply to content that is copied by one of its participants as a
 "fresh string of bits" that is sent as a new message to "new, current" participants.
 
-Less obviously an E2ESM solution **MAY** enable message "forwarding", or "replying", or "quoting",
+Less obviously: E2ESM software **MAY** enable message "forwarding", or "replying", or "quoting",
 where a message's participant may freshly send the message's object references and keys to enable
 "new, current" participants to access PCASM from which they were previously excluded.
 
