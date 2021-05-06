@@ -233,7 +233,7 @@ FooBook **MUST** enable the user to observe and manage the complete state of the
 [@TrustedComputingBase] with respect to their FooBook messaging services. (Management and
 Visibility)
 
-## Is it not necessary for E2ESM to offer Digital Rights Management
+## E2ESM does not define message "rights management"
 
 Integrity of Participation, which restricts access of a message's PCASM to its fixed set of
 participants, obviously does not apply to content that is copied by one of its participants as a

@@ -374,7 +374,7 @@ of their <xref target="TrustedComputingBase"></xref>
 with respect
 to their FooBook messaging services. (Management and Visibility)</t>
 
-<section anchor="is-it-not-necessary-for-e2esm-to-offer-digital-rights-management"><name>Is it not necessary for E2ESM to offer Digital Rights Management</name>
+<section anchor="e2esm-does-not-define-message-rights-management"><name>E2ESM does not define message &quot;rights management&quot;</name>
 <t>Integrity of Participation,
 which restricts access
 of a message's PCASM

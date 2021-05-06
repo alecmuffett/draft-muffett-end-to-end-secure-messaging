@@ -81,8 +81,7 @@ Table of Contents
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   6
    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .   6
-     7.1.  Is it not necessary for E2ESM to offer Digital Rights
-           Management  . . . . . . . . . . . . . . . . . . . . . . .   7
+     7.1.  E2ESM does not define message "rights management" . . . .   7
    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
    9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
    10. Security Considerations . . . . . . . . . . . . . . . . . . .   8
@@ -106,6 +105,7 @@ Table of Contents
    which implements closed distribution by using secure point-to-point
    [RFC7686] networking to literally restrict the distribution of
    plaintext content to relevant participants.
+
 
 
 
@@ -365,7 +365,7 @@ Internet-Draft                    e2esm                         May 2021
    of their [TrustedComputingBase] with respect to their FooBook
    messaging services.  (Management and Visibility)
 
-7.1.  Is it not necessary for E2ESM to offer Digital Rights Management
+7.1.  E2ESM does not define message "rights management"
 
    Integrity of Participation, which restricts access of a message's
    PCASM to its fixed set of participants, obviously does not apply to

@@ -392,7 +392,7 @@ of their [@TrustedComputingBase]
 with respect
 to their FooBook messaging services. (Management and Visibility)
 
-## Is it not necessary for E2ESM to offer Digital Rights Management
+## E2ESM does not define message "rights management"
 
 Integrity of Participation,
 which restricts access
