@@ -124,7 +124,7 @@ The PCASM of a message is defined as any of:
 ### Content PCASM
 
 Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any
-given bit of the plaintext message content (the "content")
+given bit of the plaintext message content. ("content")
 
 Content PCASM would include, non-exclusively:
 
