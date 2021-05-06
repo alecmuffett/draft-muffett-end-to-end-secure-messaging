@@ -77,8 +77,8 @@ All participants **MUST** be peers who **MUST** have equal access to any given m
 
 ## Transparency of Participation
 
-The existence of all current conversation participants **MUST** be visible at all times to all
-current conversation participants.
+The existence of all current conversation participants **MUST** be visible at the current time to
+all current conversation participants.
 
 ## Integrity of Participation
 
@@ -100,7 +100,7 @@ action of one or more existing participants.
 E2ESM software **MUST** provide each participant entity with means to review or revoke access for
 clients or devices that can access future PCASM.
 
-E2ESM software **MUST** provide each participant entity with notifications or complete logs of
+E2ESM software **MUST** provide each participant entity with notifications and/or complete logs of
 changes to the set of clients or devices that can or could access message PCASM.
 
 # Definitions
@@ -148,7 +148,7 @@ For transport encryption of content, precise Size PCASM **SHOULD NOT** be observ
 
 ### Descriptive PCASM
 
-Descriptive PCASM is data that reveals information regarding the nature of the content.
+Descriptive PCASM is data that describes the "content".
 
 Descriptive PCASM would include, non-exclusively:
 
@@ -166,11 +166,11 @@ Descriptive PCASM would include, non-exclusively:
 
 7.  The content was matched by a machine-learning classifier with the following training set: ...
 
-### **OPTIONAL** Conversational Metadata
+### Conversation Metadata (**OPTIONAL**)
 
 Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons",
-or "group participant lists" constitute PCASM, is a choice for the E2ESM software, but that choice
-**MUST** be made apparent to participants.
+or "group participant lists" constitute PCASM, is an **OPTIONAL** choice for the E2ESM software, but
+that choice **MUST** be made apparent to participants.
 
 ### Non-PCASM
 

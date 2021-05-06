@@ -137,7 +137,8 @@ The existence
 of all current
 conversation participants
 **MUST** be visible
-at all times
+at the current
+time
 to all current
 conversation participants.
 
@@ -188,7 +189,7 @@ E2ESM software
 **MUST** provide
 each participant entity
 with notifications
-or complete logs
+and/or complete logs
 of changes
 to the set of
 clients or devices
@@ -261,10 +262,8 @@ precise Size PCASM **SHOULD NOT** be observable.
 
 Descriptive PCASM
 is data
-that reveals
-information regarding
-the nature
-of the content.
+that describes
+the "content".
 
 Descriptive PCASM would include, non-exclusively:
 
@@ -276,16 +275,20 @@ Descriptive PCASM would include, non-exclusively:
 1. The hash of the content does not exist amongst the following set of hashes: ...
 1. The content was matched by a machine-learning classifier with the following training set: ...
 
-### **OPTIONAL** Conversational Metadata
+### Conversation Metadata (**OPTIONAL**)
 
-Whether per-conversation "group" metadata,
+Whether
+per-conversation
+"group" metadata,
 such as
 "group titles",
 "group topics",
 "group icons",
 or "group participant lists"
 constitute PCASM,
-is a choice
+is an
+**OPTIONAL**
+choice
 for the E2ESM software,
 but that choice
 **MUST**

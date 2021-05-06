@@ -78,7 +78,7 @@ Table of Contents
        4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
        4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
        4.3.3.  Descriptive PCASM . . . . . . . . . . . . . . . . . .   5
-       4.3.4.  OPTIONAL Conversational Metadata  . . . . . . . . . .   6
+       4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   6
        4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   6
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
@@ -157,7 +157,7 @@ Internet-Draft                    e2esm                         May 2021
 3.2.  Transparency of Participation
 
    The existence of all current conversation participants MUST be
-   visible at all times to all current conversation participants.
+   visible at the current time to all current conversation participants.
 
 
 
@@ -195,8 +195,8 @@ Internet-Draft                    e2esm                         May 2021
    PCASM.
 
    E2ESM software MUST provide each participant entity with
-   notifications or complete logs of changes to the set of clients or
-   devices that can or could access message PCASM.
+   notifications and/or complete logs of changes to the set of clients
+   or devices that can or could access message PCASM.
 
 4.  Definitions
 
@@ -257,8 +257,7 @@ Internet-Draft                    e2esm                         May 2021
 
 4.3.3.  Descriptive PCASM
 
-   Descriptive PCASM is data that reveals information regarding the
-   nature of the content.
+   Descriptive PCASM is data that describes the "content".
 
    Descriptive PCASM would include, non-exclusively:
 
@@ -277,6 +276,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
+
 Muffett                  Expires 7 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
@@ -288,12 +288,12 @@ Internet-Draft                    e2esm                         May 2021
    7.  The content was matched by a machine-learning classifier with the
        following training set: ...
 
-4.3.4.  OPTIONAL Conversational Metadata
+4.3.4.  Conversation Metadata (OPTIONAL)
 
    Whether per-conversation "group" metadata, such as "group titles",
    "group topics", "group icons", or "group participant lists"
-   constitute PCASM, is a choice for the E2ESM software, but that choice
-   MUST be made apparent to participants.
+   constitute PCASM, is an OPTIONAL choice for the E2ESM software, but
+   that choice MUST be made apparent to participants.
 
 4.3.5.  Non-PCASM
 

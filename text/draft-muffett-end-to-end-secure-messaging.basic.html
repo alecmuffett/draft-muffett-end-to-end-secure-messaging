@@ -119,7 +119,8 @@ to any given message&rsquo;s PCASM.</p>
 of all current
 conversation participants
 <strong>MUST</strong> be visible
-at all times
+at the current
+time
 to all current
 conversation participants.</p>
 
@@ -170,7 +171,7 @@ future PCASM.</p>
 <strong>MUST</strong> provide
 each participant entity
 with notifications
-or complete logs
+and/or complete logs
 of changes
 to the set of
 clients or devices
@@ -245,10 +246,8 @@ precise Size PCASM <strong>SHOULD NOT</strong> be observable.</p>
 
 <p>Descriptive PCASM
 is data
-that reveals
-information regarding
-the nature
-of the content.</p>
+that describes
+the &ldquo;content&rdquo;.</p>
 
 <p>Descriptive PCASM would include, non-exclusively:</p>
 
@@ -262,16 +261,20 @@ of the content.</p>
 <li>The content was matched by a machine-learning classifier with the following training set: &hellip;</li>
 </ol>
 
-<h3 id="optional-conversational-metadata"><strong>OPTIONAL</strong> Conversational Metadata</h3>
+<h3 id="conversation-metadata-optional">Conversation Metadata (<strong>OPTIONAL</strong>)</h3>
 
-<p>Whether per-conversation &ldquo;group&rdquo; metadata,
+<p>Whether
+per-conversation
+&ldquo;group&rdquo; metadata,
 such as
 &ldquo;group titles&rdquo;,
 &ldquo;group topics&rdquo;,
 &ldquo;group icons&rdquo;,
 or &ldquo;group participant lists&rdquo;
 constitute PCASM,
-is a choice
+is an
+<strong>OPTIONAL</strong>
+choice
 for the E2ESM software,
 but that choice
 <strong>MUST</strong>
