@@ -72,7 +72,7 @@ Table of Contents
        3.3.2.  Non-Participation . . . . . . . . . . . . . . . . . .   4
      3.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   4
        3.4.1.  Public Conversations and Self-Subscription  . . . . .   4
-     3.5.  Management and Visibility of Participant Clients &
+     3.5.  Management and Visibility of Participant Clients and
            Devices . . . . . . . . . . . . . . . . . . . . . . . . .   4
    4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   5
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   5
@@ -210,7 +210,7 @@ Internet-Draft                    e2esm                         May 2021
    This MAY be considered legitimate "intentional action" to increase
    the set of participants in the group.
 
-3.5.  Management and Visibility of Participant Clients & Devices
+3.5.  Management and Visibility of Participant Clients and Devices
 
    E2ESM software MUST provide each participant entity with means to
    review or revoke access for clients or devices that can access future

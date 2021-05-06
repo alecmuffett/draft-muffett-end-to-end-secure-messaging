@@ -116,7 +116,7 @@ non-participant entities to subscribe themselves as conversation participants.
 This **MAY** be considered legitimate "intentional action" to increase the set of participants in
 the group.
 
-## Management and Visibility of Participant Clients & Devices
+## Management and Visibility of Participant Clients and Devices
 
 E2ESM software **MUST** provide each participant entity with means to review or revoke access for
 clients or devices that can access future PCASM.

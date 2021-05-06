@@ -226,7 +226,7 @@ legitimate
 to increase the set of participants
 in the group.
 
-## Management and Visibility of Participant Clients & Devices
+## Management and Visibility of Participant Clients and Devices
 
 E2ESM software
 **MUST** provide

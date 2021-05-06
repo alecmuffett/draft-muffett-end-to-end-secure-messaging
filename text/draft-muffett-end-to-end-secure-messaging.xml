@@ -214,7 +214,7 @@ in the group.</t>
 </section>
 </section>
 
-<section anchor="management-and-visibility-of-participant-clients-devices"><name>Management and Visibility of Participant Clients &amp; Devices</name>
+<section anchor="management-and-visibility-of-participant-clients-and-devices"><name>Management and Visibility of Participant Clients and Devices</name>
 <t>E2ESM software
 <bcp14>MUST</bcp14> provide
 each participant entity
