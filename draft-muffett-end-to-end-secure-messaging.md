@@ -400,7 +400,8 @@ of a message's PCASM
 to its fixed set of participants,
 obviously does not apply
 to content
-that is copied as a "fresh string of bits"
+that is copied as
+a "fresh string of bits"
 and resubmitted
 by a participant
 sent as a new message
@@ -425,13 +426,21 @@ of "backdoor"
 this is considered
 application functionality
 requiring "intentional action"
-of a message's participant
-equivalent to
-them forwarding the content
-as a "fresh string of bits",
-and is therefore
-outside the scope
-of this document.
+of a message's participant -
+nearly equivalent to
+forwarding the content
+as a "fresh string of bits".
+
+Both approaches -
+analogous to "call by value"
+versus "call by reference" -
+raise interesting
+application design questions.
+However
+such features
+exist outside
+of the scope
+of this definition.
 
 # See Also
 

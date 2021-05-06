@@ -83,7 +83,7 @@ Table of Contents
    7.  Observations  . . . . . . . . . . . . . . . . . . . . . . . .   7
      7.1.  Is it not necessary for E2ESM to offer Digital Rights
            Management  . . . . . . . . . . . . . . . . . . . . . . .   7
-   8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+   8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
    9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
    10. Security Considerations . . . . . . . . . . . . . . . . . . .   8
    11. Informative References  . . . . . . . . . . . . . . . . . . .   8
@@ -378,13 +378,13 @@ Internet-Draft                    e2esm                         May 2021
 
    Per the definition of "backdoor" this is considered application
    functionality requiring "intentional action" of a message's
-   participant equivalent to them forwarding the content as a "fresh
-   string of bits", and is therefore outside the scope of this document.
+   participant - nearly equivalent to forwarding the content as a "fresh
+   string of bits".
 
-8.  See Also
+   Both approaches - analogous to "call by value" versus "call by
+   reference" - raise interesting application design questions.  However
+   such features exist outside of the scope of this definition.
 
-   A different approach to defining (specifically) end-to-end encryption
-   is being discussed in [I-D.knodel-e2ee-definition].
 
 
 
@@ -393,6 +393,11 @@ Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+8.  See Also
+
+   A different approach to defining (specifically) end-to-end encryption
+   is being discussed in [I-D.knodel-e2ee-definition].
 
 9.  IANA Considerations
 
@@ -437,6 +442,14 @@ Author's Address
    Alec Muffett
    Security Researcher
 
+
+
+
+Muffett                  Expires 7 November 2021                [Page 8]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    Email: alec.muffett@gmail.com
 
 
@@ -445,4 +458,47 @@ Author's Address
 
 
 
-Muffett                  Expires 7 November 2021                [Page 8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muffett                  Expires 7 November 2021                [Page 9]

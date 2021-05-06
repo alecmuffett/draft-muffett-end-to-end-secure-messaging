@@ -244,8 +244,11 @@ where a participant may freshly send older object references and keys that permi
 participants to access PCASM from which they were previously excluded.
 
 Per the definition of "backdoor" this is considered application functionality requiring "intentional
-action" of a message's participant equivalent to them forwarding the content as a "fresh string of
-bits", and is therefore outside the scope of this document.
+action" of a message's participant - nearly equivalent to forwarding the content as a "fresh string
+of bits".
+
+Both approaches - analogous to "call by value" versus "call by reference" - raise interesting
+application design questions. However such features exist outside of the scope of this definition.
 
 # See Also
 
