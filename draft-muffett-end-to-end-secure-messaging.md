@@ -500,8 +500,12 @@ in the group.
 
 # See Also
 
-A different approach to defining (specifically) end-to-end encryption
-is being discussed in [@I-D.knodel-e2ee-definition].
+A different approach
+to defining
+(specifically)
+end-to-end encryption
+is discussed
+in [@I-D.knodel-e2ee-definition].
 
 # IANA Considerations
 

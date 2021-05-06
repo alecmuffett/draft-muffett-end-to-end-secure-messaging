@@ -267,7 +267,7 @@ considered legitimate "intentional action" to increase the set of participants i
 
 # See Also
 
-A different approach to defining (specifically) end-to-end encryption is being discussed in
+A different approach to defining (specifically) end-to-end encryption is discussed in
 [@I-D.knodel-e2ee-definition].
 
 # IANA Considerations

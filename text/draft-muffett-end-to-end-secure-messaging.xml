@@ -478,8 +478,12 @@ in the group.</t>
 </section>
 
 <section anchor="see-also"><name>See Also</name>
-<t>A different approach to defining (specifically) end-to-end encryption
-is being discussed in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
+<t>A different approach
+to defining
+(specifically)
+end-to-end encryption
+is discussed
+in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
 </section>
 
 <section anchor="iana-considerations"><name>IANA Considerations</name>

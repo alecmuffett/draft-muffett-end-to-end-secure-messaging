@@ -429,7 +429,7 @@ Internet-Draft                    e2esm                         May 2021
 7.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
-   is being discussed in [I-D.knodel-e2ee-definition].
+   is discussed in [I-D.knodel-e2ee-definition].
 
 8.  IANA Considerations
 
