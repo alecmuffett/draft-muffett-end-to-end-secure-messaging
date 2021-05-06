@@ -67,8 +67,8 @@ Software which functions as an End-to-End Secure Messenger **MUST** satisfy the 
 principles, and **MUST** satisfy these principles in respect of the provided definitions for all
 forms of communication and data-sharing that the software offers.
 
-Any software that does not satisfy these requirements is not an End-to-End Secure Messenger,
-and does not implement End-to-End Secure Messaging, nor does it implement End-to-End Encrypted
+Any software that does not satisfy these requirements is not an End-to-End Secure Messenger, and
+it does not implement End-to-End Secure Messaging, nor does it implement End-to-End Encrypted
 Messaging.
 
 # Principles

@@ -115,7 +115,7 @@ that does not
 satisfy these requirements
 is not an
 End-to-End Secure Messenger,
-and does not implement
+and it does not implement
 End-to-End Secure Messaging,
 nor does it implement
 End-to-End Encrypted Messaging.
