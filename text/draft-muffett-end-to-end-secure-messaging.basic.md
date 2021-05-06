@@ -26,8 +26,8 @@ organization = "Security Researcher"
 .# Abstract
 
 This document defines End-to-End Secure Messaging in terms of the behaviours that **MUST** be
-exhibited by software which claims to implement it, or which claims to implement that subset which
-is known as End-to-End Encrypted Messaging.
+exhibited by software that claims to implement it, or which claims to implement that subset which is
+known as End-to-End Encrypted Messaging.
 
 {mainmatter}
 
@@ -46,8 +46,8 @@ Other architectural approaches exist - for instance [@RicochetRefresh] which imp
 distribution by using secure point-to-point [@RFC7686] networking to literally restrict the
 distribution of plaintext content to relevant participants.
 
-Therefore we describe E2ESM in terms of functional outcomes of the messenger rather than in terms of
-implementation goals and technologies.
+Therefore we describe E2ESM in terms of functional behaviours of the solution rather than in terms
+of implementation goals and technologies.
 
 ## Notational Conventions
 
@@ -62,8 +62,8 @@ Software which functions as an End-to-End Secure Messenger **MUST** satisfy the 
 principles, and **MUST** satisfy these principles in respect of the provided definitions for all
 forms of communication and data-sharing that the software offers.
 
-Any software that does not satisfy these conditions is not an End-to-End Secure Messenger, nor does
-it implement End-to-End Encrypted Messaging.
+Any software that does not satisfy these conditions is not an End-to-End Secure Messenger, does not
+implement End-to-End Secure Messaging, nor does it implement End-to-End Encrypted Messaging.
 
 # Principles
 
@@ -203,9 +203,9 @@ phrase "end-to-end".
 
 Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
 entity **MAY** legitimately store, forward, or access messages by means that are outside of the
-messenger software.
+messenger solution.
 
-For example: if a participant accesses their E2ESM messenger via remote desktop software, and their
+For example: if a participant accesses their E2ESM solution via remote desktop software, and their
 RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
 storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM.
 
