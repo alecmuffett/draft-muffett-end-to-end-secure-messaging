@@ -272,7 +272,7 @@ Metadata PCASM would include, non-exclusively:
 1. The hash of the content does not exist amongst the following set of hashes: ...
 1. The content was matched by a machine-learning classifier with the following training set: ...
 
-### Examples of Non-PCASM
+### Non-PCASM
 
 Information which would not be PCASM would include, non-exclusively:
 
