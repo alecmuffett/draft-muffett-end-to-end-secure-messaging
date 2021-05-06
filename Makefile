@@ -9,6 +9,9 @@ all: $(DIR)/$(NAME).txt $(DIR)/$(NAME).html
 push: all
 	git add . && git commit -m "make on `datestamp`" && git push
 
+open: all
+	open $(DIR)/$(NAME).html
+
 $(DIR)/$(NAME).html: $(DIR)/$(NAME).xml
 	( cd $(DIR) && $(XML2RFC) --html $(NAME).xml )
 

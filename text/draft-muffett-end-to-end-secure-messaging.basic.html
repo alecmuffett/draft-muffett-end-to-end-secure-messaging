@@ -126,7 +126,9 @@ conversation participants.</p>
 
 <h2 id="integrity-of-participation">Integrity of Participation</h2>
 
-<p>The PCASM
+<p>Excusing the
+&ldquo;retransmission exception&rdquo;,
+PCASM
 of any given message
 <strong>MUST</strong> only be available
 to the fixed set
@@ -136,6 +138,29 @@ to whom,
 and at the time when
 it was sent.</p>
 
+<h3 id="retransmission-exception">Retransmission Exception</h3>
+
+<p>If a participant
+that can access
+an &ldquo;original&rdquo; message
+intentionally &ldquo;retransmits&rdquo;
+(e.g. quotes, forwards)
+that message
+to create
+a new message
+within the E2ESM software,
+then
+the original message&rsquo;s PCASM
+<strong>MAY</strong>
+become available
+to a new,
+additional,
+and
+possibly different
+set of
+conversation participants,
+via that new message.</p>
+
 <h3 id="non-participation">Non-Participation</h3>
 
 <p>It follows that
@@ -143,8 +168,8 @@ for any given message,
 all entities
 that exist
 outside of
-the above-defined set
-are &ldquo;non-participants&rdquo;
+the above-defined sets of participants
+will be &ldquo;non-participants&rdquo;
 in respect of that message.</p>
 
 <h2 id="closure-of-conversation">Closure of Conversation</h2>
@@ -342,9 +367,25 @@ be a failure
 of the participant&rsquo;s
 <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
 
-<h1 id="rationale">Rationale</h1>
+<h1 id="public-conversations-and-self-subscription">Public Conversations and Self-Subscription</h1>
 
-<h2 id="worked-example">Worked Example</h2>
+<p>Existing participants <strong>MAY</strong>
+publicly share
+links,
+data,
+or other mechanisms
+to enable
+non-participant entities
+to subscribe themselves
+as conversation participants.
+This <strong>MAY</strong> be
+considered
+legitimate
+&ldquo;intentional action&rdquo;
+to increase the set of participants
+in the group.</p>
+
+<h1 id="rationale">Rationale</h1>
 
 <p>Consider FooBook,
 a hypothetical example company
@@ -415,76 +456,6 @@ but it <strong>MUST</strong>
 communicate to participants
 whether it does,
 or does not.</p>
-
-<h2 id="e2esm-does-not-define-message-rights-management">E2ESM does not define message &ldquo;rights management&rdquo;</h2>
-
-<p>Integrity of Participation,
-which restricts access
-of a message&rsquo;s PCASM
-to its fixed set of participants,
-obviously does not apply
-to content
-that is copied
-by one of its participants
-as a &ldquo;fresh string of bits&rdquo;
-that is sent
-as a new message
-to &ldquo;new, current&rdquo; participants.</p>
-
-<p>Less obviously:
-E2ESM software
-<strong>MAY</strong> enable
-message &ldquo;forwarding&rdquo;,
-or &ldquo;replying&rdquo;,
-or &ldquo;quoting&rdquo;,
-where a message&rsquo;s participant
-may freshly send
-the message&rsquo;s object references and keys
-to enable
-&ldquo;new, current&rdquo; participants
-to access PCASM
-from which
-they were previously excluded.</p>
-
-<p>Per the definition
-of &ldquo;backdoor&rdquo;
-this latter is considered
-application functionality
-requiring &ldquo;intentional action&rdquo;
-of a message&rsquo;s participant -
-nearly equivalent to
-forwarding the content
-as a &ldquo;fresh string of bits&rdquo;,
-although potentially with greater attribution.</p>
-
-<p>Both approaches -
-analogous to &ldquo;call by value&rdquo;
-versus &ldquo;call by reference&rdquo; -
-raise interesting
-application design questions.
-However
-such features
-exist outside
-of the scope
-of this definition.</p>
-
-<h2 id="public-conversations-and-self-subscription">Public Conversations and Self-Subscription</h2>
-
-<p>Existing participants <strong>MAY</strong>
-publicly share
-links,
-data,
-or other mechanisms
-to enable
-non-participant entities
-to subscribe themselves
-as conversation participants.
-This <strong>MAY</strong> be
-considered
-legitimate
-&ldquo;intentional action&rdquo;
-to increase the set of participants
-in the group.</p>
 
 <h1 id="see-also">See Also</h1>
 

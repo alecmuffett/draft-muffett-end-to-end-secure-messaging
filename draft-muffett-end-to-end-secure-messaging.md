@@ -144,7 +144,9 @@ conversation participants.
 
 ## Integrity of Participation
 
-The PCASM
+Excusing the
+"retransmission exception",
+PCASM
 of any given message
 **MUST** only be available
 to the fixed set
@@ -154,6 +156,29 @@ to whom,
 and at the time when
 it was sent.
 
+### Retransmission Exception
+
+If a participant
+that can access
+an "original" message
+intentionally "retransmits"
+(e.g. quotes, forwards)
+that message
+to create
+a new message
+within the E2ESM software,
+then
+the original message's PCASM
+**MAY**
+become available
+to a new,
+additional,
+and
+possibly different
+set of
+conversation participants,
+via that new message.
+
 ### Non-Participation
 
 It follows that
@@ -161,8 +186,8 @@ for any given message,
 all entities
 that exist
 outside of
-the above-defined set
-are "non-participants"
+the above-defined sets of participants
+will be "non-participants"
 in respect of that message.
 
 ## Closure of Conversation
@@ -354,9 +379,25 @@ be a failure
 of the participant's
 [@TrustedComputingBase].
 
-# Rationale
+# Public Conversations and Self-Subscription
 
-## Worked Example
+Existing participants **MAY**
+publicly share
+links,
+data,
+or other mechanisms
+to enable
+non-participant entities
+to subscribe themselves
+as conversation participants.
+This **MAY** be
+considered
+legitimate
+"intentional action"
+to increase the set of participants
+in the group.
+
+# Rationale
 
 Consider FooBook,
 a hypothetical example company
@@ -427,76 +468,6 @@ but it **MUST**
 communicate to participants
 whether it does,
 or does not.
-
-## E2ESM does not define message "rights management"
-
-Integrity of Participation,
-which restricts access
-of a message's PCASM
-to its fixed set of participants,
-obviously does not apply
-to content
-that is copied
-by one of its participants
-as a "fresh string of bits"
-that is sent
-as a new message
-to "new, current" participants.
-
-Less obviously:
-E2ESM software
-**MAY** enable
-message "forwarding",
-or "replying",
-or "quoting",
-where a message's participant
-may freshly send
-the message's object references and keys
-to enable
-"new, current" participants
-to access PCASM
-from which
-they were previously excluded.
-
-Per the definition
-of "backdoor"
-this latter is considered
-application functionality
-requiring "intentional action"
-of a message's participant -
-nearly equivalent to
-forwarding the content
-as a "fresh string of bits",
-although potentially with greater attribution.
-
-Both approaches -
-analogous to "call by value"
-versus "call by reference" -
-raise interesting
-application design questions.
-However
-such features
-exist outside
-of the scope
-of this definition.
-
-## Public Conversations and Self-Subscription
-
-Existing participants **MAY**
-publicly share
-links,
-data,
-or other mechanisms
-to enable
-non-participant entities
-to subscribe themselves
-as conversation participants.
-This **MAY** be
-considered
-legitimate
-"intentional action"
-to increase the set of participants
-in the group.
 
 # See Also
 
