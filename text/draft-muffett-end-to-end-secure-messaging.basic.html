@@ -207,11 +207,22 @@ is defined as:</p>
 <h3 id="content-pcasm">Content PCASM</h3>
 
 <p>Content PCASM
-is data
-that offers an attacker
-a better than 50-50 guess
+is any data
+that can offer
+better than 50-50 certainty
 regarding the value of
-any individual bit of plaintext message content (the &ldquo;content&rdquo;)</p>
+any given bit
+of the plaintext message content (the &ldquo;content&rdquo;)</p>
+
+<p>Content PCASM would include, non-exclusively:</p>
+
+<ol>
+<li>The content is &ldquo;Hello, world.&rdquo;</li>
+<li>The content starts with the word &ldquo;Hello&rdquo;</li>
+<li>The top bit of the first byte of the content in ASCII encoding, is zero</li>
+<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
+<li>The Salted-MD5 Hash of the content is : &hellip;</li>
+</ol>
 
 <h3 id="size-pcasm">Size PCASM</h3>
 
@@ -222,40 +233,32 @@ Size PCASM is the unpadded size of the content.</p>
 Size PCASM is currently undefined.</p>
 
 <p>For transport encryption of content,
-Size PCASM <strong>SHOULD NOT</strong> be observable.</p>
+precise Size PCASM <strong>SHOULD NOT</strong> be observable.</p>
 
-<h3 id="descriptive-pcasm">Descriptive PCASM</h3>
+<h3 id="metadata-pcasm">Metadata PCASM</h3>
 
-<p>Descriptive PCASM
+<p>Metadata PCASM
 is data
-that offers an attacker
-a better than 50-50 guess
-regarding the value of
-any individual bit of metadata
-that may reveal
-the thematic nature of the content,
-e.g. group-chat titles.</p>
+that reveals
+information regarding
+the thematic
+or partial
+nature of the content.</p>
 
-<h3 id="examples-of-pcasm">Examples of PCASM</h3>
-
-<p>Information which would be PCASM would include, non-exclusively:</p>
+<p>Metadata PCASM would include, non-exclusively:</p>
 
 <ol>
-<li>The content is &ldquo;Hello, world.&rdquo;</li>
-<li>The content is definitely 13 bytes long</li>
-<li>The content starts with the word &ldquo;Hello&rdquo;</li>
+<li>The conversation title is &ldquo;Example Greetings&rdquo;</li>
 <li>The content contains the substring &ldquo;ello&rdquo;</li>
 <li>The content does not contain the word &ldquo;Goodbye&rdquo;</li>
 <li>The content contains a substring from amongst the following set: &hellip;</li>
 <li>The content does not contain a substring from amongst the following set: &hellip;</li>
-<li>The top bit of the first byte of the content in ASCII encoding, is zero</li>
-<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
 <li>The hash of the content exists amongst the following set of hashes: &hellip;</li>
 <li>The hash of the content does not exist amongst the following set of hashes: &hellip;</li>
 <li>The content was matched by a machine-learning classifier with the following training set: &hellip;</li>
 </ol>
 
-<h3 id="examples-of-non-pcasm">Examples of non-PCASM</h3>
+<h3 id="examples-of-non-pcasm">Examples of Non-PCASM</h3>
 
 <p>Information which would not be PCASM would include, non-exclusively:</p>
 

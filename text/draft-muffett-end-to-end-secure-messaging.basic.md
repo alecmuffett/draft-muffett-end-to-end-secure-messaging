@@ -123,8 +123,20 @@ The PCASM of a message is defined as:
 
 ### Content PCASM
 
-Content PCASM is data that offers an attacker a better than 50-50 guess regarding the value of any
-individual bit of plaintext message content (the "content")
+Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any
+given bit of the plaintext message content (the "content")
+
+Content PCASM would include, non-exclusively:
+
+1.  The content is "Hello, world."
+
+2.  The content starts with the word "Hello"
+
+3.  The top bit of the first byte of the content in ASCII encoding, is zero
+
+4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
+
+5.  The Salted-MD5 Hash of the content is : ...
 
 ### Size PCASM
 
@@ -132,43 +144,32 @@ For block encryption of content, Size PCASM is the unpadded size of the content.
 
 For stream encryption of content, Size PCASM is currently undefined.
 
-For transport encryption of content, Size PCASM **SHOULD NOT** be observable.
+For transport encryption of content, precise Size PCASM **SHOULD NOT** be observable.
 
-### Descriptive PCASM
+### Metadata PCASM
 
-Descriptive PCASM is data that offers an attacker a better than 50-50 guess regarding the value of
-any individual bit of metadata that may reveal the thematic nature of the content, e.g. group-chat
-titles.
+Metadata PCASM is data that reveals information regarding the thematic or partial nature of the
+content.
 
-### Examples of PCASM
+Metadata PCASM would include, non-exclusively:
 
-Information which would be PCASM would include, non-exclusively:
+1.  The conversation title is "Example Greetings"
 
-1.   The content is "Hello, world."
+2.  The content contains the substring "ello"
 
-2.   The content is definitely 13 bytes long
+3.  The content does not contain the word "Goodbye"
 
-3.   The content starts with the word "Hello"
+4.  The content contains a substring from amongst the following set: ...
 
-4.   The content contains the substring "ello"
+5.  The content does not contain a substring from amongst the following set: ...
 
-5.   The content does not contain the word "Goodbye"
+6.  The hash of the content exists amongst the following set of hashes: ...
 
-6.   The content contains a substring from amongst the following set: ...
+7.  The hash of the content does not exist amongst the following set of hashes: ...
 
-7.   The content does not contain a substring from amongst the following set: ...
+8.  The content was matched by a machine-learning classifier with the following training set: ...
 
-8.   The top bit of the first byte of the content in ASCII encoding, is zero
-
-9.   The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
-
-10.  The hash of the content exists amongst the following set of hashes: ...
-
-11.  The hash of the content does not exist amongst the following set of hashes: ...
-
-12.  The content was matched by a machine-learning classifier with the following training set: ...
-
-### Examples of non-PCASM
+### Examples of Non-PCASM
 
 Information which would not be PCASM would include, non-exclusively:
 
