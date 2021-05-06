@@ -4,8 +4,8 @@
 
 ietf-mls                                                      A. Muffett
 Internet-Draft                                       Security Researcher
-Intended status: Informational                                5 May 2021
-Expires: 6 November 2021
+Intended status: Informational                                6 May 2021
+Expires: 7 November 2021
 
 
           Functional Definition of End-to-End Secure Messaging
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 November 2021.
+   This Internet-Draft will expire on 7 November 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Muffett                  Expires 6 November 2021                [Page 1]
+Muffett                  Expires 7 November 2021                [Page 1]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -79,11 +79,12 @@ Table of Contents
        4.3.2.  Examples of non-PCASM . . . . . . . . . . . . . . . .   5
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
-   6.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
-   8.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
-   9.  Informative References  . . . . . . . . . . . . . . . . . . .   7
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   6.  Rationale for Principles  . . . . . . . . . . . . . . . . . .   6
+   7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   10. Informative References  . . . . . . . . . . . . . . . . . . .   7
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -103,16 +104,19 @@ Table of Contents
    [RFC7686] networking to literally restrict the distribution of
    plaintext content to relevant participants.
 
-   Therefore we describe E2ESM in terms of functional outcomes of the
-   messenger rather than in terms of implementation goals and
-   technologies.
 
 
 
-Muffett                  Expires 6 November 2021                [Page 2]
+
+
+Muffett                  Expires 7 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   Therefore we describe E2ESM in terms of functional outcomes of the
+   messenger rather than in terms of implementation goals and
+   technologies.
 
 1.1.  Notational Conventions
 
@@ -139,7 +143,7 @@ Internet-Draft                    e2esm                         May 2021
 
 3.1.  Equality of Participation
 
-   All participants MUST be peers and MUST have equal access to any
+   All participants MUST be peers who MUST have equal access to any
    given message's PCASM.
 
 3.2.  Transparency of Participation
@@ -161,11 +165,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-
-
-
-
-Muffett                  Expires 6 November 2021                [Page 3]
+Muffett                  Expires 7 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -180,7 +180,9 @@ Internet-Draft                    e2esm                         May 2021
 
    E2ESM solutions MUST provide each participant entity with means to
    review or revoke access for clients or devices that can access future
-   PCASM.  E2ESM solutions MUST provide each participant entity with
+   PCASM.
+
+   E2ESM solutions MUST provide each participant entity with
    notifications or complete logs of changes to the set of clients or
    devices that can or could access message PCASM.
 
@@ -216,15 +218,15 @@ Internet-Draft                    e2esm                         May 2021
 
    Information which would be PCASM would include, non-exclusively:
 
-   1.   The content is "Hello, world."
 
 
 
-
-Muffett                  Expires 6 November 2021                [Page 4]
+Muffett                  Expires 7 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   1.   The content is "Hello, world."
 
    2.   The content is definitely 13 bytes long
 
@@ -272,15 +274,16 @@ Internet-Draft                    e2esm                         May 2021
 
    7.  The content was composed using the following platform: ...
 
-   There is obvious discussion to be had regarding "how fuzzy a content-
-   size is fuzzy enough?"
 
 
 
-Muffett                  Expires 6 November 2021                [Page 5]
+Muffett                  Expires 7 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   There is obvious discussion to be had regarding "how fuzzy a content-
+   size is fuzzy enough?"
 
    If the size of a message's content is at all observable by a non-
    participant, it would appear reasonable where a block cipher is used
@@ -319,30 +322,57 @@ Internet-Draft                    e2esm                         May 2021
 
    This would be a failure of the participant's [TrustedComputingBase].
 
-6.  See Also
+6.  Rationale for Principles
 
-   A different approach to defining (specifically) end-to-end encryption
-   is being discussed in [I-D.knodel-e2ee-definition].
+   Consider FooBook, a company which provides messaging services for
+   conversations between entities who use it.
 
-7.  IANA Considerations
-
-   This document has no IANA actions.
-
+   FooBook MUST decide whether to represent itself as a conversation
+   participant or as a non-participant.  (Transparency of Participation)
 
 
 
 
-
-Muffett                  Expires 6 November 2021                [Page 6]
+Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
 
-8.  Security Considerations
+   If FooBook decides to represent itself as a conversation non-
+   participant, then it MUST NOT have access to PCASM.  (Integrity of
+   Participation, Non-Participation)
+
+   If FooBook decides to represent itself as a conversation participant,
+   then it MUST NOT have privileged access to PCASM, for instance via
+   direct database access.  (Equality of Participation)
+
+   FooBook MAY retain means to eject reported abusive participants from
+   a conversation.  (Decrease in Closure of Participation)
+
+   FooBook MUST NOT retain means to forcibly insert new participants
+   into a conversation.  Also, this specification does not recognise the
+   notion of an "atomic" exchange of one particpant with another,
+   treating it as an ejection, followed by an "illegitimate" insertion.
+   (Increase in Closure of Participation)
+
+   FooBook MUST enable the user to observe and manage the complete state
+   of their [TrustedComputingBase] with respect to their FooBook
+   messaging services.  (Management and Visibility)
+
+7.  See Also
+
+   A different approach to defining (specifically) end-to-end encryption
+   is being discussed in [I-D.knodel-e2ee-definition].
+
+8.  IANA Considerations
+
+   This document has no IANA actions.
+
+9.  Security Considerations
 
    This document is entirely comprised of security considerations.
 
-9.  Informative References
+10.  Informative References
 
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
@@ -355,6 +385,14 @@ Internet-Draft                    e2esm                         May 2021
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
+
+
+
+
+Muffett                  Expires 7 November 2021                [Page 7]
+
+Internet-Draft                    e2esm                         May 2021
+
 
    [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
@@ -389,4 +427,22 @@ Author's Address
 
 
 
-Muffett                  Expires 6 November 2021                [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muffett                  Expires 7 November 2021                [Page 8]

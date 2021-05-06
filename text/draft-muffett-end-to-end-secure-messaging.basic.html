@@ -99,7 +99,7 @@ will require:</p>
 <h2 id="equality-of-participation">Equality of Participation</h2>
 
 <p>All participants
-<strong>MUST</strong> be peers and
+<strong>MUST</strong> be peers who
 <strong>MUST</strong> have equal access
 to any given message&rsquo;s PCASM.</p>
 
@@ -154,8 +154,9 @@ with means
 to review or revoke access for
 clients or devices
 that can access
-future PCASM.
-E2ESM solutions
+future PCASM.</p>
+
+<p>E2ESM solutions
 <strong>MUST</strong> provide
 each participant entity
 with notifications
@@ -312,6 +313,63 @@ would be a failure of E2ESM.</p>
 a failure of
 the participant&rsquo;s
 <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
+
+<h1 id="rationale-for-principles">Rationale for Principles</h1>
+
+<p>Consider FooBook,
+a company
+which provides
+messaging services
+for conversations
+between entities
+who use it.</p>
+
+<p>FooBook <strong>MUST</strong> decide
+whether to represent itself
+as a conversation participant
+or as a non-participant. (Transparency of Participation)</p>
+
+<p>If FooBook decides
+to represent itself
+as a conversation non-participant,
+then it <strong>MUST NOT</strong>
+have access to PCASM. (Integrity of Participation, Non-Participation)</p>
+
+<p>If FooBook decides
+to represent itself
+as a conversation participant,
+then it <strong>MUST NOT</strong>
+have privileged access
+to PCASM,
+for instance
+via direct database access. (Equality of Participation)</p>
+
+<p>FooBook <strong>MAY</strong>
+retain means
+to eject reported abusive participants
+from a conversation. (Decrease in Closure of Participation)</p>
+
+<p>FooBook <strong>MUST NOT</strong>
+retain means
+to forcibly insert
+new participants
+into a conversation.
+Also, this specification
+does not recognise
+the notion
+of an &ldquo;atomic&rdquo; exchange
+of one particpant with another,
+treating it as an ejection,
+followed by an &ldquo;illegitimate&rdquo; insertion.
+(Increase in Closure of Participation)</p>
+
+<p>FooBook <strong>MUST</strong>
+enable the user
+to observe and manage
+the complete state
+of their <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+with respect
+to their FooBook messaging services. (Management and Visibility)</p>
 
 <h1 id="see-also">See Also</h1>
 
