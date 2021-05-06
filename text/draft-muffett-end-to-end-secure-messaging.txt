@@ -315,20 +315,20 @@ Internet-Draft                    e2esm                         May 2021
 
 4.4.  Backdoor
 
-   Discussions of E2ESM frequently reference the concept of "backdoors".
-   We propose a standard definition:
-
-   A backdoor is any intentional or unintentional mechanism, in respect
-   of a given message and that message's set of participants where some
-   PCASM of that message MAY become available to a non-participant
-   without the intentional action of a participant.
+   A "backdoor" is any intentional or unintentional mechanism, in
+   respect of a given message and that message's set of participants
+   where some PCASM of that message MAY become available to a non-
+   participant without the intentional action of a participant.
 
 5.  Scope of a Participant in E2ESM
 
    The term "participant" in this document exists to supercede the more
    vague notion of "end" in the phrase "end-to-end".
 
-
+   Participants are defined in terms of an entity's
+   [TrustedComputingBase] to acknowledge that an entity MAY legitimately
+   store, forward, or access messages by means that are outside of the
+   E2ESM software.
 
 
 
@@ -337,11 +337,6 @@ Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   Participants are defined in terms of an entity's
-   [TrustedComputingBase] to acknowledge that an entity MAY legitimately
-   store, forward, or access messages by means that are outside of the
-   E2ESM software.
 
    For example: if a participant accesses their E2ESM software via
    remote desktop software, and their RDP session is hijacked by a third
@@ -384,6 +379,11 @@ Internet-Draft                    e2esm                         May 2021
    FooBook MUST enable the user to observe and manage the complete state
    of their [TrustedComputingBase] with respect to their FooBook
    messaging services.  (Management and Visibility)
+
+
+
+
+
 
 
 

@@ -309,12 +309,7 @@ Information which would not be PCASM would include, non-exclusively:
 
 ## Backdoor
 
-Discussions of E2ESM
-frequently reference
-the concept of "backdoors".
-We propose a standard definition:
-
-A backdoor
+A "backdoor"
 is any
 intentional or unintentional mechanism,
 in respect of a given message

@@ -297,11 +297,7 @@ to participants.</t>
 </section>
 
 <section anchor="backdoor"><name>Backdoor</name>
-<t>Discussions of E2ESM
-frequently reference
-the concept of &quot;backdoors&quot;.
-We propose a standard definition:</t>
-<t>A backdoor
+<t>A &quot;backdoor&quot;
 is any
 intentional or unintentional mechanism,
 in respect of a given message
