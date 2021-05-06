@@ -106,7 +106,7 @@ an End-to-End Secure Messenger.
 
 For a series of
 one or more "messages"
-each which are comprised
+each which are composed
 of "plaintext content and sensitive metadata" (PCASM)
 and which constitute
 a "conversation"
@@ -336,6 +336,7 @@ for conversations
 between entities
 who use it.
 
+For each conversation
 FooBook **MUST** decide
 whether to represent itself
 as a conversation participant
@@ -343,13 +344,13 @@ or as a non-participant. (Transparency of Participation)
 
 If FooBook decides
 to represent itself
-as a conversation non-participant,
+as a non-participant,
 then it **MUST NOT**
 have any access to PCASM. (Integrity of Participation / Non-Participation)
 
 If FooBook decides
 to represent itself
-as a conversation participant,
+as a participant,
 then it **MUST NOT**
 have privileged access
 to PCASM,
@@ -400,7 +401,7 @@ This document has no IANA actions.
 
 # Security Considerations
 
-This document is entirely comprised of security considerations.
+This document is entirely composed of security considerations.
 
 {backmatter}
 
