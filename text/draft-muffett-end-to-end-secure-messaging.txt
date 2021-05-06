@@ -81,8 +81,10 @@ Table of Contents
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   6
    7.  Observations  . . . . . . . . . . . . . . . . . . . . . . . .   7
+     7.1.  Is it not necessary for E2ESM to offer Digital Rights
+           Management  . . . . . . . . . . . . . . . . . . . . . . .   7
    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   7
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
    10. Security Considerations . . . . . . . . . . . . . . . . . . .   8
    11. Informative References  . . . . . . . . . . . . . . . . . . .   8
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
@@ -104,8 +106,6 @@ Table of Contents
    which implements closed distribution by using secure point-to-point
    [RFC7686] networking to literally restrict the distribution of
    plaintext content to relevant participants.
-
-
 
 
 
@@ -363,28 +363,28 @@ Internet-Draft                    e2esm                         May 2021
 
 7.  Observations
 
+7.1.  Is it not necessary for E2ESM to offer Digital Rights Management
+
    Integrity of Participation, which restricts access of a message's
-   PCASM to its fixed set of participants, will obviously not apply to
-   PCASM content that is copied as a "fresh string of bits" and then is
-   resubmitted by a participant as a new message sent to a new,
+   PCASM to its fixed set of participants, obviously does not apply to
+   PCASM content that is copied as a "fresh string of bits" which is
+   resubmitted by a participant as a new message that is sent to a new,
    "current" set of participants.
 
    Less obviously an E2ESM MAY enable message "forwarding", or
-   "replying", or "quoting", where a participant may freshly send object
+   "replying", or "quoting", where a participant may send object
    references and keys that permit "current" participants to access
-   PCASM from which they were previously excluded.  Per the definition
-   of "backdoor" this is considered to be application functionality
-   equivalent to a "fresh string of bits" and is outside the scope of
-   this document.
+   PCASM from which they were previously excluded.
+
+   Per the definition of "backdoor" this is considered as application
+   functionality equivalent to forwarding a "fresh string of bits", and
+   is therefore outside the scope of this document.
 
 8.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
    is being discussed in [I-D.knodel-e2ee-definition].
 
-9.  IANA Considerations
-
-   This document has no IANA actions.
 
 
 
@@ -393,6 +393,10 @@ Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+9.  IANA Considerations
+
+   This document has no IANA actions.
 
 10.  Security Considerations
 
@@ -434,10 +438,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
 
 
 

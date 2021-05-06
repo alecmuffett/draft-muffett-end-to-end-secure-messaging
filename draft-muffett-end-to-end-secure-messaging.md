@@ -392,18 +392,21 @@ to their FooBook messaging services. (Management and Visibility)
 
 # Observations
 
+## Is it not necessary for E2ESM to offer Digital Rights Management
+
 Integrity of Participation,
 which restricts access
 of a message's PCASM
 to its fixed set of participants,
-will obviously not apply
+obviously does not apply
 to PCASM content
 that is copied
 as a "fresh string of bits"
-and then is resubmitted
+which is resubmitted
 by a participant
 as a new message
-sent to a new, "current" set of participants.
+that is sent
+to a new, "current" set of participants.
 
 Less obviously
 an E2ESM
@@ -412,18 +415,20 @@ message "forwarding",
 or "replying",
 or "quoting",
 where a participant
-may freshly send
-object references and keys
+may send object references and keys
 that permit "current" participants
 to access PCASM
 from which
 they were previously excluded.
+
 Per the definition
 of "backdoor"
-this is considered to be
-application functionality
-equivalent to a "fresh string of bits"
-and is outside the scope
+this is considered
+as application functionality
+equivalent to forwarding
+a "fresh string of bits",
+and is therefore
+outside the scope
 of this document.
 
 # See Also
