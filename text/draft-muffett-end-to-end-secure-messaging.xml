@@ -206,7 +206,8 @@ set of participants.</t>
 <section anchor="plaintext-content-and-sensitive-metadata-pcasm"><name>Plaintext Content and Sensitive Metadata (PCASM)</name>
 <t>The PCASM
 of a message
-is defined as:</t>
+is defined as
+any of:</t>
 
 <section anchor="content-pcasm"><name>Content PCASM</name>
 <t>Content PCASM

@@ -216,7 +216,7 @@ Internet-Draft                    e2esm                         May 2021
 
 4.3.  Plaintext Content and Sensitive Metadata (PCASM)
 
-   The PCASM of a message is defined as:
+   The PCASM of a message is defined as any of:
 
 
 

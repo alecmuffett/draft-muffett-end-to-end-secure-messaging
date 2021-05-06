@@ -220,7 +220,8 @@ set of participants.
 
 The PCASM
 of a message
-is defined as:
+is defined as
+any of:
 
 ### Content PCASM
 

@@ -119,7 +119,7 @@ evolving set of participants.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
-The PCASM of a message is defined as:
+The PCASM of a message is defined as any of:
 
 ### Content PCASM
 
