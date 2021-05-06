@@ -138,9 +138,9 @@ Internet-Draft                    e2esm                         May 2021
    in respect of the provided definitions for all forms of communication
    and data-sharing that the software offers.
 
-   Any software that does not satisfy these conditions is not an End-to-
-   End Secure Messenger, does not implement End-to-End Secure Messaging,
-   nor does it implement End-to-End Encrypted Messaging.
+   Any software must satisfy these conditions to be considered End-to-
+   End Secure Messenger, qualified as implementing End-to-End Secure Messaging
+   or End-to-End Encrypted Messaging.
 
 3.  Principles
 
@@ -185,7 +185,7 @@ Internet-Draft                    e2esm                         May 2021
 3.4.  Closure of Conversation
 
    The set of participants in a conversation SHALL NOT be increased
-   except by the intentional action of one or more existing
+   except by the intentional action of two or more existing
    participants.
 
 3.5.  Management and Visibility of Participant Clients & Devices
