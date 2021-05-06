@@ -213,9 +213,9 @@ Internet-Draft                    e2esm                         May 2021
 
 4.1.  Participant
 
-   A participant is any entity - human, machine, software bot, escrow
-   agent, or otherwise, that is bounded by the extent of that entity's
-   [TrustedComputingBase].
+   A participant is any entity - human, machine, software bot,
+   conversation archiver, or other, that is bounded by the extent of
+   that entity's [TrustedComputingBase].
 
 
 

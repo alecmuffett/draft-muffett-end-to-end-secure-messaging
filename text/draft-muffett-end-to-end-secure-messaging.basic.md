@@ -116,7 +116,7 @@ These principles **MUST** be measured with respect to the following definitions:
 
 ## Participant
 
-A participant is any entity - human, machine, software bot, escrow agent, or otherwise, that is
+A participant is any entity - human, machine, software bot, conversation archiver, or other, that is
 bounded by the extent of that entity's [@TrustedComputingBase].
 
 ## Conversation

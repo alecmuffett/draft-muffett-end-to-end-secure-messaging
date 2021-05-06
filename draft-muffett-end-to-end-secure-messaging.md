@@ -232,7 +232,11 @@ the following definitions:
 
 A participant
 is any entity -
-human, machine, software bot, escrow agent, or otherwise,
+human,
+machine,
+software bot,
+conversation archiver,
+or other,
 that is bounded
 by the extent
 of that entity's
