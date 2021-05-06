@@ -205,10 +205,9 @@ Internet-Draft                    e2esm                         May 2021
 
    Existing participants MAY publicly share links, data, or other
    mechanisms to enable non-participant entities to subscribe themselves
-   as conversation participants.
-
-   This MAY be considered legitimate "intentional action" to increase
-   the set of participants in the group.
+   as conversation participants.  This MAY be considered legitimate
+   "intentional action" to increase the set of participants in the
+   group.
 
 3.5.  Management and Visibility of Participant Clients and Devices
 
@@ -216,8 +215,9 @@ Internet-Draft                    e2esm                         May 2021
    review or revoke access for clients or devices that can access future
    PCASM.
 
-
-
+   E2ESM software MUST provide each participant entity with
+   notifications and/or complete logs of changes to the set of clients
+   or devices that can or could access message PCASM.
 
 
 
@@ -225,10 +225,6 @@ Muffett                  Expires 7 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   E2ESM software MUST provide each participant entity with
-   notifications and/or complete logs of changes to the set of clients
-   or devices that can or could access message PCASM.
 
 4.  Definitions
 
@@ -274,6 +270,10 @@ Internet-Draft                    e2esm                         May 2021
    For block encryption of content, Size PCASM is the unpadded size of
    the content.
 
+   For stream encryption of content, Size PCASM is currently undefined.
+
+   For transport encryption of content, precise Size PCASM SHOULD NOT be
+   observable.
 
 
 
@@ -281,11 +281,6 @@ Muffett                  Expires 7 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   For stream encryption of content, Size PCASM is currently undefined.
-
-   For transport encryption of content, precise Size PCASM SHOULD NOT be
-   observable.
 
 4.3.3.  Descriptive PCASM
 
@@ -331,16 +326,17 @@ Internet-Draft                    e2esm                         May 2021
 
    4.  The content was sent at the following date and time: ...
 
+   5.  The content was sent from the following IP address: ...
+
+   6.  The content was sent from the following geolocation: ...
+
+
 
 
 Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   5.  The content was sent from the following IP address: ...
-
-   6.  The content was sent from the following geolocation: ...
 
    7.  The content was composed using the following platform: ...
 
@@ -387,15 +383,16 @@ Internet-Draft                    e2esm                         May 2021
    where it is a participant.  (Integrity of Participation, Equality of
    Participation)
 
+   FooBook MAY retain means to eject reported abusive participants from
+   a conversation.  (Decrease in Closure of Participation)
+
+
 
 
 Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   FooBook MAY retain means to eject reported abusive participants from
-   a conversation.  (Decrease in Closure of Participation)
 
    FooBook MUST NOT retain means to forcibly insert new participants
    into a conversation.  For clarity: this specification does not
@@ -441,6 +438,9 @@ Internet-Draft                    e2esm                         May 2021
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
               2015, <https://www.rfc-editor.org/info/rfc7686>.
 
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
 
 
@@ -449,10 +449,6 @@ Muffett                  Expires 7 November 2021                [Page 8]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [RicochetRefresh]
               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
@@ -468,6 +464,10 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
+
+
+
+
 
 
 

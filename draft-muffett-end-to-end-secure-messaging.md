@@ -218,7 +218,6 @@ to enable
 non-participant entities
 to subscribe themselves
 as conversation participants.
-
 This **MAY** be
 considered
 legitimate
