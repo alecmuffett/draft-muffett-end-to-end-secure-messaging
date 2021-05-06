@@ -112,13 +112,12 @@ that the software offers.
 
 Any software
 that does not
-satisfy these conditions
+satisfy these requirements
 is not an
 End-to-End Secure Messenger,
-does not implement
+and does not implement
 End-to-End Secure Messaging,
-nor
-does it implement
+nor does it implement
 End-to-End Encrypted Messaging.
 
 # Principles
