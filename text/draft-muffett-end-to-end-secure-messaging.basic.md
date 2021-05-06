@@ -237,15 +237,15 @@ Visibility)
 
 Integrity of Participation, which restricts access of a message's PCASM to its fixed set of
 participants, obviously does not apply to content that is copied by one of its participants as a
-"fresh string of bits" that is sent as a new message to a new "current" set of participants.
+"fresh string of bits" that is sent as a new message to "new, current" participants.
 
 Less obviously an E2ESM solution **MAY** enable message "forwarding", or "replying", or "quoting",
 where a message's participant may freshly send the message's object references and keys to enable
 "new, current" participants to access PCASM from which they were previously excluded.
 
-Per the definition of "backdoor" this is considered application functionality requiring "intentional
-action" of a message's participant - nearly equivalent to forwarding the content as a "fresh string
-of bits".
+Per the definition of "backdoor" this latter is considered application functionality requiring
+"intentional action" of a message's participant - nearly equivalent to forwarding the content as a
+"fresh string of bits", although potentially with greater attribution.
 
 Both approaches - analogous to "call by value" versus "call by reference" - raise interesting
 application design questions. However such features exist outside of the scope of this definition.

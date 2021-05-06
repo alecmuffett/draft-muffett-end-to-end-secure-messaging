@@ -386,7 +386,7 @@ by one of its participants
 as a &quot;fresh string of bits&quot;
 that is sent
 as a new message
-to a new &quot;current&quot; set of participants.</t>
+to &quot;new, current&quot; participants.</t>
 <t>Less obviously
 an E2ESM solution
 <bcp14>MAY</bcp14> enable
@@ -396,19 +396,21 @@ or &quot;quoting&quot;,
 where a message's participant
 may freshly send
 the message's object references and keys
-to enable &quot;new, current&quot; participants
+to enable
+&quot;new, current&quot; participants
 to access PCASM
 from which
 they were previously excluded.</t>
 <t>Per the definition
 of &quot;backdoor&quot;
-this is considered
+this latter is considered
 application functionality
 requiring &quot;intentional action&quot;
 of a message's participant -
 nearly equivalent to
 forwarding the content
-as a &quot;fresh string of bits&quot;.</t>
+as a &quot;fresh string of bits&quot;,
+although potentially with greater attribution.</t>
 <t>Both approaches -
 analogous to &quot;call by value&quot;
 versus &quot;call by reference&quot; -
