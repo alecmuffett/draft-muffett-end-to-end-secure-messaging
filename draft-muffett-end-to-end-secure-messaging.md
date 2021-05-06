@@ -30,7 +30,7 @@ defines End-to-End Secure Messaging
 in terms of the behaviours
 that **MUST** be exhibited
 by software
-which claims to implement it,
+that claims to implement it,
 or which claims to implement
 that subset which is known as
 End-to-End Encrypted Messaging.
@@ -75,8 +75,8 @@ to relevant participants.
 
 Therefore we describe E2ESM
 in terms of
-functional outcomes
-of the messenger
+functional behaviours
+of the solution
 rather than
 in terms
 of implementation
@@ -93,7 +93,8 @@ capitals, as shown here.
 # Requirements for an End-to-End Secure Messenger
 
 Software which functions
-as an End-to-End Secure Messenger
+as an
+End-to-End Secure Messenger
 **MUST** satisfy the following principles, and
 **MUST** satisfy these principles in respect of the provided definitions
 for all forms of communication
@@ -103,8 +104,12 @@ that the software offers.
 Any software
 that does not
 satisfy these conditions
-is not an End-to-End Secure Messenger,
-nor does it implement
+is not an
+End-to-End Secure Messenger,
+does not implement
+End-to-End Secure Messaging,
+nor
+does it implement
 End-to-End Encrypted Messaging.
 
 # Principles
@@ -319,11 +324,11 @@ that an entity
 store, forward, or access messages
 by means
 that are outside of
-the messenger software.
+the messenger solution.
 
 For example:
 if a participant
-accesses their E2ESM messenger
+accesses their E2ESM solution
 via remote desktop software,
 and their RDP session is hijacked by a third party;
 of if they back-up their messages
