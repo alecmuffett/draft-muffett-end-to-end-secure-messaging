@@ -328,7 +328,7 @@ the participant's
 
 # Rationale
 
-# Worked Example
+## Worked Example
 
 Consider FooBook,
 a hypothetical example company

@@ -206,7 +206,7 @@ This would be a failure of the participant's [@TrustedComputingBase].
 
 # Rationale
 
-# Worked Example
+## Worked Example
 
 Consider FooBook, a hypothetical example company which provides messaging services for conversations
 between entities who use it.

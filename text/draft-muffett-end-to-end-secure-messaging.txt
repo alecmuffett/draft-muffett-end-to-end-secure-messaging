@@ -80,12 +80,12 @@ Table of Contents
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .   6
-     7.1.  E2ESM does not define message "rights management" . . . .   7
-   8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
-   10. Security Considerations . . . . . . . . . . . . . . . . . . .   8
-   11. Informative References  . . . . . . . . . . . . . . . . . . .   8
+     6.1.  Worked Example  . . . . . . . . . . . . . . . . . . . . .   6
+     6.2.  E2ESM does not define message "rights management" . . . .   7
+   7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   10. Informative References  . . . . . . . . . . . . . . . . . . .   8
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
@@ -324,7 +324,7 @@ Internet-Draft                    e2esm                         May 2021
 
 6.  Rationale
 
-7.  Worked Example
+6.1.  Worked Example
 
    Consider FooBook, a hypothetical example company which provides
    messaging services for conversations between entities who use it.
@@ -365,7 +365,7 @@ Internet-Draft                    e2esm                         May 2021
    of their [TrustedComputingBase] with respect to their FooBook
    messaging services.  (Management and Visibility)
 
-7.1.  E2ESM does not define message "rights management"
+6.2.  E2ESM does not define message "rights management"
 
    Integrity of Participation, which restricts access of a message's
    PCASM to its fixed set of participants, obviously does not apply to
@@ -398,20 +398,20 @@ Internet-Draft                    e2esm                         May 2021
    reference" - raise interesting application design questions.  However
    such features exist outside of the scope of this definition.
 
-8.  See Also
+7.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
    is being discussed in [I-D.knodel-e2ee-definition].
 
-9.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  Security Considerations
+9.  Security Considerations
 
    This document is entirely composed of security considerations.
 
-11.  Informative References
+10.  Informative References
 
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.

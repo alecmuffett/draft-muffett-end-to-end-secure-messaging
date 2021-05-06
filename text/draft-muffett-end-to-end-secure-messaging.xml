@@ -315,7 +315,6 @@ the participant's
 </section>
 
 <section anchor="rationale"><name>Rationale</name>
-</section>
 
 <section anchor="worked-example"><name>Worked Example</name>
 <t>Consider FooBook,
@@ -373,6 +372,7 @@ the complete state
 of their <xref target="TrustedComputingBase"></xref>
 with respect
 to their FooBook messaging services. (Management and Visibility)</t>
+</section>
 
 <section anchor="e2esm-does-not-define-message-rights-management"><name>E2ESM does not define message &quot;rights management&quot;</name>
 <t>Integrity of Participation,
