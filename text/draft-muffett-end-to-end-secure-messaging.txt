@@ -80,14 +80,14 @@ Table of Contents
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  Observations  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .   6
      7.1.  Is it not necessary for E2ESM to offer Digital Rights
            Management  . . . . . . . . . . . . . . . . . . . . . . .   7
    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
    9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
    10. Security Considerations . . . . . . . . . . . . . . . . . . .   8
    11. Informative References  . . . . . . . . . . . . . . . . . . .   8
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
 
@@ -324,12 +324,12 @@ Internet-Draft                    e2esm                         May 2021
 
 6.  Rationale
 
-   Consider FooBook, a company which provides messaging services for
-   conversations between entities who use it.
+7.  Worked Example
 
-   For each conversation FooBook MUST decide whether to represent itself
-   as a conversation participant or as a non-participant.  (Transparency
-   of Participation)
+   Consider FooBook, a hypothetical example company which provides
+   messaging services for conversations between entities who use it.
+
+
 
 
 
@@ -337,6 +337,10 @@ Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   For each conversation FooBook MUST decide whether to represent itself
+   as a conversation participant or as a non-participant.  (Transparency
+   of Participation)
 
    If FooBook decides to represent itself as a non-participant, then it
    MUST NOT have any access to PCASM.  (Integrity of Participation /
@@ -361,8 +365,6 @@ Internet-Draft                    e2esm                         May 2021
    of their [TrustedComputingBase] with respect to their FooBook
    messaging services.  (Management and Visibility)
 
-7.  Observations
-
 7.1.  Is it not necessary for E2ESM to offer Digital Rights Management
 
    Integrity of Participation, which restricts access of a message's
@@ -383,9 +385,7 @@ Internet-Draft                    e2esm                         May 2021
    as a "fresh string of bits", although potentially with greater
    attribution.
 
-   Both approaches - analogous to "call by value" versus "call by
-   reference" - raise interesting application design questions.  However
-   such features exist outside of the scope of this definition.
+
 
 
 
@@ -393,6 +393,10 @@ Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   Both approaches - analogous to "call by value" versus "call by
+   reference" - raise interesting application design questions.  However
+   such features exist outside of the scope of this definition.
 
 8.  See Also
 
@@ -437,10 +441,6 @@ Internet-Draft                    e2esm                         May 2021
               Wikipedia, "Trusted Computing Base", 2021,
               <https://en.wikipedia.org/wiki/Trusted_computing_base>.
 
-Author's Address
-
-   Alec Muffett
-   Security Researcher
 
 
 
@@ -450,12 +450,12 @@ Muffett                  Expires 7 November 2021                [Page 8]
 Internet-Draft                    e2esm                         May 2021
 
 
+Author's Address
+
+   Alec Muffett
+   Security Researcher
+
    Email: alec.muffett@gmail.com
-
-
-
-
-
 
 
 

@@ -315,8 +315,11 @@ the participant's
 </section>
 
 <section anchor="rationale"><name>Rationale</name>
+</section>
+
+<section anchor="worked-example"><name>Worked Example</name>
 <t>Consider FooBook,
-a company
+a hypothetical example company
 which provides
 messaging services
 for conversations
@@ -370,9 +373,6 @@ the complete state
 of their <xref target="TrustedComputingBase"></xref>
 with respect
 to their FooBook messaging services. (Management and Visibility)</t>
-</section>
-
-<section anchor="observations"><name>Observations</name>
 
 <section anchor="is-it-not-necessary-for-e2esm-to-offer-digital-rights-management"><name>Is it not necessary for E2ESM to offer Digital Rights Management</name>
 <t>Integrity of Participation,

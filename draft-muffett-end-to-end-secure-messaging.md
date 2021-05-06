@@ -328,8 +328,10 @@ the participant's
 
 # Rationale
 
+# Worked Example
+
 Consider FooBook,
-a company
+a hypothetical example company
 which provides
 messaging services
 for conversations
@@ -389,8 +391,6 @@ the complete state
 of their [@TrustedComputingBase]
 with respect
 to their FooBook messaging services. (Management and Visibility)
-
-# Observations
 
 ## Is it not necessary for E2ESM to offer Digital Rights Management
 

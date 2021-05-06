@@ -206,8 +206,10 @@ This would be a failure of the participant's [@TrustedComputingBase].
 
 # Rationale
 
-Consider FooBook, a company which provides messaging services for conversations between entities who
-use it.
+# Worked Example
+
+Consider FooBook, a hypothetical example company which provides messaging services for conversations
+between entities who use it.
 
 For each conversation FooBook **MUST** decide whether to represent itself as a conversation
 participant or as a non-participant. (Transparency of Participation)
@@ -230,8 +232,6 @@ Closure of Participation)
 FooBook **MUST** enable the user to observe and manage the complete state of their
 [@TrustedComputingBase] with respect to their FooBook messaging services. (Management and
 Visibility)
-
-# Observations
 
 ## Is it not necessary for E2ESM to offer Digital Rights Management
 
