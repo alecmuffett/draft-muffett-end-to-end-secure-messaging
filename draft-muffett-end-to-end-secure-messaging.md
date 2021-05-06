@@ -117,7 +117,7 @@ will require:
 ## Equality of Participation
 
 All participants
-**MUST** be peers and
+**MUST** be peers who
 **MUST** have equal access
 to any given message's PCASM.
 
@@ -173,6 +173,7 @@ to review or revoke access for
 clients or devices
 that can access
 future PCASM.
+
 E2ESM solutions
 **MUST** provide
 each participant entity
@@ -324,6 +325,63 @@ This would be
 a failure of
 the participant's
 [@TrustedComputingBase].
+
+# Rationale for Principles
+
+Consider FooBook,
+a company
+which provides
+messaging services
+for conversations
+between entities
+who use it.
+
+FooBook **MUST** decide
+whether to represent itself
+as a conversation participant
+or as a non-participant. (Transparency of Participation)
+
+If FooBook decides
+to represent itself
+as a conversation non-participant,
+then it **MUST NOT**
+have access to PCASM. (Integrity of Participation, Non-Participation)
+
+If FooBook decides
+to represent itself
+as a conversation participant,
+then it **MUST NOT**
+have privileged access
+to PCASM,
+for instance
+via direct database access. (Equality of Participation)
+
+FooBook **MAY**
+retain means
+to eject reported abusive participants
+from a conversation. (Decrease in Closure of Participation)
+
+FooBook **MUST NOT**
+retain means
+to forcibly insert
+new participants
+into a conversation.
+Also, this specification
+does not recognise
+the notion
+of an "atomic" exchange
+of one particpant with another,
+treating it as an ejection,
+followed by an "illegitimate" insertion.
+(Increase in Closure of Participation)
+
+FooBook **MUST**
+enable the user
+to observe and manage
+the complete state
+of their [@TrustedComputingBase]
+with respect
+to their FooBook messaging services. (Management and Visibility)
 
 # See Also
 
