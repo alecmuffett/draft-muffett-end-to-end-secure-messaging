@@ -71,25 +71,25 @@ Table of Contents
        3.3.1.  Retransmission Exception  . . . . . . . . . . . . . .   4
        3.3.2.  Non-Participation . . . . . . . . . . . . . . . . . .   4
      3.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   4
+       3.4.1.  Public Conversations and Self-Subscription  . . . . .   4
      3.5.  Management and Visibility of Participant Clients &
            Devices . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   5
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   5
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   5
      4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   5
        4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
        4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
-       4.3.3.  Descriptive PCASM . . . . . . . . . . . . . . . . . .   5
+       4.3.3.  Descriptive PCASM . . . . . . . . . . . . . . . . . .   6
        4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   6
        4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   6
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   7
-   6.  Public Conversations and Self-Subscription  . . . . . . . . .   7
-   7.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
-   8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
-   10. Security Considerations . . . . . . . . . . . . . . . . . . .   8
-   11. Informative References  . . . . . . . . . . . . . . . . . . .   8
+   6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+   7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   10. Informative References  . . . . . . . . . . . . . . . . . . .   8
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
@@ -201,20 +201,20 @@ Internet-Draft                    e2esm                         May 2021
    except by the intentional action of one or more existing
    participants.
 
+3.4.1.  Public Conversations and Self-Subscription
+
+   Existing participants MAY publicly share links, data, or other
+   mechanisms to enable non-participant entities to subscribe themselves
+   as conversation participants.
+
+   This MAY be considered legitimate "intentional action" to increase
+   the set of participants in the group.
+
 3.5.  Management and Visibility of Participant Clients & Devices
 
    E2ESM software MUST provide each participant entity with means to
    review or revoke access for clients or devices that can access future
    PCASM.
-
-   E2ESM software MUST provide each participant entity with
-   notifications and/or complete logs of changes to the set of clients
-   or devices that can or could access message PCASM.
-
-4.  Definitions
-
-   These principles MUST be measured with respect to the following
-   definitions:
 
 
 
@@ -225,6 +225,15 @@ Muffett                  Expires 7 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   E2ESM software MUST provide each participant entity with
+   notifications and/or complete logs of changes to the set of clients
+   or devices that can or could access message PCASM.
+
+4.  Definitions
+
+   These principles MUST be measured with respect to the following
+   definitions:
 
 4.1.  Participant
 
@@ -265,6 +274,14 @@ Internet-Draft                    e2esm                         May 2021
    For block encryption of content, Size PCASM is the unpadded size of
    the content.
 
+
+
+
+Muffett                  Expires 7 November 2021                [Page 5]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    For stream encryption of content, Size PCASM is currently undefined.
 
    For transport encryption of content, precise Size PCASM SHOULD NOT be
@@ -273,14 +290,6 @@ Internet-Draft                    e2esm                         May 2021
 4.3.3.  Descriptive PCASM
 
    Descriptive PCASM is data that describes the "content".
-
-
-
-
-Muffett                  Expires 7 November 2021                [Page 5]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    Descriptive PCASM would include, non-exclusively:
 
@@ -322,21 +331,18 @@ Internet-Draft                    e2esm                         May 2021
 
    4.  The content was sent at the following date and time: ...
 
-   5.  The content was sent from the following IP address: ...
-
-   6.  The content was sent from the following geolocation: ...
-
-   7.  The content was composed using the following platform: ...
-
-
-
-
 
 
 Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   5.  The content was sent from the following IP address: ...
+
+   6.  The content was sent from the following geolocation: ...
+
+   7.  The content was composed using the following platform: ...
 
 4.4.  Backdoor
 
@@ -362,15 +368,7 @@ Internet-Draft                    e2esm                         May 2021
    be a failure of E2ESM.  This would instead be a failure of the
    participant's [TrustedComputingBase].
 
-6.  Public Conversations and Self-Subscription
-
-   Existing participants MAY publicly share links, data, or other
-   mechanisms to enable non-participant entities to subscribe themselves
-   as conversation participants.  This MAY be considered legitimate
-   "intentional action" to increase the set of participants in the
-   group.
-
-7.  Rationale
+6.  Rationale
 
    Consider FooBook, a hypothetical example company which provides
    messaging services for conversations between entities who use it.
@@ -383,9 +381,11 @@ Internet-Draft                    e2esm                         May 2021
    MUST NOT have any access to PCASM.  (Integrity of Participation /
    Non-Participation)
 
-
-
-
+   If FooBook decides to represent itself as a participant, then it MUST
+   NOT have privileged access to PCASM, for instance via direct database
+   access, but it MAY have "normal" access to PCASM of conversations
+   where it is a participant.  (Integrity of Participation, Equality of
+   Participation)
 
 
 
@@ -393,12 +393,6 @@ Muffett                  Expires 7 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   If FooBook decides to represent itself as a participant, then it MUST
-   NOT have privileged access to PCASM, for instance via direct database
-   access, but it MAY have "normal" access to PCASM of conversations
-   where it is a participant.  (Integrity of Participation, Equality of
-   Participation)
 
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
@@ -416,20 +410,20 @@ Internet-Draft                    e2esm                         May 2021
    FooBook MAY treat conversation metadata as PCASM, but it MUST
    communicate to participants whether it does, or does not.
 
-8.  See Also
+7.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
    is discussed in [I-D.knodel-e2ee-definition].
 
-9.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  Security Considerations
+9.  Security Considerations
 
    This document is entirely composed of security considerations.
 
-11.  Informative References
+10.  Informative References
 
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
@@ -443,16 +437,18 @@ Internet-Draft                    e2esm                         May 2021
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
+   [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
+              Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
+              2015, <https://www.rfc-editor.org/info/rfc7686>.
+
+
+
 
 
 Muffett                  Expires 7 November 2021                [Page 8]
 
 Internet-Draft                    e2esm                         May 2021
 
-
-   [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
-              Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
-              2015, <https://www.rfc-editor.org/info/rfc7686>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -472,6 +468,10 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
+
+
+
+
 
 
 

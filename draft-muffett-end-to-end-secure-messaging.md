@@ -207,6 +207,25 @@ except by the intentional action
 of one or more
 existing participants.
 
+### Public Conversations and Self-Subscription
+
+Existing participants **MAY**
+publicly share
+links,
+data,
+or other mechanisms
+to enable
+non-participant entities
+to subscribe themselves
+as conversation participants.
+
+This **MAY** be
+considered
+legitimate
+"intentional action"
+to increase the set of participants
+in the group.
+
 ## Management and Visibility of Participant Clients & Devices
 
 E2ESM software
@@ -390,24 +409,6 @@ This would instead
 be a failure
 of the participant's
 [@TrustedComputingBase].
-
-# Public Conversations and Self-Subscription
-
-Existing participants **MAY**
-publicly share
-links,
-data,
-or other mechanisms
-to enable
-non-participant entities
-to subscribe themselves
-as conversation participants.
-This **MAY** be
-considered
-legitimate
-"intentional action"
-to increase the set of participants
-in the group.
 
 # Rationale
 

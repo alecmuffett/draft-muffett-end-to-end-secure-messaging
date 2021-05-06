@@ -108,6 +108,14 @@ participants will be "non-participants" in respect of that message.
 The set of participants in a conversation **SHALL NOT** be increased except by the intentional
 action of one or more existing participants.
 
+### Public Conversations and Self-Subscription
+
+Existing participants **MAY** publicly share links, data, or other mechanisms to enable
+non-participant entities to subscribe themselves as conversation participants.
+
+This **MAY** be considered legitimate "intentional action" to increase the set of participants in
+the group.
+
 ## Management and Visibility of Participant Clients & Devices
 
 E2ESM software **MUST** provide each participant entity with means to review or revoke access for
@@ -222,12 +230,6 @@ For example: if a participant accesses their E2ESM software via remote desktop s
 RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
 storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
 would instead be a failure of the participant's [@TrustedComputingBase].
-
-# Public Conversations and Self-Subscription
-
-Existing participants **MAY** publicly share links, data, or other mechanisms to enable
-non-participant entities to subscribe themselves as conversation participants. This **MAY** be
-considered legitimate "intentional action" to increase the set of participants in the group.
 
 # Rationale
 
