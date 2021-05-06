@@ -207,9 +207,8 @@ E2ESM software.
 
 For example: if a participant accesses their E2ESM software via remote desktop software, and their
 RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
-storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM.
-
-This would be a failure of the participant's [@TrustedComputingBase].
+storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
+would instead be a failure of the participant's [@TrustedComputingBase].
 
 # Rationale
 
@@ -239,6 +238,9 @@ Closure of Participation)
 FooBook **MUST** enable the user to observe and manage the complete state of their
 [@TrustedComputingBase] with respect to their FooBook messaging services. (Management and
 Visibility)
+
+FooBook **MAY** treat conversation metadata as PCASM, but it **MUST** communicate to participants
+whether it does, or does not.
 
 ## E2ESM does not define message "rights management"
 

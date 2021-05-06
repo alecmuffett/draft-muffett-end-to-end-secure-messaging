@@ -349,10 +349,9 @@ to cloud storage
 leading somehow to data exfiltration,
 neither of these
 would be a failure of E2ESM.
-
-This would be
-a failure of
-the participant's
+This would instead
+be a failure
+of the participant's
 [@TrustedComputingBase].
 
 # Rationale
@@ -420,6 +419,14 @@ the complete state
 of their [@TrustedComputingBase]
 with respect
 to their FooBook messaging services. (Management and Visibility)
+
+FooBook **MAY**
+treat conversation metadata
+as PCASM,
+but it **MUST**
+communicate to participants
+whether it does,
+or does not.
 
 ## E2ESM does not define message "rights management"
 

@@ -335,10 +335,10 @@ in cleartext
 to cloud storage
 leading somehow to data exfiltration,
 neither of these
-would be a failure of E2ESM.</t>
-<t>This would be
-a failure of
-the participant's
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant's
 <xref target="TrustedComputingBase"></xref>.</t>
 </section>
 
@@ -400,6 +400,13 @@ the complete state
 of their <xref target="TrustedComputingBase"></xref>
 with respect
 to their FooBook messaging services. (Management and Visibility)</t>
+<t>FooBook <bcp14>MAY</bcp14>
+treat conversation metadata
+as PCASM,
+but it <bcp14>MUST</bcp14>
+communicate to participants
+whether it does,
+or does not.</t>
 </section>
 
 <section anchor="e2esm-does-not-define-message-rights-management"><name>E2ESM does not define message &quot;rights management&quot;</name>
