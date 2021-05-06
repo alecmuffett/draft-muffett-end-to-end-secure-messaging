@@ -380,22 +380,21 @@ which restricts access
 of a message's PCASM
 to its fixed set of participants,
 obviously does not apply
-to PCASM content
-that is copied
-as a &quot;fresh string of bits&quot;
-which is resubmitted
+to content
+that is copied as a &quot;fresh string of bits&quot;
+and resubmitted
 by a participant
 as a new message
-that is sent
-to a new, &quot;current&quot; set of participants.</t>
+sent to a new, &quot;current&quot; set of participants.</t>
 <t>Less obviously
-an E2ESM
+an E2ESM solution
 <bcp14>MAY</bcp14> enable
 message &quot;forwarding&quot;,
 or &quot;replying&quot;,
 or &quot;quoting&quot;,
 where a participant
-may send object references and keys
+may freshly send
+older object references and keys
 that permit &quot;current&quot; participants
 to access PCASM
 from which
@@ -403,9 +402,12 @@ they were previously excluded.</t>
 <t>Per the definition
 of &quot;backdoor&quot;
 this is considered
-as application functionality
-equivalent to forwarding
-a &quot;fresh string of bits&quot;,
+application functionality
+requiring &quot;intentional action&quot;
+of a message's participant
+equivalent to
+them forwarding the content
+as a &quot;fresh string of bits&quot;,
 and is therefore
 outside the scope
 of this document.</t>
