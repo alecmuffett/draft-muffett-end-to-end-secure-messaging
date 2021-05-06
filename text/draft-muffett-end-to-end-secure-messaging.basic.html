@@ -241,20 +241,18 @@ Size PCASM is currently undefined.</p>
 <p>For transport encryption of content,
 precise Size PCASM <strong>SHOULD NOT</strong> be observable.</p>
 
-<h3 id="metadata-pcasm">Metadata PCASM</h3>
+<h3 id="descriptive-pcasm">Descriptive PCASM</h3>
 
-<p>Metadata PCASM
+<p>Descriptive PCASM
 is data
 that reveals
 information regarding
-the thematic
-or partial
-nature of the content.</p>
+the nature
+of the content.</p>
 
-<p>Metadata PCASM would include, non-exclusively:</p>
+<p>Descriptive PCASM would include, non-exclusively:</p>
 
 <ol>
-<li>The conversation title is &ldquo;Example Greetings&rdquo;</li>
 <li>The content contains the substring &ldquo;ello&rdquo;</li>
 <li>The content does not contain the word &ldquo;Goodbye&rdquo;</li>
 <li>The content contains a substring from amongst the following set: &hellip;</li>
@@ -263,6 +261,18 @@ nature of the content.</p>
 <li>The hash of the content does not exist amongst the following set of hashes: &hellip;</li>
 <li>The content was matched by a machine-learning classifier with the following training set: &hellip;</li>
 </ol>
+
+<h3 id="optional-conversational-metadata"><strong>OPTIONAL</strong> Conversational Metadata</h3>
+
+<p>Whether per-conversation metadata,
+such as &ldquo;group titles&rdquo;
+or &ldquo;group participants&rdquo;
+constitutes PCASM,
+is a choice
+for the E2ESM Solution,
+but it <strong>MUST</strong>
+be made apparent
+to participants.</p>
 
 <h3 id="non-pcasm">Non-PCASM</h3>
 

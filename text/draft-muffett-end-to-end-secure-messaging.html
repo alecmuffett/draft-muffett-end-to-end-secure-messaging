@@ -1334,10 +1334,13 @@ End-to-End Encrypted Messaging.<a href="#section-abstract-1" class="pilcrow">¶<
                     <p id="section-toc.1-1.4.2.3.2.2.1"><a href="#section-4.3.2" class="xref">4.3.2</a>.  <a href="#name-size-pcasm" class="xref">Size PCASM</a></p>
 </li>
                   <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.3.2.3">
-                    <p id="section-toc.1-1.4.2.3.2.3.1"><a href="#section-4.3.3" class="xref">4.3.3</a>.  <a href="#name-metadata-pcasm" class="xref">Metadata PCASM</a></p>
+                    <p id="section-toc.1-1.4.2.3.2.3.1"><a href="#section-4.3.3" class="xref">4.3.3</a>.  <a href="#name-descriptive-pcasm" class="xref">Descriptive PCASM</a></p>
 </li>
                   <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.3.2.4">
-                    <p id="section-toc.1-1.4.2.3.2.4.1"><a href="#section-4.3.4" class="xref">4.3.4</a>.  <a href="#name-non-pcasm" class="xref">Non-PCASM</a></p>
+                    <p id="section-toc.1-1.4.2.3.2.4.1"><a href="#section-4.3.4" class="xref">4.3.4</a>.  <a href="#name-optional-conversational-met" class="xref">OPTIONAL Conversational Metadata</a></p>
+</li>
+                  <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.3.2.5">
+                    <p id="section-toc.1-1.4.2.3.2.5.1"><a href="#section-4.3.5" class="xref">4.3.5</a>.  <a href="#name-non-pcasm" class="xref">Non-PCASM</a></p>
 </li>
                 </ul>
 </li>
@@ -1660,59 +1663,72 @@ Size PCASM is currently undefined.<a href="#section-4.3.2-2" class="pilcrow">¶<
 precise Size PCASM <span class="bcp14">SHOULD NOT</span> be observable.<a href="#section-4.3.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="metadata-pcasm">
+<div id="descriptive-pcasm">
 <section id="section-4.3.3">
-          <h4 id="name-metadata-pcasm">
-<a href="#section-4.3.3" class="section-number selfRef">4.3.3. </a><a href="#name-metadata-pcasm" class="section-name selfRef">Metadata PCASM</a>
+          <h4 id="name-descriptive-pcasm">
+<a href="#section-4.3.3" class="section-number selfRef">4.3.3. </a><a href="#name-descriptive-pcasm" class="section-name selfRef">Descriptive PCASM</a>
           </h4>
-<p id="section-4.3.3-1">Metadata PCASM
+<p id="section-4.3.3-1">Descriptive PCASM
 is data
 that reveals
 information regarding
-the thematic
-or partial
-nature of the content.<a href="#section-4.3.3-1" class="pilcrow">¶</a></p>
-<p id="section-4.3.3-2">Metadata PCASM would include, non-exclusively:<a href="#section-4.3.3-2" class="pilcrow">¶</a></p>
+the nature
+of the content.<a href="#section-4.3.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3.3-2">Descriptive PCASM would include, non-exclusively:<a href="#section-4.3.3-2" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-4.3.3-3">
-<li id="section-4.3.3-3.1">The conversation title is "Example Greetings"<a href="#section-4.3.3-3.1" class="pilcrow">¶</a>
+<li id="section-4.3.3-3.1">The content contains the substring "ello"<a href="#section-4.3.3-3.1" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.3-3.2">The content contains the substring "ello"<a href="#section-4.3.3-3.2" class="pilcrow">¶</a>
+            <li id="section-4.3.3-3.2">The content does not contain the word "Goodbye"<a href="#section-4.3.3-3.2" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.3-3.3">The content does not contain the word "Goodbye"<a href="#section-4.3.3-3.3" class="pilcrow">¶</a>
+            <li id="section-4.3.3-3.3">The content contains a substring from amongst the following set: ...<a href="#section-4.3.3-3.3" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.3-3.4">The content contains a substring from amongst the following set: ...<a href="#section-4.3.3-3.4" class="pilcrow">¶</a>
+            <li id="section-4.3.3-3.4">The content does not contain a substring from amongst the following set: ...<a href="#section-4.3.3-3.4" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.3-3.5">The content does not contain a substring from amongst the following set: ...<a href="#section-4.3.3-3.5" class="pilcrow">¶</a>
+            <li id="section-4.3.3-3.5">The hash of the content exists amongst the following set of hashes: ...<a href="#section-4.3.3-3.5" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.3-3.6">The hash of the content exists amongst the following set of hashes: ...<a href="#section-4.3.3-3.6" class="pilcrow">¶</a>
+            <li id="section-4.3.3-3.6">The hash of the content does not exist amongst the following set of hashes: ...<a href="#section-4.3.3-3.6" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.3-3.7">The hash of the content does not exist amongst the following set of hashes: ...<a href="#section-4.3.3-3.7" class="pilcrow">¶</a>
-</li>
-            <li id="section-4.3.3-3.8">The content was matched by a machine-learning classifier with the following training set: ...<a href="#section-4.3.3-3.8" class="pilcrow">¶</a>
+            <li id="section-4.3.3-3.7">The content was matched by a machine-learning classifier with the following training set: ...<a href="#section-4.3.3-3.7" class="pilcrow">¶</a>
 </li>
           </ol>
 </section>
 </div>
-<div id="non-pcasm">
+<div id="optional-conversational-metadata">
 <section id="section-4.3.4">
-          <h4 id="name-non-pcasm">
-<a href="#section-4.3.4" class="section-number selfRef">4.3.4. </a><a href="#name-non-pcasm" class="section-name selfRef">Non-PCASM</a>
+          <h4 id="name-optional-conversational-met">
+<a href="#section-4.3.4" class="section-number selfRef">4.3.4. </a><a href="#name-optional-conversational-met" class="section-name selfRef"><span class="bcp14">OPTIONAL</span> Conversational Metadata</a>
           </h4>
-<p id="section-4.3.4-1">Information which would not be PCASM would include, non-exclusively:<a href="#section-4.3.4-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-4.3.4-2">
-<li id="section-4.3.4-2.1">The content is sent from Alice<a href="#section-4.3.4-2.1" class="pilcrow">¶</a>
+<p id="section-4.3.4-1">Whether per-conversation metadata,
+such as "group titles"
+or "group participants"
+constitutes PCASM,
+is a choice
+for the E2ESM Solution,
+but it <span class="bcp14">MUST</span>
+be made apparent
+to participants.<a href="#section-4.3.4-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="non-pcasm">
+<section id="section-4.3.5">
+          <h4 id="name-non-pcasm">
+<a href="#section-4.3.5" class="section-number selfRef">4.3.5. </a><a href="#name-non-pcasm" class="section-name selfRef">Non-PCASM</a>
+          </h4>
+<p id="section-4.3.5-1">Information which would not be PCASM would include, non-exclusively:<a href="#section-4.3.5-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.3.5-2">
+<li id="section-4.3.5-2.1">The content is sent from Alice<a href="#section-4.3.5-2.1" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.4-2.2">The content is sent to Bob<a href="#section-4.3.4-2.2" class="pilcrow">¶</a>
+            <li id="section-4.3.5-2.2">The content is sent to Bob<a href="#section-4.3.5-2.2" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.4-2.3">The content is between 1 and 16 bytes long<a href="#section-4.3.4-2.3" class="pilcrow">¶</a>
+            <li id="section-4.3.5-2.3">The content is between 1 and 16 bytes long<a href="#section-4.3.5-2.3" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.4-2.4">The content was sent at the following date and time: ...<a href="#section-4.3.4-2.4" class="pilcrow">¶</a>
+            <li id="section-4.3.5-2.4">The content was sent at the following date and time: ...<a href="#section-4.3.5-2.4" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.4-2.5">The content was sent from the following IP address: ...<a href="#section-4.3.4-2.5" class="pilcrow">¶</a>
+            <li id="section-4.3.5-2.5">The content was sent from the following IP address: ...<a href="#section-4.3.5-2.5" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.4-2.6">The content was sent from the following geolocation: ...<a href="#section-4.3.4-2.6" class="pilcrow">¶</a>
+            <li id="section-4.3.5-2.6">The content was sent from the following geolocation: ...<a href="#section-4.3.5-2.6" class="pilcrow">¶</a>
 </li>
-            <li id="section-4.3.4-2.7">The content was composed using the following platform: ...<a href="#section-4.3.4-2.7" class="pilcrow">¶</a>
+            <li id="section-4.3.5-2.7">The content was composed using the following platform: ...<a href="#section-4.3.5-2.7" class="pilcrow">¶</a>
 </li>
           </ol>
 </section>

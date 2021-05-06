@@ -257,19 +257,17 @@ Size PCASM is currently undefined.
 For transport encryption of content,
 precise Size PCASM **SHOULD NOT** be observable.
 
-### Metadata PCASM
+### Descriptive PCASM
 
-Metadata PCASM
+Descriptive PCASM
 is data
 that reveals
 information regarding
-the thematic
-or partial
-nature of the content.
+the nature
+of the content.
 
-Metadata PCASM would include, non-exclusively:
+Descriptive PCASM would include, non-exclusively:
 
-1. The conversation title is "Example Greetings"
 1. The content contains the substring "ello"
 1. The content does not contain the word "Goodbye"
 1. The content contains a substring from amongst the following set: ...
@@ -277,6 +275,18 @@ Metadata PCASM would include, non-exclusively:
 1. The hash of the content exists amongst the following set of hashes: ...
 1. The hash of the content does not exist amongst the following set of hashes: ...
 1. The content was matched by a machine-learning classifier with the following training set: ...
+
+### **OPTIONAL** Conversational Metadata
+
+Whether per-conversation metadata,
+such as "group titles"
+or "group participants"
+constitutes PCASM,
+is a choice
+for the E2ESM Solution,
+but it **MUST**
+be made apparent
+to participants.
 
 ### Non-PCASM
 
