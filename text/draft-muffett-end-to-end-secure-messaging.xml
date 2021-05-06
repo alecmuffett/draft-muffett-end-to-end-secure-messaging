@@ -384,8 +384,8 @@ to content
 that is copied as a &quot;fresh string of bits&quot;
 and resubmitted
 by a participant
-as a new message
-sent to a new, &quot;current&quot; set of participants.</t>
+sent as a new message
+to a new, &quot;current&quot; set of participants.</t>
 <t>Less obviously
 an E2ESM solution
 <bcp14>MAY</bcp14> enable

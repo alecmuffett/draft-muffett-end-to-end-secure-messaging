@@ -403,8 +403,8 @@ to content
 that is copied as a "fresh string of bits"
 and resubmitted
 by a participant
-as a new message
-sent to a new, "current" set of participants.
+sent as a new message
+to a new, "current" set of participants.
 
 Less obviously
 an E2ESM solution

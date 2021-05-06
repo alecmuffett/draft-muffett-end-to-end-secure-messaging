@@ -237,7 +237,7 @@ Visibility)
 
 Integrity of Participation, which restricts access of a message's PCASM to its fixed set of
 participants, obviously does not apply to content that is copied as a "fresh string of bits" and
-resubmitted by a participant as a new message sent to a new, "current" set of participants.
+resubmitted by a participant sent as a new message to a new, "current" set of participants.
 
 Less obviously an E2ESM solution **MAY** enable message "forwarding", or "replying", or "quoting",
 where a participant may freshly send older object references and keys that permit "current"
