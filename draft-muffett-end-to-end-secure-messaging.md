@@ -216,13 +216,38 @@ set of participants.
 The PCASM
 of a message
 is defined as:
-1 or more
-bits of information
-regarding any or all of:
 
-1. the plaintext message content (the "content")
-1. the precise size of the content
-1. any metadata which may describe the thematic nature of the content
+### Content PCASM
+
+Content PCASM
+is data
+that offers an attacker
+a better than 50-50 guess
+regarding the value of
+any individual bit of plaintext message content (the "content")
+
+### Size PCASM
+
+For block encryption of content,
+Size PCASM is the unpadded size of the content.
+
+For stream encryption of content,
+Size PCASM is currently undefined.
+
+For transport encryption of content,
+Size PCASM **SHOULD NOT** be observable.
+
+### Descriptive PCASM
+
+Descriptive PCASM
+is data
+that offers an attacker
+a better than 50-50 guess
+regarding the value of
+any individual bit of metadata
+that may reveal
+the thematic nature of the content,
+e.g. group-chat titles.
 
 ### Examples of PCASM
 
@@ -252,26 +277,6 @@ Information which would not be PCASM would include, non-exclusively:
 1. The content was sent from the following IP address: ...
 1. The content was sent from the following geolocation: ...
 1. The content was composed using the following platform: ...
-
-There is obvious discussion
-to be had
-regarding
-"how fuzzy a content-size is fuzzy enough?"
-
-If the size of a message's content
-is at all observable
-by a non-participant,
-it would appear reasonable
-where a block cipher is used to implement E2ESM,
-to avoid visibly surfacing
-the underlying content size
-as a number
-that is any more specific or precise
-than an integer multiple
-of the underlying cipher block size would be.
-
-Stream cipher "fuzziness" adequacy
-is currently undefined in this draft.
 
 ## Backdoor
 
