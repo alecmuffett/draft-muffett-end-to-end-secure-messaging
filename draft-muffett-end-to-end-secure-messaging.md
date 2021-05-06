@@ -6,7 +6,7 @@ docName = "apparently this tool demands a doc name but does not use it"
 ipr ="trust200902"
 area = "Internet"
 workgroup = "ietf-mls"
-keyword = ["messaging", "end to end", "encryption"]
+keyword = ["messaging", "end to end", "encryption", "security"]
 
 [seriesInfo]
 status = "informational"
@@ -81,6 +81,15 @@ rather than
 in terms
 of implementation
 goals and technologies.
+
+## Comments
+
+Comments are solicited
+and should be addressed to
+the working group's
+mailing list
+TODO
+and/or the author(s).
 
 ## Notational Conventions
 

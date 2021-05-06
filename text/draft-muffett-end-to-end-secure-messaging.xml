@@ -13,6 +13,7 @@
 <keyword>messaging</keyword>
 <keyword>end to end</keyword>
 <keyword>encryption</keyword>
+<keyword>security</keyword>
 
 <abstract>
 <t>This document
@@ -70,6 +71,15 @@ rather than
 in terms
 of implementation
 goals and technologies.</t>
+
+<section anchor="comments"><name>Comments</name>
+<t>Comments are solicited
+and should be addressed to
+the working group's
+mailing list
+TODO
+and/or the author(s).</t>
+</section>
 
 <section anchor="notational-conventions"><name>Notational Conventions</name>
 <t>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
