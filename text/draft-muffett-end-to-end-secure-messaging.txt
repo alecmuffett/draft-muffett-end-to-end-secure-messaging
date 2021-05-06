@@ -66,7 +66,7 @@ Table of Contents
    3.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   3
      3.1.  Equality of Participation . . . . . . . . . . . . . . . .   3
      3.2.  Transparency of Participation . . . . . . . . . . . . . .   3
-     3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   3
+     3.3.  Integrity of Participation  . . . . . . . . . . . . . . .   4
        3.3.1.  Non-Participation . . . . . . . . . . . . . . . . . .   4
      3.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   4
      3.5.  Management and Visibility of Participant Clients &
@@ -75,7 +75,7 @@ Table of Contents
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
      4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
-       4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   4
+       4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
        4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
        4.3.3.  Descriptive PCASM . . . . . . . . . . . . . . . . . .   5
        4.3.4.  Examples of PCASM . . . . . . . . . . . . . . . . . .   5
@@ -84,7 +84,7 @@ Table of Contents
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   6
    6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
      6.1.  Worked Example  . . . . . . . . . . . . . . . . . . . . .   7
-     6.2.  E2ESM does not define message "rights management" . . . .   7
+     6.2.  E2ESM does not define message "rights management" . . . .   8
    7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
    9.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
@@ -136,8 +136,11 @@ Internet-Draft                    e2esm                         May 2021
    Software which functions as an End-to-End Secure Messenger MUST
    satisfy the following principles, and MUST satisfy these principles
    in respect of the provided definitions for all forms of communication
-   and data-sharing that the software offers, otherwise it is not an
-   End-to-End Secure Messenger.
+   and data-sharing that the software offers.
+
+   Any software that does not satisfy these conditions is not an End-to-
+   End Secure Messenger, nor does it implement End-to-End Encrypted
+   Messaging.
 
 3.  Principles
 
@@ -156,11 +159,8 @@ Internet-Draft                    e2esm                         May 2021
    The existence of all current conversation participants MUST be
    visible at all times to all current conversation participants.
 
-3.3.  Integrity of Participation
 
-   The PCASM of any given message MUST only be available to the fixed
-   set of conversation participants from whom, to whom, and at the time
-   when it was sent.
+
 
 
 
@@ -169,6 +169,12 @@ Muffett                  Expires 7 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+3.3.  Integrity of Participation
+
+   The PCASM of any given message MUST only be available to the fixed
+   set of conversation participants from whom, to whom, and at the time
+   when it was sent.
 
 3.3.1.  Non-Participation
 
@@ -212,12 +218,6 @@ Internet-Draft                    e2esm                         May 2021
 
    The PCASM of a message is defined as:
 
-4.3.1.  Content PCASM
-
-   Content PCASM is data that offers an attacker a better than 50-50
-   guess regarding the value of any individual bit of plaintext message
-   content (the "content")
-
 
 
 
@@ -225,6 +225,12 @@ Muffett                  Expires 7 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+4.3.1.  Content PCASM
+
+   Content PCASM is data that offers an attacker a better than 50-50
+   guess regarding the value of any individual bit of plaintext message
+   content (the "content")
 
 4.3.2.  Size PCASM
 
@@ -267,12 +273,6 @@ Internet-Draft                    e2esm                         May 2021
 
    9.   The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
 
-   10.  The hash of the content exists amongst the following set of
-        hashes: ...
-
-   11.  The hash of the content does not exist amongst the following set
-        of hashes: ...
-
 
 
 
@@ -281,6 +281,12 @@ Muffett                  Expires 7 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   10.  The hash of the content exists amongst the following set of
+        hashes: ...
+
+   11.  The hash of the content does not exist amongst the following set
+        of hashes: ...
 
    12.  The content was matched by a machine-learning classifier with
         the following training set: ...
@@ -323,13 +329,7 @@ Internet-Draft                    e2esm                         May 2021
    store, forward, or access messages by means that are outside of the
    messenger software.
 
-   For example: if a participant accesses their E2ESM messenger via
-   remote desktop software, and their RDP session is hijacked by a third
-   party; of if they back-up their messages in cleartext to cloud
-   storage leading somehow to data exfiltration, neither of these would
-   be a failure of E2ESM.
 
-   This would be a failure of the participant's [TrustedComputingBase].
 
 
 
@@ -337,6 +337,14 @@ Muffett                  Expires 7 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   For example: if a participant accesses their E2ESM messenger via
+   remote desktop software, and their RDP session is hijacked by a third
+   party; of if they back-up their messages in cleartext to cloud
+   storage leading somehow to data exfiltration, neither of these would
+   be a failure of E2ESM.
+
+   This would be a failure of the participant's [TrustedComputingBase].
 
 6.  Rationale
 
@@ -372,6 +380,20 @@ Internet-Draft                    e2esm                         May 2021
    of their [TrustedComputingBase] with respect to their FooBook
    messaging services.  (Management and Visibility)
 
+
+
+
+
+
+
+
+
+
+Muffett                  Expires 7 November 2021                [Page 7]
+
+Internet-Draft                    e2esm                         May 2021
+
+
 6.2.  E2ESM does not define message "rights management"
 
    Integrity of Participation, which restricts access of a message's
@@ -385,14 +407,6 @@ Internet-Draft                    e2esm                         May 2021
    send the message's object references and keys to enable "new,
    current" participants to access PCASM from which they were previously
    excluded.
-
-
-
-
-Muffett                  Expires 7 November 2021                [Page 7]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    Per the definition of "backdoor" this latter is considered
    application functionality requiring "intentional action" of a
@@ -426,6 +440,16 @@ Internet-Draft                    e2esm                         May 2021
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
 
+
+
+
+
+
+Muffett                  Expires 7 November 2021                [Page 8]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -443,13 +467,6 @@ Internet-Draft                    e2esm                         May 2021
               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
               <https://www.ricochetrefresh.net>.
 
-
-
-Muffett                  Expires 7 November 2021                [Page 8]
-
-Internet-Draft                    e2esm                         May 2021
-
-
    [TrustedComputingBase]
               Wikipedia, "Trusted Computing Base", 2021,
               <https://en.wikipedia.org/wiki/Trusted_computing_base>.
@@ -460,23 +477,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

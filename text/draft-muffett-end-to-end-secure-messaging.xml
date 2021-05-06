@@ -87,9 +87,13 @@ as an End-to-End Secure Messenger
 <bcp14>MUST</bcp14> satisfy these principles in respect of the provided definitions
 for all forms of communication
 and data-sharing
-that the software offers,
-otherwise it is not
-an End-to-End Secure Messenger.</t>
+that the software offers.</t>
+<t>Any software
+that does not
+satisfy these conditions
+is not an End-to-End Secure Messenger,
+nor does it implement
+End-to-End Encrypted Messaging.</t>
 </section>
 
 <section anchor="principles"><name>Principles</name>
