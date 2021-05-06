@@ -400,12 +400,12 @@ of a message's PCASM
 to its fixed set of participants,
 obviously does not apply
 to content
-that is copied as
-a "fresh string of bits"
-and resubmitted
-by a participant
-sent as a new message
-to a new, "current" set of participants.
+that is copied
+by one of its participants
+as a "fresh string of bits"
+that is sent
+as a new message
+to a new "current" set of participants.
 
 Less obviously
 an E2ESM solution
@@ -413,10 +413,10 @@ an E2ESM solution
 message "forwarding",
 or "replying",
 or "quoting",
-where a participant
+where a message's participant
 may freshly send
-older object references and keys
-that permit "current" participants
+the message's object references and keys
+to enable "new, current" participants
 to access PCASM
 from which
 they were previously excluded.

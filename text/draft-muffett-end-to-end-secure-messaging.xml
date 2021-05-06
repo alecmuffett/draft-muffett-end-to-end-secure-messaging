@@ -381,22 +381,22 @@ of a message's PCASM
 to its fixed set of participants,
 obviously does not apply
 to content
-that is copied as
-a &quot;fresh string of bits&quot;
-and resubmitted
-by a participant
-sent as a new message
-to a new, &quot;current&quot; set of participants.</t>
+that is copied
+by one of its participants
+as a &quot;fresh string of bits&quot;
+that is sent
+as a new message
+to a new &quot;current&quot; set of participants.</t>
 <t>Less obviously
 an E2ESM solution
 <bcp14>MAY</bcp14> enable
 message &quot;forwarding&quot;,
 or &quot;replying&quot;,
 or &quot;quoting&quot;,
-where a participant
+where a message's participant
 may freshly send
-older object references and keys
-that permit &quot;current&quot; participants
+the message's object references and keys
+to enable &quot;new, current&quot; participants
 to access PCASM
 from which
 they were previously excluded.</t>
