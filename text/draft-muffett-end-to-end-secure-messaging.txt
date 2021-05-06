@@ -84,6 +84,7 @@ Table of Contents
    6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
      6.1.  Worked Example  . . . . . . . . . . . . . . . . . . . . .   7
      6.2.  E2ESM does not define message "rights management" . . . .   8
+     6.3.  Public Conversations and Self-Subscription  . . . . . . .   8
    7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
    9.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
@@ -102,7 +103,6 @@ Table of Contents
    means of encryption, in order to obscure content at rest upon a
    central server.  So therefore E2ESM is often narrowly regarded in
    terms of "end-to-end encryption".
-
 
 
 
@@ -418,6 +418,14 @@ Internet-Draft                    e2esm                         May 2021
    reference" - raise interesting application design questions.  However
    such features exist outside of the scope of this definition.
 
+6.3.  Public Conversations and Self-Subscription
+
+   Existing participants MAY publicly share links, data, or other
+   mechanisms to enable non-participant entities to subscribe themselves
+   as conversation participants.  This MAY be considered legitimate
+   "intentional action" to increase the set of participants in the
+   group.
+
 7.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
@@ -433,14 +441,6 @@ Internet-Draft                    e2esm                         May 2021
 
 10.  Informative References
 
-   [I-D.knodel-e2ee-definition]
-              Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
-              Grover, "Definition of End-to-end Encryption", Work in
-              Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
-              22 February 2021, <https://tools.ietf.org/html/draft-
-              knodel-e2ee-definition-00>.
-
-
 
 
 
@@ -449,6 +449,13 @@ Muffett                  Expires 7 November 2021                [Page 8]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   [I-D.knodel-e2ee-definition]
+              Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
+              Grover, "Definition of End-to-end Encryption", Work in
+              Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
+              22 February 2021, <https://tools.ietf.org/html/draft-
+              knodel-e2ee-definition-00>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -477,13 +484,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
-
-
-
 
 
 

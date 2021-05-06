@@ -432,6 +432,24 @@ exist outside
 of the scope
 of this definition.</t>
 </section>
+
+<section anchor="public-conversations-and-self-subscription"><name>Public Conversations and Self-Subscription</name>
+<t>Existing participants <bcp14>MAY</bcp14>
+publicly share
+links,
+data,
+or other mechanisms
+to enable
+non-participant entities
+to subscribe themselves
+as conversation participants.
+This <bcp14>MAY</bcp14> be
+considered
+legitimate
+&quot;intentional action&quot;
+to increase the set of participants
+in the group.</t>
+</section>
 </section>
 
 <section anchor="see-also"><name>See Also</name>
