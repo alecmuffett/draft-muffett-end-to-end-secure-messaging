@@ -65,7 +65,7 @@ Secure Messenger.
 
 # Principles
 
-For a series of one or more "messages" each which are comprised of "plaintext content and sensitive
+For a series of one or more "messages" each which are composed of "plaintext content and sensitive
 metadata" (PCASM) and which constitute a "conversation" amongst a set of "participants", to provide
 E2ESM will require:
 
@@ -209,16 +209,15 @@ This would be a failure of the participant's [@TrustedComputingBase].
 Consider FooBook, a company which provides messaging services for conversations between entities who
 use it.
 
-FooBook **MUST** decide whether to represent itself as a conversation participant or as a
-non-participant. (Transparency of Participation)
+For each conversation FooBook **MUST** decide whether to represent itself as a conversation
+participant or as a non-participant. (Transparency of Participation)
 
-If FooBook decides to represent itself as a conversation non-participant, then it **MUST NOT** have
-any access to PCASM. (Integrity of Participation / Non-Participation)
+If FooBook decides to represent itself as a non-participant, then it **MUST NOT** have any access to
+PCASM. (Integrity of Participation / Non-Participation)
 
-If FooBook decides to represent itself as a conversation participant, then it **MUST NOT** have
-privileged access to PCASM, for instance via direct database access, but it **MAY** have "normal"
-access to PCASM of conversations where it is a participant. (Integrity of Participation, Equality of
-Participation)
+If FooBook decides to represent itself as a participant, then it **MUST NOT** have privileged access
+to PCASM, for instance via direct database access, but it **MAY** have "normal" access to PCASM of
+conversations where it is a participant. (Integrity of Participation, Equality of Participation)
 
 FooBook **MAY** retain means to eject reported abusive participants from a conversation. (Decrease
 in Closure of Participation)
@@ -243,7 +242,7 @@ This document has no IANA actions.
 
 # Security Considerations
 
-This document is entirely comprised of security considerations.
+This document is entirely composed of security considerations.
 
 {backmatter}
 

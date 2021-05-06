@@ -95,7 +95,7 @@ an End-to-End Secure Messenger.</t>
 <section anchor="principles"><name>Principles</name>
 <t>For a series of
 one or more &quot;messages&quot;
-each which are comprised
+each which are composed
 of &quot;plaintext content and sensitive metadata&quot; (PCASM)
 and which constitute
 a &quot;conversation&quot;
@@ -322,18 +322,19 @@ messaging services
 for conversations
 between entities
 who use it.</t>
-<t>FooBook <bcp14>MUST</bcp14> decide
+<t>For each conversation
+FooBook <bcp14>MUST</bcp14> decide
 whether to represent itself
 as a conversation participant
 or as a non-participant. (Transparency of Participation)</t>
 <t>If FooBook decides
 to represent itself
-as a conversation non-participant,
+as a non-participant,
 then it <bcp14>MUST NOT</bcp14>
 have any access to PCASM. (Integrity of Participation / Non-Participation)</t>
 <t>If FooBook decides
 to represent itself
-as a conversation participant,
+as a participant,
 then it <bcp14>MUST NOT</bcp14>
 have privileged access
 to PCASM,
@@ -381,7 +382,7 @@ is being discussed in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
 </section>
 
 <section anchor="security-considerations"><name>Security Considerations</name>
-<t>This document is entirely comprised of security considerations.</t>
+<t>This document is entirely composed of security considerations.</t>
 </section>
 
 </middle>
