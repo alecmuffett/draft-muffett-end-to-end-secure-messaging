@@ -204,7 +204,7 @@ storage leading somehow to data exfiltration, neither of these would be a failur
 
 This would be a failure of the participant's [@TrustedComputingBase].
 
-# Rationale for Principles
+# Rationale
 
 Consider FooBook, a company which provides messaging services for conversations between entities who
 use it.
@@ -213,18 +213,19 @@ FooBook **MUST** decide whether to represent itself as a conversation participan
 non-participant. (Transparency of Participation)
 
 If FooBook decides to represent itself as a conversation non-participant, then it **MUST NOT** have
-access to PCASM. (Integrity of Participation, Non-Participation)
+access to PCASM. (Integrity of Participation / Non-Participation)
 
 If FooBook decides to represent itself as a conversation participant, then it **MUST NOT** have
-privileged access to PCASM, for instance via direct database access. (Equality of Participation)
+privileged access to PCASM, for instance via direct database access. (Integrity of Participation,
+Equality of Participation)
 
 FooBook **MAY** retain means to eject reported abusive participants from a conversation. (Decrease
 in Closure of Participation)
 
-FooBook **MUST NOT** retain means to forcibly insert new participants into a conversation. Also,
-this specification does not recognise the notion of an "atomic" exchange of one particpant with
-another, treating it as an ejection, followed by an "illegitimate" insertion. (Increase in Closure
-of Participation)
+FooBook **MUST NOT** retain means to forcibly insert new participants into a conversation. For
+clarity: this specification does not recognise any notion of "atomic" exchange of one particpant
+with another, treating it as an ejection, followed by an "illegitimate" insertion. (Increase in
+Closure of Participation)
 
 FooBook **MUST** enable the user to observe and manage the complete state of their
 [@TrustedComputingBase] with respect to their FooBook messaging services. (Management and

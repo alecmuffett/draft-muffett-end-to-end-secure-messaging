@@ -1344,7 +1344,7 @@ End-to-End Encrypted Messaging.<a href="#section-abstract-1" class="pilcrow">¶<
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-scope-of-a-participant-in-e" class="xref">Scope of a Participant in E2ESM</a></p>
 </li>
           <li class="compact toc ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-rationale-for-principles" class="xref">Rationale for Principles</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-rationale" class="xref">Rationale</a></p>
 </li>
           <li class="compact toc ulEmpty" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-see-also" class="xref">See Also</a></p>
@@ -1740,10 +1740,10 @@ the participant's
 <span>[<a href="#TrustedComputingBase" class="xref">TrustedComputingBase</a>]</span>.<a href="#section-5-4" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="rationale-for-principles">
+<div id="rationale">
 <section id="section-6">
-      <h2 id="name-rationale-for-principles">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-rationale-for-principles" class="section-name selfRef">Rationale for Principles</a>
+      <h2 id="name-rationale">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-rationale" class="section-name selfRef">Rationale</a>
       </h2>
 <p id="section-6-1">Consider FooBook,
 a company
@@ -1760,7 +1760,7 @@ or as a non-participant. (Transparency of Participation)<a href="#section-6-2" c
 to represent itself
 as a conversation non-participant,
 then it <span class="bcp14">MUST NOT</span>
-have access to PCASM. (Integrity of Participation, Non-Participation)<a href="#section-6-3" class="pilcrow">¶</a></p>
+have access to PCASM. (Integrity of Participation / Non-Participation)<a href="#section-6-3" class="pilcrow">¶</a></p>
 <p id="section-6-4">If FooBook decides
 to represent itself
 as a conversation participant,
@@ -1768,7 +1768,7 @@ then it <span class="bcp14">MUST NOT</span>
 have privileged access
 to PCASM,
 for instance
-via direct database access. (Equality of Participation)<a href="#section-6-4" class="pilcrow">¶</a></p>
+via direct database access. (Integrity of Participation, Equality of Participation)<a href="#section-6-4" class="pilcrow">¶</a></p>
 <p id="section-6-5">FooBook <span class="bcp14">MAY</span>
 retain means
 to eject reported abusive participants
@@ -1778,10 +1778,11 @@ retain means
 to forcibly insert
 new participants
 into a conversation.
-Also, this specification
+For clarity:
+this specification
 does not recognise
-the notion
-of an "atomic" exchange
+any notion
+of "atomic" exchange
 of one particpant with another,
 treating it as an ejection,
 followed by an "illegitimate" insertion.

@@ -314,7 +314,7 @@ the participant's
 <xref target="TrustedComputingBase"></xref>.</t>
 </section>
 
-<section anchor="rationale-for-principles"><name>Rationale for Principles</name>
+<section anchor="rationale"><name>Rationale</name>
 <t>Consider FooBook,
 a company
 which provides
@@ -330,7 +330,7 @@ or as a non-participant. (Transparency of Participation)</t>
 to represent itself
 as a conversation non-participant,
 then it <bcp14>MUST NOT</bcp14>
-have access to PCASM. (Integrity of Participation, Non-Participation)</t>
+have access to PCASM. (Integrity of Participation / Non-Participation)</t>
 <t>If FooBook decides
 to represent itself
 as a conversation participant,
@@ -338,7 +338,7 @@ then it <bcp14>MUST NOT</bcp14>
 have privileged access
 to PCASM,
 for instance
-via direct database access. (Equality of Participation)</t>
+via direct database access. (Integrity of Participation, Equality of Participation)</t>
 <t>FooBook <bcp14>MAY</bcp14>
 retain means
 to eject reported abusive participants
@@ -348,10 +348,11 @@ retain means
 to forcibly insert
 new participants
 into a conversation.
-Also, this specification
+For clarity:
+this specification
 does not recognise
-the notion
-of an &quot;atomic&quot; exchange
+any notion
+of &quot;atomic&quot; exchange
 of one particpant with another,
 treating it as an ejection,
 followed by an &quot;illegitimate&quot; insertion.

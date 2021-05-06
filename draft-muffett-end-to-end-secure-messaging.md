@@ -326,7 +326,7 @@ a failure of
 the participant's
 [@TrustedComputingBase].
 
-# Rationale for Principles
+# Rationale
 
 Consider FooBook,
 a company
@@ -345,7 +345,7 @@ If FooBook decides
 to represent itself
 as a conversation non-participant,
 then it **MUST NOT**
-have access to PCASM. (Integrity of Participation, Non-Participation)
+have access to PCASM. (Integrity of Participation / Non-Participation)
 
 If FooBook decides
 to represent itself
@@ -354,7 +354,7 @@ then it **MUST NOT**
 have privileged access
 to PCASM,
 for instance
-via direct database access. (Equality of Participation)
+via direct database access. (Integrity of Participation, Equality of Participation)
 
 FooBook **MAY**
 retain means
@@ -366,10 +366,11 @@ retain means
 to forcibly insert
 new participants
 into a conversation.
-Also, this specification
+For clarity:
+this specification
 does not recognise
-the notion
-of an "atomic" exchange
+any notion
+of "atomic" exchange
 of one particpant with another,
 treating it as an ejection,
 followed by an "illegitimate" insertion.
