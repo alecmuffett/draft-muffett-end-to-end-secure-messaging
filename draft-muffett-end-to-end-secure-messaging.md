@@ -5,7 +5,7 @@ category = "info"
 docName = "apparently this tool demands a doc name but does not use it"
 ipr ="trust200902"
 area = "Internet"
-workgroup = "ietf-mls"
+workgroup = "individual submission"
 keyword = ["messaging", "end to end", "encryption", "security"]
 
 [seriesInfo]

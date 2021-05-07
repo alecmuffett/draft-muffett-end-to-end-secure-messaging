@@ -2,7 +2,7 @@
 
 
 
-ietf-mls                                                      A. Muffett
+individual submission                                         A. Muffett
 Internet-Draft                                       Security Researcher
 Intended status: Informational                                7 May 2021
 Expires: 8 November 2021
