@@ -434,7 +434,7 @@ If the term
 "back door"
 is considered
 innately pejorative,
-aLternative, uncertain constructions
+alternative, uncertain constructions
 such as
 "illegitimate access feature",
 "potentially intentional data-access weakness",

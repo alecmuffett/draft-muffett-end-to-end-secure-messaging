@@ -234,7 +234,7 @@ An access facilitation mechanism is a "door", and is inherently [@DualUse]. Beca
 E2ESM is to limit access to PCASM exclusively to a defined set of participants, then the intended
 means of access is clearly the "front door"; and any other access mechanism is a "back door".
 
-If the term "back door" is considered innately pejorative, aLternative, uncertain constructions such
+If the term "back door" is considered innately pejorative, alternative, uncertain constructions such
 as "illegitimate access feature", "potentially intentional data-access weakness", "legally-obligated
 exceptional access mechanism", or any other phrase, all **MUST** combine both notions of an access
 mechanism (e.g. "door") and a definite or suspected intention (e.g. "legal obligation").

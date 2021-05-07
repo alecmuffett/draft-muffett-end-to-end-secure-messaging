@@ -373,7 +373,7 @@ Internet-Draft                    e2esm                         May 2021
    is a "back door".
 
    If the term "back door" is considered innately pejorative,
-   aLternative, uncertain constructions such as "illegitimate access
+   alternative, uncertain constructions such as "illegitimate access
    feature", "potentially intentional data-access weakness", "legally-
    obligated exceptional access mechanism", or any other phrase, all
    MUST combine both notions of an access mechanism (e.g. "door") and a
