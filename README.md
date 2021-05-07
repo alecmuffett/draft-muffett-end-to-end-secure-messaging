@@ -1,6 +1,8 @@
 # draft-muffett-end-to-end-secure-messaging
 
-The submitted versions are available at https://datatracker.ietf.org/doc/draft-muffett-end-to-end-secure-messaging/
+The submitted versions are available at: https://datatracker.ietf.org/doc/draft-muffett-end-to-end-secure-messaging/
+
+Maillist discussion is available at: https://mailarchive.ietf.org/arch/browse/mls/
 
 The current unsubmitted draft text can be found here.
 
