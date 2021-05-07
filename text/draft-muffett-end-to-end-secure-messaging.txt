@@ -4,8 +4,8 @@
 
 ietf-mls                                                      A. Muffett
 Internet-Draft                                       Security Researcher
-Intended status: Informational                                6 May 2021
-Expires: 7 November 2021
+Intended status: Informational                                7 May 2021
+Expires: 8 November 2021
 
 
           Functional Definition of End-to-End Secure Messaging
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 November 2021.
+   This Internet-Draft will expire on 8 November 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Muffett                  Expires 7 November 2021                [Page 1]
+Muffett                  Expires 8 November 2021                [Page 1]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -84,13 +84,14 @@ Table of Contents
        4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   6
        4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   6
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
-   5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   7
-   6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
-   7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
-   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
-   9.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
-   10. Informative References  . . . . . . . . . . . . . . . . . . .   8
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   9
+       4.4.1.  Why call this a "backdoor"? . . . . . . . . . . . . .   7
+   5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   8
+   6.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+   7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .   9
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
+   10. Informative References  . . . . . . . . . . . . . . . . . . .   9
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
 
@@ -108,8 +109,7 @@ Table of Contents
 
 
 
-
-Muffett                  Expires 7 November 2021                [Page 2]
+Muffett                  Expires 8 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -165,7 +165,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 7 November 2021                [Page 3]
+Muffett                  Expires 8 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -221,7 +221,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 7 November 2021                [Page 4]
+Muffett                  Expires 8 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -277,7 +277,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 7 November 2021                [Page 5]
+Muffett                  Expires 8 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -333,7 +333,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 7 November 2021                [Page 6]
+Muffett                  Expires 8 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -346,6 +346,57 @@ Internet-Draft                    e2esm                         May 2021
    respect of a given message and that message's set of participants,
    where some PCASM of that message MAY become available to a non-
    participant without the intentional action of a participant.
+
+4.4.1.  Why call this a "backdoor"?
+
+   In software engineering there is a perpetual tension between the
+   concepts of "feature" versus "bug", and occasionally "misfeature"
+   versus "misbug"
+
+   In part this tension arises from the concept of [DualUse], and that
+   it is not feasible to firmly and completely ascribe "intention" to a
+   hardware or software mechanism.
+
+   Thus the information security community have experienced a historical
+   spectrum of mechanisms that have assisted non-participant access to
+   PCASM.  These have variously been described as "export-grade key
+   restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
+   Meltdown), "law enforcement access fields" (Clipper), and "key
+   escrow" (Crypto Wars).
+
+   All of these terms combine an "access" facilitation mechanism with an
+   intention or opportunity - and for all of them an access mechanism is
+   first REQUIRED.
+
+   An access mechanism is a "door", and is inherently [DualUse].
+   Because the goal of E2ESM is to limit access to PCASM to a clear set
+   of participants, then the intended means of access is clearly the
+   "front door"; thus any other access mechanism is a "back door".
+
+   If the term "back door" is considered innately pejorative,
+   alternative constructions such as "illegitimate access feature",
+   "potentially intentional data-access weakness", "legally-obligated
+   exceptional access mechanism", or any other construction, all must
+   combine the notions of an access mechanism (e.g. "door") with a
+   definite or suspected intention (e.g. "legal obligation").
+
+   So the phrase "back door" is brief, clear, and widely understood to
+   mean "a secondary means of access".  In the definition we already
+   allow for the term to be prefixed with "intentional" or
+   "unintentional".
+
+
+
+
+
+Muffett                  Expires 8 November 2021                [Page 7]
+
+Internet-Draft                    e2esm                         May 2021
+
+
+   Thus it seems appropriate to use this term in this context, not least
+   because it is also not far removed from the similar and established
+   term "side channel".
 
 5.  Scope of a Participant in E2ESM
 
@@ -386,19 +437,18 @@ Internet-Draft                    e2esm                         May 2021
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
 
-
-
-
-Muffett                  Expires 7 November 2021                [Page 7]
-
-Internet-Draft                    e2esm                         May 2021
-
-
    FooBook MUST NOT retain means to forcibly insert new participants
    into a conversation.  For clarity: this specification does not
    recognise any notion of "atomic" exchange of one particpant with
    another, treating it as an ejection, followed by an "illegitimate"
    insertion.  (Increase in Closure of Participation)
+
+
+
+Muffett                  Expires 8 November 2021                [Page 8]
+
+Internet-Draft                    e2esm                         May 2021
+
 
    FooBook MUST enable the user to observe and manage the complete state
    of their [TrustedComputingBase] with respect to their FooBook
@@ -422,6 +472,9 @@ Internet-Draft                    e2esm                         May 2021
 
 10.  Informative References
 
+   [DualUse]  Wikipedia, "Dual-use technology", 2021,
+              <https://en.wikipedia.org/wiki/Dual-use_technology>.
+
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
               Grover, "Definition of End-to-end Encryption", Work in
@@ -442,17 +495,16 @@ Internet-Draft                    e2esm                         May 2021
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-
-
-
-Muffett                  Expires 7 November 2021                [Page 8]
-
-Internet-Draft                    e2esm                         May 2021
-
-
    [RicochetRefresh]
               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
               <https://www.ricochetrefresh.net>.
+
+
+
+Muffett                  Expires 8 November 2021                [Page 9]
+
+Internet-Draft                    e2esm                         May 2021
+
 
    [TrustedComputingBase]
               Wikipedia, "Trusted Computing Base", 2021,
@@ -501,4 +553,8 @@ Author's Address
 
 
 
-Muffett                  Expires 7 November 2021                [Page 9]
+
+
+
+
+Muffett                  Expires 8 November 2021               [Page 10]

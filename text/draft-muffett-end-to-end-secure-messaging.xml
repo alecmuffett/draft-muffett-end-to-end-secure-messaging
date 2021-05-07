@@ -363,6 +363,87 @@ of that message
 <bcp14>MAY</bcp14> become available
 to a non-participant
 without the intentional action of a participant.</t>
+
+<section anchor="why-call-this-a-backdoor"><name>Why call this a &quot;backdoor&quot;?</name>
+<t>In software engineering
+there is a perpetual tension
+between the concepts of
+&quot;feature&quot; versus &quot;bug&quot;,
+and occasionally
+&quot;misfeature&quot; versus &quot;misbug&quot;</t>
+<t>In part
+this tension
+arises from
+the concept of <xref target="DualUse"></xref>,
+and that it is
+not feasible
+to firmly and completely ascribe
+&quot;intention&quot;
+to a hardware or software mechanism.</t>
+<t>Thus the information security community
+have experienced
+a historical spectrum
+of mechanisms
+that  have assisted
+non-participant access to PCASM.
+These have
+variously been described as
+&quot;export-grade key restrictions&quot; (TLS, then Logjam),
+&quot;side channel attacks&quot; (Spectre and Meltdown),
+&quot;law enforcement access fields&quot; (Clipper), and
+&quot;key escrow&quot; (Crypto Wars).</t>
+<t>All of these terms
+combine an &quot;access&quot; facilitation mechanism
+with an intention or opportunity -
+and for all of them
+an access mechanism
+is first <bcp14>REQUIRED</bcp14>.</t>
+<t>An access mechanism
+is a &quot;door&quot;,
+and is inherently <xref target="DualUse"></xref>.
+Because the goal
+of E2ESM
+is to limit
+access to PCASM
+to a clear set of participants,
+then the intended
+means of access
+is clearly the &quot;front door&quot;;
+thus any other access mechanism
+is a &quot;back door&quot;.</t>
+<t>If the term
+&quot;back door&quot;
+is considered
+innately pejorative,
+alternative constructions
+such as
+&quot;illegitimate access feature&quot;,
+&quot;potentially intentional data-access weakness&quot;,
+&quot;legally-obligated exceptional access mechanism&quot;,
+or any other construction,
+all must combine the notions
+of an access mechanism (e.g. &quot;door&quot;)
+with a definite or suspected intention (e.g. &quot;legal obligation&quot;).</t>
+<t>So the phrase
+&quot;back door&quot;
+is brief,
+clear,
+and widely understood
+to mean &quot;a secondary means of access&quot;.
+In the definition
+we already allow
+for the term to be prefixed
+with &quot;intentional&quot; or &quot;unintentional&quot;.</t>
+<t>Thus it seems
+appropriate
+to use this term
+in this context,
+not least because
+it is also not far removed
+from the similar
+and established term
+&quot;side channel&quot;.</t>
+</section>
 </section>
 </section>
 
@@ -484,6 +565,13 @@ in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
 
 <back>
 <references><name>Informative References</name>
+<reference anchor="DualUse" target="https://en.wikipedia.org/wiki/Dual-use_technology">
+  <front>
+    <title>Dual-use technology</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml-ids/reference.I-D.knodel-e2ee-definition.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7686.xml"/>
