@@ -380,67 +380,71 @@ without the intentional action of a participant.
 In software engineering
 there is a perpetual tension
 between the concepts of
-"feature" versus "bug",
+"feature" versus "bug" -
 and occasionally
-"misfeature" versus "misbug"
+"misfeature" versus "misbug".
 
-In part
-this tension
-arises from
-the concept of [@DualUse],
-and that it is
+These tensions
+arise from
+the problem of [@DualUse] -
+that it is
 not feasible
-to firmly and completely ascribe
-"intention"
-to a hardware or software mechanism.
+to firmly
+and completely
+ascribe "intention"
+to any hardware or software mechanism.
 
-Thus the information security community
+The information security community
 have experienced
 a historical spectrum
 of mechanisms
-that  have assisted
+which have assisted
 non-participant access to PCASM.
 These have
-variously been described as
+variously been named as
 "export-grade key restrictions" (TLS, then Logjam),
 "side channel attacks" (Spectre and Meltdown),
 "law enforcement access fields" (Clipper), and
 "key escrow" (Crypto Wars).
 
-All of these terms
-combine an "access" facilitation mechanism
-with an intention or opportunity -
+All of
+these terms
+combine
+an "access facilitation mechanism"
+with an "intention or opportunity" -
 and for all of them
-an access mechanism
+an access facilitation mechanism
 is first **REQUIRED**.
 
-An access mechanism
+An access facilitation mechanism
 is a "door",
 and is inherently [@DualUse].
 Because the goal
 of E2ESM
 is to limit
 access to PCASM
-to a clear set of participants,
+exclusively to
+a defined set of participants,
 then the intended
 means of access
 is clearly the "front door";
-thus any other access mechanism
+and any other access mechanism
 is a "back door".
 
 If the term
 "back door"
 is considered
 innately pejorative,
-alternative constructions
+aLternative, uncertain constructions
 such as
 "illegitimate access feature",
 "potentially intentional data-access weakness",
 "legally-obligated exceptional access mechanism",
-or any other construction,
-all must combine the notions
+or any other phrase,
+all **MUST** combine
+both notions
 of an access mechanism (e.g. "door")
-with a definite or suspected intention (e.g. "legal obligation").
+and a definite or suspected intention (e.g. "legal obligation").
 
 So the phrase
 "back door"
@@ -448,7 +452,7 @@ is brief,
 clear,
 and widely understood
 to mean "a secondary means of access".
-In the definition
+In the above definition
 we already allow
 for the term to be prefixed
 with "intentional" or "unintentional".

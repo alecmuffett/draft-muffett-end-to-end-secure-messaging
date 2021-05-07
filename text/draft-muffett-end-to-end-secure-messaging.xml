@@ -368,69 +368,73 @@ without the intentional action of a participant.</t>
 <t>In software engineering
 there is a perpetual tension
 between the concepts of
-&quot;feature&quot; versus &quot;bug&quot;,
+&quot;feature&quot; versus &quot;bug&quot; -
 and occasionally
-&quot;misfeature&quot; versus &quot;misbug&quot;</t>
-<t>In part
-this tension
-arises from
-the concept of <xref target="DualUse"></xref>,
-and that it is
+&quot;misfeature&quot; versus &quot;misbug&quot;.</t>
+<t>These tensions
+arise from
+the problem of <xref target="DualUse"></xref> -
+that it is
 not feasible
-to firmly and completely ascribe
-&quot;intention&quot;
-to a hardware or software mechanism.</t>
-<t>Thus the information security community
+to firmly
+and completely
+ascribe &quot;intention&quot;
+to any hardware or software mechanism.</t>
+<t>The information security community
 have experienced
 a historical spectrum
 of mechanisms
-that  have assisted
+which have assisted
 non-participant access to PCASM.
 These have
-variously been described as
+variously been named as
 &quot;export-grade key restrictions&quot; (TLS, then Logjam),
 &quot;side channel attacks&quot; (Spectre and Meltdown),
 &quot;law enforcement access fields&quot; (Clipper), and
 &quot;key escrow&quot; (Crypto Wars).</t>
-<t>All of these terms
-combine an &quot;access&quot; facilitation mechanism
-with an intention or opportunity -
+<t>All of
+these terms
+combine
+an &quot;access facilitation mechanism&quot;
+with an &quot;intention or opportunity&quot; -
 and for all of them
-an access mechanism
+an access facilitation mechanism
 is first <bcp14>REQUIRED</bcp14>.</t>
-<t>An access mechanism
+<t>An access facilitation mechanism
 is a &quot;door&quot;,
 and is inherently <xref target="DualUse"></xref>.
 Because the goal
 of E2ESM
 is to limit
 access to PCASM
-to a clear set of participants,
+exclusively to
+a defined set of participants,
 then the intended
 means of access
 is clearly the &quot;front door&quot;;
-thus any other access mechanism
+and any other access mechanism
 is a &quot;back door&quot;.</t>
 <t>If the term
 &quot;back door&quot;
 is considered
 innately pejorative,
-alternative constructions
+aLternative, uncertain constructions
 such as
 &quot;illegitimate access feature&quot;,
 &quot;potentially intentional data-access weakness&quot;,
 &quot;legally-obligated exceptional access mechanism&quot;,
-or any other construction,
-all must combine the notions
+or any other phrase,
+all <bcp14>MUST</bcp14> combine
+both notions
 of an access mechanism (e.g. &quot;door&quot;)
-with a definite or suspected intention (e.g. &quot;legal obligation&quot;).</t>
+and a definite or suspected intention (e.g. &quot;legal obligation&quot;).</t>
 <t>So the phrase
 &quot;back door&quot;
 is brief,
 clear,
 and widely understood
 to mean &quot;a secondary means of access&quot;.
-In the definition
+In the above definition
 we already allow
 for the term to be prefixed
 with &quot;intentional&quot; or &quot;unintentional&quot;.</t>

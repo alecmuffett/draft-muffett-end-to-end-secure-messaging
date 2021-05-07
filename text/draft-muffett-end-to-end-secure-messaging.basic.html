@@ -368,67 +368,71 @@ without the intentional action of a participant.</p>
 <p>In software engineering
 there is a perpetual tension
 between the concepts of
-&ldquo;feature&rdquo; versus &ldquo;bug&rdquo;,
+&ldquo;feature&rdquo; versus &ldquo;bug&rdquo; -
 and occasionally
-&ldquo;misfeature&rdquo; versus &ldquo;misbug&rdquo;</p>
+&ldquo;misfeature&rdquo; versus &ldquo;misbug&rdquo;.</p>
 
-<p>In part
-this tension
-arises from
-the concept of <cite class="informative"><a href="#DualUse"><sup>[DualUse]</sup></a></cite>,
-and that it is
+<p>These tensions
+arise from
+the problem of <cite class="informative"><a href="#DualUse"><sup>[DualUse]</sup></a></cite> -
+that it is
 not feasible
-to firmly and completely ascribe
-&ldquo;intention&rdquo;
-to a hardware or software mechanism.</p>
+to firmly
+and completely
+ascribe &ldquo;intention&rdquo;
+to any hardware or software mechanism.</p>
 
-<p>Thus the information security community
+<p>The information security community
 have experienced
 a historical spectrum
 of mechanisms
-that  have assisted
+which have assisted
 non-participant access to PCASM.
 These have
-variously been described as
+variously been named as
 &ldquo;export-grade key restrictions&rdquo; (TLS, then Logjam),
 &ldquo;side channel attacks&rdquo; (Spectre and Meltdown),
 &ldquo;law enforcement access fields&rdquo; (Clipper), and
 &ldquo;key escrow&rdquo; (Crypto Wars).</p>
 
-<p>All of these terms
-combine an &ldquo;access&rdquo; facilitation mechanism
-with an intention or opportunity -
+<p>All of
+these terms
+combine
+an &ldquo;access facilitation mechanism&rdquo;
+with an &ldquo;intention or opportunity&rdquo; -
 and for all of them
-an access mechanism
+an access facilitation mechanism
 is first <strong>REQUIRED</strong>.</p>
 
-<p>An access mechanism
+<p>An access facilitation mechanism
 is a &ldquo;door&rdquo;,
 and is inherently <cite class="informative"><a href="#DualUse"><sup>[DualUse]</sup></a></cite>.
 Because the goal
 of E2ESM
 is to limit
 access to PCASM
-to a clear set of participants,
+exclusively to
+a defined set of participants,
 then the intended
 means of access
 is clearly the &ldquo;front door&rdquo;;
-thus any other access mechanism
+and any other access mechanism
 is a &ldquo;back door&rdquo;.</p>
 
 <p>If the term
 &ldquo;back door&rdquo;
 is considered
 innately pejorative,
-alternative constructions
+aLternative, uncertain constructions
 such as
 &ldquo;illegitimate access feature&rdquo;,
 &ldquo;potentially intentional data-access weakness&rdquo;,
 &ldquo;legally-obligated exceptional access mechanism&rdquo;,
-or any other construction,
-all must combine the notions
+or any other phrase,
+all <strong>MUST</strong> combine
+both notions
 of an access mechanism (e.g. &ldquo;door&rdquo;)
-with a definite or suspected intention (e.g. &ldquo;legal obligation&rdquo;).</p>
+and a definite or suspected intention (e.g. &ldquo;legal obligation&rdquo;).</p>
 
 <p>So the phrase
 &ldquo;back door&rdquo;
@@ -436,7 +440,7 @@ is brief,
 clear,
 and widely understood
 to mean &ldquo;a secondary means of access&rdquo;.
-In the definition
+In the above definition
 we already allow
 for the term to be prefixed
 with &ldquo;intentional&rdquo; or &ldquo;unintentional&rdquo;.</p>

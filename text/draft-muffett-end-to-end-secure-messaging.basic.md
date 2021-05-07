@@ -217,31 +217,31 @@ non-participant without the intentional action of a participant.
 
 ### Why call this a "backdoor"?
 
-In software engineering there is a perpetual tension between the concepts of "feature" versus "bug",
-and occasionally "misfeature" versus "misbug"
+In software engineering there is a perpetual tension between the concepts of "feature" versus "bug"
+- and occasionally "misfeature" versus "misbug".
 
-In part this tension arises from the concept of [@DualUse], and that it is not feasible to firmly
-and completely ascribe "intention" to a hardware or software mechanism.
+These tensions arise from the problem of [@DualUse] - that it is not feasible to firmly and
+completely ascribe "intention" to any hardware or software mechanism.
 
-Thus the information security community have experienced a historical spectrum of mechanisms that
-have assisted non-participant access to PCASM. These have variously been described as "export-grade
-key restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and Meltdown), "law
-enforcement access fields" (Clipper), and "key escrow" (Crypto Wars).
+The information security community have experienced a historical spectrum of mechanisms which have
+assisted non-participant access to PCASM. These have variously been named as "export-grade key
+restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and Meltdown), "law enforcement
+access fields" (Clipper), and "key escrow" (Crypto Wars).
 
-All of these terms combine an "access" facilitation mechanism with an intention or opportunity - and
-for all of them an access mechanism is first **REQUIRED**.
+All of these terms combine an "access facilitation mechanism" with an "intention or opportunity" -
+and for all of them an access facilitation mechanism is first **REQUIRED**.
 
-An access mechanism is a "door", and is inherently [@DualUse]. Because the goal of E2ESM is to limit
-access to PCASM to a clear set of participants, then the intended means of access is clearly the
-"front door"; thus any other access mechanism is a "back door".
+An access facilitation mechanism is a "door", and is inherently [@DualUse]. Because the goal of
+E2ESM is to limit access to PCASM exclusively to a defined set of participants, then the intended
+means of access is clearly the "front door"; and any other access mechanism is a "back door".
 
-If the term "back door" is considered innately pejorative, alternative constructions such as
-"illegitimate access feature", "potentially intentional data-access weakness", "legally-obligated
-exceptional access mechanism", or any other construction, all must combine the notions of an access
-mechanism (e.g. "door") with a definite or suspected intention (e.g. "legal obligation").
+If the term "back door" is considered innately pejorative, aLternative, uncertain constructions such
+as "illegitimate access feature", "potentially intentional data-access weakness", "legally-obligated
+exceptional access mechanism", or any other phrase, all **MUST** combine both notions of an access
+mechanism (e.g. "door") and a definite or suspected intention (e.g. "legal obligation").
 
 So the phrase "back door" is brief, clear, and widely understood to mean "a secondary means of
-access". In the definition we already allow for the term to be prefixed with "intentional" or
+access". In the above definition we already allow for the term to be prefixed with "intentional" or
 "unintentional".
 
 Thus it seems appropriate to use this term in this context, not least because it is also not far
