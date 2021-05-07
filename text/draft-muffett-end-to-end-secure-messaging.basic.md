@@ -218,10 +218,9 @@ non-participant without the intentional action of a participant.
 ### Why call this a "backdoor"?
 
 In software engineering there is a perpetual tension between the concepts of "feature" versus "bug"
-- and occasionally "misfeature" versus "misbug".
-
-These tensions arise from the problem of [@DualUse] - that it is not feasible to firmly and
-completely ascribe "intention" to any hardware or software mechanism.
+- and occasionally "misfeature" versus "misbug". These tensions arise from the problem of [@DualUse]
+- that it is not feasible to firmly and completely ascribe "intention" to any hardware or software
+mechanism.
 
 The information security community have experienced a historical spectrum of mechanisms which have
 assisted non-participant access to PCASM. These have variously been named as "export-grade key

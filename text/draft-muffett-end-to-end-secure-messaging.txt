@@ -351,11 +351,9 @@ Internet-Draft                    e2esm                         May 2021
 
    In software engineering there is a perpetual tension between the
    concepts of "feature" versus "bug" - and occasionally "misfeature"
-   versus "misbug".
-
-   These tensions arise from the problem of [DualUse] - that it is not
-   feasible to firmly and completely ascribe "intention" to any hardware
-   or software mechanism.
+   versus "misbug".  These tensions arise from the problem of [DualUse]
+   - that it is not feasible to firmly and completely ascribe
+   "intention" to any hardware or software mechanism.
 
    The information security community have experienced a historical
    spectrum of mechanisms which have assisted non-participant access to
@@ -385,6 +383,8 @@ Internet-Draft                    e2esm                         May 2021
    mean "a secondary means of access".  In the above definition we
    already allow for the term to be prefixed with "intentional" or
    "unintentional".
+
+
 
 
 

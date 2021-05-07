@@ -370,8 +370,8 @@ there is a perpetual tension
 between the concepts of
 &quot;feature&quot; versus &quot;bug&quot; -
 and occasionally
-&quot;misfeature&quot; versus &quot;misbug&quot;.</t>
-<t>These tensions
+&quot;misfeature&quot; versus &quot;misbug&quot;.
+These tensions
 arise from
 the problem of <xref target="DualUse"></xref> -
 that it is
