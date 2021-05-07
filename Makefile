@@ -1,4 +1,4 @@
-NAME=draft-muffett-end-to-end-secure-messaging
+NAME=draft-muffett-end-to-end-secure-messaging-01
 DIR=text
 
 XML2RFC=xml2rfc -v
@@ -24,5 +24,5 @@ $(DIR)/$(NAME).xml: $(NAME).md
 	mmark $(NAME).md >$(DIR)/$(NAME).xml
 
 clean:
-	rm -f *~
-	rm $(DIR)/*
+	-rm -f *~
+	-rm $(DIR)/$(NAME).*
