@@ -101,7 +101,7 @@ and data-sharing
 that the software offers.
 The software
 <bcp14>MAY</bcp14> comprise
-an entire application
+either a complete application,
 or a clearly defined subset
 of functionality
 within a

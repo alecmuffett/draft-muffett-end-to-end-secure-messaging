@@ -111,7 +111,7 @@ and data-sharing
 that the software offers.
 The software
 **MAY** comprise
-an entire application
+either a complete application,
 or a clearly defined subset
 of functionality
 within a
