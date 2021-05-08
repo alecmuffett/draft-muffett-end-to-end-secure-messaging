@@ -5,7 +5,7 @@ XML2RFC=xml2rfc -v
 #--v3
 
 all: $(DIR)/$(NAME).txt $(DIR)/$(NAME).html
-	-diff -c $(DIR)/$(PREV).txt $(DIR)/$(NAME).txt > $(DIR)/$(NAME).diff
+	-diff -bc $(DIR)/$(PREV).txt $(DIR)/$(NAME).txt > $(DIR)/$(NAME).diff
 
 push: all
 	git add . && git commit -m "make on `datestamp`" && git push

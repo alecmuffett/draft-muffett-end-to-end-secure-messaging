@@ -222,7 +222,15 @@ in the group.</t>
 </section>
 
 <section anchor="management-and-visibility-of-participant-clients-and-devices"><name>Management and Visibility of Participant Clients and Devices</name>
-<t>E2ESM software
+<t>Where there
+exists
+centralised
+E2ESM software
+that hosts
+participants:</t>
+
+<ol>
+<li><t>The E2ESM software
 <bcp14>MUST</bcp14> provide
 each participant entity
 with means
@@ -230,7 +238,8 @@ to review or revoke access for
 clients or devices
 that can access
 future PCASM.</t>
-<t>E2ESM software
+</li>
+<li><t>The E2ESM software
 <bcp14>MUST</bcp14> provide
 each participant entity
 with notifications
@@ -240,6 +249,8 @@ to the set of
 clients or devices
 that can or could access
 message PCASM.</t>
+</li>
+</ol>
 </section>
 </section>
 
@@ -306,12 +317,12 @@ Size PCASM is currently undefined.</t>
 precise Size PCASM <bcp14>SHOULD NOT</bcp14> be observable.</t>
 </section>
 
-<section anchor="descriptive-pcasm"><name>Descriptive PCASM</name>
-<t>Descriptive PCASM
+<section anchor="analytic-pcasm"><name>Analytic PCASM</name>
+<t>Analytic PCASM
 is data
 that describes
 the &quot;content&quot;.</t>
-<t>Descriptive PCASM would include, non-exclusively:</t>
+<t>Analytic PCASM would include, non-exclusively:</t>
 
 <ol>
 <li>The content contains the substring &quot;ello&quot;</li>

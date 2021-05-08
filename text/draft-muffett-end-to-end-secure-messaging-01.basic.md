@@ -118,11 +118,13 @@ considered legitimate "intentional action" to increase the set of participants i
 
 ## Management and Visibility of Participant Clients and Devices
 
-E2ESM software **MUST** provide each participant entity with means to review or revoke access for
-clients or devices that can access future PCASM.
+Where there exists centralised E2ESM software that hosts participants:
 
-E2ESM software **MUST** provide each participant entity with notifications and/or complete logs of
-changes to the set of clients or devices that can or could access message PCASM.
+1.  The E2ESM software **MUST** provide each participant entity with means to review or revoke
+    access for clients or devices that can access future PCASM.
+
+2.  The E2ESM software **MUST** provide each participant entity with notifications and/or complete
+    logs of changes to the set of clients or devices that can or could access message PCASM.
 
 # Definitions
 
@@ -167,11 +169,11 @@ For stream encryption of content, Size PCASM is currently undefined.
 
 For transport encryption of content, precise Size PCASM **SHOULD NOT** be observable.
 
-### Descriptive PCASM
+### Analytic PCASM
 
-Descriptive PCASM is data that describes the "content".
+Analytic PCASM is data that describes the "content".
 
-Descriptive PCASM would include, non-exclusively:
+Analytic PCASM would include, non-exclusively:
 
 1.  The content contains the substring "ello"
 

@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-08 09:59:44.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-08 11:25:07.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -62,6 +62,23 @@
   Internet-Draft                    e2esm                         May 2021
   
 ***************
+*** 80,86 ****
+       4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   5
+         4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
+         4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
+!        4.3.3.  Descriptive PCASM . . . . . . . . . . . . . . . . . .   6
+         4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   6
+         4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   6
+       4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
+--- 80,86 ----
+       4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   5
+         4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
+         4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
+!        4.3.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   6
+         4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   6
+         4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   6
+       4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
+***************
 *** 109,115 ****
   
   
@@ -117,7 +134,17 @@
   Internet-Draft                    e2esm                         May 2021
   
 ***************
-*** 221,227 ****
+*** 211,231 ****
+  
+  3.5.  Management and Visibility of Participant Clients and Devices
+  
+!    E2ESM software MUST provide each participant entity with means to
+!    review or revoke access for clients or devices that can access future
+!    PCASM.
+  
+!    E2ESM software MUST provide each participant entity with
+!    notifications and/or complete logs of changes to the set of clients
+!    or devices that can or could access message PCASM.
   
   
   
@@ -125,16 +152,45 @@
   
   Internet-Draft                    e2esm                         May 2021
   
---- 221,227 ----
+  
+  4.  Definitions
+  
+     These principles MUST be measured with respect to the following
+--- 211,235 ----
+  
+  3.5.  Management and Visibility of Participant Clients and Devices
+  
+!    Where there exists centralised E2ESM software that hosts
+!    participants:
+  
+!    1.  The E2ESM software MUST provide each participant entity with
+!        means to review or revoke access for clients or devices that can
+!        access future PCASM.
   
   
   
+! 
 ! Muffett                  Expires 9 November 2021                [Page 4]
   
   Internet-Draft                    e2esm                         May 2021
   
+  
++    2.  The E2ESM software MUST provide each participant entity with
++        notifications and/or complete logs of changes to the set of
++        clients or devices that can or could access message PCASM.
++ 
+  4.  Definitions
+  
+     These principles MUST be measured with respect to the following
 ***************
-*** 277,283 ****
+*** 270,292 ****
+     For block encryption of content, Size PCASM is the unpadded size of
+     the content.
+  
+-    For stream encryption of content, Size PCASM is currently undefined.
+- 
+-    For transport encryption of content, precise Size PCASM SHOULD NOT be
+-    observable.
   
   
   
@@ -142,7 +198,19 @@
   
   Internet-Draft                    e2esm                         May 2021
   
---- 277,283 ----
+  
+! 4.3.3.  Descriptive PCASM
+  
+!    Descriptive PCASM is data that describes the "content".
+  
+!    Descriptive PCASM would include, non-exclusively:
+  
+     1.  The content contains the substring "ello"
+  
+--- 274,297 ----
+     For block encryption of content, Size PCASM is the unpadded size of
+     the content.
+  
   
   
   
@@ -150,25 +218,68 @@
   
   Internet-Draft                    e2esm                         May 2021
   
-***************
-*** 333,339 ****
   
+!    For stream encryption of content, Size PCASM is currently undefined.
+! 
+!    For transport encryption of content, precise Size PCASM SHOULD NOT be
+!    observable.
   
+! 4.3.3.  Analytic PCASM
   
-! Muffett                  Expires 8 November 2021                [Page 6]
-  
-  Internet-Draft                    e2esm                         May 2021
+!    Analytic PCASM is data that describes the "content".
+! 
+!    Analytic PCASM would include, non-exclusively:
   
---- 333,339 ----
-  
-  
-  
-! Muffett                  Expires 9 November 2021                [Page 6]
-  
-  Internet-Draft                    e2esm                         May 2021
+     1.  The content contains the substring "ello"
   
 ***************
-*** 389,395 ****
+*** 326,342 ****
+  
+     4.  The content was sent at the following date and time: ...
+  
+-    5.  The content was sent from the following IP address: ...
+- 
+-    6.  The content was sent from the following geolocation: ...
+  
+  
+  
+  
+- Muffett                  Expires 8 November 2021                [Page 6]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     7.  The content was composed using the following platform: ...
+  
+--- 331,346 ----
+  
+     4.  The content was sent at the following date and time: ...
+  
+  
+  
++ Muffett                  Expires 9 November 2021                [Page 6]
+  
++ Internet-Draft                    e2esm                         May 2021
+  
+  
+!    5.  The content was sent from the following IP address: ...
+  
++    6.  The content was sent from the following geolocation: ...
+  
+     7.  The content was composed using the following platform: ...
+  
+***************
+*** 379,399 ****
+     MUST combine both notions of an access mechanism (e.g. "door") and a
+     definite or suspected intention (e.g. "legal obligation").
+  
+-    So the phrase "back door" is brief, clear, and widely understood to
+-    mean "a secondary means of access".  In the above definition we
+-    already allow for the term to be prefixed with "intentional" or
+-    "unintentional".
+  
+  
+  
   
   
   
@@ -176,7 +287,17 @@
   
   Internet-Draft                    e2esm                         May 2021
   
---- 389,395 ----
+  
+     Thus it seems appropriate to use this term in this context, not least
+     because it is also not far removed from the similar and established
+     term "side channel".
+--- 383,404 ----
+     MUST combine both notions of an access mechanism (e.g. "door") and a
+     definite or suspected intention (e.g. "legal obligation").
+  
+  
+  
+  
   
   
   
@@ -184,8 +305,25 @@
   
   Internet-Draft                    e2esm                         May 2021
   
+  
++    So the phrase "back door" is brief, clear, and widely understood to
++    mean "a secondary means of access".  In the above definition we
++    already allow for the term to be prefixed with "intentional" or
++    "unintentional".
++ 
+     Thus it seems appropriate to use this term in this context, not least
+     because it is also not far removed from the similar and established
+     term "side channel".
 ***************
-*** 445,451 ****
+*** 437,455 ****
+     FooBook MAY retain means to eject reported abusive participants from
+     a conversation.  (Decrease in Closure of Participation)
+  
+-    FooBook MUST NOT retain means to forcibly insert new participants
+-    into a conversation.  For clarity: this specification does not
+-    recognise any notion of "atomic" exchange of one particpant with
+-    another, treating it as an ejection, followed by an "illegitimate"
+-    insertion.  (Increase in Closure of Participation)
   
   
   
@@ -193,7 +331,14 @@
   
   Internet-Draft                    e2esm                         May 2021
   
---- 445,451 ----
+  
+     FooBook MUST enable the user to observe and manage the complete state
+     of their [TrustedComputingBase] with respect to their FooBook
+     messaging services.  (Management and Visibility)
+--- 442,461 ----
+     FooBook MAY retain means to eject reported abusive participants from
+     a conversation.  (Decrease in Closure of Participation)
+  
   
   
   
@@ -201,8 +346,28 @@
   
   Internet-Draft                    e2esm                         May 2021
   
+  
++    FooBook MUST NOT retain means to forcibly insert new participants
++    into a conversation.  For clarity: this specification does not
++    recognise any notion of "atomic" exchange of one particpant with
++    another, treating it as an ejection, followed by an "illegitimate"
++    insertion.  (Increase in Closure of Participation)
++ 
+     FooBook MUST enable the user to observe and manage the complete state
+     of their [TrustedComputingBase] with respect to their FooBook
+     messaging services.  (Management and Visibility)
 ***************
-*** 501,507 ****
+*** 491,511 ****
+                Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
+                2015, <https://www.rfc-editor.org/info/rfc7686>.
+  
+-    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+-               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+-               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+  
+-    [RicochetRefresh]
+-               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
+-               <https://www.ricochetrefresh.net>.
   
   
   
@@ -210,7 +375,15 @@
   
   Internet-Draft                    e2esm                         May 2021
   
---- 501,507 ----
+  
+     [TrustedComputingBase]
+                Wikipedia, "Trusted Computing Base", 2021,
+                <https://en.wikipedia.org/wiki/Trusted_computing_base>.
+--- 497,519 ----
+                Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
+                2015, <https://www.rfc-editor.org/info/rfc7686>.
+  
+  
   
   
   
@@ -218,11 +391,31 @@
   
   Internet-Draft                    e2esm                         May 2021
   
+  
++    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
++               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
++               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
++ 
++    [RicochetRefresh]
++               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
++               <https://www.ricochetrefresh.net>.
++ 
+     [TrustedComputingBase]
+                Wikipedia, "Trusted Computing Base", 2021,
+                <https://en.wikipedia.org/wiki/Trusted_computing_base>.
 ***************
-*** 557,560 ****
+*** 549,560 ****
   
   
   
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
 ! Muffett                  Expires 8 November 2021               [Page 10]
 --- 557,560 ----
   

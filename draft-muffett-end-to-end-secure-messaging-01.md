@@ -234,7 +234,14 @@ in the group.
 
 ## Management and Visibility of Participant Clients and Devices
 
+Where there
+exists
+centralised
 E2ESM software
+that hosts
+participants:
+
+1. The E2ESM software
 **MUST** provide
 each participant entity
 with means
@@ -243,7 +250,7 @@ clients or devices
 that can access
 future PCASM.
 
-E2ESM software
+2. The E2ESM software
 **MUST** provide
 each participant entity
 with notifications
@@ -320,14 +327,14 @@ Size PCASM is currently undefined.
 For transport encryption of content,
 precise Size PCASM **SHOULD NOT** be observable.
 
-### Descriptive PCASM
+### Analytic PCASM
 
-Descriptive PCASM
+Analytic PCASM
 is data
 that describes
 the "content".
 
-Descriptive PCASM would include, non-exclusively:
+Analytic PCASM would include, non-exclusively:
 
 1. The content contains the substring "ello"
 1. The content does not contain the word "Goodbye"
