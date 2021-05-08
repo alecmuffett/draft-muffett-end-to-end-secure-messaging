@@ -1,11 +1,12 @@
 NAME=draft-muffett-end-to-end-secure-messaging-01
 PREV=draft-muffett-end-to-end-secure-messaging-00
+DIFF=vs-00
 DIR=text
 XML2RFC=xml2rfc -v
 #--v3
 
 all: $(DIR)/$(NAME).txt $(DIR)/$(NAME).html
-	-diff -bc $(DIR)/$(PREV).txt $(DIR)/$(NAME).txt > $(DIR)/$(NAME).diff
+	-diff -bc $(DIR)/$(PREV).txt $(DIR)/$(NAME).txt > $(DIR)/$(NAME)-$(DIFF).diff
 
 push: all
 	git add . && git commit -m "make on `datestamp`" && git push
