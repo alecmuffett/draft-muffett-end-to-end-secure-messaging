@@ -98,7 +98,14 @@ End-to-End Secure Messenger
 <bcp14>MUST</bcp14> satisfy these principles in respect of the provided definitions
 for all forms of communication
 and data-sharing
-that the software offers.</t>
+that the software offers.
+The software
+<bcp14>MAY</bcp14> comprise
+an entire application
+or a clearly defined subset
+of functionality
+within a
+larger application.</t>
 <t>Any software
 that does not
 satisfy these requirements

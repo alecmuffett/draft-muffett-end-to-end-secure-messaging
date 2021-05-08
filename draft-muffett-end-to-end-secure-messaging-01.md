@@ -109,6 +109,13 @@ End-to-End Secure Messenger
 for all forms of communication
 and data-sharing
 that the software offers.
+The software
+**MAY** comprise
+an entire application
+or a clearly defined subset
+of functionality
+within a
+larger application.
 
 Any software
 that does not
