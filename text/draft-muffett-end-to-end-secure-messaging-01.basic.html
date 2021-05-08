@@ -530,15 +530,23 @@ have any access to PCASM. (Integrity of Participation / Non-Participation)</p>
 to represent itself
 as a participant,
 then it <strong>MUST NOT</strong>
-have privileged access
+have exceptional access
 to PCASM,
+despite being
+the provider
+of the service -
 for instance
-via direct database access,
-but it <strong>MAY</strong>
+via
+raw database access
+or network sniffing.
+However it <strong>MAY</strong>
+participate in
+E2ESM conversations
+in a &ldquo;normal&rdquo; way,
+and thereby
 have &ldquo;normal&rdquo; access
-to PCASM
-of conversations
-where it is a participant. (Integrity of Participation, Equality of Participation)</p>
+to intra-conversation PCASM.
+(Integrity of Participation, Equality of Participation)</p>
 
 <p>FooBook <strong>MAY</strong>
 retain means

@@ -275,9 +275,11 @@ participant or as a non-participant. (Transparency of Participation)
 If FooBook decides to represent itself as a non-participant, then it **MUST NOT** have any access to
 PCASM. (Integrity of Participation / Non-Participation)
 
-If FooBook decides to represent itself as a participant, then it **MUST NOT** have privileged access
-to PCASM, for instance via direct database access, but it **MAY** have "normal" access to PCASM of
-conversations where it is a participant. (Integrity of Participation, Equality of Participation)
+If FooBook decides to represent itself as a participant, then it **MUST NOT** have exceptional
+access to PCASM, despite being the provider of the service - for instance via raw database access
+or network sniffing. However it **MAY** participate in E2ESM conversations in a "normal" way, and
+thereby have "normal" access to intra-conversation PCASM. (Integrity of Participation, Equality of
+Participation)
 
 FooBook **MAY** retain means to eject reported abusive participants from a conversation. (Decrease
 in Closure of Participation)

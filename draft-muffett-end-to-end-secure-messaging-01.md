@@ -540,15 +540,23 @@ If FooBook decides
 to represent itself
 as a participant,
 then it **MUST NOT**
-have privileged access
+have exceptional access
 to PCASM,
+despite being
+the provider
+of the service -
 for instance
-via direct database access,
-but it **MAY**
+via
+raw database access
+or network sniffing.
+However it **MAY**
+participate in
+E2ESM conversations
+in a "normal" way,
+and thereby
 have "normal" access
-to PCASM
-of conversations
-where it is a participant. (Integrity of Participation, Equality of Participation)
+to intra-conversation PCASM.
+(Integrity of Participation, Equality of Participation)
 
 FooBook **MAY**
 retain means

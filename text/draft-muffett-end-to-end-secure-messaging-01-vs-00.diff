@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-08 11:25:07.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-08 23:10:25.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -315,7 +315,15 @@
      because it is also not far removed from the similar and established
      term "side channel".
 ***************
-*** 437,455 ****
+*** 429,455 ****
+     Non-Participation)
+  
+     If FooBook decides to represent itself as a participant, then it MUST
+!    NOT have privileged access to PCASM, for instance via direct database
+!    access, but it MAY have "normal" access to PCASM of conversations
+!    where it is a participant.  (Integrity of Participation, Equality of
+!    Participation)
+  
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
@@ -326,7 +334,7 @@
 -    insertion.  (Increase in Closure of Participation)
   
   
-  
+! 
 ! Muffett                  Expires 8 November 2021                [Page 8]
   
   Internet-Draft                    e2esm                         May 2021
@@ -335,10 +343,18 @@
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
---- 442,461 ----
+--- 434,461 ----
+     Non-Participation)
+  
+     If FooBook decides to represent itself as a participant, then it MUST
+!    NOT have exceptional access to PCASM, despite being the provider of
+!    the service - for instance via raw database access or network
+!    sniffing.  However it MAY participate in E2ESM conversations in a
+!    "normal" way, and thereby have "normal" access to intra-conversation
+!    PCASM.  (Integrity of Participation, Equality of Participation)
+  
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
-  
   
   
   
