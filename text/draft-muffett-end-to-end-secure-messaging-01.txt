@@ -4,8 +4,8 @@
 
 individual submission                                         A. Muffett
 Internet-Draft                                       Security Researcher
-Intended status: Informational                                7 May 2021
-Expires: 8 November 2021
+Intended status: Informational                                8 May 2021
+Expires: 9 November 2021
 
 
           Functional Definition of End-to-End Secure Messaging
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 November 2021.
+   This Internet-Draft will expire on 9 November 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Muffett                  Expires 8 November 2021                [Page 1]
+Muffett                  Expires 9 November 2021                [Page 1]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Muffett                  Expires 8 November 2021                [Page 2]
+Muffett                  Expires 9 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -165,7 +165,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 3]
+Muffett                  Expires 9 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -221,7 +221,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 4]
+Muffett                  Expires 9 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -277,7 +277,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 5]
+Muffett                  Expires 9 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -333,7 +333,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 6]
+Muffett                  Expires 9 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -389,7 +389,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 7]
+Muffett                  Expires 9 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -445,7 +445,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 8]
+Muffett                  Expires 9 November 2021                [Page 8]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -501,7 +501,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 8 November 2021                [Page 9]
+Muffett                  Expires 9 November 2021                [Page 9]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -557,4 +557,4 @@ Author's Address
 
 
 
-Muffett                  Expires 8 November 2021               [Page 10]
+Muffett                  Expires 9 November 2021               [Page 10]
