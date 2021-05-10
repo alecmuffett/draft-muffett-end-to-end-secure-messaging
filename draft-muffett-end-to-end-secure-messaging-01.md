@@ -513,7 +513,7 @@ and established term
 
 The term "participant"
 in this document
-exists to supercede
+exists to supersede
 the more vague notion of "end"
 in the phrase "end-to-end".
 
@@ -602,7 +602,7 @@ this specification
 does not recognise
 any notion
 of "atomic" exchange
-of one particpant with another,
+of one participant with another,
 treating it as an ejection,
 followed by an "illegitimate" insertion.
 (Increase in Closure of Participation)

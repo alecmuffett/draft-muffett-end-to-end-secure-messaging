@@ -418,7 +418,7 @@ Internet-Draft                    e2esm                         May 2021
 
 5.  Scope of a Participant in E2ESM
 
-   The term "participant" in this document exists to supercede the more
+   The term "participant" in this document exists to supersede the more
    vague notion of "end" in the phrase "end-to-end".
 
    Participants are defined in terms of an entity's
@@ -466,7 +466,7 @@ Internet-Draft                    e2esm                         May 2021
 
    FooBook MUST NOT retain means to forcibly insert new participants
    into a conversation.  For clarity: this specification does not
-   recognise any notion of "atomic" exchange of one particpant with
+   recognise any notion of "atomic" exchange of one participant with
    another, treating it as an ejection, followed by an "illegitimate"
    insertion.  (Increase in Closure of Participation)
 

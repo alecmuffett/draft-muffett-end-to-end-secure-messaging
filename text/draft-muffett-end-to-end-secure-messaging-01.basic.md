@@ -262,7 +262,7 @@ removed from the similar and established term "side channel".
 
 # Scope of a Participant in E2ESM
 
-The term "participant" in this document exists to supercede the more vague notion of "end" in the
+The term "participant" in this document exists to supersede the more vague notion of "end" in the
 phrase "end-to-end".
 
 Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
@@ -295,7 +295,7 @@ FooBook **MAY** retain means to eject reported abusive participants from a conve
 in Closure of Participation)
 
 FooBook **MUST NOT** retain means to forcibly insert new participants into a conversation. For
-clarity: this specification does not recognise any notion of "atomic" exchange of one particpant
+clarity: this specification does not recognise any notion of "atomic" exchange of one participant
 with another, treating it as an ejection, followed by an "illegitimate" insertion. (Increase in
 Closure of Participation)
 

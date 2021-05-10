@@ -499,7 +499,7 @@ and established term
 <section anchor="scope-of-a-participant-in-e2esm"><name>Scope of a Participant in E2ESM</name>
 <t>The term &quot;participant&quot;
 in this document
-exists to supercede
+exists to supersede
 the more vague notion of &quot;end&quot;
 in the phrase &quot;end-to-end&quot;.</t>
 <t>Participants are defined
@@ -581,7 +581,7 @@ this specification
 does not recognise
 any notion
 of &quot;atomic&quot; exchange
-of one particpant with another,
+of one participant with another,
 treating it as an ejection,
 followed by an &quot;illegitimate&quot; insertion.
 (Increase in Closure of Participation)</t>
