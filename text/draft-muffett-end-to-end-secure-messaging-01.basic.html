@@ -264,7 +264,36 @@ or other,
 that is bounded
 by the extent
 of that entity&rsquo;s
-<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
+Trusted Computing Base (TCB).</p>
+
+<p>It is important to note
+that the concept of &ldquo;participant&rdquo;,
+defined by their TCB,
+is a foundation for all other trust.
+Developing from
+the basic definitions of
+a  <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+and from the concept of
+&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>,
+a failure of a participant
+to maintain integrity
+over their own (trusted) environment
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</p>
+
+<p>Further: it is
+obviously possible
+to burden
+the E2ESM
+with surfacing
+potential integrity issues
+of any given participant;
+but to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.</p>
 
 <h2 id="conversation">Conversation</h2>
 
@@ -623,6 +652,13 @@ in <cite class="informative"><a href="#I-D.knodel-e2ee-definition"><sup>[I-D.kno
 <span class="bibliography-title">Ricochet Refresh</span>
 <a class="bliography-target" href="https://www.ricochetrefresh.net">https://www.ricochetrefresh.net</a>
 <date class="bibliography-date">2021</date>
+</dd>
+<dt class="bibliography-cite" id="RoleOfTrust">[RoleOfTrust]</dt>
+<dd><span class="bibliography-author">David D. Clark</span>
+<span class="bibliography-author">Marjory S. Blumenthal</span>
+<span class="bibliography-title">The End-to-End Argument and Application Design: The Role of Trust</span>
+<a class="bliography-target" href="https://www.repository.law.indiana.edu/fclj/vol63/iss2/3">https://www.repository.law.indiana.edu/fclj/vol63/iss2/3</a>
+<date class="bibliography-date">2011</date>
 </dd>
 <dt class="bibliography-cite" id="TrustedComputingBase">[TrustedComputingBase]</dt>
 <dd><span class="bibliography-author">Wikipedia</span>

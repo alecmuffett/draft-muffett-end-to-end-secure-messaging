@@ -4,8 +4,8 @@
 
 individual submission                                         A. Muffett
 Internet-Draft                                       Security Researcher
-Intended status: Informational                                8 May 2021
-Expires: 9 November 2021
+Intended status: Informational                               10 May 2021
+Expires: 11 November 2021
 
 
           Functional Definition of End-to-End Secure Messaging
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 November 2021.
+   This Internet-Draft will expire on 11 November 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Muffett                  Expires 9 November 2021                [Page 1]
+Muffett                 Expires 11 November 2021                [Page 1]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -79,10 +79,10 @@ Table of Contents
      4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   5
      4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   5
        4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
-       4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
+       4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   6
        4.3.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   6
        4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   6
-       4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   6
+       4.3.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . .   7
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
        4.4.1.  Why call this a "backdoor"? . . . . . . . . . . . . .   7
    5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   8
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Muffett                  Expires 9 November 2021                [Page 2]
+Muffett                 Expires 11 November 2021                [Page 2]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -165,7 +165,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 9 November 2021                [Page 3]
+Muffett                 Expires 11 November 2021                [Page 3]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -221,7 +221,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                  Expires 9 November 2021                [Page 4]
+Muffett                 Expires 11 November 2021                [Page 4]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -239,7 +239,20 @@ Internet-Draft                    e2esm                         May 2021
 
    A participant is any entity - human, machine, software bot,
    conversation archiver, or other, that is bounded by the extent of
-   that entity's [TrustedComputingBase].
+   that entity's Trusted Computing Base (TCB).
+
+   It is important to note that the concept of "participant", defined by
+   their TCB, is a foundation for all other trust.  Developing from the
+   basic definitions of a [TrustedComputingBase] and from the concept of
+   "trust-to-trust" discussed in [RoleOfTrust], a failure of a
+   participant to maintain integrity over their own (trusted)
+   environment should not be considered a failure of an E2ESM that
+   connects it to other participants.
+
+   Further: it is obviously possible to burden the E2ESM with surfacing
+   potential integrity issues of any given participant; but to require
+   such in this standard would risk harming the privacy of the
+   participant entity.
 
 4.2.  Conversation
 
@@ -262,6 +275,13 @@ Internet-Draft                    e2esm                         May 2021
 
    2.  The content starts with the word "Hello"
 
+
+
+Muffett                 Expires 11 November 2021                [Page 5]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    3.  The top bit of the first byte of the content in ASCII encoding,
        is zero
 
@@ -273,14 +293,6 @@ Internet-Draft                    e2esm                         May 2021
 
    For block encryption of content, Size PCASM is the unpadded size of
    the content.
-
-
-
-
-Muffett                  Expires 9 November 2021                [Page 5]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    For stream encryption of content, Size PCASM is currently undefined.
 
@@ -319,6 +331,13 @@ Internet-Draft                    e2esm                         May 2021
    constitute PCASM, is an OPTIONAL choice for the E2ESM software, but
    that choice MUST be made apparent to participants.
 
+
+
+Muffett                 Expires 11 November 2021                [Page 6]
+
+Internet-Draft                    e2esm                         May 2021
+
+
 4.3.5.  Non-PCASM
 
    Information which would not be PCASM would include, non-exclusively:
@@ -330,13 +349,6 @@ Internet-Draft                    e2esm                         May 2021
    3.  The content is between 1 and 16 bytes long
 
    4.  The content was sent at the following date and time: ...
-
-
-
-Muffett                  Expires 9 November 2021                [Page 6]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    5.  The content was sent from the following IP address: ...
 
@@ -370,6 +382,18 @@ Internet-Draft                    e2esm                         May 2021
    "intention or opportunity" - and for all of them an access
    facilitation mechanism is first REQUIRED.
 
+
+
+
+
+
+
+
+Muffett                 Expires 11 November 2021                [Page 7]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    An access facilitation mechanism is a "door", and is inherently
    [DualUse].  Because the goal of E2ESM is to limit access to PCASM
    exclusively to a defined set of participants, then the intended means
@@ -382,17 +406,6 @@ Internet-Draft                    e2esm                         May 2021
    obligated exceptional access mechanism", or any other phrase, all
    MUST combine both notions of an access mechanism (e.g. "door") and a
    definite or suspected intention (e.g. "legal obligation").
-
-
-
-
-
-
-
-Muffett                  Expires 9 November 2021                [Page 7]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    So the phrase "back door" is brief, clear, and widely understood to
    mean "a secondary means of access".  In the above definition we
@@ -429,6 +442,14 @@ Internet-Draft                    e2esm                         May 2021
    as a conversation participant or as a non-participant.  (Transparency
    of Participation)
 
+
+
+
+Muffett                 Expires 11 November 2021                [Page 8]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    If FooBook decides to represent itself as a non-participant, then it
    MUST NOT have any access to PCASM.  (Integrity of Participation /
    Non-Participation)
@@ -442,13 +463,6 @@ Internet-Draft                    e2esm                         May 2021
 
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
-
-
-
-Muffett                  Expires 9 November 2021                [Page 8]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    FooBook MUST NOT retain means to forcibly insert new participants
    into a conversation.  For clarity: this specification does not
@@ -484,6 +498,14 @@ Internet-Draft                    e2esm                         May 2021
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
               Grover, "Definition of End-to-end Encryption", Work in
+
+
+
+Muffett                 Expires 11 November 2021                [Page 9]
+
+Internet-Draft                    e2esm                         May 2021
+
+
               Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
@@ -497,15 +519,6 @@ Internet-Draft                    e2esm                         May 2021
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
               2015, <https://www.rfc-editor.org/info/rfc7686>.
 
-
-
-
-
-Muffett                  Expires 9 November 2021                [Page 9]
-
-Internet-Draft                    e2esm                         May 2021
-
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
@@ -513,6 +526,12 @@ Internet-Draft                    e2esm                         May 2021
    [RicochetRefresh]
               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
               <https://www.ricochetrefresh.net>.
+
+   [RoleOfTrust]
+              Clark, D. D. and M. S. Blumenthal, "The End-to-End
+              Argument and Application Design: The Role of Trust", 2011,
+              <https://www.repository.law.indiana.edu/fclj/vol63/
+              iss2/3>.
 
    [TrustedComputingBase]
               Wikipedia, "Trusted Computing Base", 2021,
@@ -538,23 +557,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Muffett                  Expires 9 November 2021               [Page 10]
+Muffett                 Expires 11 November 2021               [Page 10]

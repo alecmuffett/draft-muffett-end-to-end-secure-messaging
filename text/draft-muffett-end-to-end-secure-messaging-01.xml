@@ -271,7 +271,34 @@ or other,
 that is bounded
 by the extent
 of that entity's
-<xref target="TrustedComputingBase"></xref>.</t>
+Trusted Computing Base (TCB).</t>
+<t>It is important to note
+that the concept of &quot;participant&quot;,
+defined by their TCB,
+is a foundation for all other trust.
+Developing from
+the basic definitions of
+a  <xref target="TrustedComputingBase"></xref>
+and from the concept of
+&quot;trust-to-trust&quot; discussed in <xref target="RoleOfTrust"></xref>,
+a failure of a participant
+to maintain integrity
+over their own (trusted) environment
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</t>
+<t>Further: it is
+obviously possible
+to burden
+the E2ESM
+with surfacing
+potential integrity issues
+of any given participant;
+but to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.</t>
 </section>
 
 <section anchor="conversation"><name>Conversation</name>
@@ -611,6 +638,14 @@ in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
     <title>Ricochet Refresh</title>
     <author fullname="BlueprintForFreeSpeech"></author>
     <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="RoleOfTrust" target="https://www.repository.law.indiana.edu/fclj/vol63/iss2/3">
+  <front>
+    <title>The End-to-End Argument and Application Design: The Role of Trust</title>
+    <author fullname="David D. Clark"></author>
+    <author fullname="Marjory S. Blumenthal"></author>
+    <date year="2011"></date>
   </front>
 </reference>
 <reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">

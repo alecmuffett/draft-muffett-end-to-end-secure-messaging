@@ -280,7 +280,36 @@ or other,
 that is bounded
 by the extent
 of that entity's
-[@TrustedComputingBase].
+Trusted Computing Base (TCB).
+
+It is important to note
+that the concept of "participant",
+defined by their TCB,
+is a foundation for all other trust.
+Developing from
+the basic definitions of
+a  [@TrustedComputingBase]
+and from the concept of
+"trust-to-trust" discussed in [@RoleOfTrust],
+a failure of a participant
+to maintain integrity
+over their own (trusted) environment
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.
+
+Further: it is
+obviously possible
+to burden
+the E2ESM
+with surfacing
+potential integrity issues
+of any given participant;
+but to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.
 
 ## Conversation
 
@@ -612,6 +641,15 @@ This document has no IANA actions.
 This document is entirely composed of security considerations.
 
 {backmatter}
+
+<reference anchor='RoleOfTrust' target='https://www.repository.law.indiana.edu/fclj/vol63/iss2/3'>
+	<front>
+		<title>The End-to-End Argument and Application Design: The Role of Trust</title>
+		<author fullname="David D. Clark"> </author>
+		<author fullname="Marjory S. Blumenthal"> </author>
+		<date year='2011'/>
+	</front>
+</reference>
 
 <reference anchor='TrustedComputingBase' target='https://en.wikipedia.org/wiki/Trusted_computing_base'>
 	<front>
