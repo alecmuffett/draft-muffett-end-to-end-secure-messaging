@@ -115,7 +115,7 @@ End-to-End Encrypted Messaging.</p>
 for several of
 these definitions
 may also be found
-in the rationale section,
+in the rationales section,
 below.</p>
 
 <h2 id="participant">Participant</h2>
@@ -229,13 +229,6 @@ amongst a set of &ldquo;participants&rdquo;,
 to provide E2ESM
 will require:</p>
 
-<h2 id="equality-of-participation">Equality of Participation</h2>
-
-<p>All participants
-<strong>MUST</strong> be peers who
-<strong>MUST</strong> have equal access
-to any given message&rsquo;s PCASM.</p>
-
 <h2 id="transparency-of-participation">Transparency of Participation</h2>
 
 <p>The existence
@@ -295,6 +288,16 @@ the above-defined sets of participants
 will be &ldquo;non-participants&rdquo;
 in respect of that message.</p>
 
+<h2 id="equality-of-participation">Equality of Participation</h2>
+
+<p>All participants
+<strong>MUST</strong> be peers who
+<strong>MUST</strong> have equal access
+to the PCASM
+of any message
+for which they
+have access; see &ldquo;Integrity of Participation&rdquo;.</p>
+
 <h2 id="closure-of-conversation">Closure of Conversation</h2>
 
 <p>The set of participants
@@ -353,7 +356,7 @@ that can or could access
 message PCASM.</p></li>
 </ol>
 
-<h1 id="rationale">Rationale</h1>
+<h1 id="rationales">Rationales</h1>
 
 <p>This explanatory section
 regarding the principles
@@ -532,32 +535,6 @@ from the similar
 and established term
 &ldquo;side channel&rdquo;.</p>
 
-<h2 id="why-equality-of-participation">Why: Equality of Participation</h2>
-
-<p>Without equality of participation
-it would be allowed
-for a person to deploy
-a standalone cleartext chat server,
-available solely over TLS-encrypted links,
-declare themselves to be &ldquo;participants&rdquo;
-in every conversation from its outset,
-access all message PCASM on that basis,
-and yet call themselves an E2ESM.</p>
-
-<p>So this is an &ldquo;anti-cheating&rdquo; clause:
-all participant access to PCASM
-<strong>MUST</strong> be via
-the same mechanisms
-for all participants
-without favour or privilege,
-and in particular
-PCASM <strong>MUST NOT</strong>
-be available via other means,
-e.g.
-raw filestore,
-database access
-or network sniffing.</p>
-
 <h2 id="why-transparency-of-participation">Why: Transparency of Participation</h2>
 
 <p>The &ldquo;ends&rdquo; of &ldquo;end to end&rdquo; are the participants;
@@ -594,6 +571,32 @@ several non-E2ESM.
 Therefore
 the converse
 is true.</p>
+
+<h2 id="why-equality-of-participation">Why: Equality of Participation</h2>
+
+<p>Without equality of participation
+it would be allowed
+for a person to deploy
+a standalone cleartext chat server,
+available solely over TLS-encrypted links,
+declare themselves to be &ldquo;participants&rdquo;
+in every conversation from its outset,
+access all message PCASM on that basis,
+and yet call themselves an E2ESM.</p>
+
+<p>So this is an &ldquo;anti-cheating&rdquo; clause:
+all participant access to PCASM
+<strong>MUST</strong> be via
+the same mechanisms
+for all participants
+without favour or privilege,
+and in particular
+PCASM <strong>MUST NOT</strong>
+be available via other means,
+e.g.
+raw filestore,
+database access
+or network sniffing.</p>
 
 <h2 id="why-closure-of-conversation">Why: Closure of Conversation</h2>
 

@@ -133,7 +133,7 @@ Further context
 for several of
 these definitions
 may also be found
-in the rationale section,
+in the rationales section,
 below.
 
 ## Participant
@@ -247,13 +247,6 @@ amongst a set of "participants",
 to provide E2ESM
 will require:
 
-## Equality of Participation
-
-All participants
-**MUST** be peers who
-**MUST** have equal access
-to any given message's PCASM.
-
 ## Transparency of Participation
 
 The existence
@@ -313,6 +306,16 @@ the above-defined sets of participants
 will be "non-participants"
 in respect of that message.
 
+## Equality of Participation
+
+All participants
+**MUST** be peers who
+**MUST** have equal access
+to the PCASM
+of any message
+for which they
+have access; see "Integrity of Participation".
+
 ## Closure of Conversation
 
 The set of participants
@@ -369,7 +372,7 @@ clients or devices
 that can or could access
 message PCASM.
 
-# Rationale
+# Rationales
 
 This explanatory section
 regarding the principles
@@ -548,32 +551,6 @@ from the similar
 and established term
 "side channel".
 
-## Why: Equality of Participation
-
-Without equality of participation
-it would be allowed
-for a person to deploy
-a standalone cleartext chat server,
-available solely over TLS-encrypted links,
-declare themselves to be "participants"
-in every conversation from its outset,
-access all message PCASM on that basis,
-and yet call themselves an E2ESM.
-
-So this is an "anti-cheating" clause:
-all participant access to PCASM
-**MUST** be via
-the same mechanisms
-for all participants
-without favour or privilege,
-and in particular
-PCASM **MUST NOT**
-be available via other means,
-e.g.
-raw filestore,
-database access
-or network sniffing.
-
 ## Why: Transparency of Participation
 
 The "ends" of "end to end" are the participants;
@@ -610,6 +587,32 @@ several non-E2ESM.
 Therefore
 the converse
 is true.
+
+## Why: Equality of Participation
+
+Without equality of participation
+it would be allowed
+for a person to deploy
+a standalone cleartext chat server,
+available solely over TLS-encrypted links,
+declare themselves to be "participants"
+in every conversation from its outset,
+access all message PCASM on that basis,
+and yet call themselves an E2ESM.
+
+So this is an "anti-cheating" clause:
+all participant access to PCASM
+**MUST** be via
+the same mechanisms
+for all participants
+without favour or privilege,
+and in particular
+PCASM **MUST NOT**
+be available via other means,
+e.g.
+raw filestore,
+database access
+or network sniffing.
 
 ## Why: Closure of Conversation
 

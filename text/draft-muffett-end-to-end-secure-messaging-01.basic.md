@@ -75,7 +75,7 @@ Messaging.
 
 # Definitions
 
-Further context for several of these definitions may also be found in the rationale section, below.
+Further context for several of these definitions may also be found in the rationales section, below.
 
 ## Participant
 
@@ -127,10 +127,6 @@ For a series of one or more "messages" each which are composed of "plaintext con
 metadata" (PCASM) and which constitute a "conversation" amongst a set of "participants", to provide
 E2ESM will require:
 
-## Equality of Participation
-
-All participants **MUST** be peers who **MUST** have equal access to any given message's PCASM.
-
 ## Transparency of Participation
 
 The existence of all current conversation participants **MUST** be visible at the current time to
@@ -153,6 +149,11 @@ conversation participants, via that new message.
 It follows that for any given message, all entities that exist outside of the above-defined sets of
 participants will be "non-participants" in respect of that message.
 
+## Equality of Participation
+
+All participants **MUST** be peers who **MUST** have equal access to the PCASM of any message for
+which they have access; see "Integrity of Participation".
+
 ## Closure of Conversation
 
 The set of participants in a conversation **SHALL NOT** be increased except by the intentional
@@ -174,7 +175,7 @@ Where there exists centralised E2ESM software that hosts participants:
 2.  The E2ESM software **MUST** provide each participant entity with notifications and/or complete
     logs of changes to the set of clients or devices that can or could access message PCASM.
 
-# Rationale
+# Rationales
 
 This explanatory section regarding the principles has been broken out for clarity and argumentation
 purposes.
@@ -251,17 +252,6 @@ access". In the above definition we already allow for the term to be prefixed wi
 Thus it seems appropriate to use this term in this context, not least because it is also not far
 removed from the similar and established term "side channel".
 
-## Why: Equality of Participation
-
-Without equality of participation it would be allowed for a person to deploy a standalone cleartext
-chat server, available solely over TLS-encrypted links, declare themselves to be "participants" in
-every conversation from its outset, access all message PCASM on that basis, and yet call themselves
-an E2ESM.
-
-So this is an "anti-cheating" clause: all participant access to PCASM **MUST** be via the same
-mechanisms for all participants without favour or privilege, and in particular PCASM **MUST NOT** be
-available via other means, e.g. raw filestore, database access or network sniffing.
-
 ## Why: Transparency of Participation
 
 The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
@@ -276,6 +266,17 @@ If this was not the intention we would deduce that an E2ESM would automatically 
 available to newly-added conversation participants, thereby breaking forward secrecy. This is not a
 characteristic of any E2ESM, but it is characteristic of several non-E2ESM. Therefore the converse
 is true.
+
+## Why: Equality of Participation
+
+Without equality of participation it would be allowed for a person to deploy a standalone cleartext
+chat server, available solely over TLS-encrypted links, declare themselves to be "participants" in
+every conversation from its outset, access all message PCASM on that basis, and yet call themselves
+an E2ESM.
+
+So this is an "anti-cheating" clause: all participant access to PCASM **MUST** be via the same
+mechanisms for all participants without favour or privilege, and in particular PCASM **MUST NOT** be
+available via other means, e.g. raw filestore, database access or network sniffing.
 
 ## Why: Closure of Conversation
 
