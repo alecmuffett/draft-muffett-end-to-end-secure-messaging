@@ -129,8 +129,9 @@ End-to-End Encrypted Messaging.
 
 # Definitions
 
-Contextual explanation
-for several of these definitions
+Further context
+for several of
+these definitions
 may also be found
 in the rationale section,
 below.
@@ -144,7 +145,10 @@ machine,
 software bot,
 conversation archiver,
 or other -
-that is bounded
+and the systems that
+they control and use
+for the E2ESM software,
+bounded
 by the extent
 of that entity's
 Trusted Computing Base (TCB).
@@ -155,7 +159,8 @@ A conversation
 is a sequence
 of one or more messages
 over a period of time
-amongst a constant or evolving
+amongst a constant
+or evolving
 set of participants.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
@@ -173,7 +178,7 @@ that can offer
 better than 50-50 certainty
 regarding the value of
 any given bit
-of the plaintext message content. ("content")
+of the plaintext message content ("content").
 
 ### Size PCASM
 
@@ -190,19 +195,17 @@ precise Size PCASM **SHOULD NOT** be observable.
 
 Analytic PCASM
 is data
-that describes
+which analyzes,
+describes,
+reduces,
+or summarizes
 the "content".
 
 ### Conversation Metadata (**OPTIONAL**)
 
 Whether
 per-conversation
-"group" metadata,
-such as
-"group titles",
-"group topics",
-"group icons",
-or "group participant lists"
+metadata
 constitute PCASM,
 is an
 **OPTIONAL**
@@ -360,7 +363,6 @@ clients or devices
 that can or could access
 message PCASM.
 
-
 # Rationale
 
 This explanatory section
@@ -510,7 +512,6 @@ be a failure
 of the participant's
 [@TrustedComputingBase].
 
-
 ## Why: Backdoor
 
 In software engineering
@@ -635,9 +636,16 @@ Examples of Analytic PCASM would include, non-exclusively:
 1. The hash of the content does not exist amongst the following set of hashes: ...
 1. The content was matched by a machine-learning classifier with the following training set: ...
 
-## Conversation Metadata
+## Conversation Metadata as **OPTIONAL** PCASM
 
-Examples of Conversation Metadata are given in the main text.
+Examples of Conversation Metadata would include, non-exclusively:
+
+1. maillist email addresses
+1. maillist server names
+1. group titles
+1. group topics
+1. group icons
+1. group participant lists
 
 ## Non-PCASM
 

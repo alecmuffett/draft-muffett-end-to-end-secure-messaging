@@ -75,13 +75,13 @@ Messaging.
 
 # Definitions
 
-Contextual explanation for several of these definitions may also be found in the rationale section,
-below.
+Further context for several of these definitions may also be found in the rationale section, below.
 
 ## Participant
 
-A participant is any entity - human, machine, software bot, conversation archiver, or other - that
-is bounded by the extent of that entity's Trusted Computing Base (TCB).
+A participant is any entity - human, machine, software bot, conversation archiver, or other - and
+the systems that they control and use for the E2ESM software, bounded by the extent of that entity's
+Trusted Computing Base (TCB).
 
 ## Conversation
 
@@ -95,7 +95,7 @@ The PCASM of a message is defined as any or all of:
 ### Content PCASM
 
 Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any
-given bit of the plaintext message content. ("content")
+given bit of the plaintext message content ("content").
 
 ### Size PCASM
 
@@ -107,13 +107,12 @@ For transport encryption of content, precise Size PCASM **SHOULD NOT** be observ
 
 ### Analytic PCASM
 
-Analytic PCASM is data that describes the "content".
+Analytic PCASM is data which analyzes, describes, reduces, or summarizes the "content".
 
 ### Conversation Metadata (**OPTIONAL**)
 
-Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons", or
-"group participant lists" constitute PCASM, is an **OPTIONAL** choice for E2ESM software, but that
-choice **MUST** be made apparent to participants.
+Whether per-conversation metadata constitute PCASM, is an **OPTIONAL** choice for E2ESM software,
+but that choice **MUST** be made apparent to participants.
 
 ## Backdoor
 
@@ -311,9 +310,21 @@ Examples of Analytic PCASM would include, non-exclusively:
 
 7.  The content was matched by a machine-learning classifier with the following training set: ...
 
-## Conversation Metadata
+## Conversation Metadata as **OPTIONAL** PCASM
 
-Examples of Conversation Metadata are given in the main text.
+Examples of Conversation Metadata would include, non-exclusively:
+
+1.  maillist email addresses
+
+2.  maillist server names
+
+3.  group titles
+
+4.  group topics
+
+5.  group icons
+
+6.  group participant lists
 
 ## Non-PCASM
 

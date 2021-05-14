@@ -96,7 +96,7 @@ Table of Contents
      6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .   9
      6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .   9
      6.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .   9
-     6.4.  Conversation Metadata . . . . . . . . . . . . . . . . . .  10
+     6.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  10
      6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  10
    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  10
    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  11
@@ -172,14 +172,15 @@ Internet-Draft                    e2esm                         May 2021
 
 3.  Definitions
 
-   Contextual explanation for several of these definitions may also be
-   found in the rationale section, below.
+   Further context for several of these definitions may also be found in
+   the rationale section, below.
 
 3.1.  Participant
 
    A participant is any entity - human, machine, software bot,
-   conversation archiver, or other - that is bounded by the extent of
-   that entity's Trusted Computing Base (TCB).
+   conversation archiver, or other - and the systems that they control
+   and use for the E2ESM software, bounded by the extent of that
+   entity's Trusted Computing Base (TCB).
 
 3.2.  Conversation
 
@@ -193,8 +194,8 @@ Internet-Draft                    e2esm                         May 2021
 3.3.1.  Content PCASM
 
    Content PCASM is any data that can offer better than 50-50 certainty
-   regarding the value of any given bit of the plaintext message
-   content. ("content")
+   regarding the value of any given bit of the plaintext message content
+   ("content").
 
 3.3.2.  Size PCASM
 
@@ -208,15 +209,14 @@ Internet-Draft                    e2esm                         May 2021
 
 3.3.3.  Analytic PCASM
 
-   Analytic PCASM is data that describes the "content".
+   Analytic PCASM is data which analyzes, describes, reduces, or
+   summarizes the "content".
 
 3.3.4.  Conversation Metadata (OPTIONAL)
 
-   Whether per-conversation "group" metadata, such as "group titles",
-   "group topics", "group icons", or "group participant lists"
-   constitute PCASM, is an OPTIONAL choice for E2ESM software, but that
-   choice MUST be made apparent to participants.
-
+   Whether per-conversation metadata constitute PCASM, is an OPTIONAL
+   choice for E2ESM software, but that choice MUST be made apparent to
+   participants.
 
 
 
@@ -509,9 +509,21 @@ Internet-Draft                    e2esm                         May 2021
    7.  The content was matched by a machine-learning classifier with the
        following training set: ...
 
-6.4.  Conversation Metadata
+6.4.  Conversation Metadata as OPTIONAL PCASM
 
-   Examples of Conversation Metadata are given in the main text.
+   Examples of Conversation Metadata would include, non-exclusively:
+
+   1.  maillist email addresses
+
+   2.  maillist server names
+
+   3.  group titles
+
+   4.  group topics
+
+   5.  group icons
+
+   6.  group participant lists
 
 6.5.  Non-PCASM
 
@@ -540,6 +552,16 @@ Internet-Draft                    e2esm                         May 2021
    as a conversation participant or as a non-participant.  (Transparency
    of Participation)
 
+
+
+
+
+
+Muffett                 Expires 15 November 2021               [Page 10]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    If FooBook decides to represent itself as a non-participant, then it
    MUST NOT have any access to PCASM.  (Integrity of Participation /
    Non-Participation)
@@ -553,14 +575,6 @@ Internet-Draft                    e2esm                         May 2021
 
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
-
-
-
-
-Muffett                 Expires 15 November 2021               [Page 10]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    FooBook MUST NOT retain means to forcibly insert new participants
    into a conversation.  For clarity: this specification does not
@@ -596,6 +610,14 @@ Internet-Draft                    e2esm                         May 2021
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
               Grover, "Definition of End-to-end Encryption", Work in
+
+
+
+Muffett                 Expires 15 November 2021               [Page 11]
+
+Internet-Draft                    e2esm                         May 2021
+
+
               Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
@@ -608,15 +630,6 @@ Internet-Draft                    e2esm                         May 2021
    [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
               2015, <https://www.rfc-editor.org/info/rfc7686>.
-
-
-
-
-
-Muffett                 Expires 15 November 2021               [Page 11]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -642,19 +655,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

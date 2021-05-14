@@ -111,8 +111,9 @@ End-to-End Encrypted Messaging.</p>
 
 <h1 id="definitions">Definitions</h1>
 
-<p>Contextual explanation
-for several of these definitions
+<p>Further context
+for several of
+these definitions
 may also be found
 in the rationale section,
 below.</p>
@@ -126,7 +127,10 @@ machine,
 software bot,
 conversation archiver,
 or other -
-that is bounded
+and the systems that
+they control and use
+for the E2ESM software,
+bounded
 by the extent
 of that entity&rsquo;s
 Trusted Computing Base (TCB).</p>
@@ -137,7 +141,8 @@ Trusted Computing Base (TCB).</p>
 is a sequence
 of one or more messages
 over a period of time
-amongst a constant or evolving
+amongst a constant
+or evolving
 set of participants.</p>
 
 <h2 id="plaintext-content-and-sensitive-metadata-pcasm">Plaintext Content and Sensitive Metadata (PCASM)</h2>
@@ -155,7 +160,7 @@ that can offer
 better than 50-50 certainty
 regarding the value of
 any given bit
-of the plaintext message content. (&ldquo;content&rdquo;)</p>
+of the plaintext message content (&ldquo;content&rdquo;).</p>
 
 <h3 id="size-pcasm">Size PCASM</h3>
 
@@ -172,19 +177,17 @@ precise Size PCASM <strong>SHOULD NOT</strong> be observable.</p>
 
 <p>Analytic PCASM
 is data
-that describes
+which analyzes,
+describes,
+reduces,
+or summarizes
 the &ldquo;content&rdquo;.</p>
 
 <h3 id="conversation-metadata-optional">Conversation Metadata (<strong>OPTIONAL</strong>)</h3>
 
 <p>Whether
 per-conversation
-&ldquo;group&rdquo; metadata,
-such as
-&ldquo;group titles&rdquo;,
-&ldquo;group topics&rdquo;,
-&ldquo;group icons&rdquo;,
-or &ldquo;group participant lists&rdquo;
+metadata
 constitute PCASM,
 is an
 <strong>OPTIONAL</strong>
@@ -621,9 +624,18 @@ and/or content encryption mechanisms.</p>
 <li>The content was matched by a machine-learning classifier with the following training set: &hellip;</li>
 </ol>
 
-<h2 id="conversation-metadata">Conversation Metadata</h2>
+<h2 id="conversation-metadata-as-optional-pcasm">Conversation Metadata as <strong>OPTIONAL</strong> PCASM</h2>
 
-<p>Examples of Conversation Metadata are given in the main text.</p>
+<p>Examples of Conversation Metadata would include, non-exclusively:</p>
+
+<ol>
+<li>maillist email addresses</li>
+<li>maillist server names</li>
+<li>group titles</li>
+<li>group topics</li>
+<li>group icons</li>
+<li>group participant lists</li>
+</ol>
 
 <h2 id="non-pcasm">Non-PCASM</h2>
 

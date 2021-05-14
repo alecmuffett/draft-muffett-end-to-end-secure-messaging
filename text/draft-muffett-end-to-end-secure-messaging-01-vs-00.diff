@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-14 21:53:41.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-14 22:02:30.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -138,7 +138,7 @@
 !      6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .   9
 !      6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .   9
 !      6.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .   9
-!      6.4.  Conversation Metadata . . . . . . . . . . . . . . . . . .  10
+!      6.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  10
 !      6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  10
 !    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  10
 !    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  11
@@ -246,14 +246,15 @@
 ! 
 ! 3.  Definitions
 ! 
-!    Contextual explanation for several of these definitions may also be
-!    found in the rationale section, below.
+!    Further context for several of these definitions may also be found in
+!    the rationale section, below.
 ! 
 ! 3.1.  Participant
 ! 
 !    A participant is any entity - human, machine, software bot,
-!    conversation archiver, or other - that is bounded by the extent of
-!    that entity's Trusted Computing Base (TCB).
+!    conversation archiver, or other - and the systems that they control
+!    and use for the E2ESM software, bounded by the extent of that
+!    entity's Trusted Computing Base (TCB).
 ! 
 ! 3.2.  Conversation
 ! 
@@ -261,40 +262,39 @@
 !    time amongst a constant or evolving set of participants.
 ! 
 ! 3.3.  Plaintext Content and Sensitive Metadata (PCASM)
-! 
-!    The PCASM of a message is defined as any or all of:
-! 
-! 3.3.1.  Content PCASM
-! 
-!    Content PCASM is any data that can offer better than 50-50 certainty
-!    regarding the value of any given bit of the plaintext message
-!    content. ("content")
-! 
-! 3.3.2.  Size PCASM
-! 
-!    For block encryption of content, Size PCASM is the unpadded size of
-!    the content.
-! 
-!    For stream encryption of content, Size PCASM is currently undefined.
-! 
-!    For transport encryption of content, precise Size PCASM SHOULD NOT be
-!    observable.
-! 
-! 3.3.3.  Analytic PCASM
   
-+    Analytic PCASM is data that describes the "content".
++    The PCASM of a message is defined as any or all of:
   
-+ 3.3.4.  Conversation Metadata (OPTIONAL)
++ 3.3.1.  Content PCASM
+  
++    Content PCASM is any data that can offer better than 50-50 certainty
++    regarding the value of any given bit of the plaintext message content
++    ("content").
 + 
-+    Whether per-conversation "group" metadata, such as "group titles",
-+    "group topics", "group icons", or "group participant lists"
-+    constitute PCASM, is an OPTIONAL choice for E2ESM software, but that
-+    choice MUST be made apparent to participants.
++ 3.3.2.  Size PCASM
++ 
++    For block encryption of content, Size PCASM is the unpadded size of
++    the content.
   
++    For stream encryption of content, Size PCASM is currently undefined.
++ 
++    For transport encryption of content, precise Size PCASM SHOULD NOT be
++    observable.
   
++ 3.3.3.  Analytic PCASM
   
++    Analytic PCASM is data which analyzes, describes, reduces, or
++    summarizes the "content".
   
-  
+! 3.3.4.  Conversation Metadata (OPTIONAL)
+! 
+!    Whether per-conversation metadata constitute PCASM, is an OPTIONAL
+!    choice for E2ESM software, but that choice MUST be made apparent to
+!    participants.
+! 
+! 
+! 
+! 
 ! Muffett                 Expires 15 November 2021                [Page 4]
   
   Internet-Draft                    e2esm                         May 2021
@@ -380,9 +380,9 @@
 ! 
 !    These principles MUST be measured with respect to the following
 !    definitions:
-  
-! 4.1.  Participant
 ! 
+! 4.1.  Participant
+  
 !    A participant is any entity - human, machine, software bot,
 !    conversation archiver, or other, that is bounded by the extent of
 !    that entity's [TrustedComputingBase].
@@ -439,9 +439,9 @@
 !    Descriptive PCASM would include, non-exclusively:
 ! 
 !    1.  The content contains the substring "ello"
-! 
+  
 !    2.  The content does not contain the word "Goodbye"
-! 
+  
 !    3.  The content contains a substring from amongst the following set:
 !        ...
   
@@ -453,7 +453,7 @@
   
 !    6.  The hash of the content does not exist amongst the following set
 !        of hashes: ...
-  
+! 
 !    7.  The content was matched by a machine-learning classifier with the
 !        following training set: ...
   
@@ -467,7 +467,7 @@
 ! 4.3.5.  Non-PCASM
   
 !    Information which would not be PCASM would include, non-exclusively:
-  
+! 
 !    1.  The content is sent from Alice
   
 !    2.  The content is sent to Bob
@@ -686,18 +686,18 @@
 !    store, forward, or access messages by means that are outside of the
 !    E2ESM software.
   
--    For example: if a participant accesses their E2ESM software via
--    remote desktop software, and their RDP session is hijacked by a third
--    party; of if they back-up their messages in cleartext to cloud
--    storage leading somehow to data exfiltration, neither of these would
--    be a failure of E2ESM.  This would instead be a failure of the
--    participant's [TrustedComputingBase].
+!    For example: if a participant accesses their E2ESM software via
+!    remote desktop software, and their RDP session is hijacked by a third
+!    party; of if they back-up their messages in cleartext to cloud
+!    storage leading somehow to data exfiltration, neither of these would
+!    be a failure of E2ESM.  This would instead be a failure of the
+!    participant's [TrustedComputingBase].
   
 ! 6.  Rationale
   
      Consider FooBook, a hypothetical example company which provides
      messaging services for conversations between entities who use it.
---- 454,537 ----
+--- 454,549 ----
      because it is also not far removed from the similar and established
      term "side channel".
   
@@ -708,7 +708,7 @@
 !    string of length 13 bytes without terminator character.
   
 ! 6.1.  Content PCASM
-! 
+  
 !    Examples of Content PCASM would include, non-exclusively:
 ! 
 !    1.  The content is "Hello, world."
@@ -745,8 +745,8 @@
 ! 
 !    6.  The hash of the content does not exist amongst the following set
 !        of hashes: ...
-  
-  
+! 
+! 
 ! 
 ! Muffett                 Expires 15 November 2021                [Page 9]
 ! 
@@ -756,9 +756,21 @@
 !    7.  The content was matched by a machine-learning classifier with the
 !        following training set: ...
 ! 
-! 6.4.  Conversation Metadata
+! 6.4.  Conversation Metadata as OPTIONAL PCASM
 ! 
-!    Examples of Conversation Metadata are given in the main text.
+!    Examples of Conversation Metadata would include, non-exclusively:
+! 
+!    1.  maillist email addresses
+! 
+!    2.  maillist server names
+  
+!    3.  group titles
+! 
+!    4.  group topics
+! 
+!    5.  group icons
+! 
+!    6.  group participant lists
 ! 
 ! 6.5.  Non-PCASM
 ! 
@@ -783,7 +795,12 @@
      Consider FooBook, a hypothetical example company which provides
      messaging services for conversations between entities who use it.
 ***************
-*** 429,455 ****
+*** 424,455 ****
+     as a conversation participant or as a non-participant.  (Transparency
+     of Participation)
+  
+     If FooBook decides to represent itself as a non-participant, then it
+     MUST NOT have any access to PCASM.  (Integrity of Participation /
      Non-Participation)
   
      If FooBook decides to represent itself as a participant, then it MUST
@@ -795,23 +812,38 @@
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
--    FooBook MUST NOT retain means to forcibly insert new participants
--    into a conversation.  For clarity: this specification does not
--    recognise any notion of "atomic" exchange of one particpant with
--    another, treating it as an ejection, followed by an "illegitimate"
--    insertion.  (Increase in Closure of Participation)
+     FooBook MUST NOT retain means to forcibly insert new participants
+     into a conversation.  For clarity: this specification does not
+!    recognise any notion of "atomic" exchange of one particpant with
+     another, treating it as an ejection, followed by an "illegitimate"
+     insertion.  (Increase in Closure of Participation)
   
-  
-  
-! Muffett                  Expires 8 November 2021                [Page 8]
-  
-  Internet-Draft                    e2esm                         May 2021
-  
-  
+- 
+- 
+- Muffett                  Expires 8 November 2021                [Page 8]
+- 
+- Internet-Draft                    e2esm                         May 2021
+- 
+- 
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
---- 545,573 ----
+--- 552,587 ----
+     as a conversation participant or as a non-participant.  (Transparency
+     of Participation)
+  
++ 
++ 
++ 
++ 
++ 
++ Muffett                 Expires 15 November 2021               [Page 10]
++ 
++ Internet-Draft                    e2esm                         May 2021
++ 
++ 
+     If FooBook decides to represent itself as a non-participant, then it
+     MUST NOT have any access to PCASM.  (Integrity of Participation /
      Non-Participation)
   
      If FooBook decides to represent itself as a participant, then it MUST
@@ -824,20 +856,12 @@
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
+     FooBook MUST NOT retain means to forcibly insert new participants
+     into a conversation.  For clarity: this specification does not
+!    recognise any notion of "atomic" exchange of one participant with
+     another, treating it as an ejection, followed by an "illegitimate"
+     insertion.  (Increase in Closure of Participation)
   
-  
-  
-! Muffett                 Expires 15 November 2021               [Page 10]
-  
-  Internet-Draft                    e2esm                         May 2021
-  
-  
-+    FooBook MUST NOT retain means to forcibly insert new participants
-+    into a conversation.  For clarity: this specification does not
-+    recognise any notion of "atomic" exchange of one participant with
-+    another, treating it as an ejection, followed by an "illegitimate"
-+    insertion.  (Increase in Closure of Participation)
-+ 
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
@@ -863,7 +887,7 @@
   
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
---- 575,594 ----
+--- 589,608 ----
      FooBook MAY treat conversation metadata as PCASM, but it MUST
      communicate to participants whether it does, or does not.
   
@@ -885,12 +909,11 @@
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
 ***************
-*** 491,496 ****
---- 609,623 ----
-                Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
-                2015, <https://www.rfc-editor.org/info/rfc7686>.
-  
-+ 
+*** 478,483 ****
+--- 610,623 ----
+     [I-D.knodel-e2ee-definition]
+                Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
+                Grover, "Definition of End-to-end Encryption", Work in
 + 
 + 
 + 
@@ -899,9 +922,9 @@
 + Internet-Draft                    e2esm                         May 2021
 + 
 + 
-     [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-                2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-                May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+                Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
+                22 February 2021, <https://tools.ietf.org/html/draft-
+                knodel-e2ee-definition-00>.
 ***************
 *** 499,510 ****
                 BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
@@ -916,7 +939,7 @@
   
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
---- 626,636 ----
+--- 639,649 ----
                 BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
                 <https://www.ricochetrefresh.net>.
   
@@ -929,10 +952,23 @@
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
 ***************
-*** 543,560 ****
+*** 530,560 ****
   
   
   
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
 ! 
 ! 
 ! 
