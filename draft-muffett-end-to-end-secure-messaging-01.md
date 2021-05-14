@@ -146,6 +146,32 @@ All participants
 **MUST** have equal access
 to any given message's PCASM.
 
+### Why do we need this?
+
+Without equality of participation
+it would be allowed
+for a person to deploy
+a standalone cleartext chat server,
+available solely over TLS-encrypted links,
+declare themselves to be "participants"
+in every conversation from its outset,
+access all message PCASM on that basis,
+and yet call themselves an E2ESM.
+
+So this is an "anti-cheating" clause:
+all participant access to PCASM
+**MUST** be via
+the same mechanisms
+for all participants
+without favour or privilege,
+and in particular
+PCASM **MUST NOT**
+be available via other means,
+e.g.
+raw filestore,
+database access
+or network sniffing.
+
 ## Transparency of Participation
 
 The existence
@@ -156,6 +182,14 @@ at the current
 time
 to all current
 conversation participants.
+
+### Why do we need this?
+
+The "ends" of "end to end" are the participants;
+for a message to be composed
+to be exclusively accessible
+to that set of participants,
+all participants must be visible.
 
 ## Integrity of Participation
 
@@ -205,6 +239,35 @@ the above-defined sets of participants
 will be "non-participants"
 in respect of that message.
 
+### Why do we need this?
+
+Inherent in the term
+"end to end secure messenger"
+is the intention
+that PCASM
+will only be available
+to the participants ("ends")
+at the time the message was composed.
+
+If this was not the intention
+we would deduce
+that an E2ESM
+would automatically make
+past content
+available to
+newly-added conversation participants,
+thereby breaking
+forward secrecy.
+This is not
+a characteristic
+of any E2ESM,
+but it is
+characteristic of
+several non-E2ESM.
+Therefore
+the converse
+is true.
+
 ## Closure of Conversation
 
 The set of participants
@@ -231,6 +294,18 @@ legitimate
 "intentional action"
 to increase the set of participants
 in the group.
+
+### Why do we need this?
+
+If a conversation
+is not "only extensible from within"
+then it would be possible
+for participants
+to be injected
+into the conversation
+thereby defeating
+the closure of message distribution.
+
 
 ## Management and Visibility of Participant Clients and Devices
 
