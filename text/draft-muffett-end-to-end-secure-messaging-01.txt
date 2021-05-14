@@ -84,14 +84,15 @@ Table of Contents
        4.3.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   6
        4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   7
      4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
-       4.4.1.  Why call this a "backdoor"? . . . . . . . . . . . . .   7
-   5.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   8
-     5.1.  Why: Equality of Participation  . . . . . . . . . . . . .   8
-     5.2.  Why: Transparency of Participation  . . . . . . . . . . .   8
-     5.3.  Why: Integrity of Participation . . . . . . . . . . . . .   8
-     5.4.  Why: Closure of Conversation  . . . . . . . . . . . . . .   9
+   5.  Rationale . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     5.1.  Why: Equality of Participation  . . . . . . . . . . . . .   7
+     5.2.  Why: Transparency of Participation  . . . . . . . . . . .   7
+     5.3.  Why: Integrity of Participation . . . . . . . . . . . . .   7
+     5.4.  Why: Closure of Conversation  . . . . . . . . . . . . . .   8
      5.5.  Why: Management and Visibility of Participant Clients and
-           Devices . . . . . . . . . . . . . . . . . . . . . . . . .   9
+           Devices . . . . . . . . . . . . . . . . . . . . . . . . .   8
+     5.6.  Why: Participant  . . . . . . . . . . . . . . . . . . . .   8
+     5.7.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .   8
    6.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .   9
      6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .   9
      6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .   9
@@ -104,7 +105,6 @@ Table of Contents
    10. Security Considerations . . . . . . . . . . . . . . . . . . .  11
    11. Informative References  . . . . . . . . . . . . . . . . . . .  11
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
-
 
 
 
@@ -352,57 +352,6 @@ Internet-Draft                    e2esm                         May 2021
    where some PCASM of that message MAY become available to a non-
    participant without the intentional action of a participant.
 
-4.4.1.  Why call this a "backdoor"?
-
-   In software engineering there is a perpetual tension between the
-   concepts of "feature" versus "bug" - and occasionally "misfeature"
-   versus "misbug".  These tensions arise from the problem of [DualUse]
-   - that it is not feasible to firmly and completely ascribe
-   "intention" to any hardware or software mechanism.
-
-   The information security community have experienced a historical
-   spectrum of mechanisms which have assisted non-participant access to
-   PCASM.  These have variously been named as "export-grade key
-   restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
-   Meltdown), "law enforcement access fields" (Clipper), and "key
-   escrow" (Crypto Wars).
-
-   All of these terms combine an "access facilitation mechanism" with an
-   "intention or opportunity" - and for all of them an access
-   facilitation mechanism is first REQUIRED.
-
-   An access facilitation mechanism is a "door", and is inherently
-   [DualUse].  Because the goal of E2ESM is to limit access to PCASM
-   exclusively to a defined set of participants, then the intended means
-   of access is clearly the "front door"; and any other access mechanism
-   is a "back door".
-
-   If the term "back door" is considered innately pejorative,
-   alternative, uncertain constructions such as "illegitimate access
-   feature", "potentially intentional data-access weakness", "legally-
-   obligated exceptional access mechanism", or any other phrase, all
-   MUST combine both notions of an access mechanism (e.g. "door") and a
-   definite or suspected intention (e.g. "legal obligation").
-
-
-
-
-
-
-Muffett                 Expires 15 November 2021                [Page 7]
-
-Internet-Draft                    e2esm                         May 2021
-
-
-   So the phrase "back door" is brief, clear, and widely understood to
-   mean "a secondary means of access".  In the above definition we
-   already allow for the term to be prefixed with "intentional" or
-   "unintentional".
-
-   Thus it seems appropriate to use this term in this context, not least
-   because it is also not far removed from the similar and established
-   term "side channel".
-
 5.  Rationale
 
    This explanatory section regarding the principles has been broken out
@@ -433,11 +382,62 @@ Internet-Draft                    e2esm                         May 2021
    that PCASM will only be available to the participants ("ends") at the
    time the message was composed.
 
+
+
+
+
+
+
+
+Muffett                 Expires 15 November 2021                [Page 7]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    If this was not the intention we would deduce that an E2ESM would
    automatically make past content available to newly-added conversation
    participants, thereby breaking forward secrecy.  This is not a
    characteristic of any E2ESM, but it is characteristic of several non-
    E2ESM.  Therefore the converse is true.
+
+5.4.  Why: Closure of Conversation
+
+   If a conversation is not "only extensible from within" then it would
+   be possible for participants to be injected into the conversation
+   thereby defeating the closure of message distribution.
+
+5.5.  Why: Management and Visibility of Participant Clients and Devices
+
+   *TODO*: touch also upon mutual assurance & authentication.
+
+5.6.  Why: Participant
+
+5.7.  Why: Backdoor
+
+   In software engineering there is a perpetual tension between the
+   concepts of "feature" versus "bug" - and occasionally "misfeature"
+   versus "misbug".  These tensions arise from the problem of [DualUse]
+   - that it is not feasible to firmly and completely ascribe
+   "intention" to any hardware or software mechanism.
+
+   The information security community have experienced a historical
+   spectrum of mechanisms which have assisted non-participant access to
+   PCASM.  These have variously been named as "export-grade key
+   restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
+   Meltdown), "law enforcement access fields" (Clipper), and "key
+   escrow" (Crypto Wars).
+
+   All of these terms combine an "access facilitation mechanism" with an
+   "intention or opportunity" - and for all of them an access
+   facilitation mechanism is first REQUIRED.
+
+   An access facilitation mechanism is a "door", and is inherently
+   [DualUse].  Because the goal of E2ESM is to limit access to PCASM
+   exclusively to a defined set of participants, then the intended means
+   of access is clearly the "front door"; and any other access mechanism
+   is a "back door".
+
+
 
 
 
@@ -450,15 +450,21 @@ Muffett                 Expires 15 November 2021                [Page 8]
 Internet-Draft                    e2esm                         May 2021
 
 
-5.4.  Why: Closure of Conversation
+   If the term "back door" is considered innately pejorative,
+   alternative, uncertain constructions such as "illegitimate access
+   feature", "potentially intentional data-access weakness", "legally-
+   obligated exceptional access mechanism", or any other phrase, all
+   MUST combine both notions of an access mechanism (e.g. "door") and a
+   definite or suspected intention (e.g. "legal obligation").
 
-   If a conversation is not "only extensible from within" then it would
-   be possible for participants to be injected into the conversation
-   thereby defeating the closure of message distribution.
+   So the phrase "back door" is brief, clear, and widely understood to
+   mean "a secondary means of access".  In the above definition we
+   already allow for the term to be prefixed with "intentional" or
+   "unintentional".
 
-5.5.  Why: Management and Visibility of Participant Clients and Devices
-
-   *TODO*: touch also upon mutual assurance & authentication.
+   Thus it seems appropriate to use this term in this context, not least
+   because it is also not far removed from the similar and established
+   term "side channel".
 
 6.  Examples of PCASM
 
@@ -493,18 +499,18 @@ Internet-Draft                    e2esm                         May 2021
 
    2.  The content does not contain the word "Goodbye"
 
-   3.  The content contains a substring from amongst the following set:
-       ...
-
-   4.  The content does not contain a substring from amongst the
-       following set: ...
-
 
 
 Muffett                 Expires 15 November 2021                [Page 9]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   3.  The content contains a substring from amongst the following set:
+       ...
+
+   4.  The content does not contain a substring from amongst the
+       following set: ...
 
    5.  The hash of the content exists amongst the following set of
        hashes: ...
@@ -546,12 +552,6 @@ Internet-Draft                    e2esm                         May 2021
    as a conversation participant or as a non-participant.  (Transparency
    of Participation)
 
-   If FooBook decides to represent itself as a non-participant, then it
-   MUST NOT have any access to PCASM.  (Integrity of Participation /
-   Non-Participation)
-
-
-
 
 
 
@@ -561,6 +561,10 @@ Muffett                 Expires 15 November 2021               [Page 10]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   If FooBook decides to represent itself as a non-participant, then it
+   MUST NOT have any access to PCASM.  (Integrity of Participation /
+   Non-Participation)
 
    If FooBook decides to represent itself as a participant, then it MUST
    NOT have exceptional access to PCASM, despite being the provider of
@@ -606,10 +610,6 @@ Internet-Draft                    e2esm                         May 2021
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
               Grover, "Definition of End-to-end Encryption", Work in
-              Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
-              22 February 2021, <https://tools.ietf.org/html/draft-
-              knodel-e2ee-definition-00>.
-
 
 
 
@@ -617,6 +617,10 @@ Muffett                 Expires 15 November 2021               [Page 11]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+              Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
+              22 February 2021, <https://tools.ietf.org/html/draft-
+              knodel-e2ee-definition-00>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -651,10 +655,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
 
 
 
