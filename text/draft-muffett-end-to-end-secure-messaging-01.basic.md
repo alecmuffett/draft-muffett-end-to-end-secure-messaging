@@ -128,36 +128,10 @@ Where there exists centralised E2ESM software that hosts participants:
 
 # Definitions
 
-These principles **MUST** be measured with respect to the following definitions:
-
 ## Participant
 
 A participant is any entity - human, machine, software bot, conversation archiver, or other, that is
 bounded by the extent of that entity's Trusted Computing Base (TCB).
-
-It is important to note that the concept of "participant", defined by their TCB, is a foundation
-for all other trust. Developing from the basic definitions of a [@TrustedComputingBase] and from
-the concept of "trust-to-trust" discussed in [@RoleOfTrust], a failure of a participant to maintain
-integrity over their own (trusted) environment should not be considered a failure of an E2ESM that
-connects it to other participants.
-
-Further: it is obviously possible to burden the E2ESM with surfacing potential integrity issues of
-any given participant; but to require such in this standard would risk harming the privacy of the
-participant entity.
-
-### Scope of a Participant in E2ESM
-
-The term "participant" in this document exists to supersede the more vague notion of "end" in the
-phrase "end-to-end".
-
-Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
-entity **MAY** legitimately store, forward, or access messages by means that are outside of the
-E2ESM software.
-
-For example: if a participant accesses their E2ESM software via remote desktop software, and their
-RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
-storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
-would instead be a failure of the participant's [@TrustedComputingBase].
 
 ## Conversation
 
@@ -166,7 +140,7 @@ evolving set of participants.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
-The PCASM of a message is defined as any of:
+The PCASM of a message is defined as any or all of:
 
 ### Content PCASM
 
@@ -238,6 +212,28 @@ be injected into the conversation thereby defeating the closure of message distr
 **TODO**: touch also upon mutual assurance & authentication.
 
 ## Why: Participant
+
+It is important to note that the concept of "participant", defined by their TCB, is a foundation
+for all other trust. Developing from the basic definitions of a [@TrustedComputingBase] and from
+the concept of "trust-to-trust" discussed in [@RoleOfTrust], a failure of a participant to maintain
+integrity over their own (trusted) environment should not be considered a failure of an E2ESM that
+connects it to other participants.
+
+Further: it is obviously possible to burden the E2ESM with surfacing potential integrity issues of
+any given participant; but to require such in this standard would risk harming the privacy of the
+participant entity.
+
+The term "participant" in this document exists to supersede the more vague notion of "end" in the
+phrase "end-to-end".
+
+Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
+entity **MAY** legitimately store, forward, or access messages by means that are outside of the
+E2ESM software.
+
+For example: if a participant accesses their E2ESM software via remote desktop software, and their
+RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
+storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
+would instead be a failure of the participant's [@TrustedComputingBase].
 
 ## Why: Backdoor
 

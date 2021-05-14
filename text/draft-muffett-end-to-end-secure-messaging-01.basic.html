@@ -247,11 +247,6 @@ message PCASM.</p></li>
 
 <h1 id="definitions">Definitions</h1>
 
-<p>These principles
-<strong>MUST</strong> be measured
-with respect to
-the following definitions:</p>
-
 <h2 id="participant">Participant</h2>
 
 <p>A participant
@@ -265,69 +260,6 @@ that is bounded
 by the extent
 of that entity&rsquo;s
 Trusted Computing Base (TCB).</p>
-
-<p>It is important to note
-that the concept of &ldquo;participant&rdquo;,
-defined by their TCB,
-is a foundation for all other trust.
-Developing from
-the basic definitions of
-a  <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-and from the concept of
-&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>,
-a failure of a participant
-to maintain integrity
-over their own (trusted) environment
-should not be considered
-a failure of an E2ESM
-that connects it to other participants.</p>
-
-<p>Further: it is
-obviously possible
-to burden
-the E2ESM
-with surfacing
-potential integrity issues
-of any given participant;
-but to require such
-in this standard
-would risk harming
-the privacy
-of the participant entity.</p>
-
-<h3 id="scope-of-a-participant-in-e2esm">Scope of a Participant in E2ESM</h3>
-
-<p>The term &ldquo;participant&rdquo;
-in this document
-exists to supersede
-the more vague notion of &ldquo;end&rdquo;
-in the phrase &ldquo;end-to-end&rdquo;.</p>
-
-<p>Participants are defined
-in terms of an entity&rsquo;s <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-to acknowledge
-that an entity
-<strong>MAY</strong> legitimately
-store, forward, or access messages
-by means
-that are outside of
-the E2ESM software.</p>
-
-<p>For example:
-if a participant
-accesses their E2ESM software
-via remote desktop software,
-and their RDP session is hijacked by a third party;
-of if they back-up their messages
-in cleartext
-to cloud storage
-leading somehow to data exfiltration,
-neither of these
-would be a failure of E2ESM.
-This would instead
-be a failure
-of the participant&rsquo;s
-<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
 
 <h2 id="conversation">Conversation</h2>
 
@@ -343,7 +275,7 @@ set of participants.</p>
 <p>The PCASM
 of a message
 is defined as
-any of:</p>
+any or all of:</p>
 
 <h3 id="content-pcasm">Content PCASM</h3>
 
@@ -493,6 +425,67 @@ the closure of message distribution.</p>
 <p><strong>TODO</strong>: touch also upon mutual assurance &amp; authentication.</p>
 
 <h2 id="why-participant">Why: Participant</h2>
+
+<p>It is important to note
+that the concept of &ldquo;participant&rdquo;,
+defined by their TCB,
+is a foundation for all other trust.
+Developing from
+the basic definitions of
+a  <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+and from the concept of
+&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>,
+a failure of a participant
+to maintain integrity
+over their own (trusted) environment
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</p>
+
+<p>Further: it is
+obviously possible
+to burden
+the E2ESM
+with surfacing
+potential integrity issues
+of any given participant;
+but to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.</p>
+
+<p>The term &ldquo;participant&rdquo;
+in this document
+exists to supersede
+the more vague notion of &ldquo;end&rdquo;
+in the phrase &ldquo;end-to-end&rdquo;.</p>
+
+<p>Participants are defined
+in terms of an entity&rsquo;s <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+to acknowledge
+that an entity
+<strong>MAY</strong> legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.</p>
+
+<p>For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant&rsquo;s
+<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
 
 <h2 id="why-backdoor">Why: Backdoor</h2>
 

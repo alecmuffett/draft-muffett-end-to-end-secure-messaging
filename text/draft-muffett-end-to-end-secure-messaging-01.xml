@@ -258,10 +258,6 @@ message PCASM.</t>
 </section>
 
 <section anchor="definitions"><name>Definitions</name>
-<t>These principles
-<bcp14>MUST</bcp14> be measured
-with respect to
-the following definitions:</t>
 
 <section anchor="participant"><name>Participant</name>
 <t>A participant
@@ -275,65 +271,6 @@ that is bounded
 by the extent
 of that entity's
 Trusted Computing Base (TCB).</t>
-<t>It is important to note
-that the concept of &quot;participant&quot;,
-defined by their TCB,
-is a foundation for all other trust.
-Developing from
-the basic definitions of
-a  <xref target="TrustedComputingBase"></xref>
-and from the concept of
-&quot;trust-to-trust&quot; discussed in <xref target="RoleOfTrust"></xref>,
-a failure of a participant
-to maintain integrity
-over their own (trusted) environment
-should not be considered
-a failure of an E2ESM
-that connects it to other participants.</t>
-<t>Further: it is
-obviously possible
-to burden
-the E2ESM
-with surfacing
-potential integrity issues
-of any given participant;
-but to require such
-in this standard
-would risk harming
-the privacy
-of the participant entity.</t>
-
-<section anchor="scope-of-a-participant-in-e2esm"><name>Scope of a Participant in E2ESM</name>
-<t>The term &quot;participant&quot;
-in this document
-exists to supersede
-the more vague notion of &quot;end&quot;
-in the phrase &quot;end-to-end&quot;.</t>
-<t>Participants are defined
-in terms of an entity's <xref target="TrustedComputingBase"></xref>
-to acknowledge
-that an entity
-<bcp14>MAY</bcp14> legitimately
-store, forward, or access messages
-by means
-that are outside of
-the E2ESM software.</t>
-<t>For example:
-if a participant
-accesses their E2ESM software
-via remote desktop software,
-and their RDP session is hijacked by a third party;
-of if they back-up their messages
-in cleartext
-to cloud storage
-leading somehow to data exfiltration,
-neither of these
-would be a failure of E2ESM.
-This would instead
-be a failure
-of the participant's
-<xref target="TrustedComputingBase"></xref>.</t>
-</section>
 </section>
 
 <section anchor="conversation"><name>Conversation</name>
@@ -349,7 +286,7 @@ set of participants.</t>
 <t>The PCASM
 of a message
 is defined as
-any of:</t>
+any or all of:</t>
 
 <section anchor="content-pcasm"><name>Content PCASM</name>
 <t>Content PCASM
@@ -496,6 +433,62 @@ the closure of message distribution.</t>
 </section>
 
 <section anchor="why-participant"><name>Why: Participant</name>
+<t>It is important to note
+that the concept of &quot;participant&quot;,
+defined by their TCB,
+is a foundation for all other trust.
+Developing from
+the basic definitions of
+a  <xref target="TrustedComputingBase"></xref>
+and from the concept of
+&quot;trust-to-trust&quot; discussed in <xref target="RoleOfTrust"></xref>,
+a failure of a participant
+to maintain integrity
+over their own (trusted) environment
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</t>
+<t>Further: it is
+obviously possible
+to burden
+the E2ESM
+with surfacing
+potential integrity issues
+of any given participant;
+but to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.</t>
+<t>The term &quot;participant&quot;
+in this document
+exists to supersede
+the more vague notion of &quot;end&quot;
+in the phrase &quot;end-to-end&quot;.</t>
+<t>Participants are defined
+in terms of an entity's <xref target="TrustedComputingBase"></xref>
+to acknowledge
+that an entity
+<bcp14>MAY</bcp14> legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.</t>
+<t>For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant's
+<xref target="TrustedComputingBase"></xref>.</t>
 </section>
 
 <section anchor="why-backdoor"><name>Why: Backdoor</name>
