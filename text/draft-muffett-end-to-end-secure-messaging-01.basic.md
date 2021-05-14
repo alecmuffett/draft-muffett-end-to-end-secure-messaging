@@ -111,8 +111,9 @@ Analytic PCASM is data which analyzes, describes, reduces, or summarizes the "co
 
 ### Conversation Metadata (**OPTIONAL**)
 
-Whether per-conversation metadata constitute PCASM, is an **OPTIONAL** choice for E2ESM software,
-but that choice **MUST** be made apparent to participants.
+Conversation Metadata exists "outside" of messages and describes the conversationa context. Whether
+per-conversation metadata constitute PCASM, is an **OPTIONAL** choice for E2ESM software, but that
+choice **MUST** be made apparent to participants.
 
 ## Backdoor
 

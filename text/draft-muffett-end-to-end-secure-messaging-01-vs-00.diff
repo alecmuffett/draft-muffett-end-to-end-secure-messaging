@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-14 22:29:42.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-14 22:34:25.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -196,11 +196,11 @@
 -    "plaintext content and sensitive metadata" (PCASM) and which
 -    constitute a "conversation" amongst a set of "participants", to
 -    provide E2ESM will require:
-  
-! 3.1.  Equality of Participation
-! 
-!    All participants MUST be peers who MUST have equal access to any
-!    given message's PCASM.
+- 
+- 3.1.  Equality of Participation
+- 
+-    All participants MUST be peers who MUST have equal access to any
+-    given message's PCASM.
   
   
   
@@ -209,7 +209,7 @@
   
   
 ! Muffett                  Expires 8 November 2021                [Page 3]
-  
+! 
 ! Internet-Draft                    e2esm                         May 2021
   
   
@@ -244,13 +244,13 @@
 !    except by the intentional action of one or more existing
 !    participants.
   
-- 3.4.1.  Public Conversations and Self-Subscription
+! 3.4.1.  Public Conversations and Self-Subscription
   
--    Existing participants MAY publicly share links, data, or other
--    mechanisms to enable non-participant entities to subscribe themselves
--    as conversation participants.  This MAY be considered legitimate
--    "intentional action" to increase the set of participants in the
--    group.
+!    Existing participants MAY publicly share links, data, or other
+!    mechanisms to enable non-participant entities to subscribe themselves
+!    as conversation participants.  This MAY be considered legitimate
+!    "intentional action" to increase the set of participants in the
+!    group.
   
 - 3.5.  Management and Visibility of Participant Clients and Devices
   
@@ -264,9 +264,9 @@
   
   
   
-- Muffett                  Expires 8 November 2021                [Page 4]
+! Muffett                  Expires 8 November 2021                [Page 4]
   
-! Internet-Draft                    e2esm                         May 2021
+  Internet-Draft                    e2esm                         May 2021
   
   
 ! 4.  Definitions
@@ -299,10 +299,10 @@
   
 !    1.  The content is "Hello, world."
   
--    2.  The content starts with the word "Hello"
+!    2.  The content starts with the word "Hello"
   
--    3.  The top bit of the first byte of the content in ASCII encoding,
--        is zero
+!    3.  The top bit of the first byte of the content in ASCII encoding,
+!        is zero
   
 -    4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
   
@@ -315,12 +315,12 @@
   
 -    For stream encryption of content, Size PCASM is currently undefined.
   
-!    For transport encryption of content, precise Size PCASM SHOULD NOT be
-!    observable.
+-    For transport encryption of content, precise Size PCASM SHOULD NOT be
+-    observable.
   
   
   
-! Muffett                  Expires 8 November 2021                [Page 5]
+- Muffett                  Expires 8 November 2021                [Page 5]
   
 ! Internet-Draft                    e2esm                         May 2021
   
@@ -352,22 +352,22 @@
   
 ! 4.3.4.  Conversation Metadata (OPTIONAL)
   
--    Whether per-conversation "group" metadata, such as "group titles",
--    "group topics", "group icons", or "group participant lists"
--    constitute PCASM, is an OPTIONAL choice for the E2ESM software, but
--    that choice MUST be made apparent to participants.
+!    Whether per-conversation "group" metadata, such as "group titles",
+!    "group topics", "group icons", or "group participant lists"
+!    constitute PCASM, is an OPTIONAL choice for the E2ESM software, but
+!    that choice MUST be made apparent to participants.
   
 - 4.3.5.  Non-PCASM
   
 -    Information which would not be PCASM would include, non-exclusively:
   
-!    1.  The content is sent from Alice
+-    1.  The content is sent from Alice
   
 !    2.  The content is sent to Bob
   
--    3.  The content is between 1 and 16 bytes long
+!    3.  The content is between 1 and 16 bytes long
   
-!    4.  The content was sent at the following date and time: ...
+-    4.  The content was sent at the following date and time: ...
   
 !    5.  The content was sent from the following IP address: ...
   
@@ -405,7 +405,7 @@
   
   
   
-! Muffett                 Expires 15 November 2021                [Page 3]
++ Muffett                 Expires 15 November 2021                [Page 3]
   
 + Internet-Draft                    e2esm                         May 2021
   
@@ -419,17 +419,17 @@
 +    Further context for several of these definitions may also be found in
 +    the rationale section, below.
   
-+ 3.1.  Participant
+! 3.1.  Participant
   
-!    A participant is any entity - human, machine, software bot,
-!    conversation archiver, or other - and the systems that they control
-!    and use for the E2ESM software, bounded by the extent of that
-!    entity's Trusted Computing Base (TCB).
++    A participant is any entity - human, machine, software bot,
++    conversation archiver, or other - and the systems that they control
++    and use for the E2ESM software, bounded by the extent of that
++    entity's Trusted Computing Base (TCB).
   
 ! 3.2.  Conversation
   
-+    A conversation is a sequence of one or more messages over a period of
-+    time amongst a constant or evolving set of participants.
+!    A conversation is a sequence of one or more messages over a period of
+!    time amongst a constant or evolving set of participants.
   
 ! 3.3.  Plaintext Content and Sensitive Metadata (PCASM)
   
@@ -461,16 +461,17 @@
   
   
   
-+ Muffett                 Expires 15 November 2021                [Page 4]
+! Muffett                 Expires 15 November 2021                [Page 4]
   
-+ Internet-Draft                    e2esm                         May 2021
+  Internet-Draft                    e2esm                         May 2021
   
   
 ! 3.3.4.  Conversation Metadata (OPTIONAL)
   
-+    Whether per-conversation metadata constitute PCASM, is an OPTIONAL
-+    choice for E2ESM software, but that choice MUST be made apparent to
-+    participants.
+!    Conversation Metadata exists "outside" of messages and describes the
+!    conversationa context.  Whether per-conversation metadata constitute
+!    PCASM, is an OPTIONAL choice for E2ESM software, but that choice MUST
+!    be made apparent to participants.
   
 ! 3.4.  Backdoor
   
@@ -516,19 +517,18 @@
   
   
   
-  
-! Muffett                 Expires 15 November 2021                [Page 5]
++ Muffett                 Expires 15 November 2021                [Page 5]
   
 + Internet-Draft                    e2esm                         May 2021
   
   
 ! 4.3.2.  Non-Participation
   
-!    It follows that for any given message, all entities that exist
-!    outside of the above-defined sets of participants will be "non-
-!    participants" in respect of that message.
++    It follows that for any given message, all entities that exist
++    outside of the above-defined sets of participants will be "non-
++    participants" in respect of that message.
   
-+ 4.4.  Closure of Conversation
+! 4.4.  Closure of Conversation
   
 !    The set of participants in a conversation SHALL NOT be increased
 !    except by the intentional action of one or more existing
@@ -586,10 +586,10 @@
 !    The term "participant" in this document exists to supersede the more
 !    vague notion of "end" in the phrase "end-to-end".
   
-!    Participants are defined in terms of an entity's
-!    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
-!    store, forward, or access messages by means that are outside of the
-!    E2ESM software.
++    Participants are defined in terms of an entity's
++    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
++    store, forward, or access messages by means that are outside of the
++    E2ESM software.
   
 +    For example: if a participant accesses their E2ESM software via
 +    remote desktop software, and their RDP session is hijacked by a third
@@ -600,20 +600,20 @@
   
 + 5.2.  Why: Content PCASM
   
-+    *TODO* because content needs to stay secret
+!    *TODO* because content needs to stay secret
   
 ! 5.3.  Why: Size PCASM
   
-!    *TODO* because "yes" is three letters, and "no" is two.  Unless
-!    you're using another language, but signals intelligence is still a
-!    thing.
++    *TODO* because "yes" is three letters, and "no" is two.  Unless
++    you're using another language, but signals intelligence is still a
++    thing.
   
-+ 5.4.  Why: Analytic PCASM
+! 5.4.  Why: Analytic PCASM
   
 !    *TODO* because these enable backdoors.
   
 ! 5.5.  Why: Conversation Metadata as OPTIONAL PCASM
-  
+! 
 !    *TODO* optional because email, if nothing else.
   
 ! 5.6.  Why: Backdoor

@@ -203,6 +203,12 @@ the "content".
 
 ### Conversation Metadata (**OPTIONAL**)
 
+Conversation Metadata
+exists "outside"
+of messages
+and describes
+the conversationa
+context.
 Whether
 per-conversation
 metadata

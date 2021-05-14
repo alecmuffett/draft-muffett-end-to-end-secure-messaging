@@ -191,7 +191,13 @@ the &quot;content&quot;.</t>
 </section>
 
 <section anchor="conversation-metadata-optional"><name>Conversation Metadata (<bcp14>OPTIONAL</bcp14>)</name>
-<t>Whether
+<t>Conversation Metadata
+exists &quot;outside&quot;
+of messages
+and describes
+the conversationa
+context.
+Whether
 per-conversation
 metadata
 constitute PCASM,
