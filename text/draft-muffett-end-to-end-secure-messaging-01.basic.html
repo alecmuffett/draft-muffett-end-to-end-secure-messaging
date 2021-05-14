@@ -369,6 +369,40 @@ would risk harming
 the privacy
 of the participant entity.</p>
 
+<h3 id="scope-of-a-participant-in-e2esm">Scope of a Participant in E2ESM</h3>
+
+<p>The term &ldquo;participant&rdquo;
+in this document
+exists to supersede
+the more vague notion of &ldquo;end&rdquo;
+in the phrase &ldquo;end-to-end&rdquo;.</p>
+
+<p>Participants are defined
+in terms of an entity&rsquo;s <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+to acknowledge
+that an entity
+<strong>MAY</strong> legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.</p>
+
+<p>For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant&rsquo;s
+<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
+
 <h2 id="conversation">Conversation</h2>
 
 <p>A conversation
@@ -536,40 +570,6 @@ it is also not far removed
 from the similar
 and established term
 &ldquo;side channel&rdquo;.</p>
-
-<h1 id="scope-of-a-participant-in-e2esm">Scope of a Participant in E2ESM</h1>
-
-<p>The term &ldquo;participant&rdquo;
-in this document
-exists to supersede
-the more vague notion of &ldquo;end&rdquo;
-in the phrase &ldquo;end-to-end&rdquo;.</p>
-
-<p>Participants are defined
-in terms of an entity&rsquo;s <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-to acknowledge
-that an entity
-<strong>MAY</strong> legitimately
-store, forward, or access messages
-by means
-that are outside of
-the E2ESM software.</p>
-
-<p>For example:
-if a participant
-accesses their E2ESM software
-via remote desktop software,
-and their RDP session is hijacked by a third party;
-of if they back-up their messages
-in cleartext
-to cloud storage
-leading somehow to data exfiltration,
-neither of these
-would be a failure of E2ESM.
-This would instead
-be a failure
-of the participant&rsquo;s
-<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
 
 <h1 id="examples-of-pcasm">Examples of PCASM</h1>
 

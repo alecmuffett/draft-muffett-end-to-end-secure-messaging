@@ -374,6 +374,38 @@ in this standard
 would risk harming
 the privacy
 of the participant entity.</t>
+
+<section anchor="scope-of-a-participant-in-e2esm"><name>Scope of a Participant in E2ESM</name>
+<t>The term &quot;participant&quot;
+in this document
+exists to supersede
+the more vague notion of &quot;end&quot;
+in the phrase &quot;end-to-end&quot;.</t>
+<t>Participants are defined
+in terms of an entity's <xref target="TrustedComputingBase"></xref>
+to acknowledge
+that an entity
+<bcp14>MAY</bcp14> legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.</t>
+<t>For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant's
+<xref target="TrustedComputingBase"></xref>.</t>
+</section>
 </section>
 
 <section anchor="conversation"><name>Conversation</name>
@@ -535,38 +567,6 @@ and established term
 &quot;side channel&quot;.</t>
 </section>
 </section>
-</section>
-
-<section anchor="scope-of-a-participant-in-e2esm"><name>Scope of a Participant in E2ESM</name>
-<t>The term &quot;participant&quot;
-in this document
-exists to supersede
-the more vague notion of &quot;end&quot;
-in the phrase &quot;end-to-end&quot;.</t>
-<t>Participants are defined
-in terms of an entity's <xref target="TrustedComputingBase"></xref>
-to acknowledge
-that an entity
-<bcp14>MAY</bcp14> legitimately
-store, forward, or access messages
-by means
-that are outside of
-the E2ESM software.</t>
-<t>For example:
-if a participant
-accesses their E2ESM software
-via remote desktop software,
-and their RDP session is hijacked by a third party;
-of if they back-up their messages
-in cleartext
-to cloud storage
-leading somehow to data exfiltration,
-neither of these
-would be a failure of E2ESM.
-This would instead
-be a failure
-of the participant's
-<xref target="TrustedComputingBase"></xref>.</t>
 </section>
 
 <section anchor="examples-of-pcasm"><name>Examples of PCASM</name>

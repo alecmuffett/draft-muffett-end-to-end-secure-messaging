@@ -176,6 +176,20 @@ Further: it is obviously possible to burden the E2ESM with surfacing potential i
 any given participant; but to require such in this standard would risk harming the privacy of the
 participant entity.
 
+### Scope of a Participant in E2ESM
+
+The term "participant" in this document exists to supersede the more vague notion of "end" in the
+phrase "end-to-end".
+
+Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
+entity **MAY** legitimately store, forward, or access messages by means that are outside of the
+E2ESM software.
+
+For example: if a participant accesses their E2ESM software via remote desktop software, and their
+RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
+storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
+would instead be a failure of the participant's [@TrustedComputingBase].
+
 ## Conversation
 
 A conversation is a sequence of one or more messages over a period of time amongst a constant or
@@ -244,20 +258,6 @@ access". In the above definition we already allow for the term to be prefixed wi
 
 Thus it seems appropriate to use this term in this context, not least because it is also not far
 removed from the similar and established term "side channel".
-
-# Scope of a Participant in E2ESM
-
-The term "participant" in this document exists to supersede the more vague notion of "end" in the
-phrase "end-to-end".
-
-Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
-entity **MAY** legitimately store, forward, or access messages by means that are outside of the
-E2ESM software.
-
-For example: if a participant accesses their E2ESM software via remote desktop software, and their
-RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
-storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
-would instead be a failure of the participant's [@TrustedComputingBase].
 
 # Examples of PCASM
 

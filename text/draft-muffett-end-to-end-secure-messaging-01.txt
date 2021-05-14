@@ -80,26 +80,26 @@ Table of Contents
            Devices . . . . . . . . . . . . . . . . . . . . . . . . .   6
    4.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   6
-     4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   6
-     4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   6
+       4.1.1.  Scope of a Participant in E2ESM . . . . . . . . . . .   6
+     4.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   7
+     4.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   7
        4.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   7
        4.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   7
        4.3.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   7
        4.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   7
-     4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
-       4.4.1.  Why call this a "backdoor"? . . . . . . . . . . . . .   7
-   5.  Scope of a Participant in E2ESM . . . . . . . . . . . . . . .   8
-   6.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .   8
-     6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .   9
-     6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .   9
-     6.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .   9
-     6.4.  Conversation Metadata . . . . . . . . . . . . . . . . . .   9
-     6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  10
-   7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  10
-   8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  11
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
-   10. Security Considerations . . . . . . . . . . . . . . . . . . .  11
-   11. Informative References  . . . . . . . . . . . . . . . . . . .  11
+     4.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   8
+       4.4.1.  Why call this a "backdoor"? . . . . . . . . . . . . .   8
+   5.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .   9
+     5.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .   9
+     5.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .   9
+     5.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .   9
+     5.4.  Conversation Metadata . . . . . . . . . . . . . . . . . .  10
+     5.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  10
+   6.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  10
+   7.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  11
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .  11
+   10. Informative References  . . . . . . . . . . . . . . . . . . .  11
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 
@@ -319,15 +319,15 @@ Internet-Draft                    e2esm                         May 2021
    such in this standard would risk harming the privacy of the
    participant entity.
 
-4.2.  Conversation
+4.1.1.  Scope of a Participant in E2ESM
 
-   A conversation is a sequence of one or more messages over a period of
-   time amongst a constant or evolving set of participants.
+   The term "participant" in this document exists to supersede the more
+   vague notion of "end" in the phrase "end-to-end".
 
-4.3.  Plaintext Content and Sensitive Metadata (PCASM)
-
-   The PCASM of a message is defined as any of:
-
+   Participants are defined in terms of an entity's
+   [TrustedComputingBase] to acknowledge that an entity MAY legitimately
+   store, forward, or access messages by means that are outside of the
+   E2ESM software.
 
 
 
@@ -337,6 +337,22 @@ Muffett                 Expires 15 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   For example: if a participant accesses their E2ESM software via
+   remote desktop software, and their RDP session is hijacked by a third
+   party; of if they back-up their messages in cleartext to cloud
+   storage leading somehow to data exfiltration, neither of these would
+   be a failure of E2ESM.  This would instead be a failure of the
+   participant's [TrustedComputingBase].
+
+4.2.  Conversation
+
+   A conversation is a sequence of one or more messages over a period of
+   time amongst a constant or evolving set of participants.
+
+4.3.  Plaintext Content and Sensitive Metadata (PCASM)
+
+   The PCASM of a message is defined as any of:
 
 4.3.1.  Content PCASM
 
@@ -365,6 +381,19 @@ Internet-Draft                    e2esm                         May 2021
    constitute PCASM, is an OPTIONAL choice for E2ESM software, but that
    choice MUST be made apparent to participants.
 
+
+
+
+
+
+
+
+
+Muffett                 Expires 15 November 2021                [Page 7]
+
+Internet-Draft                    e2esm                         May 2021
+
+
 4.4.  Backdoor
 
    A "backdoor" is any intentional or unintentional mechanism, in
@@ -386,13 +415,6 @@ Internet-Draft                    e2esm                         May 2021
    restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
    Meltdown), "law enforcement access fields" (Clipper), and "key
    escrow" (Crypto Wars).
-
-
-
-Muffett                 Expires 15 November 2021                [Page 7]
-
-Internet-Draft                    e2esm                         May 2021
-
 
    All of these terms combine an "access facilitation mechanism" with an
    "intention or opportunity" - and for all of them an access
@@ -420,28 +442,6 @@ Internet-Draft                    e2esm                         May 2021
    because it is also not far removed from the similar and established
    term "side channel".
 
-5.  Scope of a Participant in E2ESM
-
-   The term "participant" in this document exists to supersede the more
-   vague notion of "end" in the phrase "end-to-end".
-
-   Participants are defined in terms of an entity's
-   [TrustedComputingBase] to acknowledge that an entity MAY legitimately
-   store, forward, or access messages by means that are outside of the
-   E2ESM software.
-
-   For example: if a participant accesses their E2ESM software via
-   remote desktop software, and their RDP session is hijacked by a third
-   party; of if they back-up their messages in cleartext to cloud
-   storage leading somehow to data exfiltration, neither of these would
-   be a failure of E2ESM.  This would instead be a failure of the
-   participant's [TrustedComputingBase].
-
-6.  Examples of PCASM
-
-   For an example message with a plaintext content ("content") of
-   "Hello, world.", for the purposes of this example encoded as an ASCII
-   string of length 13 bytes without terminator character.
 
 
 
@@ -450,7 +450,13 @@ Muffett                 Expires 15 November 2021                [Page 8]
 Internet-Draft                    e2esm                         May 2021
 
 
-6.1.  Content PCASM
+5.  Examples of PCASM
+
+   For an example message with a plaintext content ("content") of
+   "Hello, world.", for the purposes of this example encoded as an ASCII
+   string of length 13 bytes without terminator character.
+
+5.1.  Content PCASM
 
    Examples of Content PCASM would include, non-exclusively:
 
@@ -464,12 +470,12 @@ Internet-Draft                    e2esm                         May 2021
 
    5.  The Salted-MD5 Hash of the content is : ...
 
-6.2.  Size PCASM
+5.2.  Size PCASM
 
    Size PCASM is defined in the main text, as it relates to the
    transport and/or content encryption mechanisms.
 
-6.3.  Analytic PCASM
+5.3.  Analytic PCASM
 
    Examples of Analytic PCASM would include, non-exclusively:
 
@@ -492,12 +498,6 @@ Internet-Draft                    e2esm                         May 2021
    7.  The content was matched by a machine-learning classifier with the
        following training set: ...
 
-6.4.  Conversation Metadata
-
-   Examples of Conversation Metadata are given in the main text.
-
-
-
 
 
 
@@ -506,7 +506,11 @@ Muffett                 Expires 15 November 2021                [Page 9]
 Internet-Draft                    e2esm                         May 2021
 
 
-6.5.  Non-PCASM
+5.4.  Conversation Metadata
+
+   Examples of Conversation Metadata are given in the main text.
+
+5.5.  Non-PCASM
 
    Information which would not be PCASM would include, non-exclusively:
 
@@ -524,7 +528,7 @@ Internet-Draft                    e2esm                         May 2021
 
    7.  The content was composed using the following platform: ...
 
-7.  Worked Example
+6.  Worked Example
 
    Consider FooBook, a hypothetical example company which provides
    messaging services for conversations between entities who use it.
@@ -547,11 +551,7 @@ Internet-Draft                    e2esm                         May 2021
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
 
-   FooBook MUST NOT retain means to forcibly insert new participants
-   into a conversation.  For clarity: this specification does not
-   recognise any notion of "atomic" exchange of one participant with
-   another, treating it as an ejection, followed by an "illegitimate"
-   insertion.  (Increase in Closure of Participation)
+
 
 
 
@@ -562,6 +562,12 @@ Muffett                 Expires 15 November 2021               [Page 10]
 Internet-Draft                    e2esm                         May 2021
 
 
+   FooBook MUST NOT retain means to forcibly insert new participants
+   into a conversation.  For clarity: this specification does not
+   recognise any notion of "atomic" exchange of one participant with
+   another, treating it as an ejection, followed by an "illegitimate"
+   insertion.  (Increase in Closure of Participation)
+
    FooBook MUST enable the user to observe and manage the complete state
    of their [TrustedComputingBase] with respect to their FooBook
    messaging services.  (Management and Visibility)
@@ -569,20 +575,20 @@ Internet-Draft                    e2esm                         May 2021
    FooBook MAY treat conversation metadata as PCASM, but it MUST
    communicate to participants whether it does, or does not.
 
-8.  See Also
+7.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
    is discussed in [I-D.knodel-e2ee-definition].
 
-9.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  Security Considerations
+9.  Security Considerations
 
    This document is entirely composed of security considerations.
 
-11.  Informative References
+10.  Informative References
 
    [DualUse]  Wikipedia, "Dual-use technology", 2021,
               <https://en.wikipedia.org/wiki/Dual-use_technology>.
@@ -603,13 +609,7 @@ Internet-Draft                    e2esm                         May 2021
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
               2015, <https://www.rfc-editor.org/info/rfc7686>.
 
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [RicochetRefresh]
-              BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
-              <https://www.ricochetrefresh.net>.
 
 
 
@@ -617,6 +617,14 @@ Muffett                 Expires 15 November 2021               [Page 11]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+   [RicochetRefresh]
+              BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
+              <https://www.ricochetrefresh.net>.
 
    [RoleOfTrust]
               Clark, D. D. and M. S. Blumenthal, "The End-to-End
@@ -634,14 +642,6 @@ Author's Address
    Security Researcher
 
    Email: alec.muffett@gmail.com
-
-
-
-
-
-
-
-
 
 
 
