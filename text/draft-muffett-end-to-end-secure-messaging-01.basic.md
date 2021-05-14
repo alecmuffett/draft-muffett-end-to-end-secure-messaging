@@ -126,46 +126,6 @@ Where there exists centralised E2ESM software that hosts participants:
 2.  The E2ESM software **MUST** provide each participant entity with notifications and/or complete
     logs of changes to the set of clients or devices that can or could access message PCASM.
 
-# Rationale
-
-This explanatory section regarding the principles has been broken out for clarity and argumentation
-purposes.
-
-## Why: Equality of Participation
-
-Without equality of participation it would be allowed for a person to deploy a standalone cleartext
-chat server, available solely over TLS-encrypted links, declare themselves to be "participants" in
-every conversation from its outset, access all message PCASM on that basis, and yet call themselves
-an E2ESM.
-
-So this is an "anti-cheating" clause: all participant access to PCASM **MUST** be via the same
-mechanisms for all participants without favour or privilege, and in particular PCASM **MUST NOT** be
-available via other means, e.g. raw filestore, database access or network sniffing.
-
-## Why: Transparency of Participation
-
-The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
-accessible to that set of participants, all participants must be visible.
-
-## Why: Integrity of Participation
-
-Inherent in the term "end to end secure messenger" is the intention that PCASM will only be
-available to the participants ("ends") at the time the message was composed.
-
-If this was not the intention we would deduce that an E2ESM would automatically make past content
-available to newly-added conversation participants, thereby breaking forward secrecy. This is not a
-characteristic of any E2ESM, but it is characteristic of several non-E2ESM. Therefore the converse
-is true.
-
-## Why: Closure of Conversation
-
-If a conversation is not "only extensible from within" then it would be possible for participants to
-be injected into the conversation thereby defeating the closure of message distribution.
-
-## Why: Management and Visibility of Participant Clients and Devices
-
-**TODO**: touch also upon mutual assurance & authentication.
-
 # Definitions
 
 These principles **MUST** be measured with respect to the following definitions:
@@ -267,6 +227,46 @@ access". In the above definition we already allow for the term to be prefixed wi
 
 Thus it seems appropriate to use this term in this context, not least because it is also not far
 removed from the similar and established term "side channel".
+
+# Rationale
+
+This explanatory section regarding the principles has been broken out for clarity and argumentation
+purposes.
+
+## Why: Equality of Participation
+
+Without equality of participation it would be allowed for a person to deploy a standalone cleartext
+chat server, available solely over TLS-encrypted links, declare themselves to be "participants" in
+every conversation from its outset, access all message PCASM on that basis, and yet call themselves
+an E2ESM.
+
+So this is an "anti-cheating" clause: all participant access to PCASM **MUST** be via the same
+mechanisms for all participants without favour or privilege, and in particular PCASM **MUST NOT** be
+available via other means, e.g. raw filestore, database access or network sniffing.
+
+## Why: Transparency of Participation
+
+The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
+accessible to that set of participants, all participants must be visible.
+
+## Why: Integrity of Participation
+
+Inherent in the term "end to end secure messenger" is the intention that PCASM will only be
+available to the participants ("ends") at the time the message was composed.
+
+If this was not the intention we would deduce that an E2ESM would automatically make past content
+available to newly-added conversation participants, thereby breaking forward secrecy. This is not a
+characteristic of any E2ESM, but it is characteristic of several non-E2ESM. Therefore the converse
+is true.
+
+## Why: Closure of Conversation
+
+If a conversation is not "only extensible from within" then it would be possible for participants to
+be injected into the conversation thereby defeating the closure of message distribution.
+
+## Why: Management and Visibility of Participant Clients and Devices
+
+**TODO**: touch also upon mutual assurance & authentication.
 
 # Examples of PCASM
 
