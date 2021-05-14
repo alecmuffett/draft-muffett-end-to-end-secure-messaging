@@ -12,6 +12,9 @@
 <workgroup>individual submission</workgroup>
 <keyword>messaging</keyword>
 <keyword>end to end</keyword>
+<keyword>end to end encryption</keyword>
+<keyword>end to end secure</keyword>
+<keyword>end to end security</keyword>
 <keyword>encryption</keyword>
 <keyword>security</keyword>
 
@@ -396,15 +399,6 @@ better than 50-50 certainty
 regarding the value of
 any given bit
 of the plaintext message content. (&quot;content&quot;)</t>
-<t>Content PCASM would include, non-exclusively:</t>
-
-<ol>
-<li>The content is &quot;Hello, world.&quot;</li>
-<li>The content starts with the word &quot;Hello&quot;</li>
-<li>The top bit of the first byte of the content in ASCII encoding, is zero</li>
-<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
-<li>The Salted-MD5 Hash of the content is : ...</li>
-</ol>
 </section>
 
 <section anchor="size-pcasm"><name>Size PCASM</name>
@@ -421,17 +415,6 @@ precise Size PCASM <bcp14>SHOULD NOT</bcp14> be observable.</t>
 is data
 that describes
 the &quot;content&quot;.</t>
-<t>Analytic PCASM would include, non-exclusively:</t>
-
-<ol>
-<li>The content contains the substring &quot;ello&quot;</li>
-<li>The content does not contain the word &quot;Goodbye&quot;</li>
-<li>The content contains a substring from amongst the following set: ...</li>
-<li>The content does not contain a substring from amongst the following set: ...</li>
-<li>The hash of the content exists amongst the following set of hashes: ...</li>
-<li>The hash of the content does not exist amongst the following set of hashes: ...</li>
-<li>The content was matched by a machine-learning classifier with the following training set: ...</li>
-</ol>
 </section>
 
 <section anchor="conversation-metadata-optional"><name>Conversation Metadata (<bcp14>OPTIONAL</bcp14>)</name>
@@ -447,25 +430,11 @@ constitute PCASM,
 is an
 <bcp14>OPTIONAL</bcp14>
 choice
-for the E2ESM software,
+for E2ESM software,
 but that choice
 <bcp14>MUST</bcp14>
 be made apparent
 to participants.</t>
-</section>
-
-<section anchor="non-pcasm"><name>Non-PCASM</name>
-<t>Information which would not be PCASM would include, non-exclusively:</t>
-
-<ol>
-<li>The content is sent from Alice</li>
-<li>The content is sent to Bob</li>
-<li>The content is between 1 and 16 bytes long</li>
-<li>The content was sent at the following date and time: ...</li>
-<li>The content was sent from the following IP address: ...</li>
-<li>The content was sent from the following geolocation: ...</li>
-<li>The content was composed using the following platform: ...</li>
-</ol>
 </section>
 </section>
 
@@ -600,7 +569,62 @@ of the participant's
 <xref target="TrustedComputingBase"></xref>.</t>
 </section>
 
-<section anchor="rationale"><name>Rationale</name>
+<section anchor="examples-of-pcasm"><name>Examples of PCASM</name>
+<t>For an example message with a plaintext content (&quot;content&quot;) of &quot;Hello,
+world.&quot;, for the purposes of this example encoded as an ASCII string
+of length 13 bytes without terminator character.</t>
+
+<section anchor="content-pcasm-1"><name>Content PCASM</name>
+<t>Examples of Content PCASM would include, non-exclusively:</t>
+
+<ol>
+<li>The content is &quot;Hello, world.&quot;</li>
+<li>The content starts with the word &quot;Hello&quot;</li>
+<li>The top bit of the first byte of the content, is zero</li>
+<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
+<li>The Salted-MD5 Hash of the content is : ...</li>
+</ol>
+</section>
+
+<section anchor="size-pcasm-1"><name>Size PCASM</name>
+<t>Size PCASM is defined in the main text, as it relates to the transport
+and/or content encryption mechanisms.</t>
+</section>
+
+<section anchor="analytic-pcasm-1"><name>Analytic PCASM</name>
+<t>Examples of Analytic PCASM would include, non-exclusively:</t>
+
+<ol>
+<li>The content contains the substring &quot;ello&quot;</li>
+<li>The content does not contain the word &quot;Goodbye&quot;</li>
+<li>The content contains a substring from amongst the following set: ...</li>
+<li>The content does not contain a substring from amongst the following set: ...</li>
+<li>The hash of the content exists amongst the following set of hashes: ...</li>
+<li>The hash of the content does not exist amongst the following set of hashes: ...</li>
+<li>The content was matched by a machine-learning classifier with the following training set: ...</li>
+</ol>
+</section>
+
+<section anchor="conversation-metadata"><name>Conversation Metadata</name>
+<t>Examples of Conversation Metadata are given in the main text.</t>
+</section>
+
+<section anchor="non-pcasm"><name>Non-PCASM</name>
+<t>Information which would not be PCASM would include, non-exclusively:</t>
+
+<ol>
+<li>The content is sent from Alice</li>
+<li>The content is sent to Bob</li>
+<li>The content is between 1 and 16 bytes long</li>
+<li>The content was sent at the following date and time: ...</li>
+<li>The content was sent from the following IP address: ...</li>
+<li>The content was sent from the following geolocation: ...</li>
+<li>The content was composed using the following platform: ...</li>
+</ol>
+</section>
+</section>
+
+<section anchor="worked-example"><name>Worked Example</name>
 <t>Consider FooBook,
 a hypothetical example company
 which provides

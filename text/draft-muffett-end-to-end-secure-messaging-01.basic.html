@@ -395,16 +395,6 @@ regarding the value of
 any given bit
 of the plaintext message content. (&ldquo;content&rdquo;)</p>
 
-<p>Content PCASM would include, non-exclusively:</p>
-
-<ol>
-<li>The content is &ldquo;Hello, world.&rdquo;</li>
-<li>The content starts with the word &ldquo;Hello&rdquo;</li>
-<li>The top bit of the first byte of the content in ASCII encoding, is zero</li>
-<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
-<li>The Salted-MD5 Hash of the content is : &hellip;</li>
-</ol>
-
 <h3 id="size-pcasm">Size PCASM</h3>
 
 <p>For block encryption of content,
@@ -423,18 +413,6 @@ is data
 that describes
 the &ldquo;content&rdquo;.</p>
 
-<p>Analytic PCASM would include, non-exclusively:</p>
-
-<ol>
-<li>The content contains the substring &ldquo;ello&rdquo;</li>
-<li>The content does not contain the word &ldquo;Goodbye&rdquo;</li>
-<li>The content contains a substring from amongst the following set: &hellip;</li>
-<li>The content does not contain a substring from amongst the following set: &hellip;</li>
-<li>The hash of the content exists amongst the following set of hashes: &hellip;</li>
-<li>The hash of the content does not exist amongst the following set of hashes: &hellip;</li>
-<li>The content was matched by a machine-learning classifier with the following training set: &hellip;</li>
-</ol>
-
 <h3 id="conversation-metadata-optional">Conversation Metadata (<strong>OPTIONAL</strong>)</h3>
 
 <p>Whether
@@ -449,25 +427,11 @@ constitute PCASM,
 is an
 <strong>OPTIONAL</strong>
 choice
-for the E2ESM software,
+for E2ESM software,
 but that choice
 <strong>MUST</strong>
 be made apparent
 to participants.</p>
-
-<h3 id="non-pcasm">Non-PCASM</h3>
-
-<p>Information which would not be PCASM would include, non-exclusively:</p>
-
-<ol>
-<li>The content is sent from Alice</li>
-<li>The content is sent to Bob</li>
-<li>The content is between 1 and 16 bytes long</li>
-<li>The content was sent at the following date and time: &hellip;</li>
-<li>The content was sent from the following IP address: &hellip;</li>
-<li>The content was sent from the following geolocation: &hellip;</li>
-<li>The content was composed using the following platform: &hellip;</li>
-</ol>
 
 <h2 id="backdoor">Backdoor</h2>
 
@@ -607,7 +571,62 @@ be a failure
 of the participant&rsquo;s
 <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
 
-<h1 id="rationale">Rationale</h1>
+<h1 id="examples-of-pcasm">Examples of PCASM</h1>
+
+<p>For an example message with a plaintext content (&ldquo;content&rdquo;) of &ldquo;Hello,
+world.&rdquo;, for the purposes of this example encoded as an ASCII string
+of length 13 bytes without terminator character.</p>
+
+<h2 id="content-pcasm-1">Content PCASM</h2>
+
+<p>Examples of Content PCASM would include, non-exclusively:</p>
+
+<ol>
+<li>The content is &ldquo;Hello, world.&rdquo;</li>
+<li>The content starts with the word &ldquo;Hello&rdquo;</li>
+<li>The top bit of the first byte of the content, is zero</li>
+<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
+<li>The Salted-MD5 Hash of the content is : &hellip;</li>
+</ol>
+
+<h2 id="size-pcasm-1">Size PCASM</h2>
+
+<p>Size PCASM is defined in the main text, as it relates to the transport
+and/or content encryption mechanisms.</p>
+
+<h2 id="analytic-pcasm-1">Analytic PCASM</h2>
+
+<p>Examples of Analytic PCASM would include, non-exclusively:</p>
+
+<ol>
+<li>The content contains the substring &ldquo;ello&rdquo;</li>
+<li>The content does not contain the word &ldquo;Goodbye&rdquo;</li>
+<li>The content contains a substring from amongst the following set: &hellip;</li>
+<li>The content does not contain a substring from amongst the following set: &hellip;</li>
+<li>The hash of the content exists amongst the following set of hashes: &hellip;</li>
+<li>The hash of the content does not exist amongst the following set of hashes: &hellip;</li>
+<li>The content was matched by a machine-learning classifier with the following training set: &hellip;</li>
+</ol>
+
+<h2 id="conversation-metadata">Conversation Metadata</h2>
+
+<p>Examples of Conversation Metadata are given in the main text.</p>
+
+<h2 id="non-pcasm">Non-PCASM</h2>
+
+<p>Information which would not be PCASM would include, non-exclusively:</p>
+
+<ol>
+<li>The content is sent from Alice</li>
+<li>The content is sent to Bob</li>
+<li>The content is between 1 and 16 bytes long</li>
+<li>The content was sent at the following date and time: &hellip;</li>
+<li>The content was sent from the following IP address: &hellip;</li>
+<li>The content was sent from the following geolocation: &hellip;</li>
+<li>The content was composed using the following platform: &hellip;</li>
+</ol>
+
+<h1 id="worked-example">Worked Example</h1>
 
 <p>Consider FooBook,
 a hypothetical example company

@@ -6,7 +6,7 @@ docName = "apparently this tool demands a doc name but does not use it"
 ipr ="trust200902"
 area = "Internet"
 workgroup = "individual submission"
-keyword = ["messaging", "end to end", "encryption", "security"]
+keyword = ["messaging", "end to end", "end to end encryption", "end to end secure", "end to end security", "encryption", "security"]
 
 [seriesInfo]
 status = "informational"
@@ -190,18 +190,6 @@ The PCASM of a message is defined as any of:
 Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any
 given bit of the plaintext message content. ("content")
 
-Content PCASM would include, non-exclusively:
-
-1.  The content is "Hello, world."
-
-2.  The content starts with the word "Hello"
-
-3.  The top bit of the first byte of the content in ASCII encoding, is zero
-
-4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
-
-5.  The Salted-MD5 Hash of the content is : ...
-
 ### Size PCASM
 
 For block encryption of content, Size PCASM is the unpadded size of the content.
@@ -214,45 +202,11 @@ For transport encryption of content, precise Size PCASM **SHOULD NOT** be observ
 
 Analytic PCASM is data that describes the "content".
 
-Analytic PCASM would include, non-exclusively:
-
-1.  The content contains the substring "ello"
-
-2.  The content does not contain the word "Goodbye"
-
-3.  The content contains a substring from amongst the following set: ...
-
-4.  The content does not contain a substring from amongst the following set: ...
-
-5.  The hash of the content exists amongst the following set of hashes: ...
-
-6.  The hash of the content does not exist amongst the following set of hashes: ...
-
-7.  The content was matched by a machine-learning classifier with the following training set: ...
-
 ### Conversation Metadata (**OPTIONAL**)
 
-Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons",
-or "group participant lists" constitute PCASM, is an **OPTIONAL** choice for the E2ESM software, but
-that choice **MUST** be made apparent to participants.
-
-### Non-PCASM
-
-Information which would not be PCASM would include, non-exclusively:
-
-1.  The content is sent from Alice
-
-2.  The content is sent to Bob
-
-3.  The content is between 1 and 16 bytes long
-
-4.  The content was sent at the following date and time: ...
-
-5.  The content was sent from the following IP address: ...
-
-6.  The content was sent from the following geolocation: ...
-
-7.  The content was composed using the following platform: ...
+Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons", or
+"group participant lists" constitute PCASM, is an **OPTIONAL** choice for E2ESM software, but that
+choice **MUST** be made apparent to participants.
 
 ## Backdoor
 
@@ -305,7 +259,71 @@ RDP session is hijacked by a third party; of if they back-up their messages in c
 storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
 would instead be a failure of the participant's [@TrustedComputingBase].
 
-# Rationale
+# Examples of PCASM
+
+For an example message with a plaintext content ("content") of "Hello, world.", for the purposes of
+this example encoded as an ASCII string of length 13 bytes without terminator character.
+
+## Content PCASM
+
+Examples of Content PCASM would include, non-exclusively:
+
+1.  The content is "Hello, world."
+
+2.  The content starts with the word "Hello"
+
+3.  The top bit of the first byte of the content, is zero
+
+4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
+
+5.  The Salted-MD5 Hash of the content is : ...
+
+## Size PCASM
+
+Size PCASM is defined in the main text, as it relates to the transport and/or content encryption
+mechanisms.
+
+## Analytic PCASM
+
+Examples of Analytic PCASM would include, non-exclusively:
+
+1.  The content contains the substring "ello"
+
+2.  The content does not contain the word "Goodbye"
+
+3.  The content contains a substring from amongst the following set: ...
+
+4.  The content does not contain a substring from amongst the following set: ...
+
+5.  The hash of the content exists amongst the following set of hashes: ...
+
+6.  The hash of the content does not exist amongst the following set of hashes: ...
+
+7.  The content was matched by a machine-learning classifier with the following training set: ...
+
+## Conversation Metadata
+
+Examples of Conversation Metadata are given in the main text.
+
+## Non-PCASM
+
+Information which would not be PCASM would include, non-exclusively:
+
+1.  The content is sent from Alice
+
+2.  The content is sent to Bob
+
+3.  The content is between 1 and 16 bytes long
+
+4.  The content was sent at the following date and time: ...
+
+5.  The content was sent from the following IP address: ...
+
+6.  The content was sent from the following geolocation: ...
+
+7.  The content was composed using the following platform: ...
+
+# Worked Example
 
 Consider FooBook, a hypothetical example company which provides messaging services for conversations
 between entities who use it.
