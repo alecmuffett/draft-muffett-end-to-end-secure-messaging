@@ -433,6 +433,24 @@ be a failure
 of the participant's
 [@TrustedComputingBase].
 
+## Why: Content PCASM
+
+**TODO** because content needs to stay secret
+
+## Why: Size PCASM
+
+**TODO** because "yes" is three letters, and "no" is two. Unless
+you're using another language, but signals intelligence is still a
+thing.
+
+## Why: Analytic PCASM
+
+**TODO** because these enable backdoors.
+
+## Why: Conversation Metadata as **OPTIONAL** PCASM
+
+**TODO** optional because email, if nothing else.
+
 ## Why: Backdoor
 
 In software engineering
@@ -601,17 +619,23 @@ the closure of message distribution.
 
 ## Why: Management and Visibility of Participant Clients and Devices
 
-**TODO**
+**TODO** **REQUIRED** because there is little benefit in requiring
+group conversations to be closed against "ghost participant injection"
+if the security services of an illiberal state will simply demand that
+the ghost is injected into a participant instead of a conversation
 
-## Why Not: Mandate Disappearing Messages?
+## Why Not: Require Disappearing Messages?
 
-**TODO**
+**TODO** / doesn't fit email / excellent, **RECOMMENDED** even, but
+not obliged.
 
-## Why Not: Mandate Mutual Identity Verification?
+## Why Not: Require Mutual Identity Verification?
 
-**TODO**
+**TODO** / how to metricate the value-add / how to add value at all,
+in a peer-to-peer network? / how to add value at all, if there is no
+external trust? / also: reflections on trusting trust
 
-## Why Not:
+## Why Not: Require Third-Party Identity?
 
 **TODO**
 

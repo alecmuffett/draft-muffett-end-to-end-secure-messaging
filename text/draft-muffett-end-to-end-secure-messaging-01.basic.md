@@ -178,6 +178,78 @@ Where there exists centralised E2ESM software that hosts participants:
 This explanatory section regarding the principles has been broken out for clarity and argumentation
 purposes.
 
+## Why: Participant
+
+It is important to note that the concept of "participant", defined by their TCB, is a foundation
+for all other trust. Developing from the basic definitions of a [@TrustedComputingBase] and from
+the concept of "trust-to-trust" discussed in [@RoleOfTrust], a failure of a participant to maintain
+integrity over their own (trusted) environment should not be considered a failure of an E2ESM that
+connects it to other participants.
+
+Further: it is obviously possible to burden the E2ESM with surfacing potential integrity issues of
+any given participant; but to require such in this standard would risk harming the privacy of the
+participant entity.
+
+The term "participant" in this document exists to supersede the more vague notion of "end" in the
+phrase "end-to-end".
+
+Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
+entity **MAY** legitimately store, forward, or access messages by means that are outside of the
+E2ESM software.
+
+For example: if a participant accesses their E2ESM software via remote desktop software, and their
+RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
+storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
+would instead be a failure of the participant's [@TrustedComputingBase].
+
+## Why: Content PCASM
+
+**TODO** because content needs to stay secret
+
+## Why: Size PCASM
+
+**TODO** because "yes" is three letters, and "no" is two. Unless you're using another language, but
+signals intelligence is still a thing.
+
+## Why: Analytic PCASM
+
+**TODO** because these enable backdoors.
+
+## Why: Conversation Metadata as **OPTIONAL** PCASM
+
+**TODO** optional because email, if nothing else.
+
+## Why: Backdoor
+
+In software engineering there is a perpetual tension between the concepts of "feature" versus "bug"
+- and occasionally "misfeature" versus "misbug". These tensions arise from the problem of [@DualUse]
+- that it is not feasible to firmly and completely ascribe "intention" to any hardware or software
+mechanism.
+
+The information security community have experienced a historical spectrum of mechanisms which have
+assisted non-participant access to PCASM. These have variously been named as "export-grade key
+restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and Meltdown), "law enforcement
+access fields" (Clipper), and "key escrow" (Crypto Wars).
+
+All of these terms combine an "access facilitation mechanism" with an "intention or opportunity" -
+and for all of them an access facilitation mechanism is first **REQUIRED**.
+
+An access facilitation mechanism is a "door", and is inherently [@DualUse]. Because the goal of
+E2ESM is to limit access to PCASM exclusively to a defined set of participants, then the intended
+means of access is clearly the "front door"; and any other access mechanism is a "back door".
+
+If the term "back door" is considered innately pejorative, alternative, uncertain constructions such
+as "illegitimate access feature", "potentially intentional data-access weakness", "legally-obligated
+exceptional access mechanism", or any other phrase, all **MUST** combine both notions of an access
+mechanism (e.g. "door") and a definite or suspected intention (e.g. "legal obligation").
+
+So the phrase "back door" is brief, clear, and widely understood to mean "a secondary means of
+access". In the above definition we already allow for the term to be prefixed with "intentional" or
+"unintentional".
+
+Thus it seems appropriate to use this term in this context, not least because it is also not far
+removed from the similar and established term "side channel".
+
 ## Why: Equality of Participation
 
 Without equality of participation it would be allowed for a person to deploy a standalone cleartext
@@ -211,62 +283,22 @@ be injected into the conversation thereby defeating the closure of message distr
 
 ## Why: Management and Visibility of Participant Clients and Devices
 
-**TODO**: touch also upon mutual assurance & authentication.
+**TODO** **REQUIRED** because there is little benefit in requiring group conversations to be closed
+against "ghost participant injection" if the security services of an illiberal state will simply
+demand that the ghost is injected into a participant instead of a conversation
 
-## Why: Participant
+## Why Not: Require Disappearing Messages?
 
-It is important to note that the concept of "participant", defined by their TCB, is a foundation
-for all other trust. Developing from the basic definitions of a [@TrustedComputingBase] and from
-the concept of "trust-to-trust" discussed in [@RoleOfTrust], a failure of a participant to maintain
-integrity over their own (trusted) environment should not be considered a failure of an E2ESM that
-connects it to other participants.
+**TODO** / doesn't fit email / excellent, **RECOMMENDED** even, but not obliged.
 
-Further: it is obviously possible to burden the E2ESM with surfacing potential integrity issues of
-any given participant; but to require such in this standard would risk harming the privacy of the
-participant entity.
+## Why Not: Require Mutual Identity Verification?
 
-The term "participant" in this document exists to supersede the more vague notion of "end" in the
-phrase "end-to-end".
+**TODO** / how to metricate the value-add / how to add value at all, in a peer-to-peer network? /
+how to add value at all, if there is no external trust? / also: reflections on trusting trust
 
-Participants are defined in terms of an entity's [@TrustedComputingBase] to acknowledge that an
-entity **MAY** legitimately store, forward, or access messages by means that are outside of the
-E2ESM software.
+## Why Not: Require Third-Party Identity?
 
-For example: if a participant accesses their E2ESM software via remote desktop software, and their
-RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
-storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
-would instead be a failure of the participant's [@TrustedComputingBase].
-
-## Why: Backdoor
-
-In software engineering there is a perpetual tension between the concepts of "feature" versus "bug"
-- and occasionally "misfeature" versus "misbug". These tensions arise from the problem of [@DualUse]
-- that it is not feasible to firmly and completely ascribe "intention" to any hardware or software
-mechanism.
-
-The information security community have experienced a historical spectrum of mechanisms which have
-assisted non-participant access to PCASM. These have variously been named as "export-grade key
-restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and Meltdown), "law enforcement
-access fields" (Clipper), and "key escrow" (Crypto Wars).
-
-All of these terms combine an "access facilitation mechanism" with an "intention or opportunity" -
-and for all of them an access facilitation mechanism is first **REQUIRED**.
-
-An access facilitation mechanism is a "door", and is inherently [@DualUse]. Because the goal of
-E2ESM is to limit access to PCASM exclusively to a defined set of participants, then the intended
-means of access is clearly the "front door"; and any other access mechanism is a "back door".
-
-If the term "back door" is considered innately pejorative, alternative, uncertain constructions such
-as "illegitimate access feature", "potentially intentional data-access weakness", "legally-obligated
-exceptional access mechanism", or any other phrase, all **MUST** combine both notions of an access
-mechanism (e.g. "door") and a definite or suspected intention (e.g. "legal obligation").
-
-So the phrase "back door" is brief, clear, and widely understood to mean "a secondary means of
-access". In the above definition we already allow for the term to be prefixed with "intentional" or
-"unintentional".
-
-Thus it seems appropriate to use this term in this context, not least because it is also not far
-removed from the similar and established term "side channel".
+**TODO**
 
 # Examples of PCASM
 

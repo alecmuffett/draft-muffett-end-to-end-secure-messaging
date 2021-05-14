@@ -363,83 +363,6 @@ regarding the principles
 has been broken out
 for clarity and argumentation purposes.</t>
 
-<section anchor="why-equality-of-participation"><name>Why: Equality of Participation</name>
-<t>Without equality of participation
-it would be allowed
-for a person to deploy
-a standalone cleartext chat server,
-available solely over TLS-encrypted links,
-declare themselves to be &quot;participants&quot;
-in every conversation from its outset,
-access all message PCASM on that basis,
-and yet call themselves an E2ESM.</t>
-<t>So this is an &quot;anti-cheating&quot; clause:
-all participant access to PCASM
-<bcp14>MUST</bcp14> be via
-the same mechanisms
-for all participants
-without favour or privilege,
-and in particular
-PCASM <bcp14>MUST NOT</bcp14>
-be available via other means,
-e.g.
-raw filestore,
-database access
-or network sniffing.</t>
-</section>
-
-<section anchor="why-transparency-of-participation"><name>Why: Transparency of Participation</name>
-<t>The &quot;ends&quot; of &quot;end to end&quot; are the participants;
-for a message to be composed
-to be exclusively accessible
-to that set of participants,
-all participants must be visible.</t>
-</section>
-
-<section anchor="why-integrity-of-participation"><name>Why: Integrity of Participation</name>
-<t>Inherent in the term
-&quot;end to end secure messenger&quot;
-is the intention
-that PCASM
-will only be available
-to the participants (&quot;ends&quot;)
-at the time the message was composed.</t>
-<t>If this was not the intention
-we would deduce
-that an E2ESM
-would automatically make
-past content
-available to
-newly-added conversation participants,
-thereby breaking
-forward secrecy.
-This is not
-a characteristic
-of any E2ESM,
-but it is
-characteristic of
-several non-E2ESM.
-Therefore
-the converse
-is true.</t>
-</section>
-
-<section anchor="why-closure-of-conversation"><name>Why: Closure of Conversation</name>
-<t>If a conversation
-is not
-&quot;only extensible from within&quot;
-then it would be possible
-for participants
-to be injected
-into the conversation
-thereby defeating
-the closure of message distribution.</t>
-</section>
-
-<section anchor="why-management-and-visibility-of-participant-clients-and-devices"><name>Why: Management and Visibility of Participant Clients and Devices</name>
-<t><strong>TODO</strong>: touch also upon mutual assurance &amp; authentication.</t>
-</section>
-
 <section anchor="why-participant"><name>Why: Participant</name>
 <t>It is important to note
 that the concept of &quot;participant&quot;,
@@ -497,6 +420,24 @@ This would instead
 be a failure
 of the participant's
 <xref target="TrustedComputingBase"></xref>.</t>
+</section>
+
+<section anchor="why-content-pcasm"><name>Why: Content PCASM</name>
+<t><strong>TODO</strong> because content needs to stay secret</t>
+</section>
+
+<section anchor="why-size-pcasm"><name>Why: Size PCASM</name>
+<t><strong>TODO</strong> because &quot;yes&quot; is three letters, and &quot;no&quot; is two. Unless
+you're using another language, but signals intelligence is still a
+thing.</t>
+</section>
+
+<section anchor="why-analytic-pcasm"><name>Why: Analytic PCASM</name>
+<t><strong>TODO</strong> because these enable backdoors.</t>
+</section>
+
+<section anchor="why-conversation-metadata-as-optional-pcasm"><name>Why: Conversation Metadata as <bcp14>OPTIONAL</bcp14> PCASM</name>
+<t><strong>TODO</strong> optional because email, if nothing else.</t>
 </section>
 
 <section anchor="why-backdoor"><name>Why: Backdoor</name>
@@ -582,6 +523,101 @@ it is also not far removed
 from the similar
 and established term
 &quot;side channel&quot;.</t>
+</section>
+
+<section anchor="why-equality-of-participation"><name>Why: Equality of Participation</name>
+<t>Without equality of participation
+it would be allowed
+for a person to deploy
+a standalone cleartext chat server,
+available solely over TLS-encrypted links,
+declare themselves to be &quot;participants&quot;
+in every conversation from its outset,
+access all message PCASM on that basis,
+and yet call themselves an E2ESM.</t>
+<t>So this is an &quot;anti-cheating&quot; clause:
+all participant access to PCASM
+<bcp14>MUST</bcp14> be via
+the same mechanisms
+for all participants
+without favour or privilege,
+and in particular
+PCASM <bcp14>MUST NOT</bcp14>
+be available via other means,
+e.g.
+raw filestore,
+database access
+or network sniffing.</t>
+</section>
+
+<section anchor="why-transparency-of-participation"><name>Why: Transparency of Participation</name>
+<t>The &quot;ends&quot; of &quot;end to end&quot; are the participants;
+for a message to be composed
+to be exclusively accessible
+to that set of participants,
+all participants must be visible.</t>
+</section>
+
+<section anchor="why-integrity-of-participation"><name>Why: Integrity of Participation</name>
+<t>Inherent in the term
+&quot;end to end secure messenger&quot;
+is the intention
+that PCASM
+will only be available
+to the participants (&quot;ends&quot;)
+at the time the message was composed.</t>
+<t>If this was not the intention
+we would deduce
+that an E2ESM
+would automatically make
+past content
+available to
+newly-added conversation participants,
+thereby breaking
+forward secrecy.
+This is not
+a characteristic
+of any E2ESM,
+but it is
+characteristic of
+several non-E2ESM.
+Therefore
+the converse
+is true.</t>
+</section>
+
+<section anchor="why-closure-of-conversation"><name>Why: Closure of Conversation</name>
+<t>If a conversation
+is not
+&quot;only extensible from within&quot;
+then it would be possible
+for participants
+to be injected
+into the conversation
+thereby defeating
+the closure of message distribution.</t>
+</section>
+
+<section anchor="why-management-and-visibility-of-participant-clients-and-devices"><name>Why: Management and Visibility of Participant Clients and Devices</name>
+<t><strong>TODO</strong> <bcp14>REQUIRED</bcp14> because there is little benefit in requiring
+group conversations to be closed against &quot;ghost participant injection&quot;
+if the security services of an illiberal state will simply demand that
+the ghost is injected into a participant instead of a conversation</t>
+</section>
+
+<section anchor="why-not-require-disappearing-messages"><name>Why Not: Require Disappearing Messages?</name>
+<t><strong>TODO</strong> / doesn't fit email / excellent, <bcp14>RECOMMENDED</bcp14> even, but
+not obliged.</t>
+</section>
+
+<section anchor="why-not-require-mutual-identity-verification"><name>Why Not: Require Mutual Identity Verification?</name>
+<t><strong>TODO</strong> / how to metricate the value-add / how to add value at all,
+in a peer-to-peer network? / how to add value at all, if there is no
+external trust? / also: reflections on trusting trust</t>
+</section>
+
+<section anchor="why-not-require-third-party-identity"><name>Why Not: Require Third-Party Identity?</name>
+<t><strong>TODO</strong></t>
 </section>
 </section>
 
