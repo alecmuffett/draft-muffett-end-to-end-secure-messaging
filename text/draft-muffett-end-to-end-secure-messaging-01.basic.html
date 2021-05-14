@@ -128,32 +128,6 @@ will require:</p>
 <strong>MUST</strong> have equal access
 to any given message&rsquo;s PCASM.</p>
 
-<h3 id="why-do-we-need-this">Why do we need this?</h3>
-
-<p>Without equality of participation
-it would be allowed
-for a person to deploy
-a standalone cleartext chat server,
-available solely over TLS-encrypted links,
-declare themselves to be &ldquo;participants&rdquo;
-in every conversation from its outset,
-access all message PCASM on that basis,
-and yet call themselves an E2ESM.</p>
-
-<p>So this is an &ldquo;anti-cheating&rdquo; clause:
-all participant access to PCASM
-<strong>MUST</strong> be via
-the same mechanisms
-for all participants
-without favour or privilege,
-and in particular
-PCASM <strong>MUST NOT</strong>
-be available via other means,
-e.g.
-raw filestore,
-database access
-or network sniffing.</p>
-
 <h2 id="transparency-of-participation">Transparency of Participation</h2>
 
 <p>The existence
@@ -164,14 +138,6 @@ at the current
 time
 to all current
 conversation participants.</p>
-
-<h3 id="why-do-we-need-this-1">Why do we need this?</h3>
-
-<p>The &ldquo;ends&rdquo; of &ldquo;end to end&rdquo; are the participants;
-for a message to be composed
-to be exclusively accessible
-to that set of participants,
-all participants must be visible.</p>
 
 <h2 id="integrity-of-participation">Integrity of Participation</h2>
 
@@ -221,35 +187,6 @@ the above-defined sets of participants
 will be &ldquo;non-participants&rdquo;
 in respect of that message.</p>
 
-<h3 id="why-do-we-need-this-2">Why do we need this?</h3>
-
-<p>Inherent in the term
-&ldquo;end to end secure messenger&rdquo;
-is the intention
-that PCASM
-will only be available
-to the participants (&ldquo;ends&rdquo;)
-at the time the message was composed.</p>
-
-<p>If this was not the intention
-we would deduce
-that an E2ESM
-would automatically make
-past content
-available to
-newly-added conversation participants,
-thereby breaking
-forward secrecy.
-This is not
-a characteristic
-of any E2ESM,
-but it is
-characteristic of
-several non-E2ESM.
-Therefore
-the converse
-is true.</p>
-
 <h2 id="closure-of-conversation">Closure of Conversation</h2>
 
 <p>The set of participants
@@ -276,17 +213,6 @@ legitimate
 &ldquo;intentional action&rdquo;
 to increase the set of participants
 in the group.</p>
-
-<h3 id="why-do-we-need-this-3">Why do we need this?</h3>
-
-<p>If a conversation
-is not &ldquo;only extensible from within&rdquo;
-then it would be possible
-for participants
-to be injected
-into the conversation
-thereby defeating
-the closure of message distribution.</p>
 
 <h2 id="management-and-visibility-of-participant-clients-and-devices">Management and Visibility of Participant Clients and Devices</h2>
 
@@ -318,6 +244,92 @@ clients or devices
 that can or could access
 message PCASM.</p></li>
 </ol>
+
+<h1 id="rationale">Rationale</h1>
+
+<p>This explanatory section
+regarding the principles
+has been broken out
+for clarity and argumentation purposes.</p>
+
+<h2 id="why-equality-of-participation">Why: Equality of Participation</h2>
+
+<p>Without equality of participation
+it would be allowed
+for a person to deploy
+a standalone cleartext chat server,
+available solely over TLS-encrypted links,
+declare themselves to be &ldquo;participants&rdquo;
+in every conversation from its outset,
+access all message PCASM on that basis,
+and yet call themselves an E2ESM.</p>
+
+<p>So this is an &ldquo;anti-cheating&rdquo; clause:
+all participant access to PCASM
+<strong>MUST</strong> be via
+the same mechanisms
+for all participants
+without favour or privilege,
+and in particular
+PCASM <strong>MUST NOT</strong>
+be available via other means,
+e.g.
+raw filestore,
+database access
+or network sniffing.</p>
+
+<h2 id="why-transparency-of-participation">Why: Transparency of Participation</h2>
+
+<p>The &ldquo;ends&rdquo; of &ldquo;end to end&rdquo; are the participants;
+for a message to be composed
+to be exclusively accessible
+to that set of participants,
+all participants must be visible.</p>
+
+<h2 id="why-integrity-of-participation">Why: Integrity of Participation</h2>
+
+<p>Inherent in the term
+&ldquo;end to end secure messenger&rdquo;
+is the intention
+that PCASM
+will only be available
+to the participants (&ldquo;ends&rdquo;)
+at the time the message was composed.</p>
+
+<p>If this was not the intention
+we would deduce
+that an E2ESM
+would automatically make
+past content
+available to
+newly-added conversation participants,
+thereby breaking
+forward secrecy.
+This is not
+a characteristic
+of any E2ESM,
+but it is
+characteristic of
+several non-E2ESM.
+Therefore
+the converse
+is true.</p>
+
+<h2 id="why-closure-of-conversation">Why: Closure of Conversation</h2>
+
+<p>If a conversation
+is not
+&ldquo;only extensible from within&rdquo;
+then it would be possible
+for participants
+to be injected
+into the conversation
+thereby defeating
+the closure of message distribution.</p>
+
+<h2 id="why-management-and-visibility-of-participant-clients-and-devices">Why: Management and Visibility of Participant Clients and Devices</h2>
+
+<p><strong>TODO</strong>: touch also upon mutual assurance &amp; authentication.</p>
 
 <h1 id="definitions">Definitions</h1>
 
