@@ -73,6 +73,54 @@ Any software that does not satisfy these requirements is not an End-to-End Secur
 it does not implement End-to-End Secure Messaging, nor does it implement End-to-End Encrypted
 Messaging.
 
+# Definitions
+
+Contextual explanation for several of these definitions may also be found in the rationale section,
+below.
+
+## Participant
+
+A participant is any entity - human, machine, software bot, conversation archiver, or other - that
+is bounded by the extent of that entity's Trusted Computing Base (TCB).
+
+## Conversation
+
+A conversation is a sequence of one or more messages over a period of time amongst a constant or
+evolving set of participants.
+
+## Plaintext Content and Sensitive Metadata (PCASM)
+
+The PCASM of a message is defined as any or all of:
+
+### Content PCASM
+
+Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any
+given bit of the plaintext message content. ("content")
+
+### Size PCASM
+
+For block encryption of content, Size PCASM is the unpadded size of the content.
+
+For stream encryption of content, Size PCASM is currently undefined.
+
+For transport encryption of content, precise Size PCASM **SHOULD NOT** be observable.
+
+### Analytic PCASM
+
+Analytic PCASM is data that describes the "content".
+
+### Conversation Metadata (**OPTIONAL**)
+
+Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons", or
+"group participant lists" constitute PCASM, is an **OPTIONAL** choice for E2ESM software, but that
+choice **MUST** be made apparent to participants.
+
+## Backdoor
+
+A "backdoor" is any intentional or unintentional mechanism, in respect of a given message and
+that message's set of participants, where some PCASM of that message **MAY** become available to a
+non-participant without the intentional action of a participant.
+
 # Principles
 
 For a series of one or more "messages" each which are composed of "plaintext content and sensitive
@@ -125,51 +173,6 @@ Where there exists centralised E2ESM software that hosts participants:
 
 2.  The E2ESM software **MUST** provide each participant entity with notifications and/or complete
     logs of changes to the set of clients or devices that can or could access message PCASM.
-
-# Definitions
-
-## Participant
-
-A participant is any entity - human, machine, software bot, conversation archiver, or other, that is
-bounded by the extent of that entity's Trusted Computing Base (TCB).
-
-## Conversation
-
-A conversation is a sequence of one or more messages over a period of time amongst a constant or
-evolving set of participants.
-
-## Plaintext Content and Sensitive Metadata (PCASM)
-
-The PCASM of a message is defined as any or all of:
-
-### Content PCASM
-
-Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any
-given bit of the plaintext message content. ("content")
-
-### Size PCASM
-
-For block encryption of content, Size PCASM is the unpadded size of the content.
-
-For stream encryption of content, Size PCASM is currently undefined.
-
-For transport encryption of content, precise Size PCASM **SHOULD NOT** be observable.
-
-### Analytic PCASM
-
-Analytic PCASM is data that describes the "content".
-
-### Conversation Metadata (**OPTIONAL**)
-
-Whether per-conversation "group" metadata, such as "group titles", "group topics", "group icons", or
-"group participant lists" constitute PCASM, is an **OPTIONAL** choice for E2ESM software, but that
-choice **MUST** be made apparent to participants.
-
-## Backdoor
-
-A "backdoor" is any intentional or unintentional mechanism, in respect of a given message and
-that message's set of participants, where some PCASM of that message **MAY** become available to a
-non-participant without the intentional action of a participant.
 
 # Rationale
 

@@ -120,6 +120,103 @@ nor does it implement
 End-to-End Encrypted Messaging.</t>
 </section>
 
+<section anchor="definitions"><name>Definitions</name>
+<t>Contextual explanation
+for several of these definitions
+may also be found
+in the rationale section,
+below.</t>
+
+<section anchor="participant"><name>Participant</name>
+<t>A participant
+is any entity -
+human,
+machine,
+software bot,
+conversation archiver,
+or other -
+that is bounded
+by the extent
+of that entity's
+Trusted Computing Base (TCB).</t>
+</section>
+
+<section anchor="conversation"><name>Conversation</name>
+<t>A conversation
+is a sequence
+of one or more messages
+over a period of time
+amongst a constant or evolving
+set of participants.</t>
+</section>
+
+<section anchor="plaintext-content-and-sensitive-metadata-pcasm"><name>Plaintext Content and Sensitive Metadata (PCASM)</name>
+<t>The PCASM
+of a message
+is defined as
+any or all of:</t>
+
+<section anchor="content-pcasm"><name>Content PCASM</name>
+<t>Content PCASM
+is any data
+that can offer
+better than 50-50 certainty
+regarding the value of
+any given bit
+of the plaintext message content. (&quot;content&quot;)</t>
+</section>
+
+<section anchor="size-pcasm"><name>Size PCASM</name>
+<t>For block encryption of content,
+Size PCASM is the unpadded size of the content.</t>
+<t>For stream encryption of content,
+Size PCASM is currently undefined.</t>
+<t>For transport encryption of content,
+precise Size PCASM <bcp14>SHOULD NOT</bcp14> be observable.</t>
+</section>
+
+<section anchor="analytic-pcasm"><name>Analytic PCASM</name>
+<t>Analytic PCASM
+is data
+that describes
+the &quot;content&quot;.</t>
+</section>
+
+<section anchor="conversation-metadata-optional"><name>Conversation Metadata (<bcp14>OPTIONAL</bcp14>)</name>
+<t>Whether
+per-conversation
+&quot;group&quot; metadata,
+such as
+&quot;group titles&quot;,
+&quot;group topics&quot;,
+&quot;group icons&quot;,
+or &quot;group participant lists&quot;
+constitute PCASM,
+is an
+<bcp14>OPTIONAL</bcp14>
+choice
+for E2ESM software,
+but that choice
+<bcp14>MUST</bcp14>
+be made apparent
+to participants.</t>
+</section>
+</section>
+
+<section anchor="backdoor"><name>Backdoor</name>
+<t>A &quot;backdoor&quot;
+is any
+intentional or unintentional mechanism,
+in respect of a given message
+and that message's set of participants,
+where some PCASM
+of that message
+<bcp14>MAY</bcp14> become available
+to a non-participant
+without the intentional action of a participant.</t>
+</section>
+</section>
+
 <section anchor="principles"><name>Principles</name>
 <t>For a series of
 one or more &quot;messages&quot;
@@ -254,98 +351,6 @@ that can or could access
 message PCASM.</t>
 </li>
 </ol>
-</section>
-</section>
-
-<section anchor="definitions"><name>Definitions</name>
-
-<section anchor="participant"><name>Participant</name>
-<t>A participant
-is any entity -
-human,
-machine,
-software bot,
-conversation archiver,
-or other,
-that is bounded
-by the extent
-of that entity's
-Trusted Computing Base (TCB).</t>
-</section>
-
-<section anchor="conversation"><name>Conversation</name>
-<t>A conversation
-is a sequence
-of one or more messages
-over a period of time
-amongst a constant or evolving
-set of participants.</t>
-</section>
-
-<section anchor="plaintext-content-and-sensitive-metadata-pcasm"><name>Plaintext Content and Sensitive Metadata (PCASM)</name>
-<t>The PCASM
-of a message
-is defined as
-any or all of:</t>
-
-<section anchor="content-pcasm"><name>Content PCASM</name>
-<t>Content PCASM
-is any data
-that can offer
-better than 50-50 certainty
-regarding the value of
-any given bit
-of the plaintext message content. (&quot;content&quot;)</t>
-</section>
-
-<section anchor="size-pcasm"><name>Size PCASM</name>
-<t>For block encryption of content,
-Size PCASM is the unpadded size of the content.</t>
-<t>For stream encryption of content,
-Size PCASM is currently undefined.</t>
-<t>For transport encryption of content,
-precise Size PCASM <bcp14>SHOULD NOT</bcp14> be observable.</t>
-</section>
-
-<section anchor="analytic-pcasm"><name>Analytic PCASM</name>
-<t>Analytic PCASM
-is data
-that describes
-the &quot;content&quot;.</t>
-</section>
-
-<section anchor="conversation-metadata-optional"><name>Conversation Metadata (<bcp14>OPTIONAL</bcp14>)</name>
-<t>Whether
-per-conversation
-&quot;group&quot; metadata,
-such as
-&quot;group titles&quot;,
-&quot;group topics&quot;,
-&quot;group icons&quot;,
-or &quot;group participant lists&quot;
-constitute PCASM,
-is an
-<bcp14>OPTIONAL</bcp14>
-choice
-for E2ESM software,
-but that choice
-<bcp14>MUST</bcp14>
-be made apparent
-to participants.</t>
-</section>
-</section>
-
-<section anchor="backdoor"><name>Backdoor</name>
-<t>A &quot;backdoor&quot;
-is any
-intentional or unintentional mechanism,
-in respect of a given message
-and that message's set of participants,
-where some PCASM
-of that message
-<bcp14>MAY</bcp14> become available
-to a non-participant
-without the intentional action of a participant.</t>
 </section>
 </section>
 
