@@ -324,7 +324,7 @@ in the group.</t>
 </section>
 </section>
 
-<section anchor="management-and-visibility-of-participant-clients-and-devices"><name>Management and Visibility of Participant Clients and Devices</name>
+<section anchor="management-of-participant-clients-and-devices"><name>Management of Participant Clients and Devices</name>
 <t>Where there
 exists
 centralised
@@ -598,7 +598,7 @@ thereby defeating
 the closure of message distribution.</t>
 </section>
 
-<section anchor="why-management-and-visibility-of-participant-clients-and-devices"><name>Why: Management and Visibility of Participant Clients and Devices</name>
+<section anchor="why-management-of-participant-clients-and-devices"><name>Why: Management of Participant Clients and Devices</name>
 <t><strong>TODO</strong> <bcp14>REQUIRED</bcp14> because there is little benefit in requiring
 group conversations to be closed against &quot;ghost participant injection&quot;
 if the security services of an illiberal state will simply demand that

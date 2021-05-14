@@ -334,7 +334,7 @@ legitimate
 to increase the set of participants
 in the group.
 
-## Management and Visibility of Participant Clients and Devices
+## Management of Participant Clients and Devices
 
 Where there
 exists
@@ -617,7 +617,7 @@ into the conversation
 thereby defeating
 the closure of message distribution.
 
-## Why: Management and Visibility of Participant Clients and Devices
+## Why: Management of Participant Clients and Devices
 
 **TODO** **REQUIRED** because there is little benefit in requiring
 group conversations to be closed against "ghost participant injection"

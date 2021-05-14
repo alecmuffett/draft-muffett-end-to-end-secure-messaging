@@ -163,7 +163,7 @@ Existing participants **MAY** publicly share links, data, or other mechanisms to
 non-participant entities to subscribe themselves as conversation participants. This **MAY** be
 considered legitimate "intentional action" to increase the set of participants in the group.
 
-## Management and Visibility of Participant Clients and Devices
+## Management of Participant Clients and Devices
 
 Where there exists centralised E2ESM software that hosts participants:
 
@@ -281,7 +281,7 @@ is true.
 If a conversation is not "only extensible from within" then it would be possible for participants to
 be injected into the conversation thereby defeating the closure of message distribution.
 
-## Why: Management and Visibility of Participant Clients and Devices
+## Why: Management of Participant Clients and Devices
 
 **TODO** **REQUIRED** because there is little benefit in requiring group conversations to be closed
 against "ghost participant injection" if the security services of an illiberal state will simply
