@@ -129,8 +129,8 @@ E2ESM will require:
 
 ## Transparency of Participation
 
-The existence of all current conversation participants **MUST** be visible at the current time to
-all current conversation participants.
+The complete set of all conversation participants **MUST** be visible at the current time to all
+conversation participants.
 
 ## Integrity of Participation
 
@@ -256,6 +256,14 @@ removed from the similar and established term "side channel".
 
 The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
 accessible to that set of participants, all participants must be visible.
+
+For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP" or (to a limited extent)
+"Ricochet", the set of participants is fixed by the author at the time of individual message
+composition, and **MUST** be visible to all participants.
+
+For "centralised" E2ESM solutions such as Signal or WhatsApp, the set of participants is a "group
+context" shared amongst all participants and at the time of individual message composition it
+**MUST** be inherited into a set of "fixed" per-participant access capabilities by the author.
 
 ## Why: Integrity of Participation
 

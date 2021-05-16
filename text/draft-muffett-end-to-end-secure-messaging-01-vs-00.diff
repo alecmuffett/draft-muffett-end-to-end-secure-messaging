@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-14 22:40:21.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-16 11:54:49.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -18,8 +18,8 @@
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
-! Intended status: Informational                               14 May 2021
-! Expires: 15 November 2021
+! Intended status: Informational                               16 May 2021
+! Expires: 17 November 2021
   
   
             Functional Definition of End-to-End Secure Messaging
@@ -40,7 +40,7 @@
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
-!    This Internet-Draft will expire on 15 November 2021.
+!    This Internet-Draft will expire on 17 November 2021.
   
   Copyright Notice
   
@@ -95,7 +95,7 @@
   
   
   
-! Muffett                 Expires 15 November 2021                [Page 1]
+! Muffett                 Expires 17 November 2021                [Page 1]
   
   Internet-Draft                    e2esm                         May 2021
   
@@ -132,13 +132,13 @@
 !      5.5.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .   7
 !      5.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .   7
 !      5.7.  Why: Transparency of Participation  . . . . . . . . . . .   8
-!      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .   8
+!      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .   9
 !      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .   9
 !      5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .   9
 !      5.11. Why: Management of Participant Clients and Devices  . . .   9
 !      5.12. Why Not: Require Disappearing Messages? . . . . . . . . .   9
-!      5.13. Why Not: Require Mutual Identity Verification?  . . . . .   9
-!      5.14. Why Not: Require Third-Party Identity?  . . . . . . . . .   9
+!      5.13. Why Not: Require Mutual Identity Verification?  . . . . .  10
+!      5.14. Why Not: Require Third-Party Identity?  . . . . . . . . .  10
 !    6.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  10
 !      6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  10
 !      6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  10
@@ -151,7 +151,7 @@
 ! 
 ! 
 ! 
-! Muffett                 Expires 15 November 2021                [Page 2]
+! Muffett                 Expires 17 November 2021                [Page 2]
 ! 
 ! Internet-Draft                    e2esm                         May 2021
 ! 
@@ -405,7 +405,7 @@
   
   
   
-+ Muffett                 Expires 15 November 2021                [Page 3]
++ Muffett                 Expires 17 November 2021                [Page 3]
   
 + Internet-Draft                    e2esm                         May 2021
   
@@ -461,7 +461,7 @@
   
   
   
-! Muffett                 Expires 15 November 2021                [Page 4]
+! Muffett                 Expires 17 November 2021                [Page 4]
   
   Internet-Draft                    e2esm                         May 2021
   
@@ -489,8 +489,8 @@
   
 ! 4.1.  Transparency of Participation
   
-!    The existence of all current conversation participants MUST be
-!    visible at the current time to all current conversation participants.
+!    The complete set of all conversation participants MUST be visible at
+!    the current time to all conversation participants.
   
 ! 4.2.  Integrity of Participation
   
@@ -517,7 +517,7 @@
   
   
   
-! Muffett                 Expires 15 November 2021                [Page 5]
+! Muffett                 Expires 17 November 2021                [Page 5]
   
 + Internet-Draft                    e2esm                         May 2021
   
@@ -573,7 +573,7 @@
   
   
   
-! Muffett                 Expires 15 November 2021                [Page 6]
+! Muffett                 Expires 17 November 2021                [Page 6]
   
 ! Internet-Draft                    e2esm                         May 2021
   
@@ -631,7 +631,7 @@
 + 
 + 
 + 
-+ Muffett                 Expires 15 November 2021                [Page 7]
++ Muffett                 Expires 17 November 2021                [Page 7]
 + 
 + Internet-Draft                    e2esm                         May 2021
 + 
@@ -640,7 +640,7 @@
      spectrum of mechanisms which have assisted non-participant access to
      PCASM.  These have variously been named as "export-grade key
 ***************
-*** 384,421 ****
+*** 384,425 ****
      already allow for the term to be prefixed with "intentional" or
      "unintentional".
   
@@ -679,7 +679,11 @@
   
      Consider FooBook, a hypothetical example company which provides
      messaging services for conversations between entities who use it.
---- 423,602 ----
+  
+     For each conversation FooBook MUST decide whether to represent itself
+     as a conversation participant or as a non-participant.  (Transparency
+     of Participation)
+--- 423,623 ----
      already allow for the term to be prefixed with "intentional" or
      "unintentional".
   
@@ -688,27 +692,39 @@
 +    term "side channel".
 + 
 + 5.7.  Why: Transparency of Participation
-  
++ 
 +    The "ends" of "end to end" are the participants; for a message to be
 +    composed to be exclusively accessible to that set of participants,
 +    all participants must be visible.
++ 
++    For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP"
++    or (to a limited extent) "Ricochet", the set of participants is fixed
++    by the author at the time of individual message composition, and MUST
++    be visible to all participants.
++ 
++ 
++ 
   
-+ 5.8.  Why: Integrity of Participation
-  
-+    Inherent in the term "end to end secure messenger" is the intention
-+    that PCASM will only be available to the participants ("ends") at the
-+    time the message was composed.
   
   
-! 
-! 
-! 
-! 
-! 
-! Muffett                 Expires 15 November 2021                [Page 8]
+  
+  
+! Muffett                 Expires 17 November 2021                [Page 8]
   
   Internet-Draft                    e2esm                         May 2021
   
+  
+!    For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
+!    of participants is a "group context" shared amongst all participants
+!    and at the time of individual message composition it MUST be
+!    inherited into a set of "fixed" per-participant access capabilities
+!    by the author.
+  
+! 5.8.  Why: Integrity of Participation
+  
+!    Inherent in the term "end to end secure messenger" is the intention
+!    that PCASM will only be available to the participants ("ends") at the
+!    time the message was composed.
   
 !    If this was not the intention we would deduce that an E2ESM would
 !    automatically make past content available to newly-added conversation
@@ -717,18 +733,18 @@
 !    E2ESM.  Therefore the converse is true.
   
 ! 5.9.  Why: Equality of Participation
-  
+! 
 !    Without equality of participation it would be allowed for a person to
 !    deploy a standalone cleartext chat server, available solely over TLS-
 !    encrypted links, declare themselves to be "participants" in every
 !    conversation from its outset, access all message PCASM on that basis,
 !    and yet call themselves an E2ESM.
-  
+! 
 !    So this is an "anti-cheating" clause: all participant access to PCASM
 !    MUST be via the same mechanisms for all participants without favour
 !    or privilege, and in particular PCASM MUST NOT be available via other
 !    means, e.g. raw filestore, database access or network sniffing.
-  
+! 
 ! 5.10.  Why: Closure of Conversation
 ! 
 !    If a conversation is not "only extensible from within" then it would
@@ -747,6 +763,13 @@
 !    *TODO* / doesn't fit email / excellent, RECOMMENDED even, but not
 !    obliged.
 ! 
+! 
+! 
+! Muffett                 Expires 17 November 2021                [Page 9]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+! 
 ! 5.13.  Why Not: Require Mutual Identity Verification?
 ! 
 !    *TODO* / how to metricate the value-add / how to add value at all, in
@@ -757,15 +780,6 @@
 ! 
 !    *TODO*
 ! 
-! 
-! 
-! 
-! 
-! Muffett                 Expires 15 November 2021                [Page 9]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
-! 
 ! 6.  Examples of PCASM
 ! 
 !    For an example message with a plaintext content ("content") of
@@ -773,7 +787,7 @@
 !    string of length 13 bytes without terminator character.
 ! 
 ! 6.1.  Content PCASM
-  
+! 
 !    Examples of Content PCASM would include, non-exclusively:
 ! 
 !    1.  The content is "Hello, world."
@@ -805,6 +819,13 @@
 !    4.  The content does not contain a substring from amongst the
 !        following set: ...
 ! 
+! 
+! 
+! Muffett                 Expires 17 November 2021               [Page 10]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+! 
 !    5.  The hash of the content exists amongst the following set of
 !        hashes: ...
 ! 
@@ -814,20 +835,12 @@
 !    7.  The content was matched by a machine-learning classifier with the
 !        following training set: ...
 ! 
-! 
-! 
-! 
-! Muffett                 Expires 15 November 2021               [Page 10]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
-! 
 ! 6.4.  Conversation Metadata as OPTIONAL PCASM
 ! 
 !    Examples of Conversation Metadata would include, non-exclusively:
 ! 
 !    1.  maillist email addresses
-! 
+  
 !    2.  maillist server names
 ! 
 !    3.  group titles
@@ -860,9 +873,20 @@
   
      Consider FooBook, a hypothetical example company which provides
      messaging services for conversations between entities who use it.
+  
++ 
++ 
++ 
++ Muffett                 Expires 17 November 2021               [Page 11]
++ 
++ Internet-Draft                    e2esm                         May 2021
++ 
++ 
+     For each conversation FooBook MUST decide whether to represent itself
+     as a conversation participant or as a non-participant.  (Transparency
+     of Participation)
 ***************
-*** 428,455 ****
-     MUST NOT have any access to PCASM.  (Integrity of Participation /
+*** 429,455 ****
      Non-Participation)
   
      If FooBook decides to represent itself as a participant, then it MUST
@@ -890,19 +914,9 @@
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
---- 609,639 ----
-     MUST NOT have any access to PCASM.  (Integrity of Participation /
+--- 627,647 ----
      Non-Participation)
   
-+ 
-+ 
-+ 
-+ 
-+ Muffett                 Expires 15 November 2021               [Page 11]
-+ 
-+ Internet-Draft                    e2esm                         May 2021
-+ 
-+ 
      If FooBook decides to represent itself as a participant, then it MUST
 !    NOT have exceptional access to PCASM, despite being the provider of
 !    the service - for instance via raw database access or network
@@ -923,7 +937,7 @@
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
 ***************
-*** 457,476 ****
+*** 457,480 ****
      FooBook MAY treat conversation metadata as PCASM, but it MUST
      communicate to participants whether it does, or does not.
   
@@ -944,7 +958,11 @@
   
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
---- 641,660 ----
+  
+     [I-D.knodel-e2ee-definition]
+                Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
+                Grover, "Definition of End-to-end Encryption", Work in
+--- 649,679 ----
      FooBook MAY treat conversation metadata as PCASM, but it MUST
      communicate to participants whether it does, or does not.
   
@@ -965,23 +983,17 @@
   
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
-***************
-*** 482,487 ****
---- 666,679 ----
-                22 February 2021, <https://tools.ietf.org/html/draft-
-                knodel-e2ee-definition-00>.
   
 + 
 + 
-+ 
-+ Muffett                 Expires 15 November 2021               [Page 12]
++ Muffett                 Expires 17 November 2021               [Page 12]
 + 
 + Internet-Draft                    e2esm                         May 2021
 + 
 + 
-     [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-                Requirement Levels", BCP 14, RFC 2119,
-                DOI 10.17487/RFC2119, March 1997,
+     [I-D.knodel-e2ee-definition]
+                Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
+                Grover, "Definition of End-to-end Encryption", Work in
 ***************
 *** 499,510 ****
                 BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
@@ -996,7 +1008,7 @@
   
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
---- 691,701 ----
+--- 698,708 ----
                 BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
                 <https://www.ricochetrefresh.net>.
   
@@ -1009,10 +1021,17 @@
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
 ***************
-*** 534,560 ****
+*** 527,560 ****
   
   
   
+! 
+! 
+! 
+! 
+! 
+! 
+! 
 ! 
 ! 
 ! 
@@ -1041,4 +1060,4 @@
   
   
   
-! Muffett                 Expires 15 November 2021               [Page 13]
+! Muffett                 Expires 17 November 2021               [Page 13]

@@ -238,13 +238,14 @@ to provide E2ESM
 will require:</t>
 
 <section anchor="transparency-of-participation"><name>Transparency of Participation</name>
-<t>The existence
-of all current
+<t>The
+complete set
+of all
 conversation participants
 <bcp14>MUST</bcp14> be visible
-at the current
-time
-to all current
+at the
+current time
+to all
 conversation participants.</t>
 </section>
 
@@ -535,11 +536,43 @@ and established term
 </section>
 
 <section anchor="why-transparency-of-participation"><name>Why: Transparency of Participation</name>
-<t>The &quot;ends&quot; of &quot;end to end&quot; are the participants;
+<t>The &quot;ends&quot;
+of &quot;end to end&quot;
+are the participants;
 for a message to be composed
 to be exclusively accessible
 to that set of participants,
 all participants must be visible.</t>
+<t>For
+&quot;virtual peer-to-peer&quot;
+E2ESM solutions
+such as
+&quot;Email with PGP&quot;
+or
+(to a limited extent) &quot;Ricochet&quot;,
+the set of participants
+is fixed
+by the author
+at the time
+of individual message composition,
+and <bcp14>MUST</bcp14>
+be visible
+to all participants.</t>
+<t>For &quot;centralised&quot;
+E2ESM solutions
+such as Signal
+or WhatsApp,
+the set of participants
+is a &quot;group context&quot;
+shared amongst all participants
+and at the time
+of individual message composition
+it <bcp14>MUST</bcp14>
+be inherited
+into a set of
+&quot;fixed&quot; per-participant
+access capabilities
+by the author.</t>
 </section>
 
 <section anchor="why-integrity-of-participation"><name>Why: Integrity of Participation</name>
