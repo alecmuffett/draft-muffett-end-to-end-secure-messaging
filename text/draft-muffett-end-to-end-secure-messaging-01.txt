@@ -105,7 +105,7 @@ Table of Contents
      6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  11
    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  11
    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  12
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
+   9.  Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 
 
@@ -114,8 +114,9 @@ Muffett                 Expires 17 November 2021                [Page 2]
 Internet-Draft                    e2esm                         May 2021
 
 
-   10. Security Considerations . . . . . . . . . . . . . . . . . . .  12
-   11. Informative References  . . . . . . . . . . . . . . . . . . .  12
+   10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
+   11. Security Considerations . . . . . . . . . . . . . . . . . . .  13
+   12. Informative References  . . . . . . . . . . . . . . . . . . .  13
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
 
 1.  Introduction
@@ -161,7 +162,6 @@ Internet-Draft                    e2esm                         May 2021
    and data-sharing that the software offers.  The software MAY comprise
    either a complete application, or a clearly defined subset of
    functionality within a larger application.
-
 
 
 
@@ -654,18 +654,18 @@ Internet-Draft                    e2esm                         May 2021
    A different approach to defining (specifically) end-to-end encryption
    is discussed in [I-D.knodel-e2ee-definition].
 
-9.  IANA Considerations
+9.  Live Drafts
+
+   Live working drafts of this document are at:
+   https://github.com/alecmuffett/draft-muffett-end-to-end-secure-
+   messaging (https://github.com/alecmuffett/draft-muffett-end-to-end-
+   secure-messaging)
+
+10.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  Security Considerations
 
-   This document is entirely composed of security considerations.
-
-11.  Informative References
-
-   [DualUse]  Wikipedia, "Dual-use technology", 2021,
-              <https://en.wikipedia.org/wiki/Dual-use_technology>.
 
 
 
@@ -673,6 +673,15 @@ Muffett                 Expires 17 November 2021               [Page 12]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+11.  Security Considerations
+
+   This document is entirely composed of security considerations.
+
+12.  Informative References
+
+   [DualUse]  Wikipedia, "Dual-use technology", 2021,
+              <https://en.wikipedia.org/wiki/Dual-use_technology>.
 
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
@@ -713,6 +722,14 @@ Author's Address
    Alec Muffett
    Security Researcher
 
+
+
+
+Muffett                 Expires 17 November 2021               [Page 13]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    Email: alec.muffett@gmail.com
 
 
@@ -725,4 +742,43 @@ Author's Address
 
 
 
-Muffett                 Expires 17 November 2021               [Page 13]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muffett                 Expires 17 November 2021               [Page 14]

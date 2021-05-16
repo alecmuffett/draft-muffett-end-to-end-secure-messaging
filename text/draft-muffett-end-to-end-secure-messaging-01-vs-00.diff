@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-16 11:54:49.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-16 11:56:26.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -91,7 +91,7 @@
   
   1.  Introduction
   
---- 53,122 ----
+--- 53,123 ----
   
   
   
@@ -147,7 +147,7 @@
 !      6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  11
 !    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  11
 !    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  12
-!    9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
+!    9.  Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  12
 ! 
 ! 
 ! 
@@ -156,8 +156,9 @@
 ! Internet-Draft                    e2esm                         May 2021
 ! 
 ! 
-!    10. Security Considerations . . . . . . . . . . . . . . . . . . .  12
-!    11. Informative References  . . . . . . . . . . . . . . . . . . .  12
+!    10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
+!    11. Security Considerations . . . . . . . . . . . . . . . . . . .  13
+!    12. Informative References  . . . . . . . . . . . . . . . . . . .  13
 !    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
   
   1.  Introduction
@@ -178,27 +179,27 @@
      Other architectural approaches exist - for instance [RicochetRefresh]
      which implements closed distribution by using secure point-to-point
      [RFC7686] networking to literally restrict the distribution of
---- 131,136 ----
+--- 132,137 ----
 ***************
 *** 141,353 ****
      Software which functions as an End-to-End Secure Messenger MUST
      satisfy the following principles, and MUST satisfy these principles
      in respect of the provided definitions for all forms of communication
 !    and data-sharing that the software offers.
+! 
+!    Any software that does not satisfy these requirements is not an End-
+!    to-End Secure Messenger, and it does not implement End-to-End Secure
+!    Messaging, nor does it implement End-to-End Encrypted Messaging.
+! 
+! 3.  Principles
   
--    Any software that does not satisfy these requirements is not an End-
--    to-End Secure Messenger, and it does not implement End-to-End Secure
--    Messaging, nor does it implement End-to-End Encrypted Messaging.
-  
-- 3.  Principles
-- 
 -    For a series of one or more "messages" each which are composed of
 -    "plaintext content and sensitive metadata" (PCASM) and which
 -    constitute a "conversation" amongst a set of "participants", to
 -    provide E2ESM will require:
 - 
 - 3.1.  Equality of Participation
-- 
+  
 -    All participants MUST be peers who MUST have equal access to any
 -    given message's PCASM.
   
@@ -223,7 +224,7 @@
 !    Excusing the "retransmission exception", PCASM of any given message
 !    MUST only be available to the fixed set of conversation participants
 !    from whom, to whom, and at the time when it was sent.
-  
+! 
 ! 3.3.1.  Retransmission Exception
   
 !    If a participant that can access an "original" message intentionally
@@ -394,14 +395,13 @@
   
      In software engineering there is a perpetual tension between the
      concepts of "feature" versus "bug" - and occasionally "misfeature"
---- 158,382 ----
+--- 159,382 ----
      Software which functions as an End-to-End Secure Messenger MUST
      satisfy the following principles, and MUST satisfy these principles
      in respect of the provided definitions for all forms of communication
 !    and data-sharing that the software offers.  The software MAY comprise
 !    either a complete application, or a clearly defined subset of
 !    functionality within a larger application.
-  
   
   
   
@@ -416,17 +416,17 @@
   
 + 3.  Definitions
   
-!    Further context for several of these definitions may also be found in
-!    the rationales section, below.
++    Further context for several of these definitions may also be found in
++    the rationales section, below.
   
 ! 3.1.  Participant
   
-+    A participant is any entity - human, machine, software bot,
-+    conversation archiver, or other - and the systems that they control
-+    and use for the E2ESM software, bounded by the extent of that
-+    entity's Trusted Computing Base (TCB).
+!    A participant is any entity - human, machine, software bot,
+!    conversation archiver, or other - and the systems that they control
+!    and use for the E2ESM software, bounded by the extent of that
+!    entity's Trusted Computing Base (TCB).
   
-! 3.2.  Conversation
++ 3.2.  Conversation
   
 !    A conversation is a sequence of one or more messages over a period of
 !    time amongst a constant or evolving set of participants.
@@ -703,12 +703,12 @@
 +    be visible to all participants.
 + 
 + 
-+ 
   
   
   
   
   
+! 
 ! Muffett                 Expires 17 November 2021                [Page 8]
   
   Internet-Draft                    e2esm                         May 2021
@@ -779,7 +779,7 @@
 ! 5.14.  Why Not: Require Third-Party Identity?
 ! 
 !    *TODO*
-! 
+  
 ! 6.  Examples of PCASM
 ! 
 !    For an example message with a plaintext content ("content") of
@@ -840,7 +840,7 @@
 !    Examples of Conversation Metadata would include, non-exclusively:
 ! 
 !    1.  maillist email addresses
-  
+! 
 !    2.  maillist server names
 ! 
 !    3.  group titles
@@ -937,7 +937,7 @@
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
 ***************
-*** 457,480 ****
+*** 457,476 ****
      FooBook MAY treat conversation metadata as PCASM, but it MUST
      communicate to participants whether it does, or does not.
   
@@ -958,11 +958,7 @@
   
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
-  
-     [I-D.knodel-e2ee-definition]
-                Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
-                Grover, "Definition of End-to-end Encryption", Work in
---- 649,679 ----
+--- 649,684 ----
      FooBook MAY treat conversation metadata as PCASM, but it MUST
      communicate to participants whether it does, or does not.
   
@@ -971,29 +967,34 @@
      A different approach to defining (specifically) end-to-end encryption
      is discussed in [I-D.knodel-e2ee-definition].
   
-! 9.  IANA Considerations
+! 9.  Live Drafts
+! 
+!    Live working drafts of this document are at:
+!    https://github.com/alecmuffett/draft-muffett-end-to-end-secure-
+!    messaging (https://github.com/alecmuffett/draft-muffett-end-to-end-
+!    secure-messaging)
+! 
+! 10.  IANA Considerations
   
      This document has no IANA actions.
   
-! 10.  Security Considerations
+! 
+! 
+! 
+! 
+! Muffett                 Expires 17 November 2021               [Page 12]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+! 
+! 11.  Security Considerations
   
      This document is entirely composed of security considerations.
   
-! 11.  Informative References
+! 12.  Informative References
   
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
-  
-+ 
-+ 
-+ Muffett                 Expires 17 November 2021               [Page 12]
-+ 
-+ Internet-Draft                    e2esm                         May 2021
-+ 
-+ 
-     [I-D.knodel-e2ee-definition]
-                Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
-                Grover, "Definition of End-to-end Encryption", Work in
 ***************
 *** 499,510 ****
                 BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
@@ -1008,7 +1009,7 @@
   
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
---- 698,708 ----
+--- 707,717 ----
                 BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
                 <https://www.ricochetrefresh.net>.
   
@@ -1021,43 +1022,39 @@
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
 ***************
-*** 527,560 ****
+*** 515,520 ****
+--- 722,735 ----
+     Alec Muffett
+     Security Researcher
+  
++ 
++ 
++ 
++ Muffett                 Expires 17 November 2021               [Page 13]
++ 
++ Internet-Draft                    e2esm                         May 2021
++ 
++ 
+     Email: alec.muffett@gmail.com
+  
+  
+***************
+*** 557,560 ****
   
   
   
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
 ! Muffett                  Expires 8 November 2021               [Page 10]
---- 725,728 ----
+--- 772,784 ----
   
   
   
-! Muffett                 Expires 17 November 2021               [Page 13]
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! Muffett                 Expires 17 November 2021               [Page 14]

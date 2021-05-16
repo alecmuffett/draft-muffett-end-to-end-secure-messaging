@@ -809,6 +809,13 @@ is discussed
 in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
 </section>
 
+<section anchor="live-drafts"><name>Live Drafts</name>
+<t>Live working drafts
+of this document
+are at:
+<eref target="https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging">https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging</eref></t>
+</section>
+
 <section anchor="iana-considerations"><name>IANA Considerations</name>
 <t>This document has no IANA actions.</t>
 </section>

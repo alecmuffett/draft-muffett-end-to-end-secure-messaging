@@ -828,6 +828,13 @@ end-to-end encryption
 is discussed
 in [@I-D.knodel-e2ee-definition].
 
+# Live Drafts
+
+Live working drafts
+of this document
+are at:
+https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging
+
 # IANA Considerations
 
 This document has no IANA actions.
