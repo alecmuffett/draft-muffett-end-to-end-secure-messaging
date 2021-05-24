@@ -96,16 +96,16 @@ Table of Contents
      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .  10
      5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  10
      5.11. Why: Management of Participant Clients and Devices  . . .  11
-     5.12. Why Not: Require Disappearing Messages? . . . . . . . . .  11
-     5.13. Why Not: Require Mutual Identity Verification?  . . . . .  11
-     5.14. Why Not: Require Third-Party Identity?  . . . . . . . . .  11
-   6.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  11
-     6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  11
-     6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  11
-     6.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  12
-     6.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  12
-     6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  12
-   7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  13
+   6.  OPTIONAL Features of E2ESM  . . . . . . . . . . . . . . . . .  11
+     6.1.  Disappearing Messages . . . . . . . . . . . . . . . . . .  11
+     6.2.  Mutual Identity Verification  . . . . . . . . . . . . . .  11
+     6.3.  Third-Party Identity  . . . . . . . . . . . . . . . . . .  11
+   7.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  11
+     7.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  11
+     7.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  11
+     7.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  12
+     7.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  12
+     7.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 
 
@@ -114,11 +114,12 @@ Muffett                 Expires 25 November 2021                [Page 2]
 Internet-Draft                    e2esm                         May 2021
 
 
-   8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  13
-   9.  Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  14
-   10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
-   11. Security Considerations . . . . . . . . . . . . . . . . . . .  14
-   12. Informative References  . . . . . . . . . . . . . . . . . . .  14
+   8.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  13
+   9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  13
+   10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  14
+   11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
+   12. Security Considerations . . . . . . . . . . . . . . . . . . .  14
+   13. Informative References  . . . . . . . . . . . . . . . . . . .  14
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  15
 
 1.  Introduction
@@ -155,7 +156,6 @@ Internet-Draft                    e2esm                         May 2021
    "OPTIONAL" in this document are to be interpreted as described in BCP
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
-
 
 
 
@@ -401,19 +401,6 @@ Internet-Draft                    e2esm                         May 2021
 
 5.1.  Why: Participant
 
-   It is important to note that the concept of "participant", defined by
-   their TCB, is a foundation for all other trust.  Developing from the
-   basic definitions of a [TrustedComputingBase] and from the concept of
-   "trust-to-trust" discussed in [RoleOfTrust], a failure of a
-   participant to maintain integrity over their own (trusted)
-   environment should not be considered a failure of an E2ESM that
-   connects it to other participants.
-
-   Further: it is obviously possible to burden the E2ESM with surfacing
-   potential integrity issues of any given participant; but to require
-   such in this standard would risk harming the privacy of the
-   participant entity.
-
    The term "participant" in this document exists to supersede the more
    vague notion of "end" in the phrase "end-to-end".
 
@@ -428,6 +415,19 @@ Internet-Draft                    e2esm                         May 2021
    storage leading somehow to data exfiltration, neither of these would
    be a failure of E2ESM.  This would instead be a failure of the
    participant's [TrustedComputingBase].
+
+   It is important to note that the concept of "participant", defined by
+   their TCB, is the foundation for all other trust.  Developing from
+   the basic definitions of a [TrustedComputingBase] and from the
+   concept of "trust-to-trust" discussed in [RoleOfTrust], failure of a
+   participant to maintain integrity over their own (trusted)
+   environment should not be considered a failure of an E2ESM that
+   connects it to other participants.
+
+   Further: it is obviously possible to burden the E2ESM with surfacing
+   potential integrity issues of any given participant; but to require
+   such in this standard would risk harming the privacy of the
+   participant entity.
 
 5.2.  Why: Content PCASM
 
@@ -569,28 +569,30 @@ Internet-Draft                    e2esm                         May 2021
    the security services of an illiberal state will simply demand that
    the ghost is injected into a participant instead of a conversation
 
-5.12.  Why Not: Require Disappearing Messages?
+6.  OPTIONAL Features of E2ESM
+
+6.1.  Disappearing Messages
 
    *TODO* / doesn't fit email / excellent, RECOMMENDED even, but not
    obliged.
 
-5.13.  Why Not: Require Mutual Identity Verification?
+6.2.  Mutual Identity Verification
 
    *TODO* / how to metricate the value-add / how to add value at all, in
    a peer-to-peer network? / how to add value at all, if there is no
    external trust? / also: reflections on trusting trust
 
-5.14.  Why Not: Require Third-Party Identity?
+6.3.  Third-Party Identity
 
    *TODO*
 
-6.  Examples of PCASM
+7.  Examples of PCASM
 
    For an example message with content ("content") of "Hello, world.",
    for the purposes of this example encoded as an ASCII string of length
    13 bytes without terminator character.
 
-6.1.  Content PCASM
+7.1.  Content PCASM
 
    Examples of Content PCASM would include, non-exclusively:
 
@@ -604,12 +606,10 @@ Internet-Draft                    e2esm                         May 2021
 
    5.  The Salted-MD5 Hash of the content is : ...
 
-6.2.  Size PCASM
+7.2.  Size PCASM
 
    Size PCASM is defined in the main text, as it relates to the
    transport and/or content encryption mechanisms.
-
-
 
 
 
@@ -618,7 +618,7 @@ Muffett                 Expires 25 November 2021               [Page 11]
 Internet-Draft                    e2esm                         May 2021
 
 
-6.3.  Analytic PCASM
+7.3.  Analytic PCASM
 
    Examples of Analytic PCASM would include, non-exclusively:
 
@@ -641,7 +641,7 @@ Internet-Draft                    e2esm                         May 2021
    7.  The content was matched by a machine-learning classifier with the
        following training set: ...
 
-6.4.  Conversation Metadata as OPTIONAL PCASM
+7.4.  Conversation Metadata as OPTIONAL PCASM
 
    Examples of Conversation Metadata would include, non-exclusively:
 
@@ -657,7 +657,7 @@ Internet-Draft                    e2esm                         May 2021
 
    6.  group participant lists
 
-6.5.  Non-PCASM
+7.5.  Non-PCASM
 
    Information which would not be PCASM would include, non-exclusively:
 
@@ -682,7 +682,7 @@ Internet-Draft                    e2esm                         May 2021
 
    7.  The content was composed using the following platform: ...
 
-7.  Worked Example
+8.  Worked Example
 
    Consider FooBook, a hypothetical example company which provides
    messaging services for conversations between entities who use it.
@@ -718,7 +718,7 @@ Internet-Draft                    e2esm                         May 2021
    FooBook MAY treat conversation metadata as PCASM, but it MUST
    communicate to participants whether it does, or does not.
 
-8.  See Also
+9.  See Also
 
    A different approach to defining (specifically) end-to-end encryption
    is discussed in [I-D.knodel-e2ee-definition].
@@ -730,22 +730,22 @@ Muffett                 Expires 25 November 2021               [Page 13]
 Internet-Draft                    e2esm                         May 2021
 
 
-9.  Live Drafts
+10.  Live Drafts
 
    Live working drafts of this document are at:
    https://github.com/alecmuffett/draft-muffett-end-to-end-secure-
    messaging (https://github.com/alecmuffett/draft-muffett-end-to-end-
    secure-messaging)
 
-10.  IANA Considerations
+11.  IANA Considerations
 
    This document has no IANA actions.
 
-11.  Security Considerations
+12.  Security Considerations
 
    This document is entirely composed of security considerations.
 
-12.  Informative References
+13.  Informative References
 
    [DualUse]  Wikipedia, "Dual-use technology", 2021,
               <https://en.wikipedia.org/wiki/Dual-use_technology>.

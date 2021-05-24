@@ -481,35 +481,6 @@ for clarity and argumentation purposes.</p>
 
 <h2 id="why-participant">Why: Participant</h2>
 
-<p>It is important to note
-that the concept of &ldquo;participant&rdquo;,
-defined by their TCB,
-is a foundation for all other trust.
-Developing from
-the basic definitions of
-a  <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-and from the concept of
-&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>,
-a failure of a participant
-to maintain integrity
-over their own (trusted) environment
-should not be considered
-a failure of an E2ESM
-that connects it to other participants.</p>
-
-<p>Further: it is
-obviously possible
-to burden
-the E2ESM
-with surfacing
-potential integrity issues
-of any given participant;
-but to require such
-in this standard
-would risk harming
-the privacy
-of the participant entity.</p>
-
 <p>The term &ldquo;participant&rdquo;
 in this document
 exists to supersede
@@ -541,6 +512,35 @@ This would instead
 be a failure
 of the participant&rsquo;s
 <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
+
+<p>It is important to note
+that the concept of &ldquo;participant&rdquo;,
+defined by their TCB,
+is the foundation for all other trust.
+Developing from
+the basic definitions of
+a <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+and from the concept of
+&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>,
+failure of a participant
+to maintain integrity
+over their own (trusted) environment
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</p>
+
+<p>Further: it is
+obviously possible
+to burden
+the E2ESM
+with surfacing
+potential integrity issues
+of any given participant;
+but to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.</p>
 
 <h2 id="why-content-pcasm">Why: Content PCASM</h2>
 
@@ -767,18 +767,20 @@ group conversations to be closed against &ldquo;ghost participant injection&rdqu
 if the security services of an illiberal state will simply demand that
 the ghost is injected into a participant instead of a conversation</p>
 
-<h2 id="why-not-require-disappearing-messages">Why Not: Require Disappearing Messages?</h2>
+<h1 id="optional-features-of-e2esm"><strong>OPTIONAL</strong> Features of E2ESM</h1>
+
+<h2 id="disappearing-messages">Disappearing Messages</h2>
 
 <p><strong>TODO</strong> / doesn&rsquo;t fit email / excellent, <strong>RECOMMENDED</strong> even, but
 not obliged.</p>
 
-<h2 id="why-not-require-mutual-identity-verification">Why Not: Require Mutual Identity Verification?</h2>
+<h2 id="mutual-identity-verification">Mutual Identity Verification</h2>
 
 <p><strong>TODO</strong> / how to metricate the value-add / how to add value at all,
 in a peer-to-peer network? / how to add value at all, if there is no
 external trust? / also: reflections on trusting trust</p>
 
-<h2 id="why-not-require-third-party-identity">Why Not: Require Third-Party Identity?</h2>
+<h2 id="third-party-identity">Third-Party Identity</h2>
 
 <p><strong>TODO</strong></p>
 

@@ -227,16 +227,6 @@ purposes.
 
 ## Why: Participant
 
-It is important to note that the concept of "participant", defined by their TCB, is a foundation
-for all other trust. Developing from the basic definitions of a [@TrustedComputingBase] and from
-the concept of "trust-to-trust" discussed in [@RoleOfTrust], a failure of a participant to maintain
-integrity over their own (trusted) environment should not be considered a failure of an E2ESM that
-connects it to other participants.
-
-Further: it is obviously possible to burden the E2ESM with surfacing potential integrity issues of
-any given participant; but to require such in this standard would risk harming the privacy of the
-participant entity.
-
 The term "participant" in this document exists to supersede the more vague notion of "end" in the
 phrase "end-to-end".
 
@@ -248,6 +238,16 @@ For example: if a participant accesses their E2ESM software via remote desktop s
 RDP session is hijacked by a third party; of if they back-up their messages in cleartext to cloud
 storage leading somehow to data exfiltration, neither of these would be a failure of E2ESM. This
 would instead be a failure of the participant's [@TrustedComputingBase].
+
+It is important to note that the concept of "participant", defined by their TCB, is the foundation
+for all other trust. Developing from the basic definitions of a [@TrustedComputingBase] and from
+the concept of "trust-to-trust" discussed in [@RoleOfTrust], failure of a participant to maintain
+integrity over their own (trusted) environment should not be considered a failure of an E2ESM that
+connects it to other participants.
+
+Further: it is obviously possible to burden the E2ESM with surfacing potential integrity issues of
+any given participant; but to require such in this standard would risk harming the privacy of the
+participant entity.
 
 ## Why: Content PCASM
 
@@ -342,16 +342,18 @@ be injected into the conversation thereby defeating the closure of message distr
 against "ghost participant injection" if the security services of an illiberal state will simply
 demand that the ghost is injected into a participant instead of a conversation
 
-## Why Not: Require Disappearing Messages?
+# **OPTIONAL** Features of E2ESM
+
+## Disappearing Messages
 
 **TODO** / doesn't fit email / excellent, **RECOMMENDED** even, but not obliged.
 
-## Why Not: Require Mutual Identity Verification?
+## Mutual Identity Verification
 
 **TODO** / how to metricate the value-add / how to add value at all, in a peer-to-peer network? /
 how to add value at all, if there is no external trust? / also: reflections on trusting trust
 
-## Why Not: Require Third-Party Identity?
+## Third-Party Identity
 
 **TODO**
 
