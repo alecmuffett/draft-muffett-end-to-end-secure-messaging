@@ -70,7 +70,6 @@ goals and technologies.</p>
 and should be addressed to
 the working group&rsquo;s
 mailing list
-TODO
 and/or the author(s).</p>
 
 <h2 id="notational-conventions">Notational Conventions</h2>
@@ -137,7 +136,7 @@ can also be found
 in the rationales section,
 below.</p>
 
-<h2 id="message">Message</h2>
+<h2 id="message-and-platform">Message and Platform</h2>
 
 <p>A &ldquo;message&rdquo;
 is information
@@ -148,6 +147,12 @@ to be communicated.</p>
 both plaintext &ldquo;content&rdquo;,
 and also &ldquo;metadata&rdquo;
 which describes the content.</p>
+
+<p>A &ldquo;platform&rdquo;
+is a specific instance of software
+which exists
+for the purpose
+of exchanging messages.</p>
 
 <h2 id="plaintext-content-and-sensitive-metadata-pcasm">Plaintext Content and Sensitive Metadata (PCASM)</h2>
 
@@ -178,19 +183,19 @@ Size PCASM is the unpadded size of the content.</p>
 Size PCASM is currently undefined (TBD)</p>
 
 <p>For transport encryption of content,
-precise Size PCASM
+exact Size PCASM
 <strong>SHOULD NOT</strong>
 be observable
-or inferrable.</p>
+or inferable.</p>
 
 <h3 id="analytic-pcasm">Analytic PCASM</h3>
 
 <p>Analytic PCASM
 is data
-which analyzes,
+which analyses,
 describes,
 reduces,
-or summarizes
+or summarises
 the &ldquo;content&rdquo;.</p>
 
 <h3 id="conversation-metadata-optional">Conversation Metadata (<strong>OPTIONAL</strong>)</h3>
@@ -289,6 +294,12 @@ over a period of time,
 amongst a constant
 or evolving
 set of participants.</p>
+
+<p>A given platform <strong>MAY</strong>
+distinguish between
+and support
+more than one conversation
+at any given time.</p>
 
 <p>In &ldquo;centralised&rdquo; E2ESM
 such as WhatsApp or Signal,
@@ -544,21 +555,46 @@ of the participant entity.</p>
 
 <h2 id="why-content-pcasm">Why: Content PCASM</h2>
 
-<p><strong>TODO</strong> because content needs to stay secret</p>
+<p>Content PCASM
+<strong>MUST</strong> be protected
+as it comprises
+that which is
+&ldquo;closed&rdquo; from general distribution.</p>
 
 <h2 id="why-size-pcasm">Why: Size PCASM</h2>
 
-<p><strong>TODO</strong> because &ldquo;yes&rdquo; is three letters, and &ldquo;no&rdquo; is two. Unless
-you&rsquo;re using another language, but signals intelligence is still a
-thing.</p>
+<p>Exact size PCASM
+<strong>MUST</strong> be protected
+as it <strong>MAY</strong>
+offer insight into
+Content PCASM.</p>
 
 <h2 id="why-analytic-pcasm">Why: Analytic PCASM</h2>
 
-<p><strong>TODO</strong> because these enable backdoors.</p>
+<p>Analytic PCASM
+<strong>MUST</strong> be protected
+as it <strong>MAY</strong>
+offer insight into
+Content PCASM.</p>
 
 <h2 id="why-conversation-metadata-as-optional-pcasm">Why: Conversation Metadata as <strong>OPTIONAL</strong> PCASM</h2>
 
-<p><strong>TODO</strong> optional because email, if nothing else.</p>
+<p>Conversational Metadata <strong>MAY</strong>
+offer insight into
+Content PCASM,
+however the abstractions
+of transport mechanism,
+group management,
+or platform choice,
+<strong>MAY</strong> render this irrelevant.</p>
+
+<p>For example
+an PGP-Encrypted email distribution list
+named &ldquo;blockchain-fans@example.com&rdquo;
+would leak
+its implicit topic
+and participant identities
+to capable observers.</p>
 
 <h2 id="why-backdoor">Why: Backdoor</h2>
 
@@ -744,8 +780,9 @@ and in particular
 PCASM <strong>MUST NOT</strong>
 be available via other means,
 e.g.
+raw block-device access,
 raw filestore,
-database access
+raw database access,
 or network sniffing.</p>
 
 <h2 id="why-closure-of-conversation">Why: Closure of Conversation</h2>
@@ -760,29 +797,127 @@ into the conversation
 thereby defeating
 the closure of message distribution.</p>
 
+<p>A subtle
+centralised vs: decentralised
+edge-case is as follows:
+consider a
+PGP-encrypted email distribution list.
+Would it break &ldquo;closure of conversation&rdquo;
+for a non-participant
+email administrator
+to simply add new users
+to the maillist?</p>
+
+<p>Answer: no, because
+in this case
+the maillist
+is functioning
+as a &ldquo;platform&rdquo;
+for multiple &ldquo;conversation&rdquo; threads,
+and mere addition of
+of a new
+&ldquo;transport-level&rdquo;
+maillist member
+would not include them
+as a participant
+in ongoing E2ESM conversations;
+such inclusion
+would be a future burden
+upon existing participants.</p>
+
+<p>However:
+similar external injection
+of a new entity
+into a centralised
+WhatsApp or Signal &ldquo;group&rdquo;
+would be clearly a breach
+of &ldquo;closure of conversation&rdquo;.</p>
+
 <h2 id="why-management-of-participant-clients-and-devices">Why: Management of Participant Clients and Devices</h2>
 
-<p><strong>TODO</strong> <strong>REQUIRED</strong> because there is little benefit in requiring
-group conversations to be closed against &ldquo;ghost participant injection&rdquo;
-if the security services of an illiberal state will simply demand that
-the ghost is injected into a participant instead of a conversation</p>
+<p>There is little benefit
+in requiring
+conversations
+to be closed
+against &ldquo;participant injection&rdquo;
+if a non-participant
+may obtain
+PCASM access
+by forcing a platform
+to silently add
+extra means of PCASM access
+to an existing participant
+on behalf of that non-participant.</p>
+
+<p>Therefore
+to be an E2ESM
+the platform
+<strong>MUST</strong> provide
+the described
+management of participant clients and devices.</p>
 
 <h1 id="optional-features-of-e2esm"><strong>OPTIONAL</strong> Features of E2ESM</h1>
 
 <h2 id="disappearing-messages">Disappearing Messages</h2>
 
-<p><strong>TODO</strong> / doesn&rsquo;t fit email / excellent, <strong>RECOMMENDED</strong> even, but
-not obliged.</p>
+<p>&ldquo;Disappearing&rdquo;,
+&ldquo;expiring&rdquo;,
+&ldquo;exploding&rdquo;,
+&ldquo;ephemeral&rdquo;
+or other forms of
+time-limited access to PCASM
+are strongly <strong>RECOMMENDED</strong>
+but not obligatory
+mechanisms
+for E2ESM,
+not least
+because they
+are impossible to implement
+in a way that cannot be circumvented
+by e.g. screenshots.</p>
 
 <h2 id="mutual-identity-verification">Mutual Identity Verification</h2>
 
-<p><strong>TODO</strong> / how to metricate the value-add / how to add value at all,
-in a peer-to-peer network? / how to add value at all, if there is no
-external trust? / also: reflections on trusting trust</p>
+<p>Some manner of
+&ldquo;shared key&rdquo;
+that mutually assures
+participant identity
+and communications integrity
+are strongly <strong>RECOMMENDED</strong>
+but not obligatory
+mechanisms
+for E2ESM.</p>
 
-<h2 id="third-party-identity">Third-Party Identity</h2>
+<p>The benefits
+of such mechanisms
+are limited to certain perspectives
+of certain platforms.</p>
 
-<p><strong>TODO</strong></p>
+<p>For instance:
+in Ricochet
+the identity key
+of a user
+is the absolute source of truth
+for their identity,
+and excusing detection of typographic errors
+there is nothing which can be added to that
+in order to further assure their &ldquo;identity&rdquo;.</p>
+
+<p>Similarly WhatsApp
+provides each participant
+with a &ldquo;verifiable security QR code&rdquo;
+and &ldquo;security code change notifiations&rdquo;,
+but these codes
+do not &ldquo;leak&rdquo; the number
+of &ldquo;WhatsApp For Web&rdquo; clients
+which are bound to that phone.</p>
+
+<p>For any given platform
+participant-client metadata
+of this kind
+<strong>MAY</strong> be,
+a private aspect
+of that participant&rsquo;s TCB.</p>
 
 <h1 id="examples-of-pcasm">Examples of PCASM</h1>
 
@@ -925,7 +1060,7 @@ treat conversation metadata
 as PCASM,
 but it <strong>MUST</strong>
 communicate to participants
-whether it does,
+whether it does
 or does not.</p>
 
 <h1 id="see-also">See Also</h1>

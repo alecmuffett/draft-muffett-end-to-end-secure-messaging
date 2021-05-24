@@ -65,15 +65,15 @@ Table of Contents
      1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
    2.  Requirements for an End-to-End Secure Messenger . . . . . . .   4
    3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     3.1.  Message . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.1.  Message and Platform  . . . . . . . . . . . . . . . . . .   4
      3.2.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
-       3.2.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   4
+       3.2.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
        3.2.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
        3.2.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   5
        3.2.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   5
      3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   5
-     3.5.  Participants and Non-Participants . . . . . . . . . . . .   5
+     3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
      3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
@@ -94,18 +94,18 @@ Table of Contents
      5.7.  Why: Transparency of Participation  . . . . . . . . . . .  10
      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .  10
      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .  10
-     5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  10
+     5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  11
      5.11. Why: Management of Participant Clients and Devices  . . .  11
    6.  OPTIONAL Features of E2ESM  . . . . . . . . . . . . . . . . .  11
      6.1.  Disappearing Messages . . . . . . . . . . . . . . . . . .  11
-     6.2.  Mutual Identity Verification  . . . . . . . . . . . . . .  11
-     6.3.  Third-Party Identity  . . . . . . . . . . . . . . . . . .  11
-   7.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  11
-     7.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  11
-     7.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  11
-     7.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  12
-     7.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  12
-     7.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  12
+     6.2.  Mutual Identity Verification  . . . . . . . . . . . . . .  12
+   7.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  12
+     7.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  12
+     7.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  12
+     7.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  13
+     7.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  13
+     7.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  13
+   8.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  14
 
 
 
@@ -114,13 +114,12 @@ Muffett                 Expires 25 November 2021                [Page 2]
 Internet-Draft                    e2esm                         May 2021
 
 
-   8.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  13
-   9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  13
-   10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  14
-   11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
-   12. Security Considerations . . . . . . . . . . . . . . . . . . .  14
-   13. Informative References  . . . . . . . . . . . . . . . . . . .  14
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  15
+   9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  14
+   10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  15
+   11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
+   12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
+   13. Informative References  . . . . . . . . . . . . . . . . . . .  15
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
 
 1.  Introduction
 
@@ -147,7 +146,7 @@ Internet-Draft                    e2esm                         May 2021
 1.1.  Comments
 
    Comments are solicited and should be addressed to the working group's
-   mailing list TODO and/or the author(s).
+   mailing list and/or the author(s).
 
 1.2.  Notational Conventions
 
@@ -156,6 +155,7 @@ Internet-Draft                    e2esm                         May 2021
    "OPTIONAL" in this document are to be interpreted as described in BCP
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
+
 
 
 
@@ -200,22 +200,22 @@ Internet-Draft                    e2esm                         May 2021
    Further context for several of these definitions can also be found in
    the rationales section, below.
 
-3.1.  Message
+3.1.  Message and Platform
 
    A "message" is information of 0 or more bits, to be communicated.
 
    Messages possess both plaintext "content", and also "metadata" which
    describes the content.
 
+   A "platform" is a specific instance of software which exists for the
+   purpose of exchanging messages.
+
 3.2.  Plaintext Content and Sensitive Metadata (PCASM)
 
    The "PCASM" of a message is defined as the "plaintext content and
    sensitive metadata" of that message, comprising any or all of:
 
-3.2.1.  Content PCASM
 
-   Content PCASM is any data that can offer better than 50-50 certainty
-   regarding the value of any bit of the content.
 
 
 
@@ -226,6 +226,11 @@ Muffett                 Expires 25 November 2021                [Page 4]
 Internet-Draft                    e2esm                         May 2021
 
 
+3.2.1.  Content PCASM
+
+   Content PCASM is any data that can offer better than 50-50 certainty
+   regarding the value of any bit of the content.
+
 3.2.2.  Size PCASM
 
    For block encryption of content, Size PCASM is the unpadded size of
@@ -234,13 +239,13 @@ Internet-Draft                    e2esm                         May 2021
    For stream encryption of content, Size PCASM is currently undefined
    (TBD)
 
-   For transport encryption of content, precise Size PCASM SHOULD NOT be
-   observable or inferrable.
+   For transport encryption of content, exact Size PCASM SHOULD NOT be
+   observable or inferable.
 
 3.2.3.  Analytic PCASM
 
-   Analytic PCASM is data which analyzes, describes, reduces, or
-   summarizes the "content".
+   Analytic PCASM is data which analyses, describes, reduces, or
+   summarises the "content".
 
 3.2.4.  Conversation Metadata (OPTIONAL)
 
@@ -268,11 +273,6 @@ Internet-Draft                    e2esm                         May 2021
 
    For each message there will be one sender and one or more recipients.
 
-3.5.  Participants and Non-Participants
-
-   The union set of sender and recipients for any given message are the
-   "participants" in that message.
-
 
 
 
@@ -281,6 +281,11 @@ Muffett                 Expires 25 November 2021                [Page 5]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+3.5.  Participants and Non-Participants
+
+   The union set of sender and recipients for any given message are the
+   "participants" in that message.
 
    It follows that for any given message, all entities that exist
    outside of the the participant set will be "non-participants" in
@@ -291,6 +296,9 @@ Internet-Draft                    e2esm                         May 2021
    A "conversation" is a sequence of one or more messages, and the
    responses or replies to them, over a period of time, amongst a
    constant or evolving set of participants.
+
+   A given platform MAY distinguish between and support more than one
+   conversation at any given time.
 
    In "centralised" E2ESM such as WhatsApp or Signal, the software MAY
    offer collective "group" conversation contexts that provide
@@ -322,14 +330,6 @@ Internet-Draft                    e2esm                         May 2021
    message MUST be frozen into an immutable set at the moment when the
    message is composed or sent.
 
-   The complete set of all recipients MUST be visible to the sender at
-   the moment of message composition or sending.
-
-   The complete set of participants in a message MUST be visible to all
-   other participants.
-
-
-
 
 
 
@@ -337,6 +337,12 @@ Muffett                 Expires 25 November 2021                [Page 6]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   The complete set of all recipients MUST be visible to the sender at
+   the moment of message composition or sending.
+
+   The complete set of participants in a message MUST be visible to all
+   other participants.
 
 4.2.  Integrity of Participation
 
@@ -380,12 +386,6 @@ Internet-Draft                    e2esm                         May 2021
        means to review or revoke access for clients or devices that can
        access future PCASM.
 
-   2.  The E2ESM software MUST provide each participant entity with
-       notifications and/or complete logs of changes to the set of
-       clients or devices that can or could access message PCASM.
-
-
-
 
 
 
@@ -393,6 +393,10 @@ Muffett                 Expires 25 November 2021                [Page 7]
 
 Internet-Draft                    e2esm                         May 2021
 
+
+   2.  The E2ESM software MUST provide each participant entity with
+       notifications and/or complete logs of changes to the set of
+       clients or devices that can or could access message PCASM.
 
 5.  Rationales
 
@@ -431,17 +435,13 @@ Internet-Draft                    e2esm                         May 2021
 
 5.2.  Why: Content PCASM
 
-   *TODO* because content needs to stay secret
+   Content PCASM MUST be protected as it comprises that which is
+   "closed" from general distribution.
 
 5.3.  Why: Size PCASM
 
-   *TODO* because "yes" is three letters, and "no" is two.  Unless
-   you're using another language, but signals intelligence is still a
-   thing.
-
-
-
-
+   Exact size PCASM MUST be protected as it MAY offer insight into
+   Content PCASM.
 
 
 
@@ -452,11 +452,18 @@ Internet-Draft                    e2esm                         May 2021
 
 5.4.  Why: Analytic PCASM
 
-   *TODO* because these enable backdoors.
+   Analytic PCASM MUST be protected as it MAY offer insight into Content
+   PCASM.
 
 5.5.  Why: Conversation Metadata as OPTIONAL PCASM
 
-   *TODO* optional because email, if nothing else.
+   Conversational Metadata MAY offer insight into Content PCASM, however
+   the abstractions of transport mechanism, group management, or
+   platform choice, MAY render this irrelevant.
+
+   For example an PGP-Encrypted email distribution list named
+   "blockchain-fans@example.com" would leak its implicit topic and
+   participant identities to capable observers.
 
 5.6.  Why: Backdoor
 
@@ -490,6 +497,15 @@ Internet-Draft                    e2esm                         May 2021
    MUST combine both notions of an access mechanism (e.g. "door") and a
    definite or suspected intention (e.g. "legal obligation").
 
+
+
+
+
+Muffett                 Expires 25 November 2021                [Page 9]
+
+Internet-Draft                    e2esm                         May 2021
+
+
    So the phrase "back door" is brief, clear, and widely understood to
    mean "a secondary means of access".  In the above definition we
    already allow for the term to be prefixed with "intentional" or
@@ -498,13 +514,6 @@ Internet-Draft                    e2esm                         May 2021
    Thus it seems appropriate to use this term in this context, not least
    because it is also not far removed from the similar and established
    term "side channel".
-
-
-
-Muffett                 Expires 25 November 2021                [Page 9]
-
-Internet-Draft                    e2esm                         May 2021
-
 
 5.7.  Why: Transparency of Participation
 
@@ -543,16 +552,7 @@ Internet-Draft                    e2esm                         May 2021
    conversation from its outset, access all message PCASM on that basis,
    and yet call themselves an E2ESM.
 
-   So this is an "anti-cheating" clause: all participant access to PCASM
-   MUST be via the same mechanisms for all participants without favour
-   or privilege, and in particular PCASM MUST NOT be available via other
-   means, e.g. raw filestore, database access or network sniffing.
 
-5.10.  Why: Closure of Conversation
-
-   If a conversation is not "only extensible from within" then it would
-   be possible for participants to be injected into the conversation
-   thereby defeating the closure of message distribution.
 
 
 
@@ -562,29 +562,83 @@ Muffett                 Expires 25 November 2021               [Page 10]
 Internet-Draft                    e2esm                         May 2021
 
 
+   So this is an "anti-cheating" clause: all participant access to PCASM
+   MUST be via the same mechanisms for all participants without favour
+   or privilege, and in particular PCASM MUST NOT be available via other
+   means, e.g. raw block-device access, raw filestore, raw database
+   access, or network sniffing.
+
+5.10.  Why: Closure of Conversation
+
+   If a conversation is not "only extensible from within" then it would
+   be possible for participants to be injected into the conversation
+   thereby defeating the closure of message distribution.
+
+   A subtle centralised vs: decentralised edge-case is as follows:
+   consider a PGP-encrypted email distribution list.  Would it break
+   "closure of conversation" for a non-participant email administrator
+   to simply add new users to the maillist?
+
+   Answer: no, because in this case the maillist is functioning as a
+   "platform" for multiple "conversation" threads, and mere addition of
+   of a new "transport-level" maillist member would not include them as
+   a participant in ongoing E2ESM conversations; such inclusion would be
+   a future burden upon existing participants.
+
+   However: similar external injection of a new entity into a
+   centralised WhatsApp or Signal "group" would be clearly a breach of
+   "closure of conversation".
+
 5.11.  Why: Management of Participant Clients and Devices
 
-   *TODO* REQUIRED because there is little benefit in requiring group
-   conversations to be closed against "ghost participant injection" if
-   the security services of an illiberal state will simply demand that
-   the ghost is injected into a participant instead of a conversation
+   There is little benefit in requiring conversations to be closed
+   against "participant injection" if a non-participant may obtain PCASM
+   access by forcing a platform to silently add extra means of PCASM
+   access to an existing participant on behalf of that non-participant.
+
+   Therefore to be an E2ESM the platform MUST provide the described
+   management of participant clients and devices.
 
 6.  OPTIONAL Features of E2ESM
 
 6.1.  Disappearing Messages
 
-   *TODO* / doesn't fit email / excellent, RECOMMENDED even, but not
-   obliged.
+   "Disappearing", "expiring", "exploding", "ephemeral" or other forms
+   of time-limited access to PCASM are strongly RECOMMENDED but not
+   obligatory mechanisms for E2ESM, not least because they are
+   impossible to implement in a way that cannot be circumvented by e.g.
+   screenshots.
+
+
+
+
+
+Muffett                 Expires 25 November 2021               [Page 11]
+
+Internet-Draft                    e2esm                         May 2021
+
 
 6.2.  Mutual Identity Verification
 
-   *TODO* / how to metricate the value-add / how to add value at all, in
-   a peer-to-peer network? / how to add value at all, if there is no
-   external trust? / also: reflections on trusting trust
+   Some manner of "shared key" that mutually assures participant
+   identity and communications integrity are strongly RECOMMENDED but
+   not obligatory mechanisms for E2ESM.
 
-6.3.  Third-Party Identity
+   The benefits of such mechanisms are limited to certain perspectives
+   of certain platforms.
 
-   *TODO*
+   For instance: in Ricochet the identity key of a user is the absolute
+   source of truth for their identity, and excusing detection of
+   typographic errors there is nothing which can be added to that in
+   order to further assure their "identity".
+
+   Similarly WhatsApp provides each participant with a "verifiable
+   security QR code" and "security code change notifiations", but these
+   codes do not "leak" the number of "WhatsApp For Web" clients which
+   are bound to that phone.
+
+   For any given platform participant-client metadata of this kind MAY
+   be, a private aspect of that participant's TCB.
 
 7.  Examples of PCASM
 
@@ -613,7 +667,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 11]
+
+
+Muffett                 Expires 25 November 2021               [Page 12]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -669,7 +725,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 12]
+Muffett                 Expires 25 November 2021               [Page 13]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -716,7 +772,7 @@ Internet-Draft                    e2esm                         May 2021
    messaging services.  (Management and Visibility)
 
    FooBook MAY treat conversation metadata as PCASM, but it MUST
-   communicate to participants whether it does, or does not.
+   communicate to participants whether it does or does not.
 
 9.  See Also
 
@@ -725,7 +781,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 13]
+Muffett                 Expires 25 November 2021               [Page 14]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -781,7 +837,7 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 14]
+Muffett                 Expires 25 November 2021               [Page 15]
 
 Internet-Draft                    e2esm                         May 2021
 
@@ -837,4 +893,4 @@ Author's Address
 
 
 
-Muffett                 Expires 25 November 2021               [Page 15]
+Muffett                 Expires 25 November 2021               [Page 16]

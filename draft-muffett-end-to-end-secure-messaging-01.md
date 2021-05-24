@@ -88,7 +88,6 @@ Comments are solicited
 and should be addressed to
 the working group's
 mailing list
-TODO
 and/or the author(s).
 
 ## Notational Conventions
@@ -153,7 +152,7 @@ can also be found
 in the rationales section,
 below.
 
-## Message
+## Message and Platform
 
 A "message"
 is information
@@ -164,6 +163,12 @@ Messages possess
 both plaintext "content",
 and also "metadata"
 which describes the content.
+
+A "platform"
+is a specific instance of software
+which exists
+for the purpose
+of exchanging messages.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
@@ -194,19 +199,19 @@ For stream encryption of content,
 Size PCASM is currently undefined (TBD)
 
 For transport encryption of content,
-precise Size PCASM
+exact Size PCASM
 **SHOULD NOT**
 be observable
-or inferrable.
+or inferable.
 
 ### Analytic PCASM
 
 Analytic PCASM
 is data
-which analyzes,
+which analyses,
 describes,
 reduces,
-or summarizes
+or summarises
 the "content".
 
 ### Conversation Metadata (**OPTIONAL**)
@@ -305,6 +310,12 @@ over a period of time,
 amongst a constant
 or evolving
 set of participants.
+
+A given platform **MAY**
+distinguish between
+and support
+more than one conversation
+at any given time.
 
 In "centralised" E2ESM
 such as WhatsApp or Signal,
@@ -558,21 +569,46 @@ of the participant entity.
 
 ## Why: Content PCASM
 
-**TODO** because content needs to stay secret
+Content PCASM
+**MUST** be protected
+as it comprises
+that which is
+"closed" from general distribution.
 
 ## Why: Size PCASM
 
-**TODO** because "yes" is three letters, and "no" is two. Unless
-you're using another language, but signals intelligence is still a
-thing.
+Exact size PCASM
+**MUST** be protected
+as it **MAY**
+offer insight into
+Content PCASM.
 
 ## Why: Analytic PCASM
 
-**TODO** because these enable backdoors.
+Analytic PCASM
+**MUST** be protected
+as it **MAY**
+offer insight into
+Content PCASM.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
-**TODO** optional because email, if nothing else.
+Conversational Metadata **MAY**
+offer insight into
+Content PCASM,
+however the abstractions
+of transport mechanism,
+group management,
+or platform choice,
+**MAY** render this irrelevant.
+
+For example
+an PGP-Encrypted email distribution list
+named "blockchain-fans@example.com"
+would leak
+its implicit topic
+and participant identities
+to capable observers.
 
 ## Why: Backdoor
 
@@ -758,8 +794,9 @@ and in particular
 PCASM **MUST NOT**
 be available via other means,
 e.g.
+raw block-device access,
 raw filestore,
-database access
+raw database access,
 or network sniffing.
 
 ## Why: Closure of Conversation
@@ -774,29 +811,127 @@ into the conversation
 thereby defeating
 the closure of message distribution.
 
+A subtle
+centralised vs: decentralised
+edge-case is as follows:
+consider a
+PGP-encrypted email distribution list.
+Would it break "closure of conversation"
+for a non-participant
+email administrator
+to simply add new users
+to the maillist?
+
+Answer: no, because
+in this case
+the maillist
+is functioning
+as a "platform"
+for multiple "conversation" threads,
+and mere addition of
+of a new
+"transport-level"
+maillist member
+would not include them
+as a participant
+in ongoing E2ESM conversations;
+such inclusion
+would be a future burden
+upon existing participants.
+
+However:
+similar external injection
+of a new entity
+into a centralised
+WhatsApp or Signal "group"
+would be clearly a breach
+of "closure of conversation".
+
 ## Why: Management of Participant Clients and Devices
 
-**TODO** **REQUIRED** because there is little benefit in requiring
-group conversations to be closed against "ghost participant injection"
-if the security services of an illiberal state will simply demand that
-the ghost is injected into a participant instead of a conversation
+There is little benefit
+in requiring
+conversations
+to be closed
+against "participant injection"
+if a non-participant
+may obtain
+PCASM access
+by forcing a platform
+to silently add
+extra means of PCASM access
+to an existing participant
+on behalf of that non-participant.
+
+Therefore
+to be an E2ESM
+the platform
+**MUST** provide
+the described
+management of participant clients and devices.
 
 # **OPTIONAL** Features of E2ESM
 
 ## Disappearing Messages
 
-**TODO** / doesn't fit email / excellent, **RECOMMENDED** even, but
-not obliged.
+"Disappearing",
+"expiring",
+"exploding",
+"ephemeral"
+or other forms of
+time-limited access to PCASM
+are strongly **RECOMMENDED**
+but not obligatory
+mechanisms
+for E2ESM,
+not least
+because they
+are impossible to implement
+in a way that cannot be circumvented
+by e.g. screenshots.
 
 ## Mutual Identity Verification
 
-**TODO** / how to metricate the value-add / how to add value at all,
-in a peer-to-peer network? / how to add value at all, if there is no
-external trust? / also: reflections on trusting trust
+Some manner of
+"shared key"
+that mutually assures
+participant identity
+and communications integrity
+are strongly **RECOMMENDED**
+but not obligatory
+mechanisms
+for E2ESM.
 
-## Third-Party Identity
+The benefits
+of such mechanisms
+are limited to certain perspectives
+of certain platforms.
 
-**TODO**
+For instance:
+in Ricochet
+the identity key
+of a user
+is the absolute source of truth
+for their identity,
+and excusing detection of typographic errors
+there is nothing which can be added to that
+in order to further assure their "identity".
+
+Similarly WhatsApp
+provides each participant
+with a "verifiable security QR code"
+and "security code change notifiations",
+but these codes
+do not "leak" the number
+of "WhatsApp For Web" clients
+which are bound to that phone.
+
+For any given platform
+participant-client metadata
+of this kind
+**MAY** be,
+a private aspect
+of that participant's TCB.
 
 # Examples of PCASM
 
@@ -931,7 +1066,7 @@ treat conversation metadata
 as PCASM,
 but it **MUST**
 communicate to participants
-whether it does,
+whether it does
 or does not.
 
 # See Also
