@@ -537,7 +537,7 @@ however the abstractions
 of transport mechanism,
 group management,
 or platform choice,
-**MAY** render this irrelevant.
+**MAY** render this moot.
 
 For example
 an PGP-Encrypted email distribution list
