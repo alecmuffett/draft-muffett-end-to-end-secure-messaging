@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 14:05:16.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-05-24 14:11:00.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-05-24 14:26:13.000000000 +0100
 ***************
 *** 9,15 ****
   
@@ -16,4 +16,25 @@
 !               draft-muffett-end-to-end-secure-messaging-02
   
   Abstract
+  
+***************
+*** 313,321 ****
+  3.7.  Backdoor
+  
+     A "backdoor" is any intentional or unintentional mechanism, in
+!    respect of a given message and that message's set of participants,
+!    where some PCASM of that message MAY become available to a non-
+!    participant without the intentional action of a participant.
+  
+  4.  Principles
+  
+--- 313,321 ----
+  3.7.  Backdoor
+  
+     A "backdoor" is any intentional or unintentional mechanism, in
+!    respect of a given message and that message's participants, where
+!    some PCASM of that message MAY become available to a non-participant
+!    without the intentional action of a participant.
+  
+  4.  Principles
   

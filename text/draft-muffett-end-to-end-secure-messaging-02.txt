@@ -313,9 +313,9 @@ Internet-Draft                    e2esm                         May 2021
 3.7.  Backdoor
 
    A "backdoor" is any intentional or unintentional mechanism, in
-   respect of a given message and that message's set of participants,
-   where some PCASM of that message MAY become available to a non-
-   participant without the intentional action of a participant.
+   respect of a given message and that message's participants, where
+   some PCASM of that message MAY become available to a non-participant
+   without the intentional action of a participant.
 
 4.  Principles
 

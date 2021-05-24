@@ -168,7 +168,7 @@ metadata may also exist, in terms of (e.g.) email addressees or subject lines.
 ## Backdoor
 
 A "backdoor" is any intentional or unintentional mechanism, in respect of a given message and
-that message's set of participants, where some PCASM of that message **MAY** become available to a
+that message's participants, where some PCASM of that message **MAY** become available to a
 non-participant without the intentional action of a participant.
 
 # Principles

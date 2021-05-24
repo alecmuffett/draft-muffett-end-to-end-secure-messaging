@@ -349,7 +349,7 @@ A "backdoor"
 is any
 intentional or unintentional mechanism,
 in respect of a given message
-and that message's set of participants,
+and that message's participants,
 where some PCASM
 of that message
 **MAY** become available
