@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 14:05:16.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-05-24 14:26:13.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-05-24 14:28:07.000000000 +0100
 ***************
 *** 9,15 ****
   
@@ -38,3 +38,20 @@
   
   4.  Principles
   
+***************
+*** 422,428 ****
+  
+     Conversational Metadata MAY offer insight into Content PCASM, however
+     the abstractions of transport mechanism, group management, or
+!    platform choice, MAY render this irrelevant.
+  
+     For example an PGP-Encrypted email distribution list named
+     "blockchain-fans@example.com" would leak its implicit topic and
+--- 422,428 ----
+  
+     Conversational Metadata MAY offer insight into Content PCASM, however
+     the abstractions of transport mechanism, group management, or
+!    platform choice, MAY render this moot.
+  
+     For example an PGP-Encrypted email distribution list named
+     "blockchain-fans@example.com" would leak its implicit topic and

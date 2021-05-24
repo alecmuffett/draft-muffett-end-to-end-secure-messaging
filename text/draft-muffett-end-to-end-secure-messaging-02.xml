@@ -518,7 +518,7 @@ however the abstractions
 of transport mechanism,
 group management,
 or platform choice,
-<bcp14>MAY</bcp14> render this irrelevant.</t>
+<bcp14>MAY</bcp14> render this moot.</t>
 <t>For example
 an PGP-Encrypted email distribution list
 named &quot;blockchain-fans@example.com&quot;

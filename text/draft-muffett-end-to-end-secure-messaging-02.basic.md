@@ -246,7 +246,7 @@ Analytic PCASM **MUST** be protected as it **MAY** offer insight into Content PC
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
 Conversational Metadata **MAY** offer insight into Content PCASM, however the abstractions of
-transport mechanism, group management, or platform choice, **MAY** render this irrelevant.
+transport mechanism, group management, or platform choice, **MAY** render this moot.
 
 For example an PGP-Encrypted email distribution list named "blockchain-fans@example.com" would leak
 its implicit topic and participant identities to capable observers.
