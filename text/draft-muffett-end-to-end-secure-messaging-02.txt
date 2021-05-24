@@ -9,7 +9,7 @@ Expires: 25 November 2021
 
 
           Functional Definition of End-to-End Secure Messaging
-              draft-muffett-end-to-end-secure-messaging-01
+              draft-muffett-end-to-end-secure-messaging-02
 
 Abstract
 
