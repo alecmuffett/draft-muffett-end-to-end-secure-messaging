@@ -278,7 +278,7 @@ for any given message,
 all entities
 that exist
 outside of
-the the participant set
+the participant set
 will be &ldquo;non-participants&rdquo;
 in respect of that message.</p>
 
@@ -490,69 +490,6 @@ regarding the principles
 has been broken out
 for clarity and argumentation purposes.</p>
 
-<h2 id="why-participant">Why: Participant</h2>
-
-<p>The term &ldquo;participant&rdquo;
-in this document
-exists to supersede
-the more vague notion of &ldquo;end&rdquo;
-in the phrase &ldquo;end-to-end&rdquo;.</p>
-
-<p>Participants are defined
-in terms of an entity&rsquo;s <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-to acknowledge
-that an entity
-<strong>MAY</strong> legitimately
-store, forward, or access messages
-by means
-that are outside of
-the E2ESM software.</p>
-
-<p>For example:
-if a participant
-accesses their E2ESM software
-via remote desktop software,
-and their RDP session is hijacked by a third party;
-of if they back-up their messages
-in cleartext
-to cloud storage
-leading somehow to data exfiltration,
-neither of these
-would be a failure of E2ESM.
-This would instead
-be a failure
-of the participant&rsquo;s
-<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
-
-<p>It is important to note
-that the concept of &ldquo;participant&rdquo;,
-defined by their TCB,
-is the foundation for all other trust.
-Developing from
-the basic definitions of
-a <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-and from the concept of
-&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>,
-failure of a participant
-to maintain integrity
-over their own (trusted) environment
-should not be considered
-a failure of an E2ESM
-that connects it to other participants.</p>
-
-<p>Further: it is
-obviously possible
-to burden
-the E2ESM
-with surfacing
-potential integrity issues
-of any given participant;
-but to require such
-in this standard
-would risk harming
-the privacy
-of the participant entity.</p>
-
 <h2 id="why-content-pcasm">Why: Content PCASM</h2>
 
 <p>Content PCASM
@@ -596,6 +533,77 @@ its implicit topic
 and participant identities
 to capable observers.</p>
 
+<h2 id="why-entity-and-participant">Why: Entity and Participant</h2>
+
+<p>The term &ldquo;participant&rdquo;
+in this document
+exists to supersede
+the more vague notion of &ldquo;end&rdquo;
+in the phrase &ldquo;end-to-end&rdquo;.</p>
+
+<p>Entities,
+and thus participants,
+are defined
+in terms of their <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+to acknowledge
+that an entity
+<strong>MAY</strong> legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.</p>
+
+<p>It is important to note
+that the concept of &ldquo;entity&rdquo;
+as defined by their TCB,
+is the foundation
+for all other trust in E2ESM.
+This develops from
+the basic definitions of
+a <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
+and from the concepts of
+&ldquo;trust-to-trust&rdquo; discussed in <cite class="informative"><a href="#RoleOfTrust"><sup>[RoleOfTrust]</sup></a></cite>.
+Failure of a participant
+to maintain integrity or control
+over their TCB
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</p>
+
+<p>For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant&rsquo;s
+<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>.</p>
+
+<p>Further:
+it would be
+obviously possible
+to burden
+an E2ESM
+with surfacing
+potential integrity issues
+of any given participant
+to other participants,
+e.g. &ldquo;patch compliance&rdquo;.
+But to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.
+See also: &ldquo;Mutual Identity Verification&rdquo;
+in &ldquo;<strong>OPTIONAL</strong> Features of E2ESM&rdquo;</p>
+
 <h2 id="why-backdoor">Why: Backdoor</h2>
 
 <p>In software engineering
@@ -615,7 +623,7 @@ ascribe &ldquo;intention&rdquo;
 to any hardware or software mechanism.</p>
 
 <p>The information security community
-have experienced
+has experienced
 a historical spectrum
 of mechanisms
 which have assisted
@@ -880,7 +888,7 @@ by e.g. screenshots.</p>
 
 <p>Some manner of
 &ldquo;shared key&rdquo;
-that mutually assures
+which mutually assures
 participant identity
 and communications integrity
 are strongly <strong>RECOMMENDED</strong>
@@ -906,18 +914,19 @@ in order to further assure their &ldquo;identity&rdquo;.</p>
 <p>Similarly WhatsApp
 provides each participant
 with a &ldquo;verifiable security QR code&rdquo;
-and &ldquo;security code change notifiations&rdquo;,
+and &ldquo;security code change notifications&rdquo;,
 but these codes
 do not &ldquo;leak&rdquo; the number
 of &ldquo;WhatsApp For Web&rdquo; clients
 which are bound to that phone.</p>
 
-<p>For any given platform
-participant-client metadata
+<p>Participant-client information
 of this kind
-<strong>MAY</strong> be,
-a private aspect
-of that participant&rsquo;s TCB.</p>
+<strong>MAY</strong> be
+a highly private aspect
+of that participant&rsquo;s TCB,
+and <strong>SHOULD</strong> be treated
+sensitively by platforms.</p>
 
 <h1 id="examples-of-pcasm">Examples of PCASM</h1>
 

@@ -294,7 +294,7 @@ for any given message,
 all entities
 that exist
 outside of
-the the participant set
+the participant set
 will be "non-participants"
 in respect of that message.
 
@@ -504,69 +504,6 @@ regarding the principles
 has been broken out
 for clarity and argumentation purposes.
 
-## Why: Participant
-
-The term "participant"
-in this document
-exists to supersede
-the more vague notion of "end"
-in the phrase "end-to-end".
-
-Participants are defined
-in terms of an entity's [@TrustedComputingBase]
-to acknowledge
-that an entity
-**MAY** legitimately
-store, forward, or access messages
-by means
-that are outside of
-the E2ESM software.
-
-For example:
-if a participant
-accesses their E2ESM software
-via remote desktop software,
-and their RDP session is hijacked by a third party;
-of if they back-up their messages
-in cleartext
-to cloud storage
-leading somehow to data exfiltration,
-neither of these
-would be a failure of E2ESM.
-This would instead
-be a failure
-of the participant's
-[@TrustedComputingBase].
-
-It is important to note
-that the concept of "participant",
-defined by their TCB,
-is the foundation for all other trust.
-Developing from
-the basic definitions of
-a [@TrustedComputingBase]
-and from the concept of
-"trust-to-trust" discussed in [@RoleOfTrust],
-failure of a participant
-to maintain integrity
-over their own (trusted) environment
-should not be considered
-a failure of an E2ESM
-that connects it to other participants.
-
-Further: it is
-obviously possible
-to burden
-the E2ESM
-with surfacing
-potential integrity issues
-of any given participant;
-but to require such
-in this standard
-would risk harming
-the privacy
-of the participant entity.
-
 ## Why: Content PCASM
 
 Content PCASM
@@ -610,6 +547,77 @@ its implicit topic
 and participant identities
 to capable observers.
 
+## Why: Entity and Participant
+
+The term "participant"
+in this document
+exists to supersede
+the more vague notion of "end"
+in the phrase "end-to-end".
+
+Entities,
+and thus participants,
+are defined
+in terms of their [@TrustedComputingBase]
+to acknowledge
+that an entity
+**MAY** legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.
+
+It is important to note
+that the concept of "entity"
+as defined by their TCB,
+is the foundation
+for all other trust in E2ESM.
+This develops from
+the basic definitions of
+a [@TrustedComputingBase]
+and from the concepts of
+"trust-to-trust" discussed in [@RoleOfTrust].
+Failure of a participant
+to maintain integrity or control
+over their TCB
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.
+
+For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant's
+[@TrustedComputingBase].
+
+Further:
+it would be
+obviously possible
+to burden
+an E2ESM
+with surfacing
+potential integrity issues
+of any given participant
+to other participants,
+e.g. "patch compliance".
+But to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.
+See also: "Mutual Identity Verification"
+in "**OPTIONAL** Features of E2ESM"
+
 ## Why: Backdoor
 
 In software engineering
@@ -629,7 +637,7 @@ ascribe "intention"
 to any hardware or software mechanism.
 
 The information security community
-have experienced
+has experienced
 a historical spectrum
 of mechanisms
 which have assisted
@@ -894,7 +902,7 @@ by e.g. screenshots.
 
 Some manner of
 "shared key"
-that mutually assures
+which mutually assures
 participant identity
 and communications integrity
 are strongly **RECOMMENDED**
@@ -920,18 +928,19 @@ in order to further assure their "identity".
 Similarly WhatsApp
 provides each participant
 with a "verifiable security QR code"
-and "security code change notifiations",
+and "security code change notifications",
 but these codes
 do not "leak" the number
 of "WhatsApp For Web" clients
 which are bound to that phone.
 
-For any given platform
-participant-client metadata
+Participant-client information
 of this kind
-**MAY** be,
-a private aspect
-of that participant's TCB.
+**MAY** be
+a highly private aspect
+of that participant's TCB,
+and **SHOULD** be treated
+sensitively by platforms.
 
 # Examples of PCASM
 
