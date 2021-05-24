@@ -1,5 +1,5 @@
-*** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-07 22:51:10.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-16 11:56:26.000000000 +0100
+*** text/draft-muffett-end-to-end-secure-messaging-00.txt	2021-05-19 05:57:48.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 12:24:13.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -18,8 +18,8 @@
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
-! Intended status: Informational                               16 May 2021
-! Expires: 17 November 2021
+! Intended status: Informational                               24 May 2021
+! Expires: 25 November 2021
   
   
             Functional Definition of End-to-End Secure Messaging
@@ -40,7 +40,7 @@
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
-!    This Internet-Draft will expire on 17 November 2021.
+!    This Internet-Draft will expire on 25 November 2021.
   
   Copyright Notice
   
@@ -59,7 +59,7 @@
 !    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
        1.1.  Comments  . . . . . . . . . . . . . . . . . . . . . . . .   3
        1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
-     2.  Requirements for an End-to-End Secure Messenger . . . . . . .   3
+!    2.  Requirements for an End-to-End Secure Messenger . . . . . . .   3
 !    3.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   3
 !      3.1.  Equality of Participation . . . . . . . . . . . . . . . .   3
 !      3.2.  Transparency of Participation . . . . . . . . . . . . . .   4
@@ -91,11 +91,11 @@
   
   1.  Introduction
   
---- 53,123 ----
+--- 53,125 ----
   
   
   
-! Muffett                 Expires 17 November 2021                [Page 1]
+! Muffett                 Expires 25 November 2021                [Page 1]
   
   Internet-Draft                    e2esm                         May 2021
   
@@ -105,66 +105,68 @@
 !    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
        1.1.  Comments  . . . . . . . . . . . . . . . . . . . . . . . .   3
        1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
-     2.  Requirements for an End-to-End Secure Messenger . . . . . . .   3
+!    2.  Requirements for an End-to-End Secure Messenger . . . . . . .   4
 !    3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
-!      3.1.  Participant . . . . . . . . . . . . . . . . . . . . . . .   4
-!      3.2.  Conversation  . . . . . . . . . . . . . . . . . . . . . .   4
-!      3.3.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
-!        3.3.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   4
-!        3.3.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   4
-!        3.3.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   4
-!        3.3.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   5
-!      3.4.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   5
-!    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-!      4.1.  Transparency of Participation . . . . . . . . . . . . . .   5
-!      4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   5
-!        4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   5
-!        4.2.2.  Non-Participation . . . . . . . . . . . . . . . . . .   5
-!      4.3.  Equality of Participation . . . . . . . . . . . . . . . .   6
-!      4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   6
-!        4.4.1.  Public Conversations and Self-Subscription  . . . . .   6
-!      4.5.  Management of Participant Clients and Devices . . . . . .   6
-!    5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-!      5.1.  Why: Participant  . . . . . . . . . . . . . . . . . . . .   6
-!      5.2.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   7
-!      5.3.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   7
-!      5.4.  Why: Analytic PCASM . . . . . . . . . . . . . . . . . . .   7
-!      5.5.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .   7
-!      5.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .   7
-!      5.7.  Why: Transparency of Participation  . . . . . . . . . . .   8
-!      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .   9
-!      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .   9
-!      5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .   9
-!      5.11. Why: Management of Participant Clients and Devices  . . .   9
-!      5.12. Why Not: Require Disappearing Messages? . . . . . . . . .   9
-!      5.13. Why Not: Require Mutual Identity Verification?  . . . . .  10
-!      5.14. Why Not: Require Third-Party Identity?  . . . . . . . . .  10
-!    6.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  10
-!      6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  10
-!      6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  10
-!      6.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  10
-!      6.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  11
-!      6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  11
-!    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  11
-!    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  12
-!    9.  Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  12
+!      3.1.  Message . . . . . . . . . . . . . . . . . . . . . . . . .   4
+!      3.2.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   4
+!        3.2.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   4
+!        3.2.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
+!        3.2.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   5
+!        3.2.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   5
+!      3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+!      3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   5
+!      3.5.  Participants and Non-Participants . . . . . . . . . . . .   5
+!      3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
+!      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
+!    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+!      4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
+!      4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   7
+!        4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   7
+!      4.3.  Equality of Participation . . . . . . . . . . . . . . . .   7
+!      4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   7
+!        4.4.1.  Public Conversations and Self-Subscription  . . . . .   7
+!      4.5.  Management of Participant Clients and Devices . . . . . .   7
+!    5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+!      5.1.  Why: Participant  . . . . . . . . . . . . . . . . . . . .   8
+!      5.2.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   8
+!      5.3.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   8
+!      5.4.  Why: Analytic PCASM . . . . . . . . . . . . . . . . . . .   9
+!      5.5.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .   9
+!      5.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .   9
+!      5.7.  Why: Transparency of Participation  . . . . . . . . . . .  10
+!      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .  10
+!      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .  10
+!      5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  10
+!      5.11. Why: Management of Participant Clients and Devices  . . .  11
+!      5.12. Why Not: Require Disappearing Messages? . . . . . . . . .  11
+!      5.13. Why Not: Require Mutual Identity Verification?  . . . . .  11
+!      5.14. Why Not: Require Third-Party Identity?  . . . . . . . . .  11
+!    6.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  11
+!      6.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  11
+!      6.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  11
+!      6.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  12
+!      6.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  12
+!      6.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  12
+!    7.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  13
 ! 
 ! 
 ! 
-! Muffett                 Expires 17 November 2021                [Page 2]
+! Muffett                 Expires 25 November 2021                [Page 2]
 ! 
 ! Internet-Draft                    e2esm                         May 2021
 ! 
 ! 
-!    10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
-!    11. Security Considerations . . . . . . . . . . . . . . . . . . .  13
-!    12. Informative References  . . . . . . . . . . . . . . . . . . .  13
-!    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
+!    8.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  13
+!    9.  Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  14
+!    10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
+!    11. Security Considerations . . . . . . . . . . . . . . . . . . .  14
+!    12. Informative References  . . . . . . . . . . . . . . . . . . .  14
+!    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  15
   
   1.  Introduction
   
 ***************
-*** 106,119 ****
+*** 106,126 ****
      central server.  So therefore E2ESM is often narrowly regarded in
      terms of "end-to-end encryption".
   
@@ -179,29 +181,54 @@
      Other architectural approaches exist - for instance [RicochetRefresh]
      which implements closed distribution by using secure point-to-point
      [RFC7686] networking to literally restrict the distribution of
---- 132,137 ----
+!    plaintext content to relevant participants.
+  
+     Therefore we describe E2ESM in terms of functional behaviours of the
+!    software rather than in terms of implementation goals and
+     technologies.
+  
+  1.1.  Comments
+--- 134,146 ----
+     central server.  So therefore E2ESM is often narrowly regarded in
+     terms of "end-to-end encryption".
+  
+     Other architectural approaches exist - for instance [RicochetRefresh]
+     which implements closed distribution by using secure point-to-point
+     [RFC7686] networking to literally restrict the distribution of
+!    content to relevant participants.
+  
+     Therefore we describe E2ESM in terms of functional behaviours of the
+!    software rather than in terms of its implementation goals and
+     technologies.
+  
+  1.1.  Comments
 ***************
-*** 141,353 ****
+*** 136,353 ****
+     14 [RFC2119] [RFC8174] when, and only when, they appear in all
+     capitals, as shown here.
+  
+  2.  Requirements for an End-to-End Secure Messenger
+  
      Software which functions as an End-to-End Secure Messenger MUST
      satisfy the following principles, and MUST satisfy these principles
      in respect of the provided definitions for all forms of communication
 !    and data-sharing that the software offers.
-! 
-!    Any software that does not satisfy these requirements is not an End-
-!    to-End Secure Messenger, and it does not implement End-to-End Secure
-!    Messaging, nor does it implement End-to-End Encrypted Messaging.
-! 
+  
+     Any software that does not satisfy these requirements is not an End-
+     to-End Secure Messenger, and it does not implement End-to-End Secure
+     Messaging, nor does it implement End-to-End Encrypted Messaging.
+  
 ! 3.  Principles
   
--    For a series of one or more "messages" each which are composed of
--    "plaintext content and sensitive metadata" (PCASM) and which
--    constitute a "conversation" amongst a set of "participants", to
--    provide E2ESM will require:
-- 
-- 3.1.  Equality of Participation
+!    For a series of one or more "messages" each which are composed of
+!    "plaintext content and sensitive metadata" (PCASM) and which
+!    constitute a "conversation" amongst a set of "participants", to
+!    provide E2ESM will require:
   
--    All participants MUST be peers who MUST have equal access to any
--    given message's PCASM.
+! 3.1.  Equality of Participation
+  
+!    All participants MUST be peers who MUST have equal access to any
+!    given message's PCASM.
   
   
   
@@ -216,16 +243,16 @@
   
 ! 3.2.  Transparency of Participation
   
-!    The existence of all current conversation participants MUST be
-!    visible at the current time to all current conversation participants.
+-    The existence of all current conversation participants MUST be
+-    visible at the current time to all current conversation participants.
   
-! 3.3.  Integrity of Participation
+- 3.3.  Integrity of Participation
   
-!    Excusing the "retransmission exception", PCASM of any given message
-!    MUST only be available to the fixed set of conversation participants
-!    from whom, to whom, and at the time when it was sent.
-! 
-! 3.3.1.  Retransmission Exception
+-    Excusing the "retransmission exception", PCASM of any given message
+-    MUST only be available to the fixed set of conversation participants
+-    from whom, to whom, and at the time when it was sent.
+  
+- 3.3.1.  Retransmission Exception
   
 !    If a participant that can access an "original" message intentionally
 !    "retransmits" (e.g. quotes, forwards) that message to create a new
@@ -235,15 +262,15 @@
   
 ! 3.3.2.  Non-Participation
   
-!    It follows that for any given message, all entities that exist
-!    outside of the above-defined sets of participants will be "non-
-!    participants" in respect of that message.
+-    It follows that for any given message, all entities that exist
+-    outside of the above-defined sets of participants will be "non-
+-    participants" in respect of that message.
   
 ! 3.4.  Closure of Conversation
   
 !    The set of participants in a conversation SHALL NOT be increased
 !    except by the intentional action of one or more existing
-!    participants.
+     participants.
   
 ! 3.4.1.  Public Conversations and Self-Subscription
   
@@ -253,29 +280,29 @@
 !    "intentional action" to increase the set of participants in the
 !    group.
   
-- 3.5.  Management and Visibility of Participant Clients and Devices
+! 3.5.  Management and Visibility of Participant Clients and Devices
   
--    E2ESM software MUST provide each participant entity with means to
--    review or revoke access for clients or devices that can access future
--    PCASM.
+!    E2ESM software MUST provide each participant entity with means to
+!    review or revoke access for clients or devices that can access future
+!    PCASM.
   
--    E2ESM software MUST provide each participant entity with
--    notifications and/or complete logs of changes to the set of clients
--    or devices that can or could access message PCASM.
+!    E2ESM software MUST provide each participant entity with
+!    notifications and/or complete logs of changes to the set of clients
+!    or devices that can or could access message PCASM.
   
   
   
 ! Muffett                  Expires 8 November 2021                [Page 4]
   
-  Internet-Draft                    e2esm                         May 2021
+! Internet-Draft                    e2esm                         May 2021
   
   
-! 4.  Definitions
+- 4.  Definitions
   
-!    These principles MUST be measured with respect to the following
-!    definitions:
+-    These principles MUST be measured with respect to the following
+-    definitions:
   
-! 4.1.  Participant
+- 4.1.  Participant
   
 !    A participant is any entity - human, machine, software bot,
 !    conversation archiver, or other, that is bounded by the extent of
@@ -283,8 +310,8 @@
   
 ! 4.2.  Conversation
   
-!    A conversation is a sequence of one or more messages over a period of
-!    time amongst a constant or evolving set of participants.
+-    A conversation is a sequence of one or more messages over a period of
+-    time amongst a constant or evolving set of participants.
   
 ! 4.3.  Plaintext Content and Sensitive Metadata (PCASM)
   
@@ -305,25 +332,25 @@
 !    3.  The top bit of the first byte of the content in ASCII encoding,
 !        is zero
   
--    4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
+!    4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
   
--    5.  The Salted-MD5 Hash of the content is : ...
+!    5.  The Salted-MD5 Hash of the content is : ...
   
-- 4.3.2.  Size PCASM
+! 4.3.2.  Size PCASM
   
 -    For block encryption of content, Size PCASM is the unpadded size of
 -    the content.
   
 -    For stream encryption of content, Size PCASM is currently undefined.
   
-!    For transport encryption of content, precise Size PCASM SHOULD NOT be
-!    observable.
+-    For transport encryption of content, precise Size PCASM SHOULD NOT be
+-    observable.
   
   
   
 ! Muffett                  Expires 8 November 2021                [Page 5]
   
-! Internet-Draft                    e2esm                         May 2021
+  Internet-Draft                    e2esm                         May 2021
   
   
 ! 4.3.3.  Descriptive PCASM
@@ -353,24 +380,24 @@
   
 ! 4.3.4.  Conversation Metadata (OPTIONAL)
   
--    Whether per-conversation "group" metadata, such as "group titles",
--    "group topics", "group icons", or "group participant lists"
--    constitute PCASM, is an OPTIONAL choice for the E2ESM software, but
--    that choice MUST be made apparent to participants.
+!    Whether per-conversation "group" metadata, such as "group titles",
+!    "group topics", "group icons", or "group participant lists"
+!    constitute PCASM, is an OPTIONAL choice for the E2ESM software, but
+!    that choice MUST be made apparent to participants.
   
-- 4.3.5.  Non-PCASM
+! 4.3.5.  Non-PCASM
   
--    Information which would not be PCASM would include, non-exclusively:
+!    Information which would not be PCASM would include, non-exclusively:
   
-!    1.  The content is sent from Alice
+-    1.  The content is sent from Alice
   
-!    2.  The content is sent to Bob
+-    2.  The content is sent to Bob
   
 -    3.  The content is between 1 and 16 bytes long
   
-!    4.  The content was sent at the following date and time: ...
+-    4.  The content was sent at the following date and time: ...
   
-!    5.  The content was sent from the following IP address: ...
+-    5.  The content was sent from the following IP address: ...
   
 !    6.  The content was sent from the following geolocation: ...
   
@@ -379,7 +406,7 @@
   
 ! Muffett                  Expires 8 November 2021                [Page 6]
   
-! Internet-Draft                    e2esm                         May 2021
+  Internet-Draft                    e2esm                         May 2021
   
   
 !    7.  The content was composed using the following platform: ...
@@ -395,7 +422,26 @@
   
      In software engineering there is a perpetual tension between the
      concepts of "feature" versus "bug" - and occasionally "misfeature"
---- 159,382 ----
+--- 156,464 ----
+     14 [RFC2119] [RFC8174] when, and only when, they appear in all
+     capitals, as shown here.
+  
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ Muffett                 Expires 25 November 2021                [Page 3]
++ 
++ Internet-Draft                    e2esm                         May 2021
++ 
++ 
+  2.  Requirements for an End-to-End Secure Messenger
+  
      Software which functions as an End-to-End Secure Messenger MUST
      satisfy the following principles, and MUST satisfy these principles
      in respect of the provided definitions for all forms of communication
@@ -403,77 +449,130 @@
 !    either a complete application, or a clearly defined subset of
 !    functionality within a larger application.
   
+     Any software that does not satisfy these requirements is not an End-
+     to-End Secure Messenger, and it does not implement End-to-End Secure
+     Messaging, nor does it implement End-to-End Encrypted Messaging.
   
+! 3.  Definitions
   
-+ Muffett                 Expires 17 November 2021                [Page 3]
-  
-+ Internet-Draft                    e2esm                         May 2021
+!    These definitions are drafted in respect of many examples of software
+!    commonly held to offer (or have offered) end-to-end security; these
+!    examples include:
   
+!    1.  Signal Messenger
   
-+    Any software that does not satisfy these requirements is not an End-
-+    to-End Secure Messenger, and it does not implement End-to-End Secure
-+    Messaging, nor does it implement End-to-End Encrypted Messaging.
+!    2.  WhatsApp Messenger
   
-+ 3.  Definitions
++    3.  Ricochet Messenger
   
-+    Further context for several of these definitions may also be found in
++    4.  PGP-Encrypted Email (in limited circumstances)
+  
++    Further context for several of these definitions can also be found in
 +    the rationales section, below.
   
-! 3.1.  Participant
++ 3.1.  Message
   
-!    A participant is any entity - human, machine, software bot,
-!    conversation archiver, or other - and the systems that they control
-!    and use for the E2ESM software, bounded by the extent of that
-!    entity's Trusted Computing Base (TCB).
++    A "message" is information of 0 or more bits, to be communicated.
   
-+ 3.2.  Conversation
++    Messages possess both plaintext "content", and also "metadata" which
++    describes the content.
   
-!    A conversation is a sequence of one or more messages over a period of
-!    time amongst a constant or evolving set of participants.
+! 3.2.  Plaintext Content and Sensitive Metadata (PCASM)
   
-! 3.3.  Plaintext Content and Sensitive Metadata (PCASM)
+!    The "PCASM" of a message is defined as the "plaintext content and
+!    sensitive metadata" of that message, comprising any or all of:
   
-!    The PCASM of a message is defined as any or all of:
-  
-! 3.3.1.  Content PCASM
++ 3.2.1.  Content PCASM
   
 !    Content PCASM is any data that can offer better than 50-50 certainty
-!    regarding the value of any given bit of the plaintext message content
-!    ("content").
+!    regarding the value of any bit of the content.
   
-! 3.3.2.  Size PCASM
+  
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 4]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+! 3.2.2.  Size PCASM
   
 !    For block encryption of content, Size PCASM is the unpadded size of
 !    the content.
-  
-!    For stream encryption of content, Size PCASM is currently undefined.
-  
+! 
+!    For stream encryption of content, Size PCASM is currently undefined
+!    (TBD)
+! 
 !    For transport encryption of content, precise Size PCASM SHOULD NOT be
-!    observable.
-  
-! 3.3.3.  Analytic PCASM
-  
+!    observable or inferrable.
+! 
+! 3.2.3.  Analytic PCASM
+! 
 !    Analytic PCASM is data which analyzes, describes, reduces, or
 !    summarizes the "content".
+! 
+! 3.2.4.  Conversation Metadata (OPTIONAL)
+! 
+!    Conversation Metadata MAY exist "outside" of messages and describe
+!    the conversation context.
+! 
+!    Whether conversation metadata constitutes PCASM, is an OPTIONAL
+!    choice for E2ESM software, but that choice MUST be apparent to
+     participants.
+  
+! 3.3.  Entity
+  
+!    An "entity" is a human, machine, software bot, conversation archiver,
+!    or other, which sends and/or receives messages.
+  
+!    Entities are bounded by the extent of their Trusted Computing Base
+!    ("TCB"), including all systems that they control and/or utilise.
+  
+! 3.4.  Sender and Recipient
+  
+!    A "sender" is an entity which composes and sends messages.
+  
++    A "recipient" is an entity which receives messages and MAY be able to
++    access the PCASM of those messages.
+  
++    For each message there will be one sender and one or more recipients.
+  
+! 3.5.  Participants and Non-Participants
+  
+!    The union set of sender and recipients for any given message are the
+!    "participants" in that message.
   
   
   
   
   
-  
-! Muffett                 Expires 17 November 2021                [Page 4]
+! Muffett                 Expires 25 November 2021                [Page 5]
   
-  Internet-Draft                    e2esm                         May 2021
+! Internet-Draft                    e2esm                         May 2021
   
   
-! 3.3.4.  Conversation Metadata (OPTIONAL)
+!    It follows that for any given message, all entities that exist
+!    outside of the the participant set will be "non-participants" in
+!    respect of that message.
   
-!    Conversation Metadata exists "outside" of messages and describes the
-!    conversationa context.  Whether per-conversation metadata constitute
-!    PCASM, is an OPTIONAL choice for E2ESM software, but that choice MUST
-!    be made apparent to participants.
+! 3.6.  Conversation, Group, De-/Centralised
   
-! 3.4.  Backdoor
+!    A "conversation" is a sequence of one or more messages, and the
+!    responses or replies to them, over a period of time, amongst a
+!    constant or evolving set of participants.
+! 
+!    In "centralised" E2ESM such as WhatsApp or Signal, the software MAY
+!    offer collective "group" conversation contexts that provide
+!    prefabricated sets of recipients for the client to utilise when a
+!    message is composed or sent.
+! 
+!    In "decentralised" E2ESM such as PGP-Encrypted Email or (somewhat)
+!    Ricochet, the recipients of each message are individually determined
+!    by each sender at the point of composition; however "group" metadata
+!    may also exist, in terms of (e.g.) email addressees or subject lines.
+  
+! 3.7.  Backdoor
   
 !    A "backdoor" is any intentional or unintentional mechanism, in
 !    respect of a given message and that message's set of participants,
@@ -489,8 +588,25 @@
   
 ! 4.1.  Transparency of Participation
   
-!    The complete set of all conversation participants MUST be visible at
-!    the current time to all conversation participants.
+!    In the nature of "closed distribution lists", the participants in a
+!    message MUST be frozen into an immutable set at the moment when the
+!    message is composed or sent.
+  
+!    The complete set of all recipients MUST be visible to the sender at
+!    the moment of message composition or sending.
+  
+!    The complete set of participants in a message MUST be visible to all
+!    other participants.
+  
+  
+  
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 6]
+  
+  Internet-Draft                    e2esm                         May 2021
+  
   
 ! 4.2.  Integrity of Participation
   
@@ -506,29 +622,12 @@
 !    MAY become available to a new, additional, and possibly different set
 !    of conversation participants, via that new message.
   
-! 4.2.2.  Non-Participation
-  
-!    It follows that for any given message, all entities that exist
-!    outside of the above-defined sets of participants will be "non-
-!    participants" in respect of that message.
-  
-  
-  
-  
-  
-  
-! Muffett                 Expires 17 November 2021                [Page 5]
-  
-+ Internet-Draft                    e2esm                         May 2021
-  
-  
 ! 4.3.  Equality of Participation
   
-!    All participants MUST be peers who MUST have equal access to the
-!    PCASM of any message for which they have access; see "Integrity of
-!    Participation".
+!    All participants MUST be peers who MUST have equal means of access to
+!    the PCASM of any message; see also "Integrity of Participation".
   
-+ 4.4.  Closure of Conversation
+! 4.4.  Closure of Conversation
   
 !    The set of participants in a conversation SHALL NOT be increased
 !    except by the intentional action of one or more existing
@@ -555,12 +654,22 @@
 !        notifications and/or complete logs of changes to the set of
 !        clients or devices that can or could access message PCASM.
   
-! 5.  Rationales
   
-!    This explanatory section regarding the principles has been broken out
-!    for clarity and argumentation purposes.
   
-! 5.1.  Why: Participant
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 7]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+  
++ 5.  Rationales
+  
++    This explanatory section regarding the principles has been broken out
++    for clarity and argumentation purposes.
+  
++ 5.1.  Why: Participant
   
 !    It is important to note that the concept of "participant", defined by
 !    their TCB, is a foundation for all other trust.  Developing from the
@@ -569,51 +678,54 @@
 !    participant to maintain integrity over their own (trusted)
 !    environment should not be considered a failure of an E2ESM that
 !    connects it to other participants.
-  
-  
-  
-  
-! Muffett                 Expires 17 November 2021                [Page 6]
-  
-! Internet-Draft                    e2esm                         May 2021
-  
-  
+! 
 !    Further: it is obviously possible to burden the E2ESM with surfacing
 !    potential integrity issues of any given participant; but to require
 !    such in this standard would risk harming the privacy of the
 !    participant entity.
-  
+! 
 !    The term "participant" in this document exists to supersede the more
 !    vague notion of "end" in the phrase "end-to-end".
-  
+! 
 !    Participants are defined in terms of an entity's
 !    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
 !    store, forward, or access messages by means that are outside of the
 !    E2ESM software.
-  
-+    For example: if a participant accesses their E2ESM software via
-+    remote desktop software, and their RDP session is hijacked by a third
-+    party; of if they back-up their messages in cleartext to cloud
-+    storage leading somehow to data exfiltration, neither of these would
-+    be a failure of E2ESM.  This would instead be a failure of the
-+    participant's [TrustedComputingBase].
-  
-+ 5.2.  Why: Content PCASM
-  
-+    *TODO* because content needs to stay secret
-  
+! 
+!    For example: if a participant accesses their E2ESM software via
+!    remote desktop software, and their RDP session is hijacked by a third
+!    party; of if they back-up their messages in cleartext to cloud
+!    storage leading somehow to data exfiltration, neither of these would
+!    be a failure of E2ESM.  This would instead be a failure of the
+!    participant's [TrustedComputingBase].
+! 
+! 5.2.  Why: Content PCASM
+! 
+!    *TODO* because content needs to stay secret
+! 
 ! 5.3.  Why: Size PCASM
-  
+! 
 !    *TODO* because "yes" is three letters, and "no" is two.  Unless
 !    you're using another language, but signals intelligence is still a
 !    thing.
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! Muffett                 Expires 25 November 2021                [Page 8]
+  
+  Internet-Draft                    e2esm                         May 2021
   
-+ 5.4.  Why: Analytic PCASM
+  
+! 5.4.  Why: Analytic PCASM
   
 !    *TODO* because these enable backdoors.
   
 ! 5.5.  Why: Conversation Metadata as OPTIONAL PCASM
-  
+! 
 !    *TODO* optional because email, if nothing else.
   
 ! 5.6.  Why: Backdoor
@@ -621,26 +733,7 @@
      In software engineering there is a perpetual tension between the
      concepts of "feature" versus "bug" - and occasionally "misfeature"
 ***************
-*** 355,360 ****
---- 384,399 ----
-     - that it is not feasible to firmly and completely ascribe
-     "intention" to any hardware or software mechanism.
-  
-+ 
-+ 
-+ 
-+ 
-+ 
-+ Muffett                 Expires 17 November 2021                [Page 7]
-+ 
-+ Internet-Draft                    e2esm                         May 2021
-+ 
-+ 
-     The information security community have experienced a historical
-     spectrum of mechanisms which have assisted non-participant access to
-     PCASM.  These have variously been named as "export-grade key
-***************
-*** 384,425 ****
+*** 384,421 ****
      already allow for the term to be prefixed with "intentional" or
      "unintentional".
   
@@ -679,17 +772,20 @@
   
      Consider FooBook, a hypothetical example company which provides
      messaging services for conversations between entities who use it.
-  
-     For each conversation FooBook MUST decide whether to represent itself
-     as a conversation participant or as a non-participant.  (Transparency
-     of Participation)
---- 423,623 ----
+--- 495,688 ----
      already allow for the term to be prefixed with "intentional" or
      "unintentional".
   
 +    Thus it seems appropriate to use this term in this context, not least
 +    because it is also not far removed from the similar and established
 +    term "side channel".
++ 
++ 
++ 
++ Muffett                 Expires 25 November 2021                [Page 9]
++ 
++ Internet-Draft                    e2esm                         May 2021
++ 
 + 
 + 5.7.  Why: Transparency of Participation
 + 
@@ -702,38 +798,26 @@
 +    by the author at the time of individual message composition, and MUST
 +    be visible to all participants.
 + 
-+ 
++    For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
++    of participants is a "group context" shared amongst all participants
++    and at the time of individual message composition it MUST be
++    inherited into a set of "fixed" per-participant access capabilities
++    by the author.
   
++ 5.8.  Why: Integrity of Participation
   
++    Inherent in the term "end to end secure messenger" is the intention
++    that PCASM will only be available to the participants ("ends") at the
++    time the message was composed.
   
++    If this was not the intention we would deduce that an E2ESM would
++    automatically make past content available to newly-added conversation
++    participants, thereby breaking forward secrecy.  This is not a
++    characteristic of any E2ESM, but it is characteristic of several non-
++    E2ESM.  Therefore the converse is true.
   
++ 5.9.  Why: Equality of Participation
   
-! 
-! Muffett                 Expires 17 November 2021                [Page 8]
-  
-  Internet-Draft                    e2esm                         May 2021
-  
-  
-!    For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
-!    of participants is a "group context" shared amongst all participants
-!    and at the time of individual message composition it MUST be
-!    inherited into a set of "fixed" per-participant access capabilities
-!    by the author.
-  
-! 5.8.  Why: Integrity of Participation
-  
-!    Inherent in the term "end to end secure messenger" is the intention
-!    that PCASM will only be available to the participants ("ends") at the
-!    time the message was composed.
-  
-!    If this was not the intention we would deduce that an E2ESM would
-!    automatically make past content available to newly-added conversation
-!    participants, thereby breaking forward secrecy.  This is not a
-!    characteristic of any E2ESM, but it is characteristic of several non-
-!    E2ESM.  Therefore the converse is true.
-  
-! 5.9.  Why: Equality of Participation
-! 
 !    Without equality of participation it would be allowed for a person to
 !    deploy a standalone cleartext chat server, available solely over TLS-
 !    encrypted links, declare themselves to be "participants" in every
@@ -751,25 +835,26 @@
 !    be possible for participants to be injected into the conversation
 !    thereby defeating the closure of message distribution.
 ! 
-! 5.11.  Why: Management of Participant Clients and Devices
 ! 
+! 
+! 
+! Muffett                 Expires 25 November 2021               [Page 10]
+  
+  Internet-Draft                    e2esm                         May 2021
+  
+  
+! 5.11.  Why: Management of Participant Clients and Devices
+  
 !    *TODO* REQUIRED because there is little benefit in requiring group
 !    conversations to be closed against "ghost participant injection" if
 !    the security services of an illiberal state will simply demand that
 !    the ghost is injected into a participant instead of a conversation
-! 
+  
 ! 5.12.  Why Not: Require Disappearing Messages?
-! 
+  
 !    *TODO* / doesn't fit email / excellent, RECOMMENDED even, but not
 !    obliged.
-! 
-! 
-! 
-! Muffett                 Expires 17 November 2021                [Page 9]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
-! 
+  
 ! 5.13.  Why Not: Require Mutual Identity Verification?
 ! 
 !    *TODO* / how to metricate the value-add / how to add value at all, in
@@ -779,12 +864,12 @@
 ! 5.14.  Why Not: Require Third-Party Identity?
 ! 
 !    *TODO*
-  
+! 
 ! 6.  Examples of PCASM
 ! 
-!    For an example message with a plaintext content ("content") of
-!    "Hello, world.", for the purposes of this example encoded as an ASCII
-!    string of length 13 bytes without terminator character.
+!    For an example message with content ("content") of "Hello, world.",
+!    for the purposes of this example encoded as an ASCII string of length
+!    13 bytes without terminator character.
 ! 
 ! 6.1.  Content PCASM
 ! 
@@ -805,8 +890,17 @@
 !    Size PCASM is defined in the main text, as it relates to the
 !    transport and/or content encryption mechanisms.
 ! 
-! 6.3.  Analytic PCASM
 ! 
+! 
+! 
+! 
+! Muffett                 Expires 25 November 2021               [Page 11]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+! 
+! 6.3.  Analytic PCASM
+  
 !    Examples of Analytic PCASM would include, non-exclusively:
 ! 
 !    1.  The content contains the substring "ello"
@@ -818,13 +912,6 @@
 ! 
 !    4.  The content does not contain a substring from amongst the
 !        following set: ...
-! 
-! 
-! 
-! Muffett                 Expires 17 November 2021               [Page 10]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
 ! 
 !    5.  The hash of the content exists amongst the following set of
 !        hashes: ...
@@ -861,6 +948,13 @@
 ! 
 !    3.  The content is between 1 and 16 bytes long
 ! 
+! 
+! 
+! Muffett                 Expires 25 November 2021               [Page 12]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+! 
 !    4.  The content was sent at the following date and time: ...
 ! 
 !    5.  The content was sent from the following IP address: ...
@@ -873,18 +967,6 @@
   
      Consider FooBook, a hypothetical example company which provides
      messaging services for conversations between entities who use it.
-  
-+ 
-+ 
-+ 
-+ Muffett                 Expires 17 November 2021               [Page 11]
-+ 
-+ Internet-Draft                    e2esm                         May 2021
-+ 
-+ 
-     For each conversation FooBook MUST decide whether to represent itself
-     as a conversation participant or as a non-participant.  (Transparency
-     of Participation)
 ***************
 *** 429,455 ****
      Non-Participation)
@@ -914,7 +996,7 @@
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
      messaging services.  (Management and Visibility)
---- 627,647 ----
+--- 696,716 ----
      Non-Participation)
   
      If FooBook decides to represent itself as a participant, then it MUST
@@ -958,7 +1040,7 @@
   
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
---- 649,684 ----
+--- 718,751 ----
      FooBook MAY treat conversation metadata as PCASM, but it MUST
      communicate to participants whether it does, or does not.
   
@@ -967,6 +1049,13 @@
      A different approach to defining (specifically) end-to-end encryption
      is discussed in [I-D.knodel-e2ee-definition].
   
+! 
+! 
+! Muffett                 Expires 25 November 2021               [Page 13]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
+! 
 ! 9.  Live Drafts
 ! 
 !    Live working drafts of this document are at:
@@ -978,15 +1067,6 @@
   
      This document has no IANA actions.
   
-! 
-! 
-! 
-! 
-! Muffett                 Expires 17 November 2021               [Page 12]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
-! 
 ! 11.  Security Considerations
   
      This document is entirely composed of security considerations.
@@ -996,65 +1076,55 @@
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
 ***************
-*** 499,510 ****
-                BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
-                <https://www.ricochetrefresh.net>.
+*** 501,511 ****
   
-! 
-! 
+  
+  
 ! Muffett                  Expires 8 November 2021                [Page 9]
-! 
-! Internet-Draft                    e2esm                         May 2021
+  
+  Internet-Draft                    e2esm                         May 2021
+  
+  
+     [TrustedComputingBase]
+                Wikipedia, "Trusted Computing Base", 2021,
+                <https://en.wikipedia.org/wiki/Trusted_computing_base>.
+--- 776,797 ----
+  
+  
+  
 ! 
+! 
+! 
+! 
+! 
+! Muffett                 Expires 25 November 2021               [Page 14]
+  
+  Internet-Draft                    e2esm                         May 2021
   
+  
++    [RoleOfTrust]
++               Clark, D. D. and M. S. Blumenthal, "The End-to-End
++               Argument and Application Design: The Role of Trust", 2011,
++               <https://www.repository.law.indiana.edu/fclj/vol63/
++               iss2/3>.
++ 
      [TrustedComputingBase]
                 Wikipedia, "Trusted Computing Base", 2021,
---- 707,717 ----
-                BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
-                <https://www.ricochetrefresh.net>.
-  
-!    [RoleOfTrust]
-!               Clark, D. D. and M. S. Blumenthal, "The End-to-End
-!               Argument and Application Design: The Role of Trust", 2011,
-!               <https://www.repository.law.indiana.edu/fclj/vol63/
-!               iss2/3>.
-  
-     [TrustedComputingBase]
-                Wikipedia, "Trusted Computing Base", 2021,
+                <https://en.wikipedia.org/wiki/Trusted_computing_base>.
 ***************
-*** 515,520 ****
---- 722,735 ----
-     Alec Muffett
-     Security Researcher
-  
-+ 
-+ 
-+ 
-+ Muffett                 Expires 17 November 2021               [Page 13]
-+ 
-+ Internet-Draft                    e2esm                         May 2021
-+ 
-+ 
-     Email: alec.muffett@gmail.com
-  
-  
-***************
-*** 557,560 ****
+*** 551,560 ****
   
   
   
+! 
+! 
+! 
+! 
+! 
+! 
 ! Muffett                  Expires 8 November 2021               [Page 10]
---- 772,784 ----
+--- 837,840 ----
   
   
   
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! Muffett                 Expires 17 November 2021               [Page 14]
+! Muffett                 Expires 25 November 2021               [Page 15]

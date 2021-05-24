@@ -52,7 +52,7 @@ by using
 secure point-to-point <cite class="informative"><a href="#RFC7686"><sup>[RFC7686]</sup></a></cite> networking
 to literally restrict
 the distribution
-of plaintext content
+of content
 to relevant participants.</p>
 
 <p>Therefore we describe E2ESM
@@ -61,7 +61,7 @@ functional behaviours
 of the software
 rather than
 in terms
-of implementation
+of its implementation
 goals and technologies.</p>
 
 <h2 id="comments">Comments</h2>
@@ -111,46 +111,53 @@ End-to-End Encrypted Messaging.</p>
 
 <h1 id="definitions">Definitions</h1>
 
+<p>These definitions
+are drafted
+in respect of
+many examples
+of software
+commonly held
+to offer
+(or have offered)
+end-to-end security;
+these examples
+include:</p>
+
+<ol>
+<li>Signal Messenger</li>
+<li>WhatsApp Messenger</li>
+<li>Ricochet Messenger</li>
+<li>PGP-Encrypted Email (in limited circumstances)</li>
+</ol>
+
 <p>Further context
 for several of
 these definitions
-may also be found
+can also be found
 in the rationales section,
 below.</p>
 
-<h2 id="participant">Participant</h2>
+<h2 id="message">Message</h2>
 
-<p>A participant
-is any entity -
-human,
-machine,
-software bot,
-conversation archiver,
-or other -
-and the systems that
-they control and use
-for the E2ESM software,
-bounded
-by the extent
-of that entity&rsquo;s
-Trusted Computing Base (TCB).</p>
+<p>A &ldquo;message&rdquo;
+is information
+of 0 or more bits,
+to be communicated.</p>
 
-<h2 id="conversation">Conversation</h2>
-
-<p>A conversation
-is a sequence
-of one or more messages
-over a period of time
-amongst a constant
-or evolving
-set of participants.</p>
+<p>Messages possess
+both plaintext &ldquo;content&rdquo;,
+and also &ldquo;metadata&rdquo;
+which describes the content.</p>
 
 <h2 id="plaintext-content-and-sensitive-metadata-pcasm">Plaintext Content and Sensitive Metadata (PCASM)</h2>
 
-<p>The PCASM
+<p>The &ldquo;PCASM&rdquo;
 of a message
-is defined as
-any or all of:</p>
+is defined
+as the
+&ldquo;plaintext content and sensitive metadata&rdquo;
+of that message,
+comprising any or all of:</p>
 
 <h3 id="content-pcasm">Content PCASM</h3>
 
@@ -159,8 +166,8 @@ is any data
 that can offer
 better than 50-50 certainty
 regarding the value of
-any given bit
-of the plaintext message content (&ldquo;content&rdquo;).</p>
+any bit
+of the content.</p>
 
 <h3 id="size-pcasm">Size PCASM</h3>
 
@@ -168,10 +175,13 @@ of the plaintext message content (&ldquo;content&rdquo;).</p>
 Size PCASM is the unpadded size of the content.</p>
 
 <p>For stream encryption of content,
-Size PCASM is currently undefined.</p>
+Size PCASM is currently undefined (TBD)</p>
 
 <p>For transport encryption of content,
-precise Size PCASM <strong>SHOULD NOT</strong> be observable.</p>
+precise Size PCASM
+<strong>SHOULD NOT</strong>
+be observable
+or inferrable.</p>
 
 <h3 id="analytic-pcasm">Analytic PCASM</h3>
 
@@ -186,23 +196,125 @@ the &ldquo;content&rdquo;.</p>
 <h3 id="conversation-metadata-optional">Conversation Metadata (<strong>OPTIONAL</strong>)</h3>
 
 <p>Conversation Metadata
-exists &ldquo;outside&rdquo;
+<strong>MAY</strong> exist &ldquo;outside&rdquo;
 of messages
-and describes
-the conversationa
-context.
-Whether
-per-conversation
-metadata
-constitute PCASM,
+and describe
+the conversation
+context.</p>
+
+<p>Whether
+conversation metadata
+constitutes PCASM,
 is an
 <strong>OPTIONAL</strong>
 choice
 for E2ESM software,
 but that choice
 <strong>MUST</strong>
-be made apparent
+be apparent
 to participants.</p>
+
+<h2 id="entity">Entity</h2>
+
+<p>An &ldquo;entity&rdquo;
+is a
+human,
+machine,
+software bot,
+conversation archiver,
+or other,
+which sends
+and/or receives
+messages.</p>
+
+<p>Entities are
+bounded
+by the extent
+of their
+Trusted Computing Base (&ldquo;TCB&rdquo;),
+including
+all systems
+that they control and/or utilise.</p>
+
+<h2 id="sender-and-recipient">Sender and Recipient</h2>
+
+<p>A &ldquo;sender&rdquo;
+is an entity
+which composes
+and sends
+messages.</p>
+
+<p>A &ldquo;recipient&rdquo;
+is an entity
+which receives
+messages
+and <strong>MAY</strong>
+be able
+to access
+the PCASM
+of those messages.</p>
+
+<p>For each message
+there will be
+one sender
+and one or more
+recipients.</p>
+
+<h2 id="participants-and-non-participants">Participants and Non-Participants</h2>
+
+<p>The union set
+of sender and recipients
+for any given message
+are the &ldquo;participants&rdquo;
+in that message.</p>
+
+<p>It follows that
+for any given message,
+all entities
+that exist
+outside of
+the the participant set
+will be &ldquo;non-participants&rdquo;
+in respect of that message.</p>
+
+<h2 id="conversation-group-de-centralised">Conversation, Group, De-/Centralised</h2>
+
+<p>A &ldquo;conversation&rdquo;
+is a sequence
+of one or more messages,
+and the responses
+or replies
+to them,
+over a period of time,
+amongst a constant
+or evolving
+set of participants.</p>
+
+<p>In &ldquo;centralised&rdquo; E2ESM
+such as WhatsApp or Signal,
+the software <strong>MAY</strong>
+offer collective
+&ldquo;group&rdquo; conversation contexts
+that provide
+prefabricated sets
+of recipients
+for the client
+to utilise
+when a message
+is composed or sent.</p>
+
+<p>In &ldquo;decentralised&rdquo; E2ESM
+such as PGP-Encrypted Email
+or (somewhat) Ricochet,
+the recipients of each message
+are individually determined
+by each sender
+at the point of composition;
+however &ldquo;group&rdquo; metadata
+may also exist,
+in terms of
+(e.g.) email addressees
+or subject lines.</p>
 
 <h2 id="backdoor">Backdoor</h2>
 
@@ -231,15 +343,29 @@ will require:</p>
 
 <h2 id="transparency-of-participation">Transparency of Participation</h2>
 
-<p>The
-complete set
-of all
-conversation participants
+<p>In the nature
+of &ldquo;closed distribution lists&rdquo;,
+the participants
+in a message
+<strong>MUST</strong> be
+frozen into
+an immutable set
+at the moment
+when the message
+is composed or sent.</p>
+
+<p>The complete set
+of all recipients
 <strong>MUST</strong> be visible
-at the
-current time
-to all
-conversation participants.</p>
+to the sender
+at the moment
+of message composition or sending.</p>
+
+<p>The complete set
+of participants
+in a message
+<strong>MUST</strong> be visible
+to all other participants.</p>
 
 <h2 id="integrity-of-participation">Integrity of Participation</h2>
 
@@ -278,26 +404,15 @@ set of
 conversation participants,
 via that new message.</p>
 
-<h3 id="non-participation">Non-Participation</h3>
-
-<p>It follows that
-for any given message,
-all entities
-that exist
-outside of
-the above-defined sets of participants
-will be &ldquo;non-participants&rdquo;
-in respect of that message.</p>
-
 <h2 id="equality-of-participation">Equality of Participation</h2>
 
 <p>All participants
 <strong>MUST</strong> be peers who
-<strong>MUST</strong> have equal access
+<strong>MUST</strong> have equal means of access
 to the PCASM
-of any message
-for which they
-have access; see &ldquo;Integrity of Participation&rdquo;.</p>
+of any message;
+see also
+&ldquo;Integrity of Participation&rdquo;.</p>
 
 <h2 id="closure-of-conversation">Closure of Conversation</h2>
 
@@ -669,9 +784,9 @@ external trust? / also: reflections on trusting trust</p>
 
 <h1 id="examples-of-pcasm">Examples of PCASM</h1>
 
-<p>For an example message with a plaintext content (&ldquo;content&rdquo;) of &ldquo;Hello,
-world.&rdquo;, for the purposes of this example encoded as an ASCII string
-of length 13 bytes without terminator character.</p>
+<p>For an example message with content (&ldquo;content&rdquo;) of &ldquo;Hello, world.&rdquo;,
+for the purposes of this example encoded as an ASCII string of length
+13 bytes without terminator character.</p>
 
 <h2 id="content-pcasm-1">Content PCASM</h2>
 

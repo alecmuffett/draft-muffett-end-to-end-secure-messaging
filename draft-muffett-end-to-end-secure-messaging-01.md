@@ -70,7 +70,7 @@ by using
 secure point-to-point [@RFC7686] networking
 to literally restrict
 the distribution
-of plaintext content
+of content
 to relevant participants.
 
 Therefore we describe E2ESM
@@ -79,7 +79,7 @@ functional behaviours
 of the software
 rather than
 in terms
-of implementation
+of its implementation
 goals and technologies.
 
 ## Comments
@@ -129,46 +129,51 @@ End-to-End Encrypted Messaging.
 
 # Definitions
 
+These definitions
+are drafted
+in respect of
+many examples
+of software
+commonly held
+to offer
+(or have offered)
+end-to-end security;
+these examples
+include:
+
+1. Signal Messenger
+1. WhatsApp Messenger
+1. Ricochet Messenger
+1. PGP-Encrypted Email (in limited circumstances)
+
 Further context
 for several of
 these definitions
-may also be found
+can also be found
 in the rationales section,
 below.
 
-## Participant
+## Message
 
-A participant
-is any entity -
-human,
-machine,
-software bot,
-conversation archiver,
-or other -
-and the systems that
-they control and use
-for the E2ESM software,
-bounded
-by the extent
-of that entity's
-Trusted Computing Base (TCB).
+A "message"
+is information
+of 0 or more bits,
+to be communicated.
 
-## Conversation
-
-A conversation
-is a sequence
-of one or more messages
-over a period of time
-amongst a constant
-or evolving
-set of participants.
+Messages possess
+both plaintext "content",
+and also "metadata"
+which describes the content.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
-The PCASM
+The "PCASM"
 of a message
-is defined as
-any or all of:
+is defined
+as the
+"plaintext content and sensitive metadata"
+of that message,
+comprising any or all of:
 
 ### Content PCASM
 
@@ -177,8 +182,8 @@ is any data
 that can offer
 better than 50-50 certainty
 regarding the value of
-any given bit
-of the plaintext message content ("content").
+any bit
+of the content.
 
 ### Size PCASM
 
@@ -186,10 +191,13 @@ For block encryption of content,
 Size PCASM is the unpadded size of the content.
 
 For stream encryption of content,
-Size PCASM is currently undefined.
+Size PCASM is currently undefined (TBD)
 
 For transport encryption of content,
-precise Size PCASM **SHOULD NOT** be observable.
+precise Size PCASM
+**SHOULD NOT**
+be observable
+or inferrable.
 
 ### Analytic PCASM
 
@@ -204,23 +212,125 @@ the "content".
 ### Conversation Metadata (**OPTIONAL**)
 
 Conversation Metadata
-exists "outside"
+**MAY** exist "outside"
 of messages
-and describes
-the conversationa
+and describe
+the conversation
 context.
+
 Whether
-per-conversation
-metadata
-constitute PCASM,
+conversation metadata
+constitutes PCASM,
 is an
 **OPTIONAL**
 choice
 for E2ESM software,
 but that choice
 **MUST**
-be made apparent
+be apparent
 to participants.
+
+## Entity
+
+An "entity"
+is a
+human,
+machine,
+software bot,
+conversation archiver,
+or other,
+which sends
+and/or receives
+messages.
+
+Entities are
+bounded
+by the extent
+of their
+Trusted Computing Base ("TCB"),
+including
+all systems
+that they control and/or utilise.
+
+## Sender and Recipient
+
+A "sender"
+is an entity
+which composes
+and sends
+messages.
+
+A "recipient"
+is an entity
+which receives
+messages
+and **MAY**
+be able
+to access
+the PCASM
+of those messages.
+
+For each message
+there will be
+one sender
+and one or more
+recipients.
+
+## Participants and Non-Participants
+
+The union set
+of sender and recipients
+for any given message
+are the "participants"
+in that message.
+
+It follows that
+for any given message,
+all entities
+that exist
+outside of
+the the participant set
+will be "non-participants"
+in respect of that message.
+
+## Conversation, Group, De-/Centralised
+
+A "conversation"
+is a sequence
+of one or more messages,
+and the responses
+or replies
+to them,
+over a period of time,
+amongst a constant
+or evolving
+set of participants.
+
+In "centralised" E2ESM
+such as WhatsApp or Signal,
+the software **MAY**
+offer collective
+"group" conversation contexts
+that provide
+prefabricated sets
+of recipients
+for the client
+to utilise
+when a message
+is composed or sent.
+
+In "decentralised" E2ESM
+such as PGP-Encrypted Email
+or (somewhat) Ricochet,
+the recipients of each message
+are individually determined
+by each sender
+at the point of composition;
+however "group" metadata
+may also exist,
+in terms of
+(e.g.) email addressees
+or subject lines.
 
 ## Backdoor
 
@@ -249,15 +359,29 @@ will require:
 
 ## Transparency of Participation
 
-The
-complete set
-of all
-conversation participants
+In the nature
+of "closed distribution lists",
+the participants
+in a message
+**MUST** be
+frozen into
+an immutable set
+at the moment
+when the message
+is composed or sent.
+
+The complete set
+of all recipients
 **MUST** be visible
-at the
-current time
-to all
-conversation participants.
+to the sender
+at the moment
+of message composition or sending.
+
+The complete set
+of participants
+in a message
+**MUST** be visible
+to all other participants.
 
 ## Integrity of Participation
 
@@ -296,26 +420,15 @@ set of
 conversation participants,
 via that new message.
 
-### Non-Participation
-
-It follows that
-for any given message,
-all entities
-that exist
-outside of
-the above-defined sets of participants
-will be "non-participants"
-in respect of that message.
-
 ## Equality of Participation
 
 All participants
 **MUST** be peers who
-**MUST** have equal access
+**MUST** have equal means of access
 to the PCASM
-of any message
-for which they
-have access; see "Integrity of Participation".
+of any message;
+see also
+"Integrity of Participation".
 
 ## Closure of Conversation
 
@@ -685,9 +798,9 @@ external trust? / also: reflections on trusting trust
 
 # Examples of PCASM
 
-For an example message with a plaintext content ("content") of "Hello,
-world.", for the purposes of this example encoded as an ASCII string
-of length 13 bytes without terminator character.
+For an example message with content ("content") of "Hello, world.",
+for the purposes of this example encoded as an ASCII string of length
+13 bytes without terminator character.
 
 ## Content PCASM
 
