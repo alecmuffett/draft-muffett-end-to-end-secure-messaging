@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-06-13 22:26:44.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-13 22:29:56.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-13 22:31:32.000000000 +0100
 ***************
 *** 4,15 ****
   
@@ -328,8 +328,8 @@
      Similarly WhatsApp provides each participant with a "verifiable
      security QR code" and "security code change notifications", but these
 !    codes do not "leak" the number of "WhatsApp For Web" connections,
-!    desktop WhatsApp applications, or other "clients" which are bound to
-!    that phone.
+!    desktop WhatsApp applications, or other clients which are bound to
+!    the E2ESM software which executes on that phone.
   
      Participant-client information of this kind MAY be a highly private
      aspect of that participant's TCB, and SHOULD be treated sensitively

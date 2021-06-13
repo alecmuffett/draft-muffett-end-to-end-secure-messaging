@@ -893,8 +893,10 @@ but these codes
 do not &quot;leak&quot; the number
 of &quot;WhatsApp For Web&quot; connections,
 desktop WhatsApp applications,
-or other &quot;clients&quot;
-which are bound to that phone.</t>
+or other clients
+which are bound to
+the E2ESM software
+which executes on that phone.</t>
 <t>Participant-client information
 of this kind
 <bcp14>MAY</bcp14> be
