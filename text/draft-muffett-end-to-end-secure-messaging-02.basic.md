@@ -388,8 +388,8 @@ identity, and excusing detection of typographic errors there is nothing which ca
 in order to further assure their "identity".
 
 Similarly WhatsApp provides each participant with a "verifiable security QR code" and "security code
-change notifications", but these codes do not "leak" the number of "WhatsApp For Web" clients which
-are bound to that phone.
+change notifications", but these codes do not "leak" the number of "WhatsApp For Web" connections,
+desktop WhatsApp applications, or other "clients" which are bound to that phone.
 
 Participant-client information of this kind **MAY** be a highly private aspect of that participant's
 TCB, and **SHOULD** be treated sensitively by platforms.

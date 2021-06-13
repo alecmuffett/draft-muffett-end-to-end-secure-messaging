@@ -891,7 +891,9 @@ with a &quot;verifiable security QR code&quot;
 and &quot;security code change notifications&quot;,
 but these codes
 do not &quot;leak&quot; the number
-of &quot;WhatsApp For Web&quot; clients
+of &quot;WhatsApp For Web&quot; connections,
+desktop WhatsApp applications,
+or other &quot;clients&quot;
 which are bound to that phone.</t>
 <t>Participant-client information
 of this kind

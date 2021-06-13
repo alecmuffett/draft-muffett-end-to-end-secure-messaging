@@ -4,8 +4,8 @@
 
 individual submission                                         A. Muffett
 Internet-Draft                                       Security Researcher
-Intended status: Informational                               24 May 2021
-Expires: 25 November 2021
+Intended status: Informational                              13 June 2021
+Expires: 15 December 2021
 
 
           Functional Definition of End-to-End Secure Messaging
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 November 2021.
+   This Internet-Draft will expire on 15 December 2021.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Muffett                 Expires 25 November 2021                [Page 1]
+Muffett                 Expires 15 December 2021                [Page 1]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Muffett                 Expires 25 November 2021                [Page 2]
+Muffett                 Expires 15 December 2021                [Page 2]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
@@ -165,9 +165,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 3]
+Muffett                 Expires 15 December 2021                [Page 3]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
 2.  Requirements for an End-to-End Secure Messenger
@@ -221,9 +221,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 4]
+Muffett                 Expires 15 December 2021                [Page 4]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
 3.2.1.  Content PCASM
@@ -277,9 +277,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 5]
+Muffett                 Expires 15 December 2021                [Page 5]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
 3.5.  Participants and Non-Participants
@@ -333,9 +333,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 6]
+Muffett                 Expires 15 December 2021                [Page 6]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    The complete set of all recipients MUST be visible to the sender at
@@ -389,9 +389,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 7]
+Muffett                 Expires 15 December 2021                [Page 7]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    2.  The E2ESM software MUST provide each participant entity with
@@ -445,9 +445,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 8]
+Muffett                 Expires 15 December 2021                [Page 8]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    Failure of a participant to maintain integrity or control over their
@@ -501,9 +501,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021                [Page 9]
+Muffett                 Expires 15 December 2021                [Page 9]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    If the term "back door" is considered innately pejorative,
@@ -557,9 +557,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 10]
+Muffett                 Expires 15 December 2021               [Page 10]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
 5.9.  Why: Equality of Participation
@@ -613,9 +613,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 11]
+Muffett                 Expires 15 December 2021               [Page 11]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
 6.  OPTIONAL Features of E2ESM
@@ -644,8 +644,9 @@ Internet-Draft                    e2esm                         May 2021
 
    Similarly WhatsApp provides each participant with a "verifiable
    security QR code" and "security code change notifications", but these
-   codes do not "leak" the number of "WhatsApp For Web" clients which
-   are bound to that phone.
+   codes do not "leak" the number of "WhatsApp For Web" connections,
+   desktop WhatsApp applications, or other "clients" which are bound to
+   that phone.
 
    Participant-client information of this kind MAY be a highly private
    aspect of that participant's TCB, and SHOULD be treated sensitively
@@ -665,14 +666,15 @@ Internet-Draft                    e2esm                         May 2021
 
    2.  The content starts with the word "Hello"
 
-   3.  The top bit of the first byte of the content, is zero
 
 
 
-Muffett                 Expires 25 November 2021               [Page 12]
+Muffett                 Expires 15 December 2021               [Page 12]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
+
+   3.  The top bit of the first byte of the content, is zero
 
    4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
 
@@ -720,15 +722,15 @@ Internet-Draft                    e2esm                         May 2021
 
    5.  group icons
 
-   6.  group participant lists
 
 
 
-
-Muffett                 Expires 25 November 2021               [Page 13]
+Muffett                 Expires 15 December 2021               [Page 13]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
+
+   6.  group participant lists
 
 7.5.  Non-PCASM
 
@@ -779,11 +781,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-
-
-Muffett                 Expires 25 November 2021               [Page 14]
+Muffett                 Expires 15 December 2021               [Page 14]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    FooBook MUST enable the user to observe and manage the complete state
@@ -837,9 +837,9 @@ Internet-Draft                    e2esm                         May 2021
 
 
 
-Muffett                 Expires 25 November 2021               [Page 15]
+Muffett                 Expires 15 December 2021               [Page 15]
 
-Internet-Draft                    e2esm                         May 2021
+Internet-Draft                    e2esm                        June 2021
 
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
@@ -893,4 +893,4 @@ Author's Address
 
 
 
-Muffett                 Expires 25 November 2021               [Page 16]
+Muffett                 Expires 15 December 2021               [Page 16]

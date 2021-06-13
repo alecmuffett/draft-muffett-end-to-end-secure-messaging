@@ -1,7 +1,12 @@
-*** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 14:05:16.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-05-24 14:28:07.000000000 +0100
+*** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-06-13 22:26:44.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-13 22:29:56.000000000 +0100
 ***************
-*** 9,15 ****
+*** 4,15 ****
+  
+  individual submission                                         A. Muffett
+  Internet-Draft                                       Security Researcher
+! Intended status: Informational                               24 May 2021
+! Expires: 25 November 2021
   
   
             Functional Definition of End-to-End Secure Messaging
@@ -9,7 +14,12 @@
   
   Abstract
   
---- 9,15 ----
+--- 4,15 ----
+  
+  individual submission                                         A. Muffett
+  Internet-Draft                                       Security Researcher
+! Intended status: Informational                              13 June 2021
+! Expires: 15 December 2021
   
   
             Functional Definition of End-to-End Secure Messaging
@@ -17,6 +27,128 @@
   
   Abstract
   
+***************
+*** 33,39 ****
+     time.  It is inappropriate to use Internet-Drafts as reference
+     material or to cite them other than as "work in progress."
+  
+!    This Internet-Draft will expire on 25 November 2021.
+  
+  Copyright Notice
+  
+--- 33,39 ----
+     time.  It is inappropriate to use Internet-Drafts as reference
+     material or to cite them other than as "work in progress."
+  
+!    This Internet-Draft will expire on 15 December 2021.
+  
+  Copyright Notice
+  
+***************
+*** 53,61 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 1]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+  Table of Contents
+--- 53,61 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 1]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+  Table of Contents
+***************
+*** 109,117 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 2]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
+--- 109,117 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 2]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
+***************
+*** 165,173 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 3]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+  2.  Requirements for an End-to-End Secure Messenger
+--- 165,173 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 3]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+  2.  Requirements for an End-to-End Secure Messenger
+***************
+*** 221,229 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 4]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+  3.2.1.  Content PCASM
+--- 221,229 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 4]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+  3.2.1.  Content PCASM
+***************
+*** 277,285 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 5]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+  3.5.  Participants and Non-Participants
+--- 277,285 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 5]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+  3.5.  Participants and Non-Participants
 ***************
 *** 313,321 ****
   3.7.  Backdoor
@@ -39,6 +171,48 @@
   4.  Principles
   
 ***************
+*** 333,341 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 6]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     The complete set of all recipients MUST be visible to the sender at
+--- 333,341 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 6]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     The complete set of all recipients MUST be visible to the sender at
+***************
+*** 389,397 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 7]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     2.  The E2ESM software MUST provide each participant entity with
+--- 389,397 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 7]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     2.  The E2ESM software MUST provide each participant entity with
+***************
 *** 422,428 ****
   
      Conversational Metadata MAY offer insight into Content PCASM, however
@@ -55,3 +229,227 @@
   
      For example an PGP-Encrypted email distribution list named
      "blockchain-fans@example.com" would leak its implicit topic and
+***************
+*** 445,453 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 8]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     Failure of a participant to maintain integrity or control over their
+--- 445,453 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 8]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     Failure of a participant to maintain integrity or control over their
+***************
+*** 501,509 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021                [Page 9]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     If the term "back door" is considered innately pejorative,
+--- 501,509 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021                [Page 9]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     If the term "back door" is considered innately pejorative,
+***************
+*** 557,565 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021               [Page 10]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+  5.9.  Why: Equality of Participation
+--- 557,565 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021               [Page 10]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+  5.9.  Why: Equality of Participation
+***************
+*** 613,621 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021               [Page 11]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+  6.  OPTIONAL Features of E2ESM
+--- 613,621 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021               [Page 11]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+  6.  OPTIONAL Features of E2ESM
+***************
+*** 644,651 ****
+  
+     Similarly WhatsApp provides each participant with a "verifiable
+     security QR code" and "security code change notifications", but these
+!    codes do not "leak" the number of "WhatsApp For Web" clients which
+!    are bound to that phone.
+  
+     Participant-client information of this kind MAY be a highly private
+     aspect of that participant's TCB, and SHOULD be treated sensitively
+--- 644,652 ----
+  
+     Similarly WhatsApp provides each participant with a "verifiable
+     security QR code" and "security code change notifications", but these
+!    codes do not "leak" the number of "WhatsApp For Web" connections,
+!    desktop WhatsApp applications, or other "clients" which are bound to
+!    that phone.
+  
+     Participant-client information of this kind MAY be a highly private
+     aspect of that participant's TCB, and SHOULD be treated sensitively
+***************
+*** 665,678 ****
+  
+     2.  The content starts with the word "Hello"
+  
+-    3.  The top bit of the first byte of the content, is zero
+  
+  
+  
+! Muffett                 Expires 25 November 2021               [Page 12]
+  
+- Internet-Draft                    e2esm                         May 2021
+  
+  
+     4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
+  
+--- 666,680 ----
+  
+     2.  The content starts with the word "Hello"
+  
+  
+  
+  
+! Muffett                 Expires 15 December 2021               [Page 12]
+! 
+! Internet-Draft                    e2esm                        June 2021
+  
+  
++    3.  The top bit of the first byte of the content, is zero
+  
+     4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
+  
+***************
+*** 720,734 ****
+  
+     5.  group icons
+  
+-    6.  group participant lists
+  
+  
+  
+  
+! Muffett                 Expires 25 November 2021               [Page 13]
+  
+- Internet-Draft                    e2esm                         May 2021
+  
+  
+  7.5.  Non-PCASM
+  
+--- 722,736 ----
+  
+     5.  group icons
+  
+  
+  
+  
++ Muffett                 Expires 15 December 2021               [Page 13]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
++    6.  group participant lists
+  
+  7.5.  Non-PCASM
+  
+***************
+*** 779,789 ****
+  
+  
+  
+  
+! 
+! Muffett                 Expires 25 November 2021               [Page 14]
+! 
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     FooBook MUST enable the user to observe and manage the complete state
+--- 781,789 ----
+  
+  
+  
++ Muffett                 Expires 15 December 2021               [Page 14]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     FooBook MUST enable the user to observe and manage the complete state
+***************
+*** 837,845 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021               [Page 15]
+  
+! Internet-Draft                    e2esm                         May 2021
+  
+  
+     [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+--- 837,845 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021               [Page 15]
+  
+! Internet-Draft                    e2esm                        June 2021
+  
+  
+     [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+***************
+*** 893,896 ****
+  
+  
+  
+! Muffett                 Expires 25 November 2021               [Page 16]
+--- 893,896 ----
+  
+  
+  
+! Muffett                 Expires 15 December 2021               [Page 16]
