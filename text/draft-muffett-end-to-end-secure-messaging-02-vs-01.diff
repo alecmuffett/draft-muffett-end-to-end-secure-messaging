@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 14:05:16.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-14 20:49:07.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-14 21:02:11.000000000 +0100
 ***************
 *** 4,19 ****
   
@@ -95,7 +95,14 @@
   
      9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
 ***************
-*** 126,133 ****
+*** 119,133 ****
+     11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
+     12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
+     13. Informative References  . . . . . . . . . . . . . . . . . . .  15
+!    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
+  
+  1.  Introduction
+  
      End-to-End Secure Messaging (E2ESM) is a mechanism which offers a
      digital analogue of "closed distribution lists" for sharing message
      content amongst a set of participants, where all participants are
@@ -104,7 +111,14 @@
   
      In client-server network models it is common to implement E2ESM by
      means of encryption, in order to obscure content at rest upon a
---- 126,133 ----
+--- 119,133 ----
+     11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
+     12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
+     13. Informative References  . . . . . . . . . . . . . . . . . . .  15
+!    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
+  
+  1.  Introduction
+  
      End-to-End Secure Messaging (E2ESM) is a mechanism which offers a
      digital analogue of "closed distribution lists" for sharing message
      content amongst a set of participants, where all participants are
@@ -404,7 +418,15 @@
      to other participants.
 --- 459,464 ----
 ***************
-*** 487,510 ****
+*** 479,510 ****
+     The information security community has experienced a historical
+     spectrum of mechanisms which have assisted non-participant access to
+     PCASM.  These have variously been named as "export-grade key
+!    restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
+!    Meltdown), "law enforcement access fields" (Clipper), and "key
+!    escrow" (Crypto Wars).
+  
+     All of these terms combine an "access facilitation mechanism" with an
      "intention or opportunity" - and for all of them an access
      facilitation mechanism is first REQUIRED.
   
@@ -414,6 +436,7 @@
 -    of access is clearly the "front door"; and any other access mechanism
 -    is a "back door".
 - 
+- 
   
   
   
@@ -421,15 +444,22 @@
   
   
   
+- Muffett                 Expires 25 November 2021                [Page 9]
+- 
+- Internet-Draft                    e2esm                         May 2021
   
-! Muffett                 Expires 25 November 2021                [Page 9]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
   
      If the term "back door" is considered innately pejorative,
      alternative, uncertain constructions such as "illegitimate access
---- 496,516 ----
+--- 488,516 ----
+     The information security community has experienced a historical
+     spectrum of mechanisms which have assisted non-participant access to
+     PCASM.  These have variously been named as "export-grade key
+!    restrictions" ([ExportControl], then [Logjam]), "side channel
+!    attacks" ([Spectre] and [Meltdown]), "law enforcement access fields"
+!    [Clipper], and "key escrow" [CryptoWars].
+  
+     All of these terms combine an "access facilitation mechanism" with an
      "intention or opportunity" - and for all of them an access
      facilitation mechanism is first REQUIRED.
   
@@ -443,11 +473,11 @@
 + Internet-Draft                    e2esm                        June 2021
   
   
-!    An access facilitation mechanism is a "door", and is inherently
-!    [DualUse].  Because the goal of E2ESM is to limit access to PCASM
-!    exclusively to a defined set of participants, then the intended means
-!    of access is clearly the "front door"; and any other access mechanism
-!    is a "back door".
++    An access facilitation mechanism is a "door", and is inherently
++    [DualUse].  Because the goal of E2ESM is to limit access to PCASM
++    exclusively to a defined set of participants, then the intended means
++    of access is clearly the "front door"; and any other access mechanism
++    is a "back door".
   
      If the term "back door" is considered innately pejorative,
      alternative, uncertain constructions such as "illegitimate access
@@ -507,13 +537,13 @@
 -    management of participant clients and devices.
 - 
 - 
-- 
   
   
   
   
-! Muffett                 Expires 25 November 2021               [Page 11]
-  
+  
+- Muffett                 Expires 25 November 2021               [Page 11]
+- 
 - Internet-Draft                    e2esm                         May 2021
   
   
@@ -528,7 +558,7 @@
   
 + Muffett                 Expires 16 December 2021               [Page 11]
   
-! Internet-Draft                    e2esm                        June 2021
++ Internet-Draft                    e2esm                        June 2021
   
   
 +    Therefore to be an E2ESM the platform MUST provide the described
@@ -646,7 +676,7 @@
      sniffing.  However it MAY participate in E2ESM conversations in a
      "normal" way, and thereby have "normal" access to intra-conversation
 ***************
-*** 771,791 ****
+*** 771,790 ****
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
@@ -667,8 +697,7 @@
   
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
-     messaging services.  (Management and Visibility)
---- 775,797 ----
+--- 775,796 ----
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
@@ -679,22 +708,21 @@
   
   
 ! Muffett                 Expires 16 December 2021               [Page 14]
-! 
-! Internet-Draft                    e2esm                        June 2021
-  
-  
+  
++ Internet-Draft                    e2esm                        June 2021
++ 
++ 
 +    FooBook MUST NOT retain means to forcibly insert new participants
 +    into a conversation.  For clarity: this specification does not
 +    recognise any notion of "atomic" exchange of one participant with
 +    another, treating it as an ejection, followed by an "illegitimate"
 +    insertion.  (Increase in Closure of Participation)
-+ 
+  
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
-     messaging services.  (Management and Visibility)
 ***************
 *** 815,823 ****
---- 821,847 ----
+--- 821,855 ----
   
   13.  Informative References
   
@@ -703,12 +731,12 @@
 +               <https://en.wikipedia.org/wiki/
 +               Ciphertext_indistinguishability>.
 + 
-     [DualUse]  Wikipedia, "Dual-use technology", 2021,
-                <https://en.wikipedia.org/wiki/Dual-use_technology>.
-  
++    [Clipper]  Wikipedia, "Clipper chip", 2021,
++               <https://en.wikipedia.org/wiki/Clipper_chip>.
 + 
-+ 
-+ 
++    [CryptoWars]
++               Wikipedia, "Crypto Wars", 2021,
++               <https://en.wikipedia.org/wiki/Crypto_Wars>.
 + 
 + 
 + 
@@ -719,9 +747,33 @@
 + Internet-Draft                    e2esm                        June 2021
 + 
 + 
+     [DualUse]  Wikipedia, "Dual-use technology", 2021,
+                <https://en.wikipedia.org/wiki/Dual-use_technology>.
+  
++    [ExportControl]
++               Wikipedia, "Export of cryptography from the United
++               States", 2021, <https://en.wikipedia.org/wiki/Export_of_cr
++               yptography_from_the_United_States#Cold_War_era>.
++ 
      [I-D.knodel-e2ee-definition]
                 Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
                 Grover, "Definition of End-to-end Encryption", Work in
+***************
+*** 825,830 ****
+--- 857,869 ----
+                22 February 2021, <https://tools.ietf.org/html/draft-
+                knodel-e2ee-definition-00>.
+  
++    [Logjam]   Wikipedia, "Logjam", 2021, <https://en.wikipedia.org/wiki/
++               Logjam_(computer_security)>.
++ 
++    [Meltdown] Wikipedia, "Meltdown", 2021,
++               <https://en.wikipedia.org/wiki/
++               Meltdown_(security_vulnerability)>.
++ 
+     [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+                Requirement Levels", BCP 14, RFC 2119,
+                DOI 10.17487/RFC2119, March 1997,
 ***************
 *** 834,847 ****
                 Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
@@ -738,31 +790,49 @@
      [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
                 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
                 May 2017, <https://www.rfc-editor.org/info/rfc8174>.
---- 858,863 ----
+--- 873,878 ----
 ***************
-*** 877,896 ****
+*** 856,861 ****
+--- 887,903 ----
+                <https://www.repository.law.indiana.edu/fclj/vol63/
+                iss2/3>.
+  
++    [Spectre]  Wikipedia, "Spectre", 2021,
++               <https://en.wikipedia.org/wiki/
++               Spectre_(security_vulnerability)>.
++ 
++ 
++ 
++ Muffett                 Expires 16 December 2021               [Page 16]
++ 
++ Internet-Draft                    e2esm                        June 2021
++ 
++ 
+     [TrustedComputingBase]
+                Wikipedia, "Trusted Computing Base", 2021,
+                <https://en.wikipedia.org/wiki/Trusted_computing_base>.
+***************
+*** 893,896 ****
   
   
   
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
-! 
 ! Muffett                 Expires 25 November 2021               [Page 16]
---- 893,896 ----
+--- 935,952 ----
   
   
   
-! Muffett                 Expires 16 December 2021               [Page 16]
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! Muffett                 Expires 16 December 2021               [Page 17]

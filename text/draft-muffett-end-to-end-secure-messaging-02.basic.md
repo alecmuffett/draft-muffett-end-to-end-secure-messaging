@@ -291,10 +291,10 @@ In software engineering there is a perpetual tension between the concepts of "fe
 - that it is not feasible to firmly and completely ascribe "intention" to any hardware or software
 mechanism.
 
-The information security community has experienced a historical spectrum of mechanisms which have
-assisted non-participant access to PCASM. These have variously been named as "export-grade key
-restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and Meltdown), "law enforcement
-access fields" (Clipper), and "key escrow" (Crypto Wars).
+The information security community has experienced a historical spectrum of mechanisms which
+have assisted non-participant access to PCASM. These have variously been named as "export-grade
+key restrictions" ([@ExportControl], then [@Logjam]), "side channel attacks" ([@Spectre] and
+[@Meltdown]), "law enforcement access fields" [@Clipper], and "key escrow" [@CryptoWars].
 
 All of these terms combine an "access facilitation mechanism" with an "intention or opportunity" -
 and for all of them an access facilitation mechanism is first **REQUIRED**.
@@ -548,9 +548,33 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
-<reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
+<reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
    <front>
-      <title>Trusted Computing Base</title>
+      <title>BREACH</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
+   <front>
+      <title>Ciphertext indistinguishability</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="Clipper" target="https://en.wikipedia.org/wiki/Clipper_chip">
+   <front>
+      <title>Clipper chip</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="CryptoWars" target="https://en.wikipedia.org/wiki/Crypto_Wars">
+   <front>
+      <title>Crypto Wars</title>
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
@@ -572,17 +596,33 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
-<reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
+<reference anchor="Logjam" target="https://en.wikipedia.org/wiki/Logjam_(computer_security)">
    <front>
-      <title>BREACH</title>
+      <title>Logjam</title>
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
 </reference>
 
-<reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
+<reference anchor="Meltdown" target="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">
    <front>
-      <title>Ciphertext indistinguishability</title>
+      <title>Meltdown</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="Spectre" target="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">
+   <front>
+      <title>Spectre</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
+   <front>
+      <title>Trusted Computing Base</title>
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>

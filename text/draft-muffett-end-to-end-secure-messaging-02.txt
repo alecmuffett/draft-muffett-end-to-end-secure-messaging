@@ -119,7 +119,7 @@ Internet-Draft                    e2esm                        June 2021
    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
    12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
    13. Informative References  . . . . . . . . . . . . . . . . . . .  15
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
 
 1.  Introduction
 
@@ -488,9 +488,9 @@ Internet-Draft                    e2esm                        June 2021
    The information security community has experienced a historical
    spectrum of mechanisms which have assisted non-participant access to
    PCASM.  These have variously been named as "export-grade key
-   restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
-   Meltdown), "law enforcement access fields" (Clipper), and "key
-   escrow" (Crypto Wars).
+   restrictions" ([ExportControl], then [Logjam]), "side channel
+   attacks" ([Spectre] and [Meltdown]), "law enforcement access fields"
+   [Clipper], and "key escrow" [CryptoWars].
 
    All of these terms combine an "access facilitation mechanism" with an
    "intention or opportunity" - and for all of them an access
@@ -826,12 +826,12 @@ Internet-Draft                    e2esm                        June 2021
               <https://en.wikipedia.org/wiki/
               Ciphertext_indistinguishability>.
 
-   [DualUse]  Wikipedia, "Dual-use technology", 2021,
-              <https://en.wikipedia.org/wiki/Dual-use_technology>.
+   [Clipper]  Wikipedia, "Clipper chip", 2021,
+              <https://en.wikipedia.org/wiki/Clipper_chip>.
 
-
-
-
+   [CryptoWars]
+              Wikipedia, "Crypto Wars", 2021,
+              <https://en.wikipedia.org/wiki/Crypto_Wars>.
 
 
 
@@ -842,12 +842,27 @@ Muffett                 Expires 16 December 2021               [Page 15]
 Internet-Draft                    e2esm                        June 2021
 
 
+   [DualUse]  Wikipedia, "Dual-use technology", 2021,
+              <https://en.wikipedia.org/wiki/Dual-use_technology>.
+
+   [ExportControl]
+              Wikipedia, "Export of cryptography from the United
+              States", 2021, <https://en.wikipedia.org/wiki/Export_of_cr
+              yptography_from_the_United_States#Cold_War_era>.
+
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
               Grover, "Definition of End-to-end Encryption", Work in
               Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
+
+   [Logjam]   Wikipedia, "Logjam", 2021, <https://en.wikipedia.org/wiki/
+              Logjam_(computer_security)>.
+
+   [Meltdown] Wikipedia, "Meltdown", 2021,
+              <https://en.wikipedia.org/wiki/
+              Meltdown_(security_vulnerability)>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -872,6 +887,17 @@ Internet-Draft                    e2esm                        June 2021
               <https://www.repository.law.indiana.edu/fclj/vol63/
               iss2/3>.
 
+   [Spectre]  Wikipedia, "Spectre", 2021,
+              <https://en.wikipedia.org/wiki/
+              Spectre_(security_vulnerability)>.
+
+
+
+Muffett                 Expires 16 December 2021               [Page 16]
+
+Internet-Draft                    e2esm                        June 2021
+
+
    [TrustedComputingBase]
               Wikipedia, "Trusted Computing Base", 2021,
               <https://en.wikipedia.org/wiki/Trusted_computing_base>.
@@ -893,4 +919,34 @@ Author's Address
 
 
 
-Muffett                 Expires 16 December 2021               [Page 16]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muffett                 Expires 16 December 2021               [Page 17]
