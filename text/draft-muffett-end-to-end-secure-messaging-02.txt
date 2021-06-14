@@ -74,7 +74,7 @@ Table of Contents
      3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   5
      3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
-     3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
+     3.6.  Conversation, Group, Centralised & Decentralised  . . . .   6
      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
@@ -134,8 +134,8 @@ Internet-Draft                    e2esm                        June 2021
    central server.  So therefore E2ESM is often narrowly regarded in
    terms of "end-to-end encryption".
 
-   Other architectural approaches exist - for instance [RicochetRefresh]
-   which implements closed distribution by using secure point-to-point
+   Other architectural approaches exist - for instance [Ricochet] which
+   implements closed distribution by using secure point-to-point
    [RFC7686] networking to literally restrict the distribution of
    content to relevant participants.
 
@@ -291,7 +291,7 @@ Internet-Draft                    e2esm                        June 2021
    outside of the participant set will be "non-participants" in respect
    of that message.
 
-3.6.  Conversation, Group, De-/Centralised
+3.6.  Conversation, Group, Centralised & Decentralised
 
    A "conversation" is a sequence of one or more messages, and the
    responses or replies to them, over a period of time, amongst a
@@ -305,10 +305,10 @@ Internet-Draft                    e2esm                        June 2021
    prefabricated sets of recipients for the client to utilise when a
    message is composed or sent.
 
-   In "decentralised" E2ESM such as PGP-Encrypted Email or (somewhat)
-   Ricochet, the recipients of each message are individually determined
-   by each sender at the point of composition; however "group" metadata
-   may also exist, in terms of (e.g.) email addressees or subject lines.
+   In "decentralised" E2ESM such as PGP-Encrypted Email or Ricochet the
+   recipients of each message are individually determined by each sender
+   at the point of composition; however "group" metadata may also exist,
+   in terms of (e.g.) email addressees or subject lines.
 
 3.7.  Backdoor
 
@@ -534,10 +534,12 @@ Internet-Draft                    e2esm                        June 2021
    composed to be exclusively accessible to that set of participants,
    all participants must be visible.
 
-   For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP"
-   or (to a limited extent) "Ricochet", the set of participants is fixed
-   by the author at the time of individual message composition, and MUST
-   be visible to all participants.
+   TODO: EXCISE DUPLICATION IN NEXT PARA
+
+   For decentralised "virtual point-to-point" E2ESM solutions such as
+   PGP-Encrypted Email or Ricochet, the set of participants is fixed by
+   the author at the time of individual message composition, and MUST be
+   visible to all participants.
 
    For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
    of participants is a "group context" shared amongst all participants
@@ -550,8 +552,6 @@ Internet-Draft                    e2esm                        June 2021
    Inherent in the term "end to end secure messenger" is the intention
    that PCASM will only be available to the participants ("ends") at the
    time the message was composed.
-
-
 
 
 
@@ -877,8 +877,7 @@ Internet-Draft                    e2esm                        June 2021
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [RicochetRefresh]
-              BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
+   [Ricochet] BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
               <https://www.ricochetrefresh.net>.
 
    [RoleOfTrust]
@@ -890,6 +889,7 @@ Internet-Draft                    e2esm                        June 2021
    [Spectre]  Wikipedia, "Spectre", 2021,
               <https://en.wikipedia.org/wiki/
               Spectre_(security_vulnerability)>.
+
 
 
 

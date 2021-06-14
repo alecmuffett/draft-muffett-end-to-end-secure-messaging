@@ -57,7 +57,7 @@ is often
 narrowly regarded
 in terms of &quot;end-to-end encryption&quot;.</t>
 <t>Other architectural approaches exist -
-for instance <xref target="RicochetRefresh"></xref>
+for instance <xref target="Ricochet"></xref>
 which implements
 closed distribution
 by using
@@ -285,7 +285,7 @@ will be &quot;non-participants&quot;
 in respect of that message.</t>
 </section>
 
-<section anchor="conversation-group-de-centralised"><name>Conversation, Group, De-/Centralised</name>
+<section anchor="conversation-group-centralised-decentralised"><name>Conversation, Group, Centralised &amp; Decentralised</name>
 <t>A &quot;conversation&quot;
 is a sequence
 of one or more messages,
@@ -315,7 +315,7 @@ when a message
 is composed or sent.</t>
 <t>In &quot;decentralised&quot; E2ESM
 such as PGP-Encrypted Email
-or (somewhat) Ricochet,
+or Ricochet
 the recipients of each message
 are individually determined
 by each sender
@@ -706,13 +706,13 @@ for a message to be composed
 to be exclusively accessible
 to that set of participants,
 all participants must be visible.</t>
+<t>TODO: EXCISE DUPLICATION IN NEXT PARA</t>
 <t>For
-&quot;virtual peer-to-peer&quot;
+decentralised
+&quot;virtual point-to-point&quot;
 E2ESM solutions
-such as
-&quot;Email with PGP&quot;
-or
-(to a limited extent) &quot;Ricochet&quot;,
+such as PGP-Encrypted Email
+or Ricochet,
 the set of participants
 is fixed
 by the author
@@ -1143,7 +1143,7 @@ are at:
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7686.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
-<reference anchor="RicochetRefresh" target="https://www.ricochetrefresh.net">
+<reference anchor="Ricochet" target="https://www.ricochetrefresh.net">
   <front>
     <title>Ricochet Refresh</title>
     <author fullname="BlueprintForFreeSpeech"></author>

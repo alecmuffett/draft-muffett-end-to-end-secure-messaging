@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 14:05:16.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-14 21:02:11.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-14 21:15:50.000000000 +0100
 ***************
 *** 4,19 ****
   
@@ -74,6 +74,23 @@
   
   Table of Contents
 ***************
+*** 74,80 ****
+       3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+       3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   5
+       3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
+!      3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
+       3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+       4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
+--- 74,80 ----
+       3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+       3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   5
+       3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
+!      3.6.  Conversation, Group, Centralised & Decentralised  . . . .   6
+       3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+       4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
+***************
 *** 109,117 ****
   
   
@@ -95,7 +112,7 @@
   
      9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
 ***************
-*** 119,133 ****
+*** 119,147 ****
      11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
      12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
      13. Informative References  . . . . . . . . . . . . . . . . . . .  15
@@ -111,7 +128,21 @@
   
      In client-server network models it is common to implement E2ESM by
      means of encryption, in order to obscure content at rest upon a
---- 119,133 ----
+     central server.  So therefore E2ESM is often narrowly regarded in
+     terms of "end-to-end encryption".
+  
+!    Other architectural approaches exist - for instance [RicochetRefresh]
+!    which implements closed distribution by using secure point-to-point
+     [RFC7686] networking to literally restrict the distribution of
+     content to relevant participants.
+  
+     Therefore we describe E2ESM in terms of functional behaviours of the
+!    software rather than in terms of its implementation goals and
+!    technologies.
+  
+  1.1.  Comments
+  
+--- 119,147 ----
      11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
      12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
      13. Informative References  . . . . . . . . . . . . . . . . . . .  15
@@ -127,17 +158,12 @@
   
      In client-server network models it is common to implement E2ESM by
      means of encryption, in order to obscure content at rest upon a
-***************
-*** 140,147 ****
-     content to relevant participants.
+     central server.  So therefore E2ESM is often narrowly regarded in
+     terms of "end-to-end encryption".
   
-     Therefore we describe E2ESM in terms of functional behaviours of the
-!    software rather than in terms of its implementation goals and
-!    technologies.
-  
-  1.1.  Comments
-  
---- 140,147 ----
+!    Other architectural approaches exist - for instance [Ricochet] which
+!    implements closed distribution by using secure point-to-point
+     [RFC7686] networking to literally restrict the distribution of
      content to relevant participants.
   
      Therefore we describe E2ESM in terms of functional behaviours of the
@@ -267,7 +293,32 @@
   
   3.5.  Participants and Non-Participants
 ***************
-*** 313,321 ****
+*** 291,297 ****
+     outside of the participant set will be "non-participants" in respect
+     of that message.
+  
+! 3.6.  Conversation, Group, De-/Centralised
+  
+     A "conversation" is a sequence of one or more messages, and the
+     responses or replies to them, over a period of time, amongst a
+--- 291,297 ----
+     outside of the participant set will be "non-participants" in respect
+     of that message.
+  
+! 3.6.  Conversation, Group, Centralised & Decentralised
+  
+     A "conversation" is a sequence of one or more messages, and the
+     responses or replies to them, over a period of time, amongst a
+***************
+*** 305,321 ****
+     prefabricated sets of recipients for the client to utilise when a
+     message is composed or sent.
+  
+!    In "decentralised" E2ESM such as PGP-Encrypted Email or (somewhat)
+!    Ricochet, the recipients of each message are individually determined
+!    by each sender at the point of composition; however "group" metadata
+!    may also exist, in terms of (e.g.) email addressees or subject lines.
+  
   3.7.  Backdoor
   
      A "backdoor" is any intentional or unintentional mechanism, in
@@ -277,7 +328,15 @@
   
   4.  Principles
   
---- 313,321 ----
+--- 305,321 ----
+     prefabricated sets of recipients for the client to utilise when a
+     message is composed or sent.
+  
+!    In "decentralised" E2ESM such as PGP-Encrypted Email or Ricochet the
+!    recipients of each message are individually determined by each sender
+!    at the point of composition; however "group" metadata may also exist,
+!    in terms of (e.g.) email addressees or subject lines.
+  
   3.7.  Backdoor
   
      A "backdoor" is any intentional or unintentional mechanism, in
@@ -437,15 +496,15 @@
 -    is a "back door".
 - 
 - 
+- 
   
   
   
   
   
   
-  
-- Muffett                 Expires 25 November 2021                [Page 9]
-- 
+! Muffett                 Expires 25 November 2021                [Page 9]
+  
 - Internet-Draft                    e2esm                         May 2021
   
   
@@ -470,7 +529,7 @@
   
 + Muffett                 Expires 16 December 2021                [Page 9]
   
-+ Internet-Draft                    e2esm                        June 2021
+! Internet-Draft                    e2esm                        June 2021
   
   
 +    An access facilitation mechanism is a "door", and is inherently
@@ -482,6 +541,31 @@
      If the term "back door" is considered innately pejorative,
      alternative, uncertain constructions such as "illegitimate access
 ***************
+*** 528,537 ****
+     composed to be exclusively accessible to that set of participants,
+     all participants must be visible.
+  
+!    For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP"
+!    or (to a limited extent) "Ricochet", the set of participants is fixed
+!    by the author at the time of individual message composition, and MUST
+!    be visible to all participants.
+  
+     For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
+     of participants is a "group context" shared amongst all participants
+--- 534,545 ----
+     composed to be exclusively accessible to that set of participants,
+     all participants must be visible.
+  
+!    TODO: EXCISE DUPLICATION IN NEXT PARA
+! 
+!    For decentralised "virtual point-to-point" E2ESM solutions such as
+!    PGP-Encrypted Email or Ricochet, the set of participants is fixed by
+!    the author at the time of individual message composition, and MUST be
+!    visible to all participants.
+  
+     For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
+     of participants is a "group context" shared amongst all participants
+***************
 *** 545,566 ****
      that PCASM will only be available to the participants ("ends") at the
      time the message was composed.
@@ -491,21 +575,21 @@
 -    participants, thereby breaking forward secrecy.  This is not a
 -    characteristic of any E2ESM, but it is characteristic of several non-
 -    E2ESM.  Therefore the converse is true.
+- 
   
   
   
   
   
   
-  
-! Muffett                 Expires 25 November 2021               [Page 10]
-  
+- Muffett                 Expires 25 November 2021               [Page 10]
+- 
 - Internet-Draft                    e2esm                         May 2021
   
   
   5.9.  Why: Equality of Participation
   
---- 551,572 ----
+--- 553,572 ----
      that PCASM will only be available to the participants ("ends") at the
      time the message was composed.
   
@@ -513,11 +597,9 @@
   
   
   
-  
-  
 + Muffett                 Expires 16 December 2021               [Page 10]
   
-! Internet-Draft                    e2esm                        June 2021
++ Internet-Draft                    e2esm                        June 2021
   
   
 +    If this was not the intention we would deduce that an E2ESM would
@@ -536,16 +618,16 @@
 -    Therefore to be an E2ESM the platform MUST provide the described
 -    management of participant clients and devices.
 - 
-- 
   
   
   
   
   
-- Muffett                 Expires 25 November 2021               [Page 11]
-- 
-- Internet-Draft                    e2esm                         May 2021
   
+! Muffett                 Expires 25 November 2021               [Page 11]
+! 
+! Internet-Draft                    e2esm                         May 2021
+! 
   
   6.  OPTIONAL Features of E2ESM
   
@@ -561,8 +643,8 @@
 + Internet-Draft                    e2esm                        June 2021
   
   
-+    Therefore to be an E2ESM the platform MUST provide the described
-+    management of participant clients and devices.
+!    Therefore to be an E2ESM the platform MUST provide the described
+!    management of participant clients and devices.
   
   6.  OPTIONAL Features of E2ESM
   
@@ -676,7 +758,7 @@
      sniffing.  However it MAY participate in E2ESM conversations in a
      "normal" way, and thereby have "normal" access to intra-conversation
 ***************
-*** 771,790 ****
+*** 771,791 ****
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
@@ -697,7 +779,8 @@
   
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
---- 775,796 ----
+     messaging services.  (Management and Visibility)
+--- 775,797 ----
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
   
@@ -708,18 +791,19 @@
   
   
 ! Muffett                 Expires 16 December 2021               [Page 14]
-  
-+ Internet-Draft                    e2esm                        June 2021
-+ 
-+ 
+! 
+! Internet-Draft                    e2esm                        June 2021
+  
+  
 +    FooBook MUST NOT retain means to forcibly insert new participants
 +    into a conversation.  For clarity: this specification does not
 +    recognise any notion of "atomic" exchange of one participant with
 +    another, treating it as an ejection, followed by an "illegitimate"
 +    insertion.  (Increase in Closure of Participation)
-  
++ 
      FooBook MUST enable the user to observe and manage the complete state
      of their [TrustedComputingBase] with respect to their FooBook
+     messaging services.  (Management and Visibility)
 ***************
 *** 815,823 ****
 --- 821,855 ----
@@ -775,7 +859,7 @@
                 Requirement Levels", BCP 14, RFC 2119,
                 DOI 10.17487/RFC2119, March 1997,
 ***************
-*** 834,847 ****
+*** 834,853 ****
                 Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
                 2015, <https://www.rfc-editor.org/info/rfc7686>.
   
@@ -790,16 +874,34 @@
      [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
                 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
                 May 2017, <https://www.rfc-editor.org/info/rfc8174>.
---- 873,878 ----
+  
+!    [RicochetRefresh]
+!               BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
+                <https://www.ricochetrefresh.net>.
+  
+     [RoleOfTrust]
+--- 873,883 ----
+                Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
+                2015, <https://www.rfc-editor.org/info/rfc7686>.
+  
+     [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+                2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+                May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+  
+!    [Ricochet] BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
+                <https://www.ricochetrefresh.net>.
+  
+     [RoleOfTrust]
 ***************
 *** 856,861 ****
---- 887,903 ----
+--- 886,903 ----
                 <https://www.repository.law.indiana.edu/fclj/vol63/
                 iss2/3>.
   
 +    [Spectre]  Wikipedia, "Spectre", 2021,
 +               <https://en.wikipedia.org/wiki/
 +               Spectre_(security_vulnerability)>.
++ 
 + 
 + 
 + 

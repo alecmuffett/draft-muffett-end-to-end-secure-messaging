@@ -63,7 +63,7 @@ narrowly regarded
 in terms of "end-to-end encryption".
 
 Other architectural approaches exist -
-for instance [@RicochetRefresh]
+for instance [@Ricochet]
 which implements
 closed distribution
 by using
@@ -302,7 +302,7 @@ the participant set
 will be "non-participants"
 in respect of that message.
 
-## Conversation, Group, De-/Centralised
+## Conversation, Group, Centralised & Decentralised
 
 A "conversation"
 is a sequence
@@ -336,7 +336,7 @@ is composed or sent.
 
 In "decentralised" E2ESM
 such as PGP-Encrypted Email
-or (somewhat) Ricochet,
+or Ricochet
 the recipients of each message
 are individually determined
 by each sender
@@ -740,13 +740,15 @@ to be exclusively accessible
 to that set of participants,
 all participants must be visible.
 
+
+TODO: EXCISE DUPLICATION IN NEXT PARA
+
 For
-"virtual peer-to-peer"
+decentralised
+"virtual point-to-point"
 E2ESM solutions
-such as
-"Email with PGP"
-or
-(to a limited extent) "Ricochet",
+such as PGP-Encrypted Email
+or Ricochet,
 the set of participants
 is fixed
 by the author
@@ -1138,7 +1140,7 @@ This document is entirely composed of security considerations.
 	</front>
 </reference>
 
-<reference anchor='RicochetRefresh' target='https://www.ricochetrefresh.net'>
+<reference anchor='Ricochet' target='https://www.ricochetrefresh.net'>
 	<front>
 		<title>Ricochet Refresh</title>
 		<author fullname="BlueprintForFreeSpeech"> </author>

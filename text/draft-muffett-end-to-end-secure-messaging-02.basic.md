@@ -42,9 +42,9 @@ In client-server network models it is common to implement E2ESM by means of encr
 to obscure content at rest upon a central server. So therefore E2ESM is often narrowly regarded in
 terms of "end-to-end encryption".
 
-Other architectural approaches exist - for instance [@RicochetRefresh] which implements closed
-distribution by using secure point-to-point [@RFC7686] networking to literally restrict the
-distribution of content to relevant participants.
+Other architectural approaches exist - for instance [@Ricochet] which implements closed distribution
+by using secure point-to-point [@RFC7686] networking to literally restrict the distribution of
+content to relevant participants.
 
 Therefore we describe E2ESM in terms of functional behaviours of the software rather than in terms
 of its implementation technologies and architecture.
@@ -150,7 +150,7 @@ The union set of sender and recipients for any given message are the "participan
 It follows that for any given message, all entities that exist outside of the participant set will
 be "non-participants" in respect of that message.
 
-## Conversation, Group, De-/Centralised
+## Conversation, Group, Centralised & Decentralised
 
 A "conversation" is a sequence of one or more messages, and the responses or replies to them, over a
 period of time, amongst a constant or evolving set of participants.
@@ -162,9 +162,9 @@ In "centralised" E2ESM such as WhatsApp or Signal, the software **MAY** offer co
 conversation contexts that provide prefabricated sets of recipients for the client to utilise when a
 message is composed or sent.
 
-In "decentralised" E2ESM such as PGP-Encrypted Email or (somewhat) Ricochet, the recipients of each
-message are individually determined by each sender at the point of composition; however "group"
-metadata may also exist, in terms of (e.g.) email addressees or subject lines.
+In "decentralised" E2ESM such as PGP-Encrypted Email or Ricochet the recipients of each message are
+individually determined by each sender at the point of composition; however "group" metadata may
+also exist, in terms of (e.g.) email addressees or subject lines.
 
 ## Backdoor
 
@@ -320,9 +320,11 @@ removed from the similar and established term "side channel".
 The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
 accessible to that set of participants, all participants must be visible.
 
-For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP" or (to a limited extent)
-"Ricochet", the set of participants is fixed by the author at the time of individual message
-composition, and **MUST** be visible to all participants.
+TODO: EXCISE DUPLICATION IN NEXT PARA
+
+For decentralised "virtual point-to-point" E2ESM solutions such as PGP-Encrypted Email or Ricochet,
+the set of participants is fixed by the author at the time of individual message composition, and
+**MUST** be visible to all participants.
 
 For "centralised" E2ESM solutions such as Signal or WhatsApp, the set of participants is a "group
 context" shared amongst all participants and at the time of individual message composition it
@@ -540,7 +542,7 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
-<reference anchor="RicochetRefresh" target="https://www.ricochetrefresh.net">
+<reference anchor="Ricochet" target="https://www.ricochetrefresh.net">
    <front>
       <title>Ricochet Refresh</title>
       <author fullname="BlueprintForFreeSpeech"></author>
