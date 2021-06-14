@@ -27,7 +27,7 @@ organization = "Security Researcher"
 
 This document
 defines End-to-End Secure Messaging
-in terms of the behaviours
+in terms of behaviours
 that **MUST** be exhibited
 by software
 that claims to implement it,
@@ -48,7 +48,7 @@ amongst a set of participants,
 where all participants
 are visible to each other
 and where non-participants
-are excluded
+are completely excluded
 from access to message content.
 
 In client-server network models
@@ -79,8 +79,12 @@ functional behaviours
 of the software
 rather than
 in terms
-of its implementation
-goals and technologies.
+of its
+implementation
+technologies
+and
+architecture.
+
 
 ## Comments
 
@@ -108,7 +112,7 @@ End-to-End Secure Messenger
 for all forms of communication
 and data-sharing
 that the software offers.
-The software
+The E2ESM software
 **MAY** comprise
 either a complete application,
 or a clearly defined subset
@@ -143,7 +147,7 @@ include:
 1. Signal Messenger
 1. WhatsApp Messenger
 1. Ricochet Messenger
-1. PGP-Encrypted Email (in limited circumstances)
+1. PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist
 
 Further context
 for several of
@@ -190,19 +194,23 @@ regarding the value of
 any bit
 of the content.
 
+TODO: where to reference [@CipherInd]?
+
 ### Size PCASM
 
 For block encryption of content,
 Size PCASM is the unpadded size of the content.
 
 For stream encryption of content,
-Size PCASM is currently undefined (TBD)
+Size PCASM is currently undefined (TODO, would benefit from broader input)
 
 For transport encryption of content,
 exact Size PCASM
 **SHOULD NOT**
 be observable
 or inferable.
+
+TODO: where to reference issues from [@BREACH]?
 
 ### Analytic PCASM
 
@@ -1117,34 +1125,49 @@ This document is entirely composed of security considerations.
 	</front>
 </reference>
 
-<reference anchor='TrustedComputingBase' target='https://en.wikipedia.org/wiki/Trusted_computing_base'>
-	<front>
-		<title>Trusted Computing Base</title>
-		<author fullname="Wikipedia"> </author>
-		<date year='2021'/>
-	</front>
-</reference>
-
-<reference anchor='DualUse' target='https://en.wikipedia.org/wiki/Dual-use_technology'>
-	<front>
-		<title>Dual-use technology</title>
-		<author fullname="Wikipedia"> </author>
-		<date year='2021'/>
-	</front>
-</reference>
-
-<reference anchor='ExportControl' target='https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era'>
-	<front>
-		<title>Export of cryptography from the United States</title>
-		<author fullname="Wikipedia"> </author>
-		<date year='2021'/>
-	</front>
-</reference>
-
 <reference anchor='RicochetRefresh' target='https://www.ricochetrefresh.net'>
 	<front>
 		<title>Ricochet Refresh</title>
 		<author fullname="BlueprintForFreeSpeech"> </author>
 		<date year='2021'/>
 	</front>
+</reference>
+<reference anchor='TrustedComputingBase' target='https://en.wikipedia.org/wiki/Trusted_computing_base'>
+    <front>
+        <title>Trusted Computing Base</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='DualUse' target='https://en.wikipedia.org/wiki/Dual-use_technology'>
+    <front>
+        <title>Dual-use technology</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='ExportControl' target='https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era'>
+    <front>
+        <title>Export of cryptography from the United States</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='BREACH' target='https://en.wikipedia.org/wiki/BREACH'>
+    <front>
+        <title>BREACH</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='CipherInd' target='https://en.wikipedia.org/wiki/Ciphertext_indistinguishability'>
+    <front>
+        <title>Ciphertext indistinguishability</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
 </reference>

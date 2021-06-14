@@ -11,7 +11,7 @@
 
 <p>This document
 defines End-to-End Secure Messaging
-in terms of the behaviours
+in terms of behaviours
 that <strong>MUST</strong> be exhibited
 by software
 that claims to implement it,
@@ -30,7 +30,7 @@ amongst a set of participants,
 where all participants
 are visible to each other
 and where non-participants
-are excluded
+are completely excluded
 from access to message content.</p>
 
 <p>In client-server network models
@@ -61,8 +61,11 @@ functional behaviours
 of the software
 rather than
 in terms
-of its implementation
-goals and technologies.</p>
+of its
+implementation
+technologies
+and
+architecture.</p>
 
 <h2 id="comments">Comments</h2>
 
@@ -90,7 +93,7 @@ End-to-End Secure Messenger
 for all forms of communication
 and data-sharing
 that the software offers.
-The software
+The E2ESM software
 <strong>MAY</strong> comprise
 either a complete application,
 or a clearly defined subset
@@ -126,7 +129,7 @@ include:</p>
 <li>Signal Messenger</li>
 <li>WhatsApp Messenger</li>
 <li>Ricochet Messenger</li>
-<li>PGP-Encrypted Email (in limited circumstances)</li>
+<li>PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist</li>
 </ol>
 
 <p>Further context
@@ -174,19 +177,23 @@ regarding the value of
 any bit
 of the content.</p>
 
+<p>TODO: where to reference <cite class="informative"><a href="#CipherInd"><sup>[CipherInd]</sup></a></cite>?</p>
+
 <h3 id="size-pcasm">Size PCASM</h3>
 
 <p>For block encryption of content,
 Size PCASM is the unpadded size of the content.</p>
 
 <p>For stream encryption of content,
-Size PCASM is currently undefined (TBD)</p>
+Size PCASM is currently undefined (TODO, would benefit from broader input)</p>
 
 <p>For transport encryption of content,
 exact Size PCASM
 <strong>SHOULD NOT</strong>
 be observable
 or inferable.</p>
+
+<p>TODO: where to reference issues from <cite class="informative"><a href="#BREACH"><sup>[BREACH]</sup></a></cite>?</p>
 
 <h3 id="analytic-pcasm">Analytic PCASM</h3>
 
@@ -1103,6 +1110,18 @@ are at:
 <section data-matter="back"><h1 id="bibliography-section">Bibliography</h1>
 <div class="bibliography">
 <dl>
+<dt class="bibliography-cite" id="BREACH">[BREACH]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">BREACH</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/BREACH">https://en.wikipedia.org/wiki/BREACH</a>
+<date class="bibliography-date">2021</date>
+</dd>
+<dt class="bibliography-cite" id="CipherInd">[CipherInd]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Ciphertext indistinguishability</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">https://en.wikipedia.org/wiki/Ciphertext_indistinguishability</a>
+<date class="bibliography-date">2021</date>
+</dd>
 <dt class="bibliography-cite" id="DualUse">[DualUse]</dt>
 <dd><span class="bibliography-author">Wikipedia</span>
 <span class="bibliography-title">Dual-use technology</span>

@@ -21,7 +21,7 @@
 <abstract>
 <t>This document
 defines End-to-End Secure Messaging
-in terms of the behaviours
+in terms of behaviours
 that <bcp14>MUST</bcp14> be exhibited
 by software
 that claims to implement it,
@@ -44,7 +44,7 @@ amongst a set of participants,
 where all participants
 are visible to each other
 and where non-participants
-are excluded
+are completely excluded
 from access to message content.</t>
 <t>In client-server network models
 it is common to implement E2ESM
@@ -72,8 +72,11 @@ functional behaviours
 of the software
 rather than
 in terms
-of its implementation
-goals and technologies.</t>
+of its
+implementation
+technologies
+and
+architecture.</t>
 
 <section anchor="comments"><name>Comments</name>
 <t>Comments are solicited
@@ -101,7 +104,7 @@ End-to-End Secure Messenger
 for all forms of communication
 and data-sharing
 that the software offers.
-The software
+The E2ESM software
 <bcp14>MAY</bcp14> comprise
 either a complete application,
 or a clearly defined subset
@@ -136,7 +139,7 @@ include:</t>
 <li>Signal Messenger</li>
 <li>WhatsApp Messenger</li>
 <li>Ricochet Messenger</li>
-<li>PGP-Encrypted Email (in limited circumstances)</li>
+<li>PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist</li>
 </ol>
 <t>Further context
 for several of
@@ -178,18 +181,20 @@ better than 50-50 certainty
 regarding the value of
 any bit
 of the content.</t>
+<t>TODO: where to reference <xref target="CipherInd"></xref>?</t>
 </section>
 
 <section anchor="size-pcasm"><name>Size PCASM</name>
 <t>For block encryption of content,
 Size PCASM is the unpadded size of the content.</t>
 <t>For stream encryption of content,
-Size PCASM is currently undefined (TBD)</t>
+Size PCASM is currently undefined (TODO, would benefit from broader input)</t>
 <t>For transport encryption of content,
 exact Size PCASM
 <bcp14>SHOULD NOT</bcp14>
 be observable
 or inferable.</t>
+<t>TODO: where to reference issues from <xref target="BREACH"></xref>?</t>
 </section>
 
 <section anchor="analytic-pcasm"><name>Analytic PCASM</name>
@@ -1072,6 +1077,20 @@ are at:
 
 <back>
 <references><name>Informative References</name>
+<reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
+  <front>
+    <title>BREACH</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
+  <front>
+    <title>Ciphertext indistinguishability</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
 <reference anchor="DualUse" target="https://en.wikipedia.org/wiki/Dual-use_technology">
   <front>
     <title>Dual-use technology</title>

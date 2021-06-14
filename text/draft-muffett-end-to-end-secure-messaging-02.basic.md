@@ -25,9 +25,9 @@ organization = "Security Researcher"
 
 .# Abstract
 
-This document defines End-to-End Secure Messaging in terms of the behaviours that **MUST** be
-exhibited by software that claims to implement it, or which claims to implement that subset which is
-known as End-to-End Encrypted Messaging.
+This document defines End-to-End Secure Messaging in terms of behaviours that **MUST** be exhibited
+by software that claims to implement it, or which claims to implement that subset which is known as
+End-to-End Encrypted Messaging.
 
 {mainmatter}
 
@@ -35,8 +35,8 @@ known as End-to-End Encrypted Messaging.
 
 End-to-End Secure Messaging (E2ESM) is a mechanism which offers a digital analogue of "closed
 distribution lists" for sharing message content amongst a set of participants, where all
-participants are visible to each other and where non-participants are excluded from access to
-message content.
+participants are visible to each other and where non-participants are completely excluded from
+access to message content.
 
 In client-server network models it is common to implement E2ESM by means of encryption, in order
 to obscure content at rest upon a central server. So therefore E2ESM is often narrowly regarded in
@@ -47,7 +47,7 @@ distribution by using secure point-to-point [@RFC7686] networking to literally r
 distribution of content to relevant participants.
 
 Therefore we describe E2ESM in terms of functional behaviours of the software rather than in terms
-of its implementation goals and technologies.
+of its implementation technologies and architecture.
 
 ## Comments
 
@@ -64,9 +64,9 @@ here.
 # Requirements for an End-to-End Secure Messenger
 
 Software which functions as an End-to-End Secure Messenger **MUST** satisfy the following
-principles, and **MUST** satisfy these principles in respect of the provided definitions for all
-forms of communication and data-sharing that the software offers. The software **MAY** comprise
-either a complete application, or a clearly defined subset of functionality within a larger
+principles, and **MUST** satisfy these principles in respect of the provided definitions for
+all forms of communication and data-sharing that the software offers. The E2ESM software **MAY**
+comprise either a complete application, or a clearly defined subset of functionality within a larger
 application.
 
 Any software that does not satisfy these requirements is not an End-to-End Secure Messenger, and
@@ -84,7 +84,7 @@ have offered) end-to-end security; these examples include:
 
 3.  Ricochet Messenger
 
-4.  PGP-Encrypted Email (in limited circumstances)
+4.  PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist
 
 Further context for several of these definitions can also be found in the rationales section, below.
 
@@ -106,13 +106,18 @@ message, comprising any or all of:
 Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any bit
 of the content.
 
+TODO: where to reference [@CipherInd]?
+
 ### Size PCASM
 
 For block encryption of content, Size PCASM is the unpadded size of the content.
 
-For stream encryption of content, Size PCASM is currently undefined (TBD)
+For stream encryption of content, Size PCASM is currently undefined (TODO, would benefit from
+broader input)
 
 For transport encryption of content, exact Size PCASM **SHOULD NOT** be observable or inferable.
+
+TODO: where to reference issues from [@BREACH]?
 
 ### Analytic PCASM
 
@@ -532,6 +537,14 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
+<reference anchor="RicochetRefresh" target="https://www.ricochetrefresh.net">
+   <front>
+      <title>Ricochet Refresh</title>
+      <author fullname="BlueprintForFreeSpeech"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
 <reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
    <front>
       <title>Trusted Computing Base</title>
@@ -556,10 +569,18 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
-<reference anchor="RicochetRefresh" target="https://www.ricochetrefresh.net">
+<reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
    <front>
-      <title>Ricochet Refresh</title>
-      <author fullname="BlueprintForFreeSpeech"></author>
+      <title>BREACH</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
+   <front>
+      <title>Ciphertext indistinguishability</title>
+      <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
 </reference>
