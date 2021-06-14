@@ -194,8 +194,6 @@ regarding the value of
 any bit
 of the content.
 
-TODO: where to reference [@CipherInd]?
-
 ### Size PCASM
 
 For block encryption of content,
@@ -209,8 +207,6 @@ exact Size PCASM
 **SHOULD NOT**
 be observable
 or inferable.
-
-TODO: where to reference issues from [@BREACH]?
 
 ### Analytic PCASM
 
@@ -520,6 +516,11 @@ as it comprises
 that which is
 "closed" from general distribution.
 
+The test
+for measuring this
+is (intended to be) modeled upon
+ciphertext indistinguishability [@CipherInd]
+
 ## Why: Size PCASM
 
 Exact size PCASM
@@ -528,13 +529,25 @@ as it **MAY**
 offer insight into
 Content PCASM.
 
+The test
+for measuring this
+is (intended) to address
+risk of content
+becoming evident
+via plaintext length.
+
 ## Why: Analytic PCASM
 
 Analytic PCASM
 **MUST** be protected
 as it **MAY**
 offer insight into
-Content PCASM.
+Content PCASM,
+for instance
+the content
+sharing features
+with other, specimen,
+known plaintext content.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
@@ -1036,7 +1049,7 @@ If FooBook decides
 to represent itself
 as a participant,
 then it **MUST NOT**
-have exceptional access
+have "exceptional" access
 to PCASM,
 despite being
 the provider

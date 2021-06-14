@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-01.txt	2021-05-24 14:05:16.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-14 20:37:36.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-06-14 20:49:07.000000000 +0100
 ***************
 *** 4,19 ****
   
@@ -73,35 +73,6 @@
   
   
   Table of Contents
-***************
-*** 77,89 ****
-       3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
-       3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
-     4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-!      4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
-       4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   7
-         4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   7
-       4.3.  Equality of Participation . . . . . . . . . . . . . . . .   7
-       4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   7
-         4.4.1.  Public Conversations and Self-Subscription  . . . . .   7
-!      4.5.  Management of Participant Clients and Devices . . . . . .   7
-     5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-       5.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   8
-       5.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   8
---- 77,89 ----
-       3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
-       3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
-     4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-!      4.1.  Transparency of Participation . . . . . . . . . . . . . .   7
-       4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   7
-         4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   7
-       4.3.  Equality of Participation . . . . . . . . . . . . . . . .   7
-       4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   7
-         4.4.1.  Public Conversations and Self-Subscription  . . . . .   7
-!      4.5.  Management of Participant Clients and Devices . . . . . .   8
-     5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-       5.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   8
-       5.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   8
 ***************
 *** 109,117 ****
   
@@ -244,13 +215,7 @@
   
   3.2.1.  Content PCASM
 ***************
-*** 231,247 ****
-     Content PCASM is any data that can offer better than 50-50 certainty
-     regarding the value of any bit of the content.
-  
-  3.2.2.  Size PCASM
-  
-     For block encryption of content, Size PCASM is the unpadded size of
+*** 237,243 ****
      the content.
   
      For stream encryption of content, Size PCASM is currently undefined
@@ -258,19 +223,7 @@
   
      For transport encryption of content, exact Size PCASM SHOULD NOT be
      observable or inferable.
-  
-  3.2.3.  Analytic PCASM
-  
-     Analytic PCASM is data which analyses, describes, reduces, or
---- 231,251 ----
-     Content PCASM is any data that can offer better than 50-50 certainty
-     regarding the value of any bit of the content.
-  
-+    TODO: where to reference [CipherInd]?
-+ 
-  3.2.2.  Size PCASM
-  
-     For block encryption of content, Size PCASM is the unpadded size of
+--- 237,243 ----
      the content.
   
      For stream encryption of content, Size PCASM is currently undefined
@@ -278,45 +231,27 @@
   
      For transport encryption of content, exact Size PCASM SHOULD NOT be
      observable or inferable.
-  
-+    TODO: where to reference issues from [BREACH]?
-+ 
-  3.2.3.  Analytic PCASM
-  
-     Analytic PCASM is data which analyses, describes, reduces, or
 ***************
-*** 271,286 ****
-     A "recipient" is an entity which receives messages and MAY be able to
-     access the PCASM of those messages.
-  
--    For each message there will be one sender and one or more recipients.
-- 
-- 
+*** 277,285 ****
   
   
   
 ! Muffett                 Expires 25 November 2021                [Page 5]
   
-- Internet-Draft                    e2esm                         May 2021
+! Internet-Draft                    e2esm                         May 2021
   
   
   3.5.  Participants and Non-Participants
-  
---- 275,288 ----
-     A "recipient" is an entity which receives messages and MAY be able to
-     access the PCASM of those messages.
+--- 277,285 ----
   
   
   
-+ Muffett                 Expires 16 December 2021                [Page 5]
+! Muffett                 Expires 16 December 2021                [Page 5]
   
 ! Internet-Draft                    e2esm                        June 2021
   
   
-+    For each message there will be one sender and one or more recipients.
-  
   3.5.  Participants and Non-Participants
-  
 ***************
 *** 313,321 ****
   3.7.  Backdoor
@@ -328,7 +263,7 @@
   
   4.  Principles
   
---- 315,323 ----
+--- 313,321 ----
   3.7.  Backdoor
   
      A "backdoor" is any intentional or unintentional mechanism, in
@@ -339,64 +274,28 @@
   4.  Principles
   
 ***************
-*** 324,342 ****
-     constitute a "conversation" amongst a set of "participants", to
-     provide E2ESM will require:
-  
-- 4.1.  Transparency of Participation
-  
--    In the nature of "closed distribution lists", the participants in a
--    message MUST be frozen into an immutable set at the moment when the
--    message is composed or sent.
+*** 333,341 ****
   
   
   
-  
-- Muffett                 Expires 25 November 2021                [Page 6]
+! Muffett                 Expires 25 November 2021                [Page 6]
   
-- Internet-Draft                    e2esm                         May 2021
+! Internet-Draft                    e2esm                         May 2021
   
   
      The complete set of all recipients MUST be visible to the sender at
-     the moment of message composition or sending.
---- 326,348 ----
-     constitute a "conversation" amongst a set of "participants", to
-     provide E2ESM will require:
+--- 333,341 ----
   
   
   
+! Muffett                 Expires 16 December 2021                [Page 6]
+  
+! Internet-Draft                    e2esm                        June 2021
   
-  
-  
-  
-  
-+ Muffett                 Expires 16 December 2021                [Page 6]
-+ 
-+ Internet-Draft                    e2esm                        June 2021
-+ 
-+ 
-+ 4.1.  Transparency of Participation
-+ 
-+    In the nature of "closed distribution lists", the participants in a
-+    message MUST be frozen into an immutable set at the moment when the
-+    message is composed or sent.
   
      The complete set of all recipients MUST be visible to the sender at
-     the moment of message composition or sending.
 ***************
-*** 377,398 ****
-     "intentional action" to increase the set of participants in the
-     group.
-  
-- 4.5.  Management of Participant Clients and Devices
-  
--    Where there exists centralised E2ESM software that hosts
--    participants:
-  
--    1.  The E2ESM software MUST provide each participant entity with
--        means to review or revoke access for clients or devices that can
--        access future PCASM.
-  
+*** 389,397 ****
   
   
   
@@ -406,35 +305,32 @@
   
   
      2.  The E2ESM software MUST provide each participant entity with
-         notifications and/or complete logs of changes to the set of
---- 383,407 ----
-     "intentional action" to increase the set of participants in the
-     group.
-  
-  
-  
-  
+--- 389,397 ----
   
   
   
 ! Muffett                 Expires 16 December 2021                [Page 7]
-! 
+  
 ! Internet-Draft                    e2esm                        June 2021
-! 
-! 
-! 4.5.  Management of Participant Clients and Devices
   
-!    Where there exists centralised E2ESM software that hosts
-!    participants:
-  
-+    1.  The E2ESM software MUST provide each participant entity with
-+        means to review or revoke access for clients or devices that can
-+        access future PCASM.
   
      2.  The E2ESM software MUST provide each participant entity with
-         notifications and/or complete logs of changes to the set of
 ***************
-*** 422,428 ****
+*** 408,428 ****
+     Content PCASM MUST be protected as it comprises that which is
+     "closed" from general distribution.
+  
+  5.2.  Why: Size PCASM
+  
+     Exact size PCASM MUST be protected as it MAY offer insight into
+     Content PCASM.
+  
+  5.3.  Why: Analytic PCASM
+  
+     Analytic PCASM MUST be protected as it MAY offer insight into Content
+!    PCASM.
+  
+  5.4.  Why: Conversation Metadata as OPTIONAL PCASM
   
      Conversational Metadata MAY offer insight into Content PCASM, however
      the abstractions of transport mechanism, group management, or
@@ -442,7 +338,28 @@
   
      For example an PGP-Encrypted email distribution list named
      "blockchain-fans@example.com" would leak its implicit topic and
---- 431,437 ----
+--- 408,435 ----
+     Content PCASM MUST be protected as it comprises that which is
+     "closed" from general distribution.
+  
++    The test for measuring this is (intended to be) modeled upon
++    ciphertext indistinguishability [CipherInd]
++ 
+  5.2.  Why: Size PCASM
+  
+     Exact size PCASM MUST be protected as it MAY offer insight into
+     Content PCASM.
+  
++    The test for measuring this is (intended) to address risk of content
++    becoming evident via plaintext length.
++ 
+  5.3.  Why: Analytic PCASM
+  
+     Analytic PCASM MUST be protected as it MAY offer insight into Content
+!    PCASM, for instance the content sharing features with other,
+!    specimen, known plaintext content.
+  
+  5.4.  Why: Conversation Metadata as OPTIONAL PCASM
   
      Conversational Metadata MAY offer insight into Content PCASM, however
      the abstractions of transport mechanism, group management, or
@@ -452,10 +369,12 @@
      "blockchain-fans@example.com" would leak its implicit topic and
 ***************
 *** 433,438 ****
---- 442,455 ----
+--- 440,455 ----
      The term "participant" in this document exists to supersede the more
      vague notion of "end" in the phrase "end-to-end".
   
++ 
++ 
 + 
 + 
 + 
@@ -587,16 +506,16 @@
 -    Therefore to be an E2ESM the platform MUST provide the described
 -    management of participant clients and devices.
 - 
-  
-  
+- 
+- 
   
   
   
   
 ! Muffett                 Expires 25 November 2021               [Page 11]
-! 
-! Internet-Draft                    e2esm                         May 2021
-! 
+  
+- Internet-Draft                    e2esm                         May 2021
+  
   
   6.  OPTIONAL Features of E2ESM
   
@@ -609,11 +528,11 @@
   
 + Muffett                 Expires 16 December 2021               [Page 11]
   
-+ Internet-Draft                    e2esm                        June 2021
+! Internet-Draft                    e2esm                        June 2021
   
   
-!    Therefore to be an E2ESM the platform MUST provide the described
-!    management of participant clients and devices.
++    Therefore to be an E2ESM the platform MUST provide the described
++    management of participant clients and devices.
   
   6.  OPTIONAL Features of E2ESM
   
@@ -710,6 +629,23 @@
   7.5.  Non-PCASM
   
 ***************
+*** 762,768 ****
+     Non-Participation)
+  
+     If FooBook decides to represent itself as a participant, then it MUST
+!    NOT have exceptional access to PCASM, despite being the provider of
+     the service - for instance via raw database access or network
+     sniffing.  However it MAY participate in E2ESM conversations in a
+     "normal" way, and thereby have "normal" access to intra-conversation
+--- 766,772 ----
+     Non-Participation)
+  
+     If FooBook decides to represent itself as a participant, then it MUST
+!    NOT have "exceptional" access to PCASM, despite being the provider of
+     the service - for instance via raw database access or network
+     sniffing.  However it MAY participate in E2ESM conversations in a
+     "normal" way, and thereby have "normal" access to intra-conversation
+***************
 *** 771,791 ****
      FooBook MAY retain means to eject reported abusive participants from
      a conversation.  (Decrease in Closure of Participation)
@@ -762,9 +698,6 @@
   
   13.  Informative References
   
-+    [BREACH]   Wikipedia, "BREACH", 2021,
-+               <https://en.wikipedia.org/wiki/BREACH>.
-+ 
 +    [CipherInd]
 +               Wikipedia, "Ciphertext indistinguishability", 2021,
 +               <https://en.wikipedia.org/wiki/
@@ -773,6 +706,9 @@
      [DualUse]  Wikipedia, "Dual-use technology", 2021,
                 <https://en.wikipedia.org/wiki/Dual-use_technology>.
   
++ 
++ 
++ 
 + 
 + 
 + 

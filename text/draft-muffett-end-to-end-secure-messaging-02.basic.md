@@ -106,8 +106,6 @@ message, comprising any or all of:
 Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any bit
 of the content.
 
-TODO: where to reference [@CipherInd]?
-
 ### Size PCASM
 
 For block encryption of content, Size PCASM is the unpadded size of the content.
@@ -116,8 +114,6 @@ For stream encryption of content, Size PCASM is currently undefined (TODO, would
 broader input)
 
 For transport encryption of content, exact Size PCASM **SHOULD NOT** be observable or inferable.
-
-TODO: where to reference issues from [@BREACH]?
 
 ### Analytic PCASM
 
@@ -240,13 +236,20 @@ purposes.
 Content PCASM **MUST** be protected as it comprises that which is "closed" from general
 distribution.
 
+The test for measuring this is (intended to be) modeled upon ciphertext indistinguishability
+[@CipherInd]
+
 ## Why: Size PCASM
 
 Exact size PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM.
 
+The test for measuring this is (intended) to address risk of content becoming evident via plaintext
+length.
+
 ## Why: Analytic PCASM
 
-Analytic PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM.
+Analytic PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM, for instance
+the content sharing features with other, specimen, known plaintext content.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
@@ -487,7 +490,7 @@ participant or as a non-participant. (Transparency of Participation)
 If FooBook decides to represent itself as a non-participant, then it **MUST NOT** have any access to
 PCASM. (Integrity of Participation / Non-Participation)
 
-If FooBook decides to represent itself as a participant, then it **MUST NOT** have exceptional
+If FooBook decides to represent itself as a participant, then it **MUST NOT** have "exceptional"
 access to PCASM, despite being the provider of the service - for instance via raw database access
 or network sniffing. However it **MAY** participate in E2ESM conversations in a "normal" way, and
 thereby have "normal" access to intra-conversation PCASM. (Integrity of Participation, Equality of

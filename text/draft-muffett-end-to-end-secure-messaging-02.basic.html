@@ -177,8 +177,6 @@ regarding the value of
 any bit
 of the content.</p>
 
-<p>TODO: where to reference <cite class="informative"><a href="#CipherInd"><sup>[CipherInd]</sup></a></cite>?</p>
-
 <h3 id="size-pcasm">Size PCASM</h3>
 
 <p>For block encryption of content,
@@ -192,8 +190,6 @@ exact Size PCASM
 <strong>SHOULD NOT</strong>
 be observable
 or inferable.</p>
-
-<p>TODO: where to reference issues from <cite class="informative"><a href="#BREACH"><sup>[BREACH]</sup></a></cite>?</p>
 
 <h3 id="analytic-pcasm">Analytic PCASM</h3>
 
@@ -505,6 +501,11 @@ as it comprises
 that which is
 &ldquo;closed&rdquo; from general distribution.</p>
 
+<p>The test
+for measuring this
+is (intended to be) modeled upon
+ciphertext indistinguishability <cite class="informative"><a href="#CipherInd"><sup>[CipherInd]</sup></a></cite></p>
+
 <h2 id="why-size-pcasm">Why: Size PCASM</h2>
 
 <p>Exact size PCASM
@@ -513,13 +514,25 @@ as it <strong>MAY</strong>
 offer insight into
 Content PCASM.</p>
 
+<p>The test
+for measuring this
+is (intended) to address
+risk of content
+becoming evident
+via plaintext length.</p>
+
 <h2 id="why-analytic-pcasm">Why: Analytic PCASM</h2>
 
 <p>Analytic PCASM
 <strong>MUST</strong> be protected
 as it <strong>MAY</strong>
 offer insight into
-Content PCASM.</p>
+Content PCASM,
+for instance
+the content
+sharing features
+with other, specimen,
+known plaintext content.</p>
 
 <h2 id="why-conversation-metadata-as-optional-pcasm">Why: Conversation Metadata as <strong>OPTIONAL</strong> PCASM</h2>
 
@@ -1029,7 +1042,7 @@ have any access to PCASM. (Integrity of Participation / Non-Participation)</p>
 to represent itself
 as a participant,
 then it <strong>MUST NOT</strong>
-have exceptional access
+have &ldquo;exceptional&rdquo; access
 to PCASM,
 despite being
 the provider
@@ -1110,12 +1123,6 @@ are at:
 <section data-matter="back"><h1 id="bibliography-section">Bibliography</h1>
 <div class="bibliography">
 <dl>
-<dt class="bibliography-cite" id="BREACH">[BREACH]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">BREACH</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/BREACH">https://en.wikipedia.org/wiki/BREACH</a>
-<date class="bibliography-date">2021</date>
-</dd>
 <dt class="bibliography-cite" id="CipherInd">[CipherInd]</dt>
 <dd><span class="bibliography-author">Wikipedia</span>
 <span class="bibliography-title">Ciphertext indistinguishability</span>

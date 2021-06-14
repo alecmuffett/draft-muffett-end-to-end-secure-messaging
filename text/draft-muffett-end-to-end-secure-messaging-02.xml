@@ -181,7 +181,6 @@ better than 50-50 certainty
 regarding the value of
 any bit
 of the content.</t>
-<t>TODO: where to reference <xref target="CipherInd"></xref>?</t>
 </section>
 
 <section anchor="size-pcasm"><name>Size PCASM</name>
@@ -194,7 +193,6 @@ exact Size PCASM
 <bcp14>SHOULD NOT</bcp14>
 be observable
 or inferable.</t>
-<t>TODO: where to reference issues from <xref target="BREACH"></xref>?</t>
 </section>
 
 <section anchor="analytic-pcasm"><name>Analytic PCASM</name>
@@ -497,6 +495,10 @@ for clarity and argumentation purposes.</t>
 as it comprises
 that which is
 &quot;closed&quot; from general distribution.</t>
+<t>The test
+for measuring this
+is (intended to be) modeled upon
+ciphertext indistinguishability <xref target="CipherInd"></xref></t>
 </section>
 
 <section anchor="why-size-pcasm"><name>Why: Size PCASM</name>
@@ -505,6 +507,12 @@ that which is
 as it <bcp14>MAY</bcp14>
 offer insight into
 Content PCASM.</t>
+<t>The test
+for measuring this
+is (intended) to address
+risk of content
+becoming evident
+via plaintext length.</t>
 </section>
 
 <section anchor="why-analytic-pcasm"><name>Why: Analytic PCASM</name>
@@ -512,7 +520,12 @@ Content PCASM.</t>
 <bcp14>MUST</bcp14> be protected
 as it <bcp14>MAY</bcp14>
 offer insight into
-Content PCASM.</t>
+Content PCASM,
+for instance
+the content
+sharing features
+with other, specimen,
+known plaintext content.</t>
 </section>
 
 <section anchor="why-conversation-metadata-as-optional-pcasm"><name>Why: Conversation Metadata as <bcp14>OPTIONAL</bcp14> PCASM</name>
@@ -998,7 +1011,7 @@ have any access to PCASM. (Integrity of Participation / Non-Participation)</t>
 to represent itself
 as a participant,
 then it <bcp14>MUST NOT</bcp14>
-have exceptional access
+have &quot;exceptional&quot; access
 to PCASM,
 despite being
 the provider
@@ -1077,13 +1090,6 @@ are at:
 
 <back>
 <references><name>Informative References</name>
-<reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
-  <front>
-    <title>BREACH</title>
-    <author fullname="Wikipedia"></author>
-    <date year="2021"></date>
-  </front>
-</reference>
 <reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
   <front>
     <title>Ciphertext indistinguishability</title>

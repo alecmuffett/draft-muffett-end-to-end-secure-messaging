@@ -77,13 +77,13 @@ Table of Contents
      3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     4.1.  Transparency of Participation . . . . . . . . . . . . . .   7
+     4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
      4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   7
        4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   7
      4.3.  Equality of Participation . . . . . . . . . . . . . . . .   7
      4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   7
        4.4.1.  Public Conversations and Self-Subscription  . . . . .   7
-     4.5.  Management of Participant Clients and Devices . . . . . .   8
+     4.5.  Management of Participant Clients and Devices . . . . . .   7
    5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   8
      5.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   8
      5.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   8
@@ -231,8 +231,6 @@ Internet-Draft                    e2esm                        June 2021
    Content PCASM is any data that can offer better than 50-50 certainty
    regarding the value of any bit of the content.
 
-   TODO: where to reference [CipherInd]?
-
 3.2.2.  Size PCASM
 
    For block encryption of content, Size PCASM is the unpadded size of
@@ -243,8 +241,6 @@ Internet-Draft                    e2esm                        June 2021
 
    For transport encryption of content, exact Size PCASM SHOULD NOT be
    observable or inferable.
-
-   TODO: where to reference issues from [BREACH]?
 
 3.2.3.  Analytic PCASM
 
@@ -275,14 +271,16 @@ Internet-Draft                    e2esm                        June 2021
    A "recipient" is an entity which receives messages and MAY be able to
    access the PCASM of those messages.
 
+   For each message there will be one sender and one or more recipients.
+
+
+
 
 
 Muffett                 Expires 16 December 2021                [Page 5]
 
 Internet-Draft                    e2esm                        June 2021
 
-
-   For each message there will be one sender and one or more recipients.
 
 3.5.  Participants and Non-Participants
 
@@ -326,9 +324,11 @@ Internet-Draft                    e2esm                        June 2021
    constitute a "conversation" amongst a set of "participants", to
    provide E2ESM will require:
 
+4.1.  Transparency of Participation
 
-
-
+   In the nature of "closed distribution lists", the participants in a
+   message MUST be frozen into an immutable set at the moment when the
+   message is composed or sent.
 
 
 
@@ -337,12 +337,6 @@ Muffett                 Expires 16 December 2021                [Page 6]
 
 Internet-Draft                    e2esm                        June 2021
 
-
-4.1.  Transparency of Participation
-
-   In the nature of "closed distribution lists", the participants in a
-   message MUST be frozen into an immutable set at the moment when the
-   message is composed or sent.
 
    The complete set of all recipients MUST be visible to the sender at
    the moment of message composition or sending.
@@ -383,17 +377,6 @@ Internet-Draft                    e2esm                        June 2021
    "intentional action" to increase the set of participants in the
    group.
 
-
-
-
-
-
-
-Muffett                 Expires 16 December 2021                [Page 7]
-
-Internet-Draft                    e2esm                        June 2021
-
-
 4.5.  Management of Participant Clients and Devices
 
    Where there exists centralised E2ESM software that hosts
@@ -402,6 +385,14 @@ Internet-Draft                    e2esm                        June 2021
    1.  The E2ESM software MUST provide each participant entity with
        means to review or revoke access for clients or devices that can
        access future PCASM.
+
+
+
+
+Muffett                 Expires 16 December 2021                [Page 7]
+
+Internet-Draft                    e2esm                        June 2021
+
 
    2.  The E2ESM software MUST provide each participant entity with
        notifications and/or complete logs of changes to the set of
@@ -417,15 +408,22 @@ Internet-Draft                    e2esm                        June 2021
    Content PCASM MUST be protected as it comprises that which is
    "closed" from general distribution.
 
+   The test for measuring this is (intended to be) modeled upon
+   ciphertext indistinguishability [CipherInd]
+
 5.2.  Why: Size PCASM
 
    Exact size PCASM MUST be protected as it MAY offer insight into
    Content PCASM.
 
+   The test for measuring this is (intended) to address risk of content
+   becoming evident via plaintext length.
+
 5.3.  Why: Analytic PCASM
 
    Analytic PCASM MUST be protected as it MAY offer insight into Content
-   PCASM.
+   PCASM, for instance the content sharing features with other,
+   specimen, known plaintext content.
 
 5.4.  Why: Conversation Metadata as OPTIONAL PCASM
 
@@ -441,6 +439,8 @@ Internet-Draft                    e2esm                        June 2021
 
    The term "participant" in this document exists to supersede the more
    vague notion of "end" in the phrase "end-to-end".
+
+
 
 
 
@@ -766,7 +766,7 @@ Internet-Draft                    e2esm                        June 2021
    Non-Participation)
 
    If FooBook decides to represent itself as a participant, then it MUST
-   NOT have exceptional access to PCASM, despite being the provider of
+   NOT have "exceptional" access to PCASM, despite being the provider of
    the service - for instance via raw database access or network
    sniffing.  However it MAY participate in E2ESM conversations in a
    "normal" way, and thereby have "normal" access to intra-conversation
@@ -821,9 +821,6 @@ Internet-Draft                    e2esm                        June 2021
 
 13.  Informative References
 
-   [BREACH]   Wikipedia, "BREACH", 2021,
-              <https://en.wikipedia.org/wiki/BREACH>.
-
    [CipherInd]
               Wikipedia, "Ciphertext indistinguishability", 2021,
               <https://en.wikipedia.org/wiki/
@@ -831,6 +828,9 @@ Internet-Draft                    e2esm                        June 2021
 
    [DualUse]  Wikipedia, "Dual-use technology", 2021,
               <https://en.wikipedia.org/wiki/Dual-use_technology>.
+
+
+
 
 
 
