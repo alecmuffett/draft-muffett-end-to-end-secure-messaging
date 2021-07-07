@@ -1,6 +1,6 @@
-NAME=draft-muffett-end-to-end-secure-messaging-02
-PREV=draft-muffett-end-to-end-secure-messaging-01
-DIFF=vs-01
+NAME=draft-muffett-end-to-end-secure-messaging-03
+PREV=draft-muffett-end-to-end-secure-messaging-02
+DIFF=vs-02
 DIR=text
 XML2RFC=xml2rfc -v
 #--v3
