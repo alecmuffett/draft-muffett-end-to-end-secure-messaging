@@ -33,7 +33,7 @@ and where non-participants
 are completely excluded
 from access to message content.</p>
 
-<p>In client-server network models
+<p>In client-server-client network models
 it is common to implement E2ESM
 by means of encryption,
 in order to obscure
@@ -139,6 +139,44 @@ can also be found
 in the rationales section,
 below.</p>
 
+<p>For the avoidance of doubt
+we define a &ldquo;messenger&rdquo;
+as a software solution
+which enables communication
+between two or more entities,
+without offering
+newly-added participants
+retrospective access
+to content
+which was previously sent
+by prior participants.</p>
+
+<p>This echoes
+the distinction
+between
+a &ldquo;maillist&rdquo;
+versus
+a &ldquo;maillist archive&rdquo;
+or &ldquo;web forum&rdquo;;
+frequently these solutions
+are integrated
+but we only consider the maillist
+as a &ldquo;messenger&rdquo; per se.</p>
+
+<p>Use cases
+of a &ldquo;messenger&rdquo;
+may include
+sending and receiving
+any or all
+of:</p>
+
+<ol>
+<li>UNICODE or ASCII messages</li>
+<li>images, video files or audio files</li>
+<li>one-way streaming video or audio</li>
+<li>two-way streaming video or audio, as in live calls</li>
+</ol>
+
 <h2 id="message-and-platform">Message and Platform</h2>
 
 <p>A &ldquo;message&rdquo;
@@ -155,7 +193,9 @@ which describes the content.</p>
 is a specific instance of software
 which exists
 for the purpose
-of exchanging messages.</p>
+of routing
+or exchanging
+messages.</p>
 
 <h2 id="plaintext-content-and-sensitive-metadata-pcasm">Plaintext Content and Sensitive Metadata (PCASM)</h2>
 
@@ -175,7 +215,8 @@ that can offer
 better than 50-50 certainty
 regarding the value of
 any bit
-of the content.</p>
+of the content.
+See &ldquo;Rationales&rdquo; for more.</p>
 
 <h3 id="size-pcasm">Size PCASM</h3>
 
@@ -183,13 +224,16 @@ of the content.</p>
 Size PCASM is the unpadded size of the content.</p>
 
 <p>For stream encryption of content,
-Size PCASM is currently undefined (TODO, would benefit from broader input)</p>
+Size PCASM is currently undefined.
+(TODO, would benefit from broader input.)</p>
 
 <p>For transport encryption of content,
 exact Size PCASM
 <strong>SHOULD NOT</strong>
 be observable
 or inferable.</p>
+
+<p>See &ldquo;Rationales&rdquo; for more.</p>
 
 <h3 id="analytic-pcasm">Analytic PCASM</h3>
 
@@ -199,7 +243,8 @@ which analyses,
 describes,
 reduces,
 or summarises
-the &ldquo;content&rdquo;.</p>
+the &ldquo;content&rdquo;.
+See &ldquo;Rationales&rdquo; for more.</p>
 
 <h3 id="conversation-metadata-optional">Conversation Metadata (<strong>OPTIONAL</strong>)</h3>
 
@@ -221,6 +266,8 @@ but that choice
 <strong>MUST</strong>
 be apparent
 to participants.</p>
+
+<p>See &ldquo;Rationales&rdquo; for more.</p>
 
 <h2 id="entity">Entity</h2>
 
@@ -422,7 +469,7 @@ via that new message.</p>
 
 <p>All participants
 <strong>MUST</strong> be peers,
-ie: they
+i.e. they
 <strong>MUST</strong> have equal access
 to the PCASM
 of any message;
@@ -438,12 +485,20 @@ except by the intentional action
 of one or more
 existing participants.</p>
 
+<p>Per &ldquo;Transparency of Participation&rdquo;
+that action
+(introducing a new participant)
+<strong>MUST</strong>
+be visible to
+all other participants</p>
+
 <h3 id="public-conversations-and-self-subscription">Public Conversations and Self-Subscription</h3>
 
 <p>Existing participants <strong>MAY</strong>
 publicly share
-links,
-data,
+links to the conversation,
+identifying data
+to assist discovery of the conversation,
 or other mechanisms
 to enable
 non-participant entities
@@ -471,6 +526,7 @@ participants:</p>
 each participant entity
 with means
 to review or revoke access for
+that participant&rsquo;s
 clients or devices
 that can access
 future PCASM.</p></li>
@@ -530,10 +586,11 @@ as it <strong>MAY</strong>
 offer insight into
 Content PCASM,
 for instance
-the content
-sharing features
-with other, specimen,
-known plaintext content.</p>
+that the content
+shares features
+with other,
+specimen,
+or known plaintext content.</p>
 
 <h2 id="why-conversation-metadata-as-optional-pcasm">Why: Conversation Metadata as <strong>OPTIONAL</strong> PCASM</h2>
 
@@ -726,8 +783,6 @@ to be exclusively accessible
 to that set of participants,
 all participants must be visible.</p>
 
-<p>TODO: EXCISE DUPLICATION IN NEXT PARA</p>
-
 <p>For
 decentralised
 &ldquo;virtual point-to-point&rdquo;
@@ -787,6 +842,32 @@ several non-E2ESM.
 Therefore
 the converse
 is true.</p>
+
+<p>As a concrete example
+this means
+that participants
+who are
+newly added
+to a &ldquo;group&rdquo;
+<strong>MUST NOT</strong>
+be able
+to read messages
+that were
+sent before
+they joined
+that group -
+unless
+(for instance)
+one pre-existing participant
+is explicitly intended
+to provide
+a &ldquo;searchable archive&rdquo;
+or similar function.
+The function
+of such a participant
+is considered to be
+out of scope
+for the messenger.</p>
 
 <h2 id="why-equality-of-participation">Why: Equality of Participation</h2>
 

@@ -38,9 +38,9 @@ distribution lists" for sharing message content amongst a set of participants, w
 participants are visible to each other and where non-participants are completely excluded from
 access to message content.
 
-In client-server network models it is common to implement E2ESM by means of encryption, in order
-to obscure content at rest upon a central server. So therefore E2ESM is often narrowly regarded in
-terms of "end-to-end encryption".
+In client-server-client network models it is common to implement E2ESM by means of encryption,
+in order to obscure content at rest upon a central server. So therefore E2ESM is often narrowly
+regarded in terms of "end-to-end encryption".
 
 Other architectural approaches exist - for instance [@Ricochet] which implements closed distribution
 by using secure point-to-point [@RFC7686] networking to literally restrict the distribution of
@@ -88,13 +88,31 @@ have offered) end-to-end security; these examples include:
 
 Further context for several of these definitions can also be found in the rationales section, below.
 
+For the avoidance of doubt we define a "messenger" as a software solution which enables
+communication between two or more entities, without offering newly-added participants retrospective
+access to content which was previously sent by prior participants.
+
+This echoes the distinction between a "maillist" versus a "maillist archive" or "web forum";
+frequently these solutions are integrated but we only consider the maillist as a "messenger" per se.
+
+Use cases of a "messenger" may include sending and receiving any or all of:
+
+1.  UNICODE or ASCII messages
+
+2.  images, video files or audio files
+
+3.  one-way streaming video or audio
+
+4.  two-way streaming video or audio, as in live calls
+
 ## Message and Platform
 
 A "message" is information of 0 or more bits, to be communicated.
 
 Messages possess both plaintext "content", and also "metadata" which describes the content.
 
-A "platform" is a specific instance of software which exists for the purpose of exchanging messages.
+A "platform" is a specific instance of software which exists for the purpose of routing or
+exchanging messages.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
@@ -104,20 +122,23 @@ message, comprising any or all of:
 ### Content PCASM
 
 Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any bit
-of the content.
+of the content. See "Rationales" for more.
 
 ### Size PCASM
 
 For block encryption of content, Size PCASM is the unpadded size of the content.
 
-For stream encryption of content, Size PCASM is currently undefined (TODO, would benefit from
-broader input)
+For stream encryption of content, Size PCASM is currently undefined. (TODO, would benefit from
+broader input.)
 
 For transport encryption of content, exact Size PCASM **SHOULD NOT** be observable or inferable.
 
+See "Rationales" for more.
+
 ### Analytic PCASM
 
-Analytic PCASM is data which analyses, describes, reduces, or summarises the "content".
+Analytic PCASM is data which analyses, describes, reduces, or summarises the "content". See
+"Rationales" for more.
 
 ### Conversation Metadata (**OPTIONAL**)
 
@@ -125,6 +146,8 @@ Conversation Metadata **MAY** exist "outside" of messages and describe the conve
 
 Whether conversation metadata constitutes PCASM, is an **OPTIONAL** choice for E2ESM software, but
 that choice **MUST** be apparent to participants.
+
+See "Rationales" for more.
 
 ## Entity
 
@@ -202,26 +225,30 @@ conversation participants, via that new message.
 
 ## Equality of Participation
 
-All participants **MUST** be peers, ie: they **MUST** have equal access to the PCASM of any message;
-see also "Integrity of Participation".
+All participants **MUST** be peers, i.e. they **MUST** have equal access to the PCASM of any
+message; see also "Integrity of Participation".
 
 ## Closure of Conversation
 
 The set of participants in a conversation **SHALL NOT** be increased except by the intentional
 action of one or more existing participants.
 
+Per "Transparency of Participation" that action (introducing a new participant) **MUST** be visible
+to all other participants
+
 ### Public Conversations and Self-Subscription
 
-Existing participants **MAY** publicly share links, data, or other mechanisms to enable
-non-participant entities to subscribe themselves as conversation participants. This **MAY** be
-considered legitimate "intentional action" to increase the set of participants in the group.
+Existing participants **MAY** publicly share links to the conversation, identifying data to assist
+discovery of the conversation, or other mechanisms to enable non-participant entities to subscribe
+themselves as conversation participants. This **MAY** be considered legitimate "intentional action"
+to increase the set of participants in the group.
 
 ## Management of Participant Clients and Devices
 
 Where there exists centralised E2ESM software that hosts participants:
 
 1.  The E2ESM software **MUST** provide each participant entity with means to review or revoke
-    access for clients or devices that can access future PCASM.
+    access for that participant's clients or devices that can access future PCASM.
 
 2.  The E2ESM software **MUST** provide each participant entity with notifications and/or complete
     logs of changes to the set of clients or devices that can or could access message PCASM.
@@ -249,7 +276,7 @@ length.
 ## Why: Analytic PCASM
 
 Analytic PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM, for instance
-the content sharing features with other, specimen, known plaintext content.
+that the content shares features with other, specimen, or known plaintext content.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
@@ -320,8 +347,6 @@ removed from the similar and established term "side channel".
 The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
 accessible to that set of participants, all participants must be visible.
 
-TODO: EXCISE DUPLICATION IN NEXT PARA
-
 For decentralised "virtual point-to-point" E2ESM solutions such as PGP-Encrypted Email or Ricochet,
 the set of participants is fixed by the author at the time of individual message composition, and
 **MUST** be visible to all participants.
@@ -339,6 +364,11 @@ If this was not the intention we would deduce that an E2ESM would automatically 
 available to newly-added conversation participants, thereby breaking forward secrecy. This is not a
 characteristic of any E2ESM, but it is characteristic of several non-E2ESM. Therefore the converse
 is true.
+
+As a concrete example this means that participants who are newly added to a "group" **MUST NOT**
+be able to read messages that were sent before they joined that group - unless (for instance)
+one pre-existing participant is explicitly intended to provide a "searchable archive" or similar
+function. The function of such a participant is considered to be out of scope for the messenger.
 
 ## Why: Equality of Participation
 
