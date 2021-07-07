@@ -51,7 +51,7 @@ and where non-participants
 are completely excluded
 from access to message content.
 
-In client-server network models
+In client-server-client network models
 it is common to implement E2ESM
 by means of encryption,
 in order to obscure
@@ -156,6 +156,42 @@ can also be found
 in the rationales section,
 below.
 
+For the avoidance of doubt
+we define a "messenger"
+as a software solution
+which enables communication
+between two or more entities,
+without offering
+newly-added participants
+retrospective access
+to content
+which was previously sent
+by prior participants.
+
+This echoes
+the distinction
+between
+a "maillist"
+versus
+a "maillist archive"
+or "web forum";
+frequently these solutions
+are integrated
+but we only consider the maillist
+as a "messenger" per se.
+
+Use cases
+of a "messenger"
+may include
+sending and receiving
+any or all
+of:
+
+1. UNICODE or ASCII messages
+1. images, video files or audio files
+1. one-way streaming video or audio
+1. two-way streaming video or audio, as in live calls
+
 ## Message and Platform
 
 A "message"
@@ -172,7 +208,9 @@ A "platform"
 is a specific instance of software
 which exists
 for the purpose
-of exchanging messages.
+of routing
+or exchanging
+messages.
 
 ## Plaintext Content and Sensitive Metadata (PCASM)
 
@@ -193,6 +231,7 @@ better than 50-50 certainty
 regarding the value of
 any bit
 of the content.
+See "Rationales" for more.
 
 ### Size PCASM
 
@@ -200,13 +239,16 @@ For block encryption of content,
 Size PCASM is the unpadded size of the content.
 
 For stream encryption of content,
-Size PCASM is currently undefined (TODO, would benefit from broader input)
+Size PCASM is currently undefined.
+(TODO, would benefit from broader input.)
 
 For transport encryption of content,
 exact Size PCASM
 **SHOULD NOT**
 be observable
 or inferable.
+
+See "Rationales" for more.
 
 ### Analytic PCASM
 
@@ -217,6 +259,8 @@ describes,
 reduces,
 or summarises
 the "content".
+See "Rationales" for more.
+
 
 ### Conversation Metadata (**OPTIONAL**)
 
@@ -238,6 +282,8 @@ but that choice
 **MUST**
 be apparent
 to participants.
+
+See "Rationales" for more.
 
 ## Entity
 
@@ -439,7 +485,7 @@ via that new message.
 
 All participants
 **MUST** be peers,
-ie: they
+i.e. they
 **MUST** have equal access
 to the PCASM
 of any message;
@@ -455,12 +501,20 @@ except by the intentional action
 of one or more
 existing participants.
 
+Per "Transparency of Participation"
+that action
+(introducing a new participant)
+**MUST**
+be visible to
+all other participants
+
 ### Public Conversations and Self-Subscription
 
 Existing participants **MAY**
 publicly share
-links,
-data,
+links to the conversation,
+identifying data
+to assist discovery of the conversation,
 or other mechanisms
 to enable
 non-participant entities
@@ -487,6 +541,7 @@ participants:
 each participant entity
 with means
 to review or revoke access for
+that participant's
 clients or devices
 that can access
 future PCASM.
@@ -545,10 +600,11 @@ as it **MAY**
 offer insight into
 Content PCASM,
 for instance
-the content
-sharing features
-with other, specimen,
-known plaintext content.
+that the content
+shares features
+with other,
+specimen,
+or known plaintext content.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
@@ -741,9 +797,6 @@ to be exclusively accessible
 to that set of participants,
 all participants must be visible.
 
-
-TODO: EXCISE DUPLICATION IN NEXT PARA
-
 For
 decentralised
 "virtual point-to-point"
@@ -803,6 +856,32 @@ several non-E2ESM.
 Therefore
 the converse
 is true.
+
+As a concrete example
+this means
+that participants
+who are
+newly added
+to a "group"
+**MUST NOT**
+be able
+to read messages
+that were
+sent before
+they joined
+that group -
+unless
+(for instance)
+one pre-existing participant
+is explicitly intended
+to provide
+a "searchable archive"
+or similar function.
+The function
+of such a participant
+is considered to be
+out of scope
+for the messenger.
 
 ## Why: Equality of Participation
 
