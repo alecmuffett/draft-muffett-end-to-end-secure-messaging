@@ -8,9 +8,12 @@ A work-in-progress feature comparison of popular messenger software against this
 
 The current unsubmitted draft text can be found here; please note that: HTML versions may be **out-of-date** with respect to main copy, due to caching.
 
-* [DIFF-02](text/draft-muffett-end-to-end-secure-messaging-02-vs-01.diff) **- diff of working draft against previous I-D submission**
-* [TEXT-02](text/draft-muffett-end-to-end-secure-messaging-02.txt) **- working draft, not yet submitted**
-* [HTML-02](https://htmlpreview.github.io/?https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging/blob/main/text/draft-muffett-end-to-end-secure-messaging-02.html) **- working draft, not yet submitted**
+* [DIFF-03](text/draft-muffett-end-to-end-secure-messaging-03-vs-02.diff) **- diff of working draft against previous I-D submission**
+* [TEXT-03](text/draft-muffett-end-to-end-secure-messaging-03.txt) **- working draft, not yet submitted**
+* [HTML-03](https://htmlpreview.github.io/?https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging/blob/main/text/draft-muffett-end-to-end-secure-messaging-03.html) **- working draft, not yet submitted**
+* [DIFF-02](text/draft-muffett-end-to-end-secure-messaging-02-vs-01.diff)
+* [TEXT-02](text/draft-muffett-end-to-end-secure-messaging-02.txt)
+* [HTML-02](https://htmlpreview.github.io/?https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging/blob/main/text/draft-muffett-end-to-end-secure-messaging-02.html)
 * [DIFF-01](text/draft-muffett-end-to-end-secure-messaging-01-vs-00.diff)
 * [TEXT-01](text/draft-muffett-end-to-end-secure-messaging-01.txt)
 * [HTML-01](https://htmlpreview.github.io/?https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging/blob/main/text/draft-muffett-end-to-end-secure-messaging-01.html)
