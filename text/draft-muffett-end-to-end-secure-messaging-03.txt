@@ -360,7 +360,7 @@ Internet-Draft                    e2esm                        July 2021
 
 4.3.  Equality of Participation
 
-   All participants MUST be peers who MUST have equal means of access to
+   All participants MUST be peers, ie: they MUST have equal access to
    the PCASM of any message; see also "Integrity of Participation".
 
 4.4.  Closure of Conversation

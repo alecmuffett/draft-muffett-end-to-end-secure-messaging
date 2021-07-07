@@ -415,8 +415,9 @@ via that new message.</t>
 
 <section anchor="equality-of-participation"><name>Equality of Participation</name>
 <t>All participants
-<bcp14>MUST</bcp14> be peers who
-<bcp14>MUST</bcp14> have equal means of access
+<bcp14>MUST</bcp14> be peers,
+ie: they
+<bcp14>MUST</bcp14> have equal access
 to the PCASM
 of any message;
 see also

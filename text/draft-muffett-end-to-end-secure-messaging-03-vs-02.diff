@@ -1,0 +1,19 @@
+*** text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-07-07 14:19:01.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-07 15:15:25.000000000 +0100
+***************
+*** 360,366 ****
+  
+  4.3.  Equality of Participation
+  
+!    All participants MUST be peers who MUST have equal means of access to
+     the PCASM of any message; see also "Integrity of Participation".
+  
+  4.4.  Closure of Conversation
+--- 360,366 ----
+  
+  4.3.  Equality of Participation
+  
+!    All participants MUST be peers, ie: they MUST have equal access to
+     the PCASM of any message; see also "Integrity of Participation".
+  
+  4.4.  Closure of Conversation
