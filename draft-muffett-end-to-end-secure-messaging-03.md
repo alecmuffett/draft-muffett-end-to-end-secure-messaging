@@ -438,8 +438,9 @@ via that new message.
 ## Equality of Participation
 
 All participants
-**MUST** be peers who
-**MUST** have equal means of access
+**MUST** be peers,
+ie: they
+**MUST** have equal access
 to the PCASM
 of any message;
 see also
