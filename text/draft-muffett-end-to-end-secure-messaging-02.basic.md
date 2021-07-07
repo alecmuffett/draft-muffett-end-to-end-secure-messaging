@@ -1,5 +1,5 @@
 %%%
-title = "Functional Definition of End-to-End Secure Messaging"
+title = "A Duck Test for End-to-End Secure Messaging"
 abbrev = "e2esm"
 category = "info"
 docName = "apparently this tool demands a doc name but does not use it"

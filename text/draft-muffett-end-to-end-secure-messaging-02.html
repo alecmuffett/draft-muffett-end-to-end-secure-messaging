@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Functional Definition of End-to-End Secure Messaging</title>
+<title>A Duck Test for End-to-End Secure Messaging</title>
 <meta content="Alec Muffett" name="author">
 <meta content="
        This document
@@ -1190,11 +1190,11 @@ li > p:last-of-type {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">e2esm</td>
-<td class="right">June 2021</td>
+<td class="right">July 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Muffett</td>
-<td class="center">Expires 15 December 2021</td>
+<td class="center">Expires 8 January 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1207,12 +1207,12 @@ li > p:last-of-type {
 <dd class="internet-draft">draft-muffett-end-to-end-secure-messaging-02</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-06-13" class="published">13 June 2021</time>
+<time datetime="2021-07-07" class="published">7 July 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-12-15">15 December 2021</time></dd>
+<dd class="expires"><time datetime="2022-01-08">8 January 2022</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1222,7 +1222,7 @@ li > p:last-of-type {
 </dd>
 </dl>
 </div>
-<h1 id="title">Functional Definition of End-to-End Secure Messaging</h1>
+<h1 id="title">A Duck Test for End-to-End Secure Messaging</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">This document
@@ -1254,7 +1254,7 @@ End-to-End Encrypted Messaging.<a href="#section-abstract-1" class="pilcrow">¶<
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 15 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 January 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1282,179 +1282,179 @@ End-to-End Encrypted Messaging.<a href="#section-abstract-1" class="pilcrow">¶<
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.1">
+<nav class="toc"><ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.1.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.1.2.1">
                 <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="xref">1.1</a>.  <a href="#name-comments" class="xref">Comments</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.1.2.2">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.1.2.2">
                 <p id="section-toc.1-1.1.2.2.1" class="keepWithNext"><a href="#section-1.2" class="xref">1.2</a>.  <a href="#name-notational-conventions" class="xref">Notational Conventions</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.2">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-requirements-for-an-end-to-" class="xref">Requirements for an End-to-End Secure Messenger</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.3">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-definitions" class="xref">Definitions</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.3.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.3.2.1">
                 <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-message-and-platform" class="xref">Message and Platform</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.2">
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-plaintext-content-and-sensi" class="xref">Plaintext Content and Sensitive Metadata (PCASM)</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.3.2.2.2.1">
                     <p id="section-toc.1-1.3.2.2.2.1.1"><a href="#section-3.2.1" class="xref">3.2.1</a>.  <a href="#name-content-pcasm" class="xref">Content PCASM</a></p>
 </li>
-                  <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2.2.2">
+                  <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.2.2.2">
                     <p id="section-toc.1-1.3.2.2.2.2.1"><a href="#section-3.2.2" class="xref">3.2.2</a>.  <a href="#name-size-pcasm" class="xref">Size PCASM</a></p>
 </li>
-                  <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2.2.3">
+                  <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.2.2.3">
                     <p id="section-toc.1-1.3.2.2.2.3.1"><a href="#section-3.2.3" class="xref">3.2.3</a>.  <a href="#name-analytic-pcasm" class="xref">Analytic PCASM</a></p>
 </li>
-                  <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2.2.4">
+                  <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.2.2.4">
                     <p id="section-toc.1-1.3.2.2.2.4.1"><a href="#section-3.2.4" class="xref">3.2.4</a>.  <a href="#name-conversation-metadata-optio" class="xref">Conversation Metadata (OPTIONAL)</a></p>
 </li>
                 </ul>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.3">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-entity" class="xref">Entity</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.4">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.4">
                 <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-sender-and-recipient" class="xref">Sender and Recipient</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.5">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.5">
                 <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="xref">3.5</a>.  <a href="#name-participants-and-non-partic" class="xref">Participants and Non-Participants</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.6">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.6">
                 <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="xref">3.6</a>.  <a href="#name-conversation-group-de-centr" class="xref">Conversation, Group, De-/Centralised</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.7">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.3.2.7">
                 <p id="section-toc.1-1.3.2.7.1"><a href="#section-3.7" class="xref">3.7</a>.  <a href="#name-backdoor" class="xref">Backdoor</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.4">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-principles" class="xref">Principles</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.4.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-transparency-of-participati" class="xref">Transparency of Participation</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.2">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-integrity-of-participation" class="xref">Integrity of Participation</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.4.2.2.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.4.2.2.2.1">
                     <p id="section-toc.1-1.4.2.2.2.1.1"><a href="#section-4.2.1" class="xref">4.2.1</a>.  <a href="#name-retransmission-exception" class="xref">Retransmission Exception</a></p>
 </li>
                 </ul>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.3">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.4.2.3">
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="xref">4.3</a>.  <a href="#name-equality-of-participation" class="xref">Equality of Participation</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.4">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.4.2.4">
                 <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="xref">4.4</a>.  <a href="#name-closure-of-conversation" class="xref">Closure of Conversation</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.4.2.4.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.4.2.4.2.1">
                     <p id="section-toc.1-1.4.2.4.2.1.1"><a href="#section-4.4.1" class="xref">4.4.1</a>.  <a href="#name-public-conversations-and-se" class="xref">Public Conversations and Self-Subscription</a></p>
 </li>
                 </ul>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.5">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.4.2.5">
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="xref">4.5</a>.  <a href="#name-management-of-participant-c" class="xref">Management of Participant Clients and Devices</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.5">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-rationales" class="xref">Rationales</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.5.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.5.2.1">
                 <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="xref">5.1</a>.  <a href="#name-why-content-pcasm" class="xref">Why: Content PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.2">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.2">
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="xref">5.2</a>.  <a href="#name-why-size-pcasm" class="xref">Why: Size PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.3">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.3">
                 <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="xref">5.3</a>.  <a href="#name-why-analytic-pcasm" class="xref">Why: Analytic PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.4">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.4">
                 <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="xref">5.4</a>.  <a href="#name-why-conversation-metadata-a" class="xref">Why: Conversation Metadata as OPTIONAL PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.5">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.5">
                 <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="xref">5.5</a>.  <a href="#name-why-entity-and-participant" class="xref">Why: Entity and Participant</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.6">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.6">
                 <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="xref">5.6</a>.  <a href="#name-why-backdoor" class="xref">Why: Backdoor</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.7">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.7">
                 <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="xref">5.7</a>.  <a href="#name-why-transparency-of-partici" class="xref">Why: Transparency of Participation</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.8">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.8">
                 <p id="section-toc.1-1.5.2.8.1"><a href="#section-5.8" class="xref">5.8</a>.  <a href="#name-why-integrity-of-participat" class="xref">Why: Integrity of Participation</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.9">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.9">
                 <p id="section-toc.1-1.5.2.9.1"><a href="#section-5.9" class="xref">5.9</a>.  <a href="#name-why-equality-of-participati" class="xref">Why: Equality of Participation</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.10">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.10">
                 <p id="section-toc.1-1.5.2.10.1"><a href="#section-5.10" class="xref">5.10</a>. <a href="#name-why-closure-of-conversation" class="xref">Why: Closure of Conversation</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.11">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.5.2.11">
                 <p id="section-toc.1-1.5.2.11.1"><a href="#section-5.11" class="xref">5.11</a>. <a href="#name-why-management-of-participa" class="xref">Why: Management of Participant Clients and Devices</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.6">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-optional-features-of-e2esm" class="xref">OPTIONAL Features of E2ESM</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.6.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.6.2.1">
                 <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="xref">6.1</a>.  <a href="#name-disappearing-messages" class="xref">Disappearing Messages</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.6.2.2">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.6.2.2">
                 <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="xref">6.2</a>.  <a href="#name-mutual-identity-verificatio" class="xref">Mutual Identity Verification</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.7">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-examples-of-pcasm" class="xref">Examples of PCASM</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.7.2.1">
+<ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.7.2.1">
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="xref">7.1</a>.  <a href="#name-content-pcasm-2" class="xref">Content PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.2">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.7.2.2">
                 <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="xref">7.2</a>.  <a href="#name-size-pcasm-2" class="xref">Size PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.3">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.7.2.3">
                 <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="xref">7.3</a>.  <a href="#name-analytic-pcasm-2" class="xref">Analytic PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.4">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.7.2.4">
                 <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="xref">7.4</a>.  <a href="#name-conversation-metadata-as-op" class="xref">Conversation Metadata as OPTIONAL PCASM</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.5">
+              <li class="compact ulEmpty toc" id="section-toc.1-1.7.2.5">
                 <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="xref">7.5</a>.  <a href="#name-non-pcasm" class="xref">Non-PCASM</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.8">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="xref">8</a>.  <a href="#name-worked-example" class="xref">Worked Example</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.9">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.9">
             <p id="section-toc.1-1.9.1"><a href="#section-9" class="xref">9</a>.  <a href="#name-see-also" class="xref">See Also</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.10">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.10">
             <p id="section-toc.1-1.10.1"><a href="#section-10" class="xref">10</a>. <a href="#name-live-drafts" class="xref">Live Drafts</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.11">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#section-11" class="xref">11</a>. <a href="#name-iana-considerations" class="xref">IANA Considerations</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.12">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.12">
             <p id="section-toc.1-1.12.1"><a href="#section-12" class="xref">12</a>. <a href="#name-security-considerations" class="xref">Security Considerations</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.13">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.13">
             <p id="section-toc.1-1.13.1"><a href="#section-13" class="xref">13</a>. <a href="#name-informative-references" class="xref">Informative References</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.14">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.14">
             <p id="section-toc.1-1.14.1"><a href="#section-appendix.a" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a></p>
 </li>
         </ul>
