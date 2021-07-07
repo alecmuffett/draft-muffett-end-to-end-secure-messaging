@@ -11,7 +11,7 @@
 
 <p>This document
 defines End-to-End Secure Messaging
-in terms of the behaviours
+in terms of behaviours
 that <strong>MUST</strong> be exhibited
 by software
 that claims to implement it,
@@ -30,7 +30,7 @@ amongst a set of participants,
 where all participants
 are visible to each other
 and where non-participants
-are excluded
+are completely excluded
 from access to message content.</p>
 
 <p>In client-server network models
@@ -45,7 +45,7 @@ narrowly regarded
 in terms of &ldquo;end-to-end encryption&rdquo;.</p>
 
 <p>Other architectural approaches exist -
-for instance <cite class="informative"><a href="#RicochetRefresh"><sup>[RicochetRefresh]</sup></a></cite>
+for instance <cite class="informative"><a href="#Ricochet"><sup>[Ricochet]</sup></a></cite>
 which implements
 closed distribution
 by using
@@ -61,8 +61,11 @@ functional behaviours
 of the software
 rather than
 in terms
-of its implementation
-goals and technologies.</p>
+of its
+implementation
+technologies
+and
+architecture.</p>
 
 <h2 id="comments">Comments</h2>
 
@@ -90,7 +93,7 @@ End-to-End Secure Messenger
 for all forms of communication
 and data-sharing
 that the software offers.
-The software
+The E2ESM software
 <strong>MAY</strong> comprise
 either a complete application,
 or a clearly defined subset
@@ -126,7 +129,7 @@ include:</p>
 <li>Signal Messenger</li>
 <li>WhatsApp Messenger</li>
 <li>Ricochet Messenger</li>
-<li>PGP-Encrypted Email (in limited circumstances)</li>
+<li>PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist</li>
 </ol>
 
 <p>Further context
@@ -180,7 +183,7 @@ of the content.</p>
 Size PCASM is the unpadded size of the content.</p>
 
 <p>For stream encryption of content,
-Size PCASM is currently undefined (TBD)</p>
+Size PCASM is currently undefined (TODO, would benefit from broader input)</p>
 
 <p>For transport encryption of content,
 exact Size PCASM
@@ -282,7 +285,7 @@ the participant set
 will be &ldquo;non-participants&rdquo;
 in respect of that message.</p>
 
-<h2 id="conversation-group-de-centralised">Conversation, Group, De-/Centralised</h2>
+<h2 id="conversation-group-centralised-decentralised">Conversation, Group, Centralised &amp; Decentralised</h2>
 
 <p>A &ldquo;conversation&rdquo;
 is a sequence
@@ -316,7 +319,7 @@ is composed or sent.</p>
 
 <p>In &ldquo;decentralised&rdquo; E2ESM
 such as PGP-Encrypted Email
-or (somewhat) Ricochet,
+or Ricochet
 the recipients of each message
 are individually determined
 by each sender
@@ -498,6 +501,11 @@ as it comprises
 that which is
 &ldquo;closed&rdquo; from general distribution.</p>
 
+<p>The test
+for measuring this
+is (intended to be) modeled upon
+ciphertext indistinguishability <cite class="informative"><a href="#CipherInd"><sup>[CipherInd]</sup></a></cite></p>
+
 <h2 id="why-size-pcasm">Why: Size PCASM</h2>
 
 <p>Exact size PCASM
@@ -506,13 +514,25 @@ as it <strong>MAY</strong>
 offer insight into
 Content PCASM.</p>
 
+<p>The test
+for measuring this
+is (intended) to address
+risk of content
+becoming evident
+via plaintext length.</p>
+
 <h2 id="why-analytic-pcasm">Why: Analytic PCASM</h2>
 
 <p>Analytic PCASM
 <strong>MUST</strong> be protected
 as it <strong>MAY</strong>
 offer insight into
-Content PCASM.</p>
+Content PCASM,
+for instance
+the content
+sharing features
+with other, specimen,
+known plaintext content.</p>
 
 <h2 id="why-conversation-metadata-as-optional-pcasm">Why: Conversation Metadata as <strong>OPTIONAL</strong> PCASM</h2>
 
@@ -630,10 +650,10 @@ which have assisted
 non-participant access to PCASM.
 These have
 variously been named as
-&ldquo;export-grade key restrictions&rdquo; (TLS, then Logjam),
-&ldquo;side channel attacks&rdquo; (Spectre and Meltdown),
-&ldquo;law enforcement access fields&rdquo; (Clipper), and
-&ldquo;key escrow&rdquo; (Crypto Wars).</p>
+&ldquo;export-grade key restrictions&rdquo; (<cite class="informative"><a href="#ExportControl"><sup>[ExportControl]</sup></a></cite>, then <cite class="informative"><a href="#Logjam"><sup>[Logjam]</sup></a></cite>),
+&ldquo;side channel attacks&rdquo; (<cite class="informative"><a href="#Spectre"><sup>[Spectre]</sup></a></cite> and <cite class="informative"><a href="#Meltdown"><sup>[Meltdown]</sup></a></cite>),
+&ldquo;law enforcement access fields&rdquo; <cite class="informative"><a href="#Clipper"><sup>[Clipper]</sup></a></cite>, and
+&ldquo;key escrow&rdquo; <cite class="informative"><a href="#CryptoWars"><sup>[CryptoWars]</sup></a></cite>.</p>
 
 <p>All of
 these terms
@@ -705,13 +725,14 @@ to be exclusively accessible
 to that set of participants,
 all participants must be visible.</p>
 
+<p>TODO: EXCISE DUPLICATION IN NEXT PARA</p>
+
 <p>For
-&ldquo;virtual peer-to-peer&rdquo;
+decentralised
+&ldquo;virtual point-to-point&rdquo;
 E2ESM solutions
-such as
-&ldquo;Email with PGP&rdquo;
-or
-(to a limited extent) &ldquo;Ricochet&rdquo;,
+such as PGP-Encrypted Email
+or Ricochet,
 the set of participants
 is fixed
 by the author
@@ -1022,7 +1043,7 @@ have any access to PCASM. (Integrity of Participation / Non-Participation)</p>
 to represent itself
 as a participant,
 then it <strong>MUST NOT</strong>
-have exceptional access
+have &ldquo;exceptional&rdquo; access
 to PCASM,
 despite being
 the provider
@@ -1103,21 +1124,57 @@ are at:
 <section data-matter="back"><h1 id="bibliography-section">Bibliography</h1>
 <div class="bibliography">
 <dl>
+<dt class="bibliography-cite" id="CipherInd">[CipherInd]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Ciphertext indistinguishability</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">https://en.wikipedia.org/wiki/Ciphertext_indistinguishability</a>
+<date class="bibliography-date">2021</date>
+</dd>
+<dt class="bibliography-cite" id="Clipper">[Clipper]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Clipper chip</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Clipper_chip">https://en.wikipedia.org/wiki/Clipper_chip</a>
+<date class="bibliography-date">2021</date>
+</dd>
+<dt class="bibliography-cite" id="CryptoWars">[CryptoWars]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Crypto Wars</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Crypto_Wars">https://en.wikipedia.org/wiki/Crypto_Wars</a>
+<date class="bibliography-date">2021</date>
+</dd>
 <dt class="bibliography-cite" id="DualUse">[DualUse]</dt>
 <dd><span class="bibliography-author">Wikipedia</span>
 <span class="bibliography-title">Dual-use technology</span>
 <a class="bliography-target" href="https://en.wikipedia.org/wiki/Dual-use_technology">https://en.wikipedia.org/wiki/Dual-use_technology</a>
 <date class="bibliography-date">2021</date>
 </dd>
+<dt class="bibliography-cite" id="ExportControl">[ExportControl]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Export of cryptography from the United States</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era">https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era</a>
+<date class="bibliography-date">2021</date>
+</dd>
 <dt class="bibliography-cite" id="I-D.knodel-e2ee-definition">[I-D.knodel-e2ee-definition]</dt>
 <dd></dd>
+<dt class="bibliography-cite" id="Logjam">[Logjam]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Logjam</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Logjam_(computer_security)">https://en.wikipedia.org/wiki/Logjam_(computer_security)</a>
+<date class="bibliography-date">2021</date>
+</dd>
+<dt class="bibliography-cite" id="Meltdown">[Meltdown]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Meltdown</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)</a>
+<date class="bibliography-date">2021</date>
+</dd>
 <dt class="bibliography-cite" id="RFC2119">[RFC2119]</dt>
 <dd></dd>
 <dt class="bibliography-cite" id="RFC7686">[RFC7686]</dt>
 <dd></dd>
 <dt class="bibliography-cite" id="RFC8174">[RFC8174]</dt>
 <dd></dd>
-<dt class="bibliography-cite" id="RicochetRefresh">[RicochetRefresh]</dt>
+<dt class="bibliography-cite" id="Ricochet">[Ricochet]</dt>
 <dd><span class="bibliography-author">BlueprintForFreeSpeech</span>
 <span class="bibliography-title">Ricochet Refresh</span>
 <a class="bliography-target" href="https://www.ricochetrefresh.net">https://www.ricochetrefresh.net</a>
@@ -1129,6 +1186,12 @@ are at:
 <span class="bibliography-title">The End-to-End Argument and Application Design: The Role of Trust</span>
 <a class="bliography-target" href="https://www.repository.law.indiana.edu/fclj/vol63/iss2/3">https://www.repository.law.indiana.edu/fclj/vol63/iss2/3</a>
 <date class="bibliography-date">2011</date>
+</dd>
+<dt class="bibliography-cite" id="Spectre">[Spectre]</dt>
+<dd><span class="bibliography-author">Wikipedia</span>
+<span class="bibliography-title">Spectre</span>
+<a class="bliography-target" href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)</a>
+<date class="bibliography-date">2021</date>
 </dd>
 <dt class="bibliography-cite" id="TrustedComputingBase">[TrustedComputingBase]</dt>
 <dd><span class="bibliography-author">Wikipedia</span>

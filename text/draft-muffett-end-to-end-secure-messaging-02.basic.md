@@ -25,9 +25,9 @@ organization = "Security Researcher"
 
 .# Abstract
 
-This document defines End-to-End Secure Messaging in terms of the behaviours that **MUST** be
-exhibited by software that claims to implement it, or which claims to implement that subset which is
-known as End-to-End Encrypted Messaging.
+This document defines End-to-End Secure Messaging in terms of behaviours that **MUST** be exhibited
+by software that claims to implement it, or which claims to implement that subset which is known as
+End-to-End Encrypted Messaging.
 
 {mainmatter}
 
@@ -35,19 +35,19 @@ known as End-to-End Encrypted Messaging.
 
 End-to-End Secure Messaging (E2ESM) is a mechanism which offers a digital analogue of "closed
 distribution lists" for sharing message content amongst a set of participants, where all
-participants are visible to each other and where non-participants are excluded from access to
-message content.
+participants are visible to each other and where non-participants are completely excluded from
+access to message content.
 
 In client-server network models it is common to implement E2ESM by means of encryption, in order
 to obscure content at rest upon a central server. So therefore E2ESM is often narrowly regarded in
 terms of "end-to-end encryption".
 
-Other architectural approaches exist - for instance [@RicochetRefresh] which implements closed
-distribution by using secure point-to-point [@RFC7686] networking to literally restrict the
-distribution of content to relevant participants.
+Other architectural approaches exist - for instance [@Ricochet] which implements closed distribution
+by using secure point-to-point [@RFC7686] networking to literally restrict the distribution of
+content to relevant participants.
 
 Therefore we describe E2ESM in terms of functional behaviours of the software rather than in terms
-of its implementation goals and technologies.
+of its implementation technologies and architecture.
 
 ## Comments
 
@@ -64,9 +64,9 @@ here.
 # Requirements for an End-to-End Secure Messenger
 
 Software which functions as an End-to-End Secure Messenger **MUST** satisfy the following
-principles, and **MUST** satisfy these principles in respect of the provided definitions for all
-forms of communication and data-sharing that the software offers. The software **MAY** comprise
-either a complete application, or a clearly defined subset of functionality within a larger
+principles, and **MUST** satisfy these principles in respect of the provided definitions for
+all forms of communication and data-sharing that the software offers. The E2ESM software **MAY**
+comprise either a complete application, or a clearly defined subset of functionality within a larger
 application.
 
 Any software that does not satisfy these requirements is not an End-to-End Secure Messenger, and
@@ -84,7 +84,7 @@ have offered) end-to-end security; these examples include:
 
 3.  Ricochet Messenger
 
-4.  PGP-Encrypted Email (in limited circumstances)
+4.  PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist
 
 Further context for several of these definitions can also be found in the rationales section, below.
 
@@ -110,7 +110,8 @@ of the content.
 
 For block encryption of content, Size PCASM is the unpadded size of the content.
 
-For stream encryption of content, Size PCASM is currently undefined (TBD)
+For stream encryption of content, Size PCASM is currently undefined (TODO, would benefit from
+broader input)
 
 For transport encryption of content, exact Size PCASM **SHOULD NOT** be observable or inferable.
 
@@ -149,7 +150,7 @@ The union set of sender and recipients for any given message are the "participan
 It follows that for any given message, all entities that exist outside of the participant set will
 be "non-participants" in respect of that message.
 
-## Conversation, Group, De-/Centralised
+## Conversation, Group, Centralised & Decentralised
 
 A "conversation" is a sequence of one or more messages, and the responses or replies to them, over a
 period of time, amongst a constant or evolving set of participants.
@@ -161,9 +162,9 @@ In "centralised" E2ESM such as WhatsApp or Signal, the software **MAY** offer co
 conversation contexts that provide prefabricated sets of recipients for the client to utilise when a
 message is composed or sent.
 
-In "decentralised" E2ESM such as PGP-Encrypted Email or (somewhat) Ricochet, the recipients of each
-message are individually determined by each sender at the point of composition; however "group"
-metadata may also exist, in terms of (e.g.) email addressees or subject lines.
+In "decentralised" E2ESM such as PGP-Encrypted Email or Ricochet the recipients of each message are
+individually determined by each sender at the point of composition; however "group" metadata may
+also exist, in terms of (e.g.) email addressees or subject lines.
 
 ## Backdoor
 
@@ -235,13 +236,20 @@ purposes.
 Content PCASM **MUST** be protected as it comprises that which is "closed" from general
 distribution.
 
+The test for measuring this is (intended to be) modeled upon ciphertext indistinguishability
+[@CipherInd]
+
 ## Why: Size PCASM
 
 Exact size PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM.
 
+The test for measuring this is (intended) to address risk of content becoming evident via plaintext
+length.
+
 ## Why: Analytic PCASM
 
-Analytic PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM.
+Analytic PCASM **MUST** be protected as it **MAY** offer insight into Content PCASM, for instance
+the content sharing features with other, specimen, known plaintext content.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
@@ -283,10 +291,10 @@ In software engineering there is a perpetual tension between the concepts of "fe
 - that it is not feasible to firmly and completely ascribe "intention" to any hardware or software
 mechanism.
 
-The information security community has experienced a historical spectrum of mechanisms which have
-assisted non-participant access to PCASM. These have variously been named as "export-grade key
-restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and Meltdown), "law enforcement
-access fields" (Clipper), and "key escrow" (Crypto Wars).
+The information security community has experienced a historical spectrum of mechanisms which
+have assisted non-participant access to PCASM. These have variously been named as "export-grade
+key restrictions" ([@ExportControl], then [@Logjam]), "side channel attacks" ([@Spectre] and
+[@Meltdown]), "law enforcement access fields" [@Clipper], and "key escrow" [@CryptoWars].
 
 All of these terms combine an "access facilitation mechanism" with an "intention or opportunity" -
 and for all of them an access facilitation mechanism is first **REQUIRED**.
@@ -312,9 +320,11 @@ removed from the similar and established term "side channel".
 The "ends" of "end to end" are the participants; for a message to be composed to be exclusively
 accessible to that set of participants, all participants must be visible.
 
-For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP" or (to a limited extent)
-"Ricochet", the set of participants is fixed by the author at the time of individual message
-composition, and **MUST** be visible to all participants.
+TODO: EXCISE DUPLICATION IN NEXT PARA
+
+For decentralised "virtual point-to-point" E2ESM solutions such as PGP-Encrypted Email or Ricochet,
+the set of participants is fixed by the author at the time of individual message composition, and
+**MUST** be visible to all participants.
 
 For "centralised" E2ESM solutions such as Signal or WhatsApp, the set of participants is a "group
 context" shared amongst all participants and at the time of individual message composition it
@@ -482,7 +492,7 @@ participant or as a non-participant. (Transparency of Participation)
 If FooBook decides to represent itself as a non-participant, then it **MUST NOT** have any access to
 PCASM. (Integrity of Participation / Non-Participation)
 
-If FooBook decides to represent itself as a participant, then it **MUST NOT** have exceptional
+If FooBook decides to represent itself as a participant, then it **MUST NOT** have "exceptional"
 access to PCASM, despite being the provider of the service - for instance via raw database access
 or network sniffing. However it **MAY** participate in E2ESM conversations in a "normal" way, and
 thereby have "normal" access to intra-conversation PCASM. (Integrity of Participation, Equality of
@@ -532,9 +542,41 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
-<reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
+<reference anchor="Ricochet" target="https://www.ricochetrefresh.net">
    <front>
-      <title>Trusted Computing Base</title>
+      <title>Ricochet Refresh</title>
+      <author fullname="BlueprintForFreeSpeech"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
+   <front>
+      <title>BREACH</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
+   <front>
+      <title>Ciphertext indistinguishability</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="Clipper" target="https://en.wikipedia.org/wiki/Clipper_chip">
+   <front>
+      <title>Clipper chip</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="CryptoWars" target="https://en.wikipedia.org/wiki/Crypto_Wars">
+   <front>
+      <title>Crypto Wars</title>
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
@@ -556,10 +598,34 @@ This document is entirely composed of security considerations.
    </front>
 </reference>
 
-<reference anchor="RicochetRefresh" target="https://www.ricochetrefresh.net">
+<reference anchor="Logjam" target="https://en.wikipedia.org/wiki/Logjam_(computer_security)">
    <front>
-      <title>Ricochet Refresh</title>
-      <author fullname="BlueprintForFreeSpeech"></author>
+      <title>Logjam</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="Meltdown" target="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">
+   <front>
+      <title>Meltdown</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="Spectre" target="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">
+   <front>
+      <title>Spectre</title>
+      <author fullname="Wikipedia"></author>
+      <date year="2021"></date>
+   </front>
+</reference>
+
+<reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
+   <front>
+      <title>Trusted Computing Base</title>
+      <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
 </reference>

@@ -13,7 +13,7 @@ Expires: 8 January 2022
 
 Abstract
 
-   This document defines End-to-End Secure Messaging in terms of the
+   This document defines End-to-End Secure Messaging in terms of
    behaviours that MUST be exhibited by software that claims to
    implement it, or which claims to implement that subset which is known
    as End-to-End Encrypted Messaging.
@@ -74,7 +74,7 @@ Table of Contents
      3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   5
      3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
-     3.6.  Conversation, Group, De-/Centralised  . . . . . . . . . .   6
+     3.6.  Conversation, Group, Centralised & Decentralised  . . . .   6
      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   6
    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.1.  Transparency of Participation . . . . . . . . . . . . . .   6
@@ -119,29 +119,29 @@ Internet-Draft                    e2esm                        July 2021
    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
    12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
    13. Informative References  . . . . . . . . . . . . . . . . . . .  15
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
 
 1.  Introduction
 
    End-to-End Secure Messaging (E2ESM) is a mechanism which offers a
    digital analogue of "closed distribution lists" for sharing message
    content amongst a set of participants, where all participants are
-   visible to each other and where non-participants are excluded from
-   access to message content.
+   visible to each other and where non-participants are completely
+   excluded from access to message content.
 
    In client-server network models it is common to implement E2ESM by
    means of encryption, in order to obscure content at rest upon a
    central server.  So therefore E2ESM is often narrowly regarded in
    terms of "end-to-end encryption".
 
-   Other architectural approaches exist - for instance [RicochetRefresh]
-   which implements closed distribution by using secure point-to-point
+   Other architectural approaches exist - for instance [Ricochet] which
+   implements closed distribution by using secure point-to-point
    [RFC7686] networking to literally restrict the distribution of
    content to relevant participants.
 
    Therefore we describe E2ESM in terms of functional behaviours of the
-   software rather than in terms of its implementation goals and
-   technologies.
+   software rather than in terms of its implementation technologies and
+   architecture.
 
 1.1.  Comments
 
@@ -175,9 +175,9 @@ Internet-Draft                    e2esm                        July 2021
    Software which functions as an End-to-End Secure Messenger MUST
    satisfy the following principles, and MUST satisfy these principles
    in respect of the provided definitions for all forms of communication
-   and data-sharing that the software offers.  The software MAY comprise
-   either a complete application, or a clearly defined subset of
-   functionality within a larger application.
+   and data-sharing that the software offers.  The E2ESM software MAY
+   comprise either a complete application, or a clearly defined subset
+   of functionality within a larger application.
 
    Any software that does not satisfy these requirements is not an End-
    to-End Secure Messenger, and it does not implement End-to-End Secure
@@ -195,7 +195,8 @@ Internet-Draft                    e2esm                        July 2021
 
    3.  Ricochet Messenger
 
-   4.  PGP-Encrypted Email (in limited circumstances)
+   4.  PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a
+       maillist
 
    Further context for several of these definitions can also be found in
    the rationales section, below.
@@ -220,7 +221,6 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-
 Muffett                  Expires 8 January 2022                 [Page 4]
 
 Internet-Draft                    e2esm                        July 2021
@@ -237,7 +237,7 @@ Internet-Draft                    e2esm                        July 2021
    the content.
 
    For stream encryption of content, Size PCASM is currently undefined
-   (TBD)
+   (TODO, would benefit from broader input)
 
    For transport encryption of content, exact Size PCASM SHOULD NOT be
    observable or inferable.
@@ -291,7 +291,7 @@ Internet-Draft                    e2esm                        July 2021
    outside of the participant set will be "non-participants" in respect
    of that message.
 
-3.6.  Conversation, Group, De-/Centralised
+3.6.  Conversation, Group, Centralised & Decentralised
 
    A "conversation" is a sequence of one or more messages, and the
    responses or replies to them, over a period of time, amongst a
@@ -305,10 +305,10 @@ Internet-Draft                    e2esm                        July 2021
    prefabricated sets of recipients for the client to utilise when a
    message is composed or sent.
 
-   In "decentralised" E2ESM such as PGP-Encrypted Email or (somewhat)
-   Ricochet, the recipients of each message are individually determined
-   by each sender at the point of composition; however "group" metadata
-   may also exist, in terms of (e.g.) email addressees or subject lines.
+   In "decentralised" E2ESM such as PGP-Encrypted Email or Ricochet the
+   recipients of each message are individually determined by each sender
+   at the point of composition; however "group" metadata may also exist,
+   in terms of (e.g.) email addressees or subject lines.
 
 3.7.  Backdoor
 
@@ -408,15 +408,22 @@ Internet-Draft                    e2esm                        July 2021
    Content PCASM MUST be protected as it comprises that which is
    "closed" from general distribution.
 
+   The test for measuring this is (intended to be) modeled upon
+   ciphertext indistinguishability [CipherInd]
+
 5.2.  Why: Size PCASM
 
    Exact size PCASM MUST be protected as it MAY offer insight into
    Content PCASM.
 
+   The test for measuring this is (intended) to address risk of content
+   becoming evident via plaintext length.
+
 5.3.  Why: Analytic PCASM
 
    Analytic PCASM MUST be protected as it MAY offer insight into Content
-   PCASM.
+   PCASM, for instance the content sharing features with other,
+   specimen, known plaintext content.
 
 5.4.  Why: Conversation Metadata as OPTIONAL PCASM
 
@@ -433,6 +440,16 @@ Internet-Draft                    e2esm                        July 2021
    The term "participant" in this document exists to supersede the more
    vague notion of "end" in the phrase "end-to-end".
 
+
+
+
+
+
+Muffett                  Expires 8 January 2022                 [Page 8]
+
+Internet-Draft                    e2esm                        July 2021
+
+
    Entities, and thus participants, are defined in terms of their
    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
    store, forward, or access messages by means that are outside of the
@@ -442,14 +459,6 @@ Internet-Draft                    e2esm                        July 2021
    their TCB, is the foundation for all other trust in E2ESM.  This
    develops from the basic definitions of a [TrustedComputingBase] and
    from the concepts of "trust-to-trust" discussed in [RoleOfTrust].
-
-
-
-Muffett                  Expires 8 January 2022                 [Page 8]
-
-Internet-Draft                    e2esm                        July 2021
-
-
    Failure of a participant to maintain integrity or control over their
    TCB should not be considered a failure of an E2ESM that connects it
    to other participants.
@@ -479,22 +488,13 @@ Internet-Draft                    e2esm                        July 2021
    The information security community has experienced a historical
    spectrum of mechanisms which have assisted non-participant access to
    PCASM.  These have variously been named as "export-grade key
-   restrictions" (TLS, then Logjam), "side channel attacks" (Spectre and
-   Meltdown), "law enforcement access fields" (Clipper), and "key
-   escrow" (Crypto Wars).
+   restrictions" ([ExportControl], then [Logjam]), "side channel
+   attacks" ([Spectre] and [Meltdown]), "law enforcement access fields"
+   [Clipper], and "key escrow" [CryptoWars].
 
    All of these terms combine an "access facilitation mechanism" with an
    "intention or opportunity" - and for all of them an access
    facilitation mechanism is first REQUIRED.
-
-   An access facilitation mechanism is a "door", and is inherently
-   [DualUse].  Because the goal of E2ESM is to limit access to PCASM
-   exclusively to a defined set of participants, then the intended means
-   of access is clearly the "front door"; and any other access mechanism
-   is a "back door".
-
-
-
 
 
 
@@ -505,6 +505,12 @@ Muffett                  Expires 8 January 2022                 [Page 9]
 
 Internet-Draft                    e2esm                        July 2021
 
+
+   An access facilitation mechanism is a "door", and is inherently
+   [DualUse].  Because the goal of E2ESM is to limit access to PCASM
+   exclusively to a defined set of participants, then the intended means
+   of access is clearly the "front door"; and any other access mechanism
+   is a "back door".
 
    If the term "back door" is considered innately pejorative,
    alternative, uncertain constructions such as "illegitimate access
@@ -528,10 +534,12 @@ Internet-Draft                    e2esm                        July 2021
    composed to be exclusively accessible to that set of participants,
    all participants must be visible.
 
-   For "virtual peer-to-peer" E2ESM solutions such as "Email with PGP"
-   or (to a limited extent) "Ricochet", the set of participants is fixed
-   by the author at the time of individual message composition, and MUST
-   be visible to all participants.
+   TODO: EXCISE DUPLICATION IN NEXT PARA
+
+   For decentralised "virtual point-to-point" E2ESM solutions such as
+   PGP-Encrypted Email or Ricochet, the set of participants is fixed by
+   the author at the time of individual message composition, and MUST be
+   visible to all participants.
 
    For "centralised" E2ESM solutions such as Signal or WhatsApp, the set
    of participants is a "group context" shared amongst all participants
@@ -545,14 +553,6 @@ Internet-Draft                    e2esm                        July 2021
    that PCASM will only be available to the participants ("ends") at the
    time the message was composed.
 
-   If this was not the intention we would deduce that an E2ESM would
-   automatically make past content available to newly-added conversation
-   participants, thereby breaking forward secrecy.  This is not a
-   characteristic of any E2ESM, but it is characteristic of several non-
-   E2ESM.  Therefore the converse is true.
-
-
-
 
 
 
@@ -561,6 +561,12 @@ Muffett                  Expires 8 January 2022                [Page 10]
 
 Internet-Draft                    e2esm                        July 2021
 
+
+   If this was not the intention we would deduce that an E2ESM would
+   automatically make past content available to newly-added conversation
+   participants, thereby breaking forward secrecy.  This is not a
+   characteristic of any E2ESM, but it is characteristic of several non-
+   E2ESM.  Therefore the converse is true.
 
 5.9.  Why: Equality of Participation
 
@@ -604,12 +610,6 @@ Internet-Draft                    e2esm                        July 2021
    access by forcing a platform to silently add extra means of PCASM
    access to an existing participant on behalf of that non-participant.
 
-   Therefore to be an E2ESM the platform MUST provide the described
-   management of participant clients and devices.
-
-
-
-
 
 
 
@@ -617,6 +617,9 @@ Muffett                  Expires 8 January 2022                [Page 11]
 
 Internet-Draft                    e2esm                        July 2021
 
+
+   Therefore to be an E2ESM the platform MUST provide the described
+   management of participant clients and devices.
 
 6.  OPTIONAL Features of E2ESM
 
@@ -664,15 +667,14 @@ Internet-Draft                    e2esm                        July 2021
 
    1.  The content is "Hello, world."
 
-   2.  The content starts with the word "Hello"
-
-
 
 
 Muffett                  Expires 8 January 2022                [Page 12]
 
 Internet-Draft                    e2esm                        July 2021
 
+
+   2.  The content starts with the word "Hello"
 
    3.  The top bit of the first byte of the content, is zero
 
@@ -720,8 +722,6 @@ Internet-Draft                    e2esm                        July 2021
 
    4.  group topics
 
-   5.  group icons
-
 
 
 
@@ -729,6 +729,8 @@ Muffett                  Expires 8 January 2022                [Page 13]
 
 Internet-Draft                    e2esm                        July 2021
 
+
+   5.  group icons
 
    6.  group participant lists
 
@@ -764,7 +766,7 @@ Internet-Draft                    e2esm                        July 2021
    Non-Participation)
 
    If FooBook decides to represent itself as a participant, then it MUST
-   NOT have exceptional access to PCASM, despite being the provider of
+   NOT have "exceptional" access to PCASM, despite being the provider of
    the service - for instance via raw database access or network
    sniffing.  However it MAY participate in E2ESM conversations in a
    "normal" way, and thereby have "normal" access to intra-conversation
@@ -773,11 +775,9 @@ Internet-Draft                    e2esm                        July 2021
    FooBook MAY retain means to eject reported abusive participants from
    a conversation.  (Decrease in Closure of Participation)
 
-   FooBook MUST NOT retain means to forcibly insert new participants
-   into a conversation.  For clarity: this specification does not
-   recognise any notion of "atomic" exchange of one participant with
-   another, treating it as an ejection, followed by an "illegitimate"
-   insertion.  (Increase in Closure of Participation)
+
+
+
 
 
 
@@ -785,6 +785,12 @@ Muffett                  Expires 8 January 2022                [Page 14]
 
 Internet-Draft                    e2esm                        July 2021
 
+
+   FooBook MUST NOT retain means to forcibly insert new participants
+   into a conversation.  For clarity: this specification does not
+   recognise any notion of "atomic" exchange of one participant with
+   another, treating it as an ejection, followed by an "illegitimate"
+   insertion.  (Increase in Closure of Participation)
 
    FooBook MUST enable the user to observe and manage the complete state
    of their [TrustedComputingBase] with respect to their FooBook
@@ -815,8 +821,34 @@ Internet-Draft                    e2esm                        July 2021
 
 13.  Informative References
 
+   [CipherInd]
+              Wikipedia, "Ciphertext indistinguishability", 2021,
+              <https://en.wikipedia.org/wiki/
+              Ciphertext_indistinguishability>.
+
+   [Clipper]  Wikipedia, "Clipper chip", 2021,
+              <https://en.wikipedia.org/wiki/Clipper_chip>.
+
+   [CryptoWars]
+              Wikipedia, "Crypto Wars", 2021,
+              <https://en.wikipedia.org/wiki/Crypto_Wars>.
+
+
+
+
+
+Muffett                  Expires 8 January 2022                [Page 15]
+
+Internet-Draft                    e2esm                        July 2021
+
+
    [DualUse]  Wikipedia, "Dual-use technology", 2021,
               <https://en.wikipedia.org/wiki/Dual-use_technology>.
+
+   [ExportControl]
+              Wikipedia, "Export of cryptography from the United
+              States", 2021, <https://en.wikipedia.org/wiki/Export_of_cr
+              yptography_from_the_United_States#Cold_War_era>.
 
    [I-D.knodel-e2ee-definition]
               Knodel, M., Baker, F., Kolkman, O., Celi, S., and G.
@@ -824,6 +856,13 @@ Internet-Draft                    e2esm                        July 2021
               Progress, Internet-Draft, draft-knodel-e2ee-definition-00,
               22 February 2021, <https://tools.ietf.org/html/draft-
               knodel-e2ee-definition-00>.
+
+   [Logjam]   Wikipedia, "Logjam", 2021, <https://en.wikipedia.org/wiki/
+              Logjam_(computer_security)>.
+
+   [Meltdown] Wikipedia, "Meltdown", 2021,
+              <https://en.wikipedia.org/wiki/
+              Meltdown_(security_vulnerability)>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -834,20 +873,11 @@ Internet-Draft                    e2esm                        July 2021
               Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
               2015, <https://www.rfc-editor.org/info/rfc7686>.
 
-
-
-
-Muffett                  Expires 8 January 2022                [Page 15]
-
-Internet-Draft                    e2esm                        July 2021
-
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [RicochetRefresh]
-              BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
+   [Ricochet] BlueprintForFreeSpeech, "Ricochet Refresh", 2021,
               <https://www.ricochetrefresh.net>.
 
    [RoleOfTrust]
@@ -855,6 +885,18 @@ Internet-Draft                    e2esm                        July 2021
               Argument and Application Design: The Role of Trust", 2011,
               <https://www.repository.law.indiana.edu/fclj/vol63/
               iss2/3>.
+
+   [Spectre]  Wikipedia, "Spectre", 2021,
+              <https://en.wikipedia.org/wiki/
+              Spectre_(security_vulnerability)>.
+
+
+
+
+Muffett                  Expires 8 January 2022                [Page 16]
+
+Internet-Draft                    e2esm                        July 2021
+
 
    [TrustedComputingBase]
               Wikipedia, "Trusted Computing Base", 2021,
@@ -893,4 +935,18 @@ Author's Address
 
 
 
-Muffett                  Expires 8 January 2022                [Page 16]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muffett                  Expires 8 January 2022                [Page 17]

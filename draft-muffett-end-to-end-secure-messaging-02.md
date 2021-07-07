@@ -27,7 +27,7 @@ organization = "Security Researcher"
 
 This document
 defines End-to-End Secure Messaging
-in terms of the behaviours
+in terms of behaviours
 that **MUST** be exhibited
 by software
 that claims to implement it,
@@ -48,7 +48,7 @@ amongst a set of participants,
 where all participants
 are visible to each other
 and where non-participants
-are excluded
+are completely excluded
 from access to message content.
 
 In client-server network models
@@ -63,7 +63,7 @@ narrowly regarded
 in terms of "end-to-end encryption".
 
 Other architectural approaches exist -
-for instance [@RicochetRefresh]
+for instance [@Ricochet]
 which implements
 closed distribution
 by using
@@ -79,8 +79,12 @@ functional behaviours
 of the software
 rather than
 in terms
-of its implementation
-goals and technologies.
+of its
+implementation
+technologies
+and
+architecture.
+
 
 ## Comments
 
@@ -108,7 +112,7 @@ End-to-End Secure Messenger
 for all forms of communication
 and data-sharing
 that the software offers.
-The software
+The E2ESM software
 **MAY** comprise
 either a complete application,
 or a clearly defined subset
@@ -143,7 +147,7 @@ include:
 1. Signal Messenger
 1. WhatsApp Messenger
 1. Ricochet Messenger
-1. PGP-Encrypted Email (in limited circumstances)
+1. PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist
 
 Further context
 for several of
@@ -196,7 +200,7 @@ For block encryption of content,
 Size PCASM is the unpadded size of the content.
 
 For stream encryption of content,
-Size PCASM is currently undefined (TBD)
+Size PCASM is currently undefined (TODO, would benefit from broader input)
 
 For transport encryption of content,
 exact Size PCASM
@@ -298,7 +302,7 @@ the participant set
 will be "non-participants"
 in respect of that message.
 
-## Conversation, Group, De-/Centralised
+## Conversation, Group, Centralised & Decentralised
 
 A "conversation"
 is a sequence
@@ -332,7 +336,7 @@ is composed or sent.
 
 In "decentralised" E2ESM
 such as PGP-Encrypted Email
-or (somewhat) Ricochet,
+or Ricochet
 the recipients of each message
 are individually determined
 by each sender
@@ -512,6 +516,11 @@ as it comprises
 that which is
 "closed" from general distribution.
 
+The test
+for measuring this
+is (intended to be) modeled upon
+ciphertext indistinguishability [@CipherInd]
+
 ## Why: Size PCASM
 
 Exact size PCASM
@@ -520,13 +529,25 @@ as it **MAY**
 offer insight into
 Content PCASM.
 
+The test
+for measuring this
+is (intended) to address
+risk of content
+becoming evident
+via plaintext length.
+
 ## Why: Analytic PCASM
 
 Analytic PCASM
 **MUST** be protected
 as it **MAY**
 offer insight into
-Content PCASM.
+Content PCASM,
+for instance
+the content
+sharing features
+with other, specimen,
+known plaintext content.
 
 ## Why: Conversation Metadata as **OPTIONAL** PCASM
 
@@ -644,10 +665,10 @@ which have assisted
 non-participant access to PCASM.
 These have
 variously been named as
-"export-grade key restrictions" (TLS, then Logjam),
-"side channel attacks" (Spectre and Meltdown),
-"law enforcement access fields" (Clipper), and
-"key escrow" (Crypto Wars).
+"export-grade key restrictions" ([@ExportControl], then [@Logjam]),
+"side channel attacks" ([@Spectre] and [@Meltdown]),
+"law enforcement access fields" [@Clipper], and
+"key escrow" [@CryptoWars].
 
 All of
 these terms
@@ -719,13 +740,15 @@ to be exclusively accessible
 to that set of participants,
 all participants must be visible.
 
+
+TODO: EXCISE DUPLICATION IN NEXT PARA
+
 For
-"virtual peer-to-peer"
+decentralised
+"virtual point-to-point"
 E2ESM solutions
-such as
-"Email with PGP"
-or
-(to a limited extent) "Ricochet",
+such as PGP-Encrypted Email
+or Ricochet,
 the set of participants
 is fixed
 by the author
@@ -1028,7 +1051,7 @@ If FooBook decides
 to represent itself
 as a participant,
 then it **MUST NOT**
-have exceptional access
+have "exceptional" access
 to PCASM,
 despite being
 the provider
@@ -1117,34 +1140,90 @@ This document is entirely composed of security considerations.
 	</front>
 </reference>
 
-<reference anchor='TrustedComputingBase' target='https://en.wikipedia.org/wiki/Trusted_computing_base'>
-	<front>
-		<title>Trusted Computing Base</title>
-		<author fullname="Wikipedia"> </author>
-		<date year='2021'/>
-	</front>
-</reference>
-
-<reference anchor='DualUse' target='https://en.wikipedia.org/wiki/Dual-use_technology'>
-	<front>
-		<title>Dual-use technology</title>
-		<author fullname="Wikipedia"> </author>
-		<date year='2021'/>
-	</front>
-</reference>
-
-<reference anchor='ExportControl' target='https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era'>
-	<front>
-		<title>Export of cryptography from the United States</title>
-		<author fullname="Wikipedia"> </author>
-		<date year='2021'/>
-	</front>
-</reference>
-
-<reference anchor='RicochetRefresh' target='https://www.ricochetrefresh.net'>
+<reference anchor='Ricochet' target='https://www.ricochetrefresh.net'>
 	<front>
 		<title>Ricochet Refresh</title>
 		<author fullname="BlueprintForFreeSpeech"> </author>
 		<date year='2021'/>
 	</front>
+</reference>
+
+<reference anchor='BREACH' target='https://en.wikipedia.org/wiki/BREACH'>
+    <front>
+        <title>BREACH</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='CipherInd' target='https://en.wikipedia.org/wiki/Ciphertext_indistinguishability'>
+    <front>
+        <title>Ciphertext indistinguishability</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='Clipper' target='https://en.wikipedia.org/wiki/Clipper_chip'>
+    <front>
+        <title>Clipper chip</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='CryptoWars' target='https://en.wikipedia.org/wiki/Crypto_Wars'>
+    <front>
+        <title>Crypto Wars</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='DualUse' target='https://en.wikipedia.org/wiki/Dual-use_technology'>
+    <front>
+        <title>Dual-use technology</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='ExportControl' target='https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era'>
+    <front>
+        <title>Export of cryptography from the United States</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='Logjam' target='https://en.wikipedia.org/wiki/Logjam_(computer_security)'>
+    <front>
+        <title>Logjam</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='Meltdown' target='https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)'>
+    <front>
+        <title>Meltdown</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='Spectre' target='https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)'>
+    <front>
+        <title>Spectre</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
+</reference>
+
+<reference anchor='TrustedComputingBase' target='https://en.wikipedia.org/wiki/Trusted_computing_base'>
+    <front>
+        <title>Trusted Computing Base</title>
+        <author fullname="Wikipedia"></author>
+        <date year='2021'/>
+    </front>
 </reference>
