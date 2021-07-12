@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- name="GENERATOR" content="github.com/mmarkdown/mmark Mmark Markdown Processor - mmark.miek.nl" -->
+<rfc version="3" ipr="trust200902" docName="draft-muffett-end-to-end-secure-messaging-04" submissionType="IETF" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" consensus="true">
+
+<front>
+<title abbrev="e2esm">A Duck Test for End-to-End Secure Messaging</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
+<author initials="A." surname="Muffett" fullname="Alec Muffett"><organization>Security Researcher</organization><address><postal><street></street>
+</postal><email>alec.muffett@gmail.com</email>
+</address></author>
+<date/>
+<area>Internet</area>
+<workgroup>individual submission</workgroup>
+<keyword>messaging</keyword>
+<keyword>end to end</keyword>
+<keyword>end to end encryption</keyword>
+<keyword>end to end secure</keyword>
+<keyword>end to end security</keyword>
+<keyword>encryption</keyword>
+<keyword>security</keyword>
+
+<abstract>
+<t>This document
+defines End-to-End Secure Messaging
+in terms of behaviours
+that <bcp14>MUST</bcp14> be exhibited
+by software
+that claims to implement it,
+or which claims to implement
+that subset which is known as
+End-to-End Encrypted Messaging.</t>
+</abstract>
+
+</front>
+
+<middle>
+
+<section anchor="introduction"><name>Introduction</name>
+<t>End-to-End Secure Messaging (E2ESM)
+is a mechanism
+which offers a digital analogue
+of &quot;closed distribution lists&quot;
+for sharing message content
+amongst a set of participants,
+where all participants
+are visible to each other
+and where non-participants
+are completely excluded
+from access to message content.</t>
+<t>In client-server-client network models
+it is common to implement E2ESM
+by means of encryption,
+in order to obscure
+content at rest
+upon a central server.
+So therefore E2ESM
+is often
+narrowly regarded
+in terms of &quot;end-to-end encryption&quot;.</t>
+<t>Other architectural approaches exist -
+for instance <xref target="Ricochet"></xref>
+which implements
+closed distribution
+by using
+secure point-to-point <xref target="RFC7686"></xref> networking
+to literally restrict
+the distribution
+of content
+to relevant participants.</t>
+<t>Therefore we describe E2ESM
+in terms of
+functional behaviours
+of the software
+rather than
+in terms
+of its
+implementation
+technologies
+and
+architecture.</t>
+
+<section anchor="comments"><name>Comments</name>
+<t>Comments are solicited
+and should be addressed to
+the working group's
+mailing list
+and/or the author(s).</t>
+</section>
+
+<section anchor="notational-conventions"><name>Notational Conventions</name>
+<t>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
+&quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;NOT RECOMMENDED&quot;, &quot;MAY&quot;, and
+&quot;OPTIONAL&quot; in this document are to be interpreted as described in BCP
+14 <xref target="RFC2119"></xref> <xref target="RFC8174"></xref> when, and only when, they appear in all
+capitals, as shown here.</t>
+</section>
+</section>
+
+<section anchor="requirements-for-an-end-to-end-secure-messenger"><name>Requirements for an End-to-End Secure Messenger</name>
+<t>Software which functions
+as an
+End-to-End Secure Messenger
+<bcp14>MUST</bcp14> satisfy the following principles, and
+<bcp14>MUST</bcp14> satisfy these principles in respect of the provided definitions
+for all forms of communication
+and data-sharing
+that the software offers.
+The E2ESM software
+<bcp14>MAY</bcp14> comprise
+either a complete application,
+or a clearly defined subset
+of functionality
+within a
+larger application.</t>
+<t>Any software
+that does not
+satisfy these requirements
+is not an
+End-to-End Secure Messenger,
+and it does not implement
+End-to-End Secure Messaging,
+nor does it implement
+End-to-End Encrypted Messaging.</t>
+</section>
+
+<section anchor="definitions"><name>Definitions</name>
+<t>These definitions
+are drafted
+in respect of
+many examples
+of software
+commonly held
+to offer
+(or have offered)
+end-to-end security;
+these examples
+include:</t>
+
+<ol>
+<li>Signal Messenger</li>
+<li>WhatsApp Messenger</li>
+<li>Ricochet Messenger</li>
+<li>PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist</li>
+</ol>
+<t>Further context
+for several of
+these definitions
+can also be found
+in the rationales section,
+below.</t>
+<t>For the avoidance of doubt
+we define a &quot;messenger&quot;
+as a software solution
+which enables communication
+between two or more entities,
+without offering
+newly-added participants
+retrospective access
+to content
+which was previously sent
+by prior participants.</t>
+<t>This echoes
+the distinction
+between
+a &quot;maillist&quot;
+versus
+a &quot;maillist archive&quot;
+or &quot;web forum&quot;;
+frequently these solutions
+are integrated
+but we only consider the maillist
+as a &quot;messenger&quot; per se.</t>
+<t>Use cases
+of a &quot;messenger&quot;
+may include
+sending and receiving
+any or all
+of:</t>
+
+<ol>
+<li>UNICODE or ASCII messages</li>
+<li>images, video files or audio files</li>
+<li>one-way streaming video or audio</li>
+<li>two-way streaming video or audio, as in live calls</li>
+</ol>
+
+<section anchor="message-and-platform"><name>Message and Platform</name>
+<t>A &quot;message&quot;
+is information
+of 0 or more bits,
+to be communicated.</t>
+<t>Messages possess
+both plaintext &quot;content&quot;,
+and also &quot;metadata&quot;
+which describes the content.</t>
+<t>A &quot;platform&quot;
+is a specific instance of software
+which exists
+for the purpose
+of routing
+or exchanging
+messages.</t>
+</section>
+
+<section anchor="plaintext-content-and-sensitive-metadata-pcasm"><name>Plaintext Content and Sensitive Metadata (PCASM)</name>
+<t>The &quot;PCASM&quot;
+of a message
+is defined
+as the
+&quot;plaintext content and sensitive metadata&quot;
+of that message,
+comprising any or all of:</t>
+
+<section anchor="content-pcasm"><name>Content PCASM</name>
+<t>Content PCASM
+is any data
+that can offer
+better than 50-50 certainty
+regarding the value of
+any bit
+of the content.
+See &quot;Rationales&quot; for more.</t>
+</section>
+
+<section anchor="size-pcasm"><name>Size PCASM</name>
+<t>For block encryption of content,
+Size PCASM is the unpadded size of the content.</t>
+<t>For stream encryption of content,
+Size PCASM is currently undefined.
+(TODO, would benefit from broader input.)</t>
+<t>For transport encryption of content,
+exact Size PCASM
+<bcp14>SHOULD NOT</bcp14>
+be observable
+or inferable.</t>
+<t>See &quot;Rationales&quot; for more.</t>
+</section>
+
+<section anchor="analytic-pcasm"><name>Analytic PCASM</name>
+<t>Analytic PCASM
+is data
+which analyses,
+describes,
+reduces,
+or summarises
+the &quot;content&quot;.
+See &quot;Rationales&quot; for more.</t>
+</section>
+
+<section anchor="conversation-metadata-optional"><name>Conversation Metadata (<bcp14>OPTIONAL</bcp14>)</name>
+<t>Conversation Metadata
+<bcp14>MAY</bcp14> exist &quot;outside&quot;
+of messages
+and describe
+the conversation
+context.</t>
+<t>Whether
+conversation metadata
+constitutes PCASM,
+is an
+<bcp14>OPTIONAL</bcp14>
+choice
+for E2ESM software,
+but that choice
+<bcp14>MUST</bcp14>
+be apparent
+to participants.</t>
+<t>See &quot;Rationales&quot; for more.</t>
+</section>
+</section>
+
+<section anchor="entity"><name>Entity</name>
+<t>An &quot;entity&quot;
+is a
+human,
+machine,
+software bot,
+conversation archiver,
+or other,
+which sends
+and/or receives
+messages.</t>
+<t>Entities are
+bounded
+by the extent
+of their
+Trusted Computing Base (&quot;TCB&quot;),
+including
+all systems
+that they control and/or utilise.</t>
+</section>
+
+<section anchor="sender-and-recipient"><name>Sender and Recipient</name>
+<t>A &quot;sender&quot;
+is an entity
+which composes
+and sends
+messages.</t>
+<t>A &quot;recipient&quot;
+is an entity
+which receives
+messages
+and <bcp14>MAY</bcp14>
+be able
+to access
+the PCASM
+of those messages.</t>
+<t>For each message
+there will be
+one sender
+and one or more
+recipients.</t>
+</section>
+
+<section anchor="participants-and-non-participants"><name>Participants and Non-Participants</name>
+<t>The union set
+of sender and recipients
+for any given message
+are the &quot;participants&quot;
+in that message.</t>
+<t>It follows that
+for any given message,
+all entities
+that exist
+outside of
+the participant set
+will be &quot;non-participants&quot;
+in respect of that message.</t>
+</section>
+
+<section anchor="conversation-group-centralised-decentralised"><name>Conversation, Group, Centralised &amp; Decentralised</name>
+<t>A &quot;conversation&quot;
+is a sequence
+of one or more messages,
+and the responses
+or replies
+to them,
+over a period of time,
+amongst a constant
+or evolving
+set of participants.</t>
+<t>A given platform <bcp14>MAY</bcp14>
+distinguish between
+and support
+more than one conversation
+at any given time.</t>
+<t>In &quot;centralised&quot; E2ESM
+such as WhatsApp or Signal,
+the software <bcp14>MAY</bcp14>
+offer collective
+&quot;group&quot; conversation contexts
+that provide
+prefabricated sets
+of recipients
+for the client
+to utilise
+when a message
+is composed or sent.</t>
+<t>In &quot;decentralised&quot; E2ESM
+such as PGP-Encrypted Email
+or Ricochet
+the recipients of each message
+are individually determined
+by each sender
+at the point of composition;
+however &quot;group&quot; metadata
+may also exist,
+in terms of
+(e.g.) email addressees
+or subject lines.</t>
+</section>
+
+<section anchor="backdoor"><name>Backdoor</name>
+<t>A &quot;backdoor&quot;
+is any
+intentional or unintentional mechanism,
+in respect of a given message
+and that message's participants,
+where some PCASM
+of that message
+<bcp14>MAY</bcp14> become available
+to a non-participant
+without the intentional action of a participant.</t>
+</section>
+</section>
+
+<section anchor="principles"><name>Principles</name>
+<t>For a series of
+one or more &quot;messages&quot;
+each which are composed
+of &quot;plaintext content and sensitive metadata&quot; (PCASM)
+and which constitute
+a &quot;conversation&quot;
+amongst a set of &quot;participants&quot;,
+to provide E2ESM
+will require:</t>
+
+<section anchor="transparency-of-participation"><name>Transparency of Participation</name>
+<t>In the nature
+of &quot;closed distribution lists&quot;,
+the participants
+in a message
+<bcp14>MUST</bcp14> be
+frozen into
+an immutable set
+at the moment
+when the message
+is composed or sent.</t>
+<t>The complete set
+of all recipients
+<bcp14>MUST</bcp14> be visible
+to the sender
+at the moment
+of message composition or sending.</t>
+<t>The complete set
+of participants
+in a message
+<bcp14>MUST</bcp14> be visible
+to all other participants.</t>
+</section>
+
+<section anchor="integrity-of-participation"><name>Integrity of Participation</name>
+<t>Excusing the
+&quot;retransmission exception&quot;,
+PCASM
+of any given message
+<bcp14>MUST</bcp14> only be available
+to the fixed set
+of conversation participants
+from whom,
+to whom,
+and at the time when
+it was sent.</t>
+
+<section anchor="retransmission-exception"><name>Retransmission Exception</name>
+<t>If a participant
+that can access
+an &quot;original&quot; message
+intentionally &quot;retransmits&quot;
+(e.g. quotes, forwards)
+that message
+to create
+a new message
+within the E2ESM software,
+then
+the original message's PCASM
+<bcp14>MAY</bcp14>
+become available
+to a new,
+additional,
+and
+possibly different
+set of
+conversation participants,
+via that new message.</t>
+</section>
+</section>
+
+<section anchor="equality-of-participation"><name>Equality of Participation</name>
+<t>All participants
+<bcp14>MUST</bcp14> be peers,
+i.e. they
+<bcp14>MUST</bcp14> have equal access
+to the PCASM
+of any message;
+see also
+&quot;Integrity of Participation&quot;.</t>
+</section>
+
+<section anchor="closure-of-conversation"><name>Closure of Conversation</name>
+<t>The set of participants
+in a conversation
+<bcp14>SHALL NOT</bcp14> be increased
+except by the intentional action
+of one or more
+existing participants.</t>
+<t>Per &quot;Transparency of Participation&quot;
+that action
+(introducing a new participant)
+<bcp14>MUST</bcp14>
+be visible to
+all other participants</t>
+
+<section anchor="public-conversations-and-self-subscription"><name>Public Conversations and Self-Subscription</name>
+<t>Existing participants <bcp14>MAY</bcp14>
+publicly share
+links to the conversation,
+identifying data
+to assist discovery of the conversation,
+or other mechanisms
+to enable
+non-participant entities
+to subscribe themselves
+as conversation participants.
+This <bcp14>MAY</bcp14> be
+considered
+legitimate
+&quot;intentional action&quot;
+to increase the set of participants
+in the group.</t>
+</section>
+</section>
+
+<section anchor="management-of-participant-clients-and-devices"><name>Management of Participant Clients and Devices</name>
+<t>Where there
+exists
+centralised
+E2ESM software
+that hosts
+participants:</t>
+
+<ol>
+<li><t>The E2ESM software
+<bcp14>MUST</bcp14> provide
+each participant entity
+with means
+to review or revoke access for
+that participant's
+clients or devices
+that can access
+future PCASM.</t>
+</li>
+<li><t>The E2ESM software
+<bcp14>MUST</bcp14> provide
+each participant entity
+with notifications
+and/or complete logs
+of changes
+to the set of
+clients or devices
+that can or could access
+message PCASM.</t>
+</li>
+</ol>
+</section>
+</section>
+
+<section anchor="rationales"><name>Rationales</name>
+<t>This explanatory section
+regarding the principles
+has been broken out
+for clarity and argumentation purposes.</t>
+
+<section anchor="why-content-pcasm"><name>Why: Content PCASM</name>
+<t>Content PCASM
+<bcp14>MUST</bcp14> be protected
+as it comprises
+that which is
+&quot;closed&quot; from general distribution.</t>
+<t>The test
+for measuring this
+is (intended to be) modeled upon
+ciphertext indistinguishability <xref target="CipherInd"></xref></t>
+</section>
+
+<section anchor="why-size-pcasm"><name>Why: Size PCASM</name>
+<t>Exact size PCASM
+<bcp14>MUST</bcp14> be protected
+as it <bcp14>MAY</bcp14>
+offer insight into
+Content PCASM.</t>
+<t>The test
+for measuring this
+is (intended) to address
+risk of content
+becoming evident
+via plaintext length.</t>
+</section>
+
+<section anchor="why-analytic-pcasm"><name>Why: Analytic PCASM</name>
+<t>Analytic PCASM
+<bcp14>MUST</bcp14> be protected
+as it <bcp14>MAY</bcp14>
+offer insight into
+Content PCASM,
+for instance
+that the content
+shares features
+with other,
+specimen,
+or known plaintext content.</t>
+</section>
+
+<section anchor="why-conversation-metadata-as-optional-pcasm"><name>Why: Conversation Metadata as <bcp14>OPTIONAL</bcp14> PCASM</name>
+<t>Conversational Metadata <bcp14>MAY</bcp14>
+offer insight into
+Content PCASM,
+however the abstractions
+of transport mechanism,
+group management,
+or platform choice,
+<bcp14>MAY</bcp14> render this moot.</t>
+<t>For example
+an PGP-Encrypted email distribution list
+named &quot;blockchain-fans@example.com&quot;
+would leak
+its implicit topic
+and participant identities
+to capable observers.</t>
+</section>
+
+<section anchor="why-entity-and-participant"><name>Why: Entity and Participant</name>
+<t>The term &quot;participant&quot;
+in this document
+exists to supersede
+the more vague notion of &quot;end&quot;
+in the phrase &quot;end-to-end&quot;.</t>
+<t>Entities,
+and thus participants,
+are defined
+in terms of their <xref target="TrustedComputingBase"></xref>
+to acknowledge
+that an entity
+<bcp14>MAY</bcp14> legitimately
+store, forward, or access messages
+by means
+that are outside of
+the E2ESM software.</t>
+<t>It is important to note
+that the concept of &quot;entity&quot;
+as defined by their TCB,
+is the foundation
+for all other trust in E2ESM.
+This develops from
+the basic definitions of
+a <xref target="TrustedComputingBase"></xref>
+and from the concepts of
+&quot;trust-to-trust&quot; discussed in <xref target="RoleOfTrust"></xref>.
+Failure of a participant
+to maintain integrity or control
+over their TCB
+should not be considered
+a failure of an E2ESM
+that connects it to other participants.</t>
+<t>For example:
+if a participant
+accesses their E2ESM software
+via remote desktop software,
+and their RDP session is hijacked by a third party;
+of if they back-up their messages
+in cleartext
+to cloud storage
+leading somehow to data exfiltration,
+neither of these
+would be a failure of E2ESM.
+This would instead
+be a failure
+of the participant's
+<xref target="TrustedComputingBase"></xref>.</t>
+<t>Further:
+it would be
+obviously possible
+to burden
+an E2ESM
+with surfacing
+potential integrity issues
+of any given participant
+to other participants,
+e.g. &quot;patch compliance&quot;.
+But to require such
+in this standard
+would risk harming
+the privacy
+of the participant entity.
+See also: &quot;Mutual Identity Verification&quot;
+in &quot;<bcp14>OPTIONAL</bcp14> Features of E2ESM&quot;</t>
+</section>
+
+<section anchor="why-backdoor"><name>Why: Backdoor</name>
+<t>In software engineering
+there is a perpetual tension
+between the concepts of
+&quot;feature&quot; versus &quot;bug&quot; -
+and occasionally
+&quot;misfeature&quot; versus &quot;misbug&quot;.
+These tensions
+arise from
+the problem of <xref target="DualUse"></xref> -
+that it is
+not feasible
+to firmly
+and completely
+ascribe &quot;intention&quot;
+to any hardware or software mechanism.</t>
+<t>The information security community
+has experienced
+a historical spectrum
+of mechanisms
+which have assisted
+non-participant access to PCASM.
+These have
+variously been named as
+&quot;export-grade key restrictions&quot; (<xref target="ExportControl"></xref>, then <xref target="Logjam"></xref>),
+&quot;side channel attacks&quot; (<xref target="Spectre"></xref> and <xref target="Meltdown"></xref>),
+&quot;law enforcement access fields&quot; <xref target="Clipper"></xref>, and
+&quot;key escrow&quot; <xref target="CryptoWars"></xref>.</t>
+<t>All of
+these terms
+combine
+an &quot;access facilitation mechanism&quot;
+with an &quot;intention or opportunity&quot; -
+and for all of them
+an access facilitation mechanism
+is first <bcp14>REQUIRED</bcp14>.</t>
+<t>An access facilitation mechanism
+is a &quot;door&quot;,
+and is inherently <xref target="DualUse"></xref>.
+Because the goal
+of E2ESM
+is to limit
+access to PCASM
+exclusively to
+a defined set of participants,
+then the intended
+means of access
+is clearly the &quot;front door&quot;;
+and any other access mechanism
+is a &quot;back door&quot;.</t>
+<t>If the term
+&quot;back door&quot;
+is considered
+innately pejorative,
+alternative, uncertain constructions
+such as
+&quot;illegitimate access feature&quot;,
+&quot;potentially intentional data-access weakness&quot;,
+&quot;legally-obligated exceptional access mechanism&quot;,
+or any other phrase,
+all <bcp14>MUST</bcp14> combine
+both notions
+of an access mechanism (e.g. &quot;door&quot;)
+and a definite or suspected intention (e.g. &quot;legal obligation&quot;).</t>
+<t>So the phrase
+&quot;back door&quot;
+is brief,
+clear,
+and widely understood
+to mean &quot;a secondary means of access&quot;.
+In the above definition
+we already allow
+for the term to be prefixed
+with &quot;intentional&quot; or &quot;unintentional&quot;.</t>
+<t>Thus it seems
+appropriate
+to use this term
+in this context,
+not least because
+it is also not far removed
+from the similar
+and established term
+&quot;side channel&quot;.</t>
+</section>
+
+<section anchor="why-transparency-of-participation"><name>Why: Transparency of Participation</name>
+<t>The &quot;ends&quot;
+of &quot;end to end&quot;
+are the participants;
+for a message to be composed
+to be exclusively accessible
+to that set of participants,
+all participants must be visible.</t>
+<t>For
+decentralised
+&quot;virtual point-to-point&quot;
+E2ESM solutions
+such as PGP-Encrypted Email
+or Ricochet,
+the set of participants
+is fixed
+by the author
+at the time
+of individual message composition,
+and <bcp14>MUST</bcp14>
+be visible
+to all participants.</t>
+<t>For &quot;centralised&quot;
+E2ESM solutions
+such as Signal
+or WhatsApp,
+the set of participants
+is a &quot;group context&quot;
+shared amongst all participants
+and at the time
+of individual message composition
+it <bcp14>MUST</bcp14>
+be inherited
+into a set of
+&quot;fixed&quot; per-participant
+access capabilities
+by the author.</t>
+</section>
+
+<section anchor="why-integrity-of-participation"><name>Why: Integrity of Participation</name>
+<t>Inherent in the term
+&quot;end to end secure messenger&quot;
+is the intention
+that PCASM
+will only be available
+to the participants (&quot;ends&quot;)
+at the time the message was composed.</t>
+<t>If this was not the intention
+we would deduce
+that an E2ESM
+would automatically make
+past content
+available to
+newly-added conversation participants,
+thereby breaking
+forward secrecy.
+This is not
+a characteristic
+of any E2ESM,
+but it is
+characteristic of
+several non-E2ESM.
+Therefore
+the converse
+is true.</t>
+<t>As a concrete example
+this means
+that participants
+who are
+newly added
+to a &quot;group&quot;
+<bcp14>MUST NOT</bcp14>
+be able
+to read messages
+that were
+sent before
+they joined
+that group -
+unless
+(for instance)
+one pre-existing participant
+is explicitly intended
+to provide
+a &quot;searchable archive&quot;
+or similar function.
+The function
+of such a participant
+is considered to be
+out of scope
+for the messenger.</t>
+</section>
+
+<section anchor="why-equality-of-participation"><name>Why: Equality of Participation</name>
+<t>Without equality of participation
+it would be allowed
+for a person to deploy
+a standalone cleartext chat server,
+available solely over TLS-encrypted links,
+declare themselves to be &quot;participants&quot;
+in every conversation from its outset,
+access all message PCASM on that basis,
+and yet call themselves an E2ESM.</t>
+<t>So this is an &quot;anti-cheating&quot; clause:
+all participant access to PCASM
+<bcp14>MUST</bcp14> be via
+the same mechanisms
+for all participants
+without favour or privilege,
+and in particular
+PCASM <bcp14>MUST NOT</bcp14>
+be available via other means,
+e.g.
+raw block-device access,
+raw filestore,
+raw database access,
+or network sniffing.</t>
+</section>
+
+<section anchor="why-closure-of-conversation"><name>Why: Closure of Conversation</name>
+<t>If a conversation
+is not
+&quot;only extensible from within&quot;
+then it would be possible
+for participants
+to be injected
+into the conversation
+thereby defeating
+the closure of message distribution.</t>
+<t>A subtle
+centralised vs: decentralised
+edge-case is as follows:
+consider a
+PGP-encrypted email distribution list.
+Would it break &quot;closure of conversation&quot;
+for a non-participant
+email administrator
+to simply add new users
+to the maillist?</t>
+<t>Answer: no, because
+in this case
+the maillist
+is functioning
+as a &quot;platform&quot;
+for multiple &quot;conversation&quot; threads,
+and mere addition of
+of a new
+&quot;transport-level&quot;
+maillist member
+would not include them
+as a participant
+in ongoing E2ESM conversations;
+such inclusion
+would be a future burden
+upon existing participants.</t>
+<t>However:
+similar external injection
+of a new entity
+into a centralised
+WhatsApp or Signal &quot;group&quot;
+would be clearly a breach
+of &quot;closure of conversation&quot;.</t>
+</section>
+
+<section anchor="why-management-of-participant-clients-and-devices"><name>Why: Management of Participant Clients and Devices</name>
+<t>There is little benefit
+in requiring
+conversations
+to be closed
+against &quot;participant injection&quot;
+if a non-participant
+may obtain
+PCASM access
+by forcing a platform
+to silently add
+extra means of PCASM access
+to an existing participant
+on behalf of that non-participant.</t>
+<t>Therefore
+to be an E2ESM
+the platform
+<bcp14>MUST</bcp14> provide
+the described
+management of participant clients and devices.</t>
+</section>
+</section>
+
+<section anchor="optional-features-of-e2esm"><name><bcp14>OPTIONAL</bcp14> Features of E2ESM</name>
+
+<section anchor="disappearing-messages"><name>Disappearing Messages</name>
+<t>&quot;Disappearing&quot;,
+&quot;expiring&quot;,
+&quot;exploding&quot;,
+&quot;ephemeral&quot;
+or other forms of
+time-limited access to PCASM
+are strongly <bcp14>RECOMMENDED</bcp14>
+but not obligatory
+mechanisms
+for E2ESM,
+not least
+because they
+are impossible to implement
+in a way that cannot be circumvented
+by e.g. screenshots.</t>
+</section>
+
+<section anchor="mutual-identity-verification"><name>Mutual Identity Verification</name>
+<t>Some manner of
+&quot;shared key&quot;
+which mutually assures
+participant identity
+and communications integrity
+are strongly <bcp14>RECOMMENDED</bcp14>
+but not obligatory
+mechanisms
+for E2ESM.</t>
+<t>The benefits
+of such mechanisms
+are limited to certain perspectives
+of certain platforms.</t>
+<t>For instance:
+in Ricochet
+the identity key
+of a user
+is the absolute source of truth
+for their identity,
+and excusing detection of typographic errors
+there is nothing which can be added to that
+in order to further assure their &quot;identity&quot;.</t>
+<t>Similarly WhatsApp
+provides each participant
+with a &quot;verifiable security QR code&quot;
+and &quot;security code change notifications&quot;,
+but these codes
+do not &quot;leak&quot; the number
+of &quot;WhatsApp For Web&quot; connections,
+desktop WhatsApp applications,
+or other clients
+which are bound to
+the E2ESM software
+which executes on that phone.</t>
+<t>Participant-client information
+of this kind
+<bcp14>MAY</bcp14> be
+a highly private aspect
+of that participant's TCB,
+and <bcp14>SHOULD</bcp14> be treated
+sensitively by platforms.</t>
+</section>
+</section>
+
+<section anchor="examples-of-pcasm"><name>Examples of PCASM</name>
+<t>For an example message with content (&quot;content&quot;) of &quot;Hello, world.&quot;,
+for the purposes of this example encoded as an ASCII string of length
+13 bytes without terminator character.</t>
+
+<section anchor="content-pcasm-1"><name>Content PCASM</name>
+<t>Examples of Content PCASM would include, non-exclusively:</t>
+
+<ol>
+<li>The content is &quot;Hello, world.&quot;</li>
+<li>The content starts with the word &quot;Hello&quot;</li>
+<li>The top bit of the first byte of the content, is zero</li>
+<li>The MD5 hash of the content is 080aef839b95facf73ec599375e92d47</li>
+<li>The Salted-MD5 Hash of the content is : ...</li>
+</ol>
+</section>
+
+<section anchor="size-pcasm-1"><name>Size PCASM</name>
+<t>Size PCASM is defined in the main text, as it relates to the transport
+and/or content encryption mechanisms.</t>
+</section>
+
+<section anchor="analytic-pcasm-1"><name>Analytic PCASM</name>
+<t>Examples of Analytic PCASM would include, non-exclusively:</t>
+
+<ol>
+<li>The content contains the substring &quot;ello&quot;</li>
+<li>The content does not contain the word &quot;Goodbye&quot;</li>
+<li>The content contains a substring from amongst the following set: ...</li>
+<li>The content does not contain a substring from amongst the following set: ...</li>
+<li>The hash of the content exists amongst the following set of hashes: ...</li>
+<li>The hash of the content does not exist amongst the following set of hashes: ...</li>
+<li>The content was matched by a machine-learning classifier with the following training set: ...</li>
+</ol>
+</section>
+
+<section anchor="conversation-metadata-as-optional-pcasm"><name>Conversation Metadata as <bcp14>OPTIONAL</bcp14> PCASM</name>
+<t>Examples of Conversation Metadata would include, non-exclusively:</t>
+
+<ol>
+<li>maillist email addresses</li>
+<li>maillist server names</li>
+<li>group titles</li>
+<li>group topics</li>
+<li>group icons</li>
+<li>group participant lists</li>
+</ol>
+</section>
+
+<section anchor="non-pcasm"><name>Non-PCASM</name>
+<t>Information which would not be PCASM would include, non-exclusively:</t>
+
+<ol>
+<li>The content is sent from Alice</li>
+<li>The content is sent to Bob</li>
+<li>The content is between 1 and 16 bytes long</li>
+<li>The content was sent at the following date and time: ...</li>
+<li>The content was sent from the following IP address: ...</li>
+<li>The content was sent from the following geolocation: ...</li>
+<li>The content was composed using the following platform: ...</li>
+</ol>
+</section>
+</section>
+
+<section anchor="worked-example"><name>Worked Example</name>
+<t>Consider FooBook,
+a hypothetical example company
+which provides
+messaging services
+for conversations
+between entities
+who use it.</t>
+<t>For each conversation
+FooBook <bcp14>MUST</bcp14> decide
+whether to represent itself
+as a conversation participant
+or as a non-participant. (Transparency of Participation)</t>
+<t>If FooBook decides
+to represent itself
+as a non-participant,
+then it <bcp14>MUST NOT</bcp14>
+have any access to PCASM. (Integrity of Participation / Non-Participation)</t>
+<t>If FooBook decides
+to represent itself
+as a participant,
+then it <bcp14>MUST NOT</bcp14>
+have &quot;exceptional&quot; access
+to PCASM,
+despite being
+the provider
+of the service -
+for instance
+via
+raw database access
+or network sniffing.
+However it <bcp14>MAY</bcp14>
+participate in
+E2ESM conversations
+in a &quot;normal&quot; way,
+and thereby
+have &quot;normal&quot; access
+to intra-conversation PCASM.
+(Integrity of Participation, Equality of Participation)</t>
+<t>FooBook <bcp14>MAY</bcp14>
+retain means
+to eject reported abusive participants
+from a conversation. (Decrease in Closure of Participation)</t>
+<t>FooBook <bcp14>MUST NOT</bcp14>
+retain means
+to forcibly insert
+new participants
+into a conversation.
+For clarity:
+this specification
+does not recognise
+any notion
+of &quot;atomic&quot; exchange
+of one participant with another,
+treating it as an ejection,
+followed by an &quot;illegitimate&quot; insertion.
+(Increase in Closure of Participation)</t>
+<t>FooBook <bcp14>MUST</bcp14>
+enable the user
+to observe and manage
+the complete state
+of their <xref target="TrustedComputingBase"></xref>
+with respect
+to their FooBook messaging services. (Management and Visibility)</t>
+<t>FooBook <bcp14>MAY</bcp14>
+treat conversation metadata
+as PCASM,
+but it <bcp14>MUST</bcp14>
+communicate to participants
+whether it does
+or does not.</t>
+</section>
+
+<section anchor="see-also"><name>See Also</name>
+<t>A different approach
+to defining
+(specifically)
+end-to-end encryption
+is discussed
+in <xref target="I-D.knodel-e2ee-definition"></xref>.</t>
+</section>
+
+<section anchor="live-drafts"><name>Live Drafts</name>
+<t>Live working drafts
+of this document
+are at:
+<eref target="https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging">https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging</eref></t>
+</section>
+
+<section anchor="iana-considerations"><name>IANA Considerations</name>
+<t>This document has no IANA actions.</t>
+</section>
+
+<section anchor="security-considerations"><name>Security Considerations</name>
+<t>This document is entirely composed of security considerations.</t>
+</section>
+
+</middle>
+
+<back>
+<references><name>Informative References</name>
+<reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
+  <front>
+    <title>Ciphertext indistinguishability</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="Clipper" target="https://en.wikipedia.org/wiki/Clipper_chip">
+  <front>
+    <title>Clipper chip</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="CryptoWars" target="https://en.wikipedia.org/wiki/Crypto_Wars">
+  <front>
+    <title>Crypto Wars</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="DualUse" target="https://en.wikipedia.org/wiki/Dual-use_technology">
+  <front>
+    <title>Dual-use technology</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="ExportControl" target="https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era">
+  <front>
+    <title>Export of cryptography from the United States</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml-ids/reference.I-D.knodel-e2ee-definition.xml"/>
+<reference anchor="Logjam" target="https://en.wikipedia.org/wiki/Logjam_(computer_security)">
+  <front>
+    <title>Logjam</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="Meltdown" target="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">
+  <front>
+    <title>Meltdown</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7686.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+<reference anchor="Ricochet" target="https://www.ricochetrefresh.net">
+  <front>
+    <title>Ricochet Refresh</title>
+    <author fullname="BlueprintForFreeSpeech"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="RoleOfTrust" target="https://www.repository.law.indiana.edu/fclj/vol63/iss2/3">
+  <front>
+    <title>The End-to-End Argument and Application Design: The Role of Trust</title>
+    <author fullname="David D. Clark"></author>
+    <author fullname="Marjory S. Blumenthal"></author>
+    <date year="2011"></date>
+  </front>
+</reference>
+<reference anchor="Spectre" target="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">
+  <front>
+    <title>Spectre</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+<reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
+  <front>
+    <title>Trusted Computing Base</title>
+    <author fullname="Wikipedia"></author>
+    <date year="2021"></date>
+  </front>
+</reference>
+</references>
+
+</back>
+
+</rfc>
