@@ -1,7 +1,7 @@
 *** text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-07-07 14:19:01.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:30:34.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
 ***************
-*** 4,11 ****
+*** 4,15 ****
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
@@ -10,7 +10,11 @@
   
   
                 A Duck Test for End-to-End Secure Messaging
---- 4,11 ----
+!               draft-muffett-end-to-end-secure-messaging-02
+  
+  Abstract
+  
+--- 4,15 ----
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
@@ -19,6 +23,10 @@
   
   
                 A Duck Test for End-to-End Secure Messaging
+!               draft-muffett-end-to-end-secure-messaging-03
+  
+  Abstract
+  
 ***************
 *** 33,39 ****
      time.  It is inappropriate to use Internet-Drafts as reference

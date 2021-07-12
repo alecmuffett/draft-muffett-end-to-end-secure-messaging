@@ -11,7 +11,7 @@ keyword = ["messaging", "end to end", "end to end encryption", "end to end secur
 [seriesInfo]
 status = "informational"
 name = "Internet-Draft"
-value = "draft-muffett-end-to-end-secure-messaging-02"
+value = "draft-muffett-end-to-end-secure-messaging-03"
 stream = "IETF"
 
 [[author]]
