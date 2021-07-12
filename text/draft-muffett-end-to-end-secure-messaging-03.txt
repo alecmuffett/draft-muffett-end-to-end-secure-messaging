@@ -4,8 +4,8 @@
 
 individual submission                                         A. Muffett
 Internet-Draft                                       Security Researcher
-Intended status: Informational                               7 July 2021
-Expires: 8 January 2022
+Intended status: Informational                              12 July 2021
+Expires: 13 January 2022
 
 
               A Duck Test for End-to-End Secure Messaging
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 January 2022.
+   This Internet-Draft will expire on 13 January 2022.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 1]
+Muffett                  Expires 13 January 2022                [Page 1]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 2]
+Muffett                  Expires 13 January 2022                [Page 2]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -165,7 +165,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 3]
+Muffett                  Expires 13 January 2022                [Page 3]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -221,7 +221,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 4]
+Muffett                  Expires 13 January 2022                [Page 4]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -277,7 +277,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 5]
+Muffett                  Expires 13 January 2022                [Page 5]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -333,7 +333,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 6]
+Muffett                  Expires 13 January 2022                [Page 6]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -389,7 +389,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 7]
+Muffett                  Expires 13 January 2022                [Page 7]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -445,7 +445,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 8]
+Muffett                  Expires 13 January 2022                [Page 8]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -501,7 +501,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                 [Page 9]
+Muffett                  Expires 13 January 2022                [Page 9]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -557,7 +557,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 10]
+Muffett                  Expires 13 January 2022               [Page 10]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -613,7 +613,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 11]
+Muffett                  Expires 13 January 2022               [Page 11]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -669,7 +669,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 12]
+Muffett                  Expires 13 January 2022               [Page 12]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -725,7 +725,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 13]
+Muffett                  Expires 13 January 2022               [Page 13]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -781,7 +781,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 14]
+Muffett                  Expires 13 January 2022               [Page 14]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -837,7 +837,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 15]
+Muffett                  Expires 13 January 2022               [Page 15]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -893,7 +893,7 @@ Internet-Draft                    e2esm                        July 2021
 
 
 
-Muffett                  Expires 8 January 2022                [Page 16]
+Muffett                  Expires 13 January 2022               [Page 16]
 
 Internet-Draft                    e2esm                        July 2021
 
@@ -949,4 +949,4 @@ Author's Address
 
 
 
-Muffett                  Expires 8 January 2022                [Page 17]
+Muffett                  Expires 13 January 2022               [Page 17]

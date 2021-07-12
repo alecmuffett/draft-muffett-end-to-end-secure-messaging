@@ -1,7 +1,60 @@
 *** text/draft-muffett-end-to-end-secure-messaging-02.txt	2021-07-07 14:19:01.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-07 21:55:25.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:30:34.000000000 +0100
 ***************
-*** 65,111 ****
+*** 4,11 ****
+  
+  individual submission                                         A. Muffett
+  Internet-Draft                                       Security Researcher
+! Intended status: Informational                               7 July 2021
+! Expires: 8 January 2022
+  
+  
+                A Duck Test for End-to-End Secure Messaging
+--- 4,11 ----
+  
+  individual submission                                         A. Muffett
+  Internet-Draft                                       Security Researcher
+! Intended status: Informational                              12 July 2021
+! Expires: 13 January 2022
+  
+  
+                A Duck Test for End-to-End Secure Messaging
+***************
+*** 33,39 ****
+     time.  It is inappropriate to use Internet-Drafts as reference
+     material or to cite them other than as "work in progress."
+  
+!    This Internet-Draft will expire on 8 January 2022.
+  
+  Copyright Notice
+  
+--- 33,39 ----
+     time.  It is inappropriate to use Internet-Drafts as reference
+     material or to cite them other than as "work in progress."
+  
+!    This Internet-Draft will expire on 13 January 2022.
+  
+  Copyright Notice
+  
+***************
+*** 53,59 ****
+  
+  
+  
+! Muffett                  Expires 8 January 2022                 [Page 1]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 53,59 ----
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 1]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 65,124 ****
        1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
      2.  Requirements for an End-to-End Secure Messenger . . . . . . .   4
      3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
@@ -49,7 +102,20 @@
   
   
   
---- 65,111 ----
+! Muffett                  Expires 8 January 2022                 [Page 2]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+  
+     9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
+!    10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  15
+!    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
+!    12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
+!    13. Informative References  . . . . . . . . . . . . . . . . . . .  15
+     Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
+  
+  1.  Introduction
+--- 65,124 ----
        1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
      2.  Requirements for an End-to-End Secure Messenger . . . . . . .   4
      3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
@@ -97,19 +163,9 @@
   
   
   
-***************
-*** 115,124 ****
-  
-  
-     9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
-!    10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  15
-!    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
-!    12. Security Considerations . . . . . . . . . . . . . . . . . . .  15
-!    13. Informative References  . . . . . . . . . . . . . . . . . . .  15
-     Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
-  
-  1.  Introduction
---- 115,124 ----
+! Muffett                  Expires 13 January 2022                [Page 2]
+  
+  Internet-Draft                    e2esm                        July 2021
   
   
      9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
@@ -143,6 +199,23 @@
   
      Other architectural approaches exist - for instance [Ricochet] which
      implements closed distribution by using secure point-to-point
+***************
+*** 165,171 ****
+  
+  
+  
+! Muffett                  Expires 8 January 2022                 [Page 3]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 165,171 ----
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 3]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
 ***************
 *** 201,261 ****
      Further context for several of these definitions can also be found in
@@ -230,7 +303,7 @@
   
   
   
-+ Muffett                  Expires 8 January 2022                 [Page 4]
++ Muffett                  Expires 13 January 2022                [Page 4]
   
 + Internet-Draft                    e2esm                        July 2021
   
@@ -240,10 +313,10 @@
 ! 3.1.  Message and Platform
 ! 
 !    A "message" is information of 0 or more bits, to be communicated.
-! 
-!    Messages possess both plaintext "content", and also "metadata" which
-!    describes the content.
   
++    Messages possess both plaintext "content", and also "metadata" which
++    describes the content.
++ 
 +    A "platform" is a specific instance of software which exists for the
 +    purpose of routing or exchanging messages.
 + 
@@ -286,7 +359,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                 [Page 5]
++ Muffett                  Expires 13 January 2022                [Page 5]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -329,7 +402,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                 [Page 6]
++ Muffett                  Expires 13 January 2022                [Page 6]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -375,7 +448,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                 [Page 7]
++ Muffett                  Expires 13 January 2022                [Page 7]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -446,7 +519,7 @@
   
 + 
 + 
-+ Muffett                  Expires 8 January 2022                 [Page 8]
++ Muffett                  Expires 13 January 2022                [Page 8]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -500,7 +573,7 @@
   
 + 
 + 
-+ Muffett                  Expires 8 January 2022                 [Page 9]
++ Muffett                  Expires 13 January 2022                [Page 9]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -550,7 +623,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 10]
++ Muffett                  Expires 13 January 2022               [Page 10]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -620,7 +693,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 11]
++ Muffett                  Expires 13 January 2022               [Page 11]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -655,7 +728,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 12]
++ Muffett                  Expires 13 January 2022               [Page 12]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -687,7 +760,7 @@
   
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 13]
++ Muffett                  Expires 13 January 2022               [Page 13]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -720,7 +793,7 @@
   
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 14]
++ Muffett                  Expires 13 January 2022               [Page 14]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -756,7 +829,7 @@
   
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 15]
++ Muffett                  Expires 13 January 2022               [Page 15]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -792,7 +865,7 @@
 + 
 + 
 + 
-+ Muffett                  Expires 8 January 2022                [Page 16]
++ Muffett                  Expires 13 January 2022               [Page 16]
 + 
 + Internet-Draft                    e2esm                        July 2021
 + 
@@ -822,35 +895,39 @@
   
   
   
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-  Muffett                  Expires 8 January 2022                [Page 17]
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! 
+! Muffett                  Expires 8 January 2022                [Page 17]
 --- 949,952 ----
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 17]
