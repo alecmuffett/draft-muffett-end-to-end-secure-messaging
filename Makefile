@@ -1,33 +1,36 @@
-NAME=draft-muffett-end-to-end-secure-messaging-04
-PREV=draft-muffett-end-to-end-secure-messaging-03
-DIFF=vs-03
+SLUG=draft-muffett-end-to-end-secure-messaging
+THIS=04
+PREV=03
 DIR=text
+SLUGTHIS=$(SLUG)-$(THIS)
+SLUGPREV=$(SLUG)-$(PREV)
+DIFF=vs-$(PREV)
 XML2RFC=xml2rfc -v
 #--v3
 
-all: $(DIR)/$(NAME).txt $(DIR)/$(NAME).html
-	-diff -bc $(DIR)/$(PREV).txt $(DIR)/$(NAME).txt > $(DIR)/$(NAME)-$(DIFF).diff
+all: $(DIR)/$(SLUGTHIS).txt $(DIR)/$(SLUGTHIS).html
+	-diff -bc $(DIR)/$(SLUGPREV).txt $(DIR)/$(SLUGTHIS).txt > $(DIR)/$(SLUGTHIS)-$(DIFF).diff
 
 diff: all
-	cat $(DIR)/$(NAME)-$(DIFF).diff
+	cat $(DIR)/$(SLUGTHIS)-$(DIFF).diff
 
 push: all
 	git add . && git commit -m "make on `datestamp`" && git push
 
 open: all
-	open $(DIR)/$(NAME).html
+	open $(DIR)/$(SLUGTHIS).html
 
-$(DIR)/$(NAME).html: $(DIR)/$(NAME).xml
-	( cd $(DIR) && $(XML2RFC) --html $(NAME).xml )
+$(DIR)/$(SLUGTHIS).html: $(DIR)/$(SLUGTHIS).xml
+	( cd $(DIR) && $(XML2RFC) --html $(SLUGTHIS).xml )
 
-$(DIR)/$(NAME).txt: $(DIR)/$(NAME).xml
-	( cd $(DIR) && $(XML2RFC) --text $(NAME).xml )
+$(DIR)/$(SLUGTHIS).txt: $(DIR)/$(SLUGTHIS).xml
+	( cd $(DIR) && $(XML2RFC) --text $(SLUGTHIS).xml )
 
-$(DIR)/$(NAME).xml: $(NAME).md
-	mmark -markdown $(NAME).md >$(DIR)/$(NAME).basic.md
-	mmark -html $(NAME).md >$(DIR)/$(NAME).basic.html
-	mmark $(NAME).md >$(DIR)/$(NAME).xml
+$(DIR)/$(SLUGTHIS).xml: $(SLUGTHIS).md
+	mmark -markdown $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.md
+	mmark -html $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.html
+	mmark $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).xml
 
 clean:
 	-rm -f *~
-	-rm $(DIR)/$(NAME).*
+	-rm $(DIR)/$(SLUGTHIS).*
