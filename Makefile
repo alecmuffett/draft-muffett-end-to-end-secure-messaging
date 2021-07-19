@@ -4,15 +4,15 @@ PREV=03
 DIR=text
 SLUGTHIS=$(SLUG)-$(THIS)
 SLUGPREV=$(SLUG)-$(PREV)
-DIFF=vs-$(PREV)
+SLUGDIFF=$(SLUGTHIS)-vs-$(PREV)
 XML2RFC=xml2rfc -v
 #--v3
 
 all: $(DIR)/$(SLUGTHIS).txt $(DIR)/$(SLUGTHIS).html
-	-diff -bc $(DIR)/$(SLUGPREV).txt $(DIR)/$(SLUGTHIS).txt > $(DIR)/$(SLUGTHIS)-$(DIFF).diff
+	-diff -bc $(DIR)/$(SLUGPREV).txt $(DIR)/$(SLUGTHIS).txt > $(DIR)/$(SLUGDIFF).diff
 
 diff: all
-	cat $(DIR)/$(SLUGTHIS)-$(DIFF).diff
+	cat $(DIR)/$(SLUGDIFF).diff
 
 push: all
 	git add . && git commit -m "make on `datestamp`" && git push
