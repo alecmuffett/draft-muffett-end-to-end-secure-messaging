@@ -1,7 +1,12 @@
-*** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-12 15:36:08.000000000 +0100
+*** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-19 05:40:53.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-19 05:46:04.000000000 +0100
 ***************
-*** 9,15 ****
+*** 4,15 ****
+  
+  individual submission                                         A. Muffett
+  Internet-Draft                                       Security Researcher
+! Intended status: Informational                              12 July 2021
+! Expires: 13 January 2022
   
   
                 A Duck Test for End-to-End Secure Messaging
@@ -9,7 +14,12 @@
   
   Abstract
   
---- 9,15 ----
+--- 4,15 ----
+  
+  individual submission                                         A. Muffett
+  Internet-Draft                                       Security Researcher
+! Intended status: Informational                              19 July 2021
+! Expires: 20 January 2022
   
   
                 A Duck Test for End-to-End Secure Messaging
@@ -17,3 +27,303 @@
   
   Abstract
   
+***************
+*** 33,39 ****
+     time.  It is inappropriate to use Internet-Drafts as reference
+     material or to cite them other than as "work in progress."
+  
+!    This Internet-Draft will expire on 13 January 2022.
+  
+  Copyright Notice
+  
+--- 33,39 ----
+     time.  It is inappropriate to use Internet-Drafts as reference
+     material or to cite them other than as "work in progress."
+  
+!    This Internet-Draft will expire on 20 January 2022.
+  
+  Copyright Notice
+  
+***************
+*** 53,59 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 1]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 53,59 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 1]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 109,115 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 2]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 109,115 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 2]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 165,171 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 3]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 165,171 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 3]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 221,227 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 4]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 221,227 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 4]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 277,283 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 5]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 277,283 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 5]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 333,339 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 6]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 333,339 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 6]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 389,395 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 7]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 389,395 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 7]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 445,451 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 8]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 445,451 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 8]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 501,507 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022                [Page 9]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 501,507 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022                [Page 9]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 557,563 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 10]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 557,563 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 10]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 613,619 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 11]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 613,619 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 11]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 669,675 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 12]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 669,675 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 12]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 725,731 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 13]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 725,731 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 13]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 781,787 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 14]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 781,787 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 14]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 837,843 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 15]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 837,843 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 15]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 893,899 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 16]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+--- 893,899 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 16]
+  
+  Internet-Draft                    e2esm                        July 2021
+  
+***************
+*** 949,952 ****
+  
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 17]
+--- 949,952 ----
+  
+  
+  
+! Muffett                  Expires 20 January 2022               [Page 17]
