@@ -1,5 +1,5 @@
 %%%
-title = "A test to falsify claims of end-to-end security in encrypted messaging apps"
+title = "A Duck Test for the Security of Encrypted Messaging Apps"
 abbrev = "e2esm"
 category = "info"
 docName = "apparently this tool demands a doc name but does not use it"
@@ -38,7 +38,8 @@ provides
 either or both of
 "end-to-end security"
 or
-"end-to-end encryption." (either/both: "E2E")
+"end-to-end encryption."
+(either/both: "E2E")
 
 Any
 messaging solution,

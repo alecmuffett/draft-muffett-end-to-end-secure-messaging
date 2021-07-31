@@ -3,7 +3,7 @@
 <rfc version="3" ipr="trust200902" docName="draft-muffett-end-to-end-secure-messaging-04" submissionType="IETF" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" consensus="true">
 
 <front>
-<title abbrev="e2esm">A test to falsify claims of end-to-end security in encrypted messaging apps</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
+<title abbrev="e2esm">A Duck Test for the Security of Encrypted Messaging Apps</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
 <author initials="A." surname="Muffett" fullname="Alec Muffett"><organization>Security Researcher</organization><address><postal><street></street>
 </postal><email>alec.muffett@gmail.com</email>
 </address></author>
@@ -32,7 +32,8 @@ provides
 either or both of
 &quot;end-to-end security&quot;
 or
-&quot;end-to-end encryption.&quot; (either/both: &quot;E2E&quot;)</t>
+&quot;end-to-end encryption.&quot;
+(either/both: &quot;E2E&quot;)</t>
 <t>Any
 messaging solution,
 or any
