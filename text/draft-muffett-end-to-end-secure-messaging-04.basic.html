@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>A Duck Test for End-to-End Secure Messaging</title>
+  <title>A test to falsify claims of end-to-end security in encrypted messaging apps</title>
   <meta name="GENERATOR" content="github.com/mmarkdown/mmark Mmark Markdown Processor - mmark.miek.nl">
   <meta charset="utf-8">
 </head>
@@ -9,63 +9,101 @@
 
 <h1 class="special" id="abstract">Abstract</h1>
 
-<p>This document
-defines End-to-End Secure Messaging
-in terms of behaviours
-that <strong>MUST</strong> be exhibited
-by software
-that claims to implement it,
-or which claims to implement
-that subset which is known as
-End-to-End Encrypted Messaging.</p>
+<p>This draft
+describes a test
+which <strong>MAY</strong> be used
+to falsify claims that
+a messaging
+or messenger application,
+platform,
+solution,
+or service (&ldquo;messaging solution&rdquo;)
+provides
+either or both of
+&ldquo;end-to-end security&rdquo;
+or
+&ldquo;end-to-end encryption.&rdquo; (either/both: &ldquo;E2E&rdquo;)</p>
+
+<p>Any
+messaging solution,
+or any
+clearly defined subset
+of a
+larger messaging solution,
+which claims to
+provide E2E,
+<strong>MUST</strong>
+satisfy
+this test;
+however
+satisfaction of
+this test
+is not
+wholly sufficient
+to determine that
+the messaging solution
+provides E2E.</p>
 <section data-matter="main">
 <h1 id="introduction">Introduction</h1>
 
-<p>End-to-End Secure Messaging (E2ESM)
-is a mechanism
-which offers a digital analogue
+<p>&ldquo;End-to-end security&rdquo; and
+&ldquo;end-to-end encryption&rdquo;
+offer digital analogues
 of &ldquo;closed distribution lists&rdquo;
-for sharing message content
+for sharing content
 amongst a set of participants,
-where all participants
-are visible to each other
-and where non-participants
-are completely excluded
-from access to message content.</p>
+where non-participants
+are fully excluded
+from access to content.</p>
 
-<p>In client-server-client network models
-it is common to implement E2ESM
-by means of encryption,
-in order to obscure
-content at rest
-upon a central server.
-So therefore E2ESM
-is often
-narrowly regarded
-in terms of &ldquo;end-to-end encryption&rdquo;.</p>
+<p>This draft
+assumes
+a specific
+application of
+&ldquo;end-to-end security&rdquo;
+or
+&ldquo;end-to-end encryption&rdquo;
+towards the
+specific use case
+of individual and group
+messaging solutions
+where participants
+who are later added
+to a messaging group
+<strong>MUST NOT</strong>
+be able
+to access
+previously-sent content.</p>
 
-<p>Other architectural approaches exist -
-for instance <cite class="informative"><a href="#Ricochet"><sup>[Ricochet]</sup></a></cite>
-which implements
-closed distribution
-by using
-secure point-to-point <cite class="informative"><a href="#RFC7686"><sup>[RFC7686]</sup></a></cite> networking
-to literally restrict
-the distribution
-of content
-to relevant participants.</p>
+<p>In turn,
+use cases
+for such
+messaging solutions
+include
+the sending
+and receiving
+of any
+or all of:</p>
 
-<p>Therefore we describe E2ESM
-in terms of
-functional behaviours
-of the software
-rather than
-in terms
-of its
-implementation
-technologies
-and
-architecture.</p>
+<ol>
+<li>UNICODE or ASCII messages</li>
+<li>images, video files or audio files</li>
+<li>one-way streaming video or audio</li>
+<li>two-way streaming video or audio, as in live calls</li>
+</ol>
+
+<p>The application
+of this test
+does not
+depend upon
+whether the
+messaging solution
+is built upon a
+centralized,
+distributed,
+hybrid,
+or any other
+network model.</p>
 
 <h2 id="comments">Comments</h2>
 
@@ -83,35 +121,210 @@ and/or the author(s).</p>
 14 <cite class="informative"><a href="#RFC2119"><sup>[RFC2119]</sup></a></cite> <cite class="informative"><a href="#RFC8174"><sup>[RFC8174]</sup></a></cite> when, and only when, they appear in all
 capitals, as shown here.</p>
 
-<h1 id="requirements-for-an-end-to-end-secure-messenger">Requirements for an End-to-End Secure Messenger</h1>
-
-<p>Software which functions
-as an
-End-to-End Secure Messenger
-<strong>MUST</strong> satisfy the following principles, and
-<strong>MUST</strong> satisfy these principles in respect of the provided definitions
-for all forms of communication
-and data-sharing
-that the software offers.
-The E2ESM software
-<strong>MAY</strong> comprise
-either a complete application,
-or a clearly defined subset
-of functionality
-within a
-larger application.</p>
-
-<p>Any software
-that does not
-satisfy these requirements
-is not an
-End-to-End Secure Messenger,
-and it does not implement
-End-to-End Secure Messaging,
-nor does it implement
-End-to-End Encrypted Messaging.</p>
-
 <h1 id="definitions">Definitions</h1>
+
+<p>The following terminology <strong>SHALL</strong> be used for this test.</p>
+
+<h2 id="entity">Entity</h2>
+
+<p>An &ldquo;entity&rdquo;
+is that
+which is
+distingushed by
+possessing a
+<cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite></p>
+
+<h2 id="content">Content</h2>
+
+<p>Plaintext content (&ldquo;content&rdquo;)
+is information
+of 0 or more bits,
+to be communicated.</p>
+
+<h2 id="metadata-and-pcasm">Metadata and PCASM</h2>
+
+<p>Plaintext content
+and
+sensitive metadata (&ldquo;PCASM&rdquo;)
+is the
+union set of
+content
+and
+associated
+&ldquo;metadata&rdquo;
+that describes
+the content,
+comprising
+any or all of:</p>
+
+<h3 id="content-metadata">Content Metadata</h3>
+
+<p>Content Metadata
+is any data
+that can offer
+better than 50% certainty
+regarding the value of
+any bit
+of the content.
+Self-evidently,
+this also includes
+the value of
+the content
+itself.</p>
+
+<h3 id="size-metadata">Size Metadata</h3>
+
+<ol>
+<li>For block encryption
+of content,
+&ldquo;size metadata&rdquo;
+is the
+unpadded size
+of the content.</li>
+<li>For stream encryption
+of content,
+&ldquo;size metadata&rdquo;
+is currently undefined. (TODO)</li>
+<li>For transport encryption
+of content,
+accurate &ldquo;size metadata&rdquo;
+<strong>SHOULD NOT</strong>
+be observable
+or inferable.</li>
+</ol>
+
+<h3 id="analytic-metadata">Analytic Metadata</h3>
+
+<p>Analytic Metadata
+is data
+that analyses,
+describes,
+reduces,
+or summarises
+the content.</p>
+
+<h2 id="message-and-intended-recipients">Message and Intended Recipients</h2>
+
+<p>A &ldquo;message&rdquo;
+is content
+which has been
+composed by
+a sender
+and which
+is bound
+to a fixed
+and immutable
+set of recipients
+(&ldquo;intended recipients&rdquo;)
+for that message.</p>
+
+<h2 id="recipient">Recipient</h2>
+
+<p>A &ldquo;recipient&rdquo;
+of a message
+is an entity
+which <strong>MAY</strong> ever
+be able
+to determine
+any PCASM
+for that message.
+Recipients
+of a message
+<strong>MAY</strong>
+exist outside
+of the set
+of intended recipients
+for that message.</p>
+
+<h2 id="sender">Sender</h2>
+
+<p>The &ldquo;sender&rdquo;
+of a message
+is an entity
+which composes
+that message
+to a set
+of intended recipients
+and sends
+that message
+into the
+messaging solution.</p>
+
+<h2 id="platform">Platform</h2>
+
+<p>A &ldquo;platform&rdquo;
+is an entity
+which provides
+a messaging solution.</p>
+
+<h2 id="conversation-and-group-conversation">Conversation and Group Conversation</h2>
+
+<p>TODO</p>
+
+<h1 id="test-preconditions">Test Preconditions</h1>
+
+<p>The following
+preconditions
+<strong>MUST</strong> be met for
+the test
+to be satisfied.
+Failure to
+satisfy these
+preconditions
+is a failure
+of the test.</p>
+
+<h2 id="recipients-are-peers">Recipients are Peers</h2>
+
+<p>For any message,
+all means
+of accessing
+its PCASM
+<strong>MUST</strong>
+be equally available
+to all recipients
+without exception.</p>
+
+<h2 id="groups-are-closed-from-within">Groups are closed from within</h2>
+
+<p>TODO, obvious</p>
+
+<h2 id="re-injection-of-old-content-is-legitimate">Re-injection of old content is legitimate</h2>
+
+<p>TODO, obvious</p>
+
+<h2 id="consistent-inheritance-of-group-membership-as-intended-recipients-in-centralized-messaging-solutions">Consistent inheritance of group membership as intended recipients in centralized messaging solutions</h2>
+
+<p>TODO, no cheating or sneaky insert/elisions</p>
+
+<h1 id="test">Test</h1>
+
+<p>The test fails
+if,
+for any message
+that is sent
+through the messaging solution,
+the set
+of recipients
+for that message
+exceeds
+the set
+of intended recipients
+for that message.</p>
+
+<h1 id="analysis">Analysis</h1>
+
+<p>TODO, non-PCASM, stuff out of scope, Ricochet, etc.</p>
+
+<h1 id="old-material-below-these-lines">OLD MATERIAL BELOW THESE LINES</h1>
+
+<h2 id="old-material-below-these-lines-1">OLD MATERIAL BELOW THESE LINES</h2>
+
+<h3 id="old-material-below-these-lines-2">OLD MATERIAL BELOW THESE LINES</h3>
+
+<h4 id="old-material-below-these-lines-3">OLD MATERIAL BELOW THESE LINES</h4>
+
+<h1 id="definitions-1">Definitions</h1>
 
 <p>These definitions
 are drafted
@@ -162,20 +375,6 @@ frequently these solutions
 are integrated
 but we only consider the maillist
 as a &ldquo;messenger&rdquo; per se.</p>
-
-<p>Use cases
-of a &ldquo;messenger&rdquo;
-may include
-sending and receiving
-any or all
-of:</p>
-
-<ol>
-<li>UNICODE or ASCII messages</li>
-<li>images, video files or audio files</li>
-<li>one-way streaming video or audio</li>
-<li>two-way streaming video or audio, as in live calls</li>
-</ol>
 
 <h2 id="message-and-platform">Message and Platform</h2>
 
@@ -267,9 +466,7 @@ but that choice
 be apparent
 to participants.</p>
 
-<p>See &ldquo;Rationales&rdquo; for more.</p>
-
-<h2 id="entity">Entity</h2>
+<h2 id="entity-1">Entity</h2>
 
 <p>An &ldquo;entity&rdquo;
 is a
@@ -1252,16 +1449,8 @@ are at:
 </dd>
 <dt class="bibliography-cite" id="RFC2119">[RFC2119]</dt>
 <dd></dd>
-<dt class="bibliography-cite" id="RFC7686">[RFC7686]</dt>
-<dd></dd>
 <dt class="bibliography-cite" id="RFC8174">[RFC8174]</dt>
 <dd></dd>
-<dt class="bibliography-cite" id="Ricochet">[Ricochet]</dt>
-<dd><span class="bibliography-author">BlueprintForFreeSpeech</span>
-<span class="bibliography-title">Ricochet Refresh</span>
-<a class="bliography-target" href="https://www.ricochetrefresh.net">https://www.ricochetrefresh.net</a>
-<date class="bibliography-date">2021</date>
-</dd>
 <dt class="bibliography-cite" id="RoleOfTrust">[RoleOfTrust]</dt>
 <dd><span class="bibliography-author">David D. Clark</span>
 <span class="bibliography-author">Marjory S. Blumenthal</span>

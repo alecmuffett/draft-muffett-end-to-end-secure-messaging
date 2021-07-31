@@ -1,5 +1,5 @@
 %%%
-title = "A Duck Test for End-to-End Secure Messaging"
+title = "A test to falsify claims of end-to-end security in encrypted messaging apps"
 abbrev = "e2esm"
 category = "info"
 docName = "apparently this tool demands a doc name but does not use it"
@@ -25,29 +25,38 @@ organization = "Security Researcher"
 
 .# Abstract
 
-This document defines End-to-End Secure Messaging in terms of behaviours that **MUST** be exhibited
-by software that claims to implement it, or which claims to implement that subset which is known as
-End-to-End Encrypted Messaging.
+This draft describes a test which **MAY** be used to falsify claims that a messaging or messenger
+application, platform, solution, or service ("messaging solution") provides either or both of
+"end-to-end security" or "end-to-end encryption." (either/both: "E2E")
+
+Any messaging solution, or any clearly defined subset of a larger messaging solution, which
+claims to provide E2E, **MUST** satisfy this test; however satisfaction of this test is not wholly
+sufficient to determine that the messaging solution provides E2E.
 
 {mainmatter}
 
 # Introduction
 
-End-to-End Secure Messaging (E2ESM) is a mechanism which offers a digital analogue of "closed
-distribution lists" for sharing message content amongst a set of participants, where all
-participants are visible to each other and where non-participants are completely excluded from
-access to message content.
+"End-to-end security" and "end-to-end encryption" offer digital analogues of "closed distribution
+lists" for sharing content amongst a set of participants, where non-participants are fully excluded
+from access to content.
 
-In client-server-client network models it is common to implement E2ESM by means of encryption,
-in order to obscure content at rest upon a central server. So therefore E2ESM is often narrowly
-regarded in terms of "end-to-end encryption".
+This draft assumes a specific application of "end-to-end security" or "end-to-end encryption"
+towards the specific use case of individual and group messaging solutions where participants who are
+later added to a messaging group **MUST NOT** be able to access previously-sent content.
 
-Other architectural approaches exist - for instance [@Ricochet] which implements closed distribution
-by using secure point-to-point [@RFC7686] networking to literally restrict the distribution of
-content to relevant participants.
+In turn, use cases for such messaging solutions include the sending and receiving of any or all of:
 
-Therefore we describe E2ESM in terms of functional behaviours of the software rather than in terms
-of its implementation technologies and architecture.
+1.  UNICODE or ASCII messages
+
+2.  images, video files or audio files
+
+3.  one-way streaming video or audio
+
+4.  two-way streaming video or audio, as in live calls
+
+The application of this test does not depend upon whether the messaging solution is built upon a
+centralized, distributed, hybrid, or any other network model.
 
 ## Comments
 
@@ -61,17 +70,103 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 described in BCP 14 [@RFC2119] [@RFC8174] when, and only when, they appear in all capitals, as shown
 here.
 
-# Requirements for an End-to-End Secure Messenger
+# Definitions
 
-Software which functions as an End-to-End Secure Messenger **MUST** satisfy the following
-principles, and **MUST** satisfy these principles in respect of the provided definitions for
-all forms of communication and data-sharing that the software offers. The E2ESM software **MAY**
-comprise either a complete application, or a clearly defined subset of functionality within a larger
-application.
+The following terminology **SHALL** be used for this test.
 
-Any software that does not satisfy these requirements is not an End-to-End Secure Messenger, and
-it does not implement End-to-End Secure Messaging, nor does it implement End-to-End Encrypted
-Messaging.
+## Entity
+
+An "entity" is that which is distingushed by possessing a [@TrustedComputingBase]
+
+## Content
+
+Plaintext content ("content") is information of 0 or more bits, to be communicated.
+
+## Metadata and PCASM
+
+Plaintext content and sensitive metadata ("PCASM") is the union set of content and associated
+"metadata" that describes the content, comprising any or all of:
+
+### Content Metadata
+
+Content Metadata is any data that can offer better than 50% certainty regarding the value of any bit
+of the content. Self-evidently, this also includes the value of the content itself.
+
+### Size Metadata
+
+1.  For block encryption of content, "size metadata" is the unpadded size of the content.
+
+2.  For stream encryption of content, "size metadata" is currently undefined. (TODO)
+
+3.  For transport encryption of content, accurate "size metadata" **SHOULD NOT** be observable or
+    inferable.
+
+### Analytic Metadata
+
+Analytic Metadata is data that analyses, describes, reduces, or summarises the content.
+
+## Message and Intended Recipients
+
+A "message" is content which has been composed by a sender and which is bound to a fixed and
+immutable set of recipients ("intended recipients") for that message.
+
+## Recipient
+
+A "recipient" of a message is an entity which **MAY** ever be able to determine any PCASM for that
+message. Recipients of a message **MAY** exist outside of the set of intended recipients for that
+message.
+
+## Sender
+
+The "sender" of a message is an entity which composes that message to a set of intended recipients
+and sends that message into the messaging solution.
+
+## Platform
+
+A "platform" is an entity which provides a messaging solution.
+
+## Conversation and Group Conversation
+
+TODO
+
+# Test Preconditions
+
+The following preconditions **MUST** be met for the test to be satisfied. Failure to satisfy these
+preconditions is a failure of the test.
+
+## Recipients are Peers
+
+For any message, all means of accessing its PCASM **MUST** be equally available to all recipients
+without exception.
+
+## Groups are closed from within
+
+TODO, obvious
+
+## Re-injection of old content is legitimate
+
+TODO, obvious
+
+## Consistent inheritance of group membership as intended recipients in centralized messaging solutions
+
+TODO, no cheating or sneaky insert/elisions
+
+# Test
+
+The test fails if, for any message that is sent through the messaging solution, the set of
+recipients for that message exceeds the set of intended recipients for that message.
+
+# Analysis
+
+TODO, non-PCASM, stuff out of scope, Ricochet, etc.
+
+# OLD MATERIAL BELOW THESE LINES
+
+## OLD MATERIAL BELOW THESE LINES
+
+### OLD MATERIAL BELOW THESE LINES
+
+#### OLD MATERIAL BELOW THESE LINES
 
 # Definitions
 
@@ -94,16 +189,6 @@ access to content which was previously sent by prior participants.
 
 This echoes the distinction between a "maillist" versus a "maillist archive" or "web forum";
 frequently these solutions are integrated but we only consider the maillist as a "messenger" per se.
-
-Use cases of a "messenger" may include sending and receiving any or all of:
-
-1.  UNICODE or ASCII messages
-
-2.  images, video files or audio files
-
-3.  one-way streaming video or audio
-
-4.  two-way streaming video or audio, as in live calls
 
 ## Message and Platform
 
@@ -146,8 +231,6 @@ Conversation Metadata **MAY** exist "outside" of messages and describe the conve
 
 Whether conversation metadata constitutes PCASM, is an **OPTIONAL** choice for E2ESM software, but
 that choice **MUST** be apparent to participants.
-
-See "Rationales" for more.
 
 ## Entity
 

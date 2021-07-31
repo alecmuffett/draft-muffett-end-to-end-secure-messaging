@@ -3,7 +3,7 @@
 <rfc version="3" ipr="trust200902" docName="draft-muffett-end-to-end-secure-messaging-04" submissionType="IETF" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" consensus="true">
 
 <front>
-<title abbrev="e2esm">A Duck Test for End-to-End Secure Messaging</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
+<title abbrev="e2esm">A test to falsify claims of end-to-end security in encrypted messaging apps</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
 <author initials="A." surname="Muffett" fullname="Alec Muffett"><organization>Security Researcher</organization><address><postal><street></street>
 </postal><email>alec.muffett@gmail.com</email>
 </address></author>
@@ -19,15 +19,39 @@
 <keyword>security</keyword>
 
 <abstract>
-<t>This document
-defines End-to-End Secure Messaging
-in terms of behaviours
-that <bcp14>MUST</bcp14> be exhibited
-by software
-that claims to implement it,
-or which claims to implement
-that subset which is known as
-End-to-End Encrypted Messaging.</t>
+<t>This draft
+describes a test
+which <bcp14>MAY</bcp14> be used
+to falsify claims that
+a messaging
+or messenger application,
+platform,
+solution,
+or service (&quot;messaging solution&quot;)
+provides
+either or both of
+&quot;end-to-end security&quot;
+or
+&quot;end-to-end encryption.&quot; (either/both: &quot;E2E&quot;)</t>
+<t>Any
+messaging solution,
+or any
+clearly defined subset
+of a
+larger messaging solution,
+which claims to
+provide E2E,
+<bcp14>MUST</bcp14>
+satisfy
+this test;
+however
+satisfaction of
+this test
+is not
+wholly sufficient
+to determine that
+the messaging solution
+provides E2E.</t>
 </abstract>
 
 </front>
@@ -35,48 +59,61 @@ End-to-End Encrypted Messaging.</t>
 <middle>
 
 <section anchor="introduction"><name>Introduction</name>
-<t>End-to-End Secure Messaging (E2ESM)
-is a mechanism
-which offers a digital analogue
+<t>&quot;End-to-end security&quot; and
+&quot;end-to-end encryption&quot;
+offer digital analogues
 of &quot;closed distribution lists&quot;
-for sharing message content
+for sharing content
 amongst a set of participants,
-where all participants
-are visible to each other
-and where non-participants
-are completely excluded
-from access to message content.</t>
-<t>In client-server-client network models
-it is common to implement E2ESM
-by means of encryption,
-in order to obscure
-content at rest
-upon a central server.
-So therefore E2ESM
-is often
-narrowly regarded
-in terms of &quot;end-to-end encryption&quot;.</t>
-<t>Other architectural approaches exist -
-for instance <xref target="Ricochet"></xref>
-which implements
-closed distribution
-by using
-secure point-to-point <xref target="RFC7686"></xref> networking
-to literally restrict
-the distribution
-of content
-to relevant participants.</t>
-<t>Therefore we describe E2ESM
-in terms of
-functional behaviours
-of the software
-rather than
-in terms
-of its
-implementation
-technologies
-and
-architecture.</t>
+where non-participants
+are fully excluded
+from access to content.</t>
+<t>This draft
+assumes
+a specific
+application of
+&quot;end-to-end security&quot;
+or
+&quot;end-to-end encryption&quot;
+towards the
+specific use case
+of individual and group
+messaging solutions
+where participants
+who are later added
+to a messaging group
+<bcp14>MUST NOT</bcp14>
+be able
+to access
+previously-sent content.</t>
+<t>In turn,
+use cases
+for such
+messaging solutions
+include
+the sending
+and receiving
+of any
+or all of:</t>
+
+<ol>
+<li>UNICODE or ASCII messages</li>
+<li>images, video files or audio files</li>
+<li>one-way streaming video or audio</li>
+<li>two-way streaming video or audio, as in live calls</li>
+</ol>
+<t>The application
+of this test
+does not
+depend upon
+whether the
+messaging solution
+is built upon a
+centralized,
+distributed,
+hybrid,
+or any other
+network model.</t>
 
 <section anchor="comments"><name>Comments</name>
 <t>Comments are solicited
@@ -95,34 +132,215 @@ capitals, as shown here.</t>
 </section>
 </section>
 
-<section anchor="requirements-for-an-end-to-end-secure-messenger"><name>Requirements for an End-to-End Secure Messenger</name>
-<t>Software which functions
-as an
-End-to-End Secure Messenger
-<bcp14>MUST</bcp14> satisfy the following principles, and
-<bcp14>MUST</bcp14> satisfy these principles in respect of the provided definitions
-for all forms of communication
-and data-sharing
-that the software offers.
-The E2ESM software
-<bcp14>MAY</bcp14> comprise
-either a complete application,
-or a clearly defined subset
-of functionality
-within a
-larger application.</t>
-<t>Any software
-that does not
-satisfy these requirements
-is not an
-End-to-End Secure Messenger,
-and it does not implement
-End-to-End Secure Messaging,
-nor does it implement
-End-to-End Encrypted Messaging.</t>
+<section anchor="definitions"><name>Definitions</name>
+<t>The following terminology <bcp14>SHALL</bcp14> be used for this test.</t>
+
+<section anchor="entity"><name>Entity</name>
+<t>An &quot;entity&quot;
+is that
+which is
+distingushed by
+possessing a
+<xref target="TrustedComputingBase"></xref></t>
 </section>
 
-<section anchor="definitions"><name>Definitions</name>
+<section anchor="content"><name>Content</name>
+<t>Plaintext content (&quot;content&quot;)
+is information
+of 0 or more bits,
+to be communicated.</t>
+</section>
+
+<section anchor="metadata-and-pcasm"><name>Metadata and PCASM</name>
+<t>Plaintext content
+and
+sensitive metadata (&quot;PCASM&quot;)
+is the
+union set of
+content
+and
+associated
+&quot;metadata&quot;
+that describes
+the content,
+comprising
+any or all of:</t>
+
+<section anchor="content-metadata"><name>Content Metadata</name>
+<t>Content Metadata
+is any data
+that can offer
+better than 50% certainty
+regarding the value of
+any bit
+of the content.
+Self-evidently,
+this also includes
+the value of
+the content
+itself.</t>
+</section>
+
+<section anchor="size-metadata"><name>Size Metadata</name>
+
+<ol>
+<li>For block encryption
+of content,
+&quot;size metadata&quot;
+is the
+unpadded size
+of the content.</li>
+<li>For stream encryption
+of content,
+&quot;size metadata&quot;
+is currently undefined. (TODO)</li>
+<li>For transport encryption
+of content,
+accurate &quot;size metadata&quot;
+<bcp14>SHOULD NOT</bcp14>
+be observable
+or inferable.</li>
+</ol>
+</section>
+
+<section anchor="analytic-metadata"><name>Analytic Metadata</name>
+<t>Analytic Metadata
+is data
+that analyses,
+describes,
+reduces,
+or summarises
+the content.</t>
+</section>
+</section>
+
+<section anchor="message-and-intended-recipients"><name>Message and Intended Recipients</name>
+<t>A &quot;message&quot;
+is content
+which has been
+composed by
+a sender
+and which
+is bound
+to a fixed
+and immutable
+set of recipients
+(&quot;intended recipients&quot;)
+for that message.</t>
+</section>
+
+<section anchor="recipient"><name>Recipient</name>
+<t>A &quot;recipient&quot;
+of a message
+is an entity
+which <bcp14>MAY</bcp14> ever
+be able
+to determine
+any PCASM
+for that message.
+Recipients
+of a message
+<bcp14>MAY</bcp14>
+exist outside
+of the set
+of intended recipients
+for that message.</t>
+</section>
+
+<section anchor="sender"><name>Sender</name>
+<t>The &quot;sender&quot;
+of a message
+is an entity
+which composes
+that message
+to a set
+of intended recipients
+and sends
+that message
+into the
+messaging solution.</t>
+</section>
+
+<section anchor="platform"><name>Platform</name>
+<t>A &quot;platform&quot;
+is an entity
+which provides
+a messaging solution.</t>
+</section>
+
+<section anchor="conversation-and-group-conversation"><name>Conversation and Group Conversation</name>
+<t>TODO</t>
+</section>
+</section>
+
+<section anchor="test-preconditions"><name>Test Preconditions</name>
+<t>The following
+preconditions
+<bcp14>MUST</bcp14> be met for
+the test
+to be satisfied.
+Failure to
+satisfy these
+preconditions
+is a failure
+of the test.</t>
+
+<section anchor="recipients-are-peers"><name>Recipients are Peers</name>
+<t>For any message,
+all means
+of accessing
+its PCASM
+<bcp14>MUST</bcp14>
+be equally available
+to all recipients
+without exception.</t>
+</section>
+
+<section anchor="groups-are-closed-from-within"><name>Groups are closed from within</name>
+<t>TODO, obvious</t>
+</section>
+
+<section anchor="re-injection-of-old-content-is-legitimate"><name>Re-injection of old content is legitimate</name>
+<t>TODO, obvious</t>
+</section>
+
+<section anchor="consistent-inheritance-of-group-membership-as-intended-recipients-in-centralized-messaging-solutions"><name>Consistent inheritance of group membership as intended recipients in centralized messaging solutions</name>
+<t>TODO, no cheating or sneaky insert/elisions</t>
+</section>
+</section>
+
+<section anchor="test"><name>Test</name>
+<t>The test fails
+if,
+for any message
+that is sent
+through the messaging solution,
+the set
+of recipients
+for that message
+exceeds
+the set
+of intended recipients
+for that message.</t>
+</section>
+
+<section anchor="analysis"><name>Analysis</name>
+<t>TODO, non-PCASM, stuff out of scope, Ricochet, etc.</t>
+</section>
+
+<section anchor="old-material-below-these-lines"><name>OLD MATERIAL BELOW THESE LINES</name>
+
+<section anchor="old-material-below-these-lines-1"><name>OLD MATERIAL BELOW THESE LINES</name>
+
+<section anchor="old-material-below-these-lines-2"><name>OLD MATERIAL BELOW THESE LINES</name>
+
+<section anchor="old-material-below-these-lines-3"><name>OLD MATERIAL BELOW THESE LINES</name>
+</section>
+</section>
+</section>
+</section>
+
+<section anchor="definitions-1"><name>Definitions</name>
 <t>These definitions
 are drafted
 in respect of
@@ -169,19 +387,6 @@ frequently these solutions
 are integrated
 but we only consider the maillist
 as a &quot;messenger&quot; per se.</t>
-<t>Use cases
-of a &quot;messenger&quot;
-may include
-sending and receiving
-any or all
-of:</t>
-
-<ol>
-<li>UNICODE or ASCII messages</li>
-<li>images, video files or audio files</li>
-<li>one-way streaming video or audio</li>
-<li>two-way streaming video or audio, as in live calls</li>
-</ol>
 
 <section anchor="message-and-platform"><name>Message and Platform</name>
 <t>A &quot;message&quot;
@@ -264,11 +469,10 @@ but that choice
 <bcp14>MUST</bcp14>
 be apparent
 to participants.</t>
-<t>See &quot;Rationales&quot; for more.</t>
 </section>
 </section>
 
-<section anchor="entity"><name>Entity</name>
+<section anchor="entity-1"><name>Entity</name>
 <t>An &quot;entity&quot;
 is a
 human,
@@ -1217,15 +1421,7 @@ are at:
   </front>
 </reference>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7686.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
-<reference anchor="Ricochet" target="https://www.ricochetrefresh.net">
-  <front>
-    <title>Ricochet Refresh</title>
-    <author fullname="BlueprintForFreeSpeech"></author>
-    <date year="2021"></date>
-  </front>
-</reference>
 <reference anchor="RoleOfTrust" target="https://www.repository.law.indiana.edu/fclj/vol63/iss2/3">
   <front>
     <title>The End-to-End Argument and Application Design: The Role of Trust</title>
