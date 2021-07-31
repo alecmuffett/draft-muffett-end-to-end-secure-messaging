@@ -1,5 +1,5 @@
 %%%
-title = "A Duck Test for the Security of Encrypted Messaging Apps"
+title = "A Duck Test for Security of Encrypted Messaging Apps"
 abbrev = "e2esm"
 category = "info"
 docName = "apparently this tool demands a doc name but does not use it"

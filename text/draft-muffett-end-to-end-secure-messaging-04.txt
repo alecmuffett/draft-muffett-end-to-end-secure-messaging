@@ -8,7 +8,7 @@ Intended status: Informational                              31 July 2021
 Expires: 1 February 2022
 
 
-        A Duck Test for the Security of Encrypted Messaging Apps
+          A Duck Test for Security of Encrypted Messaging Apps
               draft-muffett-end-to-end-secure-messaging-04
 
 Abstract

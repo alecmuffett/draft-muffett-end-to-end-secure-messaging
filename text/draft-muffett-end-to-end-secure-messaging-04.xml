@@ -3,7 +3,7 @@
 <rfc version="3" ipr="trust200902" docName="draft-muffett-end-to-end-secure-messaging-04" submissionType="IETF" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" consensus="true">
 
 <front>
-<title abbrev="e2esm">A Duck Test for the Security of Encrypted Messaging Apps</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
+<title abbrev="e2esm">A Duck Test for Security of Encrypted Messaging Apps</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
 <author initials="A." surname="Muffett" fullname="Alec Muffett"><organization>Security Researcher</organization><address><postal><street></street>
 </postal><email>alec.muffett@gmail.com</email>
 </address></author>

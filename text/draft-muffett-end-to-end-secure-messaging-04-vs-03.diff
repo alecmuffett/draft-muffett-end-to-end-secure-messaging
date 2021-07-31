@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-31 13:30:12.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-31 13:31:25.000000000 +0100
 ***************
 *** 4,22 ****
   
@@ -29,7 +29,7 @@
 ! Expires: 1 February 2022
   
   
-!         A Duck Test for the Security of Encrypted Messaging Apps
+!           A Duck Test for Security of Encrypted Messaging Apps
 !               draft-muffett-end-to-end-secure-messaging-04
   
   Abstract
