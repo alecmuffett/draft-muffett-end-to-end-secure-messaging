@@ -1,19 +1,7 @@
-<<<<<<< HEAD
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-31 13:02:14.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-31 13:04:49.000000000 +0100
 ***************
 *** 4,22 ****
-=======
-*** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-19 05:40:53.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-19 05:55:16.000000000 +0100
-***************
-*** 4,15 ****
-  
-  individual submission                                         A. Muffett
-  Internet-Draft                                       Security Researcher
-! Intended status: Informational                              12 July 2021
-! Expires: 13 January 2022
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
@@ -26,7 +14,6 @@
   
   Abstract
   
-<<<<<<< HEAD
 !    This document defines End-to-End Secure Messaging in terms of
 !    behaviours that MUST be exhibited by software that claims to
 !    implement it, or which claims to implement that subset which is known
@@ -35,14 +22,6 @@
   Status of This Memo
   
 --- 4,28 ----
-=======
---- 4,15 ----
-  
-  individual submission                                         A. Muffett
-  Internet-Draft                                       Security Researcher
-! Intended status: Informational                              19 July 2021
-! Expires: 20 January 2022
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
@@ -56,7 +35,6 @@
   
   Abstract
   
-<<<<<<< HEAD
 !    This draft describes a test which MAY be used to falsify claims that
 !    a messaging or messenger application, platform, solution, or service
 !    ("messaging solution") provides either or both of "end-to-end
@@ -69,8 +47,6 @@
   
   Status of This Memo
   
-=======
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
 ***************
 *** 33,39 ****
      time.  It is inappropriate to use Internet-Drafts as reference
@@ -80,24 +56,15 @@
   
   Copyright Notice
   
-<<<<<<< HEAD
 --- 39,45 ----
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
 !    This Internet-Draft will expire on 1 February 2022.
-=======
---- 33,39 ----
-     time.  It is inappropriate to use Internet-Drafts as reference
-     material or to cite them other than as "work in progress."
-  
-!    This Internet-Draft will expire on 20 January 2022.
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
   
   Copyright Notice
   
 ***************
-<<<<<<< HEAD
 *** 44,147 ****
      Provisions Relating to IETF Documents (https://trustee.ietf.org/
      license-info) in effect on the date of publication of this document.
@@ -108,9 +75,6 @@
      provided without warranty as described in the Simplified BSD License.
   
   
-=======
-*** 53,59 ****
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
   
   
   
@@ -118,7 +82,6 @@
   
   Internet-Draft                    e2esm                        July 2021
   
-<<<<<<< HEAD
   
 ! Table of Contents
   
@@ -359,35 +322,6 @@
   
   
   
-=======
---- 53,59 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 1]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 109,115 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022                [Page 2]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 109,115 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 2]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 165,171 ****
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
   
   
   
@@ -395,7 +329,6 @@
   
   Internet-Draft                    e2esm                        July 2021
   
-<<<<<<< HEAD
   
 ! 2.  Requirements for an End-to-End Secure Messenger
   
@@ -861,75 +794,11 @@
   
   
   
-=======
---- 165,171 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 3]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 221,227 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022                [Page 4]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 221,227 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 4]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 277,283 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022                [Page 5]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 277,283 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 5]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 333,339 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022                [Page 6]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 333,339 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 6]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 389,395 ****
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
   
   
   
 ! Muffett                  Expires 13 January 2022                [Page 7]
   
-<<<<<<< HEAD
 ! Internet-Draft                    e2esm                        July 2021
   
   
@@ -1722,178 +1591,12 @@
      [Spectre]  Wikipedia, "Spectre", 2021,
                 <https://en.wikipedia.org/wiki/
                 Spectre_(security_vulnerability)>.
-=======
-  Internet-Draft                    e2esm                        July 2021
-  
---- 389,395 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 7]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 445,451 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022                [Page 8]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 445,451 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 8]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 501,507 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022                [Page 9]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 501,507 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022                [Page 9]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 557,563 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 10]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 557,563 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 10]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 613,619 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 11]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 613,619 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 11]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 669,675 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 12]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 669,675 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 12]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 725,731 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 13]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 725,731 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 13]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 781,787 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 14]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 781,787 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 14]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 837,843 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 15]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 837,843 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 15]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-***************
-*** 893,899 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 16]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
---- 893,899 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 16]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
 ***************
 *** 949,952 ****
   
   
   
 ! Muffett                  Expires 13 January 2022               [Page 17]
-<<<<<<< HEAD
 --- 1091,1120 ----
   
   
@@ -1925,10 +1628,3 @@
 ! 
 ! 
 ! Muffett                  Expires 1 February 2022               [Page 20]
-=======
---- 949,952 ----
-  
-  
-  
-! Muffett                  Expires 20 January 2022               [Page 17]
->>>>>>> e9961c3742775ddbf89659e93596dc2848543096
