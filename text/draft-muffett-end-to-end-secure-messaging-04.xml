@@ -63,8 +63,8 @@ actually provides E2E.</t>
 offer digital analogues
 of &quot;closed distribution lists&quot;
 for sharing content
-amongst a set of participants,
-where non-participants
+amongst a set of intended recipients,
+where all others
 are fully excluded
 from access to content.</t>
 <t>This draft
@@ -78,7 +78,7 @@ towards the
 specific use case
 of individual and group
 messaging solutions
-where participants
+where entities
 who are later added
 to a messaging group
 <bcp14>MUST NOT</bcp14>
@@ -142,6 +142,16 @@ distingushed by
 possessing a
 distinct
 <xref target="TrustedComputingBase"></xref></t>
+<t>Use cases of
+an entity
+<bcp14>MAY</bcp14> include being
+a human being,
+a software bot,
+a conversation archiver,
+or something other
+which sends
+and/or receives
+messages.</t>
 </section>
 
 <section anchor="content"><name>Content</name>
@@ -216,7 +226,9 @@ the content.</t>
 
 <section anchor="message-and-intended-recipients"><name>Message and Intended Recipients</name>
 <t>A &quot;message&quot;
-is content
+is zero-or-more
+bits of
+content
 which has been
 composed by
 a sender
@@ -224,7 +236,9 @@ and which
 is bound
 to a fixed
 and immutable
-set of recipients
+set of
+zero or more
+recipients
 (&quot;intended recipients&quot;)
 for that message.</t>
 </section>
@@ -271,6 +285,28 @@ a messaging solution.</t>
 <section anchor="conversation-and-group-conversation"><name>Conversation and Group Conversation</name>
 <t>TODO</t>
 </section>
+
+<section anchor="backdoor"><name>Backdoor</name>
+<t>A &quot;backdoor&quot;
+is
+any intentional
+or unintentional
+feature
+of a messaging solution
+whereby,
+in respect of
+a given message
+some PCASM
+of that message
+<bcp14>MAY</bcp14> become available
+to an entity
+that is not
+an intended recipient
+of that message,</t>
+<t>other than by
+the intentional action
+of an intended recipient.</t>
+</section>
 </section>
 
 <section anchor="test-preconditions"><name>Test Preconditions</name>
@@ -287,13 +323,11 @@ of the test.</t>
 
 <section anchor="recipients-are-peers"><name>Recipients are Peers</name>
 <t>For any message,
-all means
-of accessing
-its PCASM
-<bcp14>MUST</bcp14>
-be equally available
-to all recipients
-without exception.</t>
+there exists no method
+to access its PCASM
+where that method
+is not equally available
+to all recipients.</t>
 </section>
 
 <section anchor="groups-are-closed-from-within"><name>Groups are closed from within</name>
@@ -338,198 +372,6 @@ for that message.</t>
 </section>
 </section>
 </section>
-</section>
-
-<section anchor="definitions-1"><name>Definitions</name>
-<t>These definitions
-are drafted
-in respect of
-many examples
-of software
-commonly held
-to offer
-(or have offered)
-end-to-end security;
-these examples
-include:</t>
-
-<ol>
-<li>Signal Messenger</li>
-<li>WhatsApp Messenger</li>
-<li>Ricochet Messenger</li>
-<li>PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist</li>
-</ol>
-<t>Further context
-for several of
-these definitions
-can also be found
-in the rationales section,
-below.</t>
-<t>For the avoidance of doubt
-we define a &quot;messenger&quot;
-as a software solution
-which enables communication
-between two or more entities,
-without offering
-newly-added participants
-retrospective access
-to content
-which was previously sent
-by prior participants.</t>
-<t>This echoes
-the distinction
-between
-a &quot;maillist&quot;
-versus
-a &quot;maillist archive&quot;
-or &quot;web forum&quot;;
-frequently these solutions
-are integrated
-but we only consider the maillist
-as a &quot;messenger&quot; per se.</t>
-
-<section anchor="message-and-platform"><name>Message and Platform</name>
-<t>A &quot;message&quot;
-is information
-of 0 or more bits,
-to be communicated.</t>
-<t>Messages possess
-both plaintext &quot;content&quot;,
-and also &quot;metadata&quot;
-which describes the content.</t>
-<t>A &quot;platform&quot;
-is a specific instance of software
-which exists
-for the purpose
-of routing
-or exchanging
-messages.</t>
-</section>
-
-<section anchor="plaintext-content-and-sensitive-metadata-pcasm"><name>Plaintext Content and Sensitive Metadata (PCASM)</name>
-<t>The &quot;PCASM&quot;
-of a message
-is defined
-as the
-&quot;plaintext content and sensitive metadata&quot;
-of that message,
-comprising any or all of:</t>
-
-<section anchor="content-pcasm"><name>Content PCASM</name>
-<t>Content PCASM
-is any data
-that can offer
-better than 50-50 certainty
-regarding the value of
-any bit
-of the content.
-See &quot;Rationales&quot; for more.</t>
-</section>
-
-<section anchor="size-pcasm"><name>Size PCASM</name>
-<t>For block encryption of content,
-Size PCASM is the unpadded size of the content.</t>
-<t>For stream encryption of content,
-Size PCASM is currently undefined.
-(TODO, would benefit from broader input.)</t>
-<t>For transport encryption of content,
-exact Size PCASM
-<bcp14>SHOULD NOT</bcp14>
-be observable
-or inferable.</t>
-<t>See &quot;Rationales&quot; for more.</t>
-</section>
-
-<section anchor="analytic-pcasm"><name>Analytic PCASM</name>
-<t>Analytic PCASM
-is data
-which analyses,
-describes,
-reduces,
-or summarises
-the &quot;content&quot;.
-See &quot;Rationales&quot; for more.</t>
-</section>
-
-<section anchor="conversation-metadata-optional"><name>Conversation Metadata (<bcp14>OPTIONAL</bcp14>)</name>
-<t>Conversation Metadata
-<bcp14>MAY</bcp14> exist &quot;outside&quot;
-of messages
-and describe
-the conversation
-context.</t>
-<t>Whether
-conversation metadata
-constitutes PCASM,
-is an
-<bcp14>OPTIONAL</bcp14>
-choice
-for E2ESM software,
-but that choice
-<bcp14>MUST</bcp14>
-be apparent
-to participants.</t>
-</section>
-</section>
-
-<section anchor="entity-1"><name>Entity</name>
-<t>An &quot;entity&quot;
-is a
-human,
-machine,
-software bot,
-conversation archiver,
-or other,
-which sends
-and/or receives
-messages.</t>
-<t>Entities are
-bounded
-by the extent
-of their
-Trusted Computing Base (&quot;TCB&quot;),
-including
-all systems
-that they control and/or utilise.</t>
-</section>
-
-<section anchor="sender-and-recipient"><name>Sender and Recipient</name>
-<t>A &quot;sender&quot;
-is an entity
-which composes
-and sends
-messages.</t>
-<t>A &quot;recipient&quot;
-is an entity
-which receives
-messages
-and <bcp14>MAY</bcp14>
-be able
-to access
-the PCASM
-of those messages.</t>
-<t>For each message
-there will be
-one sender
-and one or more
-recipients.</t>
-</section>
-
-<section anchor="participants-and-non-participants"><name>Participants and Non-Participants</name>
-<t>The union set
-of sender and recipients
-for any given message
-are the &quot;participants&quot;
-in that message.</t>
-<t>It follows that
-for any given message,
-all entities
-that exist
-outside of
-the participant set
-will be &quot;non-participants&quot;
-in respect of that message.</t>
-</section>
 
 <section anchor="conversation-group-centralised-decentralised"><name>Conversation, Group, Centralised &amp; Decentralised</name>
 <t>A &quot;conversation&quot;
@@ -571,19 +413,6 @@ may also exist,
 in terms of
 (e.g.) email addressees
 or subject lines.</t>
-</section>
-
-<section anchor="backdoor"><name>Backdoor</name>
-<t>A &quot;backdoor&quot;
-is any
-intentional or unintentional mechanism,
-in respect of a given message
-and that message's participants,
-where some PCASM
-of that message
-<bcp14>MAY</bcp14> become available
-to a non-participant
-without the intentional action of a participant.</t>
 </section>
 </section>
 
@@ -1210,7 +1039,7 @@ sensitively by platforms.</t>
 for the purposes of this example encoded as an ASCII string of length
 13 bytes without terminator character.</t>
 
-<section anchor="content-pcasm-1"><name>Content PCASM</name>
+<section anchor="content-pcasm"><name>Content PCASM</name>
 <t>Examples of Content PCASM would include, non-exclusively:</t>
 
 <ol>
@@ -1222,12 +1051,12 @@ for the purposes of this example encoded as an ASCII string of length
 </ol>
 </section>
 
-<section anchor="size-pcasm-1"><name>Size PCASM</name>
+<section anchor="size-pcasm"><name>Size PCASM</name>
 <t>Size PCASM is defined in the main text, as it relates to the transport
 and/or content encryption mechanisms.</t>
 </section>
 
-<section anchor="analytic-pcasm-1"><name>Analytic PCASM</name>
+<section anchor="analytic-pcasm"><name>Analytic PCASM</name>
 <t>Examples of Analytic PCASM would include, non-exclusively:</t>
 
 <ol>

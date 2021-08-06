@@ -38,11 +38,11 @@ messaging solution actually provides E2E.
 # Introduction
 
 "End-to-end security" and "end-to-end encryption" offer digital analogues of "closed distribution
-lists" for sharing content amongst a set of participants, where non-participants are fully excluded
+lists" for sharing content amongst a set of intended recipients, where all others are fully excluded
 from access to content.
 
 This draft assumes a specific application of "end-to-end security" or "end-to-end encryption"
-towards the specific use case of individual and group messaging solutions where participants who are
+towards the specific use case of individual and group messaging solutions where entities who are
 later added to a messaging group **MUST NOT** be able to access previously-sent content.
 
 In turn, use cases for such messaging solutions include the sending and receiving of any or all of:
@@ -78,6 +78,9 @@ The following terminology **SHALL** be used for this test.
 
 An "entity" is that which is distingushed by possessing a distinct [@TrustedComputingBase]
 
+Use cases of an entity **MAY** include being a human being, a software bot, a conversation archiver,
+or something other which sends and/or receives messages.
+
 ## Content
 
 Plaintext content ("content") is information of 0 or more bits, to be communicated.
@@ -107,8 +110,8 @@ Analytic Metadata is data that analyses, describes, reduces, or summarises the c
 
 ## Message and Intended Recipients
 
-A "message" is content which has been composed by a sender and which is bound to a fixed and
-immutable set of recipients ("intended recipients") for that message.
+A "message" is zero-or-more bits of content which has been composed by a sender and which is bound
+to a fixed and immutable set of zero or more recipients ("intended recipients") for that message.
 
 ## Recipient
 
@@ -129,6 +132,14 @@ A "platform" is an entity which provides a messaging solution.
 
 TODO
 
+## Backdoor
+
+A "backdoor" is any intentional or unintentional feature of a messaging solution whereby, in respect
+of a given message some PCASM of that message **MAY** become available to an entity that is not an
+intended recipient of that message,
+
+other than by the intentional action of an intended recipient.
+
 # Test Preconditions
 
 The following preconditions **MUST** be met for the test to be satisfied. Failure to satisfy these
@@ -136,8 +147,8 @@ preconditions is a failure of the test.
 
 ## Recipients are Peers
 
-For any message, all means of accessing its PCASM **MUST** be equally available to all recipients
-without exception.
+For any message, there exists no method to access its PCASM where that method is not equally
+available to all recipients.
 
 ## Groups are closed from within
 
@@ -168,94 +179,6 @@ TODO, non-PCASM, stuff out of scope, Ricochet, etc.
 
 #### OLD MATERIAL BELOW THESE LINES
 
-# Definitions
-
-These definitions are drafted in respect of many examples of software commonly held to offer (or
-have offered) end-to-end security; these examples include:
-
-1.  Signal Messenger
-
-2.  WhatsApp Messenger
-
-3.  Ricochet Messenger
-
-4.  PGP-Encrypted Email sent to an ad-hoc list of addressees, or to a maillist
-
-Further context for several of these definitions can also be found in the rationales section, below.
-
-For the avoidance of doubt we define a "messenger" as a software solution which enables
-communication between two or more entities, without offering newly-added participants retrospective
-access to content which was previously sent by prior participants.
-
-This echoes the distinction between a "maillist" versus a "maillist archive" or "web forum";
-frequently these solutions are integrated but we only consider the maillist as a "messenger" per se.
-
-## Message and Platform
-
-A "message" is information of 0 or more bits, to be communicated.
-
-Messages possess both plaintext "content", and also "metadata" which describes the content.
-
-A "platform" is a specific instance of software which exists for the purpose of routing or
-exchanging messages.
-
-## Plaintext Content and Sensitive Metadata (PCASM)
-
-The "PCASM" of a message is defined as the "plaintext content and sensitive metadata" of that
-message, comprising any or all of:
-
-### Content PCASM
-
-Content PCASM is any data that can offer better than 50-50 certainty regarding the value of any bit
-of the content. See "Rationales" for more.
-
-### Size PCASM
-
-For block encryption of content, Size PCASM is the unpadded size of the content.
-
-For stream encryption of content, Size PCASM is currently undefined. (TODO, would benefit from
-broader input.)
-
-For transport encryption of content, exact Size PCASM **SHOULD NOT** be observable or inferable.
-
-See "Rationales" for more.
-
-### Analytic PCASM
-
-Analytic PCASM is data which analyses, describes, reduces, or summarises the "content". See
-"Rationales" for more.
-
-### Conversation Metadata (**OPTIONAL**)
-
-Conversation Metadata **MAY** exist "outside" of messages and describe the conversation context.
-
-Whether conversation metadata constitutes PCASM, is an **OPTIONAL** choice for E2ESM software, but
-that choice **MUST** be apparent to participants.
-
-## Entity
-
-An "entity" is a human, machine, software bot, conversation archiver, or other, which sends and/or
-receives messages.
-
-Entities are bounded by the extent of their Trusted Computing Base ("TCB"), including all systems
-that they control and/or utilise.
-
-## Sender and Recipient
-
-A "sender" is an entity which composes and sends messages.
-
-A "recipient" is an entity which receives messages and **MAY** be able to access the PCASM of those
-messages.
-
-For each message there will be one sender and one or more recipients.
-
-## Participants and Non-Participants
-
-The union set of sender and recipients for any given message are the "participants" in that message.
-
-It follows that for any given message, all entities that exist outside of the participant set will
-be "non-participants" in respect of that message.
-
 ## Conversation, Group, Centralised & Decentralised
 
 A "conversation" is a sequence of one or more messages, and the responses or replies to them, over a
@@ -271,12 +194,6 @@ message is composed or sent.
 In "decentralised" E2ESM such as PGP-Encrypted Email or Ricochet the recipients of each message are
 individually determined by each sender at the point of composition; however "group" metadata may
 also exist, in terms of (e.g.) email addressees or subject lines.
-
-## Backdoor
-
-A "backdoor" is any intentional or unintentional mechanism, in respect of a given message and
-that message's participants, where some PCASM of that message **MAY** become available to a
-non-participant without the intentional action of a participant.
 
 # Principles
 
