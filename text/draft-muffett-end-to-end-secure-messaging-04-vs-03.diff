@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 01:15:59.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 01:21:11.000000000 +0100
 ***************
 *** 4,22 ****
   
@@ -357,7 +357,7 @@
 + 
 + 2.1.  Entity
 + 
-+    An "entity" is that which is distingushed by possessing a
++    An "entity" is that which is distingushed by possessing a distinct
 +    [TrustedComputingBase]
 + 
 + 2.2.  Content

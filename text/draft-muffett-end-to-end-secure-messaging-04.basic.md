@@ -76,7 +76,7 @@ The following terminology **SHALL** be used for this test.
 
 ## Entity
 
-An "entity" is that which is distingushed by possessing a [@TrustedComputingBase]
+An "entity" is that which is distingushed by possessing a distinct [@TrustedComputingBase]
 
 ## Content
 

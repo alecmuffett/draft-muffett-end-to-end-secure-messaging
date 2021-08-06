@@ -204,7 +204,7 @@ Internet-Draft                    e2esm                      August 2021
 
 2.1.  Entity
 
-   An "entity" is that which is distingushed by possessing a
+   An "entity" is that which is distingushed by possessing a distinct
    [TrustedComputingBase]
 
 2.2.  Content
