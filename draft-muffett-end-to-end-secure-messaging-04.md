@@ -313,7 +313,6 @@ other than by
 the intentional action
 of an intended recipient.
 
-
 # Test Preconditions
 
 The following
@@ -367,30 +366,20 @@ for that message.
 
 TODO, non-PCASM, stuff out of scope, Ricochet, etc.
 
-
-
-
-
-
-
-
-
-
-
 # OLD MATERIAL BELOW THESE LINES
 ## OLD MATERIAL BELOW THESE LINES
 ### OLD MATERIAL BELOW THESE LINES
 #### OLD MATERIAL BELOW THESE LINES
+##### OLD MATERIAL BELOW THESE LINES
 
-
-
-
-
-
-
-
-
-
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
 
 ## Conversation, Group, Centralised & Decentralised
 
@@ -727,97 +716,6 @@ of the participant entity.
 See also: "Mutual Identity Verification"
 in "**OPTIONAL** Features of E2ESM"
 
-## Why: Backdoor
-
-In software engineering
-there is a perpetual tension
-between the concepts of
-"feature" versus "bug" -
-and occasionally
-"misfeature" versus "misbug".
-These tensions
-arise from
-the problem of [@DualUse] -
-that it is
-not feasible
-to firmly
-and completely
-ascribe "intention"
-to any hardware or software mechanism.
-
-The information security community
-has experienced
-a historical spectrum
-of mechanisms
-which have assisted
-non-participant access to PCASM.
-These have
-variously been named as
-"export-grade key restrictions" ([@ExportControl], then [@Logjam]),
-"side channel attacks" ([@Spectre] and [@Meltdown]),
-"law enforcement access fields" [@Clipper], and
-"key escrow" [@CryptoWars].
-
-All of
-these terms
-combine
-an "access facilitation mechanism"
-with an "intention or opportunity" -
-and for all of them
-an access facilitation mechanism
-is first **REQUIRED**.
-
-An access facilitation mechanism
-is a "door",
-and is inherently [@DualUse].
-Because the goal
-of E2ESM
-is to limit
-access to PCASM
-exclusively to
-a defined set of participants,
-then the intended
-means of access
-is clearly the "front door";
-and any other access mechanism
-is a "back door".
-
-If the term
-"back door"
-is considered
-innately pejorative,
-alternative, uncertain constructions
-such as
-"illegitimate access feature",
-"potentially intentional data-access weakness",
-"legally-obligated exceptional access mechanism",
-or any other phrase,
-all **MUST** combine
-both notions
-of an access mechanism (e.g. "door")
-and a definite or suspected intention (e.g. "legal obligation").
-
-So the phrase
-"back door"
-is brief,
-clear,
-and widely understood
-to mean "a secondary means of access".
-In the above definition
-we already allow
-for the term to be prefixed
-with "intentional" or "unintentional".
-
-Thus it seems
-appropriate
-to use this term
-in this context,
-not least because
-it is also not far removed
-from the similar
-and established term
-"side channel".
-
 ## Why: Transparency of Participation
 
 The "ends"
@@ -1135,86 +1033,6 @@ Information which would not be PCASM would include, non-exclusively:
 1. The content was sent from the following IP address: ...
 1. The content was sent from the following geolocation: ...
 1. The content was composed using the following platform: ...
-
-# Worked Example
-
-Consider FooBook,
-a hypothetical example company
-which provides
-messaging services
-for conversations
-between entities
-who use it.
-
-For each conversation
-FooBook **MUST** decide
-whether to represent itself
-as a conversation participant
-or as a non-participant. (Transparency of Participation)
-
-If FooBook decides
-to represent itself
-as a non-participant,
-then it **MUST NOT**
-have any access to PCASM. (Integrity of Participation / Non-Participation)
-
-If FooBook decides
-to represent itself
-as a participant,
-then it **MUST NOT**
-have "exceptional" access
-to PCASM,
-despite being
-the provider
-of the service -
-for instance
-via
-raw database access
-or network sniffing.
-However it **MAY**
-participate in
-E2ESM conversations
-in a "normal" way,
-and thereby
-have "normal" access
-to intra-conversation PCASM.
-(Integrity of Participation, Equality of Participation)
-
-FooBook **MAY**
-retain means
-to eject reported abusive participants
-from a conversation. (Decrease in Closure of Participation)
-
-FooBook **MUST NOT**
-retain means
-to forcibly insert
-new participants
-into a conversation.
-For clarity:
-this specification
-does not recognise
-any notion
-of "atomic" exchange
-of one participant with another,
-treating it as an ejection,
-followed by an "illegitimate" insertion.
-(Increase in Closure of Participation)
-
-FooBook **MUST**
-enable the user
-to observe and manage
-the complete state
-of their [@TrustedComputingBase]
-with respect
-to their FooBook messaging services. (Management and Visibility)
-
-FooBook **MAY**
-treat conversation metadata
-as PCASM,
-but it **MUST**
-communicate to participants
-whether it does
-or does not.
 
 # See Also
 

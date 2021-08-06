@@ -360,6 +360,8 @@ for that message.</p>
 
 <h4 id="old-material-below-these-lines-3">OLD MATERIAL BELOW THESE LINES</h4>
 
+<h5 id="old-material-below-these-lines-4">OLD MATERIAL BELOW THESE LINES</h5>
+
 <h2 id="conversation-group-centralised-decentralised">Conversation, Group, Centralised &amp; Decentralised</h2>
 
 <p>A &ldquo;conversation&rdquo;
@@ -697,97 +699,6 @@ of the participant entity.
 See also: &ldquo;Mutual Identity Verification&rdquo;
 in &ldquo;<strong>OPTIONAL</strong> Features of E2ESM&rdquo;</p>
 
-<h2 id="why-backdoor">Why: Backdoor</h2>
-
-<p>In software engineering
-there is a perpetual tension
-between the concepts of
-&ldquo;feature&rdquo; versus &ldquo;bug&rdquo; -
-and occasionally
-&ldquo;misfeature&rdquo; versus &ldquo;misbug&rdquo;.
-These tensions
-arise from
-the problem of <cite class="informative"><a href="#DualUse"><sup>[DualUse]</sup></a></cite> -
-that it is
-not feasible
-to firmly
-and completely
-ascribe &ldquo;intention&rdquo;
-to any hardware or software mechanism.</p>
-
-<p>The information security community
-has experienced
-a historical spectrum
-of mechanisms
-which have assisted
-non-participant access to PCASM.
-These have
-variously been named as
-&ldquo;export-grade key restrictions&rdquo; (<cite class="informative"><a href="#ExportControl"><sup>[ExportControl]</sup></a></cite>, then <cite class="informative"><a href="#Logjam"><sup>[Logjam]</sup></a></cite>),
-&ldquo;side channel attacks&rdquo; (<cite class="informative"><a href="#Spectre"><sup>[Spectre]</sup></a></cite> and <cite class="informative"><a href="#Meltdown"><sup>[Meltdown]</sup></a></cite>),
-&ldquo;law enforcement access fields&rdquo; <cite class="informative"><a href="#Clipper"><sup>[Clipper]</sup></a></cite>, and
-&ldquo;key escrow&rdquo; <cite class="informative"><a href="#CryptoWars"><sup>[CryptoWars]</sup></a></cite>.</p>
-
-<p>All of
-these terms
-combine
-an &ldquo;access facilitation mechanism&rdquo;
-with an &ldquo;intention or opportunity&rdquo; -
-and for all of them
-an access facilitation mechanism
-is first <strong>REQUIRED</strong>.</p>
-
-<p>An access facilitation mechanism
-is a &ldquo;door&rdquo;,
-and is inherently <cite class="informative"><a href="#DualUse"><sup>[DualUse]</sup></a></cite>.
-Because the goal
-of E2ESM
-is to limit
-access to PCASM
-exclusively to
-a defined set of participants,
-then the intended
-means of access
-is clearly the &ldquo;front door&rdquo;;
-and any other access mechanism
-is a &ldquo;back door&rdquo;.</p>
-
-<p>If the term
-&ldquo;back door&rdquo;
-is considered
-innately pejorative,
-alternative, uncertain constructions
-such as
-&ldquo;illegitimate access feature&rdquo;,
-&ldquo;potentially intentional data-access weakness&rdquo;,
-&ldquo;legally-obligated exceptional access mechanism&rdquo;,
-or any other phrase,
-all <strong>MUST</strong> combine
-both notions
-of an access mechanism (e.g. &ldquo;door&rdquo;)
-and a definite or suspected intention (e.g. &ldquo;legal obligation&rdquo;).</p>
-
-<p>So the phrase
-&ldquo;back door&rdquo;
-is brief,
-clear,
-and widely understood
-to mean &ldquo;a secondary means of access&rdquo;.
-In the above definition
-we already allow
-for the term to be prefixed
-with &ldquo;intentional&rdquo; or &ldquo;unintentional&rdquo;.</p>
-
-<p>Thus it seems
-appropriate
-to use this term
-in this context,
-not least because
-it is also not far removed
-from the similar
-and established term
-&ldquo;side channel&rdquo;.</p>
-
 <h2 id="why-transparency-of-participation">Why: Transparency of Participation</h2>
 
 <p>The &ldquo;ends&rdquo;
@@ -1114,86 +1025,6 @@ and/or content encryption mechanisms.</p>
 <li>The content was composed using the following platform: &hellip;</li>
 </ol>
 
-<h1 id="worked-example">Worked Example</h1>
-
-<p>Consider FooBook,
-a hypothetical example company
-which provides
-messaging services
-for conversations
-between entities
-who use it.</p>
-
-<p>For each conversation
-FooBook <strong>MUST</strong> decide
-whether to represent itself
-as a conversation participant
-or as a non-participant. (Transparency of Participation)</p>
-
-<p>If FooBook decides
-to represent itself
-as a non-participant,
-then it <strong>MUST NOT</strong>
-have any access to PCASM. (Integrity of Participation / Non-Participation)</p>
-
-<p>If FooBook decides
-to represent itself
-as a participant,
-then it <strong>MUST NOT</strong>
-have &ldquo;exceptional&rdquo; access
-to PCASM,
-despite being
-the provider
-of the service -
-for instance
-via
-raw database access
-or network sniffing.
-However it <strong>MAY</strong>
-participate in
-E2ESM conversations
-in a &ldquo;normal&rdquo; way,
-and thereby
-have &ldquo;normal&rdquo; access
-to intra-conversation PCASM.
-(Integrity of Participation, Equality of Participation)</p>
-
-<p>FooBook <strong>MAY</strong>
-retain means
-to eject reported abusive participants
-from a conversation. (Decrease in Closure of Participation)</p>
-
-<p>FooBook <strong>MUST NOT</strong>
-retain means
-to forcibly insert
-new participants
-into a conversation.
-For clarity:
-this specification
-does not recognise
-any notion
-of &ldquo;atomic&rdquo; exchange
-of one participant with another,
-treating it as an ejection,
-followed by an &ldquo;illegitimate&rdquo; insertion.
-(Increase in Closure of Participation)</p>
-
-<p>FooBook <strong>MUST</strong>
-enable the user
-to observe and manage
-the complete state
-of their <cite class="informative"><a href="#TrustedComputingBase"><sup>[TrustedComputingBase]</sup></a></cite>
-with respect
-to their FooBook messaging services. (Management and Visibility)</p>
-
-<p>FooBook <strong>MAY</strong>
-treat conversation metadata
-as PCASM,
-but it <strong>MUST</strong>
-communicate to participants
-whether it does
-or does not.</p>
-
 <h1 id="see-also">See Also</h1>
 
 <p>A different approach
@@ -1227,44 +1058,8 @@ are at:
 <a class="bliography-target" href="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">https://en.wikipedia.org/wiki/Ciphertext_indistinguishability</a>
 <date class="bibliography-date">2021</date>
 </dd>
-<dt class="bibliography-cite" id="Clipper">[Clipper]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Clipper chip</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Clipper_chip">https://en.wikipedia.org/wiki/Clipper_chip</a>
-<date class="bibliography-date">2021</date>
-</dd>
-<dt class="bibliography-cite" id="CryptoWars">[CryptoWars]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Crypto Wars</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Crypto_Wars">https://en.wikipedia.org/wiki/Crypto_Wars</a>
-<date class="bibliography-date">2021</date>
-</dd>
-<dt class="bibliography-cite" id="DualUse">[DualUse]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Dual-use technology</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Dual-use_technology">https://en.wikipedia.org/wiki/Dual-use_technology</a>
-<date class="bibliography-date">2021</date>
-</dd>
-<dt class="bibliography-cite" id="ExportControl">[ExportControl]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Export of cryptography from the United States</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era">https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era</a>
-<date class="bibliography-date">2021</date>
-</dd>
 <dt class="bibliography-cite" id="I-D.knodel-e2ee-definition">[I-D.knodel-e2ee-definition]</dt>
 <dd></dd>
-<dt class="bibliography-cite" id="Logjam">[Logjam]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Logjam</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Logjam_(computer_security)">https://en.wikipedia.org/wiki/Logjam_(computer_security)</a>
-<date class="bibliography-date">2021</date>
-</dd>
-<dt class="bibliography-cite" id="Meltdown">[Meltdown]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Meltdown</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)</a>
-<date class="bibliography-date">2021</date>
-</dd>
 <dt class="bibliography-cite" id="RFC2119">[RFC2119]</dt>
 <dd></dd>
 <dt class="bibliography-cite" id="RFC8174">[RFC8174]</dt>
@@ -1275,12 +1070,6 @@ are at:
 <span class="bibliography-title">The End-to-End Argument and Application Design: The Role of Trust</span>
 <a class="bliography-target" href="https://www.repository.law.indiana.edu/fclj/vol63/iss2/3">https://www.repository.law.indiana.edu/fclj/vol63/iss2/3</a>
 <date class="bibliography-date">2011</date>
-</dd>
-<dt class="bibliography-cite" id="Spectre">[Spectre]</dt>
-<dd><span class="bibliography-author">Wikipedia</span>
-<span class="bibliography-title">Spectre</span>
-<a class="bliography-target" href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)</a>
-<date class="bibliography-date">2021</date>
 </dd>
 <dt class="bibliography-cite" id="TrustedComputingBase">[TrustedComputingBase]</dt>
 <dd><span class="bibliography-author">Wikipedia</span>
