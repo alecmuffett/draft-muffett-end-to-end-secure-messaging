@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 01:58:21.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 02:02:31.000000000 +0100
 ***************
 *** 4,22 ****
   
@@ -29,8 +29,8 @@
 ! Expires: 7 February 2022
   
   
-! Test to Falsify Claims of End-to-End Security in Encrypted Messaging and
-!                         Encrypted Messenger Apps
+!  Test to Falsify Claims of End-to-End Security or End-to-End Encryption
+!            in Encrypted Messenger or Encrypted Messaging Apps
 !               draft-muffett-end-to-end-secure-messaging-04
   
   Abstract

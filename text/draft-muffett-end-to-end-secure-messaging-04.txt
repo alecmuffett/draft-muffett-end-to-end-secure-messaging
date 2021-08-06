@@ -8,8 +8,8 @@ Intended status: Informational                             6 August 2021
 Expires: 7 February 2022
 
 
-Test to Falsify Claims of End-to-End Security in Encrypted Messaging and
-                        Encrypted Messenger Apps
+ Test to Falsify Claims of End-to-End Security or End-to-End Encryption
+           in Encrypted Messenger or Encrypted Messaging Apps
               draft-muffett-end-to-end-secure-messaging-04
 
 Abstract
