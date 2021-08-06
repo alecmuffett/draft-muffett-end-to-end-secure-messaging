@@ -1,5 +1,5 @@
 %%%
-title = "Test for Falsifiability of End-to-End Security in Encrypted Messaging Apps"
+title = "Test to Falsify Claims of End-to-End Security in Encrypted Messaging and Encrypted Messenger Apps"
 abbrev = "e2esm"
 category = "info"
 docName = "apparently this tool demands a doc name but does not use it"
