@@ -8,7 +8,8 @@ Intended status: Informational                             6 August 2021
 Expires: 7 February 2022
 
 
-         Duck Test for the Security of Encrypted Messaging Apps
+ Test for Falsifiability of End-to-End Security in Encrypted Messaging
+                                  Apps
               draft-muffett-end-to-end-secure-messaging-04
 
 Abstract
@@ -49,7 +50,6 @@ Copyright Notice
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.  Code Components
 
 
 
@@ -58,6 +58,7 @@ Muffett                  Expires 7 February 2022                [Page 1]
 Internet-Draft                    e2esm                      August 2021
 
 
+   and restrictions with respect to this document.  Code Components
    extracted from this document must include Simplified BSD License text
    as described in Section 4.e of the Trust Legal Provisions and are
    provided without warranty as described in the Simplified BSD License.
@@ -105,7 +106,6 @@ Table of Contents
    8.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   9
      8.1.  Transparency of Participation . . . . . . . . . . . . . .   9
      8.2.  Integrity of Participation  . . . . . . . . . . . . . . .  10
-       8.2.1.  Retransmission Exception  . . . . . . . . . . . . . .  10
 
 
 
@@ -114,6 +114,7 @@ Muffett                  Expires 7 February 2022                [Page 2]
 Internet-Draft                    e2esm                      August 2021
 
 
+       8.2.1.  Retransmission Exception  . . . . . . . . . . . . . .  10
      8.3.  Equality of Participation . . . . . . . . . . . . . . . .  10
      8.4.  Closure of Conversation . . . . . . . . . . . . . . . . .  10
        8.4.1.  Public Conversations and Self-Subscription  . . . . .  10
@@ -160,8 +161,7 @@ Internet-Draft                    e2esm                      August 2021
    to a messaging group MUST NOT be able to access previously-sent
    content.
 
-   In turn, use cases for such messaging solutions include the sending
-   and receiving of any or all of:
+
 
 
 
@@ -169,6 +169,9 @@ Muffett                  Expires 7 February 2022                [Page 3]
 
 Internet-Draft                    e2esm                      August 2021
 
+
+   In turn, use cases for such messaging solutions include the sending
+   and receiving of any or all of:
 
    1.  UNICODE or ASCII messages
 
@@ -214,9 +217,6 @@ Internet-Draft                    e2esm                      August 2021
    Plaintext content and sensitive metadata ("PCASM") is the union set
    of content and associated "metadata" that describes the content,
    comprising any or all of:
-
-
-
 
 
 

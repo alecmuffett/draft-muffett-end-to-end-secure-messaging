@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 01:09:15.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 01:10:49.000000000 +0100
 ***************
 *** 4,22 ****
   
@@ -21,7 +21,7 @@
   
   Status of This Memo
   
---- 4,27 ----
+--- 4,28 ----
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
@@ -29,7 +29,8 @@
 ! Expires: 7 February 2022
   
   
-!          Duck Test for the Security of Encrypted Messaging Apps
+!  Test for Falsifiability of End-to-End Security in Encrypted Messaging
+!                                   Apps
 !               draft-muffett-end-to-end-secure-messaging-04
   
   Abstract
@@ -55,7 +56,7 @@
   
   Copyright Notice
   
---- 38,44 ----
+--- 39,45 ----
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
@@ -64,7 +65,8 @@
   Copyright Notice
   
 ***************
-*** 45,147 ****
+*** 44,147 ****
+     Provisions Relating to IETF Documents (https://trustee.ietf.org/
      license-info) in effect on the date of publication of this document.
      Please review these documents carefully, as they describe your rights
      and restrictions with respect to this document.  Code Components
@@ -78,71 +80,71 @@
   
 ! Muffett                  Expires 13 January 2022                [Page 1]
   
-! Internet-Draft                    e2esm                        July 2021
+- Internet-Draft                    e2esm                        July 2021
   
   
 - Table of Contents
   
-!    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
-!      1.1.  Comments  . . . . . . . . . . . . . . . . . . . . . . . .   3
-!      1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
-!    2.  Requirements for an End-to-End Secure Messenger . . . . . . .   4
-!    3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
-!      3.1.  Message and Platform  . . . . . . . . . . . . . . . . . .   5
-!      3.2.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   5
-!        3.2.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
-!        3.2.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
-!        3.2.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   5
-!        3.2.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   5
-!      3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-!      3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   6
-!      3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
-!      3.6.  Conversation, Group, Centralised & Decentralised  . . . .   6
-!      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
-!    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-!      4.1.  Transparency of Participation . . . . . . . . . . . . . .   7
-!      4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   7
-!        4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   7
-!      4.3.  Equality of Participation . . . . . . . . . . . . . . . .   8
-!      4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   8
-!        4.4.1.  Public Conversations and Self-Subscription  . . . . .   8
-!      4.5.  Management of Participant Clients and Devices . . . . . .   8
-!    5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-!      5.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   8
-!      5.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   9
-!      5.3.  Why: Analytic PCASM . . . . . . . . . . . . . . . . . . .   9
-!      5.4.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .   9
-!      5.5.  Why: Entity and Participant . . . . . . . . . . . . . . .   9
-!      5.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .  10
-!      5.7.  Why: Transparency of Participation  . . . . . . . . . . .  11
-!      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .  11
-!      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .  11
-!      5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  12
-!      5.11. Why: Management of Participant Clients and Devices  . . .  12
-!    6.  OPTIONAL Features of E2ESM  . . . . . . . . . . . . . . . . .  12
-!      6.1.  Disappearing Messages . . . . . . . . . . . . . . . . . .  12
-!      6.2.  Mutual Identity Verification  . . . . . . . . . . . . . .  13
-!    7.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  13
-!      7.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  13
-!      7.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  13
-!      7.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  14
-!      7.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  14
-!      7.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  14
-!    8.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  15
+-    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
+-      1.1.  Comments  . . . . . . . . . . . . . . . . . . . . . . . .   3
+-      1.2.  Notational Conventions  . . . . . . . . . . . . . . . . .   3
+-    2.  Requirements for an End-to-End Secure Messenger . . . . . . .   4
+-    3.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   4
+-      3.1.  Message and Platform  . . . . . . . . . . . . . . . . . .   5
+-      3.2.  Plaintext Content and Sensitive Metadata (PCASM)  . . . .   5
+-        3.2.1.  Content PCASM . . . . . . . . . . . . . . . . . . . .   5
+-        3.2.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . .   5
+-        3.2.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . .   5
+-        3.2.4.  Conversation Metadata (OPTIONAL)  . . . . . . . . . .   5
+-      3.3.  Entity  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+-      3.4.  Sender and Recipient  . . . . . . . . . . . . . . . . . .   6
+-      3.5.  Participants and Non-Participants . . . . . . . . . . . .   6
+-      3.6.  Conversation, Group, Centralised & Decentralised  . . . .   6
+-      3.7.  Backdoor  . . . . . . . . . . . . . . . . . . . . . . . .   7
+-    4.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+-      4.1.  Transparency of Participation . . . . . . . . . . . . . .   7
+-      4.2.  Integrity of Participation  . . . . . . . . . . . . . . .   7
+-        4.2.1.  Retransmission Exception  . . . . . . . . . . . . . .   7
+-      4.3.  Equality of Participation . . . . . . . . . . . . . . . .   8
+-      4.4.  Closure of Conversation . . . . . . . . . . . . . . . . .   8
+-        4.4.1.  Public Conversations and Self-Subscription  . . . . .   8
+-      4.5.  Management of Participant Clients and Devices . . . . . .   8
+-    5.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+-      5.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .   8
+-      5.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .   9
+-      5.3.  Why: Analytic PCASM . . . . . . . . . . . . . . . . . . .   9
+-      5.4.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .   9
+-      5.5.  Why: Entity and Participant . . . . . . . . . . . . . . .   9
+-      5.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .  10
+-      5.7.  Why: Transparency of Participation  . . . . . . . . . . .  11
+-      5.8.  Why: Integrity of Participation . . . . . . . . . . . . .  11
+-      5.9.  Why: Equality of Participation  . . . . . . . . . . . . .  11
+-      5.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  12
+-      5.11. Why: Management of Participant Clients and Devices  . . .  12
+-    6.  OPTIONAL Features of E2ESM  . . . . . . . . . . . . . . . . .  12
+-      6.1.  Disappearing Messages . . . . . . . . . . . . . . . . . .  12
+-      6.2.  Mutual Identity Verification  . . . . . . . . . . . . . .  13
+-    7.  Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  13
+-      7.1.  Content PCASM . . . . . . . . . . . . . . . . . . . . . .  13
+-      7.2.  Size PCASM  . . . . . . . . . . . . . . . . . . . . . . .  13
+-      7.3.  Analytic PCASM  . . . . . . . . . . . . . . . . . . . . .  14
+-      7.4.  Conversation Metadata as OPTIONAL PCASM . . . . . . . . .  14
+-      7.5.  Non-PCASM . . . . . . . . . . . . . . . . . . . . . . . .  14
+-    8.  Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  15
   
   
   
-! Muffett                  Expires 13 January 2022                [Page 2]
-! 
-! Internet-Draft                    e2esm                        July 2021
-! 
-! 
-!    9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
-!    10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  16
-!    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  16
-!    12. Security Considerations . . . . . . . . . . . . . . . . . . .  16
-!    13. Informative References  . . . . . . . . . . . . . . . . . . .  16
-!    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
+- Muffett                  Expires 13 January 2022                [Page 2]
+- 
+- Internet-Draft                    e2esm                        July 2021
+- 
+- 
+-    9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
+-    10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  16
+-    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  16
+-    12. Security Considerations . . . . . . . . . . . . . . . . . . .  16
+-    13. Informative References  . . . . . . . . . . . . . . . . . . .  16
+-    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
   
 ! 1.  Introduction
   
@@ -168,10 +170,10 @@
   
   1.1.  Comments
   
---- 50,186 ----
+--- 50,189 ----
+     Provisions Relating to IETF Documents (https://trustee.ietf.org/
      license-info) in effect on the date of publication of this document.
      Please review these documents carefully, as they describe your rights
-     and restrictions with respect to this document.  Code Components
 + 
 + 
 + 
@@ -180,6 +182,7 @@
 + Internet-Draft                    e2esm                      August 2021
 + 
 + 
+     and restrictions with respect to this document.  Code Components
      extracted from this document must include Simplified BSD License text
      as described in Section 4.e of the Trust Legal Provisions and are
      provided without warranty as described in the Simplified BSD License.
@@ -227,7 +230,6 @@
 +    8.  Principles  . . . . . . . . . . . . . . . . . . . . . . . . .   9
 +      8.1.  Transparency of Participation . . . . . . . . . . . . . .   9
 +      8.2.  Integrity of Participation  . . . . . . . . . . . . . . .  10
-+        8.2.1.  Retransmission Exception  . . . . . . . . . . . . . .  10
 + 
 + 
 + 
@@ -236,6 +238,7 @@
 + Internet-Draft                    e2esm                      August 2021
 + 
 + 
++        8.2.1.  Retransmission Exception  . . . . . . . . . . . . . .  10
 +      8.3.  Equality of Participation . . . . . . . . . . . . . . . .  10
 +      8.4.  Closure of Conversation . . . . . . . . . . . . . . . . .  10
 +        8.4.1.  Public Conversations and Self-Subscription  . . . . .  10
@@ -282,20 +285,22 @@
 !    to a messaging group MUST NOT be able to access previously-sent
 !    content.
   
-!    In turn, use cases for such messaging solutions include the sending
-!    and receiving of any or all of:
   
   
   
-! Muffett                  Expires 7 February 2022                [Page 3]
+  
++ Muffett                  Expires 7 February 2022                [Page 3]
   
 + Internet-Draft                    e2esm                      August 2021
   
   
+!    In turn, use cases for such messaging solutions include the sending
+!    and receiving of any or all of:
+  
 !    1.  UNICODE or ASCII messages
-  
+! 
 !    2.  images, video files or audio files
-  
+! 
 !    3.  one-way streaming video or audio
 ! 
 !    4.  two-way streaming video or audio, as in live calls
@@ -342,7 +347,7 @@
   
      These definitions are drafted in respect of many examples of software
      commonly held to offer (or have offered) end-to-end security; these
---- 195,329 ----
+--- 198,329 ----
      14 [RFC2119] [RFC8174] when, and only when, they appear in all
      capitals, as shown here.
   
@@ -369,9 +374,6 @@
 + 
 + 
 + 
-+ 
-+ 
-+ 
 + Muffett                  Expires 7 February 2022                [Page 4]
 + 
 + Internet-Draft                    e2esm                      August 2021
@@ -382,7 +384,7 @@
 +    Content Metadata is any data that can offer better than 50% certainty
 +    regarding the value of any bit of the content.  Self-evidently, this
 +    also includes the value of the content itself.
-  
++ 
 + 2.3.2.  Size Metadata
   
 +    1.  For block encryption of content, "size metadata" is the unpadded
@@ -405,24 +407,24 @@
 +    is bound to a fixed and immutable set of recipients ("intended
 +    recipients") for that message.
   
-! 2.5.  Recipient
++ 2.5.  Recipient
   
 !    A "recipient" of a message is an entity which MAY ever be able to
 !    determine any PCASM for that message.  Recipients of a message MAY
 !    exist outside of the set of intended recipients for that message.
   
-+ 2.6.  Sender
+! 2.6.  Sender
   
-!    The "sender" of a message is an entity which composes that message to
-!    a set of intended recipients and sends that message into the
-!    messaging solution.
++    The "sender" of a message is an entity which composes that message to
++    a set of intended recipients and sends that message into the
++    messaging solution.
   
 ! 2.7.  Platform
   
 !    A "platform" is an entity which provides a messaging solution.
   
 ! 2.8.  Conversation and Group Conversation
-! 
+  
 !    TODO
 ! 
 ! 

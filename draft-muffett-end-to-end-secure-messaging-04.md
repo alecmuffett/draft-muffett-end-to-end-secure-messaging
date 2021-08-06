@@ -1,5 +1,5 @@
 %%%
-title = "Duck Test for the Security of Encrypted Messaging Apps"
+title = "Test for Falsifiability of End-to-End Security in Encrypted Messaging Apps"
 abbrev = "e2esm"
 category = "info"
 docName = "apparently this tool demands a doc name but does not use it"
