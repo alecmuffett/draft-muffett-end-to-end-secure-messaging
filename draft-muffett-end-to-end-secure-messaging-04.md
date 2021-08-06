@@ -38,15 +38,13 @@ provides
 either or both of
 "end-to-end security"
 or
-"end-to-end encryption."
+"end-to-end encryption".
 (either/both: "E2E")
 
 Any
 messaging solution,
-or any
-clearly defined subset
-of a
-larger messaging solution,
+or clearly defined
+subset thereof,
 which claims to
 provide E2E,
 **MUST**
@@ -59,7 +57,7 @@ is not
 wholly sufficient
 to determine that
 the messaging solution
-provides E2E.
+actually provides E2E.
 
 {mainmatter}
 

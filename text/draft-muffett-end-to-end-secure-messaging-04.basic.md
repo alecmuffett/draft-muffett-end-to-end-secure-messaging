@@ -27,11 +27,11 @@ organization = "Security Researcher"
 
 This draft describes a test which **MAY** be used to falsify claims that a messaging or messenger
 application, platform, solution, or service ("messaging solution") provides either or both of
-"end-to-end security" or "end-to-end encryption." (either/both: "E2E")
+"end-to-end security" or "end-to-end encryption". (either/both: "E2E")
 
-Any messaging solution, or any clearly defined subset of a larger messaging solution, which
-claims to provide E2E, **MUST** satisfy this test; however satisfaction of this test is not wholly
-sufficient to determine that the messaging solution provides E2E.
+Any messaging solution, or clearly defined subset thereof, which claims to provide E2E, **MUST**
+satisfy this test; however satisfaction of this test is not wholly sufficient to determine that the
+messaging solution actually provides E2E.
 
 {mainmatter}
 

@@ -32,14 +32,12 @@ provides
 either or both of
 &quot;end-to-end security&quot;
 or
-&quot;end-to-end encryption.&quot;
+&quot;end-to-end encryption&quot;.
 (either/both: &quot;E2E&quot;)</t>
 <t>Any
 messaging solution,
-or any
-clearly defined subset
-of a
-larger messaging solution,
+or clearly defined
+subset thereof,
 which claims to
 provide E2E,
 <bcp14>MUST</bcp14>
@@ -52,7 +50,7 @@ is not
 wholly sufficient
 to determine that
 the messaging solution
-provides E2E.</t>
+actually provides E2E.</t>
 </abstract>
 
 </front>

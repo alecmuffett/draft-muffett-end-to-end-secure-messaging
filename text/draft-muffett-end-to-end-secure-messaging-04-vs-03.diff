@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-07-31 13:32:23.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 01:09:15.000000000 +0100
 ***************
 *** 4,22 ****
   
@@ -25,8 +25,8 @@
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
-! Intended status: Informational                              31 July 2021
-! Expires: 1 February 2022
+! Intended status: Informational                             6 August 2021
+! Expires: 7 February 2022
   
   
 !          Duck Test for the Security of Encrypted Messaging Apps
@@ -37,12 +37,12 @@
 !    This draft describes a test which MAY be used to falsify claims that
 !    a messaging or messenger application, platform, solution, or service
 !    ("messaging solution") provides either or both of "end-to-end
-!    security" or "end-to-end encryption." (either/both: "E2E")
+!    security" or "end-to-end encryption". (either/both: "E2E")
 ! 
-!    Any messaging solution, or any clearly defined subset of a larger
-!    messaging solution, which claims to provide E2E, MUST satisfy this
-!    test; however satisfaction of this test is not wholly sufficient to
-!    determine that the messaging solution provides E2E.
+!    Any messaging solution, or clearly defined subset thereof, which
+!    claims to provide E2E, MUST satisfy this test; however satisfaction
+!    of this test is not wholly sufficient to determine that the messaging
+!    solution actually provides E2E.
   
   Status of This Memo
   
@@ -59,7 +59,7 @@
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
-!    This Internet-Draft will expire on 1 February 2022.
+!    This Internet-Draft will expire on 7 February 2022.
   
   Copyright Notice
   
@@ -78,10 +78,10 @@
   
 ! Muffett                  Expires 13 January 2022                [Page 1]
   
-  Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                        July 2021
   
   
-! Table of Contents
+- Table of Contents
   
 !    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
 !      1.1.  Comments  . . . . . . . . . . . . . . . . . . . . . . . .   3
@@ -133,10 +133,10 @@
   
   
 ! Muffett                  Expires 13 January 2022                [Page 2]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-  
+! 
+! Internet-Draft                    e2esm                        July 2021
+! 
+! 
 !    9.  See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
 !    10. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  16
 !    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  16
@@ -175,9 +175,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022                [Page 1]
++ Muffett                  Expires 7 February 2022                [Page 1]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      extracted from this document must include Simplified BSD License text
@@ -228,76 +228,76 @@
 +      8.1.  Transparency of Participation . . . . . . . . . . . . . .   9
 +      8.2.  Integrity of Participation  . . . . . . . . . . . . . . .  10
 +        8.2.1.  Retransmission Exception  . . . . . . . . . . . . . .  10
++ 
++ 
++ 
++ Muffett                  Expires 7 February 2022                [Page 2]
++ 
++ Internet-Draft                    e2esm                      August 2021
++ 
++ 
++      8.3.  Equality of Participation . . . . . . . . . . . . . . . .  10
++      8.4.  Closure of Conversation . . . . . . . . . . . . . . . . .  10
++        8.4.1.  Public Conversations and Self-Subscription  . . . . .  10
++      8.5.  Management of Participant Clients and Devices . . . . . .  10
++    9.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .  11
++      9.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .  11
++      9.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .  11
++      9.3.  Why: Analytic PCASM . . . . . . . . . . . . . . . . . . .  11
++      9.4.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .  11
++      9.5.  Why: Entity and Participant . . . . . . . . . . . . . . .  11
++      9.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .  12
++      9.7.  Why: Transparency of Participation  . . . . . . . . . . .  13
++      9.8.  Why: Integrity of Participation . . . . . . . . . . . . .  13
++      9.9.  Why: Equality of Participation  . . . . . . . . . . . . .  14
++      9.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  14
++      9.11. Why: Management of Participant Clients and Devices  . . .  15
++    10. OPTIONAL Features of E2ESM  . . . . . . . . . . . . . . . . .  15
++      10.1.  Disappearing Messages  . . . . . . . . . . . . . . . . .  15
++      10.2.  Mutual Identity Verification . . . . . . . . . . . . . .  15
++    11. Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  16
++      11.1.  Content PCASM  . . . . . . . . . . . . . . . . . . . . .  16
++      11.2.  Size PCASM . . . . . . . . . . . . . . . . . . . . . . .  16
++      11.3.  Analytic PCASM . . . . . . . . . . . . . . . . . . . . .  16
++      11.4.  Conversation Metadata as OPTIONAL PCASM  . . . . . . . .  17
++      11.5.  Non-PCASM  . . . . . . . . . . . . . . . . . . . . . . .  17
++    12. Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  17
++    13. See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  18
++    14. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  18
++    15. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  18
++    16. Security Considerations . . . . . . . . . . . . . . . . . . .  18
++    17. Informative References  . . . . . . . . . . . . . . . . . . .  18
++    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  20
   
++ 1.  Introduction
   
++    "End-to-end security" and "end-to-end encryption" offer digital
++    analogues of "closed distribution lists" for sharing content amongst
++    a set of participants, where non-participants are fully excluded from
++    access to content.
   
-! Muffett                  Expires 1 February 2022                [Page 2]
-  
-  Internet-Draft                    e2esm                        July 2021
-  
-  
-!      8.3.  Equality of Participation . . . . . . . . . . . . . . . .  10
-!      8.4.  Closure of Conversation . . . . . . . . . . . . . . . . .  10
-!        8.4.1.  Public Conversations and Self-Subscription  . . . . .  10
-!      8.5.  Management of Participant Clients and Devices . . . . . .  10
-!    9.  Rationales  . . . . . . . . . . . . . . . . . . . . . . . . .  11
-!      9.1.  Why: Content PCASM  . . . . . . . . . . . . . . . . . . .  11
-!      9.2.  Why: Size PCASM . . . . . . . . . . . . . . . . . . . . .  11
-!      9.3.  Why: Analytic PCASM . . . . . . . . . . . . . . . . . . .  11
-!      9.4.  Why: Conversation Metadata as OPTIONAL PCASM  . . . . . .  11
-!      9.5.  Why: Entity and Participant . . . . . . . . . . . . . . .  11
-!      9.6.  Why: Backdoor . . . . . . . . . . . . . . . . . . . . . .  12
-!      9.7.  Why: Transparency of Participation  . . . . . . . . . . .  13
-!      9.8.  Why: Integrity of Participation . . . . . . . . . . . . .  13
-!      9.9.  Why: Equality of Participation  . . . . . . . . . . . . .  14
-!      9.10. Why: Closure of Conversation  . . . . . . . . . . . . . .  14
-!      9.11. Why: Management of Participant Clients and Devices  . . .  15
-!    10. OPTIONAL Features of E2ESM  . . . . . . . . . . . . . . . . .  15
-!      10.1.  Disappearing Messages  . . . . . . . . . . . . . . . . .  15
-!      10.2.  Mutual Identity Verification . . . . . . . . . . . . . .  15
-!    11. Examples of PCASM . . . . . . . . . . . . . . . . . . . . . .  16
-!      11.1.  Content PCASM  . . . . . . . . . . . . . . . . . . . . .  16
-!      11.2.  Size PCASM . . . . . . . . . . . . . . . . . . . . . . .  16
-!      11.3.  Analytic PCASM . . . . . . . . . . . . . . . . . . . . .  16
-!      11.4.  Conversation Metadata as OPTIONAL PCASM  . . . . . . . .  17
-!      11.5.  Non-PCASM  . . . . . . . . . . . . . . . . . . . . . . .  17
-!    12. Worked Example  . . . . . . . . . . . . . . . . . . . . . . .  17
-!    13. See Also  . . . . . . . . . . . . . . . . . . . . . . . . . .  18
-!    14. Live Drafts . . . . . . . . . . . . . . . . . . . . . . . . .  18
-!    15. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  18
-!    16. Security Considerations . . . . . . . . . . . . . . . . . . .  18
-!    17. Informative References  . . . . . . . . . . . . . . . . . . .  18
-!    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  20
-  
-! 1.  Introduction
-! 
-!    "End-to-end security" and "end-to-end encryption" offer digital
-!    analogues of "closed distribution lists" for sharing content amongst
-!    a set of participants, where non-participants are fully excluded from
-!    access to content.
-! 
 !    This draft assumes a specific application of "end-to-end security" or
 !    "end-to-end encryption" towards the specific use case of individual
 !    and group messaging solutions where participants who are later added
 !    to a messaging group MUST NOT be able to access previously-sent
 !    content.
   
-+    In turn, use cases for such messaging solutions include the sending
-+    and receiving of any or all of:
+!    In turn, use cases for such messaging solutions include the sending
+!    and receiving of any or all of:
   
   
-! 
-! Muffett                  Expires 1 February 2022                [Page 3]
+  
+! Muffett                  Expires 7 February 2022                [Page 3]
   
-  Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
   
   
 !    1.  UNICODE or ASCII messages
-! 
+  
 !    2.  images, video files or audio files
   
 !    3.  one-way streaming video or audio
-  
+! 
 !    4.  two-way streaming video or audio, as in live calls
 ! 
 !    The application of this test does not depend upon whether the
@@ -307,41 +307,22 @@
   1.1.  Comments
   
 ***************
-*** 156,163 ****
---- 195,219 ----
+*** 156,189 ****
      14 [RFC2119] [RFC8174] when, and only when, they appear in all
      capitals, as shown here.
   
-+ 2.  Definitions
-+ 
-+    The following terminology SHALL be used for this test.
-+ 
-+ 2.1.  Entity
-+ 
-+    An "entity" is that which is distingushed by possessing a
-+    [TrustedComputingBase]
-+ 
-+ 2.2.  Content
-+ 
-+    Plaintext content ("content") is information of 0 or more bits, to be
-+    communicated.
-  
-+ 2.3.  Metadata and PCASM
-  
-+    Plaintext content and sensitive metadata ("PCASM") is the union set
-+    of content and associated "metadata" that describes the content,
-+    comprising any or all of:
   
   
   
-***************
-*** 165,189 ****
+  
+  
+  
   
   
   
 ! Muffett                  Expires 13 January 2022                [Page 3]
   
-  Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                        July 2021
   
   
 ! 2.  Requirements for an End-to-End Secure Messenger
@@ -361,51 +342,77 @@
   
      These definitions are drafted in respect of many examples of software
      commonly held to offer (or have offered) end-to-end security; these
---- 221,329 ----
+--- 195,329 ----
+     14 [RFC2119] [RFC8174] when, and only when, they appear in all
+     capitals, as shown here.
   
++ 2.  Definitions
++ 
++    The following terminology SHALL be used for this test.
++ 
++ 2.1.  Entity
++ 
++    An "entity" is that which is distingushed by possessing a
++    [TrustedComputingBase]
++ 
++ 2.2.  Content
++ 
++    Plaintext content ("content") is information of 0 or more bits, to be
++    communicated.
++ 
++ 2.3.  Metadata and PCASM
++ 
++    Plaintext content and sensitive metadata ("PCASM") is the union set
++    of content and associated "metadata" that describes the content,
++    comprising any or all of:
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ Muffett                  Expires 7 February 2022                [Page 4]
++ 
++ Internet-Draft                    e2esm                      August 2021
++ 
++ 
++ 2.3.1.  Content Metadata
++ 
++    Content Metadata is any data that can offer better than 50% certainty
++    regarding the value of any bit of the content.  Self-evidently, this
++    also includes the value of the content itself.
   
++ 2.3.2.  Size Metadata
   
-! Muffett                  Expires 1 February 2022                [Page 4]
-  
-  Internet-Draft                    e2esm                        July 2021
++    1.  For block encryption of content, "size metadata" is the unpadded
++        size of the content.
   
++    2.  For stream encryption of content, "size metadata" is currently
++        undefined.  (TODO)
   
-! 2.3.1.  Content Metadata
-! 
-!    Content Metadata is any data that can offer better than 50% certainty
-!    regarding the value of any bit of the content.  Self-evidently, this
-!    also includes the value of the content itself.
-! 
-! 2.3.2.  Size Metadata
-! 
-!    1.  For block encryption of content, "size metadata" is the unpadded
-!        size of the content.
-! 
-!    2.  For stream encryption of content, "size metadata" is currently
-!        undefined.  (TODO)
-! 
-!    3.  For transport encryption of content, accurate "size metadata"
-!        SHOULD NOT be observable or inferable.
-! 
-! 2.3.3.  Analytic Metadata
-! 
-!    Analytic Metadata is data that analyses, describes, reduces, or
-!    summarises the content.
-! 
-! 2.4.  Message and Intended Recipients
-! 
-!    A "message" is content which has been composed by a sender and which
-!    is bound to a fixed and immutable set of recipients ("intended
-!    recipients") for that message.
-! 
++    3.  For transport encryption of content, accurate "size metadata"
++        SHOULD NOT be observable or inferable.
+  
++ 2.3.3.  Analytic Metadata
+  
++    Analytic Metadata is data that analyses, describes, reduces, or
++    summarises the content.
+  
++ 2.4.  Message and Intended Recipients
+  
++    A "message" is content which has been composed by a sender and which
++    is bound to a fixed and immutable set of recipients ("intended
++    recipients") for that message.
+  
 ! 2.5.  Recipient
-! 
+  
 !    A "recipient" of a message is an entity which MAY ever be able to
 !    determine any PCASM for that message.  Recipients of a message MAY
 !    exist outside of the set of intended recipients for that message.
-! 
-! 2.6.  Sender
-! 
+  
++ 2.6.  Sender
+  
 !    The "sender" of a message is an entity which composes that message to
 !    a set of intended recipients and sends that message into the
 !    messaging solution.
@@ -421,9 +428,9 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022                [Page 5]
+! Muffett                  Expires 7 February 2022                [Page 5]
 ! 
-! Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                      August 2021
 ! 
 ! 
 ! 3.  Test Preconditions
@@ -479,9 +486,9 @@
   
 + 
 + 
-+ Muffett                  Expires 1 February 2022                [Page 6]
++ Muffett                  Expires 7 February 2022                [Page 6]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      2.  WhatsApp Messenger
@@ -608,9 +615,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022                [Page 7]
++ Muffett                  Expires 7 February 2022                [Page 7]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      For transport encryption of content, exact Size PCASM SHOULD NOT be
@@ -689,9 +696,9 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022                [Page 8]
+! Muffett                  Expires 7 February 2022                [Page 8]
 ! 
-! Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                      August 2021
 ! 
 ! 
 ! 7.6.  Conversation, Group, Centralised & Decentralised
@@ -812,9 +819,9 @@
   
   
   
-+ Muffett                  Expires 1 February 2022                [Page 9]
++ Muffett                  Expires 7 February 2022                [Page 9]
   
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
   
   
 + 8.2.  Integrity of Participation
@@ -901,9 +908,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022               [Page 10]
++ Muffett                  Expires 7 February 2022               [Page 10]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      2.  The E2ESM software MUST provide each participant entity with
@@ -999,9 +1006,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022               [Page 11]
++ Muffett                  Expires 7 February 2022               [Page 11]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      Entities, and thus participants, are defined in terms of their
@@ -1051,9 +1058,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022               [Page 12]
++ Muffett                  Expires 7 February 2022               [Page 12]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      An access facilitation mechanism is a "door", and is inherently
@@ -1114,9 +1121,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022               [Page 13]
++ Muffett                  Expires 7 February 2022               [Page 13]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      If this was not the intention we would deduce that an E2ESM would
@@ -1196,9 +1203,9 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022               [Page 14]
+! Muffett                  Expires 7 February 2022               [Page 14]
 ! 
-! Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                      August 2021
 ! 
 ! 
 ! 9.11.  Why: Management of Participant Clients and Devices
@@ -1278,9 +1285,9 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022               [Page 15]
+! Muffett                  Expires 7 February 2022               [Page 15]
 ! 
-! Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                      August 2021
 ! 
 ! 
 ! 11.  Examples of PCASM
@@ -1343,9 +1350,9 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022               [Page 16]
+! Muffett                  Expires 7 February 2022               [Page 16]
 ! 
-! Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                      August 2021
 ! 
 ! 
 ! 11.4.  Conversation Metadata as OPTIONAL PCASM
@@ -1412,9 +1419,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 1 February 2022               [Page 17]
++ Muffett                  Expires 7 February 2022               [Page 17]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      If FooBook decides to represent itself as a participant, then it MUST
@@ -1488,9 +1495,9 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022               [Page 18]
+! Muffett                  Expires 7 February 2022               [Page 18]
 ! 
-! Internet-Draft                    e2esm                        July 2021
+! Internet-Draft                    e2esm                      August 2021
 ! 
   
      [CipherInd]
@@ -1574,9 +1581,9 @@
   
 + 
 + 
-+ Muffett                  Expires 1 February 2022               [Page 19]
++ Muffett                  Expires 7 February 2022               [Page 19]
 + 
-+ Internet-Draft                    e2esm                        July 2021
++ Internet-Draft                    e2esm                      August 2021
 + 
 + 
      [Spectre]  Wikipedia, "Spectre", 2021,
@@ -1618,4 +1625,4 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 1 February 2022               [Page 20]
+! Muffett                  Expires 7 February 2022               [Page 20]
