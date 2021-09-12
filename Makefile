@@ -7,6 +7,8 @@ SLUGPREV=$(SLUG)-$(PREV)
 SLUGDIFF=$(SLUGTHIS)-vs-$(PREV)
 XML2RFC=xml2rfc -v
 #--v3
+REPO=https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging
+OPEN=open -g
 
 all: $(DIR)/$(SLUGTHIS).txt $(DIR)/$(SLUGTHIS).html
 	-diff -bc $(DIR)/$(SLUGPREV).txt $(DIR)/$(SLUGTHIS).txt > $(DIR)/$(SLUGDIFF).diff
@@ -16,9 +18,10 @@ diff: all
 
 push: all
 	git add . && git commit -m "make on `datestamp`" && git push
+	$(OPEN) $(REPO)
 
 open: all
-	open $(DIR)/$(SLUGTHIS).html
+	$(OPEN) $(DIR)/$(SLUGTHIS).html
 
 $(DIR)/$(SLUGTHIS).html: $(DIR)/$(SLUGTHIS).xml
 	( cd $(DIR) && $(XML2RFC) --html $(SLUGTHIS).xml )
