@@ -48,11 +48,8 @@ later added to a messaging group **MUST NOT** be able to access previously-sent 
 In turn, use cases for such messaging solutions include the sending and receiving of any or all of:
 
 1.  UNICODE or ASCII messages
-
 2.  images, video files or audio files
-
 3.  one-way streaming video or audio
-
 4.  two-way streaming video or audio, as in live calls
 
 The application of this test does not depend upon whether the messaging solution is built upon a
@@ -98,9 +95,7 @@ of the content. Self-evidently, this also includes the value of the content itse
 ### Size Metadata
 
 1.  For block encryption of content, "size metadata" is the unpadded size of the content.
-
 2.  For stream encryption of content, "size metadata" is currently undefined. (TODO)
-
 3.  For transport encryption of content, accurate "size metadata" **SHOULD NOT** be observable or
     inferable.
 
@@ -115,9 +110,9 @@ to a fixed and immutable set of zero or more recipients ("intended recipients") 
 
 ## Recipient
 
-A "recipient" of a message is an entity which **MAY** ever be able to determine any PCASM for that
-message. Recipients of a message **MAY** exist outside of the set of intended recipients for that
-message.
+A "recipient" of a message is an entity which **MAY** derive any PCASM for that message. Recipients
+of a message **MAY** exist outside of the set of intended recipients for that message. Means of
+derivation **MAY** include analysis of a larger corpus of messages.
 
 ## Sender
 
@@ -180,182 +175,6 @@ TODO, non-PCASM, stuff out of scope, Ricochet, etc.
 #### OLD MATERIAL BELOW THESE LINES
 
 ##### OLD MATERIAL BELOW THESE LINES
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
-
-------
 
 ## Conversation, Group, Centralised & Decentralised
 
@@ -427,7 +246,6 @@ Where there exists centralised E2ESM software that hosts participants:
 
 1.  The E2ESM software **MUST** provide each participant entity with means to review or revoke
     access for that participant's clients or devices that can access future PCASM.
-
 2.  The E2ESM software **MUST** provide each participant entity with notifications and/or complete
     logs of changes to the set of clients or devices that can or could access message PCASM.
 
@@ -592,13 +410,9 @@ encoded as an ASCII string of length 13 bytes without terminator character.
 Examples of Content PCASM would include, non-exclusively:
 
 1.  The content is "Hello, world."
-
 2.  The content starts with the word "Hello"
-
 3.  The top bit of the first byte of the content, is zero
-
 4.  The MD5 hash of the content is 080aef839b95facf73ec599375e92d47
-
 5.  The Salted-MD5 Hash of the content is : ...
 
 ## Size PCASM
@@ -611,17 +425,11 @@ mechanisms.
 Examples of Analytic PCASM would include, non-exclusively:
 
 1.  The content contains the substring "ello"
-
 2.  The content does not contain the word "Goodbye"
-
 3.  The content contains a substring from amongst the following set: ...
-
 4.  The content does not contain a substring from amongst the following set: ...
-
 5.  The hash of the content exists amongst the following set of hashes: ...
-
 6.  The hash of the content does not exist amongst the following set of hashes: ...
-
 7.  The content was matched by a machine-learning classifier with the following training set: ...
 
 ## Conversation Metadata as **OPTIONAL** PCASM
@@ -629,15 +437,10 @@ Examples of Analytic PCASM would include, non-exclusively:
 Examples of Conversation Metadata would include, non-exclusively:
 
 1.  maillist email addresses
-
 2.  maillist server names
-
 3.  group titles
-
 4.  group topics
-
 5.  group icons
-
 6.  group participant lists
 
 ## Non-PCASM
@@ -645,17 +448,11 @@ Examples of Conversation Metadata would include, non-exclusively:
 Information which would not be PCASM would include, non-exclusively:
 
 1.  The content is sent from Alice
-
 2.  The content is sent to Bob
-
 3.  The content is between 1 and 16 bytes long
-
 4.  The content was sent at the following date and time: ...
-
 5.  The content was sent from the following IP address: ...
-
 6.  The content was sent from the following geolocation: ...
-
 7.  The content was composed using the following platform: ...
 
 # See Also
@@ -685,6 +482,7 @@ This document is entirely composed of security considerations.
       <author fullname="Marjory S. Blumenthal"></author>
       <date year="2011"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="Ricochet" target="https://www.ricochetrefresh.net">
@@ -693,6 +491,7 @@ This document is entirely composed of security considerations.
       <author fullname="BlueprintForFreeSpeech"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="BREACH" target="https://en.wikipedia.org/wiki/BREACH">
@@ -701,6 +500,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="CipherInd" target="https://en.wikipedia.org/wiki/Ciphertext_indistinguishability">
@@ -709,6 +509,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="Clipper" target="https://en.wikipedia.org/wiki/Clipper_chip">
@@ -717,6 +518,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="CryptoWars" target="https://en.wikipedia.org/wiki/Crypto_Wars">
@@ -725,6 +527,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="DualUse" target="https://en.wikipedia.org/wiki/Dual-use_technology">
@@ -733,6 +536,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="ExportControl" target="https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States#Cold_War_era">
@@ -741,6 +545,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="Logjam" target="https://en.wikipedia.org/wiki/Logjam_(computer_security)">
@@ -749,6 +554,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="Meltdown" target="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">
@@ -757,6 +563,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="Spectre" target="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">
@@ -765,6 +572,7 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>
 
 <reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
@@ -773,4 +581,5 @@ This document is entirely composed of security considerations.
       <author fullname="Wikipedia"></author>
       <date year="2021"></date>
    </front>
+   <refcontent></refcontent>
 </reference>

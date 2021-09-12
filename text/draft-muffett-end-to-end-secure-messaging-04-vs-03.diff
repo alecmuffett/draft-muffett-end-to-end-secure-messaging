@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-08-06 02:02:31.000000000 +0100
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2021-09-12 11:53:28.000000000 +0100
 ***************
 *** 4,22 ****
   
@@ -25,8 +25,8 @@
   
   individual submission                                         A. Muffett
   Internet-Draft                                       Security Researcher
-! Intended status: Informational                             6 August 2021
-! Expires: 7 February 2022
+! Intended status: Informational                         12 September 2021
+! Expires: 16 March 2022
   
   
 !  Test to Falsify Claims of End-to-End Security or End-to-End Encryption
@@ -60,7 +60,7 @@
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
-!    This Internet-Draft will expire on 7 February 2022.
+!    This Internet-Draft will expire on 16 March 2022.
   
   Copyright Notice
   
@@ -177,9 +177,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 7 February 2022                [Page 1]
++ Muffett                   Expires 16 March 2022                 [Page 1]
 + 
-+ Internet-Draft                    e2esm                      August 2021
++ Internet-Draft                    e2esm                   September 2021
 + 
 + 
      and restrictions with respect to this document.  Code Components
@@ -233,9 +233,9 @@
 + 
 + 
 + 
-+ Muffett                  Expires 7 February 2022                [Page 2]
++ Muffett                   Expires 16 March 2022                 [Page 2]
 + 
-+ Internet-Draft                    e2esm                      August 2021
++ Internet-Draft                    e2esm                   September 2021
 + 
 + 
 +      8.5.  Why: Entity and Participant . . . . . . . . . . . . . . .   9
@@ -289,9 +289,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022                [Page 3]
+! Muffett                   Expires 16 March 2022                 [Page 3]
 ! 
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
   1.1.  Comments
@@ -388,16 +388,16 @@
 -    The "PCASM" of a message is defined as the "plaintext content and
 -    sensitive metadata" of that message, comprising any or all of:
   
-- 3.2.1.  Content PCASM
+! 3.2.1.  Content PCASM
   
 !    Content PCASM is any data that can offer better than 50-50 certainty
 !    regarding the value of any bit of the content.  See "Rationales" for
 !    more.
   
-! 3.2.2.  Size PCASM
+- 3.2.2.  Size PCASM
   
--    For block encryption of content, Size PCASM is the unpadded size of
--    the content.
+!    For block encryption of content, Size PCASM is the unpadded size of
+!    the content.
   
 !    For stream encryption of content, Size PCASM is currently undefined.
 !    (TODO, would benefit from broader input.)
@@ -447,7 +447,7 @@
   
 !    A "recipient" is an entity which receives messages and MAY be able to
 !    access the PCASM of those messages.
-  
+! 
 !    For each message there will be one sender and one or more recipients.
   
 - 3.5.  Participants and Non-Participants
@@ -509,9 +509,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022                [Page 4]
+! Muffett                   Expires 16 March 2022                 [Page 4]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 !    2.  For stream encryption of content, "size metadata" is currently
@@ -533,9 +533,10 @@
   
 ! 2.5.  Recipient
   
-!    A "recipient" of a message is an entity which MAY ever be able to
-!    determine any PCASM for that message.  Recipients of a message MAY
-!    exist outside of the set of intended recipients for that message.
+!    A "recipient" of a message is an entity which MAY derive any PCASM
+!    for that message.  Recipients of a message MAY exist outside of the
+!    set of intended recipients for that message.  Means of derivation MAY
+!    include analysis of a larger corpus of messages.
   
 ! 2.6.  Sender
   
@@ -564,10 +565,9 @@
   
   
   
-  
-! Muffett                  Expires 7 February 2022                [Page 5]
+! Muffett                   Expires 16 March 2022                 [Page 5]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 ! 3.  Test Preconditions
@@ -586,7 +586,7 @@
   
 ! 3.3.  Re-injection of old content is legitimate
   
-+    TODO, obvious
+!    TODO, obvious
   
 + 3.4.  Consistent inheritance of group membership as intended recipients
 +       in centralized messaging solutions
@@ -599,7 +599,7 @@
 +    solution, the set of recipients for that message exceeds the set of
 +    intended recipients for that message.
   
-! 5.  Analysis
++ 5.  Analysis
   
 !    TODO, non-PCASM, stuff out of scope, Ricochet, etc.
   
@@ -621,9 +621,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022                [Page 6]
+! Muffett                   Expires 16 March 2022                 [Page 6]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
      A given platform MAY distinguish between and support more than one
@@ -722,10 +722,10 @@
   
   
 ! Muffett                  Expires 13 January 2022                [Page 7]
-! 
-! Internet-Draft                    e2esm                        July 2021
+  
+- Internet-Draft                    e2esm                        July 2021
   
-  
+! 
 ! 4.3.  Equality of Participation
   
      All participants MUST be peers, i.e. they MUST have equal access to
@@ -739,9 +739,9 @@
   
   
   
-+ Muffett                  Expires 7 February 2022                [Page 7]
++ Muffett                   Expires 16 March 2022                 [Page 7]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 ! 7.3.  Equality of Participation
@@ -832,9 +832,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022                [Page 8]
+! Muffett                   Expires 16 March 2022                 [Page 8]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 ! 8.2.  Why: Size PCASM
@@ -902,9 +902,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022                [Page 9]
+! Muffett                   Expires 16 March 2022                 [Page 9]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
      Further: it would be obviously possible to burden an E2ESM with
@@ -1013,9 +1013,9 @@
   
   
   
-- Muffett                  Expires 13 January 2022               [Page 11]
+! Muffett                  Expires 13 January 2022               [Page 11]
   
-! Internet-Draft                    e2esm                        July 2021
+- Internet-Draft                    e2esm                        July 2021
   
   
      So this is an "anti-cheating" clause: all participant access to PCASM
@@ -1024,13 +1024,13 @@
   
   
   
-+ Muffett                  Expires 7 February 2022               [Page 10]
-+ 
-+ Internet-Draft                    e2esm                      August 2021
++ Muffett                   Expires 16 March 2022                [Page 10]
+  
+! Internet-Draft                    e2esm                   September 2021
   
   
-! 8.8.  Why: Equality of Participation
-  
++ 8.8.  Why: Equality of Participation
++ 
 +    Without equality of participation it would be allowed for a person to
 +    deploy a standalone cleartext chat server, available solely over TLS-
 +    encrypted links, declare themselves to be "participants" in every
@@ -1111,9 +1111,9 @@
   
   
   
-+ Muffett                  Expires 7 February 2022               [Page 11]
++ Muffett                   Expires 16 March 2022                [Page 11]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 + 9.  OPTIONAL Features of E2ESM
@@ -1193,9 +1193,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022               [Page 12]
+! Muffett                   Expires 16 March 2022                [Page 12]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 +    3.  The top bit of the first byte of the content, is zero
@@ -1263,9 +1263,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022               [Page 13]
+! Muffett                   Expires 16 March 2022                [Page 13]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 +    6.  group participant lists
@@ -1459,9 +1459,9 @@
   
   
   
-! Muffett                  Expires 7 February 2022               [Page 14]
+! Muffett                   Expires 16 March 2022                [Page 14]
   
-! Internet-Draft                    e2esm                      August 2021
+! Internet-Draft                    e2esm                   September 2021
   
   
 !    [I-D.knodel-e2ee-definition]
@@ -1507,4 +1507,4 @@
 ! 
 ! 
 ! 
-! Muffett                  Expires 7 February 2022               [Page 15]
+! Muffett                   Expires 16 March 2022                [Page 15]

@@ -252,9 +252,8 @@ for that message.
 A "recipient"
 of a message
 is an entity
-which **MAY** ever
-be able
-to determine
+which **MAY**
+derive
 any PCASM
 for that message.
 Recipients
@@ -264,6 +263,12 @@ exist outside
 of the set
 of intended recipients
 for that message.
+Means of derivation
+**MAY**
+include
+analysis of
+a larger corpus
+of messages.
 
 ## Sender
 
@@ -372,14 +377,6 @@ TODO, non-PCASM, stuff out of scope, Ricochet, etc.
 #### OLD MATERIAL BELOW THESE LINES
 ##### OLD MATERIAL BELOW THESE LINES
 
-------------------------------------------------------------------
-------------------------------------------------------------------
-------------------------------------------------------------------
-------------------------------------------------------------------
-------------------------------------------------------------------
-------------------------------------------------------------------
-------------------------------------------------------------------
-------------------------------------------------------------------
 
 ## Conversation, Group, Centralised & Decentralised
 

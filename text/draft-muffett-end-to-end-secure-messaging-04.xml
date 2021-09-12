@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- name="GENERATOR" content="github.com/mmarkdown/mmark Mmark Markdown Processor - mmark.miek.nl" -->
-<rfc version="3" ipr="trust200902" docName="draft-muffett-end-to-end-secure-messaging-04" submissionType="IETF" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" consensus="true">
+<rfc version="3" ipr="trust200902" docName="draft-muffett-end-to-end-secure-messaging-04" submissionType="IETF" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" indexInclude="false" consensus="true">
 
 <front>
 <title abbrev="e2esm">Test to Falsify Claims of End-to-End Security or End-to-End Encryption in Encrypted Messenger or Encrypted Messaging Apps</title><seriesInfo value="draft-muffett-end-to-end-secure-messaging-04" stream="IETF" status="informational" name="Internet-Draft"></seriesInfo>
 <author initials="A." surname="Muffett" fullname="Alec Muffett"><organization>Security Researcher</organization><address><postal><street></street>
 </postal><email>alec.muffett@gmail.com</email>
-</address></author>
-<date/>
+</address></author><date/>
 <area>Internet</area>
 <workgroup>individual submission</workgroup>
 <keyword>messaging</keyword>
@@ -247,9 +246,8 @@ for that message.</t>
 <t>A &quot;recipient&quot;
 of a message
 is an entity
-which <bcp14>MAY</bcp14> ever
-be able
-to determine
+which <bcp14>MAY</bcp14>
+derive
 any PCASM
 for that message.
 Recipients
@@ -258,7 +256,13 @@ of a message
 exist outside
 of the set
 of intended recipients
-for that message.</t>
+for that message.
+Means of derivation
+<bcp14>MAY</bcp14>
+include
+analysis of
+a larger corpus
+of messages.</t>
 </section>
 
 <section anchor="sender"><name>Sender</name>
@@ -1050,6 +1054,7 @@ are at:
     <author fullname="Wikipedia"></author>
     <date year="2021"></date>
   </front>
+  <refcontent></refcontent>
 </reference>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml-ids/reference.I-D.knodel-e2ee-definition.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
@@ -1061,6 +1066,7 @@ are at:
     <author fullname="Marjory S. Blumenthal"></author>
     <date year="2011"></date>
   </front>
+  <refcontent></refcontent>
 </reference>
 <reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
   <front>
@@ -1068,6 +1074,7 @@ are at:
     <author fullname="Wikipedia"></author>
     <date year="2021"></date>
   </front>
+  <refcontent></refcontent>
 </reference>
 </references>
 
