@@ -8,7 +8,7 @@ SLUGDIFF=$(SLUGTHIS)-vs-$(PREV)
 XML2RFC=xml2rfc -v
 #--v3
 REPO=https://github.com/alecmuffett/draft-muffett-end-to-end-secure-messaging
-OPEN=open -g
+OPEN=open
 
 all: $(DIR)/$(SLUGTHIS).txt $(DIR)/$(SLUGTHIS).html
 	-diff -bc $(DIR)/$(SLUGPREV).txt $(DIR)/$(SLUGTHIS).txt > $(DIR)/$(SLUGDIFF).diff
