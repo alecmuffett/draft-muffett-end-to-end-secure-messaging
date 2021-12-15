@@ -94,7 +94,7 @@ and receiving
 of any
 or all of:</t>
 
-<ol>
+<ol spacing="compact">
 <li>UNICODE or ASCII messages</li>
 <li>images, video files or audio files</li>
 <li>one-way streaming video or audio</li>
@@ -192,7 +192,7 @@ itself.</t>
 
 <section anchor="size-metadata"><name>Size Metadata</name>
 
-<ol>
+<ol spacing="compact">
 <li>For block encryption
 of content,
 &quot;size metadata&quot;
@@ -306,8 +306,8 @@ of that message
 to an entity
 that is not
 an intended recipient
-of that message,</t>
-<t>other than by
+of that message,
+other than by
 the intentional action
 of an intended recipient.</t>
 </section>
@@ -964,7 +964,7 @@ for the purposes of this example encoded as an ASCII string of length
 <section anchor="content-pcasm"><name>Content PCASM</name>
 <t>Examples of Content PCASM would include, non-exclusively:</t>
 
-<ol>
+<ol spacing="compact">
 <li>The content is &quot;Hello, world.&quot;</li>
 <li>The content starts with the word &quot;Hello&quot;</li>
 <li>The top bit of the first byte of the content, is zero</li>
@@ -981,7 +981,7 @@ and/or content encryption mechanisms.</t>
 <section anchor="analytic-pcasm"><name>Analytic PCASM</name>
 <t>Examples of Analytic PCASM would include, non-exclusively:</t>
 
-<ol>
+<ol spacing="compact">
 <li>The content contains the substring &quot;ello&quot;</li>
 <li>The content does not contain the word &quot;Goodbye&quot;</li>
 <li>The content contains a substring from amongst the following set: ...</li>
@@ -995,7 +995,7 @@ and/or content encryption mechanisms.</t>
 <section anchor="conversation-metadata-as-optional-pcasm"><name>Conversation Metadata as <bcp14>OPTIONAL</bcp14> PCASM</name>
 <t>Examples of Conversation Metadata would include, non-exclusively:</t>
 
-<ol>
+<ol spacing="compact">
 <li>maillist email addresses</li>
 <li>maillist server names</li>
 <li>group titles</li>
@@ -1008,7 +1008,7 @@ and/or content encryption mechanisms.</t>
 <section anchor="non-pcasm"><name>Non-PCASM</name>
 <t>Information which would not be PCASM would include, non-exclusively:</t>
 
-<ol>
+<ol spacing="compact">
 <li>The content is sent from Alice</li>
 <li>The content is sent to Bob</li>
 <li>The content is between 1 and 16 bytes long</li>
@@ -1054,7 +1054,6 @@ are at:
     <author fullname="Wikipedia"></author>
     <date year="2021"></date>
   </front>
-  <refcontent></refcontent>
 </reference>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml-ids/reference.I-D.knodel-e2ee-definition.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
@@ -1066,7 +1065,6 @@ are at:
     <author fullname="Marjory S. Blumenthal"></author>
     <date year="2011"></date>
   </front>
-  <refcontent></refcontent>
 </reference>
 <reference anchor="TrustedComputingBase" target="https://en.wikipedia.org/wiki/Trusted_computing_base">
   <front>
@@ -1074,7 +1072,6 @@ are at:
     <author fullname="Wikipedia"></author>
     <date year="2021"></date>
   </front>
-  <refcontent></refcontent>
 </reference>
 </references>
 

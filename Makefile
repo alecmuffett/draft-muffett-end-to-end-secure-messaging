@@ -29,8 +29,9 @@ $(DIR)/$(SLUGTHIS).html: $(DIR)/$(SLUGTHIS).xml
 $(DIR)/$(SLUGTHIS).txt: $(DIR)/$(SLUGTHIS).xml
 	( cd $(DIR) && $(XML2RFC) --text $(SLUGTHIS).xml )
 
+# was: mmark -markdown
 $(DIR)/$(SLUGTHIS).xml: $(SLUGTHIS).md
-	mmark -markdown $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.md
+	mmark $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.md
 	mmark -html $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.html
 	mmark $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).xml
 

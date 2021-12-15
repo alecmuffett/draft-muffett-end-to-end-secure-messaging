@@ -313,7 +313,6 @@ to an entity
 that is not
 an intended recipient
 of that message,
-
 other than by
 the intentional action
 of an intended recipient.
