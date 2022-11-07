@@ -31,6 +31,7 @@ $(DIR)/$(SLUGTHIS).txt: $(DIR)/$(SLUGTHIS).xml
 
 # was: mmark -markdown
 $(DIR)/$(SLUGTHIS).xml: $(SLUGTHIS).md
+	unicode-invariant <$(SLUGTHIS).md >/dev/null
 	mmark $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.md
 	mmark -html $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).basic.html
 	mmark $(SLUGTHIS).md >$(DIR)/$(SLUGTHIS).xml

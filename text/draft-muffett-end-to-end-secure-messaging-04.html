@@ -1292,23 +1292,34 @@ of messenger software.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="toc compact ulEmpty">
-<li class="toc compact ulEmpty" id="section-toc.1-1.1">
+<nav class="toc"><ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
-<ul class="toc compact ulEmpty">
-<li class="toc compact ulEmpty" id="section-toc.1-1.1.2.1">
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.1.2.1">
                 <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="xref">1.1</a>.  <a href="#name-why-cfrg" class="xref">Why CFRG?</a></p>
 </li>
-              <li class="toc compact ulEmpty" id="section-toc.1-1.1.2.2">
+              <li class="compact toc ulEmpty" id="section-toc.1-1.1.2.2">
                 <p id="section-toc.1-1.1.2.2.1" class="keepWithNext"><a href="#section-1.2" class="xref">1.2</a>.  <a href="#name-why-a-duck-test" class="xref">Why a 'Duck Test'?</a></p>
 </li>
-              <li class="toc compact ulEmpty" id="section-toc.1-1.1.2.3">
+              <li class="compact toc ulEmpty" id="section-toc.1-1.1.2.3">
                 <p id="section-toc.1-1.1.2.3.1" class="keepWithNext"><a href="#section-1.3" class="xref">1.3</a>.  <a href="#name-why-only-messenger-software" class="xref">Why only 'Messenger Software'?</a></p>
 </li>
             </ul>
 </li>
-          <li class="toc compact ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-the-field-model" class="xref">The Field Model</a></p>
+          <li class="compact toc ulEmpty" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-the-field-model" class="xref">The 'Field Model'</a></p>
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.2.2.1">
+                <p id="section-toc.1-1.2.2.1.1"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-the-duck-test" class="xref">The 'Duck Test'</a></p>
+</li>
+              <li class="compact toc ulEmpty" id="section-toc.1-1.2.2.2">
+                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="xref">2.2</a>.  <a href="#name-learn-information" class="xref">'Learn Information'?</a></p>
+</li>
+              <li class="compact toc ulEmpty" id="section-toc.1-1.2.2.3">
+                <p id="section-toc.1-1.2.2.3.1"><a href="#section-2.3" class="xref">2.3</a>.  <a href="#name-conditions-and-exceptions" class="xref">'Conditions and Exceptions'</a></p>
+</li>
+            </ul>
 </li>
         </ul>
 </nav>
@@ -1324,20 +1335,22 @@ of messenger software.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         <h3 id="name-why-cfrg">
 <a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-why-cfrg" class="section-name selfRef">Why CFRG?</a>
         </h3>
-<p id="section-1.1-1">The IRTF CFRG charter says:<a href="#section-1.1-1" class="pilcrow">¶</a></p>
-<p id="section-1.1-2"><a href="https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/">https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/</a><a href="#section-1.1-2" class="pilcrow">¶</a></p>
-<p id="section-1.1-3">"The CFRG serves as a bridge between theory and practice, bringing new
-cryptographic techniques to the Internet community and promoting an
-understanding of the use and applicability of these mechanisms via
-Informational RFCs ... Our goal is to provide a forum for discussing
-and analyzing general cryptographic aspects of security protocols, and
-to offer guidance on the use of emerging mechanisms and new uses of
-existing mechanisms."<a href="#section-1.1-3" class="pilcrow">¶</a></p>
-<p id="section-1.1-4">This internet-draft proposes an informational RFC which assists the
+<p id="section-1.1-1">The IRTF CFRG charter says:
+<a href="https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/">https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/</a><a href="#section-1.1-1" class="pilcrow">¶</a></p>
+<blockquote id="section-1.1-2">
+          <p id="section-1.1-2.1">The CFRG serves as a bridge between theory and practice, bringing
+new cryptographic techniques to the Internet community and promoting
+an understanding of the use and applicability of these mechanisms
+via Informational RFCs ... Our goal is to provide a forum for
+discussing and analyzing general cryptographic aspects of security
+protocols, and to offer guidance on the use of emerging mechanisms
+and new uses of existing mechanisms.<a href="#section-1.1-2.1" class="pilcrow">¶</a></p>
+</blockquote>
+<p id="section-1.1-3">This internet-draft proposes an informational RFC which assists the
 discussion and analysis of the general cryptographic aspects of
 end-to-end secure, encrypted messenger software, providing
-guidance on the use - especially choice - of such software.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
-<p id="section-1.1-5">Hence this internet-draft is submitted to CFRG.<a href="#section-1.1-5" class="pilcrow">¶</a></p>
+guidance on the use - especially choice - of such software.<a href="#section-1.1-3" class="pilcrow">¶</a></p>
+<p id="section-1.1-4">Hence this internet-draft is submitted to CFRG.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="why-a-duck-test">
@@ -1370,15 +1383,15 @@ encrypted messenger software.<a href="#section-1.2-4" class="pilcrow">¶</a></p>
 <a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-why-only-messenger-software" class="section-name selfRef">Why only 'Messenger Software'?</a>
         </h3>
 <p id="section-1.3-1">This internet-draft is written for the test to be applied to
-end-to-end secure, encrypted messenger software.  It may be that the
-concepts describe could be more broadly applied - for instance to
-other encrypted transport protocols - but the scale of adoption,
-invention, and discussion of messenger software demands a focused
-document which deals exclusively with the particular use-case, common
-features and foibles of end-to-end secure, encrypted messenger
-software.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
-<p id="section-1.3-2">Future documents may explore the aspects of this duck test which are
-well-suited for other purposes.<a href="#section-1.3-2" class="pilcrow">¶</a></p>
+end-to-end secure, encrypted messenger software.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
+<p id="section-1.3-2">It may be that the concepts describe could be more broadly applied -
+for instance to other encrypted transport protocols - but the scale of
+adoption, invention, and discussion of messenger software demands a
+focused document which deals exclusively with the particular use-case,
+common features and foibles of end-to-end secure, encrypted messenger
+software.<a href="#section-1.3-2" class="pilcrow">¶</a></p>
+<p id="section-1.3-3">Future documents may explore the aspects of this duck test which are
+well-suited for other purposes.<a href="#section-1.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1386,8 +1399,84 @@ well-suited for other purposes.<a href="#section-1.3-2" class="pilcrow">¶</a></
 <div id="the-field-model">
 <section id="section-2">
       <h2 id="name-the-field-model">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-the-field-model" class="section-name selfRef">The Field Model</a>
-    </h2>
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-the-field-model" class="section-name selfRef">The 'Field Model'</a>
+      </h2>
+<p id="section-2-1">Several key sources on encryption and privacy (TK, TK, TK) observe
+using similar terms that in pre-industrial-revolution societies:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<blockquote id="section-2-2">
+        <p id="section-2-2.1">All that was once necessary for two or more people to have a private
+conversation was for them to walk into a field - away from
+eavesdroppers - where they could simply talk...<a href="#section-2-2.1" class="pilcrow">¶</a></p>
+</blockquote>
+<p id="section-2-3">We refer to this as the 'field model' of secure communication, and
+observe several characteristics from which we derive the duck test:<a href="#section-2-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-2-4.1">
+          <p id="section-2-4.1.1">There is a 'speaker', who will be the 'first party', named
+'Alice'. ('A')<a href="#section-2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-4.2">
+          <p id="section-2-4.2.1">There are 'listeners', who will be 'second parties', named 'Bob',
+'Carol', 'Dave', etc; ('B', 'C', 'D', ...)<a href="#section-2-4.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-4.3">
+          <p id="section-2-4.3.1">The speaker, and the listeners which are visible to the speaker as
+standing 'within earshot' alongside her in the field, comprise the
+'participants' for a given message as uttered by the speaker.  Each
+message may have different 'participation', as Bob, Carol, and Dave
+variously are seen by Alice to arrive and depart.<a href="#section-2-4.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-4.4">
+          <p id="section-2-4.4.1">There is a 'field' or 'platform' ('P') for the conversation, acting
+as a 'third party', analogous to 'WhatsApp' or 'Signal' or other
+end-to-end secure, encrypted messenger software; the third party is
+inert ground and is incapable of comprehension of the conversation.<a href="#section-2-4.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-4.5">
+          <p id="section-2-4.5.1">All other entities outside of these three sets, are 'fourth parties'.<a href="#section-2-4.5.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<div id="the-duck-test">
+<section id="section-2.1">
+        <h3 id="name-the-duck-test">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-the-duck-test" class="section-name selfRef">The 'Duck Test'</a>
+        </h3>
+<p id="section-2.1-1">From the above we may define the duck test:<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<blockquote id="section-2.1-2">
+          <p id="section-2.1-2.1">Subject to a fixed set of conditions and exceptions: for any given
+message, if an entity that was not a 'participant' for that message
+can use aspects of the platform - including logs of past-sent and
+future-sent messages - to learn some information regarding that
+message's content, then the platform fails to satisfy the duck test.<a href="#section-2.1-2.1" class="pilcrow">¶</a></p>
+</blockquote>
+</section>
+</div>
+<div id="learn-information">
+<section id="section-2.2">
+        <h3 id="name-learn-information">
+<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-learn-information" class="section-name selfRef">'Learn Information'?</a>
+        </h3>
+<p id="section-2.2-1">The duck test pivots upon an entity which was not first- or
+second-party to a message, "learning some information" about that
+message.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2-2">How much is "some information"?<a href="#section-2.2-2" class="pilcrow">¶</a></p>
+<p id="section-2.2-3">For the duck test we define "learning about a single bit of message
+content to greater than 50% certainty" as being sufficient information
+to have learned so as to cause failure of the test.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2-4">This condition extends beyond message content into some aspects of
+sensitive metadata - for instance zero (or very short) message lengths
+can leak single bits of message content to greater than 50% certainty,
+and therefore must be mitigated.<a href="#section-2.2-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="conditions-and-exceptions">
+<section id="section-2.3">
+        <h3 id="name-conditions-and-exceptions">
+<a href="#section-2.3" class="section-number selfRef">2.3. </a><a href="#name-conditions-and-exceptions" class="section-name selfRef">'Conditions and Exceptions'</a>
+        </h3>
+<p id="section-2.3-1">...<a href="#section-2.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <script>const toc = document.getElementById("toc");

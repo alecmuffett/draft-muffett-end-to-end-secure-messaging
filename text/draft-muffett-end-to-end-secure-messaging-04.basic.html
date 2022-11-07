@@ -28,17 +28,18 @@ of messenger software.</p>
 
 <h2 id="why-cfrg">Why CFRG?</h2>
 
-<p>The IRTF CFRG charter says:</p>
+<p>The IRTF CFRG charter says:
+<a href="https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/">https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/</a></p>
 
-<p><a href="https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/">https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/</a></p>
-
-<p>&ldquo;The CFRG serves as a bridge between theory and practice, bringing new
-cryptographic techniques to the Internet community and promoting an
-understanding of the use and applicability of these mechanisms via
-Informational RFCs &hellip; Our goal is to provide a forum for discussing
-and analyzing general cryptographic aspects of security protocols, and
-to offer guidance on the use of emerging mechanisms and new uses of
-existing mechanisms.&rdquo;</p>
+<blockquote>
+<p>The CFRG serves as a bridge between theory and practice, bringing
+new cryptographic techniques to the Internet community and promoting
+an understanding of the use and applicability of these mechanisms
+via Informational RFCs &hellip; Our goal is to provide a forum for
+discussing and analyzing general cryptographic aspects of security
+protocols, and to offer guidance on the use of emerging mechanisms
+and new uses of existing mechanisms.</p>
+</blockquote>
 
 <p>This internet-draft proposes an informational RFC which assists the
 discussion and analysis of the general cryptographic aspects of
@@ -73,18 +74,85 @@ encrypted messenger software.</p>
 <h2 id="why-only-messenger-software">Why only &lsquo;Messenger Software&rsquo;?</h2>
 
 <p>This internet-draft is written for the test to be applied to
-end-to-end secure, encrypted messenger software.  It may be that the
-concepts describe could be more broadly applied - for instance to
-other encrypted transport protocols - but the scale of adoption,
-invention, and discussion of messenger software demands a focused
-document which deals exclusively with the particular use-case, common
-features and foibles of end-to-end secure, encrypted messenger
+end-to-end secure, encrypted messenger software.</p>
+
+<p>It may be that the concepts describe could be more broadly applied -
+for instance to other encrypted transport protocols - but the scale of
+adoption, invention, and discussion of messenger software demands a
+focused document which deals exclusively with the particular use-case,
+common features and foibles of end-to-end secure, encrypted messenger
 software.</p>
 
 <p>Future documents may explore the aspects of this duck test which are
 well-suited for other purposes.</p>
 
-<h1 id="the-field-model">The Field Model</h1>
+<h1 id="the-field-model">The &lsquo;Field Model&rsquo;</h1>
+
+<p>Several key sources on encryption and privacy (TK, TK, TK) observe
+using similar terms that in pre-industrial-revolution societies:</p>
+
+<blockquote>
+<p>All that was once necessary for two or more people to have a private
+conversation was for them to walk into a field - away from
+eavesdroppers - where they could simply talk&hellip;</p>
+</blockquote>
+
+<p>We refer to this as the &lsquo;field model&rsquo; of secure communication, and
+observe several characteristics from which we derive the duck test:</p>
+
+<ul>
+<li><p>There is a &lsquo;speaker&rsquo;, who will be the &lsquo;first party&rsquo;, named
+&lsquo;Alice&rsquo;. (&lsquo;A&rsquo;)</p></li>
+
+<li><p>There are &lsquo;listeners&rsquo;, who will be &lsquo;second parties&rsquo;, named &lsquo;Bob&rsquo;,
+&lsquo;Carol&rsquo;, &lsquo;Dave&rsquo;, etc; (&lsquo;B&rsquo;, &lsquo;C&rsquo;, &rsquo;D&rsquo;, &hellip;)</p></li>
+
+<li><p>The speaker, and the listeners which are visible to the speaker as
+standing &lsquo;within earshot&rsquo; alongside her in the field, comprise the
+&lsquo;participants&rsquo; for a given message as uttered by the speaker.  Each
+message may have different &lsquo;participation&rsquo;, as Bob, Carol, and Dave
+variously are seen by Alice to arrive and depart.</p></li>
+
+<li><p>There is a &lsquo;field&rsquo; or &lsquo;platform&rsquo; (&lsquo;P&rsquo;) for the conversation, acting
+as a &lsquo;third party&rsquo;, analogous to &lsquo;WhatsApp&rsquo; or &lsquo;Signal&rsquo; or other
+end-to-end secure, encrypted messenger software; the third party is
+inert ground and is incapable of comprehension of the conversation.</p></li>
+
+<li><p>All other entities outside of these three sets, are &lsquo;fourth parties&rsquo;.</p></li>
+</ul>
+
+<h2 id="the-duck-test">The &lsquo;Duck Test&rsquo;</h2>
+
+<p>From the above we may define the duck test:</p>
+
+<blockquote>
+<p>Subject to a fixed set of conditions and exceptions: for any given
+message, if an entity that was not a &lsquo;participant&rsquo; for that message
+can use aspects of the platform - including logs of past-sent and
+future-sent messages - to learn some information regarding that
+message&rsquo;s content, then the platform fails to satisfy the duck test.</p>
+</blockquote>
+
+<h2 id="learn-information">&lsquo;Learn Information&rsquo;?</h2>
+
+<p>The duck test pivots upon an entity which was not first- or
+second-party to a message, &ldquo;learning some information&rdquo; about that
+message.</p>
+
+<p>How much is &ldquo;some information&rdquo;?</p>
+
+<p>For the duck test we define &ldquo;learning about a single bit of message
+content to greater than 50% certainty&rdquo; as being sufficient information
+to have learned so as to cause failure of the test.</p>
+
+<p>This condition extends beyond message content into some aspects of
+sensitive metadata - for instance zero (or very short) message lengths
+can leak single bits of message content to greater than 50% certainty,
+and therefore must be mitigated.</p>
+
+<h2 id="conditions-and-exceptions">&lsquo;Conditions and Exceptions&rsquo;</h2>
+
+<p>&hellip;</p>
 </section>
 
 </body>

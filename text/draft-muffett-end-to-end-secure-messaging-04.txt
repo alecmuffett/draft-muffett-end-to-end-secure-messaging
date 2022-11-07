@@ -64,24 +64,26 @@ Table of Contents
      1.1.  Why CFRG? . . . . . . . . . . . . . . . . . . . . . . . .   2
      1.2.  Why a 'Duck Test'?  . . . . . . . . . . . . . . . . . . .   2
      1.3.  Why only 'Messenger Software'?  . . . . . . . . . . . . .   3
-   2.  The Field Model . . . . . . . . . . . . . . . . . . . . . . .   3
+   2.  The 'Field Model' . . . . . . . . . . . . . . . . . . . . . .   3
+     2.1.  The 'Duck Test' . . . . . . . . . . . . . . . . . . . . .   4
+     2.2.  'Learn Information'?  . . . . . . . . . . . . . . . . . .   4
+     2.3.  'Conditions and Exceptions' . . . . . . . . . . . . . . .   4
 
 1.  Introduction
 
 1.1.  Why CFRG?
 
-   The IRTF CFRG charter says:
+   The IRTF CFRG charter says: https://datatracker.ietf.org/doc/charter-
+   irtf-cfrg/01/ (https://datatracker.ietf.org/doc/charter-irtf-
+   cfrg/01/)
 
-   https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/
-   (https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/)
-
-   "The CFRG serves as a bridge between theory and practice, bringing
-   new cryptographic techniques to the Internet community and promoting
-   an understanding of the use and applicability of these mechanisms via
-   Informational RFCs ... Our goal is to provide a forum for discussing
-   and analyzing general cryptographic aspects of security protocols,
-   and to offer guidance on the use of emerging mechanisms and new uses
-   of existing mechanisms."
+   |  The CFRG serves as a bridge between theory and practice, bringing
+   |  new cryptographic techniques to the Internet community and
+   |  promoting an understanding of the use and applicability of these
+   |  mechanisms via Informational RFCs ... Our goal is to provide a
+   |  forum for discussing and analyzing general cryptographic aspects
+   |  of security protocols, and to offer guidance on the use of
+   |  emerging mechanisms and new uses of existing mechanisms.
 
    This internet-draft proposes an informational RFC which assists the
    discussion and analysis of the general cryptographic aspects of end-
@@ -102,10 +104,8 @@ Table of Contents
    not 'quack' in the way that end-to-end secure, encrypted messenger
    software is commonly expected.
 
-   The described test is not intended to be complete; additional tests,
-   checks and obligations may be brought to bear by people who wish to
-   determine whether some software also offers other characteristics
-   such as 'anonymity', or broader forms of 'metadata privacy'.
+
+
 
 
 
@@ -113,6 +113,11 @@ Muffett                    Expires 11 May 2023                  [Page 2]
 
 Internet-Draft                    e2esm                    November 2022
 
+
+   The described test is not intended to be complete; additional tests,
+   checks and obligations may be brought to bear by people who wish to
+   determine whether some software also offers other characteristics
+   such as 'anonymity', or broader forms of 'metadata privacy'.
 
    If some software fails to satisfy the duck test, it will be deemed
    only to have failed the duck test, and nothing more excepting that by
@@ -123,40 +128,35 @@ Internet-Draft                    e2esm                    November 2022
 1.3.  Why only 'Messenger Software'?
 
    This internet-draft is written for the test to be applied to end-to-
-   end secure, encrypted messenger software.  It may be that the
-   concepts describe could be more broadly applied - for instance to
-   other encrypted transport protocols - but the scale of adoption,
-   invention, and discussion of messenger software demands a focused
-   document which deals exclusively with the particular use-case, common
-   features and foibles of end-to-end secure, encrypted messenger
-   software.
+   end secure, encrypted messenger software.
+
+   It may be that the concepts describe could be more broadly applied -
+   for instance to other encrypted transport protocols - but the scale
+   of adoption, invention, and discussion of messenger software demands
+   a focused document which deals exclusively with the particular use-
+   case, common features and foibles of end-to-end secure, encrypted
+   messenger software.
 
    Future documents may explore the aspects of this duck test which are
    well-suited for other purposes.
 
-2.  The Field Model
+2.  The 'Field Model'
 
+   Several key sources on encryption and privacy (TK, TK, TK) observe
+   using similar terms that in pre-industrial-revolution societies:
 
+   |  All that was once necessary for two or more people to have a
+   |  private conversation was for them to walk into a field - away from
+   |  eavesdroppers - where they could simply talk...
 
+   We refer to this as the 'field model' of secure communication, and
+   observe several characteristics from which we derive the duck test:
 
+   *  There is a 'speaker', who will be the 'first party', named
+      'Alice'.  ('A')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   *  There are 'listeners', who will be 'second parties', named 'Bob',
+      'Carol', 'Dave', etc; ('B', 'C', 'D', ...)
 
 
 
@@ -166,3 +166,59 @@ Internet-Draft                    e2esm                    November 2022
 
 
 Muffett                    Expires 11 May 2023                  [Page 3]
+
+Internet-Draft                    e2esm                    November 2022
+
+
+   *  The speaker, and the listeners which are visible to the speaker as
+      standing 'within earshot' alongside her in the field, comprise the
+      'participants' for a given message as uttered by the speaker.
+      Each message may have different 'participation', as Bob, Carol,
+      and Dave variously are seen by Alice to arrive and depart.
+
+   *  There is a 'field' or 'platform' ('P') for the conversation,
+      acting as a 'third party', analogous to 'WhatsApp' or 'Signal' or
+      other end-to-end secure, encrypted messenger software; the third
+      party is inert ground and is incapable of comprehension of the
+      conversation.
+
+   *  All other entities outside of these three sets, are 'fourth
+      parties'.
+
+2.1.  The 'Duck Test'
+
+   From the above we may define the duck test:
+
+   |  Subject to a fixed set of conditions and exceptions: for any given
+   |  message, if an entity that was not a 'participant' for that
+   |  message can use aspects of the platform - including logs of past-
+   |  sent and future-sent messages - to learn some information
+   |  regarding that message's content, then the platform fails to
+   |  satisfy the duck test.
+
+2.2.  'Learn Information'?
+
+   The duck test pivots upon an entity which was not first- or second-
+   party to a message, "learning some information" about that message.
+
+   How much is "some information"?
+
+   For the duck test we define "learning about a single bit of message
+   content to greater than 50% certainty" as being sufficient
+   information to have learned so as to cause failure of the test.
+
+   This condition extends beyond message content into some aspects of
+   sensitive metadata - for instance zero (or very short) message
+   lengths can leak single bits of message content to greater than 50%
+   certainty, and therefore must be mitigated.
+
+2.3.  'Conditions and Exceptions'
+
+   ...
+
+
+
+
+
+
+Muffett                    Expires 11 May 2023                  [Page 4]
