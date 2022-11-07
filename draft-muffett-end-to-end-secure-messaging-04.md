@@ -114,24 +114,25 @@ using similar terms that in pre-industrial-revolution societies:
 We refer to this as the 'field model' of secure communication, and
 observe several characteristics from which we derive the duck test:
 
-* There is a 'speaker', who will be the 'first party', named
-  'Alice'. ('A')
+* There is a 'speaker', who will be the 'first party', named 'Alice'
+  ('A')
 
-* There are 'listeners', who will be 'second parties', named 'Bob',
-  'Carol', 'Dave', etc; ('B', 'C', 'D', ...)
+* There are 'listeners', who will be 'second parties', named 'Bob'
+  ('B'), 'Carol' ('C'), 'Dave' ('D'), etc...
 
 * The speaker, and the listeners which are visible to the speaker as
   standing 'within earshot' alongside her in the field, comprise the
-  'participants' for a given message as uttered by the speaker.  Each
-  message may have different 'participation', as Bob, Carol, and Dave
-  variously are seen by Alice to arrive and depart.
+  'participants' for a given message as uttered by the speaker
+
+* Each message may have different 'participation', as Bob, Carol, and
+  Dave variously arrive and depart, all being seen by Alice
 
 * There is a 'field' or 'platform' ('P') for the conversation, acting
   as a 'third party', analogous to 'WhatsApp' or 'Signal' or other
   end-to-end secure, encrypted messenger software; the third party is
-  inert ground and is incapable of comprehension of the conversation.
+  inert ground and is incapable of comprehension of the conversation
 
-* All other entities outside of these three sets, are 'fourth parties'.
+* All other entities outside of these three sets, are 'fourth parties'
 
 ## The 'Duck Test'
 
@@ -141,19 +142,17 @@ From the above we may define the duck test:
 > message, if an entity that was not a 'participant' for that message
 > can use aspects of the platform - including logs of past-sent and
 > future-sent messages - to learn some information regarding that
-> message's content, then the platform fails to satisfy the duck test.
+> message's content, then the platform fails to satisfy the duck test
 
-## 'Learn Information'?
+## 'Learn Some Information'?
 
 The duck test pivots upon an entity which was not first- or
 second-party to a message, "learning some information" about that
-message.
+message.  How much is "some information"?
 
-How much is "some information"?
-
-For the duck test we define "learning about a single bit of message
-content to greater than 50% certainty" as being sufficient information
-to have learned so as to cause failure of the test.
+> For the duck test we define "learning about a single bit of message
+> content to greater than 50% certainty" as being sufficient
+> information to have learned so as to cause failure of the test
 
 This condition extends beyond message content into some aspects of
 sensitive metadata - for instance zero (or very short) message lengths

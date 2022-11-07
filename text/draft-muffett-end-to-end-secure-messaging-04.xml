@@ -101,24 +101,25 @@ eavesdroppers - where they could simply talk...</t>
 observe several characteristics from which we derive the duck test:</t>
 
 <ul>
-<li><t>There is a 'speaker', who will be the 'first party', named
-'Alice'. ('A')</t>
+<li><t>There is a 'speaker', who will be the 'first party', named 'Alice'
+('A')</t>
 </li>
-<li><t>There are 'listeners', who will be 'second parties', named 'Bob',
-'Carol', 'Dave', etc; ('B', 'C', 'D', ...)</t>
+<li><t>There are 'listeners', who will be 'second parties', named 'Bob'
+('B'), 'Carol' ('C'), 'Dave' ('D'), etc...</t>
 </li>
 <li><t>The speaker, and the listeners which are visible to the speaker as
 standing 'within earshot' alongside her in the field, comprise the
-'participants' for a given message as uttered by the speaker.  Each
-message may have different 'participation', as Bob, Carol, and Dave
-variously are seen by Alice to arrive and depart.</t>
+'participants' for a given message as uttered by the speaker</t>
+</li>
+<li><t>Each message may have different 'participation', as Bob, Carol, and
+Dave variously arrive and depart, all being seen by Alice</t>
 </li>
 <li><t>There is a 'field' or 'platform' ('P') for the conversation, acting
 as a 'third party', analogous to 'WhatsApp' or 'Signal' or other
 end-to-end secure, encrypted messenger software; the third party is
-inert ground and is incapable of comprehension of the conversation.</t>
+inert ground and is incapable of comprehension of the conversation</t>
 </li>
-<li><t>All other entities outside of these three sets, are 'fourth parties'.</t>
+<li><t>All other entities outside of these three sets, are 'fourth parties'</t>
 </li>
 </ul>
 
@@ -128,18 +129,17 @@ inert ground and is incapable of comprehension of the conversation.</t>
 message, if an entity that was not a 'participant' for that message
 can use aspects of the platform - including logs of past-sent and
 future-sent messages - to learn some information regarding that
-message's content, then the platform fails to satisfy the duck test.</t>
+message's content, then the platform fails to satisfy the duck test</t>
 </blockquote></section>
 
-<section anchor="learn-information"><name>'Learn Information'?</name>
+<section anchor="learn-some-information"><name>'Learn Some Information'?</name>
 <t>The duck test pivots upon an entity which was not first- or
 second-party to a message, &quot;learning some information&quot; about that
-message.</t>
-<t>How much is &quot;some information&quot;?</t>
-<t>For the duck test we define &quot;learning about a single bit of message
-content to greater than 50% certainty&quot; as being sufficient information
-to have learned so as to cause failure of the test.</t>
-<t>This condition extends beyond message content into some aspects of
+message.  How much is &quot;some information&quot;?</t>
+<blockquote><t>For the duck test we define &quot;learning about a single bit of message
+content to greater than 50% certainty&quot; as being sufficient
+information to have learned so as to cause failure of the test</t>
+</blockquote><t>This condition extends beyond message content into some aspects of
 sensitive metadata - for instance zero (or very short) message lengths
 can leak single bits of message content to greater than 50% certainty,
 and therefore must be mitigated.</t>
