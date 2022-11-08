@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2022-11-08 10:27:31.000000000 +0000
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2022-11-08 10:28:48.000000000 +0000
 ***************
 *** 2,22 ****
   
@@ -500,28 +500,28 @@
   
 - 5.5.  Why: Entity and Participant
   
-!    The term "participant" in this document exists to supersede the more
-!    vague notion of "end" in the phrase "end-to-end".
+-    The term "participant" in this document exists to supersede the more
+-    vague notion of "end" in the phrase "end-to-end".
   
 !    Entities, and thus participants, are defined in terms of their
 !    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
 !    store, forward, or access messages by means that are outside of the
 !    E2ESM software.
   
--    It is important to note that the concept of "entity" as defined by
--    their TCB, is the foundation for all other trust in E2ESM.  This
--    develops from the basic definitions of a [TrustedComputingBase] and
--    from the concepts of "trust-to-trust" discussed in [RoleOfTrust].
--    Failure of a participant to maintain integrity or control over their
--    TCB should not be considered a failure of an E2ESM that connects it
--    to other participants.
+!    It is important to note that the concept of "entity" as defined by
+!    their TCB, is the foundation for all other trust in E2ESM.  This
+!    develops from the basic definitions of a [TrustedComputingBase] and
+!    from the concepts of "trust-to-trust" discussed in [RoleOfTrust].
+!    Failure of a participant to maintain integrity or control over their
+!    TCB should not be considered a failure of an E2ESM that connects it
+!    to other participants.
   
-!    For example: if a participant accesses their E2ESM software via
-!    remote desktop software, and their RDP session is hijacked by a third
-!    party; of if they back-up their messages in cleartext to cloud
-!    storage leading somehow to data exfiltration, neither of these would
-!    be a failure of E2ESM.  This would instead be a failure of the
-!    participant's [TrustedComputingBase].
+-    For example: if a participant accesses their E2ESM software via
+-    remote desktop software, and their RDP session is hijacked by a third
+-    party; of if they back-up their messages in cleartext to cloud
+-    storage leading somehow to data exfiltration, neither of these would
+-    be a failure of E2ESM.  This would instead be a failure of the
+-    participant's [TrustedComputingBase].
   
   
   
@@ -569,10 +569,10 @@
 !    MUST combine both notions of an access mechanism (e.g. "door") and a
 !    definite or suspected intention (e.g. "legal obligation").
   
--    So the phrase "back door" is brief, clear, and widely understood to
--    mean "a secondary means of access".  In the above definition we
--    already allow for the term to be prefixed with "intentional" or
--    "unintentional".
+!    So the phrase "back door" is brief, clear, and widely understood to
+!    mean "a secondary means of access".  In the above definition we
+!    already allow for the term to be prefixed with "intentional" or
+!    "unintentional".
   
 -    Thus it seems appropriate to use this term in this context, not least
 -    because it is also not far removed from the similar and established
@@ -581,7 +581,7 @@
   
   
   
-! Muffett                  Expires 13 January 2022               [Page 10]
+- Muffett                  Expires 13 January 2022               [Page 10]
   
 ! Internet-Draft                    e2esm                        July 2021
   
@@ -624,12 +624,12 @@
   
 ! 5.9.  Why: Equality of Participation
   
--    Without equality of participation it would be allowed for a person to
--    deploy a standalone cleartext chat server, available solely over TLS-
--    encrypted links, declare themselves to be "participants" in every
--    conversation from its outset, access all message PCASM on that basis,
--    and yet call themselves an E2ESM.
-- 
+!    Without equality of participation it would be allowed for a person to
+!    deploy a standalone cleartext chat server, available solely over TLS-
+!    encrypted links, declare themselves to be "participants" in every
+!    conversation from its outset, access all message PCASM on that basis,
+!    and yet call themselves an E2ESM.
+  
 - 
 - 
 - 
@@ -1005,9 +1005,8 @@
   
 + 1.2.  Why CFRG?
   
-!    The IRTF CFRG charter says: https://datatracker.ietf.org/doc/charter-
-!    irtf-cfrg/01/ (https://datatracker.ietf.org/doc/charter-irtf-
-!    cfrg/01/)
+!    The IRTF CFRG charter (https://datatracker.ietf.org/doc/charter-irtf-
+!    cfrg/01/) says:
   
 !    |  The CFRG serves as a bridge between theory and practice, bringing
 !    |  new cryptographic techniques to the Internet community and
@@ -1034,38 +1033,39 @@
   
   
   
+  
 ! Muffett                    Expires 12 May 2023                  [Page 2]
   
 ! Internet-Draft                    e2esm                    November 2022
   
   
-!    By contrast, this internet-draft specifies a simple 'falsifiability'
-!    test using which a person may establish whether some software does
-!    not 'quack' in the way that end-to-end secure, encrypted messenger
-!    software is commonly expected.
++    By contrast, this internet-draft specifies a simple 'falsifiability'
++    test using which a person may establish whether some software does
++    not 'quack' in the way that end-to-end secure, encrypted messenger
++    software is commonly expected.
   
 +    The described test is not intended to be complete; additional tests,
 +    checks and obligations may be brought to bear by people who wish to
 +    determine whether some software also offers other characteristics
 +    such as 'anonymity', or broader forms of 'metadata privacy'.
   
-+    If some software fails to satisfy the duck test, it will be deemed
-+    only to have failed the duck test, and nothing more excepting that by
-+    failing the duck test we can clearly state that the software fails to
-+    exhibit some commonly expected characteristics of end-to-end secure,
-+    encrypted messenger software.
+!    If some software fails to satisfy the duck test, it will be deemed
+!    only to have failed the duck test, and nothing more excepting that by
+!    failing the duck test we can clearly state that the software fails to
+!    exhibit some commonly expected characteristics of end-to-end secure,
+!    encrypted messenger software.
   
 ! 1.4.  Why only 'Messenger Software'?
   
-!    This internet-draft is written for the test to be applied to end-to-
-!    end secure, encrypted messenger software.
++    This internet-draft is written for the test to be applied to end-to-
++    end secure, encrypted messenger software.
   
-+    It may be that the concepts describe could be more broadly applied -
-+    for instance to other encrypted transport protocols - but the scale
-+    of adoption, invention, and discussion of messenger software demands
-+    a focused document which deals exclusively with the particular use-
-+    case, common features and foibles of end-to-end secure, encrypted
-+    messenger software.
+!    It may be that the concepts describe could be more broadly applied -
+!    for instance to other encrypted transport protocols - but the scale
+!    of adoption, invention, and discussion of messenger software demands
+!    a focused document which deals exclusively with the particular use-
+!    case, common features and foibles of end-to-end secure, encrypted
+!    messenger software.
   
 !    Future documents may explore the aspects of this duck test which are
 !    well-suited for other purposes.
@@ -1099,14 +1099,14 @@
 !       standing 'within earshot' alongside her in the field, comprise the
 !       'participants' for a given message as uttered by the speaker
   
-!    *  Each message may have different 'participation', as Bob, Carol,
-!       and Dave variously arrive and depart, all being seen by Alice
++    *  Each message may have different 'participation', as Bob, Carol,
++       and Dave variously arrive and depart, all being seen by Alice
   
-+    *  There is a 'field' or 'platform' ('P') for the conversation,
-+       acting as a 'third party', analogous to 'WhatsApp' or 'Signal' or
-+       other end-to-end secure, encrypted messenger software; the third
-+       party is inert ground and is incapable of comprehension of the
-+       conversation
+!    *  There is a 'field' or 'platform' ('P') for the conversation,
+!       acting as a 'third party', analogous to 'WhatsApp' or 'Signal' or
+!       other end-to-end secure, encrypted messenger software; the third
+!       party is inert ground and is incapable of comprehension of the
+!       conversation
   
 !    *  All other entities outside of these three sets, are 'fourth
 !       parties'

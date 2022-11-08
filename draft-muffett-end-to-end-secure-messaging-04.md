@@ -52,8 +52,8 @@ interested in seeing contextual previous work, see the
 
 ## Why CFRG?
 
-The IRTF CFRG charter says:
-https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/
+The [IRTF CFRG charter](https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/)
+says:
 
 > The CFRG serves as a bridge between theory and practice, bringing
 > new cryptographic techniques to the Internet community and promoting

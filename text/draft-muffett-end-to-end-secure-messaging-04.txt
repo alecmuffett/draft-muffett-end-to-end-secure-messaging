@@ -80,9 +80,8 @@ Table of Contents
 
 1.2.  Why CFRG?
 
-   The IRTF CFRG charter says: https://datatracker.ietf.org/doc/charter-
-   irtf-cfrg/01/ (https://datatracker.ietf.org/doc/charter-irtf-
-   cfrg/01/)
+   The IRTF CFRG charter (https://datatracker.ietf.org/doc/charter-irtf-
+   cfrg/01/) says:
 
    |  The CFRG serves as a bridge between theory and practice, bringing
    |  new cryptographic techniques to the Internet community and
@@ -105,6 +104,7 @@ Table of Contents
    software 'looks' like end-to-end secure, encrypted messenger
    software.  Such determinations may require considerable information,
    discussion of nuance, and application of considerable judgement.
+
 
 
 
