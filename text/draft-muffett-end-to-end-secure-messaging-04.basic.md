@@ -56,10 +56,12 @@ via Informational RFCs ... Our goal is to provide a forum for
 discussing and analyzing general cryptographic aspects of security
 protocols, and to offer guidance on the use of emerging mechanisms
 and new uses of existing mechanisms.</t>
-</blockquote><t>This internet-draft proposes an informational RFC which assists the
-discussion and analysis of the general cryptographic aspects of
-end-to-end secure, encrypted messenger software, providing
-guidance on the use - especially choice - of such software.</t>
+</blockquote><t>This internet-draft proposes an informational RFC which assists
+understanding of the use and applicability of end-to-end secure,
+encrypted messenger software.  This is achieved via discussion and
+analysis of general cryptographic aspects of the security which such
+software commonly offers, thereby providing the reader with guidance
+regarding the use - especially fitness and choice - of such software.</t>
 <t>Hence this internet-draft is submitted to CFRG.</t>
 </section>
 
