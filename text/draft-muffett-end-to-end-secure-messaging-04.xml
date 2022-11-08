@@ -126,10 +126,11 @@ inert ground and is incapable of comprehension of the conversation</t>
 <section anchor="the-duck-test"><name>The 'Duck Test'</name>
 <t>From the above we may define the duck test:</t>
 <blockquote><t>Subject to a fixed set of conditions and exceptions: for any given
-message, if an entity that was not a 'participant' for that message
-can use aspects of the platform - including logs of past-sent and
-future-sent messages - to learn some information regarding that
-message's content, then the platform fails to satisfy the duck test</t>
+message, if <strong>any</strong> entity that was not a 'participant' for that
+message <strong>may</strong> use partial or complete knowledge of the platform -
+including logs of past-sent and future-sent messages - to learn
+<strong>some</strong> information regarding that message's content, then the
+platform fails to satisfy the duck test</t>
 </blockquote></section>
 
 <section anchor="learn-some-information"><name>'Learn Some Information'?</name>

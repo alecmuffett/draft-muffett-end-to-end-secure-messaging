@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2022-11-07 23:51:23.000000000 +0000
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2022-11-08 10:12:16.000000000 +0000
 ***************
 *** 2,22 ****
   
@@ -29,8 +29,8 @@
   
 ! CFRG                                                          A. Muffett
   Internet-Draft                                       Security Researcher
-! Intended status: Informational                           7 November 2022
-! Expires: 11 May 2023
+! Intended status: Informational                           8 November 2022
+! Expires: 12 May 2023
   
   
 !    A 'Duck Test' for End-to-End Secure, Encrypted Messenger Software
@@ -63,7 +63,7 @@
      time.  It is inappropriate to use Internet-Drafts as reference
      material or to cite them other than as "work in progress."
   
-!    This Internet-Draft will expire on 11 May 2023.
+!    This Internet-Draft will expire on 12 May 2023.
   
   Copyright Notice
   
@@ -971,7 +971,7 @@
   
   
   
-+ Muffett                    Expires 11 May 2023                  [Page 1]
++ Muffett                    Expires 12 May 2023                  [Page 1]
   
 ! Internet-Draft                    e2esm                    November 2022
   
@@ -1027,7 +1027,7 @@
   
   
   
-! Muffett                    Expires 11 May 2023                  [Page 2]
+! Muffett                    Expires 12 May 2023                  [Page 2]
   
 ! Internet-Draft                    e2esm                    November 2022
   
@@ -1083,7 +1083,7 @@
   
   
   
-+ Muffett                    Expires 11 May 2023                  [Page 3]
++ Muffett                    Expires 12 May 2023                  [Page 3]
   
 + Internet-Draft                    e2esm                    November 2022
   
@@ -1105,11 +1105,11 @@
 !    From the above we may define the duck test:
   
 !    |  Subject to a fixed set of conditions and exceptions: for any given
-!    |  message, if an entity that was not a 'participant' for that
-!    |  message can use aspects of the platform - including logs of past-
-!    |  sent and future-sent messages - to learn some information
-!    |  regarding that message's content, then the platform fails to
-!    |  satisfy the duck test
+!    |  message, if *any* entity that was not a 'participant' for that
+!    |  message *may* use partial or complete knowledge of the platform -
+!    |  including logs of past-sent and future-sent messages - to learn
+!    |  *some* information regarding that message's content, then the
+!    |  platform fails to satisfy the duck test
   
 ! 2.2.  'Learn Some Information'?
   
@@ -1143,4 +1143,4 @@
   
   
   
-! Muffett                    Expires 11 May 2023                  [Page 4]
+! Muffett                    Expires 12 May 2023                  [Page 4]

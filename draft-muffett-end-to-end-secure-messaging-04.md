@@ -139,10 +139,11 @@ observe several characteristics from which we derive the duck test:
 From the above we may define the duck test:
 
 > Subject to a fixed set of conditions and exceptions: for any given
-> message, if an entity that was not a 'participant' for that message
-> can use aspects of the platform - including logs of past-sent and
-> future-sent messages - to learn some information regarding that
-> message's content, then the platform fails to satisfy the duck test
+> message, if **any** entity that was not a 'participant' for that
+> message **may** use partial or complete knowledge of the platform -
+> including logs of past-sent and future-sent messages - to learn
+> **some** information regarding that message's content, then the
+> platform fails to satisfy the duck test
 
 ## 'Learn Some Information'?
 
