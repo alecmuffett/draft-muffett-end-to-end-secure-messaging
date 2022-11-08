@@ -40,6 +40,12 @@ of messenger software.</t>
 
 <section anchor="introduction"><name>Introduction</name>
 
+<section anchor="work-in-progress"><name>Work in Progress</name>
+<t>This document is a complete rewrite from the ground up; if you are
+interested in seeing contextual previous work, see the
+<tt>draft-muffett-end-to-end-secure-messaging-04-abandoned</tt> series.</t>
+</section>
+
 <section anchor="why-cfrg"><name>Why CFRG?</name>
 <t>The IRTF CFRG charter says:
 <eref target="https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/">https://datatracker.ietf.org/doc/charter-irtf-cfrg/01/</eref></t>

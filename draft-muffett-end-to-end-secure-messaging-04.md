@@ -44,6 +44,12 @@ of messenger software.
 
 # Introduction
 
+## Work in Progress
+
+This document is a complete rewrite from the ground up; if you are
+interested in seeing contextual previous work, see the
+`draft-muffett-end-to-end-secure-messaging-04-abandoned` series.
+
 ## Why CFRG?
 
 The IRTF CFRG charter says:

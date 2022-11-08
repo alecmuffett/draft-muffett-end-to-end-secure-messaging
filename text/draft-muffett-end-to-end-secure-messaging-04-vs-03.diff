@@ -1,5 +1,5 @@
 *** text/draft-muffett-end-to-end-secure-messaging-03.txt	2021-07-12 15:32:34.000000000 +0100
---- text/draft-muffett-end-to-end-secure-messaging-04.txt	2022-11-08 10:12:16.000000000 +0000
+--- text/draft-muffett-end-to-end-secure-messaging-04.txt	2022-11-08 10:27:31.000000000 +0000
 ***************
 *** 2,22 ****
   
@@ -72,7 +72,7 @@
   
      This document is subject to BCP 78 and the IETF Trust's Legal
 ***************
-*** 52,945 ****
+*** 52,952 ****
   
   
   
@@ -467,8 +467,8 @@
 !    The test for measuring this is (intended to be) modeled upon
 !    ciphertext indistinguishability [CipherInd]
 ! 
-  
-  
+! 
+! 
 ! Muffett                  Expires 13 January 2022                [Page 8]
   
 ! Internet-Draft                    e2esm                        July 2021
@@ -482,13 +482,13 @@
 !    The test for measuring this is (intended) to address risk of content
 !    becoming evident via plaintext length.
   
-- 5.3.  Why: Analytic PCASM
+! 5.3.  Why: Analytic PCASM
   
--    Analytic PCASM MUST be protected as it MAY offer insight into Content
--    PCASM, for instance that the content shares features with other,
--    specimen, or known plaintext content.
+!    Analytic PCASM MUST be protected as it MAY offer insight into Content
+!    PCASM, for instance that the content shares features with other,
+!    specimen, or known plaintext content.
   
-- 5.4.  Why: Conversation Metadata as OPTIONAL PCASM
+! 5.4.  Why: Conversation Metadata as OPTIONAL PCASM
   
 -    Conversational Metadata MAY offer insight into Content PCASM, however
 -    the abstractions of transport mechanism, group management, or
@@ -498,23 +498,23 @@
 -    "blockchain-fans@example.com" would leak its implicit topic and
 -    participant identities to capable observers.
   
-! 5.5.  Why: Entity and Participant
+- 5.5.  Why: Entity and Participant
   
 !    The term "participant" in this document exists to supersede the more
 !    vague notion of "end" in the phrase "end-to-end".
   
--    Entities, and thus participants, are defined in terms of their
--    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
--    store, forward, or access messages by means that are outside of the
--    E2ESM software.
+!    Entities, and thus participants, are defined in terms of their
+!    [TrustedComputingBase] to acknowledge that an entity MAY legitimately
+!    store, forward, or access messages by means that are outside of the
+!    E2ESM software.
   
-!    It is important to note that the concept of "entity" as defined by
-!    their TCB, is the foundation for all other trust in E2ESM.  This
-!    develops from the basic definitions of a [TrustedComputingBase] and
-!    from the concepts of "trust-to-trust" discussed in [RoleOfTrust].
-!    Failure of a participant to maintain integrity or control over their
-!    TCB should not be considered a failure of an E2ESM that connects it
-!    to other participants.
+-    It is important to note that the concept of "entity" as defined by
+-    their TCB, is the foundation for all other trust in E2ESM.  This
+-    develops from the basic definitions of a [TrustedComputingBase] and
+-    from the concepts of "trust-to-trust" discussed in [RoleOfTrust].
+-    Failure of a participant to maintain integrity or control over their
+-    TCB should not be considered a failure of an E2ESM that connects it
+-    to other participants.
   
 !    For example: if a participant accesses their E2ESM software via
 !    remote desktop software, and their RDP session is hijacked by a third
@@ -562,12 +562,12 @@
 !    of access is clearly the "front door"; and any other access mechanism
 !    is a "back door".
   
--    If the term "back door" is considered innately pejorative,
--    alternative, uncertain constructions such as "illegitimate access
--    feature", "potentially intentional data-access weakness", "legally-
--    obligated exceptional access mechanism", or any other phrase, all
--    MUST combine both notions of an access mechanism (e.g. "door") and a
--    definite or suspected intention (e.g. "legal obligation").
+!    If the term "back door" is considered innately pejorative,
+!    alternative, uncertain constructions such as "illegitimate access
+!    feature", "potentially intentional data-access weakness", "legally-
+!    obligated exceptional access mechanism", or any other phrase, all
+!    MUST combine both notions of an access mechanism (e.g. "door") and a
+!    definite or suspected intention (e.g. "legal obligation").
   
 -    So the phrase "back door" is brief, clear, and widely understood to
 -    mean "a secondary means of access".  In the above definition we
@@ -622,8 +622,8 @@
 !    archive" or similar function.  The function of such a participant is
 !    considered to be out of scope for the messenger.
   
-- 5.9.  Why: Equality of Participation
-- 
+! 5.9.  Why: Equality of Participation
+  
 -    Without equality of participation it would be allowed for a person to
 -    deploy a standalone cleartext chat server, available solely over TLS-
 -    encrypted links, declare themselves to be "participants" in every
@@ -964,10 +964,17 @@
 -    Email: alec.muffett@gmail.com
 - 
 - 
+- 
+- 
+- 
+- 
   
   
   
---- 53,217 ----
+  
+  
+! Muffett                  Expires 13 January 2022               [Page 17]
+--- 53,224 ----
   
   
   
@@ -979,9 +986,10 @@
   Table of Contents
   
 !    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-!      1.1.  Why CFRG? . . . . . . . . . . . . . . . . . . . . . . . .   2
-!      1.2.  Why a 'Duck Test'?  . . . . . . . . . . . . . . . . . . .   2
-!      1.3.  Why only 'Messenger Software'?  . . . . . . . . . . . . .   3
+!      1.1.  Work in Progress  . . . . . . . . . . . . . . . . . . . .   2
+!      1.2.  Why CFRG? . . . . . . . . . . . . . . . . . . . . . . . .   2
+!      1.3.  Why a 'Duck Test'?  . . . . . . . . . . . . . . . . . . .   2
+!      1.4.  Why only 'Messenger Software'?  . . . . . . . . . . . . .   3
 !    2.  The 'Field Model' . . . . . . . . . . . . . . . . . . . . . .   3
 !      2.1.  The 'Duck Test' . . . . . . . . . . . . . . . . . . . . .   4
 !      2.2.  'Learn Some Information'? . . . . . . . . . . . . . . . .   4
@@ -989,11 +997,17 @@
   
   1.  Introduction
   
-! 1.1.  Why CFRG?
+! 1.1.  Work in Progress
   
-+    The IRTF CFRG charter says: https://datatracker.ietf.org/doc/charter-
-+    irtf-cfrg/01/ (https://datatracker.ietf.org/doc/charter-irtf-
-+    cfrg/01/)
+!    This document is a complete rewrite from the ground up; if you are
+!    interested in seeing contextual previous work, see the "draft-
+!    muffett-end-to-end-secure-messaging-04-abandoned" series.
+  
++ 1.2.  Why CFRG?
+  
+!    The IRTF CFRG charter says: https://datatracker.ietf.org/doc/charter-
+!    irtf-cfrg/01/ (https://datatracker.ietf.org/doc/charter-irtf-
+!    cfrg/01/)
   
 !    |  The CFRG serves as a bridge between theory and practice, bringing
 !    |  new cryptographic techniques to the Internet community and
@@ -1008,21 +1022,14 @@
 !    to-end secure, encrypted messenger software, providing guidance on
 !    the use - especially choice - of such software.
   
-+    Hence this internet-draft is submitted to CFRG.
+!    Hence this internet-draft is submitted to CFRG.
   
-! 1.2.  Why a 'Duck Test'?
+! 1.3.  Why a 'Duck Test'?
   
 !    There are efforts afoot to help a user determine whether some
 !    software 'looks' like end-to-end secure, encrypted messenger
 !    software.  Such determinations may require considerable information,
 !    discussion of nuance, and application of considerable judgement.
-  
-!    By contrast, this internet-draft specifies a simple 'falsifiability'
-!    test using which a person may establish whether some software does
-!    not 'quack' in the way that end-to-end secure, encrypted messenger
-!    software is commonly expected.
-  
-  
   
   
   
@@ -1032,33 +1039,38 @@
 ! Internet-Draft                    e2esm                    November 2022
   
   
-!    The described test is not intended to be complete; additional tests,
-!    checks and obligations may be brought to bear by people who wish to
-!    determine whether some software also offers other characteristics
-!    such as 'anonymity', or broader forms of 'metadata privacy'.
+!    By contrast, this internet-draft specifies a simple 'falsifiability'
+!    test using which a person may establish whether some software does
+!    not 'quack' in the way that end-to-end secure, encrypted messenger
+!    software is commonly expected.
   
-!    If some software fails to satisfy the duck test, it will be deemed
-!    only to have failed the duck test, and nothing more excepting that by
-!    failing the duck test we can clearly state that the software fails to
-!    exhibit some commonly expected characteristics of end-to-end secure,
-!    encrypted messenger software.
++    The described test is not intended to be complete; additional tests,
++    checks and obligations may be brought to bear by people who wish to
++    determine whether some software also offers other characteristics
++    such as 'anonymity', or broader forms of 'metadata privacy'.
   
-+ 1.3.  Why only 'Messenger Software'?
++    If some software fails to satisfy the duck test, it will be deemed
++    only to have failed the duck test, and nothing more excepting that by
++    failing the duck test we can clearly state that the software fails to
++    exhibit some commonly expected characteristics of end-to-end secure,
++    encrypted messenger software.
   
-+    This internet-draft is written for the test to be applied to end-to-
-+    end secure, encrypted messenger software.
+! 1.4.  Why only 'Messenger Software'?
   
-!    It may be that the concepts describe could be more broadly applied -
-!    for instance to other encrypted transport protocols - but the scale
-!    of adoption, invention, and discussion of messenger software demands
-!    a focused document which deals exclusively with the particular use-
-!    case, common features and foibles of end-to-end secure, encrypted
-!    messenger software.
+!    This internet-draft is written for the test to be applied to end-to-
+!    end secure, encrypted messenger software.
+  
++    It may be that the concepts describe could be more broadly applied -
++    for instance to other encrypted transport protocols - but the scale
++    of adoption, invention, and discussion of messenger software demands
++    a focused document which deals exclusively with the particular use-
++    case, common features and foibles of end-to-end secure, encrypted
++    messenger software.
   
 !    Future documents may explore the aspects of this duck test which are
 !    well-suited for other purposes.
   
-+ 2.  The 'Field Model'
+! 2.  The 'Field Model'
   
 !    Several key sources on encryption and privacy (TK, TK, TK) observe
 !    using similar terms that in pre-industrial-revolution societies:
@@ -1076,11 +1088,6 @@
 !    *  There are 'listeners', who will be 'second parties', named 'Bob'
 !       ('B'), 'Carol' ('C'), 'Dave' ('D'), etc...
   
-!    *  The speaker, and the listeners which are visible to the speaker as
-!       standing 'within earshot' alongside her in the field, comprise the
-!       'participants' for a given message as uttered by the speaker
-  
-  
   
   
 + Muffett                    Expires 12 May 2023                  [Page 3]
@@ -1088,17 +1095,21 @@
 + Internet-Draft                    e2esm                    November 2022
   
   
+!    *  The speaker, and the listeners which are visible to the speaker as
+!       standing 'within earshot' alongside her in the field, comprise the
+!       'participants' for a given message as uttered by the speaker
+  
 !    *  Each message may have different 'participation', as Bob, Carol,
 !       and Dave variously arrive and depart, all being seen by Alice
   
-!    *  There is a 'field' or 'platform' ('P') for the conversation,
-!       acting as a 'third party', analogous to 'WhatsApp' or 'Signal' or
-!       other end-to-end secure, encrypted messenger software; the third
-!       party is inert ground and is incapable of comprehension of the
-!       conversation
++    *  There is a 'field' or 'platform' ('P') for the conversation,
++       acting as a 'third party', analogous to 'WhatsApp' or 'Signal' or
++       other end-to-end secure, encrypted messenger software; the third
++       party is inert ground and is incapable of comprehension of the
++       conversation
   
-+    *  All other entities outside of these three sets, are 'fourth
-+       parties'
+!    *  All other entities outside of these three sets, are 'fourth
+!       parties'
   
 ! 2.1.  The 'Duck Test'
   
@@ -1132,14 +1143,6 @@
   
   
   
-  
-***************
-*** 949,952 ****
-  
-  
-  
-! Muffett                  Expires 13 January 2022               [Page 17]
---- 221,224 ----
   
   
   
